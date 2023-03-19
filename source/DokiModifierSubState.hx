@@ -65,6 +65,7 @@ class DokiModifierSubState extends MusicBeatSubstate
 			modText.setFormat(LangUtil.getFont('grotesk'), 26, 0xFF821F8B, FlxTextAlign.LEFT);
 			modText.y += LangUtil.getFontOffset('grotesk');
 			modText.antialiasing = SaveData.globalAntialiasing;
+			modText.updateHitbox();
 			modText.ID = i;
 			txtGrp.add(modText);
 			mouseManager.add(modText, onMouseDown, null, onMouseOver);

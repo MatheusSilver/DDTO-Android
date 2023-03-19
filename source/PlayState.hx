@@ -3367,7 +3367,7 @@ class PlayState extends MusicBeatState
 		camHUD.visible = true;
 
 		#if mobileC
-		mcontrols.visible = true;
+		mcontrols.visible = !SaveData.botplay;
 		#end
 
 
@@ -5837,7 +5837,7 @@ class PlayState extends MusicBeatState
 			});
 		}
 
-		if (KeyBinds.gamepad && !FlxG.keys.pressed.ANY)
+		if (KeyBinds.gamepad || !FlxG.keys.pressed.ANY)
 		{
 			if (pressArray.contains(true))
 			{

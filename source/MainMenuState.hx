@@ -459,7 +459,7 @@ class MainMenuState extends MusicBeatState
 			PlayState.SONG = Song.loadFromJson('drinks on me', 'drinks on me');
 			PlayState.storyDifficulty = 1;
 			PlayState.isStoryMode = true;
-			LoadingState.loadAndSwitchState(new PlayState());
+			LoadingState.loadAndSwitchState(new EstadoDeTroca());
 		});
 	}
 
