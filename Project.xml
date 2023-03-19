@@ -48,6 +48,7 @@
 	<!-- Defines whether or not the Izzy Engine crash handler is used. -->
 	<define name="CRASH_HANDLER" unless="debug" />
 
+
 	<!-- _____________________________ Path Settings ____________________________ -->
 
 	<set name="BUILD_DIR" value="export/debug" if="debug" />
