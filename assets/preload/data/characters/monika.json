@@ -5,10 +5,10 @@
 				0,
 				0
 			],
-			"loop": false,
+			"indices": [],
 			"fps": 24,
 			"anim": "idle",
-			"indices": [],
+			"loop": false,
 			"name": "Monika Returns Idle"
 		},
 		{
@@ -16,10 +16,10 @@
 				-107,
 				15
 			],
-			"loop": false,
+			"indices": [],
 			"fps": 24,
 			"anim": "singUP",
-			"indices": [],
+			"loop": false,
 			"name": "Monika Returns Up"
 		},
 		{
@@ -27,10 +27,10 @@
 				-29,
 				-10
 			],
-			"loop": false,
+			"indices": [],
 			"fps": 24,
 			"anim": "singRIGHT",
-			"indices": [],
+			"loop": false,
 			"name": "Monika Returns Right"
 		},
 		{
@@ -38,10 +38,10 @@
 				-30,
 				-52
 			],
-			"loop": false,
+			"indices": [],
 			"fps": 24,
 			"anim": "singDOWN",
-			"indices": [],
+			"loop": false,
 			"name": "Monika Returns Down"
 		},
 		{
@@ -49,18 +49,56 @@
 				-21,
 				40
 			],
-			"loop": false,
+			"indices": [],
 			"fps": 24,
 			"anim": "singLEFT",
-			"indices": [],
+			"loop": false,
 			"name": "Monika Returns Left"
+		}
+	],
+	"costumes": "monika",
+	"costumelist": [
+		{
+			"subfolder":true,
+			"internal_Name": "blueskies",
+			"charFile":"monika-blueskies"
+		},
+		{
+			"subfolder":true,
+			"internal_Name": "valentine",
+			"charFile":"monika-valentine"
+		},
+		{
+			"subfolder":true,
+			"internal_Name": "hex",
+			"charFile":"monika-hex"
+		},
+		{
+			"subfolder":true,
+			"internal_Name": "senpai",
+			"charFile":"monika-senpai"
+		},
+		{
+			"subfolder":true,
+			"internal_Name": "vigilante",
+			"charFile":"monika-vigilante"
+		},
+		{
+			"subfolder":true,
+			"internal_Name": "casual",
+			"charFile":"monika-casual"
+		},
+		{
+			"subfolder":true,
+			"internal_Name": "casuallong",
+			"charFile":"monika-casuallong"
 		}
 	],
 	"no_antialiasing": false,
 	"image": "characters/monika/Doki_MonikaNonPixel_Assets",
 	"position": [
-		130,
-		-160
+		0,
+		-350
 	],
 	"healthicon": "monika",
 	"flip_x": false,
@@ -70,9 +108,9 @@
 		101
 	],
 	"camera_position": [
-		-130,
-		-180
+		0,
+		0
 	],
 	"sing_duration": 6,
-	"scale": 1.8
+	"scale": 0.9
 }
