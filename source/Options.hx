@@ -114,27 +114,6 @@ class KeyBindingsOption extends Option
 	}
 }
 
-class HitboxesModificadas extends Option
-{
-	public function new(desc:String)
-	{
-		super();
-		description = desc;
-	}
-
-	public override function press():Bool
-	{
-		SaveData.hitboximagem = !SaveData.hitboximagem;
-		display = updateDisplay();
-		return true;
-	}
-
-	private override function updateDisplay():String
-	{
-		return SaveData.hitboximagem ? "Hitbox otimizada" : "Hitbox com imagem";
-	}
-}
-
 class DownscrollOption extends Option
 {
 	public function new(desc:String)

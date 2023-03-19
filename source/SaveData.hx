@@ -66,9 +66,6 @@ class SaveData
 	public static var shaders:Null<Bool> = true;
 	public static var songSpeed:Null<Float> = 1;
 
-	// Hitbox otimizada k
-	public static var hitboximagem = true; // Se for igual a true = hitbox do cachorro sortudo, caso não seja, ela muda pra uma feita por codes
-
 	// Costumes
 	public static var bfcostume:String = '';
 	public static var gfcostume:String = '';
