@@ -1,0 +1,133 @@
+{
+	"animations": [
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "idle",
+			"indices": [],
+			"name": "Big Monika Idle"
+		},
+		{
+			"offsets": [
+				141,
+				11
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singUP",
+			"indices": [],
+			"name": "Big Monika Sing Up"
+		},
+		{
+			"offsets": [
+				-22,
+				1
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "Big Monika Sing Right"
+		},
+		{
+			"offsets": [
+				1,
+				-49
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "Big Monika Sing Down"
+		},
+		{
+			"offsets": [
+				156,
+				-14
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "singLEFT",
+			"indices": [],
+			"name": "Big Monika Sing Left"
+		},
+		{
+			"offsets": [
+				141,
+				-1
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "lastNOTE_start",
+			"indices": [],
+			"name": "Big Monika Last Note0"
+		},
+		{
+			"offsets": [
+				280,
+				-8
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "lastNOTE_end",
+			"indices": [],
+			"name": "Big Monika Last Note First"
+		},
+		{
+			"offsets": [
+				37,
+				-1
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "firstDeath",
+			"indices": [],
+			"name": "Big Monika Retry Start"
+		},
+		{
+			"offsets": [
+				41,
+				-33
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "deathLoop",
+			"indices": [],
+			"name": "Big Monika Retry Loop"
+		},
+		{
+			"offsets": [
+				142,
+				-30
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "deathConfirm",
+			"indices": [],
+			"name": "Big Monika Retry End"
+		}
+	],
+	"no_antialiasing": false,
+	"image": "characters/Doki_BigMonikaDress_Assets",
+	"position": [
+		150,
+		230
+	],
+	"healthicon": "bigmonika",
+	"flip_x": false,
+	"healthbar_colors": [
+		140,
+		212,
+		101
+	],
+	"camera_position": [
+		-150,
+		-230
+	],
+	"sing_duration": 6,
+	"scale": 1.8
+}

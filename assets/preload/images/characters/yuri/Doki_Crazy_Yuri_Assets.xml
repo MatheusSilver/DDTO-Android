@@ -1,0 +1,85 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="Doki_Crazy_Yuri_Assets.png">
+	
+	
+	<SubTexture name="Yuri Crazy Down0000" x="5" y="5" width="163" height="301" />
+	<SubTexture name="Yuri Crazy Down0001" x="5" y="5" width="163" height="301" />
+	<SubTexture name="Yuri Crazy Down0002" x="5" y="5" width="163" height="301" />
+	<SubTexture name="Yuri Crazy Down0003" x="173" y="5" width="161" height="298" frameX="-1" frameY="-3" frameWidth="163" frameHeight="301" />
+	<SubTexture name="Yuri Crazy Down0004" x="339" y="5" width="160" height="300" frameX="-1" frameY="-1" frameWidth="163" frameHeight="301" />
+	<SubTexture name="Yuri Crazy Down0005" x="505" y="5" width="160" height="300" frameX="-1" frameY="-1" frameWidth="163" frameHeight="301" />
+	<SubTexture name="Yuri Crazy Down0006" x="670" y="5" width="161" height="300" frameX="-1" frameY="-1" frameWidth="163" frameHeight="301" />
+	<SubTexture name="Yuri Crazy Down0007" x="670" y="5" width="161" height="300" frameX="-1" frameY="-1" frameWidth="163" frameHeight="301" />
+	<SubTexture name="Yuri Crazy Down0008" x="670" y="5" width="161" height="300" frameX="-1" frameY="-1" frameWidth="163" frameHeight="301" />
+	<SubTexture name="Yuri Crazy Down0009" x="670" y="5" width="161" height="300" frameX="-1" frameY="-1" frameWidth="163" frameHeight="301" />
+	<SubTexture name="Yuri Crazy Down0010" x="670" y="5" width="161" height="300" frameX="-1" frameY="-1" frameWidth="163" frameHeight="301" />
+	<SubTexture name="Yuri Crazy Down0011" x="670" y="5" width="161" height="300" frameX="-1" frameY="-1" frameWidth="163" frameHeight="301" />
+	<SubTexture name="Yuri Crazy Down0012" x="670" y="5" width="161" height="300" frameX="-1" frameY="-1" frameWidth="163" frameHeight="301" />
+	<SubTexture name="Yuri Crazy Down0013" x="670" y="5" width="161" height="300" frameX="-1" frameY="-1" frameWidth="163" frameHeight="301" />
+	<SubTexture name="Yuri Crazy Down0014" x="670" y="5" width="161" height="300" frameX="-1" frameY="-1" frameWidth="163" frameHeight="301" />
+	<SubTexture name="Yuri Crazy Idle0000" x="836" y="5" width="165" height="320" frameX="-7" frameY="0" frameWidth="186" frameHeight="320" />
+	<SubTexture name="Yuri Crazy Idle0001" x="836" y="5" width="165" height="320" frameX="-7" frameY="0" frameWidth="186" frameHeight="320" />
+	<SubTexture name="Yuri Crazy Idle0002" x="1007" y="5" width="166" height="317" frameX="-6" frameY="-3" frameWidth="186" frameHeight="320" />
+	<SubTexture name="Yuri Crazy Idle0003" x="1007" y="5" width="166" height="317" frameX="-6" frameY="-3" frameWidth="186" frameHeight="320" />
+	<SubTexture name="Yuri Crazy Idle0004" x="1178" y="5" width="170" height="311" frameX="-2" frameY="-10" frameWidth="186" frameHeight="320" />
+	<SubTexture name="Yuri Crazy Idle0005" x="1353" y="5" width="184" height="311" frameX="-2" frameY="-9" frameWidth="186" frameHeight="320" />
+	<SubTexture name="Yuri Crazy Idle0006" x="1542" y="5" width="179" height="311" frameX="-7" frameY="-9" frameWidth="186" frameHeight="320" />
+	<SubTexture name="Yuri Crazy Idle0007" x="1726" y="5" width="169" height="307" frameX="-11" frameY="-14" frameWidth="186" frameHeight="320" />
+	<SubTexture name="Yuri Crazy Idle0008" x="5" y="330" width="175" height="307" frameX="-11" frameY="-14" frameWidth="186" frameHeight="320" />
+	<SubTexture name="Yuri Crazy Idle0009" x="185" y="330" width="171" height="307" frameX="-9" frameY="-14" frameWidth="186" frameHeight="320" />
+	<SubTexture name="Yuri Crazy Idle0010" x="361" y="330" width="171" height="307" frameX="-9" frameY="-14" frameWidth="186" frameHeight="320" />
+	<SubTexture name="Yuri Crazy Idle0011" x="538" y="330" width="172" height="307" frameX="-9" frameY="-14" frameWidth="186" frameHeight="320" />
+	<SubTexture name="Yuri Crazy Idle0012" x="715" y="330" width="172" height="307" frameX="-9" frameY="-14" frameWidth="186" frameHeight="320" />
+	<SubTexture name="Yuri Crazy Idle0013" x="892" y="330" width="171" height="307" frameX="-9" frameY="-14" frameWidth="186" frameHeight="320" />
+	<SubTexture name="Yuri Crazy Idle0014" x="1068" y="330" width="165" height="304" frameX="-12" frameY="-17" frameWidth="186" frameHeight="320" />
+	<SubTexture name="Yuri Crazy Idle0015" x="1068" y="330" width="165" height="304" frameX="-12" frameY="-17" frameWidth="186" frameHeight="320" />
+	<SubTexture name="Yuri Crazy Idle0016" x="1238" y="330" width="172" height="317" frameX="0" frameY="-4" frameWidth="186" frameHeight="320" />
+	<SubTexture name="Yuri Crazy Idle0017" x="1238" y="330" width="172" height="317" frameX="0" frameY="-4" frameWidth="186" frameHeight="320" />
+	<SubTexture name="Yuri Crazy Idle0018" x="1415" y="330" width="165" height="320" frameX="-7" frameY="0" frameWidth="186" frameHeight="320" />
+	<SubTexture name="Yuri Crazy Idle0019" x="1415" y="330" width="165" height="320" frameX="-7" frameY="0" frameWidth="186" frameHeight="320" />
+	<SubTexture name="Yuri Crazy Idle0020" x="836" y="5" width="165" height="320" frameX="-7" frameY="0" frameWidth="186" frameHeight="320" />
+	<SubTexture name="Yuri Crazy Idle0021" x="836" y="5" width="165" height="320" frameX="-7" frameY="0" frameWidth="186" frameHeight="320" />
+	<SubTexture name="Yuri Crazy Left0000" x="1586" y="330" width="232" height="327" />
+	<SubTexture name="Yuri Crazy Left0001" x="5" y="663" width="232" height="327" />
+	<SubTexture name="Yuri Crazy Left0002" x="242" y="663" width="224" height="326" frameX="-5" frameY="-1" frameWidth="232" frameHeight="327" />
+	<SubTexture name="Yuri Crazy Left0003" x="472" y="663" width="218" height="324" frameX="-7" frameY="-4" frameWidth="232" frameHeight="327" />
+	<SubTexture name="Yuri Crazy Left0004" x="695" y="663" width="214" height="323" frameX="-11" frameY="-4" frameWidth="232" frameHeight="327" />
+	<SubTexture name="Yuri Crazy Left0005" x="915" y="663" width="214" height="323" frameX="-11" frameY="-4" frameWidth="232" frameHeight="327" />
+	<SubTexture name="Yuri Crazy Left0006" x="1134" y="663" width="214" height="323" frameX="-11" frameY="-4" frameWidth="232" frameHeight="327" />
+	<SubTexture name="Yuri Crazy Left0007" x="1134" y="663" width="214" height="323" frameX="-11" frameY="-4" frameWidth="232" frameHeight="327" />
+	<SubTexture name="Yuri Crazy Left0008" x="1353" y="663" width="214" height="323" frameX="-11" frameY="-4" frameWidth="232" frameHeight="327" />
+	<SubTexture name="Yuri Crazy Left0009" x="1353" y="663" width="214" height="323" frameX="-11" frameY="-4" frameWidth="232" frameHeight="327" />
+	<SubTexture name="Yuri Crazy Left0010" x="1353" y="663" width="214" height="323" frameX="-11" frameY="-4" frameWidth="232" frameHeight="327" />
+	<SubTexture name="Yuri Crazy Left0011" x="1353" y="663" width="214" height="323" frameX="-11" frameY="-4" frameWidth="232" frameHeight="327" />
+	<SubTexture name="Yuri Crazy Left0012" x="1353" y="663" width="214" height="323" frameX="-11" frameY="-4" frameWidth="232" frameHeight="327" />
+	<SubTexture name="Yuri Crazy Left0013" x="1353" y="663" width="214" height="323" frameX="-11" frameY="-4" frameWidth="232" frameHeight="327" />
+	<SubTexture name="Yuri Crazy Left0014" x="1353" y="663" width="214" height="323" frameX="-11" frameY="-4" frameWidth="232" frameHeight="327" />
+	<SubTexture name="Yuri Crazy Right0000" x="1572" y="663" width="187" height="317" />
+	<SubTexture name="Yuri Crazy Right0001" x="1765" y="663" width="184" height="316" frameX="-4" frameY="-1" frameWidth="187" frameHeight="317" />
+	<SubTexture name="Yuri Crazy Right0002" x="1765" y="663" width="184" height="316" frameX="-4" frameY="-1" frameWidth="187" frameHeight="317" />
+	<SubTexture name="Yuri Crazy Right0003" x="5" y="995" width="180" height="315" frameX="-7" frameY="-2" frameWidth="187" frameHeight="317" />
+	<SubTexture name="Yuri Crazy Right0004" x="190" y="995" width="175" height="311" frameX="-10" frameY="-6" frameWidth="187" frameHeight="317" />
+	<SubTexture name="Yuri Crazy Right0005" x="370" y="995" width="176" height="313" frameX="-7" frameY="-4" frameWidth="187" frameHeight="317" />
+	<SubTexture name="Yuri Crazy Right0006" x="370" y="995" width="176" height="313" frameX="-7" frameY="-4" frameWidth="187" frameHeight="317" />
+	<SubTexture name="Yuri Crazy Right0007" x="370" y="995" width="176" height="313" frameX="-7" frameY="-4" frameWidth="187" frameHeight="317" />
+	<SubTexture name="Yuri Crazy Right0008" x="370" y="995" width="176" height="313" frameX="-7" frameY="-4" frameWidth="187" frameHeight="317" />
+	<SubTexture name="Yuri Crazy Right0009" x="370" y="995" width="176" height="313" frameX="-7" frameY="-4" frameWidth="187" frameHeight="317" />
+	<SubTexture name="Yuri Crazy Right0010" x="370" y="995" width="176" height="313" frameX="-7" frameY="-4" frameWidth="187" frameHeight="317" />
+	<SubTexture name="Yuri Crazy Right0011" x="370" y="995" width="176" height="313" frameX="-7" frameY="-4" frameWidth="187" frameHeight="317" />
+	<SubTexture name="Yuri Crazy Right0012" x="370" y="995" width="176" height="313" frameX="-7" frameY="-4" frameWidth="187" frameHeight="317" />
+	<SubTexture name="Yuri Crazy Right0013" x="370" y="995" width="176" height="313" frameX="-7" frameY="-4" frameWidth="187" frameHeight="317" />
+	<SubTexture name="Yuri Crazy Up0000" x="552" y="995" width="199" height="351" frameX="0" frameY="0" frameWidth="202" frameHeight="351" />
+	<SubTexture name="Yuri Crazy Up0001" x="552" y="995" width="199" height="351" frameX="0" frameY="0" frameWidth="202" frameHeight="351" />
+	<SubTexture name="Yuri Crazy Up0002" x="756" y="995" width="201" height="347" frameX="0" frameY="-4" frameWidth="202" frameHeight="351" />
+	<SubTexture name="Yuri Crazy Up0003" x="963" y="995" width="202" height="347" frameX="0" frameY="-4" frameWidth="202" frameHeight="351" />
+	<SubTexture name="Yuri Crazy Up0004" x="1170" y="995" width="202" height="347" frameX="0" frameY="-4" frameWidth="202" frameHeight="351" />
+	<SubTexture name="Yuri Crazy Up0005" x="1170" y="995" width="202" height="347" frameX="0" frameY="-4" frameWidth="202" frameHeight="351" />
+	<SubTexture name="Yuri Crazy Up0006" x="1170" y="995" width="202" height="347" frameX="0" frameY="-4" frameWidth="202" frameHeight="351" />
+	<SubTexture name="Yuri Crazy Up0007" x="1170" y="995" width="202" height="347" frameX="0" frameY="-4" frameWidth="202" frameHeight="351" />
+	<SubTexture name="Yuri Crazy Up0008" x="1170" y="995" width="202" height="347" frameX="0" frameY="-4" frameWidth="202" frameHeight="351" />
+	<SubTexture name="Yuri Crazy Up0009" x="1170" y="995" width="202" height="347" frameX="0" frameY="-4" frameWidth="202" frameHeight="351" />
+	<SubTexture name="Yuri Crazy Up0010" x="1170" y="995" width="202" height="347" frameX="0" frameY="-4" frameWidth="202" frameHeight="351" />
+	<SubTexture name="Yuri Crazy Up0011" x="1170" y="995" width="202" height="347" frameX="0" frameY="-4" frameWidth="202" frameHeight="351" />
+	<SubTexture name="Yuri Crazy Up0012" x="1170" y="995" width="202" height="347" frameX="0" frameY="-4" frameWidth="202" frameHeight="351" />
+	<SubTexture name="Yuri Crazy Up0013" x="1170" y="995" width="202" height="347" frameX="0" frameY="-4" frameWidth="202" frameHeight="351" />
+</TextureAtlas>

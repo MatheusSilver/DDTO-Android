@@ -1,0 +1,102 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="Libitina_tmp.png">
+	
+	
+	<SubTexture name="Libi Idle0000" x="7" y="7" width="339" height="349" />
+	<SubTexture name="Libi Idle0001" x="7" y="7" width="339" height="349" />
+	<SubTexture name="Libi Idle0002" x="7" y="7" width="339" height="349" />
+	<SubTexture name="Libi Idle0003" x="353" y="7" width="339" height="349" />
+	<SubTexture name="Libi Idle0004" x="353" y="7" width="339" height="349" />
+	<SubTexture name="Libi Idle0005" x="353" y="7" width="339" height="349" />
+	<SubTexture name="Libi Idle0006" x="700" y="7" width="339" height="349" />
+	<SubTexture name="Libi Idle0007" x="700" y="7" width="339" height="349" />
+	<SubTexture name="Libi Idle0008" x="700" y="7" width="339" height="349" />
+	<SubTexture name="Libi down0000" x="1046" y="7" width="450" height="308" frameX="0" frameY="-11" frameWidth="450" frameHeight="342" />
+	<SubTexture name="Libi down0001" x="1046" y="7" width="450" height="308" frameX="0" frameY="-11" frameWidth="450" frameHeight="342" />
+	<SubTexture name="Libi down0002" x="1503" y="7" width="426" height="308" frameX="-12" frameY="-11" frameWidth="450" frameHeight="342" />
+	<SubTexture name="Libi down0003" x="1503" y="7" width="426" height="308" frameX="-12" frameY="-11" frameWidth="450" frameHeight="342" />
+	<SubTexture name="Libi down0004" x="1936" y="7" width="384" height="340" frameX="-26" frameY="-3" frameWidth="450" frameHeight="342" />
+	<SubTexture name="Libi down0005" x="1936" y="7" width="384" height="340" frameX="-26" frameY="-3" frameWidth="450" frameHeight="342" />
+	<SubTexture name="Libi down0006" x="2328" y="7" width="383" height="318" frameX="-26" frameY="-1" frameWidth="450" frameHeight="342" />
+	<SubTexture name="Libi down0007" x="2328" y="7" width="383" height="318" frameX="-26" frameY="-1" frameWidth="450" frameHeight="342" />
+	<SubTexture name="Libi down0008" x="2718" y="7" width="383" height="319" frameX="-26" frameY="0" frameWidth="450" frameHeight="342" />
+	<SubTexture name="Libi down0009" x="2718" y="7" width="383" height="319" frameX="-26" frameY="0" frameWidth="450" frameHeight="342" />
+	<SubTexture name="Libi down0010" x="2718" y="7" width="383" height="319" frameX="-26" frameY="0" frameWidth="450" frameHeight="342" />
+	<SubTexture name="Libi down0011" x="2718" y="7" width="383" height="319" frameX="-26" frameY="0" frameWidth="450" frameHeight="342" />
+	<SubTexture name="Libi down0012" x="2718" y="7" width="383" height="319" frameX="-26" frameY="0" frameWidth="450" frameHeight="342" />
+	<SubTexture name="Libi down0013" x="2718" y="7" width="383" height="319" frameX="-26" frameY="0" frameWidth="450" frameHeight="342" />
+	<SubTexture name="Libi down miss0000" x="3109" y="7" width="380" height="313" frameX="-55" frameY="0" frameWidth="478" frameHeight="314" />
+	<SubTexture name="Libi down miss0001" x="3109" y="7" width="380" height="313" frameX="-55" frameY="0" frameWidth="478" frameHeight="314" />
+	<SubTexture name="Libi down miss0002" x="3496" y="7" width="475" height="313" frameX="0" frameY="-1" frameWidth="478" frameHeight="314" />
+	<SubTexture name="Libi down miss0003" x="3496" y="7" width="475" height="313" frameX="0" frameY="-1" frameWidth="478" frameHeight="314" />
+	<SubTexture name="Libi down miss0004" x="7" y="363" width="455" height="301" frameX="-23" frameY="-12" frameWidth="478" frameHeight="314" />
+	<SubTexture name="Libi down miss0005" x="7" y="363" width="455" height="301" frameX="-23" frameY="-12" frameWidth="478" frameHeight="314" />
+	<SubTexture name="Libi down miss0006" x="3109" y="7" width="380" height="313" frameX="-55" frameY="0" frameWidth="478" frameHeight="314" />
+	<SubTexture name="Libi down miss0007" x="3109" y="7" width="380" height="313" frameX="-55" frameY="0" frameWidth="478" frameHeight="314" />
+	<SubTexture name="Libi left0000" x="469" y="363" width="382" height="367" frameX="-13" frameY="-10" frameWidth="394" frameHeight="376" />
+	<SubTexture name="Libi left0001" x="469" y="363" width="382" height="367" frameX="-13" frameY="-10" frameWidth="394" frameHeight="376" />
+	<SubTexture name="Libi left0002" x="858" y="363" width="359" height="372" frameX="-19" frameY="-4" frameWidth="394" frameHeight="376" />
+	<SubTexture name="Libi left0003" x="858" y="363" width="359" height="372" frameX="-19" frameY="-4" frameWidth="394" frameHeight="376" />
+	<SubTexture name="Libi left0004" x="1224" y="363" width="344" height="376" frameX="0" frameY="-1" frameWidth="394" frameHeight="376" />
+	<SubTexture name="Libi left0005" x="1224" y="363" width="344" height="376" frameX="0" frameY="-1" frameWidth="394" frameHeight="376" />
+	<SubTexture name="Libi left0006" x="1575" y="363" width="348" height="376" frameX="-10" frameY="0" frameWidth="394" frameHeight="376" />
+	<SubTexture name="Libi left0007" x="1575" y="363" width="348" height="376" frameX="-10" frameY="0" frameWidth="394" frameHeight="376" />
+	<SubTexture name="Libi left0008" x="1930" y="363" width="348" height="376" frameX="-12" frameY="0" frameWidth="394" frameHeight="376" />
+	<SubTexture name="Libi left0009" x="1930" y="363" width="348" height="376" frameX="-12" frameY="0" frameWidth="394" frameHeight="376" />
+	<SubTexture name="Libi left0010" x="1930" y="363" width="348" height="376" frameX="-12" frameY="0" frameWidth="394" frameHeight="376" />
+	<SubTexture name="Libi left0011" x="1930" y="363" width="348" height="376" frameX="-12" frameY="0" frameWidth="394" frameHeight="376" />
+	<SubTexture name="Libi left0012" x="1930" y="363" width="348" height="376" frameX="-12" frameY="0" frameWidth="394" frameHeight="376" />
+	<SubTexture name="Libi left0013" x="1930" y="363" width="348" height="376" frameX="-12" frameY="0" frameWidth="394" frameHeight="376" />
+	<SubTexture name="Libi left miss0000" x="2285" y="363" width="383" height="303" frameX="-30" frameY="-6" frameWidth="476" frameHeight="308" />
+	<SubTexture name="Libi left miss0001" x="2285" y="363" width="383" height="303" frameX="-30" frameY="-6" frameWidth="476" frameHeight="308" />
+	<SubTexture name="Libi left miss0002" x="2675" y="363" width="416" height="303" frameX="0" frameY="0" frameWidth="476" frameHeight="308" />
+	<SubTexture name="Libi left miss0003" x="2675" y="363" width="416" height="303" frameX="0" frameY="0" frameWidth="476" frameHeight="308" />
+	<SubTexture name="Libi left miss0004" x="3098" y="363" width="461" height="276" frameX="-16" frameY="-15" frameWidth="476" frameHeight="308" />
+	<SubTexture name="Libi left miss0005" x="3098" y="363" width="461" height="276" frameX="-16" frameY="-15" frameWidth="476" frameHeight="308" />
+	<SubTexture name="Libi left miss0006" x="2285" y="363" width="383" height="303" frameX="-30" frameY="-6" frameWidth="476" frameHeight="308" />
+	<SubTexture name="Libi left miss0007" x="2285" y="363" width="383" height="303" frameX="-30" frameY="-6" frameWidth="476" frameHeight="308" />
+	<SubTexture name="Libi right0000" x="3566" y="363" width="413" height="352" frameX="0" frameY="-1" frameWidth="413" frameHeight="353" />
+	<SubTexture name="Libi right0001" x="3566" y="363" width="413" height="352" frameX="0" frameY="-1" frameWidth="413" frameHeight="353" />
+	<SubTexture name="Libi right0002" x="7" y="747" width="397" height="350" frameX="-9" frameY="-3" frameWidth="413" frameHeight="353" />
+	<SubTexture name="Libi right0003" x="7" y="747" width="397" height="350" frameX="-9" frameY="-3" frameWidth="413" frameHeight="353" />
+	<SubTexture name="Libi right0004" x="411" y="747" width="369" height="352" frameX="-35" frameY="-1" frameWidth="413" frameHeight="353" />
+	<SubTexture name="Libi right0005" x="411" y="747" width="369" height="352" frameX="-35" frameY="-1" frameWidth="413" frameHeight="353" />
+	<SubTexture name="Libi right0006" x="788" y="747" width="386" height="353" frameX="-17" frameY="0" frameWidth="413" frameHeight="353" />
+	<SubTexture name="Libi right0007" x="788" y="747" width="386" height="353" frameX="-17" frameY="0" frameWidth="413" frameHeight="353" />
+	<SubTexture name="Libi right0008" x="1181" y="747" width="389" height="353" frameX="-14" frameY="0" frameWidth="413" frameHeight="353" />
+	<SubTexture name="Libi right0009" x="1181" y="747" width="389" height="353" frameX="-14" frameY="0" frameWidth="413" frameHeight="353" />
+	<SubTexture name="Libi right0010" x="1181" y="747" width="389" height="353" frameX="-14" frameY="0" frameWidth="413" frameHeight="353" />
+	<SubTexture name="Libi right0011" x="1181" y="747" width="389" height="353" frameX="-14" frameY="0" frameWidth="413" frameHeight="353" />
+	<SubTexture name="Libi right0012" x="1181" y="747" width="389" height="353" frameX="-14" frameY="0" frameWidth="413" frameHeight="353" />
+	<SubTexture name="Libi right0013" x="1181" y="747" width="389" height="353" frameX="-14" frameY="0" frameWidth="413" frameHeight="353" />
+	<SubTexture name="Libi right miss0000" x="1577" y="747" width="387" height="315" frameX="-19" frameY="0" frameWidth="459" frameHeight="315" />
+	<SubTexture name="Libi right miss0001" x="1577" y="747" width="387" height="315" frameX="-19" frameY="0" frameWidth="459" frameHeight="315" />
+	<SubTexture name="Libi right miss0002" x="1971" y="747" width="407" height="295" frameX="-21" frameY="-14" frameWidth="459" frameHeight="315" />
+	<SubTexture name="Libi right miss0003" x="1971" y="747" width="407" height="295" frameX="-21" frameY="-14" frameWidth="459" frameHeight="315" />
+	<SubTexture name="Libi right miss0004" x="2386" y="747" width="459" height="281" frameX="0" frameY="-22" frameWidth="459" frameHeight="315" />
+	<SubTexture name="Libi right miss0005" x="2386" y="747" width="459" height="281" frameX="0" frameY="-22" frameWidth="459" frameHeight="315" />
+	<SubTexture name="Libi right miss0006" x="1577" y="747" width="387" height="315" frameX="-19" frameY="0" frameWidth="459" frameHeight="315" />
+	<SubTexture name="Libi right miss0007" x="1577" y="747" width="387" height="315" frameX="-19" frameY="0" frameWidth="459" frameHeight="315" />
+	<SubTexture name="Libi up0000" x="2852" y="747" width="359" height="395" frameX="-7" frameY="0" frameWidth="375" frameHeight="395" />
+	<SubTexture name="Libi up0001" x="2852" y="747" width="359" height="395" frameX="-7" frameY="0" frameWidth="375" frameHeight="395" />
+	<SubTexture name="Libi up0002" x="3218" y="747" width="373" height="390" frameX="0" frameY="-5" frameWidth="375" frameHeight="395" />
+	<SubTexture name="Libi up0003" x="3218" y="747" width="373" height="390" frameX="0" frameY="-5" frameWidth="375" frameHeight="395" />
+	<SubTexture name="Libi up0004" x="3599" y="747" width="375" height="389" frameX="0" frameY="-5" frameWidth="375" frameHeight="395" />
+	<SubTexture name="Libi up0005" x="3599" y="747" width="375" height="389" frameX="0" frameY="-5" frameWidth="375" frameHeight="395" />
+	<SubTexture name="Libi up0006" x="7" y="1149" width="373" height="388" frameX="-1" frameY="-6" frameWidth="375" frameHeight="395" />
+	<SubTexture name="Libi up0007" x="7" y="1149" width="373" height="388" frameX="-1" frameY="-6" frameWidth="375" frameHeight="395" />
+	<SubTexture name="Libi up0008" x="387" y="1149" width="372" height="388" frameX="-1" frameY="-7" frameWidth="375" frameHeight="395" />
+	<SubTexture name="Libi up0009" x="387" y="1149" width="372" height="388" frameX="-1" frameY="-7" frameWidth="375" frameHeight="395" />
+	<SubTexture name="Libi up0010" x="387" y="1149" width="372" height="388" frameX="-1" frameY="-7" frameWidth="375" frameHeight="395" />
+	<SubTexture name="Libi up0011" x="387" y="1149" width="372" height="388" frameX="-1" frameY="-7" frameWidth="375" frameHeight="395" />
+	<SubTexture name="Libi up0012" x="387" y="1149" width="372" height="388" frameX="-1" frameY="-7" frameWidth="375" frameHeight="395" />
+	<SubTexture name="Libi up0013" x="387" y="1149" width="372" height="388" frameX="-1" frameY="-7" frameWidth="375" frameHeight="395" />
+	<SubTexture name="Libi up miss0000" x="766" y="1149" width="398" height="318" frameX="-27" frameY="0" frameWidth="494" frameHeight="318" />
+	<SubTexture name="Libi up miss0001" x="766" y="1149" width="398" height="318" frameX="-27" frameY="0" frameWidth="494" frameHeight="318" />
+	<SubTexture name="Libi up miss0002" x="1171" y="1149" width="494" height="306" frameX="0" frameY="-4" frameWidth="494" frameHeight="318" />
+	<SubTexture name="Libi up miss0003" x="1171" y="1149" width="494" height="306" frameX="0" frameY="-4" frameWidth="494" frameHeight="318" />
+	<SubTexture name="Libi up miss0004" x="1673" y="1149" width="432" height="290" frameX="-16" frameY="-18" frameWidth="494" frameHeight="318" />
+	<SubTexture name="Libi up miss0005" x="1673" y="1149" width="432" height="290" frameX="-16" frameY="-18" frameWidth="494" frameHeight="318" />
+	<SubTexture name="Libi up miss0006" x="766" y="1149" width="398" height="318" frameX="-27" frameY="0" frameWidth="494" frameHeight="318" />
+	<SubTexture name="Libi up miss0007" x="766" y="1149" width="398" height="318" frameX="-27" frameY="0" frameWidth="494" frameHeight="318" />
+</TextureAtlas>

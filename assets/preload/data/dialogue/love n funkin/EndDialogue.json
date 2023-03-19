@@ -1,0 +1,70 @@
+{
+	"startingMusic": "",
+	"initStyle": "normal",
+	"dialogue": 
+	[
+		{
+			"isCommand": false,
+			"name": "no_one",
+			"expression": "gone",
+			"string": "E com o poder da música, a Namorada escreveu as letras da sua própria música de amor que ela escreveu pra seu querido Namorado.",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "no_one",
+			"expression": "gone",
+			"string": "As garitas animadamente pediram para ver o que a Namorada estava segurando, então ela entregou para elas o papel com a letra contida nele.",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "no_one",
+			"expression": "gone",
+			"string": "Com muita animação, as garotas começam a ler, e-",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "no_one",
+			"expression": "gone",
+			"string": "-suas expressões lentamente se transformaram em expressões confusas.",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "eeh",
+			"string": "\"...Eu não estava esperando que você escreveria algo tão- explícito-\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "natsuki",
+			"expression": "angy",
+			"string": "\"Argh, eww!!! Porque você escreveu isso?! Eu não preciso saber o que você e seu namorado fazem durante a noite!\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "yuri",
+			"expression": "ehh",
+			"string": "\"Estou... curiosa sobre o que te inspirou a escrever frases sobre 'O sangue de seus inimigos'-\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "sayori",
+			"expression": "ehh",
+			"string": "\"Eheheh... ehhhhh... talvez na próxima vez, tente manter as coisas apropriadas para a escola-\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "gf",
+			"expression": "peace",
+			"string": "*blep*",
+			"side": "right"
+		}
+	]
+}

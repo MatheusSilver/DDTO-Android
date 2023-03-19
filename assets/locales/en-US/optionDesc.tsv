@@ -1,0 +1,51 @@
+flag	content
+descKeyBindings	Configure os controles para cada setinha.
+descDownscroll	Faz as setas virem de cima para baixo.
+descGhostTap	Determina se você irá tomar dano caso clique em uma nota vazia.
+descJudgement	Personalize o ritmo com que você recebera notas(Doki,Bom,etc).
+descFPSCap	Coloque um Limite no FPS(Direita ou Esquerda).
+descCurFPSCap	Limite atual de FPS.
+descScroll	Mude a velocidade do Scroll. Partes em que isso ê ajustado não serão afetadas. (Direita ou Esquerda).
+descCurScroll	Velocidade atual do Scroll
+descReset	Pressione R para resetar a música
+descCustomize	Personalize o HUD da Gameplay para a forma que seu coração levar.
+descCustomizeState	Arraste a Pontuação para mudar a posição R para resetar. Q/E para zoom. Space para pausar o zoom. C para gerar um combo.
+descAccuracy	Mostra sua precisão abaixo da Barra de Saúde.
+descNPS	Mostra quantas notas por segundo você está clicando.
+descPosition	Mostra quanto tempo falta para a música acabar.
+descFPSCount	Mostra o quanto de FPS o jogo está, e quanta memoria está usando.
+descFlashing	Determina se vai haver luzes piscantes por causa de epilepsia.
+descBotplay	Faça um BOT jogar pra você(Pontuação não sera salva).
+descGFCountdown	Faça a Girlfriend contar antes da música começar.
+descMiddleScroll	Faça suas notas virem do lado, ou do centro da tela.
+descLaneUnderway	Ativa um Underlay atrás das notas(0% ê desativado, 100% é opaco).
+descLaneUnderwayControl	Transparência atual do Underlay.
+descScoreReset	Apaga os dados das suas pontuações, isso também afeta alguns desbloqueios(CAMINHO SEM VOLTA).
+descStoryReset	Apaga os dados de seu progresso na história isso também afeta alguns desbloqueios(CAMINHO SEM VOLTA).
+descSaveReset	Apaga todos os dados salvos(CAMINHO SEM VOLTA).
+descGameJolt	Conecte sua conta Game Jolt para ganhar troféus!
+descHitSound	Toca um som toda vez que você clicar numa nota.
+descHitSoundControl	Volume do Hit Sound.
+descHitSoundJudge	Escolhe onde tocar ou não tocar som dependendo da nota que você tirar.
+descNoteSplash	Faz as notas fazerem SPLASH! quando você recebe uma nota Doki!
+descEarlyLate	Mostra se você clicou atrasado ou antes da hora.
+descAutoPause	Faz o jogo pausar automaticamente se o foco não for o jogo.
+descJudgeCount	Mostra todas as notas que você tomou durante a musica(Doki,Bom,etc...)
+descLanguage	Muda o Idioma do Jogo.
+descVideoDub	Veja o video oficial de dublagem do DDTO+!
+descBadEnd	Veja o que acontece no final ruim (Link do GameBanana).
+descRatingToggle	Determina quando mostrar ou não notas(Doki,Bom,etc...) durante a Gameplay.
+descAntialiasing	Faz os visuais ficarem mais suaves a custo de um pouco de performance
+descMiddleOpponent	Mostra as notas do oponente
+descGPUTextures	Carrega as texturas na GPU, fazendo usar menos memória.
+descCacheCharacter	Reduz o tempo de carregamento por carregar todos os personagens durante a abertura do Jogo(USA MUITA MEMÓRIA).
+descCacheSong	Reduz o tempo de carregamento por carregar todas as músicas durante a abertura do Jogo(USA MUITA MEMÓRIA).
+descCache	Reduz os carregamentos ainda mais nessa sessão por carregar o que está selecionado acima.
+descPreload	Pre-carrega Assets para diminuir os travamentos e congelamentos em troca de tempo de carregamento.
+descRandom	Deixe as notas de você e seu oponente aleatórias! (Pontuação não será salva).
+descNoM	Notas Markov.
+descShaders	Deixa o jogo usar Sombra! não recomendado pois isso pode causar Crashes
+descCursor	Mostra um cursor personalizado ao invés do seu padrão.
+descKeyBindControls	Escape para salvar, Backspace para resetar. Enter para mudar algum controle.
+descKeyBindBlacklist	<X> está na lista negra!
+descJudgementControls	Pressione Esquerda para diminuir por 1, ou Direita para aumentar por 1.<N>Pressione R para Resetar

@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<data>
+	<!-- Commonly Used -->
+	<file id="data" value="data.tsv"/>
+
+	<!-- Used for Main Menu -->
+	<file id="menu" value="mainMenu.tsv"/>
+
+	<!-- Used for Options Menu -->
+	<file id="option" value="optionCategory.tsv"/>
+	<file id="option" value="optionName.tsv"/>
+	<file id="option" value="optionDesc.tsv"/>
+
+	<!-- Used for Costume Select -->
+	<file id="costume" value="characterName.tsv"/>
+	<file id="costume" value="costumeName.tsv"/>
+	<file id="costume" value="costumeDesc.tsv"/>
+	<file id="costume" value="costumeUnlock.tsv"/>
+
+	<!-- Used for Story Menu & Pop-ups -->
+	<file id="story" value="weekNames.tsv"/>
+	<file id="story" value="unlockPopups.tsv"/>
+
+	<!-- Used for Dialogue -->
+	<file id="dialogue" value="dialogue/high school conflict.tsv"/>
+
+
+	<!--Add locale entries here.
+
+	https://www.techonthenet.com/js/language_tags.php
+
+	1) Add the locale entry
+	2) Add a corresponding folder with localization content matching the id
+	3) Add a corresponding flag image in the _flags folder matching the id
+	4) Add any labels you want to display the language text in the menu
+	-->
+
+	<!-- Inglês sóq não -->
+	<locale id="en-US" is_default="true" sort="0">
+		<contributors value="Mega, Sem Nome, Noas, Demon Fever, Black Impostor, M&amp;M"/>
+		<label id="en-US" language="Português Brasileiro" region="Brasil"/>
+	</locale>
+
+	<!---
+	Any text blurbs that the translation interface itself needs are stored here rather than
+	in text files, to avoid the boot-strapping problem of having to load a locale in order
+	to display locale interface text in that locale.
+
+	A good practice is that this note should always display in the currently selected locale as
+	a tooltip over various translations.
+	-->
+
+	<note id="beta">
+		<!--This means that the translation has not been properly integrated yet-->
+		<text id="en-US" title="BETA" body="This translation is still in beta. Untranslated text, missing characters, and other visual glitches are very likely not the fault of the translator."/>
+	</note>
+
+</data>

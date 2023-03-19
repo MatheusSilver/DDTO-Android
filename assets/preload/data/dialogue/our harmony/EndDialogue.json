@@ -1,0 +1,99 @@
+{
+	"startingMusic": "",
+	"initStyle": "normal",
+	"disableBGFade": true,
+	"dialogue": 
+	[
+		{
+			"isCommand": false,
+			"name": "no_one",
+			"expression": "gone",
+			"string": "As garotas terminaram sua música sorrindo e rindo. A sala de música está iluminada com alegria.",
+			"side": ""
+		},
+		{
+			"isCommand": false,
+			"name": "sayori",
+			"expression": "gone",
+			"string": "\"Eu não acredito que esperamos tanto para cantar juntas! Eu queria fazer isso muito mais vezes!\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "gone",
+			"string": "\"Sempre temos bastante tempo extra depois das reuniões do clube para continuar cantando, e estou mais que animada em cantar mais com todos. Nós soamos incríveis juntos!\"",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "natsuki",
+			"expression": "gone",
+			"string": "\"Talvez na próxima vez poderemos chamar os outros três para cantar junto.\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "yuri",
+			"expression": "gone",
+			"string": "\"Eu não vi qualquer um deles por aqui. Você acha que eles vão aparecer na reunião do clube amanhã?\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "gone",
+			"string": "\"Vamos ver.\"",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "gone",
+			"string": "\"Na verdade, acabei de lembrar-! Sayori, você não tinha notícias animadoras para compartilhar com nós?\"",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "sayori",
+			"expression": "gone",
+			"string": "\"Oh oh! Eu tenho! Obrigada por me lembrar!\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "sayori",
+			"expression": "gone",
+			"string": "\"Vocês não vão acreditar, mas sabem como meu amigo se recusa a cantar com a gente?\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "sayori",
+			"expression": "gone",
+			"string": "\"Eu vi ele na sala do clube com o Namorado e a Namorada, e posso jurar que ouvi ele cantando!\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "natsuki",
+			"expression": "gone",
+			"string": "\"Heh heh, já era hora de ele desistir. Eu continuaria intimidando aquele idiota até que ele desistisse.\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "gone",
+			"string": "\"Estou surpresa que ele não tenha cantado por tanto tempo. Você acha que poderemos ver ele cantando se nós se escondermos?\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "sayori",
+			"expression": "gone",
+			"string": "\"Vamos ver! Para o clube de Literatura!\"",
+			"side": "left"
+		}
+	]
+}

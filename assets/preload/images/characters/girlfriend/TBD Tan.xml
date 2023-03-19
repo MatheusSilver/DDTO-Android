@@ -1,0 +1,86 @@
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="TBD Tan.png">
+	
+	
+	<SubTexture name="TBD Countdown0000" x="5" y="5" width="420" height="290" frameX="0" frameY="-13" frameWidth="420" frameHeight="303" />
+	<SubTexture name="TBD Countdown0001" x="430" y="5" width="420" height="290" frameX="0" frameY="-13" frameWidth="420" frameHeight="303" />
+	<SubTexture name="TBD Countdown0002" x="856" y="5" width="420" height="295" frameX="0" frameY="-9" frameWidth="420" frameHeight="303" />
+	<SubTexture name="TBD Countdown0003" x="1281" y="5" width="420" height="295" frameX="0" frameY="-9" frameWidth="420" frameHeight="303" />
+	<SubTexture name="TBD Countdown0004" x="1707" y="5" width="420" height="296" frameX="0" frameY="-8" frameWidth="420" frameHeight="303" />
+	<SubTexture name="TBD Countdown0005" x="2132" y="5" width="420" height="296" frameX="0" frameY="-8" frameWidth="420" frameHeight="303" />
+	<SubTexture name="TBD Countdown0006" x="2558" y="5" width="420" height="296" frameX="0" frameY="-8" frameWidth="420" frameHeight="303" />
+	<SubTexture name="TBD Countdown0007" x="2983" y="5" width="420" height="296" frameX="0" frameY="-8" frameWidth="420" frameHeight="303" />
+	<SubTexture name="TBD Countdown0008" x="3409" y="5" width="420" height="291" frameX="0" frameY="-13" frameWidth="420" frameHeight="303" />
+	<SubTexture name="TBD Countdown0009" x="5" y="306" width="420" height="291" frameX="0" frameY="-13" frameWidth="420" frameHeight="303" />
+	<SubTexture name="TBD Countdown0010" x="430" y="306" width="420" height="296" frameX="0" frameY="-8" frameWidth="420" frameHeight="303" />
+	<SubTexture name="TBD Countdown0011" x="856" y="306" width="420" height="296" frameX="0" frameY="-8" frameWidth="420" frameHeight="303" />
+	<SubTexture name="TBD Countdown0012" x="1281" y="306" width="420" height="296" frameX="0" frameY="-8" frameWidth="420" frameHeight="303" />
+	<SubTexture name="TBD Countdown0013" x="1707" y="306" width="420" height="296" frameX="0" frameY="-8" frameWidth="420" frameHeight="303" />
+	<SubTexture name="TBD Countdown0014" x="2132" y="306" width="420" height="296" frameX="0" frameY="-8" frameWidth="420" frameHeight="303" />
+	<SubTexture name="TBD Countdown0015" x="2558" y="306" width="420" height="295" frameX="0" frameY="-9" frameWidth="420" frameHeight="303" />
+	<SubTexture name="TBD Countdown0016" x="2983" y="306" width="420" height="295" frameX="0" frameY="-9" frameWidth="420" frameHeight="303" />
+	<SubTexture name="TBD Countdown0017" x="3409" y="306" width="420" height="291" frameX="0" frameY="-12" frameWidth="420" frameHeight="303" />
+	<SubTexture name="TBD Countdown0018" x="5" y="607" width="420" height="291" frameX="0" frameY="-12" frameWidth="420" frameHeight="303" />
+	<SubTexture name="TBD Countdown0019" x="430" y="607" width="420" height="295" frameX="0" frameY="-9" frameWidth="420" frameHeight="303" />
+	<SubTexture name="TBD Countdown0020" x="856" y="607" width="420" height="295" frameX="0" frameY="-9" frameWidth="420" frameHeight="303" />
+	<SubTexture name="TBD Countdown0021" x="1281" y="607" width="420" height="296" frameX="0" frameY="-8" frameWidth="420" frameHeight="303" />
+	<SubTexture name="TBD Countdown0022" x="1707" y="607" width="420" height="296" frameX="0" frameY="-8" frameWidth="420" frameHeight="303" />
+	<SubTexture name="TBD Countdown0023" x="1707" y="607" width="420" height="296" frameX="0" frameY="-8" frameWidth="420" frameHeight="303" />
+	<SubTexture name="TBD Countdown0024" x="2132" y="607" width="420" height="303" />
+	<SubTexture name="TBD Countdown0025" x="2558" y="607" width="420" height="303" />
+	<SubTexture name="TBD Countdown0026" x="2983" y="607" width="420" height="294" frameX="0" frameY="-9" frameWidth="420" frameHeight="303" />
+	<SubTexture name="TBD Countdown0027" x="3409" y="607" width="420" height="294" frameX="0" frameY="-9" frameWidth="420" frameHeight="303" />
+	<SubTexture name="TBD Countdown0028" x="5" y="915" width="420" height="295" frameX="0" frameY="-9" frameWidth="420" frameHeight="303" />
+	<SubTexture name="TBD Countdown0029" x="430" y="915" width="420" height="295" frameX="0" frameY="-9" frameWidth="420" frameHeight="303" />
+	<SubTexture name="TBD Countdown0030" x="430" y="915" width="420" height="295" frameX="0" frameY="-9" frameWidth="420" frameHeight="303" />
+	<SubTexture name="TBD Countdown0031" x="430" y="915" width="420" height="295" frameX="0" frameY="-9" frameWidth="420" frameHeight="303" />
+	<SubTexture name="TBD Countdown0032" x="430" y="915" width="420" height="295" frameX="0" frameY="-9" frameWidth="420" frameHeight="303" />
+	<SubTexture name="TBD Countdown0033" x="430" y="915" width="420" height="295" frameX="0" frameY="-9" frameWidth="420" frameHeight="303" />
+	<SubTexture name="TBD Countdown0034" x="430" y="915" width="420" height="295" frameX="0" frameY="-9" frameWidth="420" frameHeight="303" />
+	<SubTexture name="TBD Dance0000" x="856" y="915" width="420" height="295" frameX="0" frameY="-1" frameWidth="420" frameHeight="296" />
+	<SubTexture name="TBD Dance0001" x="1281" y="915" width="420" height="293" frameX="0" frameY="-3" frameWidth="420" frameHeight="296" />
+	<SubTexture name="TBD Dance0002" x="1707" y="915" width="420" height="294" frameX="0" frameY="-2" frameWidth="420" frameHeight="296" />
+	<SubTexture name="TBD Dance0003" x="2132" y="915" width="420" height="294" frameX="0" frameY="-2" frameWidth="420" frameHeight="296" />
+	<SubTexture name="TBD Dance0004" x="2558" y="915" width="420" height="294" frameX="0" frameY="-2" frameWidth="420" frameHeight="296" />
+	<SubTexture name="TBD Dance0005" x="2983" y="915" width="420" height="294" frameX="0" frameY="-2" frameWidth="420" frameHeight="296" />
+	<SubTexture name="TBD Dance0006" x="3409" y="915" width="420" height="295" frameX="0" frameY="-1" frameWidth="420" frameHeight="296" />
+	<SubTexture name="TBD Dance0007" x="3409" y="915" width="420" height="295" frameX="0" frameY="-1" frameWidth="420" frameHeight="296" />
+	<SubTexture name="TBD Dance0008" x="5" y="1215" width="420" height="296" />
+	<SubTexture name="TBD Dance0009" x="5" y="1215" width="420" height="296" />
+	<SubTexture name="TBD Dance0010" x="5" y="1215" width="420" height="296" />
+	<SubTexture name="TBD Dance0011" x="430" y="1215" width="420" height="296" />
+	<SubTexture name="TBD Dance0012" x="430" y="1215" width="420" height="296" />
+	<SubTexture name="TBD Dance0013" x="430" y="1215" width="420" height="296" />
+	<SubTexture name="TBD Dance0014" x="430" y="1215" width="420" height="296" />
+	<SubTexture name="TBD Dance0015" x="856" y="1215" width="420" height="296" />
+	<SubTexture name="TBD Dance0016" x="1281" y="1215" width="420" height="294" frameX="0" frameY="-2" frameWidth="420" frameHeight="296" />
+	<SubTexture name="TBD Dance0017" x="1707" y="1215" width="420" height="295" frameX="0" frameY="-1" frameWidth="420" frameHeight="296" />
+	<SubTexture name="TBD Dance0018" x="1707" y="1215" width="420" height="295" frameX="0" frameY="-1" frameWidth="420" frameHeight="296" />
+	<SubTexture name="TBD Dance0019" x="2132" y="1215" width="420" height="296" />
+	<SubTexture name="TBD Dance0020" x="2132" y="1215" width="420" height="296" />
+	<SubTexture name="TBD Dance0021" x="2558" y="1215" width="420" height="296" />
+	<SubTexture name="TBD Dance0022" x="2558" y="1215" width="420" height="296" />
+	<SubTexture name="TBD Dance0023" x="2983" y="1215" width="420" height="296" />
+	<SubTexture name="TBD Dance0024" x="2983" y="1215" width="420" height="296" />
+	<SubTexture name="TBD Dance0025" x="2983" y="1215" width="420" height="296" />
+	<SubTexture name="TBD Dance0026" x="3409" y="1215" width="420" height="296" />
+	<SubTexture name="TBD Dance0027" x="3409" y="1215" width="420" height="296" />
+	<SubTexture name="TBD Dance0028" x="3409" y="1215" width="420" height="296" />
+	<SubTexture name="TBD Spook0000" x="5" y="1516" width="420" height="293" frameX="0" frameY="-1" frameWidth="420" frameHeight="294" />
+	<SubTexture name="TBD Spook0001" x="430" y="1516" width="420" height="293" frameX="0" frameY="-1" frameWidth="420" frameHeight="294" />
+	<SubTexture name="TBD Spook0002" x="856" y="1516" width="420" height="293" frameX="0" frameY="-1" frameWidth="420" frameHeight="294" />
+	<SubTexture name="TBD Spook0003" x="1281" y="1516" width="420" height="293" frameX="0" frameY="-1" frameWidth="420" frameHeight="294" />
+	<SubTexture name="TBD Spook0004" x="1707" y="1516" width="420" height="294" />
+	<SubTexture name="TBD Spook0005" x="2132" y="1516" width="420" height="294" />
+	<SubTexture name="TBD Spook0006" x="2558" y="1516" width="420" height="294" />
+	<SubTexture name="TBD Spook0007" x="2983" y="1516" width="420" height="293" frameX="0" frameY="-1" frameWidth="420" frameHeight="294" />
+	<SubTexture name="TBD Spook0008" x="2983" y="1516" width="420" height="293" frameX="0" frameY="-1" frameWidth="420" frameHeight="294" />
+	<SubTexture name="TBD Spook0009" x="2983" y="1516" width="420" height="293" frameX="0" frameY="-1" frameWidth="420" frameHeight="294" />
+	<SubTexture name="TBD Spook0010" x="2983" y="1516" width="420" height="293" frameX="0" frameY="-1" frameWidth="420" frameHeight="294" />
+	<SubTexture name="TBD Spook0011" x="5" y="1516" width="420" height="293" frameX="0" frameY="-1" frameWidth="420" frameHeight="294" />
+	<SubTexture name="TBD Spook0012" x="5" y="1516" width="420" height="293" frameX="0" frameY="-1" frameWidth="420" frameHeight="294" />
+	<SubTexture name="TBD Spook0013" x="2983" y="1516" width="420" height="293" frameX="0" frameY="-1" frameWidth="420" frameHeight="294" />
+	<SubTexture name="TBD Spook0014" x="2983" y="1516" width="420" height="293" frameX="0" frameY="-1" frameWidth="420" frameHeight="294" />
+	<SubTexture name="TBD Spook0015" x="2983" y="1516" width="420" height="293" frameX="0" frameY="-1" frameWidth="420" frameHeight="294" />
+	<SubTexture name="TBD Spook0016" x="2983" y="1516" width="420" height="293" frameX="0" frameY="-1" frameWidth="420" frameHeight="294" />
+</TextureAtlas>
