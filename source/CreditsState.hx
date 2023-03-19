@@ -22,19 +22,6 @@ import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.group.FlxGroup;
 import lime.utils.Assets;
 import haxe.Json;
-import shaders.ColorMaskShader;
-
-#if FEATURE_FILESYSTEM
-import Sys;
-import sys.FileSystem;
-#end
-
-#if FEATURE_DISCORD
-import Discord.DiscordClient;
-#end
-#if FEATURE_GAMEJOLT
-import GameJolt.GameJoltAPI;
-#end
 
 using StringTools;
 
@@ -75,17 +62,14 @@ class CreditsState extends MusicBeatState
 	public var bufferArray:Array<Peeps> = [];
 	var creditsStuff:Array<Array<Dynamic>> = [];
 
+	var path:String = Paths.getPreloadPath('images/credits/credits.json');
+
 	override function create()
 	{
 		Paths.clearStoredMemory();
 		Paths.clearUnusedMemory();
 
 		persistentUpdate = persistentDraw = true;
-
-		#if FEATURE_DISCORD
-		// Updating Discord Rich Presence
-		DiscordClient.changePresence("In the Credits", null);
-		#end
 
 		if (pageFlipped)
 		{
@@ -98,12 +82,11 @@ class CreditsState extends MusicBeatState
 			Conductor.changeBPM(90);
 		}
 
-		backdrop = new FlxBackdrop(Paths.image('scrollingBG'));
+		backdrop = new FlxBackdrop(Paths.image('backdropmenucredits'));
 		backdrop.x = backdropX;
 		backdrop.velocity.set(-16, 0);
 		backdrop.scale.set(0.2, 0.2);
-		backdrop.antialiasing = SaveData.globalAntialiasing;
-		backdrop.shader = new ColorMaskShader(0xFF780D48, 0xFF87235D);
+		backdrop.antialiasing = false;
 		add(backdrop);
 
 		var gradient:FlxSprite = new FlxSprite(0, 0).loadGraphic(Paths.image('gradient', 'preload'));
@@ -114,9 +97,6 @@ class CreditsState extends MusicBeatState
 		var bg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('credits/background'));
 		bg.antialiasing = SaveData.globalAntialiasing;
 		add(bg);
-
-		var path:String = 'why';
-		path = Paths.getPreloadPath('images/credits/credits.json');
 
 		var rawJson = Assets.getText(path);
 		var json:CreditsFile = cast Json.parse(rawJson);
@@ -158,7 +138,7 @@ class CreditsState extends MusicBeatState
 			var icon:FlxSprite = new FlxSprite(777, 216).loadGraphic(Paths.image('credits/icons/' + creditsStuff[i][1]));
 
 			if (!Paths.fileExists('images/credits/icons/' + creditsStuff[i][1] + '.png', IMAGE))
-				icon.loadGraphic(Paths.image('credits/icons/default'));
+				icon.loadGraphic(Paths.image('credits/invisibru')); //por enquanto, el invisibru
 
 			iconArray.push(icon);
 			icon.antialiasing = SaveData.globalAntialiasing;
@@ -182,7 +162,7 @@ class CreditsState extends MusicBeatState
 		add(funnyDesc);
 
 		var fg:FlxSprite = new FlxSprite().loadGraphic(Paths.image('credits/overlay'));
-		fg.antialiasing = SaveData.globalAntialiasing;
+		fg.antialiasing = false;
 		add(fg);
 
 		var modRoleText:FlxText = new FlxText(50, 60, 1180, rolelist[curPage], 60);
@@ -238,10 +218,6 @@ class CreditsState extends MusicBeatState
 			{
 				if (creditsStuff[curSelected][0] == 'Jorge - SunSpirit' && FlxG.keys.pressed.G)
 				{
-					#if FEATURE_GAMEJOLT
-					GameJoltAPI.getTrophy(0);
-					#end
-
 					CoolUtil.openURL('https://www.youtube.com/watch?v=0MW9Nrg_kZU');
 				}
 				else if (creditsStuff[curSelected][3] != '')
@@ -272,8 +248,6 @@ class CreditsState extends MusicBeatState
 		if (curSelected < 0)
 			curSelected = creditsStuff.length - 1;
 
-		trace(curSelected);
-
 		for (i in 0...iconArray.length)
 		{
 			iconArray[i].alpha = 0;
@@ -295,24 +269,27 @@ class CreditsState extends MusicBeatState
 			{
 				FlxTween.cancelTweensOf(item);
 
-				if (curSelected == 0)
-					FlxTween.tween(item, {y: 196 + (item.ID * 43)}, 0.5, {ease: FlxEase.circOut});
-				if (curSelected == 1)
-					FlxTween.tween(item, {y: 239 + (item.ID * 43)}, 0.5, {ease: FlxEase.circOut});
-				if (curSelected == 2)
-					FlxTween.tween(item, {y: 282 + (item.ID * 43)}, 0.5, {ease: FlxEase.circOut});
-				if (curSelected == 3)
-					FlxTween.tween(item, {y: 325 + (item.ID * 43)}, 0.5, {ease: FlxEase.circOut});
-				if (curSelected == 4)
-					FlxTween.tween(item, {y: 368 + (item.ID * 43)}, 0.5, {ease: FlxEase.circOut});
-				if (curSelected == 5)
-					FlxTween.tween(item, {y: 411 + (item.ID * 43)}, 0.5, {ease: FlxEase.circOut});
+				switch (curSelected) {
+					case 0:
+						FlxTween.tween(item, {y: 196 + (item.ID * 43)}, 0.5, {ease: FlxEase.circOut});
+					case 1:
+						FlxTween.tween(item, {y: 239 + (item.ID * 43)}, 0.5, {ease: FlxEase.circOut});
+					case 2:
+						FlxTween.tween(item, {y: 282 + (item.ID * 43)}, 0.5, {ease: FlxEase.circOut});
+					case 3:
+						FlxTween.tween(item, {y: 325 + (item.ID * 43)}, 0.5, {ease: FlxEase.circOut});
+					case 4:
+						FlxTween.tween(item, {y: 368 + (item.ID * 43)}, 0.5, {ease: FlxEase.circOut});
+					case 5:
+						FlxTween.tween(item, {y: 411 + (item.ID * 43)}, 0.5, {ease: FlxEase.circOut});
+				}					
 			}
 
 			if (creditsStuff.length >= 10 && curSelected >= creditsStuff.length - 4)
 			{
 				FlxTween.cancelTweensOf(item);
 
+				// Se alguém souber como eu faço um switch com ==, me ajuda
 				if (curSelected == creditsStuff.length - 4)
 					FlxTween.tween(item, {y: 454 + (item.ID * 43)}, 0.5, {ease: FlxEase.circOut});
 				if (curSelected == creditsStuff.length - 3)

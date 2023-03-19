@@ -11,14 +11,10 @@ import openfl.events.Event;
 import lime.app.Application;
 import webm.WebmPlayer;
 import lime.system.System;
-// crash handler stuff
 #if CRASH_HANDLER
 import openfl.events.UncaughtErrorEvent;
 import haxe.CallStack;
 import haxe.io.Path;
-import sys.FileSystem;
-import sys.io.File;
-import sys.io.Process;
 #end
 
 using StringTools;
@@ -40,9 +36,9 @@ class Main extends Sprite
 	public static var tongue:FireTongueEx;
 
 	#if desktop
-	public static var  mouseVisivel:Bool = true;
+	public static var mouseVisivel:Bool = true;
 	#elseif mobile
-	public static var  mouseVisivel:Bool = false;
+	public static var mouseVisivel:Bool = false;
 	#end
 
 	// You can pretty much ignore everything from here on - your code should go in your states.
@@ -123,38 +119,10 @@ class Main extends Sprite
 	function onCrash(e:UncaughtErrorEvent):Void
 	{
 		var errMsg:String = "";
-		var path:String;
-		var callStack:Array<StackItem> = CallStack.exceptionStack(true);
-		var dateNow:String = Date.now().toString();
-
-		dateNow = dateNow.replace(" ", "_");
-		dateNow = dateNow.replace(":", "'");
-
-		path = Main.path + './crash/DDTO_$dateNow.txt';
-
-		for (stackItem in callStack)
-		{
-			switch (stackItem)
-			{
-				case FilePos(s, file, line, column):
-					errMsg += file + " (line " + line + ")\n";
-				default:
-					Sys.println(stackItem);
-			}
-		}
 
 		errMsg += "\nUncaught Error: "
 			+ e.error
 			+ "\nPlease report this error to the GitHub page: https://github.com/Jorge-SunSpirit/Doki-Doki-Takeover\n\n> Crash Handler written by: sqirra-rng";
-		// + "\nPlease report this error to #playtest-qa-testing.\n\n> Crash Handler written by: sqirra-rng";
-
-		if (!FileSystem.exists(Main.path + "./crash/"))
-			FileSystem.createDirectory(Main.path + "./crash/");
-
-		File.saveContent(path, errMsg + "\n");
-
-		Sys.println(errMsg);
-		Sys.println("Crash dump saved in " + Path.normalize(path));
 
 		Application.current.window.alert(errMsg, "Error!");
 		Sys.exit(1);

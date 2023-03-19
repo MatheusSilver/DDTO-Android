@@ -46,7 +46,7 @@
 	<!-- Defines whether there's an unlock all function in the Options menu. -->
 	<define name="FEATURE_UNLOCK" unless="PUBLIC_BUILD" />
 	<!-- Defines whether or not the Izzy Engine crash handler is used. -->
-	<define name="CRASH_HANDLER" if="desktop" unless="debug" />
+	<define name="CRASH_HANDLER" unless="debug" />
 
 	<!-- _____________________________ Path Settings ____________________________ -->
 
