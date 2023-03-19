@@ -59,14 +59,14 @@
 		{
 			"realName": "Lezanikat",
 			"iconName": "Leza",
-			"description": "Artista de bgs\nArtista de CG",
+			"description": "Artista de bgs\nArtista de CGs",
 			"twitter": "https://twitter.com/lezanikat",
 			"whichrole": 1
 		},
 		{
 			"realName": "Sayphonic",
 			"iconName": "Sayphonic",
-			"description": "Artista de bgs",
+			"description": "Artista de CGs",
 			"twitter": "https://twitter.com/sayphonic",
 			"whichrole": 1
 		},
@@ -80,84 +80,84 @@
 		{
 			"realName": "Juno Songs",
 			"iconName": "Juno",
-			"description": "CG Artist\nCostume Artist",
+			"description": "Artista de CGs\nArtista de Skins",
 			"twitter": "https://twitter.com/JunoSongsYT",
 			"whichrole": 1
 		},
 		{
 			"realName": "Miss Beepy",
 			"iconName": "Beepy",
-			"description": "CG Artist\nPause Screen Artist",
+			"description": "Artista de CGs\nArtista do Menu Pause",
 			"twitter": "https://twitter.com/MissBeepy",
 			"whichrole": 1
 		},
 		{
 			"realName": "Pikons",
 			"iconName": "PK",
-			"description": "CG Artist\nPause Screen Artist",
+			"description": "Artista de CGs\nArtista do Menu Pause",
 			"twitter": "https://twitter.com/vivalapk",
 			"whichrole": 1
 		},
 		{
 			"realName": "AshyTown",
 			"iconName": "Ashy",
-			"description": "Pause Screen Artist",
+			"description": "Artista do Menu Pause",
 			"twitter": "https://twitter.com/AshyTown_",
 			"whichrole": 1
 		},
 		{
 			"realName": "Phillia Esaya",
 			"iconName": "Phillia",
-			"description": "Pause Screen Artist",
+			"description": "Artista do Menu Pause",
 			"twitter": "https://twitter.com/PhilliaEsaya",
 			"whichrole": 1
 		},
 		{
 			"realName": "STS-Puelle",
 			"iconName": "Puelle",
-			"description": "Pause Screen Artist",
+			"description": "Artista do Menu Pause",
 			"twitter": "https://twitter.com/STS_PiaEsaya",
 			"whichrole": 1
 		},
 		{
 			"realName": "AnInternetsEcho",
 			"iconName": "Cammy",
-			"description": "Costume Artist",
+			"description": "Artista de Skins",
 			"twitter": "",
 			"whichrole": 2
 		},
 		{
 			"realName": "Augux168",
 			"iconName": "Augux",
-			"description": "Costume Artist",
+			"description": "Artista de Skins",
 			"twitter": "https://twitter.com/Augux168",
 			"whichrole": 2
 		},
 		{
 			"realName": "BruunoSCP",
 			"iconName": "Bruuno",
-			"description": "Costume Artist",
+			"description": "Artista de Skins",
 			"twitter": "https://twitter.com/BruunoSCP",
 			"whichrole": 2
 		},
 		{
 			"realName": "Crim",
 			"iconName": "Crim",
-			"description": "Costume Artist",
+			"description": "Artista de Skins",
 			"twitter": "https://twitter.com/scrimblocrimbo",
 			"whichrole": 2
 		},
 		{
 			"realName": "Jorge - SunSpirit",
 			"iconName": "Jorge",
-			"description": "Artist\nAnimator",
+			"description": "Artista\nAnimador",
 			"twitter": "https://twitter.com/Jorge_SunSpirit",
 			"whichrole": 2
 		},
 		{
 			"realName": "Max0KE",
 			"iconName": "Max",
-			"description": "Costume Artist",
+			"description": "Artista de Skins",
 			"twitter": "https://twitter.com/MaxOKE_",
 			"whichrole": 2
 		},
@@ -171,42 +171,42 @@
 		{
 			"realName": "TokyoGalaxy",
 			"iconName": "TokyoGalaxy",
-			"description": "Freeplay Chibi Artist",
+			"description": "Artista Chibi do Freeplay",
 			"twitter": "https://twitter.com/TokyoGalaxyOG",
 			"whichrole": 2
 		},
 		{
 			"realName": "Weeg",
 			"iconName": "Weeg",
-			"description": "Costume Artist",
+			"description": "Artista de Skins",
 			"twitter": "https://twitter.com/ItIsIWeeg",
 			"whichrole": 2
 		},
 		{
 			"realName": "Jorge - SunSpirit",
 			"iconName": "Jorge",
-			"description": "Programmer",
+			"description": "Programador",
 			"twitter": "https://twitter.com/Jorge_SunSpirit",
 			"whichrole": 3
 		},
 		{
 			"realName": "M&M",
 			"iconName": "MAndM",
-			"description": "Programmer",
+			"description": "Programador",
 			"twitter": "https://linktr.ee/ActualMandM",
 			"whichrole": 3
 		},
 		{
 			"realName": "Codexes",
 			"iconName": "Codexes",
-			"description": "Programmer",
+			"description": "Programador",
 			"twitter": "https://twitter.com/Codexes1",
 			"whichrole": 3
 		},
 		{
 			"realName": "Flootena",
 			"iconName": "Flootena",
-			"description": "Lead Charter",
+			"description": "Charter Líder",
 			"twitter": "https://twitter.com/FlootenaDX",
 			"whichrole": 4
 		},
@@ -262,91 +262,91 @@
 		{
 			"realName": "DatDavi",
 			"iconName": "Davi",
-			"description": "Musician",
+			"description": "Músicas",
 			"twitter": "https://twitter.com/dat_davi",
 			"whichrole": 5
 		},
 		{
 			"realName": "DPZ",
 			"iconName": "DPZ",
-			"description": "Musician",
+			"description": "Músicas",
 			"twitter": "https://twitter.com/dpzmusic",
 			"whichrole": 5
 		},
 		{
 			"realName": "GGalactigal",
 			"iconName": "Haruka",
-			"description": "Musician",
+			"description": "Músicas",
 			"twitter": "https://twitter.com/GGalactigal",
 			"whichrole": 5
 		},
 		{
 			"realName": "HighPoweredKeyz",
 			"iconName": "HPK",
-			"description": "Musician\n Chromatic Creator",
+			"description": "Músicas\n Criador de Chromatic",
 			"twitter": "https://twitter.com/HighPoweredArt",
 			"whichrole": 5
 		},
 		{
 			"realName": "Kairii",
 			"iconName": "Kairii",
-			"description": "Musician",
+			"description": "Músicas",
 			"twitter": "https://www.youtube.com/@RiiStudios",
 			"whichrole": 5
 		},
 		{
 			"realName": "Matt$",
 			"iconName": "Matt",
-			"description": "Musician",
+			"description": "Músicas",
 			"twitter": "https://twitter.com/matt_currency",
 			"whichrole": 5
 		},
 		{
 			"realName": "Saruky",
 			"iconName": "Saruky",
-			"description": "Musician",
+			"description": "Músicas",
 			"twitter": "https://twitter.com/Saruky__",
 			"whichrole": 5
 		},
 		{
 			"realName": "Sprunkle",
 			"iconName": "Sprunkle",
-			"description": "Musician",
+			"description": "Músicas",
 			"twitter": "https://twitter.com/Sprunkle2",
 			"whichrole": 5
 		},
 		{
 			"realName": "Stardust Tunes",
 			"iconName": "Stardust",
-			"description": "Musician",
+			"description": "Músicas",
 			"twitter": "https://twitter.com/StardustTunes",
 			"whichrole": 5
 		},
 		{
 			"realName": "Starrie_blu",
 			"iconName": "Starrieblu",
-			"description": "Musician",
+			"description": "Músicas",
 			"twitter": "https://twitter.com/starrie_blu",
 			"whichrole": 5
 		},
 		{
 			"realName": "Tony Astro",
 			"iconName": "Tony",
-			"description": "Musician",
+			"description": "Músicas",
 			"twitter": "https://twitter.com/TonyAstroVEVO",
 			"whichrole": 5
 		},
 		{
 			"realName": "UnStorm",
 			"iconName": "Unstorm",
-			"description": "Musician",
+			"description": "Músicas",
 			"twitter": "https://twitter.com/UnStormDDLC",
 			"whichrole": 5
 		},
 		{
 			"realName": "High School Conflict (Plus)",
 			"iconName": "MonikaPixel",
-			"description": "Composed by GGalactigal",
+			"description": "Composto por GGalactigal",
 			"twitter": "",
 			"whichrole": 6,
 			"funnyName": "High School\nConflict (Plus)"
@@ -354,7 +354,7 @@
 		{
 			"realName": "Bara no Yume (Plus)",
 			"iconName": "SenpaiMonika",
-			"description": "Composed by Kairii",
+			"description": "Composto por Kairii",
 			"twitter": "",
 			"whichrole": 6,
 			"funnyName": "Bara no Yume\n(Plus)"
@@ -362,14 +362,14 @@
 		{
 			"realName": "Your Demise (Plus)",
 			"iconName": "MonikaPixelBig",
-			"description": "Composed by DPZ",
+			"description": "Composto por DPZ",
 			"twitter": "",
 			"whichrole": 6
 		},
 		{
 			"realName": "Your Reality (Takeover Mix)",
 			"iconName": "SenpaiMonika",
-			"description": "Composed by UnStorm",
+			"description": "Composto por UnStorm",
 			"twitter": "",
 			"whichrole": 6,
 			"funnyName": "Your Reality\n(Takeover Mix)"
@@ -377,56 +377,56 @@
 		{
 			"realName": "Rain Clouds",
 			"iconName": "Sayori",
-			"description": "Composed by Stardust Tunes",
+			"description": "Composto por Stardust Tunes",
 			"twitter": "",
 			"whichrole": 6
 		},
 		{
 			"realName": "My Confession",
 			"iconName": "Sayori",
-			"description": "Composed by Sprunkle",
+			"description": "Composto por Sprunkle",
 			"twitter": "",
 			"whichrole": 6
 		},
 		{
 			"realName": "My Sweets",
 			"iconName": "Natsuki",
-			"description": "Composed by Sprunkle",
+			"description": "Composto por Sprunkle",
 			"twitter": "",
 			"whichrole": 6
 		},
 		{
 			"realName": "Baka",
 			"iconName": "Natsuki",
-			"description": "Composed by Starrie_blu",
+			"description": "Composto por Starrie_blu",
 			"twitter": "",
 			"whichrole": 6
 		},
 		{
 			"realName": "Deep Breaths",
 			"iconName": "Yuri",
-			"description": "Composed by Saruky",
+			"description": "Composto por Saruky",
 			"twitter": "",
 			"whichrole": 6
 		},
 		{
 			"realName": "Obsession",
 			"iconName": "YuriCrazy",
-			"description": "Composed by Matt$",
+			"description": "Composto por Matt$",
 			"twitter": "",
 			"whichrole": 6
 		},
 		{
 			"realName": "Reconciliation",
 			"iconName": "Monika",
-			"description": "Composed by HighPoweredKeyz",
+			"description": "Composto por HighPoweredKeyz",
 			"twitter": "",
 			"whichrole": 6
 		},
 		{
 			"realName": "Crucify (Yuri Mix)",
 			"iconName": "Crucify",
-			"description": "Remix Composed by Sprunkle\nAdditional Help by Stardust Tunes\nOriginal Song by Foodieti",
+			"description": "Remix Composto por Sprunkle\nAdditional Help by Stardust Tunes\nMúsica Original por Foodieti",
 			"twitter": "",
 			"whichrole": 6,
 			"funnyName": "Crucify\n(Yuri Mix)"
@@ -434,7 +434,7 @@
 		{
 			"realName": "Beathoven (Natsuki Mix)",
 			"iconName": "Beathoven",
-			"description": "Remix Composed by Kairii\nOriginal Song by PaperKitty",
+			"description": "Remix Composto por Kairii\nMúsica Original por PaperKitty",
 			"twitter": "",
 			"whichrole": 6,
 			"funnyName": "Beathoven\n(Natsuki Mix)"
@@ -442,7 +442,7 @@
 		{
 			"realName": "It's Complicated (Sayori Mix)",
 			"iconName": "Complicated",
-			"description": "Remix Composed by Stardust Tunes\nOriginal Song by Starrie_blu",
+			"description": "Remix Composto por Stardust Tunes\nMúsica Original por Starrie_blu",
 			"twitter": "",
 			"whichrole": 6,
 			"funnyName": "It's Complicated\n(Sayori Mix)"
@@ -450,7 +450,7 @@
 		{
 			"realName": "Glitcher (Monika Mix)",
 			"iconName": "Glitcher",
-			"description": "Remix Composed by HighPoweredKeyz\nAdditional Mixing Help by Matt$\nOriginal Song by YingYang48",
+			"description": "Remix Composto por HighPoweredKeyz\nAjuda Adicional de Mixagem por Matt$\nMúsica Original por YingYang48",
 			"twitter": "",
 			"whichrole": 6,
 			"funnyName": "Glitcher\n(Monika Mix)"
@@ -458,119 +458,119 @@
 		{
 			"realName": "Poems n' Thorns",
 			"iconName": "SenpaiMonika",
-			"description": "Composed by Saruky",
+			"description": "Composto por Saruky",
 			"twitter": "",
 			"whichrole": 6
 		},
 		{
 			"realName": "Dual Demise",
 			"iconName": "MonikaPixelBig",
-			"description": "Composed by Stardust Tunes",
+			"description": "Composto por Stardust Tunes",
 			"twitter": "",
 			"whichrole": 6
 		},
 		{
 			"realName": "Epiphany",
 			"iconName": "MonikaBig",
-			"description": "Composed by Matt$",
+			"description": "Composto por Matt$",
 			"twitter": "",
 			"whichrole": 6
 		},
 		{
 			"realName": "Epiphany (Lyrics)",
 			"iconName": "MonikaBig",
-			"description": "Composed by Matt$\nMonika Singing Voice by Carimelle\nLyrics by Juno Songs",
+			"description": "Composto por Matt$\nVoz da Monika Cantando por Carimelle\nLyrics by Juno Songs",
 			"twitter": "",
 			"whichrole": 6
 		},
 		{
 			"realName": "Hot Air Balloon",
 			"iconName": "Natsuki",
-			"description": "Composed by DatDavi\nAdditional Voices by Carimelle",
+			"description": "Composto por DatDavi\nVozes Adicionais por Carimelle",
 			"twitter": "",
 			"whichrole": 6
 		},
 		{
 			"realName": "Shrinking Violet",
 			"iconName": "Yuri",
-			"description": "Composed by HighPoweredKeyz\n& DatDavi",
+			"description": "Composto por HighPoweredKeyz\n& DatDavi",
 			"twitter": "",
 			"whichrole": 6
 		},
 		{
 			"realName": "Joyride",
 			"iconName": "Sayori",
-			"description": "Composed by DatDavi",
+			"description": "Composto por DatDavi",
 			"twitter": "",
 			"whichrole": 6
 		},
 		{
 			"realName": "Our Harmony",
 			"iconName": "Monika",
-			"description": "Composed by DatDavi\nAdditional Vocals by Carimelle",
+			"description": "Composto por DatDavi\nVozes Adicionais por Carimelle",
 			"twitter": "",
 			"whichrole": 6
 		},
 		{
 			"realName": "NEET",
 			"iconName": "Protag",
-			"description": "Composed by HighPoweredKeyz\n& Sprunkle",
+			"description": "Composto por HighPoweredKeyz\n& Sprunkle",
 			"twitter": "",
 			"whichrole": 6
 		},
 		{
 			"realName": "You and Me",
 			"iconName": "Protag",
-			"description": "Composed by GGalactigal\n& HighPoweredKeyz",
+			"description": "Composto por GGalactigal\n& HighPoweredKeyz",
 			"twitter": "",
 			"whichrole": 6
 		},
 		{
 			"realName": "Takeover Medley",
 			"iconName": "Monika",
-			"description": "Composed by HighPoweredKeyz,\nStardust Tunes, Kairii,\nMiss Beepy, GGalactigal, & DatDavi",
+			"description": "Composto por HighPoweredKeyz,\nStardust Tunes, Kairii,\nMiss Beepy, GGalactigal, & DatDavi",
 			"twitter": "",
 			"whichrole": 6
 		},
 		{
 			"realName": "Love n' Funkin'",
 			"iconName": "GF",
-			"description": "Composed by DatDavi\n& Stardust Tunes",
+			"description": "Composto por DatDavi\n& Stardust Tunes",
 			"twitter": "",
 			"whichrole": 6
 		},
 		{
 			"realName": "Catfight",
 			"iconName": "Natsuki",
-			"description": "Composed by Matt$",
+			"description": "Composto por Matt$",
 			"twitter": "",
 			"whichrole": 6
 		},
 		{
 			"realName": "Constricted",
 			"iconName": "Sayori",
-			"description": "Composed by Stardust Tunes",
+			"description": "Composto por Stardust Tunes",
 			"twitter": "",
 			"whichrole": 6
 		},
 		{
 			"realName": "Wilted",
 			"iconName": "SenpaiReal",
-			"description": "Composed by GGalactigal\nAdditional Voices by\nCarimelle & GrandHammer6",
+			"description": "Composto por GGalactigal\nVozes Adicionais por\nCarimelle & GrandHammer6",
 			"twitter": "",
 			"whichrole": 6
 		},
 		{
 			"realName": "Titular (MC Mix)",
 			"iconName": "Titular",
-			"description": "Remix Composed by HighPoweredKeyz\nOriginal Song by Ethan the Doodler\nAdditional Voices by AfroZer0",
+			"description": "Remix Composto por HighPoweredKeyz\nMúsica Original por Ethan the Doodler\nVozes Adicionais por AfroZer0",
 			"twitter": "",
 			"whichrole": 6
 		},
 		{
 			"realName": "Drinks on Me",
 			"iconName": "Jill",
-			"description": "Composed by DPZ",
+			"description": "Composto por DPZ",
 			"twitter": "",
 			"whichrole": 6,
 			"hiddenType": "drinksonme"
@@ -578,7 +578,7 @@
 		{
 			"realName": "Libitina",
 			"iconName": "Libitina",
-			"description": "Composed by Kairii",
+			"description": "Composto por Kairii",
 			"twitter": "",
 			"whichrole": 6,
 			"hiddenType": "libitina"
@@ -586,21 +586,21 @@
 		{
 			"realName": "Menu Music",
 			"iconName": "Monika",
-			"description": "Composed by DPZ",
+			"description": "Composto por DPZ",
 			"twitter": "",
 			"whichrole": 6
 		},
 		{
 			"realName": "Pause Music",
 			"iconName": "MonikaPixel",
-			"description": "Composed by Tony Astro",
+			"description": "Composto por Tony Astro",
 			"twitter": "",
 			"whichrole": 6
 		},
 		{
 			"realName": "Cutscene Music",
 			"iconName": "Monika",
-			"description": "Composed by HighPoweredKeyz",
+			"description": "Composto por HighPoweredKeyz",
 			"twitter": "",
 			"whichrole": 6
 		},
@@ -837,7 +837,7 @@
 		{
 			"realName": "Dan Salvato",
 			"iconName": "DanSalvato",
-			"description": "Creator of\nDoki Doki Literature Club!",
+			"description": "Criador do\nDoki Doki Literature Club!",
 			"twitter": "https://twitter.com/dansalvato",
 			"whichrole": 10
 		},
@@ -851,14 +851,14 @@
 		{
 			"realName": "Crashpunk",
 			"iconName": "Crashpunk",
-			"description": "Doki Doki Blue Skies Collab\n& Blue Skies Costume Text",
+			"description": "Doki Doki Blue Skies Collab\n& Blue Skies Texto de Skins",
 			"twitter": "",
 			"whichrole": 10
 		},
 		{
 			"realName": "DuskieWhy",
 			"iconName": "Jackie",
-			"description": "Shader Coding Help",
+			"description": "Ajuda de Shader Coding",
 			"twitter": "https://www.youtube.com/channel/UCVv8S6fT_4TyaJOwk5YxBFA",
 			"whichrole": 10
 		},
@@ -872,7 +872,7 @@
 		{
 			"realName": "Lumitic",
 			"iconName": "Lumitic",
-			"description": "Coding Help",
+			"description": "Ajuda de Coding",
 			"twitter": "https://twitter.com/PeacefulLuma",
 			"whichrole": 10
 		},
@@ -893,7 +893,7 @@
 		{
 			"realName": "Shadow Mario",
 			"iconName": "ShadowMario",
-			"description": "Psych Engine Code",
+			"description": "Código Psych Engine",
 			"twitter": "https://twitter.com/Shadow_Mario_",
 			"whichrole": 10
 		},
@@ -905,12 +905,12 @@
 			"whichrole": 10
 		},
 		{
-			"realName": "Special Thanks!",
+			"realName": "Agradecimentos Especiais!",
 			"iconName": "BF",
 			"description": "8owser16, AfroDanceMan, Awoofle, Bijuu Mike,\nBlantados, Butterflan, Danish.exe, DesireDelta,\nemeruga, EnigmaticQube, firubii, Iamjace,\nJakeNeutron, Penkaru, Saki760, shiroeyoru,\nSantiOkuu, Shouko-kun, Starbitz, StariiFish,\nThe Dustercord, Tiniest Turtles, UniqueGeese,\nvivwikls, Zee, and you!",
 			"twitter": "",
 			"whichrole": 10
 		}
 	],
-	"listoroles": ["Mod Directors", "Artists", "Guest Artists", "Programmers", "Charters", "Musicians", "Music", "Writing / Translation", "Voices", "Cameos", "Additional Credits"]
+	"listoroles": ["Diretores do Mod", "Artistas", "Artists Convidados", "Programadores", "Charters", "Músicos", "Musica", "Roteiro / Falas", "Vozes", "Convidados Especiais", "Creditos Adicionais"]
 }
