@@ -74,10 +74,7 @@ import sys.FileSystem;
 #if FEATURE_GAMEJOLT
 import GameJolt.GameJoltAPI;
 #end
-#if FEATURE_MP4
-import hxcodec.VideoHandler as NetStreamHandler;
-import hxcodec.VideoSprite;
-#end
+import flxanimate.FlxAnimate;
 
 using StringTools;
 
@@ -367,19 +364,18 @@ class PlayState extends MusicBeatState
 	var cg2BG:BGSprite;
 	var cg2Group:FlxSpriteGroup;
 
-	var poemVideo:VideoSprite;
+	var poemVideo:FlxAnimate;
 	var sideWindow:BGSprite;
 	var dokiData:Array<Float> = [];
 
 	// HOLY LIBITINA
-	var rainBG:VideoSprite;
+	var rainBG:VideoSprite; //vou te transformar em xml k (não vai ter 11912x11912 de sprite não,fica deboa)
 	var deskBG1:BGSprite;
 	var deskBG2:BGSprite;
 	var deskBG2Overlay:BGSprite;
 	var extractPopup:BGSprite;
 	var libHando:BGSprite;
-	var testVM:VideoSprite;
-	var testVMLE:BGSprite; // Low End
+	var testVMLE:BGSprite; // Le gama baka (foi proposital, piada asdadsdasdasdasdasdasd)
 	var libiWindow:BGSprite;
 	var libAwaken:BGSprite;
 	var ghostBG:FlxBackdrop;
@@ -388,7 +384,6 @@ class PlayState extends MusicBeatState
 	var eyeShadow:BGSprite;
 	var infoBG:BGSprite;
 	var infoBG2:BGSprite;
-	var crackBG:VideoSprite;
 	var crackBGLE:BGSprite; // Low End
 	var libFinaleBG:BGSprite;
 	var libGhost:BGSprite;
@@ -1489,9 +1484,10 @@ class PlayState extends MusicBeatState
 					{
 						clubroom.loadGraphic(Paths.image('musicroom/Music_RoomLNF', 'doki'));
 
-						poemVideo = new VideoSprite();
-						poemVideo.playVideo(Paths.video('lnf'), true);
-						poemVideo.bitmap.canSkip = false;
+						poemVideo = new FlxAnimate(0, 0, Paths.getLibraryPath('images/notepad/infelizmenteflxanimate', 'doki'));
+						poemVideo.showPivot = false;
+						poemVideo.anim.addBySymbol('hando', 'lnf video');
+						poemVideo.anim.play('hando');
 						poemVideo.scrollFactor.set();
 						poemVideo.setGraphicSize(Std.int(poemVideo.width / defaultCamZoom));
 						poemVideo.updateHitbox();
@@ -1558,26 +1554,11 @@ class PlayState extends MusicBeatState
 					extractPopup.alpha = 0.001;
 					add(extractPopup);
 
-					if (!SaveData.lowEnd)
-					{
-						testVM = new VideoSprite();
-						testVM.playVideo(Paths.video('testvm'), true);
-						testVM.bitmap.canSkip = false;
-						testVM.scrollFactor.set();
-						testVM.setGraphicSize(Std.int(testVM.width / defaultCamZoom));
-						testVM.updateHitbox();
-						testVM.antialiasing = SaveData.globalAntialiasing;
-						testVM.alpha = 0.001;
-						add(testVM);
-					}
-					else
-					{
-						testVMLE = new BGSprite('libitina/testVM', 'doki', 0, 0, 0, 0, ['idle', 'testVM'], true);
-						testVMLE.setGraphicSize(Std.int(FlxG.width / defaultCamZoom));
-						testVMLE.updateHitbox();
-						testVMLE.alpha = 0.001;
-						add(testVMLE);
-					}
+					testVMLE = new BGSprite('libitina/testVM', 'doki', 0, 0, 0, 0, ['idle', 'testVM'], true);
+					testVMLE.setGraphicSize(Std.int(FlxG.width / defaultCamZoom));
+					testVMLE.updateHitbox();
+					testVMLE.alpha = 0.001;
+					add(testVMLE);
 
 					libiWindow = new BGSprite('libitina/granted', 'doki', 0, 0, 0, 0); // preload
 					libiWindow.loadGraphic(Paths.image('libitina/bigwindow', 'doki'));
@@ -1655,26 +1636,11 @@ class PlayState extends MusicBeatState
 					infoBG2.alpha = 0.001;
 					add(infoBG2);
 
-					if (!SaveData.lowEnd)
-					{
-						crackBG = new VideoSprite(-10, -10);
-						crackBG.playVideo(Paths.video('crackBG'), true);
-						crackBG.bitmap.canSkip = false;
-						crackBG.scrollFactor.set(0.3, 0.3);
-						crackBG.setGraphicSize(Std.int(crackBG.width / defaultCamZoom));
-						crackBG.updateHitbox();
-						crackBG.antialiasing = SaveData.globalAntialiasing;
-						crackBG.alpha = 0.001;
-						add(crackBG);
-					}
-					else
-					{
-						crackBGLE = new BGSprite('libitina/crackbg', 'doki', -10, -10, 0.3, 0.3);
-						crackBGLE.setGraphicSize(Std.int(crackBGLE.width / defaultCamZoom));
-						crackBGLE.updateHitbox();
-						crackBGLE.alpha = 0.001;
-						add(crackBGLE);
-					}
+					crackBGLE = new BGSprite('libitina/crackbg', 'doki', -10, -10, 0.3, 0.3);
+					crackBGLE.setGraphicSize(Std.int(crackBGLE.width / defaultCamZoom));
+					crackBGLE.updateHitbox();
+					crackBGLE.alpha = 0.001;
+					add(crackBGLE);
 
 					staticshock = new FlxSprite();
 					staticshock.frames = Paths.getSparrowAtlas('HomeStatic', 'doki');
@@ -4725,25 +4691,6 @@ class PlayState extends MusicBeatState
 				defaultCamZoom -= 0.01;
 		}
 
-		// Reposition stuff
-		var dbgItem = crackBG;
-
-		if (dbgItem != null
-			&& FlxG.keys.pressed.SHIFT
-			&& !FlxG.keys.pressed.CONTROL
-			&& (FlxG.keys.pressed.I || FlxG.keys.pressed.J || FlxG.keys.pressed.K || FlxG.keys.pressed.L))
-		{
-			if (FlxG.keys.pressed.I)
-				dbgItem.y += -1;
-			else if (FlxG.keys.pressed.K)
-				dbgItem.y += 1;
-			if (FlxG.keys.pressed.J)
-				dbgItem.x += -1;
-			else if (FlxG.keys.pressed.L)
-				dbgItem.x += 1;
-			trace(dbgItem.x + " X " + dbgItem.y + ' y');
-		}
-
 		if (dad != null && FlxG.keys.justPressed.NUMPADFIVE)
 			oneMore();
 
@@ -7322,6 +7269,7 @@ class PlayState extends MusicBeatState
 							
 							camZooming = false;
 							camGame2.fade(FlxColor.WHITE, 0.5, true);
+							poemVideo.anim.play('hando', true);
 							poemVideo.alpha = 1;
 							sideWindow.alpha = 1;
 						case 504:
@@ -7408,10 +7356,7 @@ class PlayState extends MusicBeatState
 						case 126:
 							libShader();
 						case 127:
-							if (!SaveData.lowEnd)
-								testVM.bitmap.time = 0;
-							else
-								testVMLE.animation.play('idle', true);
+							testVMLE.animation.play('idle', true);
 						case 128:
 							libShader(false);
 							FlxG.camera.zoom = 1;
@@ -7424,10 +7369,7 @@ class PlayState extends MusicBeatState
 							deskBG2Overlay.alpha = 0.15;
 							camHUD.alpha = 1;
 
-							if (!SaveData.lowEnd)
-								testVM.alpha = 1;
-							else
-								testVMLE.alpha = 1;
+							testVMLE.alpha = 1;
 						case 160 | 224 | 288 | 480 | 576 | 688 | 800 | 896 | 1024:
 							libPopup(526, Random.randUInt(88, 442), Random.randF(0.9, 1.1), Random.randF(0, 2));
 							libPopup(808, Random.randUInt(88, 442), Random.randF(0.9, 1.1), Random.randF(0, 2));
@@ -7471,9 +7413,6 @@ class PlayState extends MusicBeatState
 						case 544 | 1172 | 1184 | 1189 | 1576 | 2816 | 2880 | 2944 | 3666:
 							libShader(false);
 						case 624:
-							if (!SaveData.lowEnd)
-								testVM.alpha = 0.001;
-							else
 								testVMLE.alpha = 0.001;
 
 							libiWindow.alpha = 0.001;
@@ -7486,9 +7425,6 @@ class PlayState extends MusicBeatState
 							if (!constantScroll)
 								songSpeed += 0.2;
 
-							if (!SaveData.lowEnd)
-								testVM.alpha = 1;
-							else
 								testVMLE.alpha = 1;
 
 							boyfriend.alpha = 1;
@@ -7504,9 +7440,6 @@ class PlayState extends MusicBeatState
 
 							add(libVignette);
 						case 1152:
-							if (!SaveData.lowEnd)
-								FlxTween.tween(testVM, {alpha: 0.001}, CoolUtil.calcSectionLength(), {ease: FlxEase.sineOut});
-							else
 								FlxTween.tween(testVMLE, {alpha: 0.001}, CoolUtil.calcSectionLength(), {ease: FlxEase.sineOut});
 						case 1200:
 							libShader(false);
@@ -7562,21 +7495,15 @@ class PlayState extends MusicBeatState
 							infoBG2.alpha = 1;
 						case 2480:
 							camGame2.fade(FlxColor.BLACK, 0, false);
-						case 2495:
-							if (!SaveData.lowEnd)
-								crackBG.bitmap.time = 0;
 						case 2496:
 							camGame2.fade(FlxColor.WHITE, 0.2, true);
 							infoBG2.alpha = 0.001;
-
-							if (!SaveData.lowEnd)
-								crackBG.alpha = 1;
-							else
-								crackBGLE.alpha = 1;
+							crackBGLE.alpha = 1;
 
 							libVignette.loadGraphic(Paths.image('libitina/vignetteend', 'doki'));
 						case 2752 | 2817 | 2881 | 2945 | 2960 | 2972 | 2974 | 2976 | 2978 | 2980 | 2981 | 2982 | 2983 | 2984 | 2985 | 2986 | 2987 | 2988 | 2889 | 2890 | 2891 | 2892 | 2893:
 							// this code looks so fucking ugly
+							// Parece mesmo
 							libPopup(Random.randUInt(386, 666), Random.randUInt(68, 482), Random.randF(0.95, 1.25), '', 'red', Random.randNF());
 							libPopup(Random.randUInt(668, 948), Random.randUInt(68, 482), Random.randF(0.95, 1.25), '', 'red', Random.randNF());
 							libPopup(Random.randUInt(44, 324), Random.randUInt(68, 482), Random.randF(0.95, 1.25), '', 'red', Random.randNF());
@@ -7594,10 +7521,7 @@ class PlayState extends MusicBeatState
 							boyfriend.alpha = 0.001;
 							libiWindow.alpha = 0.001;
 
-							if (!SaveData.lowEnd)
-								crackBG.alpha = 0.001;
-							else
-								crackBGLE.alpha = 0.001;
+							crackBGLE.alpha = 0.001;
 
 							noteCam = false;
 							camZooming = false;
