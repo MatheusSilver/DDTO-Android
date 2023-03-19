@@ -782,7 +782,7 @@ class DialogueBox extends FlxSpriteGroup
 					box.animation.addByPrefix(name, prefixMap[name], 24, false);
 				
 				// Special case left here
-				box.animation.addByIndices('normal', 'Doki Dialogue Blank', [9], "", 24);
+				box.animation.addByIndices('normal', 'Doki Dialogue Blank', [7], "", 24);
 				box.antialiasing = SaveData.globalAntialiasing;
 
 				//Step 2

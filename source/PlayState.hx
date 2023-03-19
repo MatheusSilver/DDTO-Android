@@ -369,7 +369,7 @@ class PlayState extends MusicBeatState
 	var dokiData:Array<Float> = [];
 
 	// HOLY LIBITINA
-	var rainBG:VideoSprite; //vou te transformar em xml k (não vai ter 11912x11912 de sprite não,fica deboa)
+	var rainBG:FlxSprite; //vou te transformar em xml k (não vai ter 11912x11912 de sprite não,fica deboa)
 	var deskBG1:BGSprite;
 	var deskBG2:BGSprite;
 	var deskBG2Overlay:BGSprite;
@@ -1511,15 +1511,16 @@ class PlayState extends MusicBeatState
 						{
 							fishy.preset = 1;
 							camGame.setFilters([new ShaderFilter(fishy)]);
-						}
+						}				
 
-						rainBG = new VideoSprite();
-						rainBG.playVideo(Paths.video('rain'), true);
-						rainBG.bitmap.canSkip = false;
-						rainBG.scrollFactor.set();
-						rainBG.setGraphicSize(Std.int(rainBG.width / defaultCamZoom));
-						rainBG.updateHitbox();
+						rainBG = new FlxSprite();
+						rainBG.frames = Paths.getSparrowAtlas('libtina/chuva', 'doki');
 						rainBG.antialiasing = SaveData.globalAntialiasing;
+						rainBG.animation.addByPrefix('idle', 'chuva', 24, true);
+						rainBG.scrollFactor.set();
+						rainBG.setGraphicSize(Std.int(2 * rainBG.width / defaultCamZoom));
+						rainBG.updateHitbox();
+						rainBG.alpha = 0.001;
 						rainBG.cameras = [camGame2];
 						add(rainBG);
 					}
@@ -2650,19 +2651,6 @@ class PlayState extends MusicBeatState
 
 	override function destroy()
 	{
-		// Clean up VideoSprite
-		for (video in members)
-		{
-			var video:Dynamic = video;
-			var video:VideoSprite = video;
-
-			if (video != null && video is VideoSprite)
-			{
-				video.bitmap.dispose();
-				video.destroy();
-				video = null;
-			}
-		}
 
 		FlxG.stage.removeEventListener(KeyboardEvent.KEY_DOWN, onKeyPress);
 		FlxG.stage.removeEventListener(KeyboardEvent.KEY_UP, onKeyRelease);
@@ -4026,15 +4014,6 @@ class PlayState extends MusicBeatState
 				vocals.pause();
 			}
 
-			for (video in members)
-			{
-				var video:Dynamic = video;
-				var video:VideoSprite = video;
-
-				if (video != null && video is VideoSprite)
-					video.bitmap.pause();
-			}
-
 			#if FEATURE_DISCORD
 			updateDiscordPresence('Paused');
 			#end
@@ -4054,15 +4033,6 @@ class PlayState extends MusicBeatState
 			{
 				FlxG.sound.music.time = Conductor.songPosition - songOffset;
 				resyncVocals();
-			}
-
-			for (video in members)
-			{
-				var video:Dynamic = video;
-				var video:VideoSprite = video;
-
-				if (video != null && video is VideoSprite)
-					video.bitmap.resume();
 			}
 
 			if (startTimer != null && !startTimer.finished)
@@ -4521,15 +4491,6 @@ class PlayState extends MusicBeatState
 
 				if (dad.animation.curAnim.name.startsWith('lastNOTE'))
 					dad.animation.curAnim.frameRate = 24 * timescale;
-		}
-
-		for (video in members)
-		{
-			var video:Dynamic = video;
-			var video:VideoSprite = video;
-
-			if (video != null && video is VideoSprite)
-				video.bitmap.rate = Conductor.playbackSpeed;
 		}
 	}
 
@@ -7581,7 +7542,7 @@ class PlayState extends MusicBeatState
 							deskBG2.alpha = 1;
 						case 3711:
 							if (!SaveData.lowEnd)
-								rainBG.bitmap.time = 0;
+								rainBG.animation.play('idle');
 						case 3712:
 							camGame2.zoom = 1.4;
 							FlxTween.tween(camGame2, {zoom: 1}, CoolUtil.calcSectionLength(2.5), {ease: FlxEase.sineInOut});
