@@ -59,10 +59,9 @@ jobs:
           haxelib install hscript --quiet
           haxelib install flxanimate --quiet
           haxelib install fireTongue --quiet
-          haxelib install flixel-addons 2.10.0
+          haxelib install flixel-addons
           haxelib git faxe https://github.com/uhrobots/faxe --quiet
           haxelib install hxCodec
-          haxelib git polymod https://github.com/MasterEric/polymod.git --quiet
           haxelib git extension-webview https://github.com/MateuzinhoX02/extension-webview.git --quiet
           haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc --quiet
           haxelib git extension-webm https://github.com/Daninnocent/extension-webm.git --quiet
