@@ -2,6 +2,9 @@
 <project>
 	<!-- _________________________ Application Settings _________________________ -->
 
+	<android target-sdk-version="29"/>
+	<android minimum-sdk-version="9"/>
+	<!--gravação de audio interno gg-->
 	<app title="Doki Doki Takeover Plus" file="DokiTakeover" packageName="com.teamsilver.dokitakeover" package="com.teamsilver.dokitakeover" main="Main" version="3.0.2" company="Team-Silver" />
 
 	<!--The flixel preloader is not accurate in Chrome. You can use it regularly if you embed the swf into a html file
