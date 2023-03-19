@@ -47,7 +47,6 @@ jobs:
           haxelib setup "%HAXELIB_ROOT%"
           haxelib install lime --quiet
           haxelib install openfl --quiet
-          haxelib install hxcpp > /dev/null --quiet
           haxelib install flixel --quiet
           haxelib run lime setup
           haxelib run lime config ANDROID_SDK $ANDROID_SDK_ROOT
@@ -65,6 +64,7 @@ jobs:
           haxelib git extension-webview https://github.com/MateuzinhoX02/extension-webview.git --quiet
           haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc --quiet
           haxelib git extension-webm https://github.com/Daninnocent/extension-webm.git --quiet
+          haxelib run lime rebuild extension-webm android
           haxelib install actuate 
           haxelib list
           haxelib run lime build android -final
