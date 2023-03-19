@@ -6,10 +6,6 @@ import openfl.utils.Assets as OpenFlAssets;
 import flixel.graphics.FlxGraphic;
 import flixel.addons.transition.FlxTransitionableState;
 import openfl.utils.Assets;
-#if FEATURE_FILESYSTEM
-import sys.io.Process;
-import sys.FileSystem;
-#end
 
 using StringTools;
 
@@ -70,28 +66,7 @@ class CoolUtil
 
 	public static function isRecording():Bool
 	{
-		#if FEATURE_OBS
-		#if windows
-		var taskList:Process = new Process('tasklist');
-		#elseif (linux || macos)
-		var taskList:Process = new Process('ps --no-headers');
-		#end
-		var readableList:String = taskList.stdout.readAll().toString().toLowerCase();
-		var isOBS:Bool = false;
-
-		for (i in 0...programList.length)
-		{
-			if (readableList.contains(programList[i]))
-				isOBS = true;
-		}
-
-		taskList.close();
-		readableList = '';
-
-		return isOBS;
-		#else
 		return false;
-		#end
 	}
 
 	inline public static function boundTo(value:Float, min:Float, max:Float):Float
@@ -160,67 +135,7 @@ class CoolUtil
 	**/
 	public static function flixelSaveCheck(company:String, title:String, localPath:String = 'ninjamuffin99', name:String = 'funkin', newPath:Bool = false):Bool
 	{
-		// before anyone asks, this is copy-pasted from FlxSave
-		var invalidChars = ~/[ ~%&\\;:"',<>?#]+/;
-
-		// Avoid checking for .sol files directly in AppData
-		if (localPath == "")
-		{
-			var path = company;
-
-			if (path == null || path == "")
-			{
-				path = "HaxeFlixel";
-			}
-			else
-			{
-				#if html5
-				// most chars are fine on browsers
-				#else
-				path = invalidChars.split(path).join("-");
-				#end
-			}
-
-			localPath = path;
-		}
-
-		var directory = lime.system.System.applicationStorageDirectory;
-		var path = '';
-
-		if (newPath)
-			path = haxe.io.Path.normalize('$directory/../../../$localPath') + "/";
-		else
-			path = haxe.io.Path.normalize('$directory/../../../$company/$title/$localPath') + "/";
-
-		name = StringTools.replace(name, "//", "/");
-		name = StringTools.replace(name, "//", "/");
-
-		if (StringTools.startsWith(name, "/"))
-		{
-			name = name.substr(1);
-		}
-
-		if (StringTools.endsWith(name, "/"))
-		{
-			name = name.substring(0, name.length - 1);
-		}
-
-		if (name.indexOf("/") > -1)
-		{
-			var split = name.split("/");
-			name = "";
-
-			for (i in 0...(split.length - 1))
-			{
-				name += "#" + split[i] + "/";
-			}
-
-			name += split[split.length - 1];
-		}
-
-		//return FileSystem.exists(path + name + ".sol");
 		return true;
-		//Ai ai... Muitas coisas a se pensar na vida
 	}
 
 	/**
@@ -228,19 +143,7 @@ class CoolUtil
 	**/
 	public static function renpySaveCheck(?doki:String = 'DDLC-1454445547'):Bool
 	{
-		var directory = lime.system.System.applicationStorageDirectory;
-		var renpy = 'RenPy';
-		var path = '';
-
-		#if linux 
-		renpy = '.renpy';
-		path = haxe.io.Path.normalize('${Sys.getEnv("HOME")}/$renpy/$doki') + "/";
-		#elseif mac
-		path = haxe.io.Path.normalize('$directory/../../../../$renpy/$doki') + "/";
-		#else
-		path = haxe.io.Path.normalize('$directory/../../../$renpy/$doki') + "/";
-		#end
-
+		
 		return true;
 	}
 
@@ -249,32 +152,14 @@ class CoolUtil
 	**/
 	public static function ddlcpSaveCheck():Bool
 	{
-		var path = Sys.getEnv("userprofile") + '\\AppData\\LocalLow\\Team Salvato\\Doki Doki Literature Club Plus\\save_preferences.sav';
-		//return FileSystem.exists(path);
 		return true;
 	}
 
 	public static function getUsername():String
 	{
-		#if FEATURE_OBS
-		if (SaveData.selfAware)
-		{
-			#if windows
-			return Sys.environment()["USERNAME"].trim();
-			#elseif linux
-			return Sys.environment()["USER"].trim();
-			#end
-		}
-		else
-			return coolText(Paths.txt('data/name', 'preload'));
-		#elseif FEATURE_GAMEJOLT
-		if (SaveData.selfAware && !GameJoltAPI.getUserInfo(true).toLowerCase().contains('no user'))
-			return GameJoltAPI.getUserInfo(true).trim();
-		else
-			return coolText(Paths.txt('data/name', 'preload'));
-		#else
+		
 		return coolText(Paths.txt('data/name', 'preload'));
-		#end
+		
 	}
 
 	public static function openURL(url:String)

@@ -9,11 +9,8 @@ import openfl.display.FPS;
 import openfl.display.Sprite;
 import openfl.events.Event;
 import lime.app.Application;
-
-#if FEATURE_DISCORD
-import Discord.DiscordClient;
-#end
-
+import webm.WebmPlayer;
+import lime.system.System;
 // crash handler stuff
 #if CRASH_HANDLER
 import openfl.events.UncaughtErrorEvent;
@@ -36,6 +33,8 @@ class Main extends Sprite
 	var framerate:Int = 60; // How many frames per second the game should run at.
 	var skipSplash:Bool = true; // Whether to skip the flixel splash screen that appears in release mode.
 	var startFullscreen:Bool = false; // Whether to start the game in fullscreen on desktop targets
+
+	public static var path:String = System.applicationStorageDirectory;
 
 	public static var fpsVar:FPS;
 	public static var tongue:FireTongueEx;
@@ -78,17 +77,10 @@ class Main extends Sprite
 		setupGame();
 	}
 
+	public static var webmHandler:WebmHandler;
+
 	private function setupGame():Void
 	{
-		// Run this first so we can see logs.
-		#if !android
-		Debug.onInitProgram();
-		#end
-
-		#if linux
-		startFullscreen = isSteamDeck();
-		#end
-
 		#if (flixel < "5.0.0")
 		var stageWidth:Int = Lib.current.stage.stageWidth;
 		var stageHeight:Int = Lib.current.stage.stageHeight;
@@ -118,18 +110,11 @@ class Main extends Sprite
 
 		// Finish up loading debug tools.
 		// NOTE: Causes Hashlink to crash, so it's disabled.
-		#if (!hl && !android)
-		Debug.onGameStart();
-		#end
 	}
 
 	inline public static function isSteamDeck():Bool
 	{
-		#if linux
-		return Sys.environment()["USER"] == "deck";
-		#else
 		return false;
-		#end
 	}
 
 	// Code was entirely made by sqirra-rng for their fnf engine named "Izzy Engine", big props to them!!!
@@ -145,7 +130,7 @@ class Main extends Sprite
 		dateNow = dateNow.replace(" ", "_");
 		dateNow = dateNow.replace(":", "'");
 
-		path = './crash/DDTO_$dateNow.txt';
+		path = Main.path + './crash/DDTO_$dateNow.txt';
 
 		for (stackItem in callStack)
 		{
@@ -161,10 +146,10 @@ class Main extends Sprite
 		errMsg += "\nUncaught Error: "
 			+ e.error
 			+ "\nPlease report this error to the GitHub page: https://github.com/Jorge-SunSpirit/Doki-Doki-Takeover\n\n> Crash Handler written by: sqirra-rng";
-			//+ "\nPlease report this error to #playtest-qa-testing.\n\n> Crash Handler written by: sqirra-rng";
+		// + "\nPlease report this error to #playtest-qa-testing.\n\n> Crash Handler written by: sqirra-rng";
 
-		if (!FileSystem.exists("./crash/"))
-			FileSystem.createDirectory("./crash/");
+		if (!FileSystem.exists(Main.path + "./crash/"))
+			FileSystem.createDirectory(Main.path + "./crash/");
 
 		File.saveContent(path, errMsg + "\n");
 
@@ -172,9 +157,6 @@ class Main extends Sprite
 		Sys.println("Crash dump saved in " + Path.normalize(path));
 
 		Application.current.window.alert(errMsg, "Error!");
-		#if FEATURE_DISCORD
-		DiscordClient.shutdown();
-		#end
 		Sys.exit(1);
 	}
 	#end
