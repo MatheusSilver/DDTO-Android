@@ -142,6 +142,7 @@ class DokiCards extends MusicBeatSubstate
 		{
 			PlayState.instance.cardSelected(who);
 			FlxTween.tween(PlayState.instance.camHUD, {alpha: 1}, 2, {ease: FlxEase.sineOut});
+			FlxTween.tween(PlayState.instance.mcontrols, {alpha: 1}, 1, {ease: FlxEase.sineOut});
 			close();
 		});
 	}

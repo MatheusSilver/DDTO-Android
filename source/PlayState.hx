@@ -443,7 +443,7 @@ class PlayState extends MusicBeatState
 	];
 
 	#if mobileC
-	var mcontrols:Mobilecontrols; 
+	public var mcontrols:Mobilecontrols; 
 	#end
 
 	// API stuff
@@ -7130,6 +7130,7 @@ class PlayState extends MusicBeatState
 							FlxTween.tween(camFollow, {y: -3404, x: 589}, 5, {ease: FlxEase.linear});
 						case 1134:
 							FlxTween.tween(camHUD, {alpha: 0}, 1, {ease: FlxEase.sineOut});
+							FlxTween.tween(mcontrols, {alpha: 0}, 1, {ease: FlxEase.sineOut});
 						case 1156:
 							canPause = false;
 							openSubState(new DokiCards(!isStoryMode));
@@ -7172,6 +7173,7 @@ class PlayState extends MusicBeatState
 							camFocus = false;
 							FlxTween.tween(camFollow, {y: -3404, x: 589}, 5, {ease: FlxEase.linear});
 							FlxTween.tween(camHUD, {alpha: 0}, 2, {ease: FlxEase.sineOut});
+							FlxTween.tween(mcontrols, {alpha: 0}, 2, {ease: FlxEase.sineOut});
 					}
 				case 'love n funkin':
 					// Jorge please don't kill me ~M&M
