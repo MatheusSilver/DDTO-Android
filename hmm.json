@@ -40,7 +40,7 @@
 		{
 			"name": "extension-webview",
 			"type": "git",
-			"ref": "main",
+			"ref": "master",
 			"url": "https://github.com/MateuzinhoX02/extension-webview.git"
 		}
 	]
