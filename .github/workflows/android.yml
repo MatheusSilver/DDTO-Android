@@ -37,7 +37,7 @@ jobs:
       - name: Installing Libraries
         run: |
           haxelib setup ~/haxelib
-          haxelib install hxcpp > /dev/null --quiet
+          haxelib install hxcpp 4.2.1 --quiet
           haxelib install hmm --quiet
           haxelib run hmm install
       - name: Configure Android
