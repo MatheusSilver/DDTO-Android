@@ -33,8 +33,6 @@
 	<define name="FEATURE_DISCORD" if="none" unless="hl"/>
 	<!-- Defines whether the file system can be read/written directly. Does not work in browser. -->
 	<define name="FEATURE_FILESYSTEM" if="none" />
-	<!-- Defines whether MP4 videos should be enabled. -->
-	<define name="FEATURE_MP4"/>
 	<!-- Defines whether videos via OpenFL should be enabled. Only works on HTML5. -->
 	<define name="FEATURE_VIDEO" if="html5" />
 	<!-- Defines whether Caching is enabled. Will cause issues on systems with limited memory. Doesn't work with Linux. -->
@@ -118,8 +116,6 @@
 	<haxelib name="flixel-ui" />
 
 	<haxelib name="firetongue" />
-	<haxelib name="hxCodec" if="FEATURE_MP4"/>
-
 	<haxelib name="discord_rpc" if="FEATURE_DISCORD"/>
 
 	<!-- https://github.com/TentaRJ/GameJolt-FNF-Integration -->
