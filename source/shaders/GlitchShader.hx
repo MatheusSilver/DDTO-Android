@@ -177,7 +177,7 @@ class GlitchShader extends FlxShader // https://www.shadertoy.com/view/XtyXzW
 	void freezeTime(vec2 p, inout float time, vec2 groupSize, float speed) {
 		GlitchSeed seed = glitchSeed(glitchCoord(p, groupSize), speed);
 		//seed.prob *= .5;
-		if (shouldApply(seed) == 1.) {
+		if (shouldApply(seed) == vec2(1.)) {
 			float frozenTime = floor(time * speed) / speed;
 			time = frozenTime;
 		}
@@ -243,7 +243,7 @@ class GlitchShader extends FlxShader // https://www.shadertoy.com/view/XtyXzW
 	}
 
 	void glitchTime(vec2 p, inout float time) {
-	freezeTime(p, time, vec2(.5) * glitchScale, 2.);
+	freezeTime(p, time, vec2(.5) * glitchScale, vec2(2.));
 	}
 
 	void glitchColor(vec2 p, inout vec3 color) {
@@ -267,9 +267,9 @@ class GlitchShader extends FlxShader // https://www.shadertoy.com/view/XtyXzW
 		vec3 accumulator = vec3(0);
 		mat3x2 offsets = mat3x2(0);
 		for (int i = 0; i < sampleCount; i++) {
-			accumulator.r += texture(bitmap, destCoord + offsets[0]).r;
-			accumulator.g += texture(bitmap, destCoord + offsets[1]).g;
-			accumulator.b += texture(bitmap, destCoord + offsets[2]).b;
+			accumulator.r += texture2D(bitmap, destCoord + offsets[0]).r;
+			accumulator.g += texture2D(bitmap, destCoord + offsets[1]).g;
+			accumulator.b += texture2D(bitmap, destCoord + offsets[2]).b;
 			offsets -= increments;
 		}
 		vec4 newColor = vec4(accumulator / float(sampleCount), 1.0);
@@ -279,7 +279,7 @@ class GlitchShader extends FlxShader // https://www.shadertoy.com/view/XtyXzW
 	void main() {
 		// time = mod(time, 1.);
 		vec2 uv = fragCoord/iResolution.xy;
-		float alpha = texture(bitmap, uv).a;
+		float alpha = texture2D(bitmap, uv).a;
 		vec2 p = openfl_TextureCoordv.xy;
 		vec3 color = texture2D(bitmap, p).rgb;
 

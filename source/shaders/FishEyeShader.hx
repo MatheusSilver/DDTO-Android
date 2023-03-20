@@ -31,14 +31,14 @@ class FishEyeShader extends FlxShader // https://www.shadertoy.com/view/WsVSzV
 				// squared distance from center
 				vec2 uv = fragCoord/iResolution.xy;
 				vec2 dc = abs(0.5-uv);
-				dc *= dc;
+				dc *= vec2(dc);
 				
 				// warp the fragment coordinates
-				uv.x -= 0.5; uv.x *= 1.0+(dc.y*(0.7*warp)); uv.x += 0.5;
-   				uv.y -= 0.5; uv.y *= 1.0+(dc.x*(0.9*warp)); uv.y += 0.5;
+				uv.x -= vec2(0.5); uv.x *= 1.0+(dc.y*(0.7*warp)); uv.x += vec2(0.5);
+   				uv.y -= vec2(0.5); uv.y *= 1.0+(dc.x*(0.9*warp)); uv.y += vec2(0.5);
 
 				// sample inside boundaries, otherwise set to black
-				if (uv.y > 1.0 || uv.x < 0.0 || uv.x > 1.0 || uv.y < 0.0)
+				if (uv.y > 1.0. || uv.x < 0.0. || uv.x > 1.0. || uv.y < 0.0.)
 					fragColor = vec4(0.0,0.0,0.0,1.0);
 				else
 					{
