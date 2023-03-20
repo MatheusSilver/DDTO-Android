@@ -49,7 +49,7 @@ jobs:
           haxelib run lime config ANDROID_SETUP true
 
       - name: Building
-        run: 
+        run: |
           haxelib list
           haxelib run lime build android
           
