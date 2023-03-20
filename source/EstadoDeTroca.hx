@@ -9,7 +9,7 @@ class EstadoDeTroca extends MusicBeatState
 
 		new flixel.util.FlxTimer().start(1.0, function(tmr:flixel.util.FlxTimer)
 		{
-			flixel.FlxG.switchState(new PlayState());
+			LoadingState.loadAndSwitchState(new PlayState(), true, true);
 		});
 	}
 }

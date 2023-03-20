@@ -379,15 +379,15 @@ class DokiStoryState extends MusicBeatState
 			switch (curPos)
 			{
 				default:
-					LoadingState.loadAndSwitchState(new EstadoDeTroca(), true, true);
+					MusicBeatState.switchState(new EstadoDeTroca());
 				#if mobile
 				case 1:
-					LoadingState.loadAndSwitchState(new VideoState('assets/videos/Cutscenesnormais/sayointro', new EstadoDeTroca()), true, true);
+					MusicBeatState.switchState(new VideoState('assets/videos/Cutscenesnormais/sayointro', new EstadoDeTroca()));
 					FlxG.sound.music.fadeOut(0.5);
 					trace("Sayori Selected");
 				#end
 				case 6:
-					LoadingState.loadAndSwitchState(new EstadoDeTroca(), true, true);
+					MusicBeatState.switchState(new EstadoDeTroca());
 					trace("hueh Week Selected");
 			}
 		});
