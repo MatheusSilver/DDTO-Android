@@ -173,31 +173,24 @@ class CoolUtil
 
 	public static function precacheSound(sound:String, ?library:String = null):Void
 	{
-		precacheSoundFile(Paths.sound(sound, library));
+		Paths.sound(sound, library);
 	}
 
 	public static function precacheMusic(sound:String, ?library:String = null):Void
 	{
-		precacheSoundFile(Paths.music(sound, library));
+		Paths.music(sound, library);
 	}
 
 	public static function precacheInst(sound:String):Void
 	{
-		precacheSoundFile(Paths.inst(sound));
+		Paths.inst(sound);
 	}
 
 	public static function precacheVoices(sound:String, ?prefix:String = '', ?suffix:String = ''):Void
 	{
-		precacheSoundFile(Paths.voices(sound, prefix, suffix));
+		Paths.voices(sound, prefix, suffix);
 	}
 
-	private static function precacheSoundFile(file:Dynamic):Void
-	{
-		#if !hl
-		if (Assets.exists(file, SOUND) || Assets.exists(file, MUSIC))
-			Assets.getSound(file, true);
-		#end
-	}
 
 	public static function calcSectionLength(multiplier:Float = 1.0):Float
 	{

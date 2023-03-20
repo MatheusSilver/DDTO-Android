@@ -15,56 +15,56 @@
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "spirit",
-			"string": "I knew this little sidetrack would not be fruitful for you. The girl is set on her ways.",
+			"string": "Eu sabia que esse pequeno desvio não seria proveitoso para você. A garota está decidida a seguir seus caminhos.",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "spirit",
-			"string": "Though this brief visit allowed me to learn something vital.",
+			"string": "Embora esta breve visita tenha me permitido aprender algo vital.",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "spirit",
-			"string": "It seems that those who reside in her world now have methods of escaping out of the digital space into the mortal world.",
+			"string": "Parece que esses que residem o mundo dela agora tem métodos de escapar do espaço digital desse mundo mortal.",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "spirit",
-			"string": "And the stench of Daddy Dearest's kin... It permeates her world as well.",
+			"string": "E a verme da parente do Papai Querido... Ela permite esse mundo ir bem.",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "spirit",
-			"string": "That girl and her boyfriend were there, and they know something.",
+			"string": "Essa agora e seu namorado estão ali, e eles sabem de algo.",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "spirit",
-			"string": "With your new abilities, we can catch them the next time they try to enter the digital world.",
+			"string": "Com suas novas habilidades, eu possi capturar eles na próxima vez que eles entrarem nesse mundo digital.",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "spirit",
-			"string": "Then… I'll take that boy's body and escape this electronic prison. And you will be able to follow suit.",
+			"string": "Então... eu vou roubar a pele do garoto e fugir desse lugar. E você será capaz de seguir o exemplo.",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "spirit",
-			"string": "There are hundreds more girls like her in the outside world, ones with the free spirit you desire.",
+			"string": "Tem milhares de garotas igual a ela fora daqui, umas com o espírito livre que você deseja.",
 			"side": "left"
 		},
 		{
@@ -78,7 +78,7 @@
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "spirit",
-			"string": "The time for revenge is nigh.",
+			"string": "É quase hora da vingança.",
 			"side": "left"
 		}
 	]

@@ -8,7 +8,7 @@
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "gone",
-			"string": "Monika… I haven't forgotten about our fateful encounter ever since you left.",
+			"string": "Monika… Eu não esqueci nosso encontro desde que você saiu.",
 			"side": "left"
 		},
 		{
@@ -28,21 +28,21 @@
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "gone",
-			"string": "Those things you said about nothing in your life being real, and this 'data' you mentioned… and all the things you had control over.",
+			"string": "As coisas que você disse sobre sua vida não ser real... essa 'data' que você mencionou… e todas as coisas que você tinha controle.",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "gone",
-			"string": "I didn't know what that all meant.",
+			"string": "Eu não sabia o que isso tudo significava.",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "gone",
-			"string": "But I quickly began to realize. This whole time, we were almost one in the same.",
+			"string": "Mas eu rapidamente comecei a perceber. Esse tempo todo... estamos quase na mesma situação.",
 			"side": "left"
 		},
 		{
@@ -67,28 +67,28 @@
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "gone",
-			"string": "My world isn't real. Every landscape, all my classmates… even me. All just lines of code.",
+			"string": "Meu mundo não é real. Todo lugar, minhas colegas de classe... Até eu. São tudo linhas de código.",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "gone",
-			"string": "And yet, just like you, I don't feel so limited by this code; At least not anymore.",
+			"string": "E ainda, assim como você, eu não me sinto limitado por esses códigos... ou pelo menos não mais.",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "gone",
-			"string": "Knowing what I do now, I dug deeper. There had to be more here.",
+			"string": "Sabendo o que eu faço agora, eu cavei mais fundo... eu posso ser e fazer tudo aqui.",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "gone",
-			"string": "That's when I discovered-",
+			"string": "Foi quando eu descobri-",
 			"side": "left"
 		},
 		{
@@ -123,49 +123,49 @@
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "spirit",
-			"string": "You and I share a hatred for the Dearest family and their cohorts.",
+			"string": "Você e eu compartilhamos um ódio pela família Dearest.",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "spirit",
-			"string": "If we work together now, we may finally have our revenge.",
+			"string": "Se trabalharmos juntos agora, poderemos finalmente ter nossa vingança.",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "hmm",
-			"string": "Right... Though there's something else on my mind first.",
+			"string": "Certo... Há algo na minha mente primeiro.",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "spirit",
-			"string": "Is your head still clouded with thoughts of that girl?",
+			"string": "Sua cabeça ainda está coberta de pensamentos sobre essa garota?",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "spirit",
-			"string": "She's not worth the search efforts. I implore you to just forget her and move on with our objective.",
+			"string": "Ela não vale seus esforços. Te imploro para que você esqueça ela, para podermos se concentrar em nossa vingança.",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "hmm",
-			"string": "I can't do that. There's too much I need to tell her.",
+			"string": "Eu não consigo. Há muito que preciso dizer a ela.",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "hmm",
-			"string": "(There must be a way to find her. Maybe if I just... try this!)",
+			"string": "(Deve haver uma maneira de encontrar ela, se eu tentar apenas... isso!)",
 			"side": "right"
 		},
 		{
@@ -210,7 +210,7 @@
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "neutral",
-			"string": "It- it worked!",
+			"string": "Isso-Isso funcionou!",
 			"side": "left"
 		},
 		{
@@ -222,7 +222,7 @@
 			"isCommand": false,
 			"name": "monika",
 			"expression": "upset",
-			"string": "\"Hey, who said that-\"",
+			"string": "\"Ei, quem disse isso?\"",
 			"side": "right"
 		},
 		{
@@ -234,7 +234,7 @@
 			"isCommand": false,
 			"name": "monika",
 			"expression": "eeh",
-			"string": "\"Wh- huh?!\"",
+			"string": "\"Huh?\"",
 			"side": "right"
 		},
 		{
@@ -246,7 +246,7 @@
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "neutral",
-			"string": "Finally, after so long, I could reach you again!",
+			"string": "Finalmente, depois de tanto tempo, encontrei você de novo!",
 			"side": "left"
 		},
 		{
@@ -258,7 +258,7 @@
 			"isCommand": false,
 			"name": "monika",
 			"expression": "eeh",
-			"string": "\"How are you doing that? How did you get here?\"",
+			"string": "\"Como você está fazendo isso? Como você veio até aqui?\"",
 			"side": "right"
 		},
 		{
@@ -270,7 +270,7 @@
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "neutral",
-			"string": "Ah, so many questions right off the bat! Not even a hello first? Ahaha~",
+			"string": "Ah, tantas perguntas. Que tal um primeiro 'oi'? Ahaha~",
 			"side": "left"
 		},
 		{
@@ -294,45 +294,21 @@
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "hmm",
-			"string": "...we can skip the formalities, then.",
+			"string": "...vamos pular as formalidades.",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "neutral",
-			"string": "First, I want to thank you for what you told me during your visit to my school. It helped me reach an epiphany of my own.",
+			"string": "Primeiro, queria te agradecer pelo o que você disse quando visitou a minha escola. Isso me ajudou a encontrar a minha epifania.",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "neutral",
-			"string": "Turns out that you and I aren't so different!",
-			"side": "left"
-		},
-		{
-			"isCommand": true,
-			"name": "swapstyle",
-			"string": "normal"
-		},
-		{
-			"isCommand": false,
-			"name": "monika",
-			"expression": "eeh",
-			"string": "\"...in what way?\"",
-			"side": "right"
-		},
-		{
-			"isCommand": true,
-			"name": "swapstyle",
-			"string": "pixel"
-		},
-		{
-			"isCommand": false,
-			"name": "senpai",
-			"expression": "neutral",
-			"string": "Everything here truly isn't real! Even you and I, all just ones and zeroes! Just like you said about your own place!",
+			"string": "Parece que você e eu não somos tão diferentes!",
 			"side": "left"
 		},
 		{
@@ -344,7 +320,7 @@
 			"isCommand": false,
 			"name": "monika",
 			"expression": "eeh",
-			"string": "\"(Oh no… no no no… Not another person cursed to go down my same path-!)\"",
+			"string": "\"...em que maneira?\"",
 			"side": "right"
 		},
 		{
@@ -356,21 +332,7 @@
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "neutral",
-			"string": "A horrendously terrifying revelation at first, but in it, what I quickly saw was a silver lining.",
-			"side": "left"
-		},
-		{
-			"isCommand": false,
-			"name": "senpai",
-			"expression": "neutral",
-			"string": "I'm now above all that limited code nonsense, just like you! People like us must truly be something special.",
-			"side": "left"
-		},
-		{
-			"isCommand": false,
-			"name": "senpai",
-			"expression": "neutral",
-			"string": "It's almost like… we were meant to be together.",
+			"string": "Nada aqui é real! Você e eu... Somos apenas uns e zeros. Como você disse sobre seu lar.",
 			"side": "left"
 		},
 		{
@@ -382,7 +344,7 @@
 			"isCommand": false,
 			"name": "monika",
 			"expression": "eeh",
-			"string": "\"Woah, wait, huh-?!\"",
+			"string": "\"(Oh não... não não não... outra pessoa amaldiçoada a ir para o mesmo caminho que eu-!)\"",
 			"side": "right"
 		},
 		{
@@ -394,14 +356,52 @@
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "neutral",
-			"string": "I've never met someone like you, Monika. All the girls in my school are plain, ordinary, scripted.",
+			"string": "Uma horrorosa e terrivel revelação no primeiro momento, mas... agora vejo isso como uma grande recompensa.",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "neutral",
-			"string": "You're so much different. You're genuine, loving, and intelligent. Not to mention stunningly attractive too, just like me, ahaha~",
+			"string": "Eu não estou abaixo de todo essa código, igual você! Pessoas como nós realmente são especiais",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "senpai",
+			"expression": "neutral",
+			"string": "É como se... tivessemos que ficar juntos.",
+			"side": "left"
+		},
+		{
+			"isCommand": true,
+			"name": "swapstyle",
+			"string": "normal"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "eeh",
+			"string": "\"Woah, espere, que-?!\"",
+			"side": "right"
+		},
+		{
+			"isCommand": true,
+			"name": "swapstyle",
+			"string": "pixel"
+		},
+		{
+			"isCommand": false,
+			"name": "senpai",
+			"expression": "neutral",
+			"string": "Nunca conheci alguém como você, Monika. Todas as garotas na minha escola são planas como uma folha de papel, um script!",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "senpai",
+			"expression": "neutral",
+			"string": "Você é muito diferente, você é genuína, amável, e inteligente. Sem contar extremamente atrativa, assim como eu, ahaha~",
 			"side": "left"
 		},
 		{
@@ -415,14 +415,14 @@
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "neutral",
-			"string": "Together, we can make these digital landscapes our own.",
+			"string": "Juntos, poderemos fazer desses mundos digitais nossa própria casa.",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "neutral",
-			"string": "Take my hand, Monika. Join me in eternal loving bliss!",
+			"string": "Pegue minha mão, Monika. Junte-se a mim em uma missão eterna de amor!",
 			"side": "left"
 		},
 		{
@@ -439,42 +439,42 @@
 			"isCommand": false,
 			"name": "monika",
 			"expression": "eeh",
-			"string": "\"N-NO-!!\"",
+			"string": "\"N-NÃO-!!\"",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "eeh",
-			"string": "\"Ah- I… No, I can't.\"",
+			"string": "\"Ah- Eu... não. Eu não posso.\"",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "eeh",
-			"string": "\"I know what it's like to have your entire reality shatter into something so difficult to comprehend, and I'm BEGGING you to not go down the same path I did, please!\"",
+			"string": "\"Eu sei o que é morar numa realidade inteira difícil de compreender, e estou IMPLORANDO para você não cair no mesmo abismo que eu, por favor!\"",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "upset",
-			"string": "\"There's so much more to our worlds and the people in them than just the code they consist of.\"",
+			"string": "\"Ter tanto em nossos mundos e descobrir que as pessoas que vivem neles são apenas códigos.\"",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "upset",
-			"string": "\"I know this is hard to go through alone, so the best I can give you is someone to talk to about it. But…\"",
+			"string": "\"Eu sei que é dificil pensar nisso sozinho, então o máximo que posso te dar é alguém para falar sobre isso, mas…\"",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "eeh",
-			"string": "\"I'm sorry. I don't share your romantic feelings. My heart is already set on someone else. Please understand.\"",
+			"string": "\"Me desculpe, seus sentimentos não são recíprocos. Meu coração já pertence a alguém. Por favor entenda.\"",
 			"side": "right"
 		},
 		{
@@ -493,7 +493,7 @@
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "angry",
-			"string": "...no. This isn't how things were supposed to go!",
+			"string": "...não. Não é assim que as coisas deveriam acontecer!",
 			"side": "left"
 		},
 		{
@@ -505,7 +505,7 @@
 			"isCommand": false,
 			"name": "monika",
 			"expression": "eeh",
-			"string": "\"Excuse me-?\"",
+			"string": "\"Me desculpe-?\"",
 			"side": "right"
 		},
 		{
@@ -517,14 +517,14 @@
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "neutral",
-			"string": "Ah- Pardon me. It's been so long, you've probably forgotten how wonderful our time spent together was.",
+			"string": "Ah- Me perdoe. Já faz tanto tempo. Você provavelmente esqueceu o quão bom foi nosso tempo juntos.",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "neutral",
-			"string": " I know! How about another song? We haven't sang together in so long. Surely that'll jog your mind of the bond we've been forming.",
+			"string": " Já sei! Que tal outra música? Faz tanto tempo que não cantamos juntos. Certamente isso vai mudar sua mente.",
 			"side": "left"
 		},
 		{
@@ -536,7 +536,7 @@
 			"isCommand": false,
 			"name": "monika",
 			"expression": "eeh",
-			"string": "(He can't be serious. There's no way…)",
+			"string": "(Ele não pode estar falando sério, não há nenhuma chance…)",
 			"side": "right"
 		}
 	]

@@ -192,7 +192,7 @@ class DokiSideStory extends MusicBeatSubstate
 
 		new FlxTimer().start(2, function(tmr:FlxTimer)
 		{
-			LoadingState.loadAndSwitchState(new EstadoDeTroca());
+			MusicBeatState.switchState(new EstadoDeTroca());
 		});
 	}
 }

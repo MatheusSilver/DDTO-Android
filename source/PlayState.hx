@@ -2261,10 +2261,13 @@ class PlayState extends MusicBeatState
 					funX = 1025;
 					funY = 465;
 			}
-			var sticker:BGSprite = new BGSprite('stickies/' + stickerData[0], 'preload', funX, funY, 0, 0);
-			sticker.scale.set(0.85, 0.85);
-			sticker.updateHitbox();
-			stickerSprites.add(sticker);
+			var sticker:BGSprite;
+			if(SONG.song.toLowerCase()=='joyride' || SONG.song.toLowerCase()=='drinks on me' || SONG.song.toLowerCase()=='takeover medley'){
+				sticker = new BGSprite('stickies/' + stickerData[0], 'preload', funX, funY, 0, 0);
+				sticker.scale.set(0.85, 0.85);
+				sticker.updateHitbox();
+				stickerSprites.add(sticker);
+			}
 		}
 		
 		if (curStage == 'musicroom')

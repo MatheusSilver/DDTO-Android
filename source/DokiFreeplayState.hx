@@ -539,7 +539,7 @@ class DokiFreeplayState extends MusicBeatState
 		if (isCharting)
 			LoadingState.loadAndSwitchState(new ChartingState());
 		else
-			LoadingState.loadAndSwitchState(new EstadoDeTroca());
+			MusicBeatState.switchState(new EstadoDeTroca());
 	}
 
 	function changeDiff(change:Int = 0):Void

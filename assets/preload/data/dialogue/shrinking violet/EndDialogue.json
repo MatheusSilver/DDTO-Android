@@ -7,35 +7,35 @@
 			"isCommand": false,
 			"name": "monika",
 			"expression": "ahh",
-			"string": "\"Woah, you’re already a natural songsmith. I know the others will love to hear this!\"",
+			"string": "\"Uau, Você ja é uma verdadeira compositor. Tenho certeza que as outras vão adorar ouvir isso!\"",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "no_one",
 			"expression": "gone",
-			"string": "Yuri looks away shyly once again and giggles to herself.",
+			"string": "Yuri olha para longe timidamente de novo e dá um pequeno sorriso para si mesma.",
 			"side": ""
 		},
 		{
 			"isCommand": false,
 			"name": "yuri",
 			"expression": "happy",
-			"string": "\"Uhuhu… I appreciate you giving me your time.\"",
+			"string": "\"Uhuhu… Eu aprecio você passando tempo comigo.\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "yuri",
 			"expression": "happy",
-			"string": "\"I’m going to rehearse a bit more on my own before our next club meeting.\"",
+			"string": "\"Vou ensaiar um pouco mais sozinha antes da próxima reunião do clube.\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "yuri",
 			"expression": "smile",
-			"string": "\"I’ll see you then, Monika.\"",
+			"string": "\"Vejo você então, Monika.\"",
 			"side": "left"
 		}
 	]
