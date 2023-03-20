@@ -5806,7 +5806,7 @@ class PlayState extends MusicBeatState
 			});
 		}
 
-		if (KeyBinds.gamepad || !FlxG.keys.pressed.ANY)
+		if (KeyBinds.gamepad && !FlxG.keys.pressed.ANY)
 		{
 			if (pressArray.contains(true))
 			{
