@@ -6,7 +6,7 @@ import flixel.FlxG;
 
 class BSLTouchUtils
 {
-	public static var prevTouched:Int = -100;
+	public static var prevTouched:Int = -1;
 
 	public static function justTouched():Bool //Copiado do Hsys k
 	{

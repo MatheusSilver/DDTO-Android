@@ -90,14 +90,19 @@ class DokiCards extends MusicBeatSubstate
 
 		if (acceptInput)
 		{
-			if (controls.NOTE_LEFT_P)
+			selectGrp.forEach(function(spr:FlxSprite)
+			{
+				if (FlxG.mouse.overlaps(spr) && FlxG.mouse.justPressed)
+					selectChar(charList[spr.ID].toLowerCase(), spr.ID);
+			});
+			/*if (controls.NOTE_LEFT_P)
 				selectChar('yuri', 0);
 			if (controls.NOTE_DOWN_P)
 				selectChar('sayori', 1);
 			if (controls.NOTE_UP_P)
 				selectChar('monika', 2);
 			if (controls.NOTE_RIGHT_P)
-				selectChar('natsuki', 3);
+				selectChar('natsuki', 3);*/
 			
 		}
 	}

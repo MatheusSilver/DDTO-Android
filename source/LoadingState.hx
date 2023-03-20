@@ -244,6 +244,7 @@ class LoadingState extends MusicBeatState
 
 	static function getNextState(target:FlxState, isPlayState = true, stopMusic = false):FlxState
 	{
+		BSLTouchUtils.prevTouched = -1;
 		if (isPlayState)
 		{
 			Paths.setCurrentLevel("week6");

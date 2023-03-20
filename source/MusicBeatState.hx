@@ -103,6 +103,7 @@ class MusicBeatState extends FlxUIState
 
 	public static function switchState(nextState:FlxState)
 	{
+		BSLTouchUtils.prevTouched = -1;
 		var curState:Dynamic = FlxG.state;
 		var leState:MusicBeatState = curState;
 		if (!FlxTransitionableState.skipNextTransIn)

@@ -379,7 +379,7 @@ class DokiStoryState extends MusicBeatState
 					MusicBeatState.switchState(new EstadoDeTroca());
 				#if mobile
 				case 1:
-					LoadingState.loadAndSwitchState(new VideoState('assets/videos/sayointro', new EstadoDeTroca()), true, true);
+					MusicBeatState.switchState(new VideoState('assets/videos/sayointro', new EstadoDeTroca()));
 					FlxG.sound.music.fadeOut(0.5);
 					trace("Sayori Selected");
 				#end
@@ -431,6 +431,7 @@ class DokiStoryState extends MusicBeatState
 		if (prevselected != curPos)
 			FlxG.sound.play(Paths.sound('scrollMenu'));
 
+		//Tenho minhas dúvidas se esse code é util agora que tudo é por touch...
 		if (!SaveData.beatFestival)
 		{
 			if (curPos >= icons.length)

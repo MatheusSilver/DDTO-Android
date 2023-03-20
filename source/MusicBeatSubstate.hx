@@ -14,6 +14,7 @@ class MusicBeatSubstate extends FlxSubState
 {
 	public function new()
 	{
+		BSLTouchUtils.prevTouched = -1;
 		CoolUtil.setFPSCap(SaveData.framerate);
 
 		super();
