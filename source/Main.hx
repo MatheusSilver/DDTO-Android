@@ -9,7 +9,6 @@ import openfl.display.FPS;
 import openfl.display.Sprite;
 import openfl.events.Event;
 import lime.app.Application;
-import webm.WebmPlayer;
 import lime.system.System;
 #if CRASH_HANDLER
 import openfl.events.UncaughtErrorEvent;
@@ -72,8 +71,6 @@ class Main extends Sprite
 
 		setupGame();
 	}
-
-	public static var webmHandler:WebmHandler;
 
 	private function setupGame():Void
 	{

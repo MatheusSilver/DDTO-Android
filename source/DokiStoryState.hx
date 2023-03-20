@@ -2,7 +2,6 @@ package;
 
 import flixel.input.keyboard.FlxKey;
 import flixel.FlxSubState;
-import flixel.input.mouse.FlxMouseEventManager;
 import Controls.KeyboardScheme;
 import flixel.FlxG;
 import flixel.FlxObject;
@@ -88,7 +87,6 @@ class DokiStoryState extends MusicBeatState
 
 	public static var instance:DokiStoryState;
 
-	var mouseManager:FlxMouseEventManager = new FlxMouseEventManager();
 
 	public var acceptInput:Bool = true;
 
@@ -190,13 +188,8 @@ class DokiStoryState extends MusicBeatState
 			story_icon.ID = i;
 			grpSprites.add(story_icon);
 
-			// Making sure a locked week isn't selected
-			if (dirstuff != 'dokistory/LockedWeek')
-				mouseManager.add(story_icon, onMouseDown, null, onMouseOver);
-			
+		
 		}
-
-		add(mouseManager);
 
 		story_sidestories = new FlxSprite(395, 542);
 		story_sidestories.frames = Paths.getSparrowAtlas('dokistory/SideStories', 'preload');
@@ -395,14 +388,12 @@ class DokiStoryState extends MusicBeatState
 	// :) ~Codexes
 	override public function openSubState(subState:FlxSubState)
 	{
-		remove(mouseManager);
 		super.openSubState(subState);
 	}
 
 	override public function closeSubState()
 	{
 		super.closeSubState();
-		add(mouseManager);
 	}
 	
 	function selectThing()
@@ -557,8 +548,6 @@ class DokiStoryState extends MusicBeatState
 		{
 			story_sidestories.visible = true;
 			SaveData.weekUnlocked = 9;
-			if (mouseManager != null) 
-				mouseManager.add(story_sidestories, onMouseDown, null, onMouseOver);
 		}
 		if (SaveData.beatSide)
 		{
@@ -588,28 +577,6 @@ class DokiStoryState extends MusicBeatState
 		txtTracklist.text = txtTracklist.text.toUpperCase();
 
 		txtTracklist.text += "\n";
-	}
-
-	function onMouseDown(spr:FlxSprite):Void
-	{
-		if (!selectedSomethin)
-			selectThing();
-	}
-
-	function onMouseOver(spr:FlxSprite):Void
-	{
-		// If whatever was previously selected isn't the new selection,
-		// play the select sound
-		if (curPos != spr.ID && !selectedSomethin)
-			FlxG.sound.play(Paths.sound('scrollMenu'));
-
-		//
-		if (!selectedSomethin)
-		{
-			curPos = spr.ID;
-			updateText();
-			updateSelected();
-		}
 	}
 
 	override function beatHit()

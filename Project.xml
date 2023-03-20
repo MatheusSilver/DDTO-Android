@@ -128,8 +128,6 @@
 
 	<haxelib name="flxanimate"/>
 	<haxelib name="extension-webview" if="android"/>
-	<haxelib name="actuate" />
-	<haxelib name="extension-webm"/>
 
 	<!-- <haxelib name="markdown" /> -->
 	<!-- <haxelib name="HtmlParser" /> -->
