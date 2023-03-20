@@ -33,7 +33,7 @@ class OptionsState extends MusicBeatState
 			#if android
 			new CustomControls('Configure o estilo de controle mobile'),
 			#end
-			new HitboxesModificadas("Troca o visual/code da hitbox.\nPor padrão, a hitbox usa imagens (feita por\nLuckyDog7), caso alterar a opção, ela ficará\notimizada!"),
+			//new MonikaHD('Habilite a skin de Monika Hd'),
 			new KeyBindingsOption(LangUtil.getString('descKeyBindings', 'option'), controls),
 			new DownscrollOption(LangUtil.getString('descDownscroll', 'option')),
 			new LaneUnderlayOption(LangUtil.getString('descLaneUnderway', 'option')),
