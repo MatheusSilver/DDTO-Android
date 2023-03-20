@@ -2745,18 +2745,7 @@ class PlayState extends MusicBeatState
 				scorePop = false;
 				if (isStoryMode && showCutscene)
 				{
-					#if (FEATURE_MP4 || FEATURE_VIDEO)
-					var video:NetStreamHandler = new NetStreamHandler();
-					video.canSkip = SaveData.beatLibitina;
-					video.skipKeys = [FlxKey.ESCAPE, FlxKey.ENTER];
-					video.playVideo(Paths.video('metaintro'), false, true);
-					video.finishCallback = function()
-					{
-						startCountdown();
-					}
-					#else
-					startCountdown();
-					#end
+					LoadingState.loadAndSwitchState(new VideoState('assets/videos/metaintro', new EstadoDeTroca()));
 				}
 				else
 				{
@@ -3066,18 +3055,7 @@ class PlayState extends MusicBeatState
 						add(blackScreentwo);
 					});
 
-					#if (FEATURE_MP4 || FEATURE_VIDEO)
-					var video:NetStreamHandler = new NetStreamHandler();
-					video.canSkip = SaveData.beatPrologue;
-					video.skipKeys = [FlxKey.ESCAPE, FlxKey.ENTER];
-					video.playVideo(Paths.video('monika'), false, true);
-					video.finishCallback = function()
-					{
-						endSong();
-					}
-					#else
-					endSong();
-					#end
+					LoadingState.loadAndSwitchState(new VideoState('assets/videos/monika', new EstadoDeTroca()));
 				});
 			}
 			case 'pixelend':
@@ -3117,27 +3095,15 @@ class PlayState extends MusicBeatState
 			}
 			case 'monikatransform':
 			{
-				#if (FEATURE_MP4 || FEATURE_VIDEO)
-				var video:NetStreamHandler = new NetStreamHandler();
-				video.canSkip = false;
-				video.playVideo(Paths.video('monikacodin'));
-				#end
+				LoadingState.loadAndSwitchState(new VideoState('assets/videos/monikacodin', new EstadoDeTroca()));
 			}
 			case 'senpaitransform':
 			{
-				#if (FEATURE_MP4 || FEATURE_VIDEO)
-				var video:NetStreamHandler = new NetStreamHandler();
-				video.canSkip = false;
-				video.playVideo(Paths.video('senpaicodin'));
-				#end
+				LoadingState.loadAndSwitchState(new VideoState('assets/videos/senpaicodin', new EstadoDeTroca()));
 			}
 			case 'youregoingtophilly':
 			{
-				#if (FEATURE_MP4 || FEATURE_VIDEO)
-				var video:NetStreamHandler = new NetStreamHandler();
-				video.canSkip = false;
-				video.playVideo(Paths.video('youregoingtophilly'));
-				#end
+				LoadingState.loadAndSwitchState(new VideoState('assets/videos/youregoingtophilly', new EstadoDeTroca()));
 			}
 			case 'wiltedbgin':
 			{

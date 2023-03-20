@@ -28,9 +28,6 @@ import Discord.DiscordClient;
 #if FEATURE_GAMEJOLT
 import GameJolt.GameJoltAPI;
 #end
-#if FEATURE_MP4
-import hxcodec.VideoHandler as NetStreamHandler;
-#end
 
 using StringTools;
 
@@ -382,7 +379,7 @@ class DokiStoryState extends MusicBeatState
 					LoadingState.loadAndSwitchState(new EstadoDeTroca(), true, true);
 				#if mobile
 				case 1:
-					LoadingState.loadAndSwitchState(new VideoState('assets/videos/Cutscenesnormais/sayointro', new EstadoDeTroca()), true, true);
+					LoadingState.loadAndSwitchState(new VideoState('assets/videos/sayointro', new EstadoDeTroca()), true, true);
 					FlxG.sound.music.fadeOut(0.5);
 					trace("Sayori Selected");
 				#end
