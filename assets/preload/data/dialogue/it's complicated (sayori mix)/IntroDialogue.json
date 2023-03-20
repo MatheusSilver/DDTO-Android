@@ -4,42 +4,42 @@
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "neutral",
-			"string": "\"There was one song in that list that popped out to me.\"",
+			"string": "\"Havia uma música naquela lista que se destacou pra mim.\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "neutral",
-			"string": "\"The song was both happy and upbeat-\"",
+			"string": "\"A música era feliz e otimista-\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "ehh",
-			"string": "\"...and yet it felt really sad too.\"",
+			"string": "\"...mas também triste\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "neutral",
-			"string": "\"Stuff that's both sad and happy in that way really speaks to me.\"",
+			"string": "\"Coisas que são ambas felizes e tristes desse jeito chamam a minha atenção.\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "ehh",
-			"string": "\"Eheheh, I don't know...\"",
+			"string": "\"Eheheh, eu não sei...\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "ehh",
-			"string": "\"It's complicated.\"",
+			"string": "\"É complicado.\"",
 			"side": "left"
 		}
 	]

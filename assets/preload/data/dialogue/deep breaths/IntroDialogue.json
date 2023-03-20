@@ -7,14 +7,14 @@
 			"isCommand": false,
 			"name": "natsuki",
 			"expression": "what",
-			"string": "\"...bleh. I think I’m done for now. I feel really dizzy after that one.\"",
+			"string": "\"...bleh. Eu acho que já tá bom pra mim por enquanto. Eu me sinto bem zonza depois dessa.\"",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "yeah",
-			"string": "\"That’s ok! Go rest your vocal chords.\"",
+			"string": "\"Tá tudo bem! Vá descansar suas cordas vocais.\"",
 			"side": "left"
 		},
 		{
@@ -29,7 +29,7 @@
 			"isCommand": false,
 			"name": "gf",
 			"expression": "ehh",
-			"string": "*confused glances*",
+			"string": "*olhares confusos*",
 			"side": "left"
 		},
 		{
@@ -43,7 +43,7 @@
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "neutral",
-			"string": "\"eheheh... Well, looks like you’re the only one left, Yuri!\"",
+			"string": "\"eheheh... Bem, parece que só sobrou você, Yuri!\"",
 			"side": "left"
 		},
 		{
@@ -57,21 +57,21 @@
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "ooh",
-			"string": "\"Hey, I know you can do it, Yuri. I bet you have one of the nicest singing voices ever!\"",
+			"string": "\"Ei, eu sei que você consegue, Yuri. Eu aposto que você tem uma das melhores vozes de canto de todas! Qual é, por favor?!\"",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "yuri",
 			"expression": "ehh",
-			"string": "\"...first having to read my poems aloud to the club... now singing too?\"",
+			"string": "\"...primeiro ter que ler meus poemas na frente do clube... agora cantar também?\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "yuri",
 			"expression": "ehh",
-			"string": "\"This club continues to ask so much out of me.\"",
+			"string": "\"Esse clube continua a pedir muito de mim.\"",
 			"side": "left"
 		}
 	]

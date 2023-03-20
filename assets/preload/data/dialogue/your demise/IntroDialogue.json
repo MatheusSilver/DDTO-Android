@@ -7,7 +7,7 @@
 			"isCommand": false,
 			"name": "monika",
 			"expression": "uhoh",
-			"string": "There... No more distractions.",
+			"string": "Pronto... Sem mais distrações.",
 			"side": "left"
 		},
 		{
@@ -21,14 +21,14 @@
 			"isCommand": false,
 			"name": "bf",
 			"expression": "what",
-			"string": "(Translation) GIRLFRIEND!",
+			"string": "(Tradução) GIRLFRIEND!",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "",
-			"string": "Let's get back to singing, shall we?",
+			"string": "Agora, podemos voltar a cantar?",
 			"side": "left"
 		},
 		{
@@ -49,35 +49,35 @@
 			"isCommand": false,
 			"name": "bf",
 			"expression": "angry",
-			"string": "*aggressive bee bop noises*",
+			"string": "*sons de bee bop agressivos*",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "gasp",
-			"string": "Oh... her.",
+			"string": "Ah... ela.",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "",
-			"string": "Hey, let's not worry about her, ok?",
+			"string": "Ei, não se preocupe com ela, ok?",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "",
-			"string": "C'mon, I've got a very special song I've wanted to sing!",
+			"string": "Qual é, eu tenho uma música especial na qual eu quero cantar!",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "bf",
 			"expression": "angry",
-			"string": "*continuation of angry bee bops*",
+			"string": "*continuação de bee bops furiosos*",
 			"side": "right"
 		},
 		{
@@ -98,7 +98,7 @@
 			"isCommand": false,
 			"name": "monika",
 			"expression": "hmm",
-			"string": "One more song.",
+			"string": "Só mais uma.",
 			"side": "left"
 		}
 	]

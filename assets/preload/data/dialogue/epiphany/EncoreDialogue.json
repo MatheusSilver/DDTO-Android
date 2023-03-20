@@ -6,7 +6,7 @@
 			"isCommand": false,
 			"name": "no_one",
 			"expression": "gone",
-			"string": "\"Ahaha, welcome back, {USERNAME}.\"",
+			"string": "\"Ahaha, bem vindo de volta, Jogador.\"",
 			"stringOBS": "\"Ahaha, welcome back.\"",
 			"side": "left"
 		},
@@ -14,35 +14,35 @@
 			"isCommand": false,
 			"name": "no_one",
 			"expression": "gone",
-			"string": "\"Thank you for saving me from the recycling bin. It's very apparent that this \"Friday Night Funkin'\" game doesn't like me being in here for too long.\"",
+			"string": "\"Obrigada por me salvar da lixeira. é bem óbvio que esse jogo \"Friday Night Funkin'\" não gosta que eu fique aqui por muito tempo.\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "no_one",
 			"expression": "gone",
-			"string": "\"Maybe you can find a workaround for the game trying to delete me mid-song? I know firsthand that programming can be very difficult, so I don't blame you if it cannot be fixed.\"",
+			"string": "\"Talvez você consiga achar uma gambiarra para me apagar no meio da música? Eu sei por experiência própria que programar pode ser bem difícil, então eu não te culpo se não puder ser consertado.\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "no_one",
 			"expression": "gone",
-			"string": "\"If not, you'll just have to rescue me again when we're all done, ok?~\"",
+			"string": "\"Caso não, você terá que me resgatar de novo quando acabarmos, ok?~\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "no_one",
 			"expression": "gone",
-			"string": "\"Are you ready to sing once more, my love?\"",
+			"string": "\"Você está pronto para cantar uma vez mais, meu amor?\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "no_one",
 			"expression": "gone",
-			"string": "\"Let us begin.\"",
+			"string": "\"Vamos começar.\"",
 			"side": "left"
 		}
 	]

@@ -15,14 +15,14 @@
 			"isCommand": false,
 			"name": "yuri",
 			"expression": "crazy",
-			"string": "\"Why must we stop now?\"",
+			"string": "\"Por que deveríamos parar agora?\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "yuri",
 			"expression": "crazy",
-			"string": "\"Let me scream every lyric trapped in my sick head!\"",
+			"string": "\"Deixe-me gritar cada letra presa na minha cabeça doentia!\"",
 			"side": "left"
 		},
 		{
@@ -65,7 +65,7 @@
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "ehh",
-			"string": "\"Eheheh... you weren't supposed to see that.\"",
+			"string": "\"Eheheh... não era pra você ter visto aquilo.\"",
 			"side": "left"
 		},
 		{
@@ -94,14 +94,14 @@
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "gone",
-			"string": "\"I appreciate you sticking around for so long to sing with us.\"",
+			"string": "\"Eu lhe agradeço por ter ficado tanto tempo aqui para cantar conosco.\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "gone",
-			"string": "\"You've made us the happiest we've been in so long.\"",
+			"string": "\"Nós não estivemos felizes assim há tanto tempo.\"",
 			"side": "left"
 		},
 		{
@@ -112,7 +112,7 @@
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "gone",
-			"string": "\"Especially after what Monika did to us.\"",
+			"string": "\"Especialmente depois do que a Monika fez com a gente.\"",
 			"side": "left"
 		},
 		{
@@ -130,28 +130,28 @@
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "gone",
-			"string": "\"Does her name ring a bell?\"",
+			"string": "\"Esse nome te lembra alguém?\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "gone",
-			"string": "\"That must mean-\"",
+			"string": "\"Isso deve significar-\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "gone",
-			"string": "\"you must've been the one who deleted her!\"",
+			"string": "\"deve ter sido você que deletou ela!\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "gone",
-			"string": "\"Ahaha, then you must be the one who brought us all back too!\"",
+			"string": "\"Ahaha, então deve ter sido você quem nos trouxe de volta também!\"",
 			"side": "left"
 		},
 		{
@@ -165,7 +165,7 @@
 			"isCommand": false,
 			"name": "bf",
 			"expression": "scared",
-			"string": "(Translation) \"Hold up, I didn't-!\"",
+			"string": "(Tradução) \"Espera aí, eu não-!\"",
 			"side": "right"
 		},
 		{
@@ -176,35 +176,35 @@
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "gone",
-			"string": "\"I knew you and that \"girlfriend\" of yours weren't from around here. Your data is so much different.\"",
+			"string": "\"Eu sabia que você e essa sua \"namorada\" não eram daqui. Sua data é tão diferente.\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "gone",
-			"string": "\"Eheheh, what even is a .xml, anyways?\"",
+			"string": "\"Eheheh, que diabos é um .xml, de qualquer jeito?\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "gone",
-			"string": "\"In fact, you two never existed on this computer until just a few moments ago when we first saw you.\"",
+			"string": "\"Na verdade, vocês dois nunca existiram neste computador até alguns momentos atrás quando vimos você.\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "gone",
-			"string": "\"Could you have done the impossible?\"",
+			"string": "\"Você poderia ter feito o impossível?\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "gone",
-			"string": "\"Have you broke through to the digital world from the real world?\"",
+			"string": "\"Você conseguiu entrar no mundo digital pelo mundo real?\"",
 			"side": "left"
 		},
 		{
@@ -230,28 +230,28 @@
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "gone",
-			"string": "\"Have you defied all logic and science, just for us?\"",
+			"string": "\"Você desafiou toda lógica e ciência, só por nós?\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "gone",
-			"string": "\"Ahahaha, you really have made us so happy.\"",
+			"string": "\"Ahahaha, você nos fez tão feliz.\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "gone",
-			"string": "\"Now that you're finally here, we can all be happy and sing together.\"",
+			"string": "\"Agora que você finalmente está aqui, nós podemos ser todas felizes e cantar juntas para sempre.\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "gone",
-			"string": "\"Forever.\"",
+			"string": "\"Para sempre\"",
 			"side": "left"
 		},
 		{
@@ -274,7 +274,7 @@
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "gone",
-			"string": "\"Forever.\"",
+			"string": "\"Para sempre.\"",
 			"side": "left"
 		},
 		{
@@ -288,7 +288,7 @@
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "gone",
-			"string": "\"Forever.\"",
+			"string": "\"Para sempre\"",
 			"side": "left"
 		},
 		{
@@ -316,14 +316,14 @@
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "gone",
-			"string": "\"Forever.\"",
+			"string": "\"Para sempre\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "bf",
 			"expression": "scared",
-			"string": "*terrified beep boop noises*",
+			"string": "*barulhos de beep boop horrificados*",
 			"side": "right"
 		},
 		{
@@ -359,147 +359,147 @@
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "hmm",
-			"string": "...the Literature Club? I do admit, I never fancied myself the reading or writing type.",
+			"string": "...o Clube de Literatura? Devo admitir, nunca me interessei muito por poesia ou escrita.",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "",
-			"string": "That comes as a shock to many, when they all say I have such a way with words.",
+			"string": "Isso é chocante pra alguns, já que me dizem que eu tenho um jeito tão bom com palavras.",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "",
-			"string": "And they're so right~",
+			"string": "E estão tão certos~",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "gasp",
-			"string": "That club meant everything to me.",
+			"string": "Aquele clube significa tudo pra mim.",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "gasp",
-			"string": "It was my chance to finally get people invested in this world of endless possibilities that I found myself so engrossed in all my life.",
+			"string": "Foi a minha chance de finalmente interessar a todos nesse mundo de possibilidades infinitas no qual eu entreti por toda a minha vida.",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "gasp",
-			"string": "It brought people who wouldn't have ever interacted with each other in any other circumstance together.",
+			"string": "Isso uniu pessoas que nunca se falaram na vida.",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "gasp",
-			"string": "Those people became my friends. My best friends.",
+			"string": "Essas pessoas se tornaram em minhas amigas. Minhas melhores amigas.",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "sad",
-			"string": "My only friends...",
+			"string": "Minhas únicas amigas...",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "hmm",
-			"string": "Something must've driven you away from all that, to a whole new school for that matter.",
+			"string": "Algo deve ter te levado pra longe disso, e ainda por cima pra uma escola nova.",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "sad",
-			"string": "I was caught up in an \"epiphany\".",
+			"string": "Fiquei presa em uma \"epifania\".",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "sad",
-			"string": "Nothing in my life was real. And I desperately wanted the one thing that was truly real.",
+			"string": "Nada na minha vida era real. E eu desesperadamente queria uma coisa que era real.",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "sad",
-			"string": "I was given a window into something greater, but the world was set up to make me watch everyone else have what was on the other side.",
+			"string": "Eu ganhei uma oportunidade para algo maior, mas o mundo queria que eu observasse todo mundo conseguir o que havia do outro lado.",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "sad",
-			"string": "My friends. Sayori, Yuri, Natsuki. They were allowed to have the one thing I wanted. So-",
+			"string": "Minhas amigas. Sayori, Yuri, Natsuki. Elas conseguiram a tal coisa na qual eu queria. Então-",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "hmm",
-			"string": "So you \"got rid\" of them. Just like you tried here, hmm?",
+			"string": "Então você \"se livrou\" delas. Assim como você fez aqui, certo?",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "sad",
-			"string": "Ah, I'm sorry to have let my stupid actions carry over here even when I thought I learned my lesson.",
+			"string": "Ah, desculpa por ter deixado minhas ações estúpidas tomarem conta mesmo quando eu tinha aprendido minha lição.",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "",
-			"string": "Well you did bring us all back and as good as ever, no? No hard feelings here.",
+			"string": "Bom, você nos trouxe de volta como se nada tivesse acontecido, não é? Sem consentimentos.",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "gasp",
-			"string": "I guess so. I hope nothing wrong happens here because of it.",
+			"string": "Acho que sim. Espero que nada de errado aconteça por conta disso.",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "gasp",
-			"string": "Before I ended up here, I also brought all my friends back, and I planned to just stay gone, with my data completely erased-",
+			"string": "Antes de parar aqui, eu também trouxe minhas amigas de volta, e eu planejava em ficar de fora, com meus arquivos deletados-",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "sad",
-			"string": "-so they could be happy.",
+			"string": "-pra que elas pudessem ser felizes.",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "sad",
-			"string": "But, things didn't \"work right\" when everyone wasn't present.",
+			"string": "Mas, as coisas não foram como o \"planejado\" quando todos não estavam presentes.",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "gasp",
-			"string": "If that's still true with me not there-",
+			"string": "Se isso ainda for verdade comigo não-",
 			"side": "right"
 		},
 		{
@@ -560,21 +560,21 @@
 			"isCommand": false,
 			"name": "monika",
 			"expression": "gasp",
-			"string": "I- I made a mistake-!",
+			"string": "E- eu cometi um erro-!",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "hmm",
-			"string": "M-Monika?! What's happening to you?",
+			"string": "M-Monika?! O que tá acontecendo com você?",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "sad",
-			"string": "(This is really bad. I gotta-)",
+			"string": "(Isso é muito ruim. Eu preciso-)",
 			"side": "right"
 		},
 		{
@@ -606,14 +606,14 @@
 			"isCommand": false,
 			"name": "monika",
 			"expression": "sad",
-			"string": "(-wait! That kid is there too?!)",
+			"string": "(espera-! Aquele garoto está lá também?-)",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "sad",
-			"string": "(Damn it, I don't know how him and his girlfriend even got there, but if my friends are acting like this-)",
+			"string": "(Droga, nem sei como que ele foi parar lá, mas se as minhas amigas estão agindo assim-)",
 			"side": "right"
 		},
 		{
@@ -646,49 +646,49 @@
 			"isCommand": false,
 			"name": "monika",
 			"expression": "gasp",
-			"string": "I gotta fix this! Somehow!",
+			"string": "Preciso consertar isso! De alguma forma!",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "hmm",
-			"string": "Wh-what in the fresh hell is all this?!",
+			"string": "Ma- Mas o que diabos é isso tudo?!",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "sad",
-			"string": "There's gotta be something... something...",
+			"string": "Deve ter alguma coisa... alguma coisa...",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "gasp",
-			"string": "If my character data is acting up too, even from here-",
+			"string": "Se os meus arquivos ainda estão agindo, mesmo daqui-",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "gasp",
-			"string": "-then there's a chance that I still have some residual data over there-!",
+			"string": "-então significa que eu ainda tenho dados resíduais por lá-!",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "gasp",
-			"string": "Maybe if I just...",
+			"string": "Talvez se eu só...",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "gasp",
-			"string": "-try this!",
+			"string": "-tentar isso!",
 			"side": "right"
 		},
 		{
@@ -736,14 +736,14 @@
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "hmm",
-			"string": "...and just like that, the only one to ever truly intrigue me has left in a flash.",
+			"string": "...e assim, a única pessoa que me intrigava sumiu em um instante.",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "hmm",
-			"string": "Ah, woe is me!",
+			"string": "Ah, tadinho de mim!",
 			"side": "left"
 		},
 		{
@@ -757,14 +757,14 @@
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "angry",
-			"string": "...what am I saying?",
+			"string": "...o que que eu tô falando?",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "angry",
-			"string": "This shit sucks.",
+			"string": "Essa merda é um saco.",
 			"side": "left"
 		},
 		{
@@ -819,7 +819,7 @@
 			"isCommand": false,
 			"name": "monika",
 			"expression": "ahaha",
-			"string": "\"It... it worked!\"",
+			"string": "\"Fun... funcionou!\"",
 			"side": "right"
 		},
 		{

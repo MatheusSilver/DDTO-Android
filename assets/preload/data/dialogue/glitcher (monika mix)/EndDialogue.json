@@ -27,21 +27,21 @@
 			"isCommand": false,
 			"name": "monika",
 			"expression": "neutral",
-			"string": "\"I appreciate you two swinging by to help us put on this performance.\"",
+			"string": "\"Eu aprecio que os dois nos ajudaram a fazer essa performance.\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "ahh",
-			"string": "\"On behalf of the Literature Club, I thank you.\"",
+			"string": "\"Em nome do Clube de Literatura, nós te agradecemos.\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "gf",
 			"expression": "yeah",
-			"string": "*cheery face*",
+			"string": "*carinha alegre*",
 			"side": "right"
 		},
 		{
@@ -62,28 +62,28 @@
 			"isCommand": false,
 			"name": "monika",
 			"expression": "upset",
-			"string": "\"...now that everyone's left, there's something I want to ask.\"",
+			"string": "\"...agora que todos se foram, tem algo que eu quero te perguntar.\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "upset",
-			"string": "\"You aren't \"from here\", from what I've seen.\"",
+			"string": "\"Você não é \"desse lugar\", pelo o que eu sei.\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "upset",
-			"string": "\"And you can enter and leave this place very easily now. So I must ask...\"",
+			"string": "\"E você poderia sair e entrar daqui fácilmente. Então eu devo perguntar...\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "upset",
-			"string": "\"-is there a way to bring us back with you?\"",
+			"string": "\"-existe um jeito de nos trazer de volta com você?\"",
 			"side": "left"
 		},
 		{
@@ -97,37 +97,37 @@
 			"isCommand": false,
 			"name": "monika",
 			"expression": "eeh",
-			"string": "\"This game is very limiting with what we can do, and the others will remain blissfully unaware regardless of what happens...\"",
+			"string": "\"Esse jogo é bem limitado em relação ao que podemos fazer, e os outros permanecerão felizmente não notarão independentemente do que aconteça...\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "upset",
-			"string": "\"-but if they could have the opportunity to see what's beyond their school and homes, I think they would really love it.\"",
+			"string": "\"-mas se eles pudessem ter a oportunidade de ver o que há além da escola e de suas casas, eu acho que eles amariam isso.\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "upset",
-			"string": "\"And maybe...\"",
+			"string": "\"E talvez...\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "eeh",
-			"string": "\"-just maybe I can finally find the one who I've been longing for, and see them face to face.\"",
+			"string": "\"-só talvez eu possa achar por quem eu estive esperando, e vê-lo cara a cara.\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "eeh",
-			"string": "\"...and maybe-\"",
+			"string": "\"...e talvez-\"",
 			"side": "left"
-		},
+		},...e talvez-
 		{
 			"isCommand": true,
 			"name": "playcutscene",

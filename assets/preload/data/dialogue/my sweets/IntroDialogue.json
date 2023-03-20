@@ -7,7 +7,7 @@
 			"isCommand": false,
 			"name": "natsuki",
 			"expression": "neutral",
-			"string": "\"...okay, you’ve convinced me.\"",
+			"string": "\"...tá bom, você me convenceu.\"",
 			"side": "left"
 		},
 		{
@@ -21,14 +21,14 @@
 			"isCommand": false,
 			"name": "natsuki",
 			"expression": "neutral",
-			"string": "\"You better not tell this to ANYONE, but I sometimes sing in front of the mirror into my hairbrush.\"",
+			"string": "\"É melhor não contar disso pra NINGUÉM, mas às vezes eu canto na frente do espelho com a minha escova.\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "natsuki",
 			"expression": "hmmph",
-			"string": "\"Only when my dad isn’t home though.\"",
+			"string": "\"Mas só quando o meu pai não tá em casa.\"",
 			"side": "left"
 		},
 		{
@@ -42,35 +42,35 @@
 			"isCommand": false,
 			"name": "natsuki",
 			"expression": "angy",
-			"string": "\"Hey! I heard that, you know!\"",
+			"string": "\"Ei! Eu ouvi isso, tá bom?!\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "yuri",
 			"expression": "smile",
-			"string": "\"Its just... picturing you doing that, its quite an adorable mental image.\"",
+			"string": "\"Eu só estava... imaginando você fazendo isso, parece ser tão adorável.\"",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "natsuki",
 			"expression": "angy",
-			"string": "\"S-shut it! And stop calling me cute! I-I’m not cute.\"",
+			"string": "\"S-se cala! E pare de me chamar de fofa! E-eu não sou fofa.\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "natsuki",
 			"expression": "hmmph",
-			"string": "\"Ugh, I shouldn’t have said anything.\"",
+			"string": "\"Ugh, eu não devia ter falado nada.\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "natsuki",
 			"expression": "neutral",
-			"string": "\"Let’s just get this started.\"",
+			"string": "\"Vamos só começar logo.\"",
 			"side": "left"
 		}
 	]

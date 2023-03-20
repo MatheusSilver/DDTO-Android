@@ -7,70 +7,70 @@
 			"isCommand": false,
 			"name": "yuri",
 			"expression": "neutral",
-			"string": "\"It appears that we have visitors.\"",
+			"string": "\"Parece que temos visita.\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "natsuki",
 			"expression": "hmmph",
-			"string": "\"Seriously, Sayori? You brought a boy to the club?\"",
+			"string": "\"Sério, Sayori? Você trouxe um menino para o clube?\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "ehh",
-			"string": "\"Hey- I wasn’t expecting anyone new. We haven’t even put out fliers for the club yet!\"",
+			"string": "\"Ei- eu não estava esperando por ninguém novo. A gente nem distribuiu cartazes pro clube ainda!\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "neutral",
-			"string": "\"But look, Natsuki! We have another girl too!\"",
+			"string": "\"Mas olha, Natsuki! Nós temos outra menina também!\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "gf",
 			"expression": "neutral",
-			"string": "*empty thoughts*",
+			"string": "*pensamentos vazios*",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "ehh",
-			"string": "\"Ehehe, if I knew we were expecting more members- I would've asked Natsuki to bake some welcome cupcakes!\"",
+			"string": "\"Ehehe, se eu soubesse que estávamos esperando mais membros- Eu iria ter perguntado a Natsuki pra fazer alguns cupcakes de boas vindas!\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "happ",
-			"string": "\"Oh! And maybe I could've asked Yuri to make tea as well!\"",
+			"string": "\"Ah! E talvez eu teria perguntado a Yuri para fazer chá também!\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "happ",
-			"string": "\"I need to write this down for later: 'Plan Tea Party for Club Soon'\"",
+			"string": "\"Eu preciso escrever isso pra mais tarde: 'Planejar Festa do Chá para Clube em Breve'\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "yuri",
 			"expression": "smile",
-			"string": "\"Sounds like you’re already very excited about our new guests. You haven’t even asked for their names yet-\"",
+			"string": "\"Parece que você já está bem animada sobre nossos novos convidados. Mas você ainda nem perguntou seus nomes-\"",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "ehh",
-			"string": "\"Ah, right! Eheh, silly me. What’re your names, new literature club attendees?\"",
+			"string": "\"Ah, certo! Eheh, eu sou tão bobinha. Quais são seus nomes, novos membros do clube de literatura?\"",
 			"side": "left"
 		},
 		{
@@ -84,21 +84,21 @@
 			"isCommand": false,
 			"name": "gf",
 			"expression": "yeah",
-			"string": "*happy gesture*",
+			"string": "*gesto feliz*",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "happ",
-			"string": "\"You two are Boyfriend and Girlfriend? Aww, you look so cute together!!!\"",
+			"string": "\"Vocês dois são Boyfriend e Girlfriend? Aww, vocês são tão fofinhos juntos!!!\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "natsuki",
 			"expression": "neutral",
-			"string": "\"...that’s cute and all, but like, what are your names?\"",
+			"string": "\"...Isso aí são apelidos fofos e tudo, mas tipo, quais são seus nomes de verdade?\"",
 			"side": "left"
 		},
 		{
@@ -112,14 +112,14 @@
 			"isCommand": false,
 			"name": "gf",
 			"expression": "yeah",
-			"string": "*another happy gesture*",
+			"string": "*outro gesto feliz*",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "natsuki",
 			"expression": "angy",
-			"string": "\"Yes, we know that you guys are dating! We wanna know your NAMES!\"",
+			"string": "\"Sim, nós sabemos que vocês estão namorando! A gente quer saber é SEUS NOMES!\"",
 			"side": "left"
 		},
 		{
@@ -133,21 +133,21 @@
 			"isCommand": false,
 			"name": "natsuki",
 			"expression": "hmmph",
-			"string": "\"...I don’t like them already.\"",
+			"string": "\"...Eu já não gostei deles.\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "natsuki",
 			"expression": "hmmph",
-			"string": "\"They’re already messing with me!\"",
+			"string": "\"Eles já estão zuando com minha cara!\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "yuri",
 			"expression": "ehh",
-			"string": "\"Natsuki! Not so harsh...\"",
+			"string": "\"Natsuki! Não seja assim...\"",
 			"side": "left"
 		},
 		{
@@ -161,42 +161,42 @@
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "ehh",
-			"string": "\"Eheheh... I’m sorry about that. If you don’t want to tell us your names, that’s ok!\"",
+			"string": "\"Eheheh... Me desculpe por aquilo. Se você não quer nos contar seus nomes, tá tudo bem!\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "happ",
-			"string": "\"I’m Sayori!\"",
+			"string": "\"Eu sou a Sayori!\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "neutral",
-			"string": "\"That lovely lavender lady over there is Yuri, and Natsuki is the one who’s real sassy today.\"",
+			"string": "\"Aquela linda e amável garota com cheiro de lavanda é a Yuri, e a Natsuki é a que está bem atrevida hoje.\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "yuri",
 			"expression": "neutral",
-			"string": "\"With introductions aside... may we ask what these microphones are for?\"",
+			"string": "\"Com introduções a lado... nós podemos perguntar pra quê servem esses microfones?\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "neutral",
-			"string": "\"I was just about to ask that.\"",
+			"string": "\"Eu já ia perguntar sobre isso.\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "ehh",
-			"string": "\"I hope you didn’t confuse this place with the music club-\"",
+			"string": "\"Eu espero que você não confundiu esse lugar com o clube de canto-\"",
 			"side": "left"
 		},
 		{
@@ -210,14 +210,14 @@
 			"isCommand": false,
 			"name": "yuri",
 			"expression": "neutral",
-			"string": "\"...you really want to sing with us?\"",
+			"string": "\"...você quer mesmo cantar conosco?\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "yuri",
 			"expression": "blush",
-			"string": "\"I’m... not sure how comfortable I’d feel doing that-\"",
+			"string": "\"Eu... não tenho certeza quão comfortável eu estaria fazendo isso-\"",
 			"side": "left"
 		},
 		{
@@ -231,7 +231,7 @@
 			"isCommand": false,
 			"name": "yuri",
 			"expression": "blush",
-			"string": "\"Wh-what do you mean I have to?!\"",
+			"string": "\"C-Como assim nós temos que cantar?!\"",
 			"side": "left"
 		},
 		{
@@ -242,7 +242,7 @@
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "neutral",
-			"string": "\"You know, we’ve been working so hard on writing and poems lately. I think having a fun singing session with everyone is the perfect break we all need!\"",
+			"string": "\"Sabe, nós estivemos trabalhando tão duro em escrever e em poemas recentemente. Eu acho que ter uma divertida sessão de canto com todo mundo seria o descanso perfeito que todas nós precisamos!\"",
 			"side": "left"
 		},
 		{
@@ -256,14 +256,14 @@
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "neutral",
-			"string": "\"When you think about it, songs are just poems with music behind them, aren’t they?\"",
+			"string": "\"Quando você pensa sobre, cantar é só recitar poemas com música no fundo, não é?\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "yeah",
-			"string": "\"I bet we’d all be great at this!\"",
+			"string": "\"Eu aposto que todas nós seriamos ótimas nisso!\"",
 			"side": "left"
 		},
 		{
@@ -284,7 +284,7 @@
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "yeah",
-			"string": "\"Here, I’ll go first!\"",
+			"string": "\"Aqui, eu vou primeiro!\"",
 			"side": "left"
 		}
 	]

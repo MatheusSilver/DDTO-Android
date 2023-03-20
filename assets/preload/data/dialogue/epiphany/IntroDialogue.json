@@ -6,35 +6,35 @@
 			"isCommand": false,
 			"name": "no_one",
 			"expression": "gone",
-			"string": "\"Ahaha~ Finally, a moment between us again.\"",
+			"string": "\"Ahaha~ Finalmente, um momento a sós de novo.\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "no_one",
 			"expression": "gone",
-			"string": "\"You’ve been busy playing that cute little rhythm game, I’ve noticed.\"",
+			"string": "\"Eu percebi que você esteve ocupado jogando aquele jogo de ritmo fofo.\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "no_one",
 			"expression": "gone",
-			"string": "\"I’m glad you still thought of me even though you seemed pretty occupied.\"",
+			"string": "\"Fico feliz que você ainda pensou em mim, mesmo que parecesse bastante ocupado.\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "no_one",
 			"expression": "gone",
-			"string": "\"Now I know it's because you were working so hard to add me to the game and sing with me!\"",
+			"string": "\"Agora eu sei que é por que você esteve trabalhando duro tentando achar um jeito de me adicionar no jogo e cantar comigo!\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "no_one",
 			"expression": "gone",
-			"string": "\"Isn't that right, {USERNAME}?\"",
+			"string": "\"Não é verdade, jogador?\"",
 			"stringOBS": "\"And everyone tuning in can watch too. Are you excited, viewers?\"",
 			"side": "left"
 		},
@@ -42,35 +42,35 @@
 			"isCommand": false,
 			"name": "no_one",
 			"expression": "gone",
-			"string": "\"Hmm, there’s only enough space here for us to sing one song-\"",
+			"string": "\"Hmm, Só existe espaço para que possamos cantar uma única música-\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "no_one",
 			"expression": "gone",
-			"string": "\"-and unfortunately since this game doesn’t have microphone support, we can’t exactly “sing” together.\"",
+			"string": "\"-e infelizmente, já que esse jogo não tem suporte a microfone, nós não podemos 'cantar' juntos exatamente.\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "no_one",
 			"expression": "gone",
-			"string": "\"But that blue haired kid’s vocal data is still stored here, why don’t we just use that for you?\"",
+			"string": "\"Mas os dados daquele garoto do cabelo azul ainda devem estar guardados aqui, por que não usarmos ele para você?\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "no_one",
 			"expression": "gone",
-			"string": "\"I want to sing with you for as long as I can, so expect this to be very, very difficult.\"",
+			"string": "\"Eu quero cantar com você por quanto tempo eu conseguir, então espere que isso seja muito, muito, MUITO difícil.\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "no_one",
 			"expression": "gone",
-			"string": "\"Here we go.\"",
+			"string": "\"Lá vamos nós.\"",
 			"side": "left"
 		}
 	]

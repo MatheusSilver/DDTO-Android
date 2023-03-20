@@ -7,84 +7,84 @@
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "neutral",
-			"string": "What a lovely performance that was! I knew you had it in you.",
+			"string": "Aquilo foi uma performance incrível! Eu sabia que você tinha talento.",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "sad",
-			"string": "Today has been one of the only real times I've tried to sing in front of strangers.",
+			"string": "Hoje foi uma das únicas vezes que eu tive que cantar na frente de estranhos.",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "uhoh",
-			"string": "I'm glad that all the practice had paid off.",
+			"string": "Eu tô feliz que todo aquele treino tenha valido a pena.",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "neutral",
-			"string": "I quite liked the song choice as well. Where is it from?",
+			"string": "Eu gostei bastante da escolha de canção também. De onde quê ela é?",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "gasp",
-			"string": "Oh! I... I wrote that song.",
+			"string": "Ah! Eu... escrevi aquela canção.",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "gasp",
-			"string": "It's something I spend a lot of long nights working on. It was meant for someone who means a lot to me.",
+			"string": "É algo que eu passo muito tempo em longas noites trabalhando. Era dedicado pra alguém que significa muito pra mim.",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "sad",
-			"string": "Unfortunately... a lot happened, and I lost my chance to sing it to them... ",
+			"string": "Infelizmente... muita coisa aconteceu, e eu perdi minha chance de cantar para essa pessoa...",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "gasp",
-			"string": "I still don't know where I am now, so I don't know if I'll ever get to share it with them... ",
+			"string": "Eu ainda não sei onde eu estou, então eu não sei se eu vou conseguir mostrar isso para ela...",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "gasp",
-			"string": "-though I don't know if they'll even want to hear it.",
+			"string": "-Embora eu nem sei se a pessoa iria querer escutar ela.",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "neutral",
-			"string": "Ah, such a tragic story you've found yourself entangled in.",
+			"string": "Ah, mas em que trágica história você se enrolou dentro de.",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "neutral",
-			"string": "I can promise that this place is one of no such tragedies.",
+			"string": "Eu posso lhe prometer que este lugar é um que não tem tais trágedias.",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "happy",
-			"string": "I'll be around whenever you have a song in your heart that needs to be sang!",
+			"string": "Eu irei estar por perto sempre quê você estiver com uma canção em seu coração que precisa ser cantada!",
 			"side": "left"
 		},
 		{
@@ -95,14 +95,14 @@
 			"isCommand": false,
 			"name": "monika",
 			"expression": "gasp",
-			"string": "(This guy is awfully flirtatious all of a sudden- especially after he snapped at me and that kid earlier...)",
+			"string": "(Esse cara está dando em cima de mim demais de repente- especialmente depois que ele explodiu comigo e com aquele garoto antes...)",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "sad",
-			"string": "(Well. If I didn't end up here, it would've been the recycling bin instead...)",
+			"string": "(Bem. Se eu não tivesse parado aqui, seria uma lixeira em que estaria dentro...)",
 			"side": "right"
 		},
 		{
@@ -116,7 +116,7 @@
 			"isCommand": false,
 			"name": "monika",
 			"expression": "sad",
-			"string": "(I hope the others are okay.)",
+			"string": "(Eu espero que as outras estejam bem.)",
 			"side": "right"
 		},
 		{
@@ -130,7 +130,7 @@
 			"isCommand": false,
 			"name": "monika",
 			"expression": "sad",
-			"string": "(After what happened, I thought restoring their character files and leaving would be what's best for the club... and for the one I loved...)",
+			"string": "(Depois do que aconteceu, eu achei que restaurar os arquivos de personagem delas e sair seria a melhor coisa para o clube... e para aquele que eu amava...)",
 			"side": "right"
 		},
 		{
@@ -148,14 +148,14 @@
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "hmm",
-			"string": "Is something the matter?",
+			"string": "Tem algo lhe incomodando?",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "gasp",
-			"string": "Ah- I'm fine. I don't know what that was-",
+			"string": "Ah- Eu estou bem. Eu não sei o que foi aquilo-",
 			"side": "right"
 		}
 	]

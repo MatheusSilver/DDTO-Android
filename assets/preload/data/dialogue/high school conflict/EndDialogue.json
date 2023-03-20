@@ -13,21 +13,21 @@
 			"isCommand": false,
 			"name": "monika",
 			"expression": "happy",
-			"string": "You kept up really well with my song!",
+			"string": "Você manteu o ritmo muito bem com minha música!",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "neutral",
-			"string": "Ah, I haven't felt this happy in a while!",
+			"string": "Ah, já faz um bom tempo desde que eu me sentia tão feliz!",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "neutral",
-			"string": "Could we sing again?",
+			"string": "Podemos cantar de novo?",
 			"side": "left"
 		},
 		{
@@ -41,21 +41,21 @@
 			"isCommand": false,
 			"name": "monika",
 			"expression": "happy",
-			"string": "Alright! Here we go-",
+			"string": "Tudo bem! Lá vamos nó-",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "whodis",
-			"string": "Who the hell are you?!",
+			"string": "Quem diabos é você?!",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "gasp",
-			"string": "-huh?",
+			"string": "-hm?",
 			"side": "left"
 		}
 	]

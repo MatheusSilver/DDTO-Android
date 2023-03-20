@@ -4,63 +4,63 @@
 			"isCommand": false,
 			"name": "no_one",
 			"expression": "gone",
-			"string": "\"Notice anything different?\"",
+			"string": "\"Percebe alguma coisa diferente?\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "no_one",
 			"expression": "gone",
-			"string": "\"Ahaha, I wanted to make this moment a little extra special.\"",
+			"string": "\"Ahaha, eu quis deixar esse momento um pouco mais especial.\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "no_one",
 			"expression": "gone",
-			"string": "\"I’ve noticed that when we sing, my voice gets turned into an assortment of random vowels and sounds.\"",
+			"string": "\"Eu percebi que quando cantamos, minha voz se transformou num arranjo de sons e vogais aleatórias.\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "no_one",
 			"expression": "gone",
-			"string": "\"As fun as it can still be that way, there’s so much I’m trying to say to you that doesn’t come through.\"",
+			"string": "\"Mesmo que isso seja divertido, existe muitas coisas que quero dizer, que não funcionam daquela forma.\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "no_one",
 			"expression": "gone",
-			"string": "\"So I did a little digging into this game’s files myself, and I think I’ve successfully bypassed that feature!\"",
+			"string": "\"Então eu explorei um pouquinho os arquivos do jogo por mim mesma, e acho que consegui superar essa mecânica!\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "no_one",
 			"expression": "gone",
-			"string": "\"Unfortunately, you’ll still need to use Boyfriend’s voice to sing back, though I won’t make you sing against all those death notes this time, ahaha.\"",
+			"string": "\"Infelizmente, você ainda vai precisar usar a voz do Boyfriend para cantar, entretanto, não vou fazer você cantar contra todas aquelas notas mortais desta vez, ahaha.\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "no_one",
 			"expression": "gone",
-			"string": "\"Just remember to save me once the game tries to delete me again, okay, my love?\"",
+			"string": "\"Apenas se lembre de me salvar quando o jogo tentar me deletar de novo, okay, meu amor?\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "no_one",
 			"expression": "gone",
-			"string": "\"Ah, I’m getting sidetracked.\"",
+			"string": "\"Ah, Estou me distraindo muito.\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "no_one",
 			"expression": "gone",
-			"string": "\"Like I said, I want this to be very special, so here’s something I wrote specially for you.\"",
+			"string": "\"Como eu disse, eu quero que isso seja muito especial, então aqui está algo que escrevi especialmente para você.\"",
 			"side": "left"
 		}
 	]

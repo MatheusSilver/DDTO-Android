@@ -14,21 +14,21 @@
 			"isCommand": false,
 			"name": "monika",
 			"expression": "uhoh",
-			"string": "Ahaha, I should know better-",
+			"string": "Ahaha, eu já devia ter aprendido.",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "uhoh",
-			"string": "Trying to interfere with people's love lives again.",
+			"string": "Tentando interferir com a vida amorosa dos outros de novo.",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "hmm",
-			"string": "I'll leave you be.",
+			"string": "Eu vou te deixar em paz.",
 			"side": "left"
 		},
 		{
@@ -73,28 +73,28 @@
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "hmm",
-			"string": "So, you weren't the one who stole my mic?",
+			"string": "Então, não foi você quem roubou o meu microfone?",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "sad",
-			"string": "That blue-haired kid gave it to me when I showed up.",
+			"string": "Aquele garoto de cabelo azul deu ele pra mim quando apareci.",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "sad",
-			"string": "I don't know where he got it.",
+			"string": "Não faço ideia da onde que ele o arranjou.",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "sad",
-			"string": "I don't even know how I got here, for that matter.",
+			"string": "Eu nem ao menos sei como que cheguei aqui, pra início de conversa.",
 			"side": "right"
 		},
 		{
@@ -108,42 +108,42 @@
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "hmm",
-			"string": "And what exactly happened after our... unintentional duet?",
+			"string": "E o que aconteceu após o nosso... dueto não intencional?",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "sad",
-			"string": "I... got rid of everyone.",
+			"string": "Eu... me livrei de todo mundo.",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "sad",
-			"string": "Temporarily. It's something I can do, but that's a long story.",
+			"string": "Temporáriamente. É algo que posso fazer, mas isso é uma longa história-",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "sad",
-			"string": "-and that included that kid's girlfriend.",
+			"string": "-e isso incluiu a namorada daquele garoto.",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "uhoh",
-			"string": "Ahaha, old habits die hard, as they say.",
+			"string": "Ahaha, velhos hábitos difícilmente morrem, como dizem.",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "hmm",
-			"string": "You got his girl too?",
+			"string": "Até a garota dele?",
 			"side": "left"
 		},
 		{
@@ -157,21 +157,21 @@
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "",
-			"string": "Hah! I bet you really pissed that worm off!",
+			"string": "Hah! Eu aposto que você enfureceu aquele verme!",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "",
-			"string": "I wish I was there to see the look on his hideous baby face.",
+			"string": "Eu queria estar lá pra poder ver a carinha de bebê chorão dele.",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "sad",
-			"string": "He was mad...",
+			"string": "Ele ficou com raiva...",
 			"side": "right"
 		},
 		{
@@ -192,7 +192,7 @@
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "",
-			"string": "Hey.",
+			"string": "Ei.",
 			"side": "left"
 		},
 		{
@@ -206,14 +206,14 @@
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "",
-			"string": "Your performance wasn't half bad earlier.",
+			"string": "Sua performance antes também não foi tão ruim.",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "senpai",
 			"expression": "",
-			"string": "Care for another song?",
+			"string": "Se importa em cantar mais uma música?",
 			"side": "left"
 		},
 		{

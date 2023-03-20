@@ -7,21 +7,21 @@
 			"isCommand": false,
 			"name": "monika",
 			"expression": "gasp",
-			"string": "...huh?",
+			"string": "...hã?",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "gasp",
-			"string": "I thought... they deleted me. After what I did to my friends.",
+			"string": "Eu jurava que... eu fui deletada. Depois do que eu fiz com todo mundo.",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "gasp",
-			"string": "-but where am I now?",
+			"string": "-mas aonde eu estou agora?",
 			"side": "left"
 		},
 		{
@@ -35,7 +35,7 @@
 			"isCommand": false,
 			"name": "monika",
 			"expression": "gasp",
-			"string": "-Oh! Hello?",
+			"string": "-Oh! Olá?",
 			"side": "left"
 		},
 		{
@@ -49,7 +49,7 @@
 			"isCommand": false,
 			"name": "monika",
 			"expression": "gasp",
-			"string": "You wanna sing?",
+			"string": "Você quer... cantar?",
 			"side": "left"
 		},
 		{
@@ -63,35 +63,35 @@
 			"isCommand": false,
 			"name": "monika",
 			"expression": "gasp",
-			"string": "...Things are happening really fast.",
+			"string": "...Tudo está acontecendo tão rápido.",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "neutral",
-			"string": "-but you know what?",
+			"string": "-mas sabe de uma coisa?",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "happy",
-			"string": "I'd love to!",
+			"string": "Eu adoraria!",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "neutral",
-			"string": "Usually I'd play piano while I sing, but this isn't a bad change of pace.",
+			"string": "Normalmente eu tocaria o piano enquanto canto, mas não custa nada variar de vez em quando.",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "happy",
-			"string": "So... Yeah!",
+			"string": "Então... vamos!",
 			"side": "left"
 		}
 	]

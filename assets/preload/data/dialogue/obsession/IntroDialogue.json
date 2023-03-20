@@ -8,7 +8,7 @@
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "yeah",
-			"string": "\"Yuri, your singing voice is amazing! Sing again, sing again! I wanna hear!\"",
+			"string": "\"Yuri, sua voz cantando é incrível! Canta de novo, canta de novo! Eu quero ouvir!\"",
 			"side": "left"
 		},
 		{
@@ -22,7 +22,7 @@
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "neutral",
-			"string": "\"Are you ok, Natsuki?\"",
+			"string": "\"Você está bem, Natsuki?\"",
 			"side": "left"
 		},
 		{
@@ -35,37 +35,37 @@
 		{
 			"isCommand": true,
 			"name": "autoskip",
-			"string": "\"Bleh... I'm not feeling so gooooooooooo-\""
+			"string": "\"Bleh... Eu não tô me sentindo tão beeeeeeeeeee-\""
 		},
 		{
 			"isCommand": true,
 			"name": "autoskip",
-			"string": "\"oooooooooooooooooooooooo\""
+			"string": "\"eeeeeeeeeeeeeeeeeeeeeeee\""
 		},
 		{
 			"isCommand": true,
 			"name": "autoskip",
-			"string": "\"ooooooooooooo\""
+			"string": "\"eeeeeeeeeeeee\""
 		},
 		{
 			"isCommand": true,
 			"name": "autoskip",
-			"string": "\"oooo\""
+			"string": "\"eeee\""
 		},
 		{
 			"isCommand": true,
 			"name": "autoskip",
-			"string": "\"ooooooo\""
+			"string": "\"eeeeeee\""
 		},
 		{
 			"isCommand": true,
 			"name": "autoskip",
-			"string": "\"oooo\""
+			"string": "\"eeee\""
 		},
 		{
 			"isCommand": true,
 			"name": "autoskip",
-			"string": "\"ooo\""
+			"string": "\"eee\""
 		},
 		{
 			"isCommand": true,
@@ -87,28 +87,28 @@
 			"isCommand": false,
 			"name": "natsuki",
 			"expression": "sick",
-			"string": "this gets skipped for some reason",
+			"string": "isso foi pulado por alguma razão",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "natsuki",
 			"expression": "sick",
-			"string": "\"I'm not feeling so good.\"",
+			"string": "\"Eu não tô me sentindo tão bem.\"",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "ehh",
-			"string": "\"Ah- I’m gonna walk Natsuki to the nurse’s office.\"",
+			"string": "\"Ah- Eu vou acompanhar a Natsuki para a enfermaria.\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "neutral",
-			"string": "\"Y-you guys have fun singing though!\"",
+			"string": "\"M-Mas vocês se divirtam cantando aí!\"",
 			"side": "left"
 		},
 		{
@@ -143,21 +143,21 @@
 			"isCommand": false,
 			"name": "yuri",
 			"expression": "smile",
-			"string": "\"Singing is much nicer than I thought.\"",
+			"string": "\"Cantar é tão melhor do que eu pensava\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "yuri",
 			"expression": "smile",
-			"string": "\"Its a nice alternative means to... release my emotions.\"",
+			"string": "\"É uma boa alternativa para... soltar minhas emoções.\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "yuri",
 			"expression": "smile",
-			"string": "\"Let’s sing again. Right now.\"",
+			"string": "\"Vamos cantar de novo. Agora.\"",
 			"side": "left"
 		},
 		{
