@@ -28,7 +28,7 @@
 			"isCommand": false,
 			"name": "natsuki",
 			"expression": "neutral",
-			"string": "\"Ei, você é a que tem a voz boa pro canto na verdade, no entanto. Mais rápido não quer dizer sempre melhor, né?\"",
+			"string": "\"Ei, você é a que tem a voz boa pro canto na verdade. Mais rápido não quer dizer sempre melhor, né?\"",
 			"side": "right"
 		},
 		{
@@ -43,7 +43,6 @@
 			"name": "natsuki",
 			"expression": "hmmph",
 			"string": "\"E o que há de errado nisso? Você faz elas soarem perfeitas! Eu soaria péssima, mesmo se tentasse cantar no seu tom mais profundo!\"",
-			"string": "\"And what's wrong with that? You make them sound perfect! I'll sound bad if I even try to sing in your deeper tones!\"",
 			"side": "right"
 		},
 		{
