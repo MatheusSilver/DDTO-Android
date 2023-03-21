@@ -51,7 +51,7 @@ class VideoSubState extends MusicBeatSubstate
 	function onURLChanging(url:String)
 	{
 		text.alpha = 1;
-		if (url == 'http://exitme/')
+		if (url == 'http://exitme(.*)') //Não tenho certeza sobre isso tambem, mas deve fazer com que o player de vídeo feche sozinho.
 			onClose(); // drity hack lol
 		trace("WebView is about to open: " + url);
 	}
