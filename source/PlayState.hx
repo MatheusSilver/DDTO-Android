@@ -2748,7 +2748,7 @@ class PlayState extends MusicBeatState
 				scorePop = false;
 				if (isStoryMode && showCutscene)
 				{
-					LoadingState.loadAndSwitchState(new VideoState('assets/videos/metaintro', new EstadoDeTroca()));
+					comecarvideo('assets/videos/metaintro');
 				}
 				else
 				{
@@ -3058,7 +3058,8 @@ class PlayState extends MusicBeatState
 						add(blackScreentwo);
 					});
 
-					LoadingState.loadAndSwitchState(new VideoState('assets/videos/monika', new EstadoDeTroca()));
+					//LoadingState.loadAndSwitchState(new VideoState('assets/videos/monika', new EstadoDeTroca()));
+					//Vou fazer isso aqui com sprites igual ao Monika Week Original
 				});
 			}
 			case 'pixelend':
@@ -3098,15 +3099,15 @@ class PlayState extends MusicBeatState
 			}
 			case 'monikatransform':
 			{
-				LoadingState.loadAndSwitchState(new VideoState('assets/videos/monikacodin', new EstadoDeTroca()));
+				comecarvideo('assets/videos/monikacodin');
 			}
 			case 'senpaitransform':
 			{
-				LoadingState.loadAndSwitchState(new VideoState('assets/videos/senpaicodin', new EstadoDeTroca()));
+				comecarvideo('assets/videos/senpaicodin');
 			}
 			case 'youregoingtophilly':
 			{
-				LoadingState.loadAndSwitchState(new VideoState('assets/videos/youregoingtophilly', new EstadoDeTroca()));
+				comecarvideo('assets/videos/youregoingtophilly');
 			}
 			case 'wiltedbgin':
 			{
@@ -4011,6 +4012,9 @@ class PlayState extends MusicBeatState
 
 			persistentUpdate = true;
 			persistentDraw = true;
+			
+			if (FlxG.sound.music.volume <= 0.1)
+				FlxG.sound.music.fadeIn(0.1, 0.6);
 
 			if (!SaveData.npsDisplay)
 				scoreTxt.text = Ratings.CalculateRanking((practiceMode ? practiceScore : songScore), nps, maxNPS, accuracy);
@@ -8774,6 +8778,16 @@ class PlayState extends MusicBeatState
 				blackbarBottom.alpha = 0.001;
 			});
 		}
+	}
+
+	function comecarvideo(video:String) //coiso chato...
+	{
+		FlxG.sound.music.fadeOut(0.3);
+		persistentUpdate = false;
+		persistentDraw = true;
+		paused = true;
+		
+		openSubState(new VideoSubState(video));
 	}
 
 	function bringInThingie()
