@@ -51,6 +51,8 @@ typedef DialogueLine =
 class DialogueBox extends FlxSpriteGroup
 {
 	var box:FlxSprite;
+	
+	var botaoSkip:FlxSprite:
 
 	var curCharacter:String = '';
 	var prevCharacter:Array<String> = ['monika', 'left'];
@@ -140,12 +142,20 @@ class DialogueBox extends FlxSpriteGroup
 		skipText.borderQuality = 1;
 		skipText.antialiasing = SaveData.globalAntialiasing;
 		add(skipText);
+		
+		botaoSkip = new FlxSprite(FlxG.width - 300, 50);
+		botaoSkip.loadGraphic(Paths.image('botaoSkip', 'doki');
+		botaoSkip.antialiasing = SaveData.globalAntialiasing;
+		#if mobile
+			add(BotaoSkip);
+		#end
 
 		if (PlayState.SONG.noteStyle == 'pixel' || isPixel)
 			skipText.font = LangUtil.getFont('vcr');
 
 		if (dialogueData.canSkip != null)
 		{
+			botaoSkip.visible = dialogeData.canSkip;
 			skipText.visible = dialogueData.canSkip;
 			canFullSkip = dialogueData.canSkip;
 		}
@@ -161,9 +171,11 @@ class DialogueBox extends FlxSpriteGroup
 			portraitRight.alpha = 0.001;
 			portraitLeft.alpha = 0.001;
 			swagDialogue.visible = false;
-			if (canFullSkip)
+			if (canFullSkip){
 				skipText.visible = false;
-		}
+				botaoSkip.visible = false;
+			}
+		}	
 	}
 
 	var dialogueOpened:Bool = false;
@@ -196,10 +208,12 @@ class DialogueBox extends FlxSpriteGroup
 			startDialogue();
 			dialogueStarted = true;
 		}
+		
+		
 
 		if (canSkip && !playingCutscene)
 		{
-			if ((PlayerSettings.player1.controls.BACK #if android || FlxG.android.justReleased.BACK #end) && !stopspamming && canFullSkip && !playingCutscene && dialogueStarted)
+			if ((PlayerSettings.player1.controls.BACK #if android || BSLTouchUtils.aperta(botaoSkip, 0) #end) && !stopspamming && canFullSkip && !playingCutscene && dialogueStarted)
 			{
 				isEnding = true;
 				stopspamming = true;
@@ -245,6 +259,7 @@ class DialogueBox extends FlxSpriteGroup
 		portraitLeft.alpha = 0.001;
 		portraitRight.alpha = 0.001;
 		skipText.visible = false;
+		botaoSkip.visible - false;
 
 		if (isPixel)
 		{
@@ -604,7 +619,10 @@ class DialogueBox extends FlxSpriteGroup
 					swagDialogue.visible = false;
 					swagDialogue.sounds = [FlxG.sound.load(Paths.sound('dialogue/pixelText'), 0)];
 					if (canFullSkip)
+					{
 						skipText.visible = false;
+						botaoSkip.visible = false;
+					}
 				}
 
 				FlxTween.tween(blackscreen, {alpha: 1}, commandDuration, {
@@ -627,7 +645,10 @@ class DialogueBox extends FlxSpriteGroup
 					swagDialogue.visible = false;
 					swagDialogue.sounds = [FlxG.sound.load(Paths.sound('dialogue/pixelText'), 0)];
 					if (canFullSkip)
+					{
 						skipText.visible = false;
+						botaoSkip.visible = false;
+					}
 				}
 
 				FlxTween.tween(blackscreen, {alpha: 0}, commandDuration, {
@@ -635,7 +656,10 @@ class DialogueBox extends FlxSpriteGroup
 					onComplete: function(twn:FlxTween)
 					{
 						if (canFullSkip && curDialogue.string.toLowerCase() == 'hidedialogue')
+						{
 							skipText.visible = true;
+							botaoSkip.visible = true;
+						}
 					}
 				});
 			case 'hidedialogue':
@@ -680,14 +704,20 @@ class DialogueBox extends FlxSpriteGroup
 					playingCutscene = true;
 
 					if (canFullSkip)
+					{
 						skipText.visible = false;
+						botaoSkip.visible = false;
+					}
 
 					new FlxTimer().start(commandDuration, function(tmr:FlxTimer)
 					{
 						playingCutscene = false;
 
 						if (canFullSkip)
+						{
 							skipText.visible = true;
+							botaoSkip.visible = true;
+						}	
 					});
 				}
 		}
