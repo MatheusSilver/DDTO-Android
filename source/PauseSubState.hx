@@ -1,6 +1,5 @@
 package;
 
-import flixel.FlxCamera;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.group.FlxGroup.FlxTypedGroup;
@@ -10,6 +9,7 @@ import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
+import flixel.input.mouse.FlxMouseEventManager;
 
 using StringTools;
 #if (flixel >= "5.3.0")
@@ -49,6 +49,8 @@ class PauseSubState extends MusicBeatSubstate
 	var bg:FlxSprite;
 	var logo:FlxSprite;
 	var logoBl:FlxSprite;
+
+	var mouseManager:FlxMouseEventManager = new FlxMouseEventManager();
 
 	var pauseArt:FlxSprite;
 
@@ -230,22 +232,19 @@ class PauseSubState extends MusicBeatSubstate
 
 		for (i in 0...menuItems.length)
 		{
-			var songText:FlxText = new FlxText(-350, 370 + (i * 80), 300, menuItems[i], 10); //Só pra ficar mais confortável pra tocar
+			var songText:FlxText = new FlxText(-350, 370 + (i * 80), 300, menuItems[i]); //Só pra ficar mais confortável pra tocar
 			songText.setFormat(LangUtil.getFont('riffic'), 27, FlxColor.WHITE, LEFT);
 			songText.antialiasing = SaveData.globalAntialiasing;
 			songText.setBorderStyle(OUTLINE, itmColor, 2);
 			songText.ID = i;
 			grpMenuShit.add(songText);
+			mouseManager.add(songText, onMouseDown);
 
 
-			FlxTween.tween(songText, {x: textX}, 1.2 + (i * 0.2), {
-				ease: FlxEase.elasticOut,
-				onComplete: function(twn:FlxTween)
-				{
-					songText.updateHitbox();
-				}
-			});
+			FlxTween.tween(songText, {x: textX}, 1.2 + (i * 0.2), {ease: FlxEase.elasticOut});
 		}
+
+		add(mouseManager);
 
 		globalSongOffset = new FlxText(5, FlxG.height - 42, 0, LangUtil.getString('cmnOffset') + ': ${SaveData.offset} ms', 12);		globalSongOffset.alpha = 0;
 		globalSongOffset.antialiasing = SaveData.globalAntialiasing;
@@ -312,23 +311,17 @@ class PauseSubState extends MusicBeatSubstate
 			});
 		}
 
-		changeSelection();
-
 		cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
+	}
+
+	function onMouseDown(txt:FlxText):Void
+	{
+		if (canPress)
+			selectCoiso(txt.ID);
 	}
 
 	override function update(elapsed:Float)
 	{
-		grpMenuShit.forEach(function(txt:FlxSprite)
-		{
-			#if (debug && !mobile)
-			trace(grpMenuShit.length);
-			if(FlxG.mouse.overlaps(txt))
-				trace(txt.ID);
-			#end
-			if (FlxG.mouse.overlaps(txt) && FlxG.mouse.justPressed && canPress)
-				selectCoiso(txt.ID);
-		});
 
 		super.update(elapsed);
 
@@ -410,9 +403,6 @@ class PauseSubState extends MusicBeatSubstate
 					closeMenu();
 				case "Reiniciar":
 					MusicBeatState.resetState();
-				case "Change Difficulty":
-					menuItems = difficultyChoices;
-					regenMenu();
 				case "Modo Treino":
 					PlayState.practiceMode = !PlayState.practiceMode;
 					practiceText.visible = PlayState.practiceMode;
@@ -445,48 +435,14 @@ class PauseSubState extends MusicBeatSubstate
 						PlayState.storyDifficulty = 2;
 					}
 					MusicBeatState.resetState();
-				case "Back":
-					menuItems = pauseOG;
-					regenMenu();
 			}
 	}
 	override function destroy()
 	{
 		pauseMusic.destroy();
-		FlxG.mouse.visible = !Main.mouseVisivel;
+		FlxG.mouse.visible = false;
 
 		super.destroy();
-	}
-
-	function changeSelection(change:Int = -1):Void
-	{
-		curSelected = change;
-		FlxG.sound.play(Paths.sound('scrollMenu'), 0.7);
-
-		grpMenuShit.forEach(function(txt:FlxText)
-		{
-			if (isLibitina)
-			{
-				if (txt.ID == curSelected)
-					txt.setFormat(LangUtil.getFont('dos'), 27, FlxColor.WHITE, LEFT);
-				else
-					txt.setFormat(LangUtil.getFont('dos'), 27, itmColor, LEFT);
-			}
-			else if (isVallHallA)
-			{
-				if (txt.ID == curSelected)
-					txt.setFormat('CyberpunkWaifus', 32, itmColor, LEFT);
-				else
-					txt.setFormat('CyberpunkWaifus', 32, FlxColor.WHITE, LEFT);
-			}
-			else
-			{
-				if (txt.ID == curSelected)
-					txt.setBorderStyle(OUTLINE, selColor, 2);
-				else
-					txt.setBorderStyle(OUTLINE, itmColor, 2);
-			}
-		});
 	}
 
 	function changeOffset(change:Float = 0, force:Bool = false):Void
@@ -551,56 +507,6 @@ class PauseSubState extends MusicBeatSubstate
 
 			close();
 		});
-	}
-
-	function regenMenu()
-	{
-		while (grpMenuShit.members.length > 0)
-		{
-			grpMenuShit.remove(grpMenuShit.members[0], true);
-		}
-
-		for (i in 0...menuItems.length)
-		{
-			var songText:FlxText = new FlxText(50, 370 + (i * 50), 0, menuItems[i]);
-			songText.setFormat(LangUtil.getFont('riffic'), 27, FlxColor.WHITE, LEFT);
-			songText.antialiasing = SaveData.globalAntialiasing;
-			songText.setBorderStyle(OUTLINE, 0xFFFF7CFF, 2);
-			songText.ID = i;
-			grpMenuShit.add(songText);
-		}
-
-		if (isLibitina)
-		{
-			grpMenuShit.forEach(function(txt:FlxText)
-			{
-				txt.setBorderStyle(OUTLINE, FlxColor.WHITE, 1.25);
-
-				if (txt.ID == curSelected)
-					txt.setFormat(LangUtil.getFont('dos'), 27, FlxColor.WHITE, LEFT);
-				else
-					txt.setFormat(LangUtil.getFont('dos'), 27, itmColor, LEFT);
-			});
-		}
-		else if (isVallHallA)
-		{
-			grpMenuShit.forEach(function(txt:FlxText)
-			{
-				txt.x += 25;
-				txt.y -= 75;
-
-				txt.setBorderStyle(OUTLINE, FlxColor.BLACK, 0);
-				txt.antialiasing = false;
-
-				if (txt.ID == curSelected)
-					txt.setFormat('CyberpunkWaifus', 32, itmColor, LEFT);
-				else
-					txt.setFormat('CyberpunkWaifus', 32, FlxColor.WHITE, LEFT);
-			});
-		}
-
-		curSelected = 0;
-		changeSelection();
 	}
 
 	/*

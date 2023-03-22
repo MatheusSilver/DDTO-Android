@@ -3032,7 +3032,6 @@ class PlayState extends MusicBeatState
 
 	var curCutscene:String = '';
 	var endsceneone:FlxSprite;
-	var monikatransformer:FlxSprite;
 
 	public function playbackCutscene(id:String, length:Float):Void
 	{
@@ -3058,7 +3057,7 @@ class PlayState extends MusicBeatState
 						add(blackScreentwo);
 					});
 
-					//LoadingState.loadAndSwitchState(new VideoState('assets/videos/monika', new EstadoDeTroca()));
+					comecarvideo('assets/videos/monika');
 					//Vou fazer isso aqui com sprites igual ao Monika Week Original
 				});
 			}
@@ -3146,10 +3145,7 @@ class PlayState extends MusicBeatState
 				remove(endsceneone);
 			}
 			case 'monikatransform':
-			{
 				remove(blackScreentwo);
-				remove(monikatransformer);
-			}
 		}
 
 		curCutscene = '';
@@ -8782,11 +8778,6 @@ class PlayState extends MusicBeatState
 
 	function comecarvideo(video:String) //coiso chato...
 	{
-		FlxG.sound.music.fadeOut(0.3);
-		persistentUpdate = false;
-		persistentDraw = true;
-		paused = true;
-		
 		openSubState(new VideoSubState(video));
 	}
 
