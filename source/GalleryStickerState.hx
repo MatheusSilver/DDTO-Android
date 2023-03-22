@@ -21,6 +21,9 @@ class GalleryStickerState extends MusicBeatState
 	var switchState:FlxSprite;
 	var sticker:FlxSprite;
 	var authorText:FlxText;
+	
+	var setaEsquerda:FlxSprite;
+	var setaDireita:FlxSprite;
 
 	var galleryData:Array<String> = CoolUtil.coolTextFile(Paths.txt('data/stickerData', 'preload'));
 	var stickerData:Array<String> = [];
@@ -80,6 +83,24 @@ class GalleryStickerState extends MusicBeatState
 		authorText.y += LangUtil.getFontOffset('aller');
 		authorText.antialiasing = SaveData.globalAntialiasing;
 		add(authorText);
+		
+		setaEsquerda = new FlxSprite(50,0);
+		setaEsquerda.loadGraphic(Paths.image('seta','doki');
+		setaEsquerda.antialiasing = SaveData.globalAntialiasing;
+		setaEsquerda.setGraphicSize(std.Int(setaEsquerda.width * 1));
+		setaEsquerda.updateHitbox();
+		setaEsquerda.screenCenter(Y);
+		add(setaEsquerda);
+
+		setaDireita = new FlxSprite(0,0);
+		setaDireita.loadGraphic(Paths.image('seta','doki');
+		setaDireita.antialiasing = SaveData.globalAntialiasing;
+		setaDireita.setGraphicSize(std.Int(setaEsquerda.width * 1));
+		setaDireita.x = FlxG.width - setaDireita.width - 50;
+		setaDireita.flipX = true;
+		setaDireita.updateHitbox();
+		setaDireita.screenCenter(Y);
+		add(setaDireita);
 
 		changeItem();
 
@@ -100,13 +121,13 @@ class GalleryStickerState extends MusicBeatState
 			MusicBeatState.switchState(new MainMenuState());
 		}
 
-		if (controls.LEFT_P)
+		if (controls.LEFT_P || BSLTouchUtils.aperta(setaEsquerda,0)=='primeiro')
 			changeItem(-1);
 
-		if (controls.RIGHT_P)
+		if (controls.RIGHT_P || BSLTouchUtils.aperta(setaDireita,0)=='primeiro')
 			changeItem(1);
 
-		if (controls.ACCEPT)
+		if (controls.ACCEPT || (BSLTouchUtils.aperta(sticker,0) && !stickerData[curSelected] == 'grandhammer')
 		{
 			FlxG.sound.play(Paths.sound('scrollMenu'));
 			CoolUtil.openURL(urlData[curSelected]);
@@ -120,7 +141,7 @@ class GalleryStickerState extends MusicBeatState
 			dontSpam = true;
 		}
 
-		if (FlxG.keys.justPressed.S)
+		if (FlxG.keys.justPressed.S || BSLTouchUtils.aperta(switchState, 0);
 			MusicBeatState.switchState(new GalleryArtState());
 
 		if (FlxG.sound.music != null)
