@@ -19,6 +19,8 @@ class GalleryArtState extends MusicBeatState
 	var backdrop:FlxBackdrop;
 	var gradient:FlxSprite;
 	var switchState:FlxSprite;
+	var artwork:FlxSprite;
+	var authorText:FlxText;
 	
 	var setaEsquerda:FlxSprite;
 	var setaDireita:FlxSprite;
@@ -124,7 +126,7 @@ class GalleryArtState extends MusicBeatState
 		else if (controls.RIGHT_P || BSLTouchUtils.aperta(setaDireita,0)=='primeiro')
 			changeItem(1);
 
-		if (controls.ACCEPT || (BSLTouchUtils.aperta(artwork,0) && artworkData[curSelected].contains('antipathy'))
+		if (controls.ACCEPT || (BSLTouchUtils.aperta(artwork,0) && !artworkData[curSelected].contains('antipathy'))
 		{
 			FlxG.sound.play(Paths.sound('scrollMenu'));
 			CoolUtil.openURL(urlData[curSelected]);
