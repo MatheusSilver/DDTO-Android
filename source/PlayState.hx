@@ -1514,7 +1514,7 @@ class PlayState extends MusicBeatState
 						}				
 
 						rainBG = new FlxSprite();
-						rainBG.frames = Paths.getSparrowAtlas('libtina/chuva', 'doki');
+						rainBG.frames = Paths.getSparrowAtlas('libitina/chuva', 'doki');
 						rainBG.antialiasing = SaveData.globalAntialiasing;
 						rainBG.animation.addByPrefix('idle', 'chuva', 24, true);
 						rainBG.scrollFactor.set();
