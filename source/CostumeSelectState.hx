@@ -282,6 +282,18 @@ class CostumeSelectState extends MusicBeatState
 			{
 				changeItem(-1);
 			}
+			
+			grpControls.forEach(function(txt:FlxText)
+			{
+				if (!selectingcostume && BSLTouchUtils.aperta(txt, txt.ID)=='primeiro')
+					changeItemDirectly(txt.ID);
+			});
+			
+			grpControlshueh.forEach(function(txt:FlxText)
+			{
+				if (selectingcostume && BSLTouchUtils.aperta(txt, txt.ID)=='primeiro')
+					changeCostumeDirectly(txt.ID);
+			});
 
 			if (controls.DOWN_P && !selectingcostume)
 			{
@@ -482,15 +494,33 @@ class CostumeSelectState extends MusicBeatState
 		}
 	}
 
-	function changeItem(huh:Int = 0)
+	function changeItem(huh:Int = 20) //PT1
 	{
 		FlxG.sound.play(Paths.sound('scrollMenu'));
 		curSelected += huh;
 
-		if (curSelected >= character.length)
-			curSelected = 0;
-		if (curSelected < 0)
-			curSelected = character.length - 1;
+		var daChoice:String = character[curSelected];
+
+		if (!selectingcostume)
+		{
+			chara.color = 0xFFFFFF;
+			loadcharacter(daChoice);
+		}
+
+		grpControls.forEach(function(txt:FlxText)
+		{
+			if (txt.ID == curSelected)
+				txt.setBorderStyle(OUTLINE, 0xFFFFCFFF, 2);
+			else
+				txt.setBorderStyle(OUTLINE, 0xFFFF7CFF, 2);
+		});
+	}
+							
+	function changeItemDirectly(huh:Int = 0) //PT1
+	{
+		FlxG.sound.play(Paths.sound('scrollMenu'));
+		curSelected = huh;
+
 		var daChoice:String = character[curSelected];
 
 		if (!selectingcostume)
@@ -508,7 +538,7 @@ class CostumeSelectState extends MusicBeatState
 		});
 	}
 
-	function changecostume(huh:Int = 0, goingforward:Bool = true)
+	function changecostume(huh:Int = 0, goingforward:Bool = true) //PT2
 	{
 		var daChoice:String = character[curSelected];
 		FlxG.sound.play(Paths.sound('scrollMenu'));
@@ -520,6 +550,45 @@ class CostumeSelectState extends MusicBeatState
 			costumeSelected = 0;
 		if (costumeSelected < 0)
 			costumeSelected = hueh - 1;
+
+		// Checking for data string value
+		var selection = costumeJSON.list[curSelected].costumes[costumeSelected];
+		if (selection.data == '')
+			loadcharacter(daChoice, 'hueh')
+		else
+			loadcharacter(daChoice, selection.data);
+
+		if (costumeUnlocked[curSelected][costumeSelected])
+			chara.color = 0xFFFFFF;
+		else
+			chara.color = 0x000000;
+
+		if (grpControlshueh != null)
+		{
+			grpControlshueh.forEach(function(txt:FlxText)
+			{
+				if (txt.ID == costumeSelected)
+					txt.setBorderStyle(OUTLINE, 0xFFFFCFFF, 2);
+				else
+					txt.setBorderStyle(OUTLINE, 0xFFFF7CFF, 2);
+			});
+		}
+	}
+							
+	function changecostumeDirectly(huh:Int = 0, goingforward:Bool = true) //PT2
+	{
+		var daChoice:String = character[curSelected];
+		FlxG.sound.play(Paths.sound('scrollMenu'));
+		costumeSelected = huh;
+
+		trace(hueh);
+
+		if (costumeSelected >= hueh)
+			costumeSelected = 0;
+		if (costumeSelected < 0)
+			costumeSelected = hueh - 1;
+		
+		//Isso é desnecessário mas é bom para evitar nego safado pilantra ordinaro
 
 		// Checking for data string value
 		var selection = costumeJSON.list[curSelected].costumes[costumeSelected];
