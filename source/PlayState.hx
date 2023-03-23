@@ -8778,6 +8778,11 @@ class PlayState extends MusicBeatState
 
 	function comecarvideo(video:String) //coiso chato...
 	{
+		persistentUpdate = false;
+		persistentDraw = true;
+		paused = true;
+		
+		//Não sei pq mas aparentemente isso é nescessário para abrir um substate... (Pelo lado bom, isso não é igual ao modboa k
 		openSubState(new VideoSubState(video));
 	}
 
