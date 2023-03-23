@@ -1,88 +1,121 @@
 {
 	"animations": [
 		{
-			"loop": false,
 			"offsets": [
 				0,
 				0
 			],
+			"indices": [],
+			"fps": 24,
 			"anim": "idle",
-			"fps": 24,
-			"name": "Yuri Idle0",
-			"indices": []
+			"loop": false,
+			"name": "Yuri Idle0"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				0,
 				0
 			],
-			"anim": "idle-alt",
+			"indices": [],
 			"fps": 24,
-			"name": "Yuri Idle-alt",
-			"indices": []
+			"anim": "idle-alt",
+			"loop": false,
+			"name": "Yuri Idle-alt"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				11,
 				25
 			],
-			"anim": "breath",
+			"indices": [],
 			"fps": 24,
-			"name": "Yuri Breath",
-			"indices": []
+			"anim": "breath",
+			"loop": false,
+			"name": "Yuri Breath"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				-4,
 				-22
 			],
-			"anim": "singLEFT",
+			"indices": [],
 			"fps": 24,
-			"name": "Yuri Sing Note Left",
-			"indices": []
+			"anim": "singLEFT",
+			"loop": false,
+			"name": "Yuri Sing Note Left"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				16,
 				1
 			],
-			"anim": "singRIGHT",
+			"indices": [],
 			"fps": 24,
-			"name": "Yuri Sing Note Right",
-			"indices": []
+			"anim": "singRIGHT",
+			"loop": false,
+			"name": "Yuri Sing Note Right"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				23,
 				24
 			],
-			"anim": "singUP",
+			"indices": [],
 			"fps": 24,
-			"name": "Yuri Sing Note Up",
-			"indices": []
+			"anim": "singUP",
+			"loop": false,
+			"name": "Yuri Sing Note Up"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				-8,
 				-21
 			],
-			"anim": "singDOWN",
+			"indices": [],
 			"fps": 24,
-			"name": "Yuri Sing Note Down",
-			"indices": []
+			"anim": "singDOWN",
+			"loop": false,
+			"name": "Yuri Sing Note Down"
+		}
+	],
+	"costumes": "yuri",
+	"costumelist": [
+		{
+			"subfolder":true,
+			"internal_Name": "blueskies",
+			"charFile":"yuri-blueskies"
+		},
+		{
+			"subfolder":true,
+			"internal_Name": "casual",
+			"charFile":"yuri-casual"
+		},
+		{
+			"subfolder":true,
+			"internal_Name": "picnic",
+			"charFile":"yuri-picnic"
+		},
+		{
+			"subfolder":true,
+			"internal_Name": "taki",
+			"charFile":"yuri-taki"
+		},
+		{
+			"subfolder":true,
+			"internal_Name": "derby",
+			"charFile":"yuri-derby"
+		},
+		{
+			"subfolder":true,
+			"internal_Name": "tabi",
+			"charFile":"yuri-tabi"
 		}
 	],
 	"no_antialiasing": false,
 	"image": "characters/yuri/Doki_Yuri_Assets",
 	"position": [
-		90,
-		-160
+		0,
+		-350
 	],
 	"healthicon": "yuri",
 	"flip_x": false,
@@ -92,9 +125,9 @@
 		210
 	],
 	"camera_position": [
-		-90,
-		-190
+		0,
+		0
 	],
 	"sing_duration": 6,
-	"scale": 2
+	"scale": 1
 }

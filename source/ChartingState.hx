@@ -889,13 +889,11 @@ class ChartingState extends MusicBeatState
 		if (FlxG.sound.music != null)
 		{
 			Conductor.songPosition = FlxG.sound.music.time + _song.offset;
-			FlxG.sound.music.pitch = songSpeed;
 		}
 
 		if (vocals.playing)
 		{
 			vocals.volume = (_song.needsVoices ? 1 : 0);
-			vocals.pitch = songSpeed;
 		}
 
 		_song.song = typingShit.text;

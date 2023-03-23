@@ -21,7 +21,7 @@
 	<window width="1280" height="720" fps="" background="#000000" hardware="true" vsync="false" orientation="landscape" fullscreen="false" resizable="true"/>
 
 	<!--Mobile/Switch-specific-->
-	<window if="mobile" orientation="landscape" fullscreen="true" width="1280" height="720" resizable="false"/>
+	<window if="mobile" orientation="landscape" fullscreen="true" resizable="false" allow-shaders="true" require-shaders="true" allow-high-dpi="true" />
 	<define name="mobileC" if="mobile" />
 	<assets path="assets/shared/images/hitbox"/>
 	<!-- _____________________________ DDTO Settings ____________________________ -->

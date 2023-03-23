@@ -59,8 +59,8 @@
 	"no_antialiasing": false,
 	"image": "characters/monika/Doki_MonikaCasualLong_Assets",
 	"position": [
-		130,
-		-160
+		16,
+		-327
 	],
 	"healthicon": "monika",
 	"flip_x": false,
@@ -70,9 +70,9 @@
 		101
 	],
 	"camera_position": [
-		-130,
-		-180
+		0,
+		0
 	],
 	"sing_duration": 6,
-	"scale": 1.8
+	"scale": 0.9
 }

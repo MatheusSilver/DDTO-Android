@@ -81,8 +81,8 @@
 	"no_antialiasing": false,
 	"image": "characters/yuri/Doki_Yuri_Picnic_Assets",
 	"position": [
-		90,
-		-160
+		0,
+		-350
 	],
 	"healthicon": "yuri",
 	"flip_x": false,
@@ -92,9 +92,9 @@
 		210
 	],
 	"camera_position": [
-		-90,
-		-190
+		0,
+		0
 	],
 	"sing_duration": 6,
-	"scale": 2
+	"scale": 1
 }

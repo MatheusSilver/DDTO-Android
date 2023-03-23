@@ -85,17 +85,17 @@ class GalleryStickerState extends MusicBeatState
 		add(authorText);
 		
 		setaEsquerda = new FlxSprite(50,0);
-		setaEsquerda.loadGraphic(Paths.image('seta','doki');
+		setaEsquerda.loadGraphic(Paths.image('seta','doki'));
 		setaEsquerda.antialiasing = SaveData.globalAntialiasing;
-		setaEsquerda.setGraphicSize(std.Int(setaEsquerda.width * 1));
+		setaEsquerda.setGraphicSize(Std.int(setaEsquerda.width * 1));
 		setaEsquerda.updateHitbox();
 		setaEsquerda.screenCenter(Y);
 		add(setaEsquerda);
 
 		setaDireita = new FlxSprite(0,0);
-		setaDireita.loadGraphic(Paths.image('seta','doki');
+		setaDireita.loadGraphic(Paths.image('seta','doki'));
 		setaDireita.antialiasing = SaveData.globalAntialiasing;
-		setaDireita.setGraphicSize(std.Int(setaEsquerda.width * 1));
+		setaDireita.setGraphicSize(Std.int(setaEsquerda.width * 1));
 		setaDireita.x = FlxG.width - setaDireita.width - 50;
 		setaDireita.flipX = true;
 		setaDireita.updateHitbox();
@@ -127,7 +127,7 @@ class GalleryStickerState extends MusicBeatState
 		if (controls.RIGHT_P || BSLTouchUtils.aperta(setaDireita,0)=='primeiro')
 			changeItem(1);
 
-		if (controls.ACCEPT || (BSLTouchUtils.aperta(sticker,0) && !stickerData[curSelected] == 'grandhammer')
+		if (controls.ACCEPT || BSLTouchUtils.aperta(sticker,0)=='primeiro' && stickerData[curSelected] != 'grandhammer')
 		{
 			FlxG.sound.play(Paths.sound('scrollMenu'));
 			CoolUtil.openURL(urlData[curSelected]);
@@ -141,7 +141,7 @@ class GalleryStickerState extends MusicBeatState
 			dontSpam = true;
 		}
 
-		if (FlxG.keys.justPressed.S || BSLTouchUtils.aperta(switchState, 0);
+		if (FlxG.keys.justPressed.S || BSLTouchUtils.aperta(switchState, 0)=='primeiro')
 			MusicBeatState.switchState(new GalleryArtState());
 
 		if (FlxG.sound.music != null)

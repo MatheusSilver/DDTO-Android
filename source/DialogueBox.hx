@@ -52,7 +52,7 @@ class DialogueBox extends FlxSpriteGroup
 {
 	var box:FlxSprite;
 	
-	var botaoSkip:FlxSprite:
+	var botaoSkip:FlxSprite;
 
 	var curCharacter:String = '';
 	var prevCharacter:Array<String> = ['monika', 'left'];
@@ -144,10 +144,10 @@ class DialogueBox extends FlxSpriteGroup
 		add(skipText);
 		
 		botaoSkip = new FlxSprite(FlxG.width - 300, 50);
-		botaoSkip.loadGraphic(Paths.image('botaoSkip', 'doki');
+		botaoSkip.loadGraphic(Paths.image('botaoSkip', 'doki'));
 		botaoSkip.antialiasing = SaveData.globalAntialiasing;
 		#if mobile
-			add(BotaoSkip);
+			add(botaoSkip);
 		#end
 
 		if (PlayState.SONG.noteStyle == 'pixel' || isPixel)
@@ -155,7 +155,7 @@ class DialogueBox extends FlxSpriteGroup
 
 		if (dialogueData.canSkip != null)
 		{
-			botaoSkip.visible = dialogeData.canSkip;
+			botaoSkip.visible = dialogueData.canSkip;
 			skipText.visible = dialogueData.canSkip;
 			canFullSkip = dialogueData.canSkip;
 		}
@@ -213,7 +213,7 @@ class DialogueBox extends FlxSpriteGroup
 
 		if (canSkip && !playingCutscene)
 		{
-			if ((PlayerSettings.player1.controls.BACK #if android || BSLTouchUtils.aperta(botaoSkip, 0) #end) && !stopspamming && canFullSkip && !playingCutscene && dialogueStarted)
+			if ((PlayerSettings.player1.controls.BACK #if android || BSLTouchUtils.aperta(botaoSkip, 0) == 'primeiro' #end) && !stopspamming && canFullSkip && !playingCutscene && dialogueStarted)
 			{
 				isEnding = true;
 				stopspamming = true;
@@ -259,7 +259,7 @@ class DialogueBox extends FlxSpriteGroup
 		portraitLeft.alpha = 0.001;
 		portraitRight.alpha = 0.001;
 		skipText.visible = false;
-		botaoSkip.visible - false;
+		botaoSkip.visible = false;
 
 		if (isPixel)
 		{

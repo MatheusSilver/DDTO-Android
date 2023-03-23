@@ -205,7 +205,7 @@
 	],
 	"sing_duration": 4,
 	"scale": 1,
-	"gameover_character": "bf",
+	"gameover_character": "bf-dead",
 	"death_sound": "fnf_loss_sfx",
 	"win_sound": "dah"
 }

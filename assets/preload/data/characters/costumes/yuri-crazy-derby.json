@@ -59,8 +59,8 @@
 	"no_antialiasing": false,
 	"image": "characters/yuri/Doki_Yuri_crazy_Derby_Assets",
 	"position": [
-		90,
-		-95
+		50,
+		-300
 	],
 	"healthicon": "yuri-crazy",
 	"flip_x": false,
@@ -70,9 +70,9 @@
 		210
 	],
 	"camera_position": [
-		-80,
-		-160
+		0,
+		0
 	],
 	"sing_duration": 6,
-	"scale": 2
+	"scale": 1
 }

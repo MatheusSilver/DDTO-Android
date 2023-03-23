@@ -308,7 +308,7 @@ class DokiFreeplayState extends MusicBeatState
 	
 		pageNum = new FlxText(480, FlxG.height - 75, 0, 'Página ' + Std.string(curPage + 1), 48);
 		//Lembrar de trocar a fonte aqui depois (É só copiar e colar o code do menu principal com alteração no size da fonte)
-		add(PageNum)
+		add(pageNum);
 		
 		leftArrow = new FlxSprite(pageNum.x - 60,pageNum.y - 10);
 		leftArrow.frames = ui_tex;
@@ -424,6 +424,17 @@ class DokiFreeplayState extends MusicBeatState
 			if (controls.RIGHT_P && !diffselect)
 				changePageHotkey(1, false);
 
+			for (touch in FlxG.touches.list) //Provavelmente irei mudar isso
+			{
+				// left arrow animation
+				arrowanimate(touch);
+				// change Selection
+				if (touch.overlaps(leftArrow) && touch.justPressed)
+					changePageHotkey(-1, false);
+				else if (touch.overlaps(rightArrow) && touch.justPressed)
+					changePageHotkey(1, false);
+			}
+
 			if (controls.BACK #if android || FlxG.android.justReleased.BACK #end)
 			{
 				switch (diffselect)
@@ -494,18 +505,6 @@ class DokiFreeplayState extends MusicBeatState
 
 		if (FlxG.sound.music != null)
 			Conductor.songPosition = FlxG.sound.music.time;
-
-		for (touch in FlxG.touches.list){
-			//left arrow animation
-			arrowanimate(touch);
-
-			//change Selection
-			if(touch.overlaps(leftArrow) && touch.justPressed){
-				changePage(-1);
-			}else if (touch.overlaps(rightArrow) && touch.justPressed){
-				changePage(1);
-			}
-		}
 	
 		super.update(elapsed);
 	}
@@ -746,7 +745,7 @@ class DokiFreeplayState extends MusicBeatState
 		pageFlipped = true;
 		curSelected = 0;
 		curPage += huh;
-		pageNum.text = 'Página ' + Std.parsestring(curPage + 1);
+		pageNum.text = 'Página ' + Std.string(curPage + 1);
 		if (!SaveData.unlockedEpiphany)
 		{
 			if (curPage >= 3)

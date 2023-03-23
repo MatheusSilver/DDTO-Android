@@ -443,7 +443,7 @@ class PlayState extends MusicBeatState
 	];
 
 	#if mobileC
-	public var mcontrols:Mobilecontrols; 
+	var mcontrols:Mobilecontrols; 
 	#end
 
 	// API stuff
@@ -3679,11 +3679,9 @@ class PlayState extends MusicBeatState
 		previousFrameTime = FlxG.game.ticks;
 
 		FlxG.sound.playMusic(Paths.inst(SONG.song), 1, false);
-		FlxG.sound.music.pitch = Conductor.playbackSpeed;
 		FlxG.sound.music.onComplete = songOutro;
 
 		vocals.play();
-		vocals.pitch = Conductor.playbackSpeed;
 		vocals.onComplete = function()
 		{
 			vocalsFinished = true;
@@ -4431,14 +4429,12 @@ class PlayState extends MusicBeatState
 		vocals.pause();
 		FlxG.sound.music.play();
 		Conductor.songPosition = FlxG.sound.music.time + songOffset;
-		FlxG.sound.music.pitch = Conductor.playbackSpeed;
 
 		if (vocalsFinished)
 			return;
 
 		vocals.time = FlxG.sound.music.time;
 		vocals.play();
-		vocals.pitch = Conductor.playbackSpeed;
 	}
 
 	// change speed of animations based off playback speed
@@ -4504,10 +4500,7 @@ class PlayState extends MusicBeatState
 		else if (!practiceMode)
 			Conductor.playbackSpeed = SaveData.songSpeed;
 
-		FlxG.sound.music.pitch = Conductor.playbackSpeed;
-
 		if (vocals != null)
-			vocals.pitch = Conductor.playbackSpeed;
 
 		// do this BEFORE super.update() so songPosition is accurate
 		if (startingSong)

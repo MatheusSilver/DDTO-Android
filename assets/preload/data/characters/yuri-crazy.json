@@ -1,66 +1,99 @@
 {
 	"animations": [
 		{
-			"loop": false,
 			"offsets": [
 				0,
 				0
 			],
-			"anim": "idle",
+			"loop": false,
 			"fps": 24,
-			"name": "Yuri Crazy Idle",
-			"indices": []
+			"anim": "idle",
+			"indices": [],
+			"name": "Yuri Crazy Idle"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				153,
 				6
 			],
+			"loop": false,
+			"fps": 24,
 			"anim": "singLEFT",
-			"fps": 24,
-			"name": "Yuri Crazy Left",
-			"indices": []
+			"indices": [],
+			"name": "Yuri Crazy Left"
 		},
 		{
-			"loop": false,
 			"offsets": [
-				-48,
-				-7
+				-51,
+				-14
 			],
-			"anim": "singRIGHT",
+			"loop": false,
 			"fps": 24,
-			"name": "Yuri Crazy Right",
-			"indices": []
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "Yuri Crazy Right"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				-3,
 				-40
 			],
-			"anim": "singDOWN",
+			"loop": false,
 			"fps": 24,
-			"name": "Yuri Crazy Down",
-			"indices": []
+			"anim": "singDOWN",
+			"indices": [],
+			"name": "Yuri Crazy Down"
 		},
 		{
-			"loop": false,
 			"offsets": [
 				55,
 				60
 			],
-			"anim": "singUP",
+			"loop": false,
 			"fps": 24,
-			"name": "Yuri Crazy Up",
-			"indices": []
+			"anim": "singUP",
+			"indices": [],
+			"name": "Yuri Crazy Up"
+		}
+	],
+	"costumes": "yuri",
+	"costumelist": [
+		{
+			"subfolder":true,
+			"internal_Name": "casual",
+			"charFile":"yuri-crazy-casual"
+		},
+		{
+			"subfolder":true,
+			"internal_Name": "blueskies",
+			"charFile":"yuri-crazy-blueskies"
+		},
+		{
+			"subfolder":true,
+			"internal_Name": "taki",
+			"charFile":"yuri-crazy-taki"
+		},
+		{
+			"subfolder":true,
+			"internal_Name": "derby",
+			"charFile":"yuri-crazy-derby"
+		},
+		{
+			"subfolder":true,
+			"internal_Name": "tabi",
+			"charFile":"yuri-crazy-tabi"
+		},
+		{
+			"subfolder":true,
+			"internal_Name": "picnic",
+			"charFile":"yuri-crazy-picnic"
 		}
 	],
 	"no_antialiasing": false,
 	"image": "characters/yuri/Doki_Crazy_Yuri_Assets",
 	"position": [
-		90,
-		-95
+		20,
+		-255
 	],
 	"healthicon": "yuri-crazy",
 	"flip_x": false,
@@ -70,9 +103,9 @@
 		210
 	],
 	"camera_position": [
-		-80,
-		-160
+		0,
+		0
 	],
 	"sing_duration": 6,
-	"scale": 2
+	"scale": 1
 }

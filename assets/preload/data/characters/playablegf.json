@@ -137,8 +137,8 @@
 	"no_antialiasing": false,
 	"image": "characters/girlfriend/playable_gf",
 	"position": [
-		90,
-		50
+		0,
+		-70
 	],
 	"healthicon": "gf",
 	"flip_x": true,
@@ -148,11 +148,11 @@
 		77
 	],
 	"camera_position": [
-		-80,
-		-120
+		0,
+		0
 	],
 	"sing_duration": 4,
-	"scale": 2,
+	"scale": 1,
 	"gameover_character": "playablegf_dead",
 	"death_sound": "fnf_loss_sfx",
 	"win_sound": "dah"
