@@ -36,14 +36,14 @@ class BSLTouchUtils
 			leToqueOrdem = 'primeiro';
         }
 	    #elseif mobile
-		   for (touch in FlxG.touches.list){
-		if (touch.overlaps(coisas) && touch.justPressed && prevTouched == coisasID){
-            leToqueOrdem = 'segundo';
-		}else if (touch.overlaps(coisas) && touch.justPressed){
-			prevTouched = coisasID;
-			leToqueOrdem = 'primeiro';
-        }    
-		   }
+		for (touch in FlxG.touches.list){
+			if (touch.overlaps(coisas) && touch.justPressed && prevTouched == coisasID)
+            	leToqueOrdem = 'segundo';
+			else if (touch.overlaps(coisas) && touch.justPressed){
+				prevTouched = coisasID;
+				leToqueOrdem = 'primeiro';
+        	}    
+		}
 	    #end
 		return leToqueOrdem;
     }
