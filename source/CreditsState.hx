@@ -137,7 +137,7 @@ class CreditsState extends MusicBeatState
 			//icons
 			var icon:FlxSprite = new FlxSprite(777, 216).loadGraphic(Paths.image('credits/icons/' + creditsStuff[i][1]));
 
-			if (!Paths.fileExists('images/credits/icons/' + creditsStuff[i][1] + '.png', IMAGE))
+			if (!Paths.imagechecker("images/credits/icons/' + creditsStuff[i][1]", "preload"))
 				icon.loadGraphic(Paths.image('credits/invisibru')); //por enquanto, el invisibru
 
 			iconArray.push(icon);

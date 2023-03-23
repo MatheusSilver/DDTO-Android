@@ -369,13 +369,13 @@ class PlayState extends MusicBeatState
 	var dokiData:Array<Float> = [];
 
 	// HOLY LIBITINA
-	var rainBG:FlxSprite; //vou te transformar em xml k (não vai ter 11912x11912 de sprite não,fica deboa)
+	var rainBG:FlxSprite; 
 	var deskBG1:BGSprite;
 	var deskBG2:BGSprite;
 	var deskBG2Overlay:BGSprite;
 	var extractPopup:BGSprite;
 	var libHando:BGSprite;
-	var testVMLE:BGSprite; // Le gama baka (foi proposital, piada asdadsdasdasdasdasdasd)
+	var testVMLE:BGSprite;
 	var libiWindow:BGSprite;
 	var libAwaken:BGSprite;
 	var ghostBG:FlxBackdrop;
@@ -384,7 +384,7 @@ class PlayState extends MusicBeatState
 	var eyeShadow:BGSprite;
 	var infoBG:BGSprite;
 	var infoBG2:BGSprite;
-	var crackBGLE:BGSprite; // Low End
+	var crackBGLE:BGSprite;
 	var libFinaleBG:BGSprite;
 	var libGhost:BGSprite;
 	var libParty:BGSprite;

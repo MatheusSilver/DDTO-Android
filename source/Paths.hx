@@ -133,6 +133,12 @@ class Paths
 		return returnPath;
 	}
 
+	// eu real acho que isso não vai mudar MUITA, mas MUITA coisa, mas ok
+	inline static public function imagechecker(key:String, ?library:String):Dynamic //A library pode ser nula pelo o que eu entendi
+	{
+		return getPath('images/$key.png', IMAGE, library);
+	}
+
 	inline public static function getPreloadPath(file:String = '')
 	{
 		return 'assets/$file';
