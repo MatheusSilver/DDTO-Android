@@ -292,7 +292,7 @@ class CostumeSelectState extends MusicBeatState
 			grpControlshueh.forEach(function(txt:FlxText)
 			{
 				if (selectingcostume && BSLTouchUtils.aperta(txt, txt.ID)=='primeiro')
-					changeCostumeDirectly(txt.ID);
+					changeCostumeDirectly(txt.ID, false);
 			});
 
 			if (controls.DOWN_P && !selectingcostume)
@@ -575,7 +575,7 @@ class CostumeSelectState extends MusicBeatState
 		}
 	}
 							
-	function changecostumeDirectly(huh:Int = 0, goingforward:Bool = true) //PT2
+	function changeCostumeDirectly(huh:Int = 0, goingforward:Bool = true) //PT2
 	{
 		var daChoice:String = character[curSelected];
 		FlxG.sound.play(Paths.sound('scrollMenu'));

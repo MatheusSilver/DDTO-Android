@@ -687,6 +687,9 @@ class PlayState extends MusicBeatState
 				{
 					endDoof = new DialogueBox(Assets.getText(Paths.json('dialogue/${SONG.song.toLowerCase()}/$endDialogue')));
 					endDoof.scrollFactor.set();
+					#if mobile
+					mcontrols.visible = false;
+					#end
 				}
 				catch (e)
 				{
@@ -7123,7 +7126,6 @@ class PlayState extends MusicBeatState
 							FlxTween.tween(camFollow, {y: -3404, x: 589}, 5, {ease: FlxEase.linear});
 						case 1134:
 							FlxTween.tween(camHUD, {alpha: 0}, 1, {ease: FlxEase.sineOut});
-							FlxTween.tween(mcontrols, {alpha: 0}, 1, {ease: FlxEase.sineOut});
 						case 1156:
 							canPause = false;
 							openSubState(new DokiCards(!isStoryMode));
@@ -7166,7 +7168,9 @@ class PlayState extends MusicBeatState
 							camFocus = false;
 							FlxTween.tween(camFollow, {y: -3404, x: 589}, 5, {ease: FlxEase.linear});
 							FlxTween.tween(camHUD, {alpha: 0}, 2, {ease: FlxEase.sineOut});
+							#if mobile
 							FlxTween.tween(mcontrols, {alpha: 0}, 2, {ease: FlxEase.sineOut});
+							#end
 					}
 				case 'love n funkin':
 					// Jorge please don't kill me ~M&M
@@ -8776,7 +8780,7 @@ class PlayState extends MusicBeatState
 		paused = true;
 		
 		//Não sei pq mas aparentemente isso é nescessário para abrir um substate... (Pelo lado bom, isso não é igual ao modboa k
-		openSubState(new VideoSubState(video));
+		#if mobile openSubState(new VideoSubState(video)); #end
 	}
 
 	function bringInThingie()

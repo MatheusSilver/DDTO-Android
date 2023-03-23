@@ -237,6 +237,7 @@ class PauseSubState extends MusicBeatSubstate
 			songText.antialiasing = SaveData.globalAntialiasing;
 			songText.setBorderStyle(OUTLINE, itmColor, 2);
 			songText.ID = i;
+			songText.offset.set(0,120);
 			grpMenuShit.add(songText);
 			mouseManager.add(songText, onMouseDown); //POH MAN... ESSE TOUCH JÁ TÁ CHATÃO...
 			//Pior é que sei que o problema é offset...
