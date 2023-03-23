@@ -126,7 +126,7 @@ class GalleryArtState extends MusicBeatState
 		else if (controls.RIGHT_P || BSLTouchUtils.aperta(setaDireita,0)=='primeiro')
 			changeItem(1);
 
-		if (controls.ACCEPT || (BSLTouchUtils.aperta(artwork,0) && !artworkData[curSelected].contains('antipathy'))
+		if (controls.ACCEPT || (BSLTouchUtils.aperta(artwork,0)=='primeiro' && !artworkData[curSelected].contains('antipathy'))
 		{
 			FlxG.sound.play(Paths.sound('scrollMenu'));
 			CoolUtil.openURL(urlData[curSelected]);
@@ -140,7 +140,7 @@ class GalleryArtState extends MusicBeatState
 			dontSpam = true;
 		}
 
-		if (FlxG.keys.justPressed.S || BSLTouchUtils.aperta(switchState, 0);
+		if (FlxG.keys.justPressed.S || BSLTouchUtils.aperta(switchState, 0)=='primeiro';
 			MusicBeatState.switchState(new GalleryStickerState());
 
 		if (FlxG.sound.music != null)
