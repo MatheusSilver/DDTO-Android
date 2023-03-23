@@ -76,6 +76,9 @@ class CustomControlsState extends MusicBeatState //Code desenvolvido dois anos a
 
 		//text inputvari
 		inputvari = new FlxText(125, 50, 0,controlitems[0], 48);
+		inputvari.alignment = FlxTextAlign.CENTER;
+		inputvari.updateHitbox();
+		inputvari.antialiasing = SaveData.globalAntialiasing;
 
 		//arrows
 		var ui_tex = Paths.getSparrowAtlas('campaign_menu_UI_assets', 'preload');

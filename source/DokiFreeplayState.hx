@@ -307,6 +307,12 @@ class DokiFreeplayState extends MusicBeatState
 		//Então é melhor lembrar de no final, trocar a skin do custom controls pela padrão usada na galeria.
 	
 		pageNum = new FlxText(480, FlxG.height - 75, 0, 'Página ' + Std.string(curPage + 1), 48);
+		pageNum.setFormat(LangUtil.getFont('riffic'), 32, FlxColor.WHITE, FlxTextAlign.CENTER);
+		pageNum.y += LangUtil.getFontOffset('riffic');
+		pageNum.setBorderStyle(OUTLINE, 0xFFF860B0, 2, 1);
+		pageNum.alignment = FlxTextAlign.CENTER;
+		pageNum.updateHitbox();
+		pageNum.antialiasing = SaveData.globalAntialiasing;
 		//Lembrar de trocar a fonte aqui depois (É só copiar e colar o code do menu principal com alteração no size da fonte)
 		add(pageNum);
 		
@@ -376,9 +382,9 @@ class DokiFreeplayState extends MusicBeatState
 				openSubState(new DokiModifierSubState());
 			}
 
-			if (SaveData.beatProtag && FlxG.mouse.overlaps(costumeSelect) && FlxG.mouse.justPressed && (curPage != 3 && curPage != 4))
+			if (SaveData.beatProtag && BSLTouchUtils.aperta(costumeSelect, 0) == 'primeiro' && (curPage != 3 && curPage != 4))
 				MusicBeatState.switchState(new CostumeSelectState());
-
+			//Mim == bulo
 			if (controls.UP_P && !diffselect && (curPage != 3 && curPage != 4))
 			{
 				if ((curPage == 1 && !SaveData.beatEncore) || (curPage == 2 && !SaveData.beatPrologue))
