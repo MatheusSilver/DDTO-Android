@@ -40,7 +40,22 @@ class SaveData
 	public static var gfCountdown:Null<Bool> = false;
 	public static var zoom:Null<Float> = 1;
 	public static var middleOpponent:Null<Bool> = false;
-	public static var gpuTextures:Null<Bool> = true;
+
+	
+	/*
+
+	Minha simples explicação do pq desativei isso:
+
+		Basicamente, os celulares antigos não tem nem um cpu e nem GPU bom,
+		principalmente por motivos de: Mali, e mediatek, que normalmente são as specs de celulares
+		mais antigos e mais fracos.
+		Ou seja, a única coisa que salva o desempenho, é um pouco da CPU e da RAM.
+		Então, isso é mais uma opção de teste
+		Depende se seu celular é mais forte em questão de GPU ou não
+	*/
+
+	public static var gpuTextures:Null<Bool> = false;
+	
 	public static var cacheCharacter:Null<Bool> = false;
 	public static var cacheSong:Null<Bool> = false;
 	public static var middleScroll:Null<Bool> = false;
@@ -63,7 +78,7 @@ class SaveData
 	public static var goodMs:Null<Int> = 90;
 	public static var sickMs:Null<Int> = 45;
 	public static var ratingToggle:Null<Bool> = true;
-	public static var shaders:Null<Bool> = true;
+	public static var shaders:Null<Bool> = false;
 	public static var songSpeed:Null<Float> = 1;
 
 	// Costumes

@@ -170,10 +170,9 @@ class CostumeSelectState extends MusicBeatState
 			trace("Costume JSON cannot be found. \n" + costumestring);
 		}
 
-		backdrop = new FlxBackdrop(Paths.image('scrollingBG'));
+		backdrop = new FlxBackdrop(Paths.image('backdropsmenu/backdropcatfight'));
 		backdrop.velocity.set(-40, -40);
 		backdrop.antialiasing = SaveData.globalAntialiasing;
-		backdrop.shader = colorShader.shader;
 		add(backdrop);
 
 		chara = new FlxSprite(522, 9).loadGraphic(Paths.image('costume/bf', 'preload'));

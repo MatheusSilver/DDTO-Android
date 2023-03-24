@@ -82,7 +82,7 @@ class CreditsState extends MusicBeatState
 			Conductor.changeBPM(90);
 		}
 
-		backdrop = new FlxBackdrop(Paths.image('backdropmenucredits'));
+		backdrop = new FlxBackdrop(Paths.image('backdropsmenu/backdropcredits'));
 		backdrop.x = backdropX;
 		backdrop.velocity.set(-16, 0);
 		backdrop.scale.set(0.2, 0.2);

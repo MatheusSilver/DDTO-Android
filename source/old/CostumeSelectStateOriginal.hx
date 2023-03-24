@@ -396,7 +396,6 @@ class CostumeSelectStateOriginal extends MusicBeatState
 		backdrop = new FlxBackdrop(Paths.image('scrollingBG'));
 		backdrop.velocity.set(-40, -40);
 		backdrop.antialiasing = SaveData.globalAntialiasing;
-		backdrop.shader = new ColorMaskShader(0xFFFDFFFF, 0xFFFDDBF1);
 		add(backdrop);
 
 		preloadcharacters();

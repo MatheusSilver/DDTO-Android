@@ -30,11 +30,10 @@ class FirstBootState extends MusicBeatState
 	{
 		persistentUpdate = persistentDraw = true;
 
-		backdrop = new FlxBackdrop(Paths.image('scrollingBG'));
+		backdrop = new FlxBackdrop(Paths.image('backdropsmenu/backdropcredits'));
 		backdrop.velocity.set(-16, 0);
 		backdrop.scale.set(0.2, 0.2);
 		backdrop.antialiasing = SaveData.globalAntialiasing;
-		backdrop.shader = new ColorMaskShader(0xFF780D48, 0xFF87235D);
 		backdrop.alpha = 0.001;
 		add(backdrop);
 

@@ -36,10 +36,9 @@ class CatfightPopup extends MusicBeatSubstate
 		}
 		else
 		{
-			var backdrop:FlxBackdrop = new FlxBackdrop(Paths.image('scrollingBG'));
+			var backdrop:FlxBackdrop = new FlxBackdrop(Paths.image('backdropsmenu/backdropcatfight'));
 			backdrop.velocity.set(-40, -40);
 			backdrop.antialiasing = SaveData.globalAntialiasing;
-			backdrop.shader = new ColorMaskShader(0xFFFDFFFF, 0xFFFDDBF1);
 			add(backdrop);
 			DokiSideStory.sidestoryinstance.acceptInput = false;
 		}

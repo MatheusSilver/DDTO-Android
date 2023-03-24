@@ -907,12 +907,11 @@ class PlayState extends MusicBeatState
 				{
 					camGame.bgColor = FlxColor.WHITE;
 
-					dokiBackdrop = new FlxBackdrop(Paths.image('scrollingBG'));
+					dokiBackdrop = new FlxBackdrop(Paths.image('backdropsmenu/backdropcatfight'));
 					dokiBackdrop.scrollFactor.set(0.1, 0.1);
 					dokiBackdrop.velocity.set(-10, 0);
 					dokiBackdrop.antialiasing = SaveData.globalAntialiasing;
 					dokiBackdrop.alpha = 0.3;
-					dokiBackdrop.shader = new ColorMaskShader(0xFFFDFFFF, 0xFFFDDBF1);
 					add(dokiBackdrop);
 
 					if (!SaveData.lowEnd)
@@ -1014,12 +1013,11 @@ class PlayState extends MusicBeatState
 					
 					camGame.bgColor = FlxColor.WHITE;
 
-					dokiBackdrop = new FlxBackdrop(Paths.image('scrollingBG'));
+					dokiBackdrop = new FlxBackdrop(Paths.image('backdropsmenu/backdropcatfight'));
 					dokiBackdrop.scrollFactor.set(0.1, 0.1);
 					dokiBackdrop.velocity.set(-10, 0);
 					dokiBackdrop.antialiasing = SaveData.globalAntialiasing;
 					dokiBackdrop.alpha = 0.3;
-					dokiBackdrop.shader = new ColorMaskShader(0xFFFDFFFF, 0xFFFDDBF1);
 					add(dokiBackdrop);
 
 					if (!SaveData.lowEnd)
@@ -1423,11 +1421,10 @@ class PlayState extends MusicBeatState
 						lightontopofall.cameras = [camGame2];
 						lightontopofall.blend = SCREEN;
 
-						dokiBackdrop = new FlxBackdrop(Paths.image('scrollingBG'));
+						dokiBackdrop = new FlxBackdrop(Paths.image('backdropsmenu/backdropcatfight'));
 						dokiBackdrop.velocity.set(-40, -40);
 						dokiBackdrop.antialiasing = SaveData.globalAntialiasing;
 						dokiBackdrop.alpha = 0.001;
-						dokiBackdrop.shader = new ColorMaskShader(0xFFFDFFFF, 0xFFFDDBF1);
 						dokiBackdrop.cameras = [camGame2];
 						add(dokiBackdrop);
 					}
@@ -1774,11 +1771,10 @@ class PlayState extends MusicBeatState
 
 					if (!SaveData.lowEnd)
 					{
-						dokiBackdrop = new FlxBackdrop(Paths.image('scrollingBG'));
+						dokiBackdrop = new FlxBackdrop(Paths.image('backdropsmenu/backdropcatfight'));
 						dokiBackdrop.velocity.set(-40, -40);
 						dokiBackdrop.antialiasing = SaveData.globalAntialiasing;
 						dokiBackdrop.alpha = 0.001;
-						dokiBackdrop.shader = new ColorMaskShader(0xFFFDFFFF, 0xFFFDDBF1);
 						add(dokiBackdrop);
 					}
 
