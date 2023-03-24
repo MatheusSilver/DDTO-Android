@@ -16,7 +16,6 @@ import flixel.util.FlxTimer;
 import openfl.utils.Assets as OpenFlAssets;
 import openfl.geom.Point;
 import openfl.filters.ShaderFilter;
-import shaders.StaticShader;
 import haxe.Json;
 import lime.utils.Assets;
 #if FEATURE_GAMEJOLT
@@ -188,12 +187,6 @@ class DialogueBox extends FlxSpriteGroup
 
 	override function update(elapsed:Float)
 	{
-		if (staticlol != null && SaveData.shaders)
-		{
-			iTime += elapsed;
-			staticlol.iTime.value = [iTime];
-		}
-
 		if (box.animation.curAnim != null)
 		{
 			if (box.animation.curAnim.name == 'normalOpen' && box.animation.curAnim.finished)
@@ -736,25 +729,13 @@ class DialogueBox extends FlxSpriteGroup
 		}
 	}
 
-	var staticlol:StaticShader;
-
 	function funnyGlitch():Void
 	{
-		if (SaveData.shaders)
-		{
-			staticlol = new StaticShader();
-			PlayState.camOverlay.setFilters([new ShaderFilter(staticlol)]);
-		}
 
 		FlxG.sound.play(Paths.sound('glitchin'));
 
 		new FlxTimer().start(0.5, function(tmr:FlxTimer)
 		{
-			if (SaveData.shaders)
-			{
-				PlayState.camOverlay.setFilters([]);
-				staticlol = null;
-			}
 			enddialogue();
 		});
 	}

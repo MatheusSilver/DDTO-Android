@@ -50,7 +50,6 @@ class PauseSubState extends MusicBeatSubstate
 	var logo:FlxSprite;
 	var logoBl:FlxSprite;
 
-	var mouseManager:FlxMouseEventManager = new FlxMouseEventManager();
 
 	var pauseArt:FlxSprite;
 
@@ -236,17 +235,18 @@ class PauseSubState extends MusicBeatSubstate
 			songText.setFormat(LangUtil.getFont('riffic'), 27, FlxColor.WHITE, LEFT);
 			songText.antialiasing = SaveData.globalAntialiasing;
 			songText.setBorderStyle(OUTLINE, itmColor, 2);
+			songText.cameras = [PlayState.camOverlay];
 			songText.ID = i;
-			songText.offset.set(0,120);
+			songText.updateHitbox();
+			songText.offset.set(0,125);
+			songText.y += 120;
 			grpMenuShit.add(songText);
-			mouseManager.add(songText, onMouseDown); //POH MAN... ESSE TOUCH JÁ TÁ CHATÃO...
 			//Pior é que sei que o problema é offset...
 
 
 			FlxTween.tween(songText, {x: textX}, 1.2 + (i * 0.2), {ease: FlxEase.elasticOut});
 		}
 
-		add(mouseManager);
 
 		globalSongOffset = new FlxText(5, FlxG.height - 42, 0, LangUtil.getString('cmnOffset') + ': ${SaveData.offset} ms', 12);		globalSongOffset.alpha = 0;
 		globalSongOffset.antialiasing = SaveData.globalAntialiasing;
@@ -326,6 +326,16 @@ class PauseSubState extends MusicBeatSubstate
 	{
 
 		super.update(elapsed);
+
+		grpMenuShit.forEach(function(txt:FlxSprite)
+		{
+			#if (debug && !mobile)
+			if (FlxG.mouse.overlaps(txt))
+				trace(txt.ID);
+			#end
+			if (BSLTouchUtils.apertasimples(txt) && canPress)
+				selectCoiso(txt.ID);
+		});
 
 		/*
 		if (pauseMusic != null && canPress)

@@ -300,16 +300,14 @@ class DokiFreeplayState extends MusicBeatState
 		costumeSelect.antialiasing = SaveData.globalAntialiasing;
 		if (SaveData.beatProtag && (curPage != 3 && curPage != 4))
 			add(costumeSelect);
-		
-		var ui_tex = Paths.getSparrowAtlas('campaign_menu_UI_assets', 'preload');
-		
 		//Novamente fazendo coisas sem testar e sem ver os assets.
 		//Então é melhor lembrar de no final, trocar a skin do custom controls pela padrão usada na galeria.
 	
-		pageNum = new FlxText(480, FlxG.height - 75, 0, 'Página ' + Std.string(curPage + 1), 48);
-		pageNum.setFormat(LangUtil.getFont('riffic'), 32, FlxColor.WHITE, FlxTextAlign.CENTER);
+		pageNum = new FlxText(560, FlxG.height - 75, 0, 'Página ' + Std.string(curPage + 1), 48);
+		pageNum.setFormat(LangUtil.getFont('riffic'), 48, FlxColor.WHITE, FlxTextAlign.CENTER);
 		pageNum.y += LangUtil.getFontOffset('riffic');
 		pageNum.setBorderStyle(OUTLINE, 0xFFF860B0, 2, 1);
+		pageNum.text = 'Página ' + Std.string(curPage + 1);
 		pageNum.alignment = FlxTextAlign.CENTER;
 		pageNum.updateHitbox();
 		pageNum.antialiasing = SaveData.globalAntialiasing;
@@ -317,18 +315,15 @@ class DokiFreeplayState extends MusicBeatState
 		add(pageNum);
 		
 		leftArrow = new FlxSprite(pageNum.x - 60,pageNum.y - 10);
-		leftArrow.frames = ui_tex;
-		leftArrow.animation.addByPrefix('idle', "arrow left");
-		leftArrow.animation.addByPrefix('press', "arrow push left");
-		leftArrow.antialiasing = false;
-		leftArrow.animation.play('idle');
+		leftArrow.loadGraphic(Paths.image('seta', 'doki'));
+		leftArrow.antialiasing = SaveData.globalAntialiasing;
+		leftArrow.updateHitbox();
 
 		rightArrow = new FlxSprite(pageNum.x + pageNum.width + 10, leftArrow.y);
-		rightArrow.frames = ui_tex;
-		rightArrow.animation.addByPrefix('idle', 'arrow right');
-		rightArrow.animation.addByPrefix('press', "arrow push right", 24, false);
-		rightArrow.antialiasing = false;
-		rightArrow.animation.play('idle');
+		rightArrow.loadGraphic(Paths.image('seta', 'doki'));
+		rightArrow.flipX=true;
+		rightArrow.antialiasing = SaveData.globalAntialiasing;
+		rightArrow.updateHitbox();
 	
 		
 		add(leftArrow);
@@ -376,13 +371,16 @@ class DokiFreeplayState extends MusicBeatState
 					acceptDiferenciado = true;
 			});
 
+			if (BSLTouchUtils.apertasimples(diff))
+				changeDiff(1);
+
 			if (FlxG.mouse.overlaps(modifierMenu) && FlxG.mouse.justPressed)
 			{
 				FlxG.sound.play(Paths.sound('confirmMenu'));
 				openSubState(new DokiModifierSubState());
 			}
 
-			if (SaveData.beatProtag && BSLTouchUtils.aperta(costumeSelect, 0) == 'primeiro' && (curPage != 3 && curPage != 4))
+			if (SaveData.beatProtag && BSLTouchUtils.apertasimples(costumeSelect) && (curPage != 3 && curPage != 4))
 				MusicBeatState.switchState(new CostumeSelectState());
 			//Mim == bulo
 			if (controls.UP_P && !diffselect && (curPage != 3 && curPage != 4))
@@ -430,16 +428,10 @@ class DokiFreeplayState extends MusicBeatState
 			if (controls.RIGHT_P && !diffselect)
 				changePageHotkey(1, false);
 
-			for (touch in FlxG.touches.list) //Provavelmente irei mudar isso
-			{
-				// left arrow animation
-				arrowanimate(touch);
-				// change Selection
-				if (touch.overlaps(leftArrow) && touch.justPressed)
-					changePageHotkey(-1, false);
-				else if (touch.overlaps(rightArrow) && touch.justPressed)
-					changePageHotkey(1, false);
-			}
+			if (BSLTouchUtils.apertasimples(leftArrow))
+				changePageHotkey(-1, false);
+			else if (BSLTouchUtils.apertasimples(rightArrow))
+				changePageHotkey(1, false);
 
 			if (controls.BACK #if android || FlxG.android.justReleased.BACK #end)
 			{
@@ -448,6 +440,9 @@ class DokiFreeplayState extends MusicBeatState
 					case true:
 						diff.visible = false;
 						diffselect = false;
+						pageNum.visible = true;
+						rightArrow.visible=true;
+						leftArrow.visible=true;
 					case false:
 						selectedSomethin = true;
 						pageFlipped = false;
@@ -490,7 +485,11 @@ class DokiFreeplayState extends MusicBeatState
 							{
 								FlxG.sound.play(Paths.sound('confirmMenu'));
 								diff.visible = true;
+
 								diffselect = true;
+								pageNum.visible = false;
+								rightArrow.visible=false;
+								leftArrow.visible=false;
 							}
 						case true:
 							{
@@ -702,6 +701,9 @@ class DokiFreeplayState extends MusicBeatState
 								FlxG.sound.play(Paths.sound('confirmMenu'));
 								diff.visible = true;
 								diffselect = true;
+								pageNum.visible = false;
+								rightArrow.visible = false;
+								leftArrow.visible = false;
 							}
 						case true:
 							{
@@ -751,7 +753,6 @@ class DokiFreeplayState extends MusicBeatState
 		pageFlipped = true;
 		curSelected = 0;
 		curPage += huh;
-		pageNum.text = 'Página ' + Std.string(curPage + 1);
 		if (!SaveData.unlockedEpiphany)
 		{
 			if (curPage >= 3)
@@ -776,25 +777,6 @@ class DokiFreeplayState extends MusicBeatState
 		// updating page stuff here
 	}
 	
-	//Isso com certeza pode ser reaproveitado para melhorar o BSLTouchUtils uma vez que usar o mouse no mobile não é tão preciso quanto  usar o touch
-	function arrowanimate(touch:flixel.input.touch.FlxTouch){
-		if(touch.overlaps(leftArrow) && touch.pressed){
-			leftArrow.animation.play('press');
-		}
-
-		if(touch.overlaps(leftArrow) && touch.released){
-			leftArrow.animation.play('idle');
-		}
-		//right arrow animation
-		if(touch.overlaps(rightArrow) && touch.pressed){
-			rightArrow.animation.play('press');
-		}
-
-		if(touch.overlaps(rightArrow) && touch.released){
-			rightArrow.animation.play('idle');
-		}
-	}
-
 	function changePageHotkey(page:Int, directPage:Bool = true)
 	{
 		FlxTransitionableState.skipNextTransIn = true;
@@ -809,7 +791,7 @@ class DokiFreeplayState extends MusicBeatState
 		else
 			changePage(page);
 
-		LoadingState.loadAndSwitchState(new DokiFreeplayState(), false);
+		MusicBeatState.switchState(new DokiFreeplayState());
 	}
 }
 
