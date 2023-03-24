@@ -120,13 +120,13 @@ class GalleryStickerState extends MusicBeatState
 			MusicBeatState.switchState(new MainMenuState());
 		}
 
-		if (controls.LEFT_P || BSLTouchUtils.aperta(setaEsquerda,0)=='primeiro')
+		if (controls.LEFT_P || BSLTouchUtils.apertasimples(setaEsquerda))
 			changeItem(-1);
 
-		if (controls.RIGHT_P || BSLTouchUtils.aperta(setaDireita,0)=='primeiro')
+		if (controls.RIGHT_P || BSLTouchUtils.apertasimples(setaDireita))
 			changeItem(1);
 
-		if (controls.ACCEPT || BSLTouchUtils.aperta(sticker,0)=='primeiro' && stickerData[curSelected] != 'grandhammer')
+		if (controls.ACCEPT || BSLTouchUtils.apertasimples(sticker) && stickerData[curSelected] != 'grandhammer')
 		{
 			FlxG.sound.play(Paths.sound('scrollMenu'));
 			CoolUtil.openURL(urlData[curSelected]);
@@ -140,7 +140,7 @@ class GalleryStickerState extends MusicBeatState
 			dontSpam = true;
 		}
 
-		if (FlxG.keys.justPressed.S || BSLTouchUtils.aperta(switchState, 0)=='primeiro')
+		if (FlxG.keys.justPressed.S || BSLTouchUtils.apertasimples(switchState))
 			MusicBeatState.switchState(new GalleryArtState());
 
 		if (FlxG.sound.music != null)

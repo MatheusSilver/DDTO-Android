@@ -297,15 +297,8 @@ class PlayState extends MusicBeatState
 	var bgSchool:FlxSprite;
 	var bgStreet:FlxSprite;
 	var bgTrees:FlxSprite;
-	var glitchy:PixelShader = new PixelShader();
-	var bloomlol:BloomShader = new BloomShader();
-	var staticlol:StaticShader = new StaticShader();
-	var staticlol2:StaticShader = new StaticShader();
-	var fishy:FishEyeShader = new FishEyeShader();
-	var warpy:WarpShader = new WarpShader();
-	var inverty:InvertShader = new InvertShader();
-	var glitchlol:GlitchShader = new GlitchShader();
-	var glitchlol2:GlitchShader = new GlitchShader();
+
+	//Ok... Isso as shaders não funcionam nem mesmo no meu PC...
 
 	var barads:BGSprite;
 	var danaBop:BGSprite;
@@ -933,12 +926,6 @@ class PlayState extends MusicBeatState
 						gradient.setGraphicSize(Std.int(gradient.width * 2.6));
 						add(gradient);
 	
-						if (SaveData.shaders)
-						{
-							var funnyShader:FishEyeShader = new FishEyeShader();
-							camGame.setFilters([new ShaderFilter(funnyShader)]);
-						}
-
 						staticcredits = new FlxSprite(0, 0);
 						staticcredits.frames = Paths.getSparrowAtlas('credits/HomeStatic', 'doki');
 						staticcredits.antialiasing = SaveData.globalAntialiasing;
@@ -1039,11 +1026,6 @@ class PlayState extends MusicBeatState
 						gradient.setGraphicSize(Std.int(gradient.width * 1.6));
 						add(gradient);
 	
-						if (SaveData.shaders)
-						{
-							var funnyShader:FishEyeShader = new FishEyeShader();
-							camGame.setFilters([new ShaderFilter(funnyShader)]);
-						}
 					}
 
 					wiltedwindow = new FlxSprite().loadGraphic(Paths.image('wilt/p1', 'doki'));
@@ -1507,12 +1489,6 @@ class PlayState extends MusicBeatState
 				{
 					if (!SaveData.lowEnd)
 					{
-						if (SaveData.shaders)
-						{
-							fishy.preset = 1;
-							camGame.setFilters([new ShaderFilter(fishy)]);
-						}				
-
 						rainBG = new FlxSprite();
 						rainBG.frames = Paths.getSparrowAtlas('libitina/chuva', 'doki');
 						rainBG.antialiasing = SaveData.globalAntialiasing;
@@ -2193,39 +2169,6 @@ class PlayState extends MusicBeatState
 
 		if (curStage == 'dokiclubroom')
 			add(clubmainlight);
-
-		if (SaveData.shaders)
-		{
-			if (curStage == 'dokiglitcher')
-			{
-				glitchy = new PixelShader();
-
-				if (!SaveData.lowEnd)
-				{
-					bloomlol = new BloomShader(0.1, 0.005, 0.8, 7.0);
-					camGame.setFilters([new ShaderFilter(glitchy), new ShaderFilter(bloomlol)]);
-				}
-				else
-				{
-					camGame.setFilters([new ShaderFilter(glitchy)]);
-				}
-			}
-
-			if (!SaveData.lowEnd)
-			{
-				if (curStage == 'dokifestival')
-				{
-					bloomlol = new BloomShader(0.1, 0.005, 0.8, 7.0);
-					camGame.setFilters([new ShaderFilter(bloomlol)]);
-				}
-
-				if (curStage == 'clubroomevil')
-				{
-					bloomlol = new BloomShader(0.1, 0.005, 0.95, 8.0);
-					camGame.setFilters([new ShaderFilter(bloomlol)]);
-				}
-			}
-		}
 
 		//Stickers (Making them universal for now because why not)
 		stickerSprites = new FlxSpriteGroup();
@@ -4472,25 +4415,6 @@ class PlayState extends MusicBeatState
 
 	override public function update(elapsed:Float)
 	{
-		if (SaveData.shaders)
-		{
-			iTime += elapsed;
-
-			if (warpy != null)
-				warpy.iTime.value = [iTime / 2];
-
-			if (staticlol != null)
-				staticlol.iTime.value = [iTime];
-
-			if (staticlol2 != null)
-				staticlol2.iTime.value = [iTime];
-
-			if (glitchlol != null)
-				glitchlol.time.value = [iTime];
-
-			if (glitchlol2 != null)
-				glitchlol2.time.value = [iTime];
-		}
 
 		songOffset = SONG.offset + SaveData.offset + perSongOffset;
 
@@ -4979,9 +4903,6 @@ class PlayState extends MusicBeatState
 						case 16:
 							gfSpeed = !gf.danceIdle ? 2 : 1;
 					}
-				case 'glitcher (monika mix)':
-					if (SaveData.shaders)
-						glitchy.data.strength.value = [glitchy.upFloat];
 			}
 		}
 
@@ -6341,19 +6262,10 @@ class PlayState extends MusicBeatState
 							positionDisplay.tweenIn();
 						case 192:
 							metadataDisplay.tweenOut();
-						case 566 | 816 | 1072 | 1328: // Start glitch
-							glitchy.upFloat = 0.0;
-							FlxTween.tween(glitchy, {upFloat: 2.7}, CoolUtil.calcSectionLength(), {ease: FlxEase.quadOut});
 						case 576 | 1088: // End Glitch to pixel
 							gopixel();
-							FlxTween.cancelTweensOf(glitchy);
-							glitchy.upFloat = 2.7;
-							FlxTween.tween(glitchy, {upFloat: 0.0}, CoolUtil.calcSectionLength(0.7), {ease: FlxEase.quadOut});
 						case 832 | 1343: // End Glitch except back to normal
 							becomefumo();
-							FlxTween.cancelTweensOf(glitchy);
-							glitchy.upFloat = 2.7;
-							FlxTween.tween(glitchy, {upFloat: 0.0}, CoolUtil.calcSectionLength(0.7), {ease: FlxEase.quadOut});
 						case 1360 | 1392 | 1424 | 1456:
 							gopixel();
 						case 1376 | 1408 | 1440 | 1472:
@@ -7371,11 +7283,6 @@ class PlayState extends MusicBeatState
 							FlxTween.tween(deskBG2Overlay, {alpha: 0.001}, CoolUtil.calcSectionLength(), {ease: FlxEase.linear});
 							camGame2.fade(FlxColor.WHITE, CoolUtil.calcSectionLength(), false);
 						case 1216:
-							if (SaveData.shaders && !SaveData.lowEnd)
-							{
-								fishy.preset = 0;
-								camGame.setFilters([new ShaderFilter(warpy), new ShaderFilter(fishy)]);
-							}
 
 							addcharacter('ghost', 0);
 							boyfriend.cameras = [camGame2];
@@ -7395,8 +7302,6 @@ class PlayState extends MusicBeatState
 							staticshock.alpha = 1;
 							add(staticshock);
 						case 1728:
-							if (SaveData.shaders && !SaveData.lowEnd)
-								camGame.setFilters([new ShaderFilter(fishy)]);
 
 							eyeBG.alpha = 1;
 							insert(members.indexOf(boyfriend) + 1, eyeShadow);
@@ -7407,7 +7312,6 @@ class PlayState extends MusicBeatState
 						case 1984:
 							libShader(false);
 							camGame2.fade(FlxColor.WHITE, 0.2, true);
-							boyfriend.shader = inverty; // this doesn't have shader check on purpose
 							libFinaleOverlay.alpha = 0.001;
 							eyeBG.alpha = 0.001;
 							eyeShadow.alpha = 0.001;
@@ -7595,22 +7499,7 @@ class PlayState extends MusicBeatState
 
 	function libShader(show:Bool = true, old:Bool = false)
 	{		
-		if (SaveData.shaders && !SaveData.lowEnd)
-		{
-			var shader = old ? staticlol : glitchlol;
-			var shader2 = old ? staticlol2 : glitchlol2;
-
-			if (show)
-			{
-				camGame.setFilters([new ShaderFilter(fishy), new ShaderFilter(shader)]);
-				camGame2.setFilters([new ShaderFilter(shader2)]);
-			}
-			else
-			{
-				camGame.setFilters([new ShaderFilter(fishy)]);
-				camGame2.setFilters(null);
-			}
-		}
+		//nada
 	}
 
 	var epipEnding:Bool = false;
@@ -8364,7 +8253,6 @@ class PlayState extends MusicBeatState
 	function gopixel()
 	{
 		//camGame.filtersEnabled = false;
-		bloomlol.data.funthreshhold.value = [1.0];
 		isPixelUI = true;
 		defaultCamZoom = 1.05;
 
@@ -8423,7 +8311,6 @@ class PlayState extends MusicBeatState
 	function becomefumo()
 	{
 		//camGame.filtersEnabled = true;
-		bloomlol.data.funthreshhold.value = [0.8];
 		isPixelUI = false;
 
 		positionDisplay.songText.font = LangUtil.getFont();
@@ -8536,20 +8423,9 @@ class PlayState extends MusicBeatState
 
 	function glitchEffect(?forcenonShader:Bool = false) //Might aswell make it universal
 	{
-		if (SaveData.shaders && !SaveData.lowEnd && !forcenonShader)
-		{
-			camGame2.setFilters([new ShaderFilter(staticlol)]);
-			new FlxTimer().start(0.2, function(tmr:FlxTimer)
-			{
-				camGame2.setFilters([]);
-			});
-		}
-		else
-		{
-			FlxTween.cancelTweensOf(redStatic);
-			redStatic.alpha = 1;
-			FlxTween.tween(redStatic, {alpha: 0.0001}, 0.2, {ease: FlxEase.linear});		
-		}
+		FlxTween.cancelTweensOf(redStatic);
+		redStatic.alpha = 1;
+		FlxTween.tween(redStatic, {alpha: 0.0001}, 0.2, {ease: FlxEase.linear});	
 	}
 
 	function wiltswap(swaper:Int, ?skipFlash:Bool = false)

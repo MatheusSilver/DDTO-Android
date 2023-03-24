@@ -284,7 +284,7 @@ class CostumeSelectState extends MusicBeatState
 			
 			grpControls.forEach(function(txt:FlxText)
 			{
-				if (!selectingcostume && BSLTouchUtils.aperta(txt, txt.ID)=='primeiro')
+				if (!selectingcostume && BSLTouchUtils.apertasimples(txt))
 					changeItemDirectly(txt.ID);
 			});
 			

@@ -910,7 +910,119 @@
 			"description": "8owser16, AfroDanceMan, Awoofle, Bijuu Mike,\nBlantados, Butterflan, Danish.exe, DesireDelta,\nemeruga, EnigmaticQube, firubii, Iamjace,\nJakeNeutron, Penkaru, Saki760, shiroeyoru,\nSantiOkuu, Shouko-kun, Starbitz, StariiFish,\nThe Dustercord, Tiniest Turtles, UniqueGeese,\nvivwikls, Zee, and you!",
 			"twitter": "",
 			"whichrole": 10
+		},
+		{
+			"realName": "Matheus Silver",
+			"iconName": "TeamSilver",
+			"description": "Programação Mobile",
+			"twitter": "",
+			"whichrole": 11
+		},
+		{
+			"realName": "Noas",
+			"iconName": "GRF",
+			"description": "Otimizador/Tradutor/Design de Menus Android",
+			"twitter": "https://youtube.com/@NoasYT",
+			"whichrole": 11
+		},
+		{
+			"realName": "LoreNya",
+			"iconName": "TeamSilver",
+			"description": "Otimização e Programação Mobile",
+			"twitter": "",
+			"whichrole": 11
+		},
+		{
+			"realName": "GuiSlakkkk",
+			"iconName": "sla",
+			"description": "Otimização kkkk",
+			"twitter": "",
+			"whichrole": 11
+		},
+		{
+			"realName": "FNF BR",
+			"iconName": "FNFBR",
+			"description": "Programação Mobile",
+			"twitter": "",
+			"whichrole": 11
+		},
+		{
+			"realName": "TheOrda",
+			"iconName": "Orda",
+			"description": "Otimização",
+			"twitter": "https://www.youtube.com/@theorda2",
+			"whichrole": 11
+		},
+		{
+			"realName": "DXGamer",
+			"iconName": "dx",
+			"description": "Otimização",
+			"twitter": "",
+			"whichrole": 11
+		},
+		{
+			"realName": "Mateus_X02",
+			"iconName": "x02",
+			"description": "Otimização e Programação Mobile",
+			"twitter": "https://www.youtube.com/channel/UCPh9ueTFJh50NRlF2CLsbbA",
+			"whichrole": 11
+		},
+		{
+			"realName": "Venti",
+			"iconName": "venti",
+			"description": "Diretor de Dublagem",
+			"twitter": "https://youtube.com/@adegadosventos",
+			"whichrole": 11
+		},
+		{
+			"realName": "Corrupção",
+			"iconName": "corru",
+			"description": "Otimização",
+			"twitter": "",
+			"whichrole": 11
+		},
+		{
+			"realName": "Sem Nome",
+			"iconName": "noname",
+			"description": "Tradução (É serio, ele não tem nome k)",
+			"twitter": "",
+			"whichrole": 11
+		},
+		{
+			"realName": "DemonFever",
+			"iconName": "fever",
+			"description": "Otimização",
+			"twitter": "",
+			"whichrole": 11
+		},
+		{
+			"realName": "Mega",
+			"iconName": "mega",
+			"description": "Tradução",
+			"twitter": "",
+			"whichrole": 11
+		},
+		{
+			"realName": "xLegend_123",
+			"iconName": "legenda",
+			"description": "Tradução",
+			"twitter": "",
+			"whichrole": 11
+		},
+		{
+			"realName": "Marcelo gamer oficial",
+			"iconName": "ataMAN",
+			"description": "Tradução",
+			"twitter": "https://youtube.com/@marcelogameroficial3714",
+			"whichrole": 11
+		},
+		{
+			"realName": "BaniBunny",
+			"iconName": "monika",
+			"description": "Tradução",
+			"twitter": "https://www.tiktok.com/@miyeong_fandubs?_t=8atdB1LQlNN&_r=1",
+			"whichrole": 11
 		}
 	],
-	"listoroles": ["Diretores do Mod", "Artistas", "Artists Convidados", "Programadores", "Charters", "Músicos", "Musica", "Roteiro / Falas", "Vozes", "Convidados Especiais", "Creditos Adicionais"]
+	"listoroles": ["Diretores do Mod", "Artistas", "Artists Convidados", "Programadores", "Charters", "Músicos", "Musica", "Roteiro / Falas", "Vozes", "Convidados Especiais", "Creditos Adicionais", "Port Mobile"]
 }

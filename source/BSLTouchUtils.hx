@@ -47,4 +47,18 @@ class BSLTouchUtils
 	    #end
 		return leToqueOrdem;
     }
+
+	public static function apertasimples(coisa:Dynamic):Bool
+    {
+	    #if desktop
+		if (FlxG.mouse.overlaps(coisa) && FlxG.mouse.justPressed)
+			return true;
+	    #elseif mobile
+		for (touch in FlxG.touches.list)
+			if (touch.overlaps(coisa) && touch.justPressed)
+				return true;
+	    #end
+
+		return false;
+    }
 }
