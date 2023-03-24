@@ -461,6 +461,20 @@ class PlayState extends MusicBeatState
 
 		instance = this;
 
+		supermercadostavin("pause/epiphany");
+		supermercadostavin("pause/fumo");
+		supermercadostavin("pause/gf");
+		supermercadostavin("pause/jill");
+		supermercadostavin("pause/libitina");
+		supermercadostavin("pause/monika");
+		supermercadostavin("pause/natsuki");
+		supermercadostavin("pause/protag");
+		supermercadostavin("pause/sayori");
+		supermercadostavin("pause/senpai");
+		supermercadostavin("pause/yuri");
+		supermercadostavin("Credits_LeftSide");
+		supermercadostavin("DDLCStart_Screen_Assets");
+
 		keysArray = [
 			[FlxKey.fromString(SaveData.leftBind), FlxKey.LEFT],
 			[FlxKey.fromString(SaveData.downBind), FlxKey.DOWN],
@@ -2835,6 +2849,9 @@ class PlayState extends MusicBeatState
 		}
 	}
 
+	public static function supermercadostavin(leimagem:String, lelibrary:String) {
+		Paths.image(leimagem, "preload"); //le supermercados tavin commit
+	}
 	function endcutscene():Void
 	{
 		var dialogueBox:DialogueBox = endDoof;
