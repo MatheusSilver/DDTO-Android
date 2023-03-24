@@ -16,7 +16,6 @@ import flixel.text.FlxText;
 import flixel.addons.display.FlxBackdrop;
 import flixel.math.FlxMath;
 import flixel.ui.FlxBar;
-import shaders.ColorMaskShader;
 #end
 
 using StringTools;

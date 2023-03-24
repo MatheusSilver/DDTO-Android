@@ -5,7 +5,6 @@ import flixel.FlxSprite;
 import flixel.addons.display.FlxBackdrop;
 import flixel.text.FlxText;
 import flixel.util.FlxColor;
-import shaders.ColorMaskShader;
 #if FEATURE_DISCORD
 import Discord.DiscordClient;
 #end

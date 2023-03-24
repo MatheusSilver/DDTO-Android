@@ -75,7 +75,6 @@ import flixel.math.FlxPoint;
 import flixel.math.FlxRect;
 import flixel.graphics.FlxGraphic;
 import flixel.addons.transition.FlxTransitionSprite.GraphicTransTileDiamond;
-import shaders.ColorMaskShader;
 
 #if FEATURE_FILESYSTEM
 import Sys;

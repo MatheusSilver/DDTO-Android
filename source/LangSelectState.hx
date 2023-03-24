@@ -10,7 +10,6 @@ import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
-import shaders.ColorMaskShader;
 
 // Aqui eu não sei o que mexer não, quem puder ajudar, a fazer a fix do possível bug
 // Me ajudem

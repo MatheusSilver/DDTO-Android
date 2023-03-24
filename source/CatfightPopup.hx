@@ -6,7 +6,6 @@ import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
-import shaders.ColorMaskShader;
 
 class CatfightPopup extends MusicBeatSubstate
 {
