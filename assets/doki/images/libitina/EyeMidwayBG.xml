@@ -1,18 +1,15 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
-<TextureAtlas imagePath="MidwayBG.png" width="2000" height="1440">
-	<SubTexture name="MidwayBG0000" x="0" y="0" width="720" height="1280" rotated="true"/>
-	<SubTexture name="MidwayBG0001" x="0" y="0" width="720" height="1280" rotated="true"/>
-	<SubTexture name="MidwayBG0002" x="0" y="0" width="720" height="1280" rotated="true"/>
-	<SubTexture name="MidwayBG0003" x="0" y="0" width="720" height="1280" rotated="true"/>
-	<SubTexture name="MidwayBG0004" x="0" y="0" width="720" height="1280" rotated="true"/>
-	<SubTexture name="MidwayBG0005" x="720" y="0" width="1280" height="720"/>
-	<SubTexture name="MidwayBG0006" x="720" y="0" width="1280" height="720"/>
-	<SubTexture name="MidwayBG0007" x="720" y="0" width="1280" height="720"/>
-	<SubTexture name="MidwayBG0008" x="720" y="0" width="1280" height="720"/>
-	<SubTexture name="MidwayBG0009" x="720" y="0" width="1280" height="720"/>
-	<SubTexture name="MidwayBG0010" x="720" y="720" width="1280" height="720"/>
-	<SubTexture name="MidwayBG0011" x="720" y="720" width="1280" height="720"/>
-	<SubTexture name="MidwayBG0012" x="720" y="720" width="1280" height="720"/>
-	<SubTexture name="MidwayBG0013" x="720" y="720" width="1280" height="720"/>
-	<SubTexture name="MidwayBG0014" x="720" y="720" width="1280" height="720"/>
+<?xml version='1.0' encoding='utf-8'?>
+<TextureAtlas imagePath="EyeMidwayBG.png">
+<SubTexture name="MidwayBG0000" x="0" y="0" width="700" height="1256" frameX="0" frameY="-24" frameWidth="720" frameHeight="1280" />
+<SubTexture name="MidwayBG0001" x="0" y="0" width="700" height="1256" frameX="0" frameY="0" frameWidth="720" frameHeight="1280" />
+<SubTexture name="MidwayBG0002" x="0" y="0" width="700" height="1256" frameX="0" frameY="0" frameWidth="720" frameHeight="1280" />
+<SubTexture name="MidwayBG0003" x="0" y="0" width="700" height="1256" frameX="0" frameY="0" frameWidth="720" frameHeight="1280" />
+<SubTexture name="MidwayBG0004" x="0" y="1256" width="1262" height="696" frameX="-18" frameY="-24" frameWidth="1280" frameHeight="720" />
+<SubTexture name="MidwayBG0005" x="0" y="1256" width="1262" height="696" frameX="0" frameY="0" frameWidth="1280" frameHeight="720" />
+<SubTexture name="MidwayBG0006" x="0" y="1256" width="1262" height="696" frameX="0" frameY="0" frameWidth="1280" frameHeight="720" />
+<SubTexture name="MidwayBG0007" x="0" y="1256" width="1262" height="696" frameX="0" frameY="0" frameWidth="1280" frameHeight="720" />
+<SubTexture name="MidwayBG0008" x="0" y="1952" width="1256" height="697" frameX="-24" frameY="-23" frameWidth="1280" frameHeight="720" />
+<SubTexture name="MidwayBG0009" x="0" y="1952" width="1256" height="697" frameX="0" frameY="0" frameWidth="1280" frameHeight="720" />
+<SubTexture name="MidwayBG0010" x="0" y="1952" width="1256" height="697" frameX="0" frameY="0" frameWidth="1280" frameHeight="720" />
+<SubTexture name="MidwayBG0011" x="0" y="1952" width="1256" height="697" frameX="0" frameY="0" frameWidth="1280" frameHeight="720" />
 </TextureAtlas>

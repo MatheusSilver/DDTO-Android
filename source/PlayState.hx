@@ -460,6 +460,19 @@ class PlayState extends MusicBeatState
 
 		instance = this;
 
+		switch(SONG.song.toLowerCase()) {
+			case "libitina":
+				FlxG.sound.cache("assets/songs/libitina/Inst");
+				FlxG.sound.cache("assets/songs/libitina/Voices");
+			case "epiphany":
+				FlxG.sound.cache("assets/songs/epiphany/Inst");
+				FlxG.sound.cache("assets/songs/epiphany/Voices");
+				FlxG.sound.cache("assets/songs/epiphany/Voices_Lyrics");
+			default:
+				FlxG.sound.cache(Paths.inst(PlayState.SONG.song));
+				FlxG.sound.cache(Paths.voices(PlayState.SONG.song));
+	}
+
 		supermercadostavin("pause/epiphany", "preload");
 		supermercadostavin("pause/fumo", "preload");
 		supermercadostavin("pause/gf", "preload");
@@ -1667,7 +1680,7 @@ class PlayState extends MusicBeatState
 					add(libFinale);
 
 					libFinaleEyes = new BGSprite('libitina/finale/ShesWatching', 'doki', 0, 0, 0, 0, ['idle', 'ShesWatching'], true);
-					libFinaleEyes.setGraphicSize(Std.int(FlxG.width / defaultCamZoom));
+					libFinaleEyes.setGraphicSize(Std.int(FlxG.width / defaultCamZoom * 2));
 					libFinaleEyes.updateHitbox();
 					libFinaleEyes.screenCenter();
 					libFinaleEyes.alpha = 0.001;
