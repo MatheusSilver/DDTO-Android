@@ -123,14 +123,13 @@ class GalleryArtState extends MusicBeatState
 			changeItem(-1);
 		else if (controls.RIGHT_P || BSLTouchUtils.apertasimples(setaDireita))
 			changeItem(1);
-
-		if ((controls.ACCEPT || BSLTouchUtils.apertasimples(artwork)) && !artworkData[curSelected].contains('antipathy'))
+		else if ((controls.ACCEPT || BSLTouchUtils.apertasimples(artwork)) && !artworkData[curSelected].contains('antipathy'))
 		{
 			FlxG.sound.play(Paths.sound('scrollMenu'));
 			CoolUtil.openURL(urlData[curSelected]);
 		}
 
-		if (FlxG.mouse.overlaps(artwork) && FlxG.mouse.pressed && artworkData[curSelected].contains('antipathy') && !dontSpam)
+		if (BSLTouchUtils.apertasimples(artwork) && artworkData[curSelected].contains('antipathy') && !dontSpam)
 		{
 			FlxG.camera.fade(FlxColor.WHITE, 1, true, true);
 			FlxG.sound.play(Paths.sound('antipathyUnlock'));

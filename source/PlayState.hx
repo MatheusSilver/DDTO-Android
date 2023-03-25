@@ -315,7 +315,6 @@ class PlayState extends MusicBeatState
 	var senpaiBoxtop:BGSprite;
 	var p1Boxtop:BGSprite;
 	var p2Boxtop:BGSprite;
-	var cursorDDTO:BGSprite;
 	var creditsBG:FlxBackdrop;
 	var wiltedwindow:FlxSprite;
 	var wiltedhey:BGSprite;
@@ -339,6 +338,10 @@ class PlayState extends MusicBeatState
 	var lightontopofall:BGSprite;
 	var funnytext:FlxTypeText;
 	var happyEnding:Bool = false;
+
+	public static var introAlts:Array<String>; //Só por causa do pause
+	public static var glitchSuffix:String = '';
+	public static var altSuffix:String = '';
 
 
 	//CGs are here
@@ -558,8 +561,7 @@ class PlayState extends MusicBeatState
 		if (SONG.song.toLowerCase() == 'catfight')
 			mirrormode = isYuri;
 
-		if (!isStoryMode)
-			toggleBotplay = SaveData.botplay;
+		toggleBotplay = SaveData.botplay;
 
 		// Making difficulty text for Discord Rich Presence/Song Position Bar.
 		switch (storyDifficulty)
@@ -985,13 +987,6 @@ class PlayState extends MusicBeatState
 					p1Boxtop.scale.set(1.25, 1.25);
 					p1Boxtop.updateHitbox();
 					p1Boxtop.cameras = [camGame2];
-
-					// cursor
-					cursorDDTO = new BGSprite('credits/Arrow', 'doki', 500, 1060, 1, 1);
-					cursorDDTO.scale.set(0.4, 0.4);
-					cursorDDTO.updateHitbox();
-					cursorDDTO.scale.set(1, 1);
-					cursorDDTO.cameras = [camGame2];
 
 					//camFollow.y = -930;
 					cg1 = new BGSprite('credits/DokiTakeoverLogo', 'doki', 0, 0, 0, 0);
@@ -1526,13 +1521,6 @@ class PlayState extends MusicBeatState
 					deskBG2.alpha = 0.001;
 					add(deskBG2);
 
-					cursorDDTO = new BGSprite('libitina/mousecursor', 'doki', 800, 730, 0, 0);
-					cursorDDTO.setGraphicSize(Std.int(cursorDDTO.width / defaultCamZoom));
-					cursorDDTO.updateHitbox();
-					cursorDDTO.cameras = [camGame2];
-					cursorDDTO.alpha = 0.001;
-					add(cursorDDTO);
-
 					extractPopup = new BGSprite('libitina/extracting', 'doki', true, 0, 0, 0, 0);
 					extractPopup.setGraphicSize(Std.int(extractPopup.width / defaultCamZoom));
 					extractPopup.updateHitbox();
@@ -2050,7 +2038,6 @@ class PlayState extends MusicBeatState
 				insert(members.indexOf(extrachar1) + 1, p2Boxtop);
 				insert(members.indexOf(boyfriend) - 1, p1Box);
 				add(p1Boxtop);
-				add(cursorDDTO);
 				if (staticcredits != null) add(staticcredits);
 				add(cg1);
 				cg2.setGraphicSize(Std.int(cg2.width / defaultCamZoom));
@@ -2219,6 +2206,11 @@ class PlayState extends MusicBeatState
 				sticker.scale.set(0.85, 0.85);
 				sticker.updateHitbox();
 				stickerSprites.add(sticker);
+
+
+				for (sticker in 0...stickerData.length-1){
+					Paths.image('stickies/' + stickerData[sticker], 'preload'); //Talvez isso seja deveras perigoso...
+				}
 			}
 		}
 		
@@ -2538,6 +2530,7 @@ class PlayState extends MusicBeatState
 
 					case 'drinks on me':
 						customstart();
+						canPause = false;
 				}
 			}
 			else
@@ -2569,7 +2562,9 @@ class PlayState extends MusicBeatState
 		FlxG.stage.addEventListener(KeyboardEvent.KEY_UP, onKeyRelease);
 
 		if (SaveData.hitSound) HitSoundManager.init();
+		#if desktop
 		FlxG.mouse.visible = false;
+		#end
 		super.create();
 
 		CustomFadeTransition.nextCamera = camOverlay;
@@ -2609,7 +2604,9 @@ class PlayState extends MusicBeatState
 
 		FlxG.stage.removeEventListener(KeyboardEvent.KEY_DOWN, onKeyPress);
 		FlxG.stage.removeEventListener(KeyboardEvent.KEY_UP, onKeyRelease);
-		FlxG.mouse.visible = Main.mouseVisivel;
+		#if desktop
+		FlxG.mouse.visible = true;
+		#end
 		super.destroy();
 	}
 
@@ -3357,7 +3354,7 @@ class PlayState extends MusicBeatState
 		if (!gf.danceIdle)
 			gfSpeed = 2;
 
-		if (!allowCountdown)
+		if (!allowCountdown && songStarted)
 		{
 			Conductor.songPosition = -CoolUtil.calcSectionLength(0.25) * 1000;
 			startTimer = new FlxTimer().start(CoolUtil.calcSectionLength(0.25), function(tmr:FlxTimer)
@@ -3471,9 +3468,7 @@ class PlayState extends MusicBeatState
 				introAssets.set('schoolEvil', ['weeb/pixelUI/ready-pixel', 'weeb/pixelUI/set-pixel', 'weeb/pixelUI/demise-date']);
 				introAssets.set('schoolEvilEX', ['weeb/pixelUI/ready-pixel', 'weeb/pixelUI/set-pixel', 'weeb/pixelUI/demise-date']);
 
-				var introAlts:Array<String> = introAssets.get('default');
-				var altSuffix:String = "";
-				var glitchSuffix:String = "";
+				introAlts = introAssets.get('default');
 
 				for (value in introAssets.keys())
 				{
@@ -4420,7 +4415,7 @@ class PlayState extends MusicBeatState
 	private var prevMusicTime:Float = 0;
 	private var paused:Bool = false;
 	var startedCountdown:Bool = false;
-	var canPause:Bool = true;
+	public var canPause:Bool = true; //tmj dav meu bom
 	var nps:Int = 0;
 	var maxNPS:Int = 0;
 
@@ -5065,7 +5060,7 @@ class PlayState extends MusicBeatState
 			});
 		}
 
-		if (!inCutscene && !paused)
+		if (!inCutscene && !paused && songStarted) //Problema que existia na Pasta-Night do modboa, e que aparentemente existe aqui tambem...
 		{
 			if (!toggleBotplay)
 				keyShit();
@@ -6341,7 +6336,7 @@ class PlayState extends MusicBeatState
 						case 480:
 							camZooming = false;
 							camFocus = false;
-							camFollow.setPosition(gf.getMidpoint().x, gf.getMidpoint().y - 100);
+							camFollow.setPosition(gf.getMidpoint().x -150, gf.getMidpoint().y - 250);
 							gf.playAnim('countdownThree');
 							FlxTween.tween(FlxG.camera, {zoom: 1}, CoolUtil.calcSectionLength(0.2));
 						case 484:
@@ -6760,10 +6755,8 @@ class PlayState extends MusicBeatState
 							FlxTween.tween(p1Boxtop, {x: p1Boxtop.x + 200}, CoolUtil.calcSectionLength(), {ease: FlxEase.sineOut});
 							FlxTween.tween(boyfriend, {x: boyfriend.x + 200}, CoolUtil.calcSectionLength(), {ease: FlxEase.sineOut});
 
-							cursorDDTO.setPosition(500, 1060);
 							FlxTween.tween(senpaiBox, {y: senpaiBox.y - 900}, CoolUtil.calcSectionLength(), {ease: FlxEase.sineOut});
 							FlxTween.tween(senpaiBoxtop, {y: senpaiBoxtop.y - 900}, CoolUtil.calcSectionLength(), {ease: FlxEase.sineOut});
-							FlxTween.tween(cursorDDTO, {y: cursorDDTO.y - 900 + 10}, CoolUtil.calcSectionLength(), {ease: FlxEase.sineOut});
 							FlxTween.tween(gf, {y: gf.y - 900}, CoolUtil.calcSectionLength(), {ease: FlxEase.sineOut});
 						case 336:
 							summmonStickies(true, 8);
@@ -6772,7 +6765,6 @@ class PlayState extends MusicBeatState
 						case 440:
 							FlxTween.tween(senpaiBox, {y: senpaiBox.y - 1200}, CoolUtil.calcSectionLength(), {ease: FlxEase.sineOut});
 							FlxTween.tween(senpaiBoxtop, {y: senpaiBoxtop.y - 1200}, CoolUtil.calcSectionLength(), {ease: FlxEase.sineOut});
-							FlxTween.tween(cursorDDTO, {y: cursorDDTO.y - 1200 + 10}, CoolUtil.calcSectionLength(), {ease: FlxEase.sineOut});
 							FlxTween.tween(gf, {y: gf.y - 1200}, CoolUtil.calcSectionLength(), {ease: FlxEase.sineOut});
 						case 447:
 							moveCamera('centered');
@@ -6812,12 +6804,9 @@ class PlayState extends MusicBeatState
 							forcedPause = 'protag';
 							creditsCharSwap("protag");
 							summmonStickies(true, 8);
-						case 66 | 450 | 834 | 1218 | 1606 | 1866:
-							prepareCharSwap();
 						case 1876:
 							forcedPause = 'monika';
 							creditsCharSwap("monika");
-							cursorDDTO.visible = false;
 						case 2240:
 							FlxTween.tween(camHUD, {alpha: 0}, 5, {ease: FlxEase.sineOut});
 							FlxTween.tween(camFollow, {y: -930}, 5, {ease: FlxEase.sineOut});
@@ -6872,6 +6861,7 @@ class PlayState extends MusicBeatState
 								FlxTween.tween(opponentStrums.members[i], {y: opponentStrums.members[i].y + 10, alpha: targetAlphaOpponent}, 1,
 									{ease: FlxEase.circOut, startDelay: 0.6 + (0.2 * i)});
 							}
+							canPause = true;
 						case 160:
 							metadataDisplay.tweenOut();
 						case 512:
@@ -7188,19 +7178,10 @@ class PlayState extends MusicBeatState
 							FlxTween.tween(FlxG.camera, {zoom: 1.5}, CoolUtil.calcSectionLength(2.25), {ease: FlxEase.quadIn});
 							FlxTween.tween(camGame2, {zoom: 1.5}, CoolUtil.calcSectionLength(2.25), {ease: FlxEase.quadIn});
 							defaultCamZoom = 1.5;
-						case 94:
-							cursorDDTO.alpha = 1;
-							FlxTween.tween(cursorDDTO, {x: 660, y: 400}, CoolUtil.calcSectionLength(0.9), {ease: FlxEase.quadOut});
-						case 110:
-							cursorDDTO.scale.set(0.9, 0.9);
-						case 111:
-							cursorDDTO.scale.set(1, 1);
 						case 112:
 							extractPopup.alpha = 1;
 							extractPopup.scale.set();
 							FlxTween.tween(extractPopup, {"scale.x": 1, "scale.y": 1}, 0.2, {ease: FlxEase.quadOut});
-						case 114:
-							FlxTween.tween(cursorDDTO, {alpha: 0.001}, 0.3, {ease: FlxEase.sineIn});
 						case 120:
 							FlxTween.tween(deskBG2, {alpha: 0.001}, CoolUtil.calcSectionLength(0.3125), {ease: FlxEase.sineIn});
 						case 126:
@@ -7531,7 +7512,9 @@ class PlayState extends MusicBeatState
 			if (SONG.notes[Math.floor(curStep / 16)].changeBPM)
 			{
 				Conductor.changeBPM(SONG.notes[Math.floor(curStep / 16)].bpm);
+				#if debug
 				FlxG.log.add('CHANGED BPM TO ' + SONG.notes[Math.floor(curStep / 16)].bpm);
+				#end
 			}
 		}
 
@@ -7855,12 +7838,6 @@ class PlayState extends MusicBeatState
 
 		if (bgGirls != null)
 			bgGirls.dance();
-	}
-
-	function penorFunction()
-	{
-		// my penor ~ Awoofle was here
-		trace('penor');
 	}
 
 	function StrumPlayAnim(isDad:Bool, id:Int, time:Float)
@@ -8404,18 +8381,6 @@ class PlayState extends MusicBeatState
 		boxFlash.cameras = [camGame2];
 		insert(members.indexOf(p2Boxtop) - 1, boxFlash);
 		FlxTween.tween(boxFlash, {alpha: 0.001}, CoolUtil.calcSectionLength(0.1), {ease: FlxEase.sineOut});
-		cursorDDTO.loadGraphic(Paths.image('credits/Arrow', 'doki'));
-		new FlxTimer().start(0.5, function(tmr:FlxTimer)
-		{
-			FlxTween.tween(cursorDDTO, {x: cursorDDTO.x - 120, y: cursorDDTO.y - 700}, CoolUtil.calcSectionLength(0.5), {ease: FlxEase.sineInOut});
-		});
-	}
-
-	function prepareCharSwap()
-	{
-		cursorDDTO.loadGraphic(Paths.image('credits/Arrow_HOLD', 'doki'));
-		cursorDDTO.setPosition(1300, 1080);
-		FlxTween.tween(cursorDDTO, {x: 205, y: 415}, CoolUtil.calcSectionLength(0.6), {ease: FlxEase.sineOut});
 	}
 
 	function reloadCreditsStickers()
@@ -8660,12 +8625,14 @@ class PlayState extends MusicBeatState
 
 	function comecarvideo(video:String) //coiso chato...
 	{
+		#if mobile
 		persistentUpdate = false;
 		persistentDraw = true;
 		paused = true;
 		
 		//Não sei pq mas aparentemente isso é nescessário para abrir um substate... (Pelo lado bom, isso não é igual ao modboa k
-		#if mobile openSubState(new VideoSubState(video)); #end
+		openSubState(new VideoSubState(video));
+		 #end
 	}
 
 	function bringInThingie()
@@ -8698,7 +8665,7 @@ class PlayState extends MusicBeatState
 			MusicBeatState.switchState(new GitarooPause());
 		}
 		else
-			openSubState(new PauseSubState(forcedPause));
+			openSubState(new PauseSubState(forcedPause, boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y));
 	}
 }
 

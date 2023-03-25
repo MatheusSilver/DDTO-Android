@@ -2,8 +2,8 @@
 	"animations": [
 		{
 			"offsets": [
-				0,
-				0
+				-125,
+				-213
 			],
 			"loop": false,
 			"fps": 24,
@@ -13,8 +13,8 @@
 		},
 		{
 			"offsets": [
-				340,
-				9
+				180,
+				-206
 			],
 			"loop": false,
 			"fps": 24,
@@ -24,8 +24,8 @@
 		},
 		{
 			"offsets": [
-				155,
-				-46
+				55,
+				-256
 			],
 			"loop": false,
 			"fps": 24,
@@ -35,8 +35,8 @@
 		},
 		{
 			"offsets": [
-				-22,
-				-20
+				-122,
+				-240
 			],
 			"loop": false,
 			"fps": 24,
@@ -46,8 +46,8 @@
 		},
 		{
 			"offsets": [
-				128,
-				28
+				4,
+				-182
 			],
 			"loop": false,
 			"fps": 24,
@@ -57,8 +57,8 @@
 		},
 		{
 			"offsets": [
-				28,
-				0
+				-82,
+				-210
 			],
 			"loop": false,
 			"fps": 24,
@@ -85,5 +85,5 @@
 		0
 	],
 	"sing_duration": 6,
-	"scale": 1
+	"scale": 2
 }

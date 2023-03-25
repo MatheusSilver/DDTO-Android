@@ -62,11 +62,11 @@ class CloseGameSubState extends MusicBeatSubstate
 		if (controls.BACK #if android || FlxG.android.justReleased.BACK #end)
 			selectItem(1);
 
-		if (FlxG.mouse.overlaps(textYes) && FlxG.mouse.justPressed && curSelected != 0)
+		if (BSLTouchUtils.apertasimples(textYes) && curSelected != 0)
 			curSelected = 0;
-		else if (FlxG.mouse.overlaps(textNo) && FlxG.mouse.justPressed  && curSelected != 1)
+		else if (BSLTouchUtils.apertasimples(textNo)  && curSelected != 1)
 			curSelected = 1;
-		else if((FlxG.mouse.overlaps(textYes) || FlxG.mouse.overlaps(textNo))  && FlxG.mouse.justPressed)
+		else if (BSLTouchUtils.apertasimples(textYes) || BSLTouchUtils.apertasimples(textNo))
 			selectItem(curSelected);
 
 		if (controls.LEFT_P)

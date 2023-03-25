@@ -1,6 +1,5 @@
 package;
 
-import flixel.input.mouse.FlxMouseEventManager;
 import Controls.KeyboardScheme;
 import haxe.Json;
 import lime.utils.Assets;
@@ -47,12 +46,6 @@ class MainMenuState extends MusicBeatState
 {
 	var curSelected:Int = 0;
 
-	// I guess this needs to be a thing now
-	// because originally, it used to be "FlxMouseEventManager.add"
-	// but now you gotta put it in a variable manager.
-	// Guessing this is a flixel update issue, but whatever. ~ Codexes
-	var mouseManager:FlxMouseEventManager = new FlxMouseEventManager();
-
 	var show:String = "";
 	var menuItems:FlxTypedGroup<FlxText>;
 
@@ -82,7 +75,9 @@ class MainMenuState extends MusicBeatState
 
 		persistentUpdate = persistentDraw = true;
 
-		FlxG.mouse.visible = Main.mouseVisivel;
+		#if desktop
+		FlxG.mouse.visible = true;
+		#end
 
 		if (!SaveData.beatPrologue)
 		{
@@ -96,12 +91,7 @@ class MainMenuState extends MusicBeatState
 		if (!SaveData.beatSide)
 			optionShit.remove('gallery');
 
-		if (!SaveData.beatVA11HallA && SaveData.beatSide)
-			addVally = true;
-
-		#if debug
 		addVally = true;
-		#end
 
 		#if FEATURE_DISCORD
 		// Updating Discord Rich Presence
@@ -250,9 +240,6 @@ class MainMenuState extends MusicBeatState
 				});
 			else
 				menuItem.x = 50;
-
-			// Add menu item into mouse manager, so it can be selected by cursor
-			mouseManager.add(menuItem, onMouseDown, null, onMouseOver);
 		}
 
 		shaker = new FlxSprite(1132, 538);
@@ -262,8 +249,6 @@ class MainMenuState extends MusicBeatState
 		shaker.animation.play('play');
 		if (addVally)
 			add(shaker);
-
-		add(mouseManager);
 
 		var versionShit:FlxText = new FlxText(-350, FlxG.height - 24, 0, "v" + Application.current.meta.get('version'), 12);
 		versionShit.scrollFactor.set();
@@ -298,20 +283,8 @@ class MainMenuState extends MusicBeatState
 
 		if (!selectedSomethin && acceptInput)
 		{
-			if (shaker != null && addVally && FlxG.mouse.overlaps(shaker) && FlxG.mouse.justPressed)
+			if (shaker != null && addVally && BSLTouchUtils.apertasimples(shaker))
 				openSong();
-
-			if (controls.UP_P)
-			{
-				FlxG.sound.play(Paths.sound('scrollMenu'));
-				//changeItem(-1);
-			}
-				
-			if (controls.DOWN_P)
-			{
-				FlxG.sound.play(Paths.sound('scrollMenu'));
-				//changeItem(1);
-			}	
 			
 			if (controls.RESET)
 				MusicBeatState.resetState();
@@ -323,6 +296,14 @@ class MainMenuState extends MusicBeatState
 			if (FlxG.keys.justPressed.P)
 				SaveData.unlockAll(false);
 			#end
+
+			menuItems.forEach(function(txt:FlxText){
+				if(BSLTouchUtils.apertasimples(txt)){
+					curSelected=txt.ID;
+					changeItem(txt.ID);
+					selectThing();
+				}
+			});
 
 			if (controls.ACCEPT)
 				selectThing();
@@ -362,7 +343,7 @@ class MainMenuState extends MusicBeatState
 		}
 	}
 
-	function changeItem(huh:Int = 0)
+	function changeItem(huh:Int = -1)
 	{
 		menuItems.forEach(function(txt:FlxText)
 		{
@@ -409,27 +390,6 @@ class MainMenuState extends MusicBeatState
 				}
 			}
 		});
-	}
-
-
-	function onMouseDown(spr:FlxSprite):Void
-	{
-		if (!selectedSomethin && acceptInput && !FlxG.mouse.overlaps(shaker))
-			selectThing();
-	}
-
-	function onMouseOver(spr:FlxSprite):Void
-	{
-		if (!selectedSomethin && acceptInput)
-		{
-			if (curSelected != spr.ID)
-				FlxG.sound.play(Paths.sound('scrollMenu'));
-	
-			if (!selectedSomethin)
-				curSelected = spr.ID;
-		}
-
-		changeItem();
 	}
 
 	override function beatHit()

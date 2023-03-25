@@ -1,5 +1,6 @@
-package;
+package; //No more pause menu com touch
 
+import flixel.FlxCamera;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.group.FlxGroup.FlxTypedGroup;
@@ -9,7 +10,6 @@ import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
-import flixel.input.mouse.FlxMouseEventManager;
 
 using StringTools;
 #if (flixel >= "5.3.0")
@@ -36,6 +36,10 @@ class PauseSubState extends MusicBeatSubstate
 	var deathInfo:Array<String> = ["Deletado", "Mortes", "Copiado"];
 	var pauseMusic:FlxSound;
 
+	var ready:FlxSprite;
+	var set:FlxSprite;
+	var go:FlxSprite; // bruh + meme = breme
+
 	var levelInfo:FlxText;
 	var levelDifficulty:FlxText;
 	var deathText:FlxText;
@@ -50,6 +54,7 @@ class PauseSubState extends MusicBeatSubstate
 	var logo:FlxSprite;
 	var logoBl:FlxSprite;
 
+	var countDownSprites:Array<FlxSprite> = [];
 
 	var pauseArt:FlxSprite;
 
@@ -64,10 +69,16 @@ class PauseSubState extends MusicBeatSubstate
 	private var curBPM:Float = 0;
 	*/
 
-	public function new(?forcePauseArt:String)
+	public function new(?forcePauseArt:String, x:Float, y:Float)
 	{
-		FlxG.mouse.visible = Main.mouseVisivel;
+		#if desktop
+		FlxG.mouse.visible = true;
+		#end
 		super();
+
+		ready = new FlxSprite().loadGraphic(Paths.image(PlayState.introAlts[0]));
+		set = new FlxSprite().loadGraphic(Paths.image(PlayState.introAlts[1]));
+		go = new FlxSprite().loadGraphic(Paths.image(PlayState.introAlts[2]));
 
 		isLibitina = PlayState.SONG.song.toLowerCase() == 'libitina';
 		isVallHallA = PlayState.SONG.song.toLowerCase() == 'drinks on me';
@@ -231,21 +242,19 @@ class PauseSubState extends MusicBeatSubstate
 
 		for (i in 0...menuItems.length)
 		{
-			var songText:FlxText = new FlxText(-350, 370 + (i * 80), 300, menuItems[i]); //Só pra ficar mais confortável pra tocar
-			songText.setFormat(LangUtil.getFont('riffic'), 27, FlxColor.WHITE, LEFT);
+			var songText:FlxText = new FlxText(-350, 370 + (i * 80), 0, menuItems[i]); //Só pra ficar mais confortável pra tocar
+			songText.setFormat(LangUtil.getFont('riffic'), 28, FlxColor.WHITE, LEFT);
 			songText.antialiasing = SaveData.globalAntialiasing;
 			songText.setBorderStyle(OUTLINE, itmColor, 2);
-			songText.cameras = [PlayState.camOverlay];
-			songText.ID = i;
 			songText.updateHitbox();
-			songText.offset.set(0,125);
-			songText.y += 120;
+			songText.ID = i;
 			grpMenuShit.add(songText);
-			//Pior é que sei que o problema é offset...
-
 
 			FlxTween.tween(songText, {x: textX}, 1.2 + (i * 0.2), {ease: FlxEase.elasticOut});
+
+	
 		}
+
 
 
 		globalSongOffset = new FlxText(5, FlxG.height - 42, 0, LangUtil.getString('cmnOffset') + ': ${SaveData.offset} ms', 12);		globalSongOffset.alpha = 0;
@@ -286,6 +295,8 @@ class PauseSubState extends MusicBeatSubstate
 					txt.setFormat(LangUtil.getFont('dos'), 27, FlxColor.WHITE, LEFT);
 				else
 					txt.setFormat(LangUtil.getFont('dos'), 27, itmColor, LEFT);
+
+				txt.updateHitbox();
 			});
 		}
 		else if (isVallHallA)
@@ -302,6 +313,7 @@ class PauseSubState extends MusicBeatSubstate
 			{
 				//txt.x += 25;
 				txt.y -= 75;
+				txt.updateHitbox();
 
 				txt.setBorderStyle(OUTLINE, FlxColor.BLACK, 0);
 				txt.antialiasing = false;
@@ -313,29 +325,19 @@ class PauseSubState extends MusicBeatSubstate
 			});
 		}
 
-		cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
-	}
+		changeSelection();
 
-	function onMouseDown(txt:FlxText):Void
-	{
-		if (canPress)
-			selectCoiso(txt.ID);
+		#if mobileC
+		addVirtualPad(FULL, A);
+		#end
+
+		cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
 	}
 
 	override function update(elapsed:Float)
 	{
 
 		super.update(elapsed);
-
-		grpMenuShit.forEach(function(txt:FlxSprite)
-		{
-			#if (debug && !mobile)
-			if (FlxG.mouse.overlaps(txt))
-				trace(txt.ID);
-			#end
-			if (BSLTouchUtils.apertasimples(txt) && canPress)
-				selectCoiso(txt.ID);
-		});
 
 		/*
 		if (pauseMusic != null && canPress)
@@ -354,9 +356,17 @@ class PauseSubState extends MusicBeatSubstate
 		if (PlayState.vocals != null && PlayState.vocals.playing)
 			PlayState.vocals.pause();
 
+		var upP = controls.UP_P;
+		var downP = controls.DOWN_P;
 		var leftP = FlxG.keys.pressed.SHIFT ? controls.LEFT : controls.LEFT_P;
 		var rightP = FlxG.keys.pressed.SHIFT ? controls.RIGHT : controls.RIGHT_P;
+		var accepted = controls.ACCEPT;
 		var reset = controls.RESET;
+
+		if (upP)
+			changeSelection(-1);
+		else if (downP)
+			changeSelection(1);
 
 		if (!FlxG.keys.pressed.CONTROL)
 		{
@@ -367,6 +377,9 @@ class PauseSubState extends MusicBeatSubstate
 			else if (rightP)
 				changeOffset(1);
 		}
+
+		if (accepted && canPress)
+			selectCoiso();
 
 		if (FlxG.keys.pressed.CONTROL && PlayState.practiceMode)
 		{
@@ -405,9 +418,9 @@ class PauseSubState extends MusicBeatSubstate
 			Conductor.playbackSpeed = 1;
 	}
 
-	function selectCoiso(selecionado:Int)
+	function selectCoiso()
 		{
-		var daSelected:String = menuItems[selecionado];
+		var daSelected:String = menuItems[curSelected];
 
 			switch (daSelected)
 			{
@@ -452,9 +465,47 @@ class PauseSubState extends MusicBeatSubstate
 	override function destroy()
 	{
 		pauseMusic.destroy();
+		#if desktop
 		FlxG.mouse.visible = false;
-
+		#end
 		super.destroy();
+	}
+
+	function changeSelection(change:Int = 0):Void
+	{
+		FlxG.sound.play(Paths.sound('scrollMenu'), 0.7);
+
+		curSelected += change;
+
+		if (curSelected < 0)
+			curSelected = menuItems.length - 1;
+		if (curSelected >= menuItems.length)
+			curSelected = 0;
+
+		grpMenuShit.forEach(function(txt:FlxText)
+		{
+			if (isLibitina)
+			{
+				if (txt.ID == curSelected)
+					txt.setFormat(LangUtil.getFont('dos'), 27, FlxColor.WHITE, LEFT);
+				else
+					txt.setFormat(LangUtil.getFont('dos'), 27, itmColor, LEFT);
+			}
+			else if (isVallHallA)
+			{
+				if (txt.ID == curSelected)
+					txt.setFormat(LangUtil.getFont('waifu'), 32, itmColor, LEFT);
+				else
+					txt.setFormat(LangUtil.getFont('waifu'), 32, FlxColor.WHITE, LEFT);
+			}
+			else
+			{
+				if (txt.ID == curSelected)
+					txt.setBorderStyle(OUTLINE, selColor, 2);
+				else
+					txt.setBorderStyle(OUTLINE, itmColor, 2);
+			}
+		});
 	}
 
 	function changeOffset(change:Float = 0, force:Bool = false):Void
@@ -500,7 +551,6 @@ class PauseSubState extends MusicBeatSubstate
 
 		FlxTween.tween(logo, {x: -500}, 0.7, {ease: FlxEase.quartInOut});
 		FlxTween.tween(logoBl, {x: -500}, 0.7, {ease: FlxEase.quartInOut});
-		FlxTween.tween(bg, {alpha: 0}, 0.6, {ease: FlxEase.quartInOut});
 		FlxTween.tween(globalSongOffset, {alpha: 0}, 0.6, {ease: FlxEase.quartInOut});
 		FlxTween.tween(perSongOffset, {alpha: 0}, 0.6, {ease: FlxEase.quartInOut});
 
@@ -512,13 +562,120 @@ class PauseSubState extends MusicBeatSubstate
 
 		new FlxTimer().start(0.6, function(tmr:FlxTimer)
 		{
-			/*
-			Conductor.songPosition = curPos;
-			Conductor.changeBPM(curBPM);
-			*/
-
-			close();
+			startCountdownback();
 		});
+	}
+
+	var loops:Int;
+
+	function startCountdownback()
+	{
+		loops = 0;
+		new FlxTimer().start(0.35, function(tmr:FlxTimer)
+		{
+			loops++;
+			switch (Std.int(loops))
+			{
+				case 1:
+					PlayState.instance.canPause = false;
+					if (PlayState.curStage.startsWith('schoolEvil') || PlayState.curStage.startsWith('schoolEvilEX'))
+						FlxG.sound.play(Paths.sound('intro3' + PlayState.glitchSuffix), 0.6);
+					else
+						FlxG.sound.play(Paths.sound('intro3' + PlayState.altSuffix), 0.6);
+
+				case 2:
+					if (!PlayState.curStage.startsWith('school'))
+					{
+						ready.setGraphicSize(Std.int(ready.width * 0.6));
+						ready.antialiasing = SaveData.globalAntialiasing;
+					}
+					else
+						ready.setGraphicSize(Std.int(ready.width * PlayState.daPixelZoom));
+
+					ready.updateHitbox();
+					ready.screenCenter();
+					add(ready);
+					countDownSprites.push(ready);
+					FlxTween.tween(ready, {y: ready.y += 100, alpha: 0}, 0.4, {
+						ease: FlxEase.cubeInOut,
+						onComplete: function(twn:FlxTween)
+						{
+							countDownSprites.remove(ready);
+							remove(ready);
+							ready.destroy();
+							FlxTween.tween(bg, {alpha: 0}, 0.5, {ease: FlxEase.quartInOut});
+						}
+					});
+					PlayState.instance.canPause = false;
+					if (PlayState.curStage.startsWith('schoolEvil') || PlayState.curStage.startsWith('schoolEvilEX'))
+						FlxG.sound.play(Paths.sound('intro2' + PlayState.glitchSuffix), 0.6);
+					else
+						FlxG.sound.play(Paths.sound('intro2' + PlayState.altSuffix), 0.6);
+				case 3:
+					set.scrollFactor.set();
+					PlayState.instance.canPause = false;
+					if (!PlayState.curStage.startsWith('school'))
+					{
+						set.setGraphicSize(Std.int(set.width * 0.6));
+						set.antialiasing = SaveData.globalAntialiasing;
+					}
+					else
+						set.setGraphicSize(Std.int(set.width * PlayState.daPixelZoom));
+
+					set.updateHitbox();
+					set.screenCenter();
+					add(set);
+					countDownSprites.push(set);
+					FlxTween.tween(set, {y: set.y += 100, alpha: 0}, 0.9, {
+						ease: FlxEase.cubeInOut,
+						onComplete: function(twn:FlxTween)
+						{
+							countDownSprites.remove(set);
+							remove(set);
+							set.destroy();
+						}
+					});
+					if (PlayState.curStage.startsWith('schoolEvil') || PlayState.curStage.startsWith('schoolEvilEX'))
+						FlxG.sound.play(Paths.sound('intro1' + PlayState.glitchSuffix), 0.6);
+					else
+						FlxG.sound.play(Paths.sound('intro1' + PlayState.altSuffix), 0.6);
+				case 4:
+					if (PlayState.curStage.startsWith('schoolEvil') || PlayState.curStage.startsWith('schoolEvilEX'))
+						FlxG.sound.play(Paths.sound('introGo' + PlayState.glitchSuffix), 0.6);
+					else
+						FlxG.sound.play(Paths.sound('introGo' + PlayState.altSuffix), 0.6);
+					
+					PlayState.instance.canPause = false;
+					go.scrollFactor.set();
+
+					if (!PlayState.curStage.startsWith('school'))
+					{
+						go.setGraphicSize(Std.int(go.width * 0.6));
+						go.antialiasing = SaveData.globalAntialiasing;
+					}
+					else
+						go.setGraphicSize(Std.int(go.width * PlayState.daPixelZoom));
+
+					go.updateHitbox();
+					go.screenCenter();
+					add(go);
+					countDownSprites.push(go);
+					FlxTween.tween(go, {y: go.y += 100, alpha: 0}, 0.4, {
+						ease: FlxEase.cubeInOut,
+						onComplete: function(twn:FlxTween)
+						{
+							countDownSprites.remove(go);
+							remove(go);
+							go.destroy();
+							new FlxTimer().start(0.75, function(tmr:FlxTimer)
+							{
+								PlayState.instance.canPause = true;
+							});
+							close();
+						}
+					});
+			}
+		}, 4);
 	}
 
 	/*

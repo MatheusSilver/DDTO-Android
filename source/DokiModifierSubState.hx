@@ -3,7 +3,6 @@ package;
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.group.FlxGroup.FlxTypedGroup;
-import flixel.input.mouse.FlxMouseEventManager;
 import flixel.math.FlxMath;
 import flixel.text.FlxText;
 import flixel.util.FlxTimer;
@@ -12,16 +11,16 @@ class DokiModifierSubState extends MusicBeatSubstate
 {
 	var modifierData:Array<Array<Dynamic>> = [
 		// internal, name, unlock, save, type, default
-		['offset', 'Offset Global', true, 'offset', 'float', 0],
+		//['offset', 'Offset Global', true, 'offset', 'float', 0],
 		['botplay', 'Botplay', true, 'botplay', 'bool', false],
 		['mirror', 'Modo Espelho', SaveData.beatFestival, 'mirrorMode', 'bool', false],
 		['death', 'Morte Súbita', true, 'missModeType', 'int', 0],
 		['random', 'Notas Aleatórias', SaveData.beatFestival, 'randomMode', 'bool', false],
-		['scroll', 'Velocidade do Scroll', true, 'scrollSpeed', 'float', 0.9],
+		//['scroll', 'Velocidade do Scroll', true, 'scrollSpeed', 'float', 0.9],
 		['down', 'Downscroll', true, 'downScroll', 'bool', false],
 		['middle', 'Middlescroll', true, 'middleScroll', 'bool', false],
-		['speed', 'Velocidade da Música', true, 'songSpeed', 'float', 1],
-		['selfAware', 'Auto Consciência', true, 'selfAware', 'bool', true],
+		//['speed', 'Velocidade da Música', true, 'songSpeed', 'float', 1],
+		//['selfAware', 'Auto Consciência', true, 'selfAware', 'bool', true], //Isso aqui na real era pro OBS, mas não é usado
 		['cool', 'Cool gameplay!!!', true, 'coolGameplay', 'bool', false]
 	];
 
@@ -29,7 +28,6 @@ class DokiModifierSubState extends MusicBeatSubstate
 
 	var acceptInput:Bool = false;
 
-	var mouseManager:FlxMouseEventManager = new FlxMouseEventManager();
 	var txtGrp:FlxTypedGroup<FlxText> = new FlxTypedGroup<FlxText>();
 
 	public static var instance:DokiModifierSubState;
@@ -68,11 +66,9 @@ class DokiModifierSubState extends MusicBeatSubstate
 			modText.updateHitbox();
 			modText.ID = i;
 			txtGrp.add(modText);
-			mouseManager.add(modText, onMouseDown, null, onMouseOver);
 		}
 
 		add(txtGrp);
-		add(mouseManager);
 
 		new FlxTimer().start(0.1, function(tmr:FlxTimer)
 		{
@@ -96,6 +92,13 @@ class DokiModifierSubState extends MusicBeatSubstate
 				close();
 			}
 
+			txtGrp.forEach(function(txt:FlxText){
+				if (BSLTouchUtils.apertasimples(txt)){
+					changeSelection(0,txt.ID);
+					changeModifier(1);
+				}
+			});
+
 			if (controls.UP_P)
 				changeSelection(-1);
 			if (controls.DOWN_P)
@@ -116,10 +119,11 @@ class DokiModifierSubState extends MusicBeatSubstate
 		}
 	}
 
-	function changeSelection(amt:Int = 0):Void
+	function changeSelection(amt:Int = 0, changeDirectly = 0):Void
 	{
 		var prevSelected:Int = curSelected;
-		curSelected += amt;
+		curSelected = changeDirectly;
+
 
 		if (prevSelected != curSelected)
 			FlxG.sound.play(Paths.sound('scrollMenu'));
@@ -211,22 +215,6 @@ class DokiModifierSubState extends MusicBeatSubstate
 			FlxG.sound.play(Paths.sound('scrollMenu'));
 
 		updateText();
-	}
-
-	function onMouseOver(txt:FlxText):Void
-	{
-		if (acceptInput && curSelected != txt.ID)
-		{
-			FlxG.sound.play(Paths.sound('scrollMenu'));
-			curSelected = txt.ID;
-			changeSelection();
-		}
-	}
-
-	function onMouseDown(txt:FlxText):Void
-	{
-		if (acceptInput && modifierData[curSelected][4] != 'float')
-			changeModifier(1);
 	}
 
 	function setValue(value:Dynamic)

@@ -36,6 +36,11 @@ class TitleState extends MusicBeatState
 
 		persistentUpdate = true;
 
+		SaveData.init();
+		CoolUtil.setFPSCap(SaveData.framerate);
+		KeyBinds.gamepad = FlxG.gamepads.lastActive != null;
+		Random.resetSeed();
+
 		curWacky = FlxG.random.getObject(getIntroTextShit());
 
 		startIntro();
@@ -239,7 +244,7 @@ class TitleState extends MusicBeatState
 		}
 		#end
 
-		var pressedEnter:Bool = controls.ACCEPT || FlxG.mouse.justPressed || BSLTouchUtils.justTouched();
+		var pressedEnter:Bool = controls.ACCEPT || BSLTouchUtils.justTouched();
 
 		if (pressedEnter && !transitioning && skippedIntro)
 		{

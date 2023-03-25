@@ -208,10 +208,10 @@ class GameplayCustomizeState extends MusicBeatState
 		FlxG.camera.zoom = FlxMath.lerp(0.9, FlxG.camera.zoom, 0.95);
 		camHUD.zoom = FlxMath.lerp(SaveData.zoom, camHUD.zoom, 0.95);
 
-		if (FlxG.mouse.overlaps(sick) && FlxG.mouse.pressed)
+		if (BSLTouchUtils.pressionando(sick))
 		{
-			sick.x = (FlxG.mouse.x - sick.width / 2) - 60;
-			sick.y = (FlxG.mouse.y - sick.height) - 60;
+			sick.x = (BSLTouchUtils.pegarpos(X) - sick.width / 2) - 60;
+			sick.y = (BSLTouchUtils.pegarpos(Y) - sick.height) - 60;
 		}
 
 		for (i in playerStrums)
@@ -231,7 +231,7 @@ class GameplayCustomizeState extends MusicBeatState
 			camHUD.zoom = SaveData.zoom;
 		}
 
-		if (FlxG.mouse.overlaps(sick) && FlxG.mouse.justReleased)
+		if (BSLTouchUtils.solto(sick))
 		{
 			SaveData.changedHitX = sick.x;
 			SaveData.changedHitY = sick.y;

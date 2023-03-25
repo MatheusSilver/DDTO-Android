@@ -51,8 +51,6 @@ class MusicBeatState extends FlxUIState
 
 	override function create()
 	{
-		var sprite:FlxSprite = new FlxSprite().loadGraphic(Paths.image('cursor'));
-		FlxG.mouse.load(sprite.pixels);
 
 		CoolUtil.setFPSCap(SaveData.framerate);
 

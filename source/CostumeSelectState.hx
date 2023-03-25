@@ -241,53 +241,28 @@ class CostumeSelectState extends MusicBeatState
 			
 		if (!selectedSomethin)
 		{
-			#if debug
-			var daChoice:String = character[curSelected];
-
-			var selection = costumeJSON.list[curSelected].costumes[costumeSelected];
-			if (FlxG.keys.justPressed.F10 && selectingcostume)
-			{
-				AnimationDebugState.costumeoverride = selection.data;
-				AnimationDebugState.inGame = false;
-				if (daChoice.startsWith('bf'))
-					AnimationDebugState.isPlayer = true;
-
-				MusicBeatState.switchState(new AnimationDebugState(daChoice));
-			}
-
-			//trace(costumeUnlocked[curSelected][costumeSelected]);
-			
-			if (FlxG.mouse.pressed && !selectingcostume)
-			{
-				trace(flavorText.x + " and " + flavorText.y);
-				flavorText.x = (FlxG.mouse.x - flavorText.width / 2);
-				flavorText.y = (FlxG.mouse.y - flavorText.height);
-			}
-
-			if (FlxG.mouse.pressed && selectingcostume)
-			{
-				trace(chara.x + " and " + chara.y);
-				chara.x = (FlxG.mouse.x - chara.width / 2);
-				chara.y = (FlxG.mouse.y - chara.height);
-			}
-			#end
-
 			if (controls.UP_P && !selectingcostume)
 			{
 				changeItem(-1);
 			}
 			
-			grpControls.forEach(function(txt:FlxText)
-			{
-				if (!selectingcostume && BSLTouchUtils.apertasimples(txt))
-					changeItemDirectly(txt.ID);
-			});
-			
-			grpControlshueh.forEach(function(txt:FlxText)
-			{
-				if (selectingcostume && BSLTouchUtils.aperta(txt, txt.ID)=='primeiro')
-					changeCostumeDirectly(txt.ID, false);
-			});
+			if (!selectingcostume){
+				grpControls.forEach(function(txt:FlxText)
+				{
+					if (BSLTouchUtils.aperta(txt, txt.ID)=='primeiro')
+						changeItemDirectly(txt.ID);
+					else if (BSLTouchUtils.aperta(txt, txt.ID) == 'segundo')
+						costumeselect(true);
+				});
+			}else{
+				grpControlshueh.forEach(function(txt:FlxText)
+				{
+					if (BSLTouchUtils.aperta(txt, txt.ID) == 'primeiro')
+						changeCostumeDirectly(txt.ID);
+					else if (BSLTouchUtils.aperta(txt, txt.ID) == 'segundo')
+						savecostume();
+				});
+			}
 
 			if (controls.DOWN_P && !selectingcostume)
 			{
@@ -422,6 +397,7 @@ class CostumeSelectState extends MusicBeatState
 	function costumeselect(goku:Bool)
 	{
 		var daChoice:String = character[curSelected];
+		BSLTouchUtils.prevTouched = -1;
 
 		if (goku)
 		{
@@ -479,7 +455,7 @@ class CostumeSelectState extends MusicBeatState
 		}
 	}
 
-	function changeItem(huh:Int = 20) //PT1
+	function changeItem(huh:Int = 0) //PT1
 	{
 		FlxG.sound.play(Paths.sound('scrollMenu'));
 		curSelected += huh;
@@ -601,6 +577,7 @@ class CostumeSelectState extends MusicBeatState
 
 	function savecostume()
 	{
+		BSLTouchUtils.prevTouched = -1;
 		var daChoice:String = character[curSelected];
 		var colorthingie:FlxColor = 0xFFFDDBF1;
 

@@ -294,7 +294,7 @@ class DokiStoryState extends MusicBeatState
 					selectThing();
 			});
 
-			if (BSLTouchUtils.apertasimples(story_sidestories))
+			if (BSLTouchUtils.aperta(story_sidestories, 8) == 'primeiro')
 				changeItem(0, 8);
 			else if (BSLTouchUtils.aperta(story_sidestories, 8) == 'segundo')
 				selectThing();
