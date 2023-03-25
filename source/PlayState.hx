@@ -467,7 +467,10 @@ class PlayState extends MusicBeatState
 			case "epiphany":
 				FlxG.sound.cache("assets/songs/epiphany/Inst");
 				FlxG.sound.cache("assets/songs/epiphany/Voices");
+				if(storyDifficulty == 2) {
 				FlxG.sound.cache("assets/songs/epiphany/Voices_Lyrics");
+				// talvez o precache das lyrics
+				}
 			default:
 				FlxG.sound.cache(Paths.inst(PlayState.SONG.song));
 				FlxG.sound.cache(Paths.voices(PlayState.SONG.song));
