@@ -67,10 +67,6 @@ import StageData;
 #if FEATURE_DISCORD
 import Discord.DiscordClient;
 #end
-#if FEATURE_FILESYSTEM
-import Sys;
-import sys.FileSystem;
-#end
 #if FEATURE_GAMEJOLT
 import GameJolt.GameJoltAPI;
 #end
@@ -461,19 +457,19 @@ class PlayState extends MusicBeatState
 
 		instance = this;
 
-		supermercadostavin("pause/epiphany");
-		supermercadostavin("pause/fumo");
-		supermercadostavin("pause/gf");
-		supermercadostavin("pause/jill");
-		supermercadostavin("pause/libitina");
-		supermercadostavin("pause/monika");
-		supermercadostavin("pause/natsuki");
-		supermercadostavin("pause/protag");
-		supermercadostavin("pause/sayori");
-		supermercadostavin("pause/senpai");
-		supermercadostavin("pause/yuri");
-		supermercadostavin("Credits_LeftSide");
-		supermercadostavin("DDLCStart_Screen_Assets");
+		supermercadostavin("pause/epiphany", "preload");
+		supermercadostavin("pause/fumo", "preload");
+		supermercadostavin("pause/gf", "preload");
+		supermercadostavin("pause/jill", "preload");
+		supermercadostavin("pause/libitina", "preload");
+		supermercadostavin("pause/monika", "preload");
+		supermercadostavin("pause/natsuki", "preload");
+		supermercadostavin("pause/protag", "preload");
+		supermercadostavin("pause/sayori", "preload");
+		supermercadostavin("pause/senpai", "preload");
+		supermercadostavin("pause/yuri", "preload");
+		supermercadostavin("Credits_LeftSide", "preload");
+		supermercadostavin("DDLCStart_Screen_Assets", "preload");
 
 		keysArray = [
 			[FlxKey.fromString(SaveData.leftBind), FlxKey.LEFT],
@@ -2850,7 +2846,7 @@ class PlayState extends MusicBeatState
 	}
 
 	public static function supermercadostavin(leimagem:String, lelibrary:String) {
-		Paths.image(leimagem, "preload"); //le supermercados tavin commit
+		Paths.image(leimagem, lelibrary); //le supermercados tavin commit
 	}
 	function endcutscene():Void
 	{

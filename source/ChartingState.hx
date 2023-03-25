@@ -39,8 +39,7 @@ import openfl.events.IOErrorEvent;
 import openfl.media.Sound;
 import openfl.net.FileReference;
 import openfl.utils.ByteArray;
-import sys.FileSystem;
-
+import Inutil; // a piada sobre o sutil, utils, bsltouchutils, então aqui temos o INUTIL
 using StringTools;
 
 #if (flixel >= "5.3.0")
@@ -384,13 +383,13 @@ class ChartingState extends MusicBeatState
 		var charDirectory:String = Paths.getPreloadPath('data/characters/');
 		var characters:Array<String> = [];
 
-		if (FileSystem.exists(charDirectory))
+		if (Inutil.exists(charDirectory))
 		{
-			for (file in FileSystem.readDirectory(charDirectory))
+			for (file in Inutil.readDirectory(charDirectory))
 			{
 				var path = haxe.io.Path.join([charDirectory, file]);
 
-				if (!FileSystem.isDirectory(path) && file.endsWith('.json'))
+				if (!Inutil.exists(path) && file.endsWith('.json'))
 				{
 					var charToCheck:String = file.substr(0, file.length - 5);
 
@@ -405,13 +404,13 @@ class ChartingState extends MusicBeatState
 		var stageDirectory:String = Paths.getPreloadPath('data/stages/');
 		var stages:Array<String> = [];
 
-		if (FileSystem.exists(stageDirectory))
+		if (Inutil.exists(stageDirectory))
 		{
-			for (file in FileSystem.readDirectory(stageDirectory))
+			for (file in Inutil.readDirectory(stageDirectory))
 			{
 				var path = haxe.io.Path.join([stageDirectory, file]);
 
-				if (!FileSystem.isDirectory(path) && file.endsWith('.json'))
+				if (!Inutil.exists(path) && file.endsWith('.json'))
 				{
 					stages.push(file.substr(0, file.length - 5));
 				}

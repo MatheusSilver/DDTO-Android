@@ -22,7 +22,7 @@ import flixel.addons.ui.FlxUIInputText;
 import flixel.addons.ui.FlxUINumericStepper;
 import flixel.addons.ui.FlxUITabMenu;
 import flixel.addons.ui.FlxUITooltip.FlxUITooltipStyle;
-import sys.FileSystem;
+import Inutil;
 
 /**
 	*DEBUG MODE
@@ -143,13 +143,13 @@ class AnimationDebugState extends MusicBeatState
 
 		var charDirectory:String = Paths.getPreloadPath('data/characters/');
 
-		if (FileSystem.exists(charDirectory))
+		if (Inutil.exists(charDirectory))
 		{
-			for (file in FileSystem.readDirectory(charDirectory))
+			for (file in Inutil.readDirectory(charDirectory))
 			{
 				var path = haxe.io.Path.join([charDirectory, file]);
 
-				if (!FileSystem.isDirectory(path) && file.endsWith('.json'))
+				if (!Inutil.exists(path) && file.endsWith('.json'))
 				{
 					var charToCheck:String = file.substr(0, file.length - 5);
 
