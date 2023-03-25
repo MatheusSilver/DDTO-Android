@@ -9,7 +9,6 @@ import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import openfl.Assets;
-import shaders.ColorMaskShader;
 
 using StringTools;
 
@@ -72,10 +71,9 @@ class TitleState extends MusicBeatState
 			FlxG.sound.music.fadeIn(2, 0, 0.7);
 		}
 
-		backdrop = new FlxBackdrop(Paths.image('scrollingBG'));
+		backdrop = new FlxBackdrop(Paths.image('backdropsmenu/backdropcatfight'));
 		backdrop.velocity.set(-10, 0);
 		backdrop.antialiasing = SaveData.globalAntialiasing;
-		backdrop.shader = new ColorMaskShader(0xFFFDEBF7, 0xFFFDDBF1);
 		add(backdrop);
 
 		creditsBG = new FlxBackdrop(Paths.image('credits/pocBackground', 'doki'));

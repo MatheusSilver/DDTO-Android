@@ -75,7 +75,6 @@ import flixel.math.FlxPoint;
 import flixel.math.FlxRect;
 import flixel.graphics.FlxGraphic;
 import flixel.addons.transition.FlxTransitionSprite.GraphicTransTileDiamond;
-import shaders.ColorMaskShader;
 
 #if FEATURE_FILESYSTEM
 import Sys;
@@ -243,10 +242,9 @@ class GameJoltLogin extends MusicBeatSubstate
 	{
 		trace("init? " + GJApi.initialized);
 
-		backdrop = new FlxBackdrop(Paths.image('scrollingBG'));
+		backdrop = new FlxBackdrop(Paths.image('backdropsmenu/backdropcredits'));
 		backdrop.velocity.set(-40, -40);
 		backdrop.antialiasing = SaveData.globalAntialiasing;
-		backdrop.shader = new ColorMaskShader(0xFFFDFFFF, 0xFFFDDBF1);
 		add(backdrop);
 
 		charBop = new FlxSprite(FlxG.width - 400, 250);

@@ -20,7 +20,6 @@ import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import lime.app.Application;
 import flixel.group.FlxGroup;
-import shaders.ColorMaskShader;
 #if FEATURE_DISCORD
 import Discord.DiscordClient;
 #end
@@ -118,10 +117,9 @@ class DokiStoryState extends MusicBeatState
 		persistentUpdate = persistentDraw = true;
 
 
-		backdrop = new FlxBackdrop(Paths.image('scrollingBG'));
+		backdrop = new FlxBackdrop(Paths.image('backdropsmenu/backdropcatfight'));
 		backdrop.velocity.set(-40, -40);
 		backdrop.antialiasing = SaveData.globalAntialiasing;
-		backdrop.shader = new ColorMaskShader(0xFFFDFFFF, 0xFFFDDBF1);
 		add(backdrop);
 
 		//-700, -360

@@ -16,7 +16,6 @@ import flixel.text.FlxText;
 import flixel.addons.display.FlxBackdrop;
 import flixel.math.FlxMath;
 import flixel.ui.FlxBar;
-import shaders.ColorMaskShader;
 #end
 
 using StringTools;
@@ -59,10 +58,9 @@ class LoadingState extends MusicBeatState
 		#if NO_PRELOAD_ALL
 		persistentUpdate = persistentDraw = true;
 
-		backdrop = new FlxBackdrop(Paths.image('scrollingBG'));
+		backdrop = new FlxBackdrop(Paths.image('backdropsmenu/backdropcatfight'));
 		backdrop.velocity.set(-40, -40);
 		backdrop.antialiasing = SaveData.globalAntialiasing;
-		backdrop.shader = new ColorMaskShader(0xFFFDFFFF, 0xFFFDDBF1);
 		add(backdrop);
 
 		if (!SaveData.beatFestival || PlayState.isStoryMode)

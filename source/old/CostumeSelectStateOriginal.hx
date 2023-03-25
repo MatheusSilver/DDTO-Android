@@ -20,7 +20,6 @@ import flixel.util.FlxTimer;
 import lime.app.Application;
 import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.group.FlxGroup;
-import shaders.ColorMaskShader;
 #if FEATURE_DISCORD
 import Discord.DiscordClient;
 #end
@@ -396,7 +395,6 @@ class CostumeSelectStateOriginal extends MusicBeatState
 		backdrop = new FlxBackdrop(Paths.image('scrollingBG'));
 		backdrop.velocity.set(-40, -40);
 		backdrop.antialiasing = SaveData.globalAntialiasing;
-		backdrop.shader = new ColorMaskShader(0xFFFDFFFF, 0xFFFDDBF1);
 		add(backdrop);
 
 		preloadcharacters();

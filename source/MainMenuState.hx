@@ -16,7 +16,6 @@ import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import lime.app.Application;
 import flixel.group.FlxGroup.FlxTypedGroup;
-import shaders.ColorMaskShader;
 #if FEATURE_DISCORD
 import Discord.DiscordClient;
 #end
@@ -105,10 +104,9 @@ class MainMenuState extends MusicBeatState
 			Conductor.changeBPM(120);
 		}
 
-		backdrop = new FlxBackdrop(Paths.image('scrollingBG'));
+		backdrop = new FlxBackdrop(Paths.image('backdropsmenu/backdropcatfight'));
 		backdrop.velocity.set(-40, -40);
 		backdrop.antialiasing = SaveData.globalAntialiasing;
-		backdrop.shader = new ColorMaskShader(0xFFFDFFFF, 0xFFFDDBF1);
 		add(backdrop);
 
 		var menuString:String = Assets.getText(Paths.json('menuCharacters'));
