@@ -52,7 +52,7 @@
 		-60
 	],
 	"sing_duration": 4,
-	"scale": 1,
+	"scale": 2,
 	"gameover_character": "bf-holding-gf-dead",
 	"death_sound": "fnf_loss_sfx",
 	"win_sound": "dah"

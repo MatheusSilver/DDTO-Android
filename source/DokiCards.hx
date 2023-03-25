@@ -92,7 +92,7 @@ class DokiCards extends MusicBeatSubstate
 		{
 			selectGrp.forEach(function(spr:FlxSprite)
 			{
-				if (FlxG.mouse.overlaps(spr) && FlxG.mouse.justPressed)
+				if (BSLTouchUtils.apertasimples(spr))
 					selectChar(charList[spr.ID].toLowerCase(), spr.ID);
 			});
 			/*if (controls.NOTE_LEFT_P)

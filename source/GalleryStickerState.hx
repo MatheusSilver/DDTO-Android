@@ -123,17 +123,15 @@ class GalleryStickerState extends MusicBeatState
 
 		if (controls.LEFT_P || BSLTouchUtils.apertasimples(setaEsquerda))
 			changeItem(-1);
-
-		if (controls.RIGHT_P || BSLTouchUtils.apertasimples(setaDireita))
+		else if (controls.RIGHT_P || BSLTouchUtils.apertasimples(setaDireita))
 			changeItem(1);
-
-		if (controls.ACCEPT || BSLTouchUtils.apertasimples(sticker) && stickerData[curSelected] != 'grandhammer')
+		else if (controls.ACCEPT || BSLTouchUtils.apertasimples(sticker) && stickerData[curSelected] != 'grandhammer')
 		{
 			FlxG.sound.play(Paths.sound('scrollMenu'));
 			CoolUtil.openURL(urlData[curSelected]);
 		}
 
-		if (FlxG.mouse.overlaps(sticker) && FlxG.mouse.pressed && stickerData[curSelected] == 'grandhammer' && !dontSpam)
+		if (BSLTouchUtils.apertasimples(sticker) && stickerData[curSelected] == 'grandhammer' && !dontSpam)
 		{
 			FlxG.camera.fade(FlxColor.WHITE, 1, true, true);
 			FlxG.sound.play(Paths.sound('holofunkUnlock'));

@@ -34,6 +34,7 @@ class OptionsState extends MusicBeatState
 			new CustomControls('Configure o estilo de controle mobile'),
 			#end
 			//new MonikaHD('Habilite a skin de Monika Hd'),
+			new BotPlay('Deixe o Bot jogar por você e apenas aproveite a história.'),
 			new KeyBindingsOption(LangUtil.getString('descKeyBindings', 'option'), controls),
 			new DownscrollOption(LangUtil.getString('descDownscroll', 'option')),
 			new LaneUnderlayOption(LangUtil.getString('descLaneUnderway', 'option')),
@@ -54,7 +55,6 @@ class OptionsState extends MusicBeatState
 			#end
 			new LowEnd('Opções de otimização extras'),
 			//new Shaders('extremamente NÃO recomendável, ative por sua conta e risco.'),
-			//new CustomCursor(LangUtil.getString('descCursor', 'option')),
 			new FlashingLightsOption(LangUtil.getString('descFlashing', 'option')),
 			new AccuracyOption(LangUtil.getString('descAccuracy', 'option')),
 			new NPSDisplayOption(LangUtil.getString('descNPS', 'option')),

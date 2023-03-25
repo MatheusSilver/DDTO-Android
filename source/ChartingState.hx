@@ -922,7 +922,7 @@ class ChartingState extends MusicBeatState
 				}
 			}
 		});
-
+		#if desktop
 		if (FlxG.mouse.justPressed)
 		{
 			if (FlxG.mouse.overlaps(curRenderedNotes))
@@ -950,12 +950,14 @@ class ChartingState extends MusicBeatState
 				}
 			}
 		}
+		
 
 		if (holding && FlxG.mouse.pressed)
 			setNoteSustain((getStrumTime(dummyArrow.y) + sectionStartTime()) - curSelectedNote[0]);
 		else
 			holding = false;
 
+		#end
 		if (curSection * 16 != curStep && curStep % 16 == 0 && FlxG.sound.music.playing)
 		{
 			if (curSection * 16 > curStep)
@@ -967,7 +969,7 @@ class ChartingState extends MusicBeatState
 				changeSection(curSection + 1, false);
 			}
 		}
-
+		#if desktop
 		if (FlxG.mouse.x > gridBG.x
 			&& FlxG.mouse.x < gridBG.x + gridBG.width
 			&& FlxG.mouse.y > gridBG.y
@@ -986,6 +988,7 @@ class ChartingState extends MusicBeatState
 			else
 				dummyArrow.y = Math.floor(FlxG.mouse.y / GRID_SIZE) * GRID_SIZE;
 		}
+		#end
 
 		var blockInput:Bool = false;
 		for (inputText in blockPressWhileTypingOn)
@@ -1118,7 +1121,7 @@ class ChartingState extends MusicBeatState
 				else
 					resetSection();
 			}
-
+			#if desktop
 			if (FlxG.mouse.wheel != 0)
 			{
 				var wheelSpin = FlxG.mouse.wheel;
@@ -1136,6 +1139,7 @@ class ChartingState extends MusicBeatState
 
 				vocals.time = FlxG.sound.music.time;
 			}
+			#end
 
 			if (!FlxG.keys.pressed.SHIFT)
 			{

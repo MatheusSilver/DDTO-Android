@@ -1153,25 +1153,3 @@ class LowEnd extends Option
 		return 'Modo Gama Baja' + ' ' + (SaveData.lowEnd ? LangUtil.getString('cmnOn') : LangUtil.getString('cmnOff'));
 	}
 }
-
-class CustomCursor extends Option
-{
-	public function new(desc:String)
-	{
-		super();
-		description = desc;
-	}
-
-	public override function press():Bool
-	{
-		SaveData.customCursor = !SaveData.customCursor;
-		FlxG.mouse.useSystemCursor = !SaveData.customCursor;
-		display = updateDisplay();
-		return true;
-	}
-
-	private override function updateDisplay():String
-	{
-		return LangUtil.getString('nameCursor', 'option') + ' ' + (SaveData.customCursor ? LangUtil.getString('cmnOn') : LangUtil.getString('cmnOff'));
-	}
-}

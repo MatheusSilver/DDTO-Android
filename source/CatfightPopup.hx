@@ -100,13 +100,15 @@ class CatfightPopup extends MusicBeatSubstate
 				close();
 			}
 
-			if (FlxG.mouse.overlaps(yuri) && FlxG.mouse.justPressed && curSelected != 0){
+			if (BSLTouchUtils.apertasimples(yuri) && curSelected != 0){
 				curSelected = 0;
 				changeItem();
-			}else if (FlxG.mouse.overlaps(natsuki) && FlxG.mouse.justPressed  && curSelected != 1){
+			}
+			else if (BSLTouchUtils.apertasimples(natsuki)  && curSelected != 1){
 				curSelected = 1;
 				changeItem();
-			}else if((FlxG.mouse.overlaps(yuri) || FlxG.mouse.overlaps(natsuki))  && FlxG.mouse.justPressed)
+			}
+			else if (BSLTouchUtils.apertasimples(yuri) || BSLTouchUtils.apertasimples(natsuki))
 				selectItem();
 		}
 	}

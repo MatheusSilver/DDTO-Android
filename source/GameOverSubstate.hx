@@ -155,7 +155,9 @@ class GameOverSubstate extends MusicBeatSubstate
 
 	override function destroy()
 	{
-		FlxG.mouse.visible = Main.mouseVisivel;
+		#if desktop
+		FlxG.mouse.visible = true;
+		#end
 		super.destroy();
 	}
 

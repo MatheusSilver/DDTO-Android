@@ -16,7 +16,6 @@ import flixel.tweens.FlxTween;
 import flixel.util.FlxTimer;
 import flixel.effects.FlxFlicker;
 import flixel.addons.transition.FlxTransitionableState;
-import flixel.input.mouse.FlxMouseEventManager;
 #if FEATURE_DISCORD
 import Discord.DiscordClient;
 #end
@@ -114,9 +113,6 @@ class DokiFreeplayState extends MusicBeatState
 		{
 			var data:Array<String> = initSonglist[i].split(':');
 			var meta = new SongMetadata(data[0], Std.parseInt(data[2]), data[1]);
-
-			if (meta.songName.toLowerCase() == 'erb') // accessible through easter egg only
-				continue;
 
 			if (meta.songName.toLowerCase() == 'drinks on me' && !SaveData.beatVA11HallA)
 				continue;
@@ -239,7 +235,6 @@ class DokiFreeplayState extends MusicBeatState
 				songName = songs[i].songName;
 			}
 
-			// TO-DO: make songs selectable by mouse
 			var songText:FlxText = new FlxText(442, 116 + (i * 47.5), 500, songName, 9);
 			songText.setFormat(Paths.font("Halogen.otf"), 29, FlxColor.BLACK, FlxTextAlign.LEFT);
 			songText.antialiasing = SaveData.globalAntialiasing;
@@ -303,7 +298,7 @@ class DokiFreeplayState extends MusicBeatState
 		//Novamente fazendo coisas sem testar e sem ver os assets.
 		//Então é melhor lembrar de no final, trocar a skin do custom controls pela padrão usada na galeria.
 	
-		pageNum = new FlxText(560, FlxG.height - 75, 0, 'Página ' + Std.string(curPage + 1), 48);
+		pageNum = new FlxText(580, 580, 0, 'Página ' + Std.string(curPage + 1), 48);
 		pageNum.setFormat(LangUtil.getFont('riffic'), 48, FlxColor.WHITE, FlxTextAlign.CENTER);
 		pageNum.y += LangUtil.getFontOffset('riffic');
 		pageNum.setBorderStyle(OUTLINE, 0xFFF860B0, 2, 1);
@@ -313,13 +308,18 @@ class DokiFreeplayState extends MusicBeatState
 		pageNum.antialiasing = SaveData.globalAntialiasing;
 		//Lembrar de trocar a fonte aqui depois (É só copiar e colar o code do menu principal com alteração no size da fonte)
 		add(pageNum);
+
+		if (curPage == 4){ //Maldita libitina...
+			pageNum.screenCenter(X);
+			pageNum.y -= 30;
+		}
 		
 		leftArrow = new FlxSprite(pageNum.x - 60,pageNum.y - 10);
 		leftArrow.loadGraphic(Paths.image('seta', 'doki'));
 		leftArrow.antialiasing = SaveData.globalAntialiasing;
 		leftArrow.updateHitbox();
 
-		rightArrow = new FlxSprite(pageNum.x + pageNum.width + 10, leftArrow.y);
+		rightArrow = new FlxSprite(pageNum.x + 205, leftArrow.y);
 		rightArrow.loadGraphic(Paths.image('seta', 'doki'));
 		rightArrow.flipX=true;
 		rightArrow.antialiasing = SaveData.globalAntialiasing;
@@ -374,7 +374,7 @@ class DokiFreeplayState extends MusicBeatState
 			if (BSLTouchUtils.apertasimples(diff))
 				changeDiff(1);
 
-			if (FlxG.mouse.overlaps(modifierMenu) && FlxG.mouse.justPressed)
+			if (BSLTouchUtils.apertasimples(modifierMenu))
 			{
 				FlxG.sound.play(Paths.sound('confirmMenu'));
 				openSubState(new DokiModifierSubState());
@@ -456,7 +456,7 @@ class DokiFreeplayState extends MusicBeatState
 			// Something barebones to hold off from playing the song
 			// until you hit spacebar
 			// Barebones because it's something quick that I could think of before doing other things
-			if ((FlxG.keys.justPressed.SPACE || (FlxG.mouse.overlaps(songPlayback) && FlxG.mouse.justPressed)) && !selectedSomethin && !SaveData.cacheSong)
+			if (FlxG.keys.justPressed.SPACE || BSLTouchUtils.apertasimples(songPlayback) && !selectedSomethin && !SaveData.cacheSong)
 				playSong();
 
 			if (controls.LEFT_P && diffselect)
@@ -683,60 +683,6 @@ class DokiFreeplayState extends MusicBeatState
 				item.setBorderStyle(OUTLINE, 0x00FF7FEE, 1, 1);
 			else
 				item.setBorderStyle(OUTLINE, 0xFFFF7FEE, 1, 1);
-		}
-	}
-
-	function onMouseDown(spr:FlxSprite):Void
-	{
-		if (!selectedSomethin && acceptInput)
-		{
-			if (multiDiff.contains(songs[curSelected].songName.toLowerCase()))
-			{
-				if (SaveData.beatEpiphany)
-				{
-					switch (diffselect)
-					{
-						case false:
-							{
-								FlxG.sound.play(Paths.sound('confirmMenu'));
-								diff.visible = true;
-								diffselect = true;
-								pageNum.visible = false;
-								rightArrow.visible = false;
-								leftArrow.visible = false;
-							}
-						case true:
-							{
-								startsong();
-							}
-					}
-				}
-				else
-					startsong();	
-			}
-			else
-			{
-				curDifficulty = 1;
-				if (songs[curSelected].songName.toLowerCase() == 'catfight')
-					openSubState(new CatfightPopup('freeplay'));
-				else
-					startsong();
-			}
-		}
-	}
-
-	//I don't know if you can just check in mousedown but just incase
-
-	function onMouseOver(txt:FlxText):Void
-	{
-		if (!selectedSomethin && acceptInput)
-		{
-			if (curSelected != txt.ID)
-			{
-				FlxG.sound.play(Paths.sound('scrollMenu'));
-				curSelected = txt.ID;
-				changeItem();
-			}
 		}
 	}
 
