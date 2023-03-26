@@ -65,10 +65,6 @@ import StageData;
 #if FEATURE_DISCORD
 import Discord.DiscordClient;
 #end
-#if FEATURE_FILESYSTEM
-import Sys;
-import sys.FileSystem;
-#end
 #if FEATURE_GAMEJOLT
 import GameJolt.GameJoltAPI;
 #end
@@ -460,6 +456,7 @@ class PlayState extends MusicBeatState
 		Paths.clearStoredMemory();
 
 		instance = this;
+
 
 		keysArray = [
 			[FlxKey.fromString(SaveData.leftBind), FlxKey.LEFT],

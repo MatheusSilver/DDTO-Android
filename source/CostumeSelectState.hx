@@ -340,9 +340,6 @@ class CostumeSelectState extends MusicBeatState
 		if (costumeJSON.list[curSelected].costumes[costumeSelected].color != null && forceColor == 0xFFFDDBF1)
 			barColor = FlxColor.fromString(costumeJSON.list[curSelected].costumes[costumeSelected].color);
 
-		FlxTween.cancelTweensOf(colorTween1);
-		FlxTween.cancelTweensOf(colorTween2);
-
 		var goku:FlxColor = FlxColor.fromHSB(barColor.hue, barColor.saturation, barColor.brightness * 1.3);
 
 		if (charCostume != null && charCostume != 'hueh' && charCostume != '')
