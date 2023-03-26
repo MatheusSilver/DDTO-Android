@@ -16,7 +16,7 @@ class DokiCards extends MusicBeatSubstate
 	public var acceptInput:Bool = false;
 	var select:FlxSprite;
 	var funnyChar:String = 'protag';
-	var charList:Array<String> =  ['Yuri', 'Sayori', 'Monika', 'Natsuki'];
+	public static var charList:Array<String> =  ['Yuri', 'Sayori', 'Monika', 'Natsuki'];
 	var selectGrp:FlxTypedGroup<FlxSprite>;
 	var curSelected:Int = 0;
 	var huehTimer:FlxTimer;
@@ -81,6 +81,14 @@ class DokiCards extends MusicBeatSubstate
 			acceptInput = true;
 		});
 
+		#if mobileC
+		addVirtualPad(FULL, NONE);
+		var camcontrol = new FlxCamera();
+		FlxG.cameras.add(camcontrol);
+		camcontrol.bgColor.alpha = 0;
+		_virtualpad.cameras = [camcontrol];
+		#end
+
 		cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
 	}
 
@@ -89,20 +97,15 @@ class DokiCards extends MusicBeatSubstate
 		super.update(elapsed);
 
 		if (acceptInput)
-		{
-			selectGrp.forEach(function(spr:FlxSprite)
-			{
-				if (BSLTouchUtils.apertasimples(spr))
-					selectChar(charList[spr.ID].toLowerCase(), spr.ID);
-			});
-			/*if (controls.NOTE_LEFT_P)
+		{ //A camera dessa bosta não permite que eu use touch aqui...
+			if (controls.NOTE_LEFT_P)
 				selectChar('yuri', 0);
 			if (controls.NOTE_DOWN_P)
 				selectChar('sayori', 1);
 			if (controls.NOTE_UP_P)
 				selectChar('monika', 2);
 			if (controls.NOTE_RIGHT_P)
-				selectChar('natsuki', 3);*/
+				selectChar('natsuki', 3);
 			
 		}
 	}

@@ -257,7 +257,7 @@ class RatingVisivel extends Option
 
 	private override function updateDisplay():String
 	{
-		return 'Classificação vísivel ' + ' ' + (SaveData.flashing ? LangUtil.getString('cmnOn') : LangUtil.getString('cmnOff'));
+		return 'Classificação vísivel ' + ' ' + (SaveData.ratingVisivel ? LangUtil.getString('cmnOn') : LangUtil.getString('cmnOff'));
 	}
 }
 

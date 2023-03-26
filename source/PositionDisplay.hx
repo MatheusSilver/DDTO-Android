@@ -28,6 +28,7 @@ class PositionDisplay extends FlxSpriteGroup
 		this.songLength = songLength;
 
 		songPosBG = new FlxSprite(0, 10).loadGraphic(Paths.image('timeBar'));
+
 		if (SaveData.downScroll)
 			songPosBG.y = FlxG.height * 0.9 + 40;
 		songPosBG.screenCenter(X);
@@ -66,6 +67,9 @@ class PositionDisplay extends FlxSpriteGroup
 
 	public function tweenIn(length:Float = 0.5)
 	{
+		songText.visible = true;
+		songPosBar.visible = true;
+		songPosBG.visible = true;
 		FlxTween.tween(songPosBG, {alpha: 1}, length, {ease: FlxEase.circOut});
 		FlxTween.tween(songPosBar, {alpha: 1}, length, {ease: FlxEase.circOut});
 		FlxTween.tween(songText, {alpha: 1}, length, {ease: FlxEase.circOut});
@@ -75,6 +79,14 @@ class PositionDisplay extends FlxSpriteGroup
 	{
 		FlxTween.tween(songPosBG, {alpha: 0}, length, {ease: FlxEase.circOut});
 		FlxTween.tween(songPosBar, {alpha: 0}, length, {ease: FlxEase.circOut});
-		FlxTween.tween(songText, {alpha: 0}, length, {ease: FlxEase.circOut});
+		FlxTween.tween(songText, {alpha: 0}, length+0.1, {
+			ease: FlxEase.circOut,
+			onComplete: function(twn:FlxTween)
+			{
+				songText.visible = false;
+				songPosBar.visible = false;
+				songPosBG.visible = false;
+			}
+		});
 	}
 }

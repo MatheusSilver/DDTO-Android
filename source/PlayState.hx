@@ -255,7 +255,6 @@ class PlayState extends MusicBeatState
 	public static var isYuri:Bool = false;
 	var encoreTime:Int = 0;
 
-	var lights_front:BGSprite;
 	var deskfront:BGSprite;
 	var clubmainlight:BGSprite;
 	var lightoverlay:BGSprite;
@@ -394,6 +393,7 @@ class PlayState extends MusicBeatState
 
 	var bgGirls:BackgroundGirls;
 	var practiceScore:Int = 0;
+	var catpopup:BGSprite;
 	var songScore:Int = 0;
 	var scoreTxt:FlxText;
 	var scoreTxtTween:FlxTween;
@@ -626,10 +626,13 @@ class PlayState extends MusicBeatState
 			-FlxG.height * FlxG.camera.zoom).makeGraphic(FlxG.width * 3, FlxG.height * 3, FlxColor.BLACK);
 		blackScreen.scrollFactor.set();
 
+		if(SONG.song.toLowerCase()=='deep breaths' || SONG.song.toLowerCase()=='shrinking violet'){
 		pinkOverlay = new FlxSprite(-FlxG.width * FlxG.camera.zoom, -FlxG.height * FlxG.camera.zoom).makeGraphic(FlxG.width * 3, FlxG.height * 3, 0xFFF281F2);
 		pinkOverlay.alpha = 0.2;
 		pinkOverlay.blend = SCREEN;
+		pinkOverlay.visible = false;
 		pinkOverlay.scrollFactor.set();
+		}
 
 		if (SONG.song.toLowerCase() == 'obsession' || SONG.song.toLowerCase() == 'my confession')
 		{
@@ -751,7 +754,7 @@ class PlayState extends MusicBeatState
 
 		if (SONG.song.toLowerCase() != 'obsession')
 		{ 	//Honestamente, tenho certeza que existe uma maneira mais bonita de fazer isso, mas considerando que tenho zero conhecimento de como isso funciona
-			//É melhor manter a utilidade disso, para apenas carregar os sprites corretamente...
+			//É melhor manter a utilidade disso, para apenas carregar os sprites corretamente...			
 			if (!SONG.player1.startsWith('monika') && !SONG.player2.startsWith('monika') && (SONG.song.toLowerCase() == 'neet' || curStage != 'dokiclubroom'))
 				membrosdoclube.push('monika');
 			if (!SONG.player1.startsWith('sayori') && !SONG.player2.startsWith('sayori') && SONG.gfVersion != 'sayo-speaker')
@@ -759,15 +762,15 @@ class PlayState extends MusicBeatState
 					if (isStoryMode || Character.loadaltcostume && SONG.gfVersion == 'gf-realdoki' && SaveData.gfcostume != "sayo")
 						membrosdoclube.push('sayori');
 				}
-			if (!SONG.player1.startsWith('natsuki') && !SONG.player2.startsWith('natsuki'))
+			if (!SONG.player1.startsWith('natsuki') && !SONG.player2.startsWith('natsuki') && SONG.song.toLowerCase()!='erb')
 				membrosdoclube.push('natsuki');
 			if (curStage != 'dokiclubroom' && !SONG.player1.startsWith('protag') && !SONG.player2.startsWith('protag'))
 				membrosdoclube.push('protag');
-			if (!SONG.player1.startsWith('yuri') && !SONG.player2.startsWith('yuri'))
+			if (!SONG.player1.startsWith('yuri') && !SONG.player2.startsWith('yuri') && SONG.song.toLowerCase()!='erb')
 				membrosdoclube.push('yuri');
 			
 		}
-		else if (SONG.song.toLowerCase() == 'obsession' && isStoryMode && showCutscene && !ForceDisableDialogue)
+		else 
 		{
 			membrosdoclube.push('sayori');
 			membrosdoclube.push('natsuki');
@@ -869,11 +872,13 @@ class PlayState extends MusicBeatState
 						add(bgGirls);
 					}
 
+					if(SONG.song.toLowerCase()!= 'your reality' && SONG.song.toLowerCase()!= 'Poems n Thorns'){
 					evilbg = new BGSprite('weeb/animatedEvilSchool', 'week6', 400, 200, 0.8, 0.9, ['background 2'], true);
 					evilbg.scale.set(6, 6);
 					evilbg.antialiasing = false;
 					evilbg.visible = false;
 					add(evilbg);
+					}
 				}
 			case 'schoolEvilEX':
 				{
@@ -963,9 +968,10 @@ class PlayState extends MusicBeatState
 						staticcredits.animation.play('idle');
 						staticcredits.scrollFactor.set();
 						staticcredits.alpha = 0.001;
+						staticcredits.visible = false;
 						staticcredits.blend = MULTIPLY;
 						staticcredits.cameras = [camGame2];
-						staticcredits.setGraphicSize(Std.int(staticcredits.width / defaultHudZoom));
+						staticcredits.setGraphicSize(Std.int(4*staticcredits.width / defaultHudZoom));
 						staticcredits.updateHitbox();
 						staticcredits.screenCenter();
 					}
@@ -975,12 +981,14 @@ class PlayState extends MusicBeatState
 					senpaiBox = new BGSprite('credits/window_bottom_senpai', 'doki', 190, 1060, 1, 1);
 					senpaiBox.scale.set(1.25, 1.25);
 					senpaiBox.updateHitbox();
+					senpaiBox.visible = false;
 					senpaiBox.cameras = [camGame2];
 					add(senpaiBox);
 
 					senpaiBoxtop = new BGSprite('credits/window_top', 'doki', 180, 1050, 1, 1);
 					senpaiBoxtop.scale.set(1.25, 1.25);
 					senpaiBoxtop.updateHitbox();
+					senpaiBoxtop.visible = false;
 					senpaiBoxtop.cameras = [camGame2];
 					add(senpaiBoxtop);
 
@@ -1007,12 +1015,13 @@ class PlayState extends MusicBeatState
 					p1Boxtop.cameras = [camGame2];
 
 					//camFollow.y = -930;
-					cg1 = new BGSprite('credits/DokiTakeoverLogo', 'doki', 0, 0, 0, 0);
+					cg1 = new BGSprite('credits/CreditsShit2', 'doki', 0, 0, 0, 0);
 					cg1.alpha = 1;
 					cg1.cameras = [camGame2];
 					cg1.screenCenter();
 					cg2 = new BGSprite('credits/thanksforplaying', 'doki', true, 0, 0, 0, 0);
 					cg2.alpha = 0.001;
+					cg2.visible = false;
 					cg2.cameras = [camGame2];
 					
 
@@ -1142,7 +1151,7 @@ class PlayState extends MusicBeatState
 					bgVa11halla.updateHitbox();
 					bg2Va11halla.updateHitbox();
 				}
-			case 'dokiclubroom':
+			case 'dokiclubroom' | 'dokiclubroom-erb':
 				{
 					if (!SaveData.lowEnd)
 					{
@@ -1154,6 +1163,7 @@ class PlayState extends MusicBeatState
 								vignette.antialiasing = SaveData.globalAntialiasing;
 								vignette.scrollFactor.set();
 								vignette.alpha = 0.001;
+								vignette.visible = false;
 
 								if (SONG.song.toLowerCase() != 'obsession')
 								{
@@ -1179,22 +1189,7 @@ class PlayState extends MusicBeatState
 							}
 							case 'deep breaths':
 							{
-								sparkleBG = new FlxBackdrop(Paths.image('clubroom/YuriSparkleBG', 'doki'));
-								sparkleBG.scrollFactor.set(0.1, 0);
-								sparkleBG.velocity.set(-16, 0);
-								sparkleBG.visible = false;
-								sparkleBG.setGraphicSize(Std.int(sparkleBG.width / defaultCamZoom));
-								sparkleBG.updateHitbox();
-								sparkleBG.screenCenter();
-								sparkleBG.antialiasing = SaveData.globalAntialiasing;
-
-								sparkleFG = new FlxBackdrop(Paths.image('clubroom/YuriSparkleFG', 'doki'));
-								sparkleFG.scrollFactor.set(0.1, 0);
-								sparkleFG.velocity.set(-48, 0);
-								sparkleFG.setGraphicSize(Std.int((sparkleFG.width * 1.2) / defaultCamZoom));
-								sparkleFG.updateHitbox();
-								sparkleFG.screenCenter();
-								sparkleFG.antialiasing = SaveData.globalAntialiasing;
+								loadYuriSparkles();
 							}
 							case 'constricted':
 							{
@@ -1206,6 +1201,7 @@ class PlayState extends MusicBeatState
 								vignette.updateHitbox();
 								vignette.screenCenter();
 								vignette.alpha = 0.001;
+								vignette.visible = false;
 
 								zippergoo = new FlxSprite(0, 0).loadGraphic(Paths.image('zippergoo', 'doki'));
 								zippergoo.antialiasing = SaveData.globalAntialiasing;
@@ -1215,6 +1211,7 @@ class PlayState extends MusicBeatState
 								zippergoo.updateHitbox();
 								zippergoo.screenCenter();
 								zippergoo.alpha = 0.001;
+								zippergoo.visible = false;
 							}
 						}
 					}
@@ -1244,8 +1241,11 @@ class PlayState extends MusicBeatState
 
 					if (SONG.song.toLowerCase() == 'neet')
 					{
-						if (bgDokis != null)
+						if (bgDokis != null){
 							bgDokis.alpha = 0.001;
+							bgDokis.visible = false;
+						}
+
 
 						add(blackScreenBG);
 
@@ -1254,6 +1254,7 @@ class PlayState extends MusicBeatState
 						spotlight.alpha = 0.001;
 						spotlight.blend = SCREEN;
 						spotlight.updateHitbox();
+						spotlight.visible = false;
 						add(spotlight);
 					}
 
@@ -1263,9 +1264,6 @@ class PlayState extends MusicBeatState
 			case 'dokifestival':
 				{
 					Character.isFestival = true;
-
-					lights_front = new BGSprite('festival/lights_front', 'doki', -605, 565, 1.1, 0.9, ['idle', 'Lights front'], true);
-					lights_front.setGraphicSize(Std.int(lights_front.width * 1.6*4));
 
 					deskfront = new BGSprite('festival/DesksFestival', 'doki', -700, -520, 1.3, 0.9);
 					deskfront.setGraphicSize(Std.int(deskfront.width * 1.6));
@@ -1290,15 +1288,18 @@ class PlayState extends MusicBeatState
 					banner.updateHitbox();
 					add(banner);
 
+					if(SONG.song.toLowerCase()=='titular (mc mix)'){
+						Paths.image('dumb/glwo', 'shared');
+						Paths.image('dumb/ring', 'shared');
+						Paths.image('dumb/onemore', 'shared');
+					}
+
 					if (bgDokis != null)
 						add(bgDokis);
 				}
 			case 'dokiglitcher':
 				{
 					Character.isFestival = true;
-
-					lights_front = new BGSprite('festival/lights_front', 'doki', -605, 565, 1.1, 0.9, ['idle', 'Lights front'], true);
-					lights_front.setGraphicSize(Std.int(lights_front.width * 1.6*4));
 
 					deskfront = new BGSprite('festival/DesksFestival', 'doki', -700, -520, 1.3, 0.9);
 					deskfront.setGraphicSize(Std.int(deskfront.width * 1.6));
@@ -1381,7 +1382,6 @@ class PlayState extends MusicBeatState
 					bgTrees.visible = false;
 					treeLeaves.visible = false;
 
-					lights_front.visible = true;
 					deskfront.visible = true;
 					closet.visible = true;
 					clubroom.visible = true;
@@ -1461,24 +1461,9 @@ class PlayState extends MusicBeatState
 					add(clubroom);
 
 					if (!SaveData.lowEnd && SONG.song.toLowerCase() == 'shrinking violet')
-					{ //rEVISAR ISSO
-						sparkleBG = new FlxBackdrop(Paths.image('clubroom/YuriSparkleBG', 'doki'));
-						sparkleBG.scrollFactor.set(0.1, 0);
-						sparkleBG.velocity.set(-16, 0);
-						sparkleBG.visible = false;
-						sparkleBG.setGraphicSize(Std.int(sparkleBG.width / defaultCamZoom));
-						sparkleBG.updateHitbox();
-						sparkleBG.screenCenter();
-						sparkleBG.antialiasing = SaveData.globalAntialiasing;
+					{ 
+						loadYuriSparkles();
 						add(sparkleBG);
-	
-						sparkleFG = new FlxBackdrop(Paths.image('clubroom/YuriSparkleFG', 'doki'));
-						sparkleFG.scrollFactor.set(0.1, 0);
-						sparkleFG.velocity.set(-48, 0);
-						sparkleFG.setGraphicSize(Std.int((sparkleFG.width * 1.2) / defaultCamZoom));
-						sparkleFG.updateHitbox();
-						sparkleFG.screenCenter();
-						sparkleFG.antialiasing = SaveData.globalAntialiasing;
 					}
 
 					lightoverlay = new BGSprite('musicroom/Music_RoomLight', 'doki', -250, -100, 1.1, 0.9);
@@ -1500,6 +1485,7 @@ class PlayState extends MusicBeatState
 						poemVideo.updateHitbox();
 						poemVideo.antialiasing = SaveData.globalAntialiasing;
 						poemVideo.cameras = [camGame2];
+						poemVideo.visible = false;
 						poemVideo.alpha = 0.001;
 
 						sideWindow = new BGSprite('notepad/SideWindow', 'doki', 0, 0, 0, 0);
@@ -1508,6 +1494,7 @@ class PlayState extends MusicBeatState
 						sideWindow.y = FlxG.height - sideWindow.height;
 						sideWindow.cameras = [camGame2];
 						sideWindow.alpha = 0.001;
+						sideWindow.visible = false;
 					}
 				}
 			case 'libitina':
@@ -1769,6 +1756,7 @@ class PlayState extends MusicBeatState
 						dokiBackdrop = new FlxBackdrop(Paths.image('backdropsmenu/backdropcatfight'));
 						dokiBackdrop.velocity.set(-40, -40);
 						dokiBackdrop.antialiasing = SaveData.globalAntialiasing;
+						dokiBackdrop.visible = false;
 						dokiBackdrop.alpha = 0.001;
 						add(dokiBackdrop);
 					}
@@ -1783,37 +1771,16 @@ class PlayState extends MusicBeatState
 					add(funnytext);
 
 					//Preload cards justincase
-					var charList:Array<String> = ['Yuri', 'Sayori', 'Monika', 'Natsuki'];
-					for (i in 0...charList.length)
-					{
-						var funnyx:Int = 69;
-
-						var funnySprite:FlxSprite = new FlxSprite(funnyx + (i * 294), 164);
-						funnySprite.frames = Paths.getSparrowAtlas('extraui/' + charList[i] + 'Card', 'preload');
-						switch (charList[i])
-						{
-							case 'Natsuki':
-								funnySprite.animation.addByPrefix('pop', 'NatCardAnim', 30, false);
-							case 'Monika':
-								funnySprite.animation.addByPrefix('pop', 'MonikaCardAnim', 30, false);
-							case 'Sayori':
-								funnySprite.animation.addByPrefix('pop', 'SayoCardAnim', 30, false);
-							case 'Yuri':
-								funnySprite.animation.addByPrefix('pop', 'YuriCardAnim', 30, false);
-						}
-						funnySprite.ID = i;
-						funnySprite.alpha = 0.001;
-						funnySprite.animation.play('pop');
-						funnySprite.antialiasing = SaveData.globalAntialiasing;
-						add(funnySprite);
-						funnySprite.cameras = [camHUD];
-					}
+					//Um preload mil vezes melhor diga-se de passagem...
+					for (chr in DokiCards.charList)
+						Paths.image('extraui/' + chr + 'Card', 'preload');
 
 				}
 		}
 
 		//Gonna hide some of this stuff for performance reasons.
-		if (curStage == 'school' || curStage == 'wilted' || curStage == 'schoolEvilEX')
+		if ((curStage == 'school' || curStage == 'wilted' || curStage == 'schoolEvilEX')
+			&& SONG.song.toLowerCase() != 'Poems n Thorns' && SONG.song.toLowerCase()!= 'your reality')
 		{
 			redStatic = new BGSprite('HomeStatic', 'doki', 0, 0, 1, 1, ['HomeStatic'], true);
 			redStatic.cameras = [camHUD];
@@ -1864,9 +1831,10 @@ class PlayState extends MusicBeatState
 				}
 			}
 
-			#if debug
-			trace(bgDokis.length);
-			#end
+			if(Character.isFestival){
+				for (member in bgDokis) //Just in case...
+					member.color = 0x828282;
+			}
 
 			if (curStage == 'dokiclubroom')
 			{
@@ -1879,14 +1847,18 @@ class PlayState extends MusicBeatState
 						}
 					case "natsuki":
 						{
-							sayori.setPosition(1050, 250);
-							yuri.setPosition(130, 176);
+							if(SONG.song.toLowerCase() != 'catfight'){
+								sayori.setPosition(1050, 250);
+								yuri.setPosition(130, 176);
+							}
 							
 						}
 					case "yuri" | "yuri-crazy":
 						{
-							sayori.setPosition(-49, 247);
-							natsuki.setPosition(1044, 290);
+							if(SONG.song.toLowerCase() != 'catfight'){
+								sayori.setPosition(-49, 247);
+								natsuki.setPosition(1044, 290);
+							}
 						}
 					case "monika":
 						{
@@ -2074,10 +2046,11 @@ class PlayState extends MusicBeatState
 
 				add(popup);
 			case 'musicroom':
-				if(curSong.toLowerCase()=='our harmony'){
+				if(SONG.song.toLowerCase()=='our harmony'){
 					cg1 = new BGSprite('musicroom/CG/cg1', 'doki', 0, 0, 0, 0);
 					cg1.alpha = 0.001;
 					cg1.cameras = [camHUD];
+					cg1.visible = false;
 					cg1.setGraphicSize(Std.int(cg1.width * 0.7));//Smallest 0.67
 					cg1.updateHitbox();
 					cg1.screenCenter();
@@ -2086,12 +2059,14 @@ class PlayState extends MusicBeatState
 				//Tween to -954x
 					cg2 = new BGSprite('musicroom/CG/cg2', 'doki', -914, -347, 0, 0);
 					cg2.alpha = 0.001;
+					cg2.visible = false;
 					cg2.cameras = [camHUD];
 					add(cg2);
 
 				//I'm not sorry
 					cg2Group = new FlxSpriteGroup();
 					cg2Group.cameras = [camGame2];
+					cg2.visible = false;
 					cg2Group.scrollFactor.set();
 					cg2Group.alpha = 0.001;
 					add(cg2Group);
@@ -2111,6 +2086,7 @@ class PlayState extends MusicBeatState
 					cg2Moni = new BGSprite('musicroom/CG/bigone/cg2Moni', 'doki', 0, 0, 0, 0);
 					cg2Moni.ID = 0;
 					cg2Group.add(cg2Moni);
+					cg2Group.visible = false;
 				}
 
 				cg2Light = new BGSprite('musicroom/CG/bigone/cg2Light', 'doki', 0, 0, 0, 0);
@@ -2132,7 +2108,7 @@ class PlayState extends MusicBeatState
 		funnTextGroup.cameras = [camHUD];
 		add(funnTextGroup);
 
-		if(curSong.toLowerCase()=='you and me'){
+		if(SONG.song.toLowerCase()=='you and me'){
 		waitin = new BGSprite('extraui/lol', 'preload', true, 153, 720, 0, 0);
 		waitin.cameras = [camHUD];
 		waitin.alpha = 0.001;
@@ -2152,21 +2128,21 @@ class PlayState extends MusicBeatState
 
 		// Shitty layering but whatev it works LOL
 		// thanks ninja muffin :)
-		if (curStage == 'dokiclubroom' || curStage == 'dokifestival' || curStage == 'dokiglitcher')
+		if (curStage == 'dokiclubroom' || curStage == 'dokiclubroom-erb' || curStage == 'dokifestival' || curStage == 'dokiglitcher')
 		{
 			add(deskfront);
 
-			if (curStage == 'dokifestival' || curStage == 'dokiglitcher')
-				add(lights_front);
 		}
 
-		if (curStage == 'dokiclubroom')
+		if (curStage == 'dokiclubroom' || curStage == 'dokiclubroom-erb')
 			add(clubmainlight);
 
+		if(SONG.song.toLowerCase()=='takeover medley'){
 		//Stickers (Making them universal for now because why not)
 		stickerSprites = new FlxSpriteGroup();
 		stickerSprites.cameras = [camHUD];
 		stickerSprites.alpha = 0.001;
+		stickerSprites.visible=false;
 		add(stickerSprites);
 
 		var funX:Int;
@@ -2196,18 +2172,18 @@ class PlayState extends MusicBeatState
 					funX = 1025;
 					funY = 465;
 			}
-			if(SONG.song.toLowerCase()=='takeover medley' && !SaveData.lowEnd){
-				for (i in 0...stickerData.length - 1){
-					var sticker:BGSprite;
-					sticker = new BGSprite('stickies/' + stickerData[i], 'preload', funX, funY, 0, 0);
-					sticker.scale.set(0.85, 0.85);
-					sticker.updateHitbox();
-					stickerSprites.add(sticker);
-				}
+			var sticker:BGSprite = new BGSprite('miss', 'preload', funX, funY, 0, 0);
+			sticker.scale.set(0.85, 0.85);
+			sticker.updateHitbox();
+			stickerSprites.add(sticker);
+		}
+			if(!SaveData.lowEnd){
+				for (sticker in stickerData)
+					Paths.image('stickies/' + sticker, 'preload');
 			}
 		}
 
-		if (!SaveData.lowEnd && (SONG.song.toLowerCase()=='joyride' || SONG.song.toLowerCase()=='drinks on me'))
+		if (!SaveData.lowEnd && (SONG.song.toLowerCase()=='joyride'))
 		{
 			sunshine = new BGSprite('musicroom/SayoSunshine', 'doki', 0, 0, 1, 1);
 			sunshine.alpha = 0.001;
@@ -2580,9 +2556,47 @@ class PlayState extends MusicBeatState
 		#end
 		super.create();
 
+		cacheCountdown();
+
 		CustomFadeTransition.nextCamera = camOverlay;
 
 		Paths.clearUnusedMemory();
+	}
+
+	function cacheCountdown()
+	{
+		var introAssets:Map<String, Array<String>> = new Map<String, Array<String>>();
+		introAssets.set('default', ['ready', "set", "go"]);
+		introAssets.set('school', ['weeb/pixelUI/ready-pixel', 'weeb/pixelUI/set-pixel', 'weeb/pixelUI/date-pixel']);
+		introAssets.set('schoolEvil', ['weeb/pixelUI/ready-pixel', 'weeb/pixelUI/set-pixel', 'weeb/pixelUI/demise-date']);
+		introAssets.set('schoolEvilEX', ['weeb/pixelUI/ready-pixel', 'weeb/pixelUI/set-pixel', 'weeb/pixelUI/demise-date']);
+
+		var introAlts:Array<String> = introAssets.get('default');
+
+		for (value in introAssets.keys())
+		{
+			if (value == curStage)
+			{
+				introAlts = introAssets.get(value);
+				altSuffix = '-pixel';
+				glitchSuffix = '-glitch';
+			}
+		}
+
+		for (asset in introAlts)
+			Paths.image(asset);
+
+		if (curStage.startsWith('schoolEvil') || curStage.startsWith('schoolEvilEX')){
+			CoolUtil.precacheSound('intro3' + glitchSuffix);
+			CoolUtil.precacheSound('intro2' + glitchSuffix);
+			CoolUtil.precacheSound('intro1' + glitchSuffix);
+			CoolUtil.precacheSound('introGo' + glitchSuffix);
+		}else{
+			CoolUtil.precacheSound('intro3' + altSuffix);
+			CoolUtil.precacheSound('intro2' + altSuffix);
+			CoolUtil.precacheSound('intro1' + altSuffix);
+			CoolUtil.precacheSound('introGo' + altSuffix);
+		}
 	}
 
 	function set_songSpeed(value:Float):Float
@@ -2670,6 +2684,8 @@ class PlayState extends MusicBeatState
 				dad.x -= 5;
 				if (extrachar1 != null) extrachar1.x -= 5;
 				if (extrachar2 != null) extrachar2.x += 5;
+
+				camGame2.visible = false;
 
 				add(poemVideo);
 				add(sideWindow);
@@ -2768,8 +2784,14 @@ class PlayState extends MusicBeatState
 				iconP1.visible = false;
 				iconP2.visible = false;
 				extrachar1.alpha = 0.001;
+				extrachar1.visible = false;
 				camFocus = false;
 				camHUD.alpha = 0.001;
+				for(char in DokiCards.charList)
+					Paths.image('credits/window_bottom_' + char.toLowerCase(), 'doki');
+			
+				Paths.image('credits/window_bottom_monika', 'doki');
+				Paths.image('credits/window_bottom', 'doki');
 				moveCamera("centered");
 				camFollow.y = -930;
 				add(blackScreen);
@@ -3318,7 +3340,7 @@ class PlayState extends MusicBeatState
 				var anim:String;
 				who = (isYuri ? 'catfightYuriPopup' : 'catfightNatPopup');
 				anim = (isYuri ? 'PopUpYuri' : 'PopUpNatsuki');
-				var catpopup:BGSprite = new BGSprite('extraui/' + who, 'preload', true, 400, 400, 1, 1, ['idle', anim]);
+				catpopup = new BGSprite('extraui/' + who, 'preload', true, 400, 400, 1, 1, ['idle', anim]);
 				catpopup.setGraphicSize(Std.int(catpopup.width * 0.7));
 				catpopup.updateHitbox();
 				add(catpopup);
@@ -4001,7 +4023,7 @@ class PlayState extends MusicBeatState
 			preloadMap.set(newCharacter, newBoyfriend);
 			preloadGroup.add(newBoyfriend);
 			newBoyfriend.alpha = 0.00001;
-			newBoyfriend.cameras = [camHUD];
+			newBoyfriend.visible = false;
 		}
 	}
 
@@ -4356,7 +4378,7 @@ class PlayState extends MusicBeatState
 		}
 
 		if (!FlxG.autoPause && !paused && startedCountdown && !boyfriendFuckingDead && canPause && !toggleBotplay)
-			pauseState(false);
+			pauseState();
 
 		super.onFocus();
 	}
@@ -5437,7 +5459,7 @@ class PlayState extends MusicBeatState
 		if(SaveData.ratingVisivel)
 			rating.loadGraphic(Paths.image(pixelShitPart1 + daRating + pixelShitPart2));
 		else
-			rating.makeGraphic(1, 1, FlxColor.TRANSPARENT);
+			rating= new FlxSprite().makeGraphic(1, 1, FlxColor.TRANSPARENT);
 
 		rating.visible = SaveData.ratingVisivel;
 
@@ -5552,7 +5574,7 @@ class PlayState extends MusicBeatState
 			if(SaveData.ratingVisivel)
 				numScore= new FlxSprite().loadGraphic(Paths.image(pixelShitPart1 + 'num' + Std.int(i) + pixelShitPart2));
 			else
-				numScore = new FlxSprite().makeGraphic(1, 1, FlxColor.WHITE);
+				numScore= new FlxSprite().makeGraphic(1, 1, FlxColor.TRANSPARENT);
 
 			numScore.visible = SaveData.ratingVisivel;
 			numScore.screenCenter();
@@ -6374,6 +6396,7 @@ class PlayState extends MusicBeatState
 							{
 								staticshock.visible = false;
 								vignette.alpha = 0;
+								vignette.visible = false;
 							}
 						case 774:
 							camZooming = true;
@@ -6381,6 +6404,9 @@ class PlayState extends MusicBeatState
 				case 'catfight':
 					switch (curStep)
 					{
+						case 50:
+							catpopup.visible = false;
+							remove(catpopup);
 						case 608:
 							defaultCamZoom = 0.8;
 						case 624:
@@ -6474,7 +6500,9 @@ class PlayState extends MusicBeatState
 						case 1280:
 							defaultCamZoom = 1;
 							if (!SaveData.lowEnd)
-								FlxTween.tween(bakaOverlay, {alpha: 0}, CoolUtil.calcSectionLength(2), {ease: FlxEase.sineOut});
+								FlxTween.tween(bakaOverlay, {alpha: 0}, CoolUtil.calcSectionLength(2), {ease: FlxEase.sineOut, onComplete:function(twn:FlxTween){
+									bakaOverlay.visible = false;
+								}});
 					}
 				case 'shrinking violet':
 					switch (curStep)
@@ -6484,6 +6512,8 @@ class PlayState extends MusicBeatState
 							if (!SaveData.lowEnd)
 							{
 								sparkleBG.visible = true;
+								sparkleFG.visible = true;
+								pinkOverlay.visible = true;
 								add(sparkleFG);
 								add(pinkOverlay);
 							}
@@ -6492,9 +6522,15 @@ class PlayState extends MusicBeatState
 						case 1040:
 							if (!SaveData.lowEnd)
 							{
-								FlxTween.tween(sparkleBG, {alpha: 0}, CoolUtil.calcSectionLength(), {ease: FlxEase.sineOut});
-								FlxTween.tween(sparkleFG, {alpha: 0}, CoolUtil.calcSectionLength(), {ease: FlxEase.sineOut});
-								FlxTween.tween(pinkOverlay, {alpha: 0}, CoolUtil.calcSectionLength(), {ease: FlxEase.sineOut});
+								FlxTween.tween(sparkleBG, {alpha: 0}, CoolUtil.calcSectionLength(), {ease: FlxEase.sineOut, onComplete:function(twn:FlxTween){
+									sparkleBG.visible = false;
+								}});
+								FlxTween.tween(sparkleFG, {alpha: 0}, CoolUtil.calcSectionLength(), {ease: FlxEase.sineOut, onComplete:function(twn:FlxTween){
+									sparkleFG.visible = false;
+								}});
+								FlxTween.tween(pinkOverlay, {alpha: 0}, CoolUtil.calcSectionLength(), {ease: FlxEase.sineOut, onComplete:function(twn:FlxTween){
+									pinkOverlay.visible = false;
+								}});
 							}
 					}
 				case 'titular (mc mix)':
@@ -6512,8 +6548,10 @@ class PlayState extends MusicBeatState
 						case 624:
 							if (!SaveData.lowEnd)
 							{
+								zippergoo.visible = true;
 								FlxTween.tween(zippergoo, {alpha: 1}, CoolUtil.calcSectionLength(0.1), {ease: FlxEase.sineOut});
 								add(zippergoo);
+								vignette.visible = true;
 								vignette.alpha = 0.2;
 								add(vignette);
 							}
@@ -6526,8 +6564,12 @@ class PlayState extends MusicBeatState
 						case 1024:
 							if (!SaveData.lowEnd)
 							{
-								FlxTween.tween(zippergoo, {alpha: 0.01}, CoolUtil.calcSectionLength(2), {ease: FlxEase.sineOut});
-								FlxTween.tween(vignette, {alpha: 0.01}, CoolUtil.calcSectionLength(2), {ease: FlxEase.sineOut});
+								FlxTween.tween(zippergoo, {alpha: 0.01}, CoolUtil.calcSectionLength(2), {ease: FlxEase.sineOut, onComplete:function(twn:FlxTween){
+									zippergoo.visible = false;
+								}});
+								FlxTween.tween(vignette, {alpha: 0.01}, CoolUtil.calcSectionLength(2), {ease: FlxEase.sineOut, onComplete:function(twn:FlxTween){
+									vignette.visible = false;
+								}});
 							}
 					}
 				case 'deep breaths':
@@ -6651,8 +6693,10 @@ class PlayState extends MusicBeatState
 							botPlayState.visible = false;
 							practiceTxt.visible = false;
 
+							cg1.visible = true;
 							cg1.alpha = 1;
 							vocals.volume = 1;
+							camGame.visible = false;
 							FlxTween.tween(cg1, {"scale.x": 0.67, "scale.y": 0.67}, 5, {ease: FlxEase.sineIn});
 							camZooming = false;
 							FlxG.camera.zoom = defaultCamZoom;
@@ -6662,7 +6706,9 @@ class PlayState extends MusicBeatState
 						case 2568:
 							FlxTween.tween(whiteflash, {alpha: 1}, 0.57, {ease: FlxEase.sineIn});
 						case 2578:
+							cg1.visible = false;
 							cg1.alpha = 0;
+							cg2.visible = true;
 							cg2.alpha = 1;
 							FlxTween.tween(whiteflash, {alpha: 0}, 1, {ease: FlxEase.sineIn});
 							FlxTween.tween(cg2, {x: -954}, 9, {ease: FlxEase.sineIn});
@@ -6671,7 +6717,9 @@ class PlayState extends MusicBeatState
 						case 2674:
 							FlxTween.tween(whiteflash, {alpha: 1}, 1, {ease: FlxEase.sineIn});
 						case 2694:
+							cg2.visible = false;
 							cg2.alpha = 0;
+							cg2Group.visible = true;
 							cg2Group.alpha = 1;
 
 							for (item in cg2Group.members)
@@ -6687,22 +6735,30 @@ class PlayState extends MusicBeatState
 					{
 						case 384:
 							gf.alpha = 0.001;
+							gf.visible = false;
 							deskfront.alpha = 0.001;
+							deskfront.visible = false;
 							blackScreenBG.alpha = 0.98;
 							spotlight.alpha = 1;
+							spotlight.visible = true;
 							FlxG.sound.play(Paths.sound('spotlight'));
 							camFocus = false;
 							moveCamera('centered');
 							camFollow.x = 554;
 							defaultCamZoom = 1.05;
 						case 512:
+							gf.visible = true;
 							gf.alpha = 1;
+							deskfront.visible = true;
 							deskfront.alpha = 1;
 
-							if (bgDokis != null)
+							if (bgDokis != null){
 								bgDokis.alpha = 1;
+								bgDokis.visible = true;
+							}
 
 							spotlight.alpha = 0;
+							spotlight.visible = false;
 							blackScreenBG.alpha = 0;
 							camFocus = true;
 							defaultCamZoom = 0.75;
@@ -6711,6 +6767,7 @@ class PlayState extends MusicBeatState
 					switch (curStep)
 					{
 						case 1:
+							gf.visible = false;
 							FlxTween.tween(whiteflash, {alpha: 1}, 2.6, {
 								ease: FlxEase.sineOut,
 								onComplete: function(tween:FlxTween)
@@ -6727,8 +6784,8 @@ class PlayState extends MusicBeatState
 								ease: FlxEase.sineOut,
 								onComplete: function(tween:FlxTween)
 								{
-									cg1.loadGraphic(Paths.image('credits/CreditsShit2', 'doki', true));
 									cg1.screenCenter();
+									cg1.visible = false;
 								}
 							});
 						case 54:
@@ -6756,6 +6813,9 @@ class PlayState extends MusicBeatState
 							FlxTween.tween(p1Boxtop, {x: p1Boxtop.x + 200}, CoolUtil.calcSectionLength(), {ease: FlxEase.sineOut});
 							FlxTween.tween(boyfriend, {x: boyfriend.x + 200}, CoolUtil.calcSectionLength(), {ease: FlxEase.sineOut});
 
+							senpaiBox.visible = true;
+							senpaiBoxtop.visible = true;
+							gf.visible = true;
 							FlxTween.tween(senpaiBox, {y: senpaiBox.y - 900}, CoolUtil.calcSectionLength(), {ease: FlxEase.sineOut});
 							FlxTween.tween(senpaiBoxtop, {y: senpaiBoxtop.y - 900}, CoolUtil.calcSectionLength(), {ease: FlxEase.sineOut});
 							FlxTween.tween(gf, {y: gf.y - 900}, CoolUtil.calcSectionLength(), {ease: FlxEase.sineOut});
@@ -6792,13 +6852,23 @@ class PlayState extends MusicBeatState
 							creditsCharSwap("yuri");
 							summmonStickies(true, 8);
 						case 1392:
+							staticcredits.visible = true;
 							if (staticcredits != null) FlxTween.tween(staticcredits, {alpha: 1}, CoolUtil.calcSectionLength(5), {ease: FlxEase.sineOut});
-							FlxTween.tween(dad, {alpha: 0}, 5, {ease: FlxEase.sineOut});
+							FlxTween.tween(dad, {alpha: 0}, 5, {ease: FlxEase.sineOut,
+								onComplete: function(tween:FlxTween)
+								{
+									dad.visible = false;
+								}
+							});
+							extrachar1.visible = true;
 							FlxTween.tween(extrachar1, {alpha: 1}, 5, {ease: FlxEase.sineOut});
 						case 1488:
 							if (staticcredits != null) staticcredits.alpha = 0.0001;
+							staticcredits.visible = false;
+							dad.visible = true;
 							dad.alpha = 1;
 							extrachar1.alpha = 0;
+							extrachar1.visible = false;
 							creditsCharSwap("yuri");
 							summmonStickies(true, 8);
 						case 1616:
@@ -6814,6 +6884,7 @@ class PlayState extends MusicBeatState
 						case 2264:
 							camZooming = false;
 						case 2280:
+							cg1.visible = true;
 							FlxTween.tween(cg1, {alpha: 1}, 0.5, {ease: FlxEase.sineOut});
 						case 2322:
 							FlxTween.tween(cg1, {alpha: 0.001}, 1, {
@@ -6822,11 +6893,14 @@ class PlayState extends MusicBeatState
 								{
 									cg1.loadGraphic(Paths.image('credits/DokiTakeoverLogo', 'doki'));
 									cg1.screenCenter();
+									cg1.visible = false;
 								}
 							});
 						case 2330:
+							cg1.visible = true;
 							FlxTween.tween(cg1, {alpha: 1}, 0.5, {ease: FlxEase.sineOut});
 						case 2358:
+							cg2.visible = true;
 							FlxTween.tween(cg2, {alpha: 1}, 1, {ease: FlxEase.sineOut});
 					}
 				case 'drinks on me':
@@ -6835,7 +6909,12 @@ class PlayState extends MusicBeatState
 						case 2:
 							FlxTween.tween(cg1, {alpha: 1}, 2.5, {ease: FlxEase.sineIn});
 						case 50:
-							FlxTween.tween(cg1, {alpha: 0}, 1.2, {ease: FlxEase.sineIn});
+							FlxTween.tween(cg1, {alpha: 0}, 1.2, {ease: FlxEase.sineIn,
+								onComplete: function(tween:FlxTween)
+								{
+									cg1.visible = false;
+								}
+							});
 						case 62:
 							FlxTween.tween(cg2, {alpha: 1}, 2.5, {ease: FlxEase.sineIn});
 						case 100: // lazy
@@ -6848,7 +6927,12 @@ class PlayState extends MusicBeatState
 						case 111:
 							positionDisplay.tweenIn();
 							metadataDisplay.tweenIn();
-							FlxTween.tween(cg2, {alpha: 0}, 1.2, {ease: FlxEase.sineIn});
+							FlxTween.tween(cg2, {alpha: 0}, 1.2, {ease: FlxEase.sineIn,
+								onComplete: function(tween:FlxTween)
+								{
+									cg2.visible = false;
+								}
+							});
 
 							var targetAlphaOpponent:Float = 1;
 
@@ -6866,8 +6950,14 @@ class PlayState extends MusicBeatState
 						case 160:
 							metadataDisplay.tweenOut();
 						case 512:
+							whiteflash.visible = true;
 							whiteflash.alpha = 1;
-							FlxTween.tween(whiteflash, {alpha: 0.001}, CoolUtil.calcSectionLength(0.2), {ease: FlxEase.sineOut});
+							FlxTween.tween(whiteflash, {alpha: 0.001}, CoolUtil.calcSectionLength(0.2), {ease: FlxEase.sineOut,
+								onComplete: function(tween:FlxTween)
+								{
+									whiteflash.visible = false;
+								}
+							});
 							danaBop.visible = true;
 							defaultCamZoom = 1;
 						case 752:
@@ -6875,7 +6965,14 @@ class PlayState extends MusicBeatState
 						case 768:
 							defaultCamZoom = 0.85;
 							whiteflash.alpha = 1;
-							FlxTween.tween(whiteflash, {alpha: 0.001}, CoolUtil.calcSectionLength(0.2), {ease: FlxEase.sineOut});
+							whiteflash.visible = true;
+							FlxTween.tween(whiteflash, {alpha: 0.001}, CoolUtil.calcSectionLength(0.2), {
+								ease: FlxEase.sineOut,
+								onComplete: function(tween:FlxTween)
+								{
+									whiteflash.visible = false;
+								}
+							});
 							dorth.visible = true;
 							alma.visible = true;
 						case 1008: // wow they're singing together
@@ -6941,8 +7038,14 @@ class PlayState extends MusicBeatState
 						case 1276:
 							encoreTime = 0;
 						case 1280:
+							whiteflash.visible = true;
 							whiteflash.alpha = 1;
-							FlxTween.tween(whiteflash, {alpha: 0.001}, CoolUtil.calcSectionLength(0.2), {ease: FlxEase.sineOut});
+							FlxTween.tween(whiteflash, {alpha: 0.001}, CoolUtil.calcSectionLength(0.2), {ease: FlxEase.sineOut,
+								onComplete: function(tween:FlxTween)
+								{
+									whiteflash.visible = false;
+								}
+							});
 							dorth.visible = false;
 							alma.visible = false;
 							danaBop.visible = false;
@@ -6969,10 +7072,15 @@ class PlayState extends MusicBeatState
 							funnytext.resetText("Os dias continuaram normais com reuniões\ncheias de histórias, doces e músicas.");
 							funnytext.start(0.04);
 						case 208:
-							funnytext.resetText("As coisas estavam indo bem, especialmente para um certo alguém-");
+							funnytext.resetText("As coisas estavam indo bem...\n especialmente para um certo alguém-");
 							funnytext.start(0.04);
 						case 252:
-							FlxTween.tween(funnytext, {alpha: 0}, 0.5, {ease: FlxEase.sineIn});
+							FlxTween.tween(funnytext, {alpha: 0}, 0.5, {ease: FlxEase.sineIn,
+								onComplete: function(twn:FlxTween)
+								{
+									funnytext.visible = false;
+								}
+							});
 						case 240:
 							if (SaveData.judgementCounter)
 								FlxTween.tween(judgementCounter, {alpha: 1}, 0.5, {ease: FlxEase.sineIn});
@@ -7021,6 +7129,7 @@ class PlayState extends MusicBeatState
 						case 784:
 							if (dokiBackdrop != null)
 							{
+								dokiBackdrop.visible = true;
 								FlxTween.tween(dokiBackdrop, {alpha: 1}, CoolUtil.calcSectionLength(0.5), {
 									ease: FlxEase.sineIn,
 									onComplete: function(tween:FlxTween)
@@ -7031,7 +7140,9 @@ class PlayState extends MusicBeatState
 							}
 						case 1068:
 							defaultCamZoom = 0.9;
-							if (dokiBackdrop != null) FlxTween.tween(dokiBackdrop, {alpha: 0}, 3, {ease: FlxEase.sineIn});
+							if (dokiBackdrop != null) FlxTween.tween(dokiBackdrop, {alpha: 0}, 3, {ease: FlxEase.sineIn, onComplete:function(twn:FlxTween){
+									dokiBackdrop.visible = false;
+								}});
 						case 1122:
 							blackBars(false);
 							camFocus = false;
@@ -7071,11 +7182,17 @@ class PlayState extends MusicBeatState
 						case 1776:
 							defaultCamZoom = 1;
 						case 1904:
+							dokiBackdrop.visible = true;
 							if (dokiBackdrop != null) FlxTween.tween(dokiBackdrop, {alpha: 1}, CoolUtil.calcSectionLength(0.5), {ease: FlxEase.sineIn});
 							defaultCamZoom = 0.9;
 						case 2160:
 							blackBars(false);
-							if (dokiBackdrop != null) FlxTween.tween(dokiBackdrop, {alpha: 0}, 3, {ease: FlxEase.sineIn});
+							if (dokiBackdrop != null) FlxTween.tween(dokiBackdrop, {alpha: 0}, 3, {ease: FlxEase.sineIn,
+								onComplete: function(twn:FlxTween)
+								{
+									dokiBackdrop.visible = false;
+								}
+							});
 						case 2638:
 							camFocus = false;
 							FlxTween.tween(camFollow, {y: -3404, x: 589}, 5, {ease: FlxEase.linear});
@@ -7107,12 +7224,16 @@ class PlayState extends MusicBeatState
 							extrachar2.updateHitbox();
 							extrachar2.cameras = [camGame2];
 							extrachar2.dance();
+							camGame2.visible = true;
+							camGame.visible = false;
 							
 							camZooming = false;
 							camGame2.fade(FlxColor.WHITE, 0.5, true);
 							poemVideo.anim.play('hando', true);
+							poemVideo.visible = true;
 							poemVideo.alpha = 1;
 							sideWindow.alpha = 1;
+							sideWindow.visible = true;
 						case 504:
 							FlxTween.tween(extrachar2, {x: -extrachar2.width * 1.5}, CoolUtil.calcSectionLength(0.25), {ease: FlxEase.sineInOut});
 						case 508:
@@ -7147,6 +7268,7 @@ class PlayState extends MusicBeatState
 							FlxTween.tween(gf, {x: -75}, CoolUtil.calcSectionLength(0.25), {ease: FlxEase.sineInOut});
 						case 640:
 							remove(gf);
+							camGame.visible = true;
 							insert(Std.int(dokiData[6]), gf);
 							gf.setPosition(dokiData[0], dokiData[1]);
 							gf.scrollFactor.set(dokiData[2], dokiData[3]);
@@ -7157,8 +7279,15 @@ class PlayState extends MusicBeatState
 
 							camZooming = true;
 							camGame2.fade(FlxColor.WHITE, 0.5, true);
+							poemVideo.visible = false;
+							sideWindow.visible = false;
 							poemVideo.alpha = 0.001;
 							sideWindow.alpha = 0.001;
+
+							new FlxTimer().start(0.7, function(tmr:FlxTimer)
+							{
+								camGame2.visible = false;
+							});
 					}
 				case 'libitina':
 					switch (curStep)
@@ -7693,11 +7822,14 @@ class PlayState extends MusicBeatState
 							}
 						});
 					case 112 | 264:
-						if (bakaOverlay != null) FlxTween.tween(bakaOverlay, {alpha: 0}, CoolUtil.calcSectionLength(2), {ease: FlxEase.sineOut});
+						if (bakaOverlay != null) FlxTween.tween(bakaOverlay, {alpha: 0}, CoolUtil.calcSectionLength(2), {ease: FlxEase.sineOut, onComplete:function(twn:FlxTween){
+									bakaOverlay.visible = false;
+								}});
 					case 144:
 						if (bakaOverlay != null)
 						{
 							bakaOverlay.animation.play('normal', true);
+							bakaOverlay.visible = true;
 							FlxTween.tween(bakaOverlay, {alpha: 1}, CoolUtil.calcSectionLength(2), {ease: FlxEase.sineIn});
 						}
 					case 176:
@@ -7711,20 +7843,37 @@ class PlayState extends MusicBeatState
 				{
 					case 104:
 						sparkleBG.visible = true;
+						sparkleFG.visible = true;
+						pinkOverlay.visible = true;
 						add(sparkleFG);
 						add(pinkOverlay);
 					case 200:
-						FlxTween.tween(sparkleBG, {alpha: 0}, CoolUtil.calcSectionLength(), {ease: FlxEase.sineOut});
-						FlxTween.tween(sparkleFG, {alpha: 0}, CoolUtil.calcSectionLength(), {ease: FlxEase.sineOut});
-						FlxTween.tween(pinkOverlay, {alpha: 0}, CoolUtil.calcSectionLength(), {ease: FlxEase.sineOut});
+						FlxTween.tween(sparkleBG, {alpha: 0}, CoolUtil.calcSectionLength(), {ease: FlxEase.sineOut, onComplete:function(twn:FlxTween){
+									sparkleBG.visible = false;
+								}});
+						FlxTween.tween(sparkleFG, {alpha: 0}, CoolUtil.calcSectionLength(), {ease: FlxEase.sineOut, onComplete:function(twn:FlxTween){
+									sparkleFG.visible = false;
+								}});
+						FlxTween.tween(pinkOverlay, {alpha: 0}, CoolUtil.calcSectionLength(), {ease: FlxEase.sineOut, onComplete:function(twn:FlxTween){
+									pinkOverlay.visible = false;
+								}});
 					case 232:
+						sparkleBG.visible = true;
+						sparkleFG.visible = true;
+						pinkOverlay.visible = true;
 						sparkleBG.alpha = 1;
 						sparkleFG.alpha = 1;
 						pinkOverlay.alpha = 0.2;
 					case 288:
-						FlxTween.tween(sparkleBG, {alpha: 0}, CoolUtil.calcSectionLength(2), {ease: FlxEase.sineOut});
-						FlxTween.tween(sparkleFG, {alpha: 0}, CoolUtil.calcSectionLength(2), {ease: FlxEase.sineOut});
-						FlxTween.tween(pinkOverlay, {alpha: 0}, CoolUtil.calcSectionLength(2), {ease: FlxEase.sineOut});
+						FlxTween.tween(sparkleBG, {alpha: 0}, CoolUtil.calcSectionLength(2), {ease: FlxEase.sineOut, onComplete:function(twn:FlxTween){
+									sparkleBG.visible = false;
+								}});
+						FlxTween.tween(sparkleFG, {alpha: 0}, CoolUtil.calcSectionLength(2), {ease: FlxEase.sineOut, onComplete:function(twn:FlxTween){
+									sparkleFG.visible = false;
+								}});
+						FlxTween.tween(pinkOverlay, {alpha: 0}, CoolUtil.calcSectionLength(2), {ease: FlxEase.sineOut, onComplete:function(twn:FlxTween){
+									pinkOverlay.visible = false;
+								}});
 				}
 			}
 
@@ -7996,7 +8145,7 @@ class PlayState extends MusicBeatState
 									camFollow.x = 765;
 									camFollow.y = 592;
 								}
-							case 'dokiclubroom' | 'dokifestival' | 'credits':
+							case 'dokiclubroom' | 'dokifestival' | 'credits' | 'dokiclubroom-erb':
 								camFollow.y = boyfriend.getMidpoint().y - 200;
 							case 'dokiglitcher':
 								if (boyfriend.curCharacter == 'bf-pixel' || boyfriend.curCharacter == 'pixelbf-new') // pixelbf-new
@@ -8053,7 +8202,7 @@ class PlayState extends MusicBeatState
 					case 'school':
 						camFollow.x = 642;
 						camFollow.y = 571;
-					case 'dokiclubroom' | 'dokifestival' | 'dokiglitcher':
+					case 'dokiclubroom' | 'dokifestival' | 'dokiglitcher' | 'dokiclubroom-erb':
 						switch (defaultCamZoom)
 						{
 							case 1:
@@ -8138,6 +8287,7 @@ class PlayState extends MusicBeatState
 		if (!SaveData.lowEnd)
 		{
 			stickerSprites.alpha = 1;
+			stickerSprites.visible = true;
 			for (item in stickerSprites.members)
 			{
 				if (stickerData.length <= 0)
@@ -8163,7 +8313,12 @@ class PlayState extends MusicBeatState
 				FlxTween.tween(item, {"scale.x": 0.85, "scale.y": 0.85}, 0.1, {});
 			}
 			if (fadeOut)
-				FlxTween.tween(stickerSprites, {alpha: 0.001}, 1, {startDelay: startDelayDur});
+				FlxTween.tween(stickerSprites, {alpha: 0.001}, 1, {startDelay: startDelayDur, 
+				onComplete: function(tween:FlxTween)
+				{
+					stickerSprites.visible = false;
+				}
+			});
 		}
 	}
 
@@ -8217,8 +8372,11 @@ class PlayState extends MusicBeatState
 		if (vignette != null)
 		{
 			add(vignette);
+			vignette.visible = true;
 			vignette.alpha = 0.6;
 		}
+
+		bgDokis.visible = false;
 
 		camFollow.setPosition((dad.getMidpoint().x + boyfriend.getMidpoint().x) / 1.8, dad.getMidpoint().y - 50);
 	}
@@ -8273,7 +8431,6 @@ class PlayState extends MusicBeatState
 		bgTrees.visible = true;
 		treeLeaves.visible = true;
 
-		lights_front.visible = false;
 		deskfront.visible = false;
 		closet.visible = false;
 		clubroom.visible = false;
@@ -8331,7 +8488,6 @@ class PlayState extends MusicBeatState
 		bgTrees.visible = false;
 		treeLeaves.visible = false;
 
-		lights_front.visible = true;
 		deskfront.visible = true;
 		closet.visible = true;
 		clubroom.visible = true;
@@ -8365,6 +8521,27 @@ class PlayState extends MusicBeatState
 		insert(members.indexOf(p2Boxtop) - 1, boxFlash);
 		FlxTween.tween(boxFlash, {alpha: 0.001}, CoolUtil.calcSectionLength(0.1), {ease: FlxEase.sineOut});
 	}
+
+	function loadYuriSparkles()
+		{
+			sparkleBG = new FlxBackdrop(Paths.image('clubroom/YuriSparkleBG', 'doki'));
+			sparkleBG.scrollFactor.set(0.1, 0);
+			sparkleBG.velocity.set(-16, 0);
+			sparkleBG.visible = false;
+			sparkleBG.setGraphicSize(Std.int(sparkleBG.width / defaultCamZoom));
+			sparkleBG.updateHitbox();
+			sparkleBG.screenCenter();
+			sparkleBG.antialiasing = SaveData.globalAntialiasing;
+
+			sparkleFG = new FlxBackdrop(Paths.image('clubroom/YuriSparkleFG', 'doki'));
+			sparkleFG.scrollFactor.set(0.1, 0);
+			sparkleFG.velocity.set(-48, 0);
+			sparkleFG.setGraphicSize(Std.int((sparkleFG.width * 1.2) / defaultCamZoom));
+			sparkleFG.updateHitbox();
+			sparkleFG.screenCenter();
+			sparkleFG.visible = false;
+			sparkleFG.antialiasing = SaveData.globalAntialiasing;			
+		}
 
 	function reloadCreditsStickers()
 	{
@@ -8540,6 +8717,7 @@ class PlayState extends MusicBeatState
 		if (vignette != null)
 		{
 			add(vignette);
+			vignette.visible = true;
 			vignette.alpha = 0.2;
 		}
 	}
@@ -8638,15 +8816,7 @@ class PlayState extends MusicBeatState
 		persistentDraw = true;
 		paused = true;
 
-		// 1 / 1000 chance for Gitaroo Man easter egg
-		if (Random.randBool(0.005) && canGitaroo)
-		{
-			FlxTransitionableState.skipNextTransOut = true;
-			FlxTransitionableState.skipNextTransIn = true;
-			MusicBeatState.switchState(new GitarooPause());
-		}
-		else
-			openSubState(new PauseSubState(forcedPause, boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y));
+		openSubState(new PauseSubState(forcedPause, boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y));
 	}
 }
 

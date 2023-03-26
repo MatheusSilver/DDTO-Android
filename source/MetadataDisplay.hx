@@ -60,6 +60,9 @@ class MetadataDisplay extends FlxSpriteGroup
     public function tweenIn()
     {
         // Move them into the display
+		metaName.visible = true;
+        metaIcon.visible = true;
+        metaArtist.visible = true;
 		FlxTween.tween(metaName, {alpha: 1, y: 20}, 0.4, {ease: FlxEase.quartInOut, startDelay: 0.3});
 		FlxTween.tween(metaIcon, {alpha: 1, y: 20 - (metaIcon.height / 2) + 16}, 0.4, {ease: FlxEase.quartInOut, startDelay: 0.3});
 		FlxTween.tween(metaArtist, {alpha: 1, y: 58}, 0.4, {ease: FlxEase.quartInOut, startDelay: 0.4});
@@ -69,7 +72,16 @@ class MetadataDisplay extends FlxSpriteGroup
     {
         // Move them out from display
 		FlxTween.tween(metaName, {alpha: 0, y: 0}, 0.4, {ease: FlxEase.quartInOut, startDelay: 0.3});
-		FlxTween.tween(metaIcon, {alpha: 0, y: 0 - (metaIcon.height / 2) + 16}, 0.4, {ease: FlxEase.quartInOut, startDelay: 0.3});
+		FlxTween.tween(metaIcon, {alpha: 0, y: 0 - (metaIcon.height / 2) + 16}, 0.4, {
+			ease: FlxEase.quartInOut,
+			startDelay: 0.33,
+			onComplete: function(twn:FlxTween)
+			{
+				metaName.visible = false;
+				metaIcon.visible = false;
+				metaArtist.visible = false;
+			}
+		});
 		FlxTween.tween(metaArtist, {alpha: 0, y: 38}, 0.4, {ease: FlxEase.quartInOut, startDelay: 0.3});
     }
 }
