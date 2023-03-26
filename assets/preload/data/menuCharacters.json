@@ -39,15 +39,6 @@
             "looped": true
         },
         {
-            "name": "yuritabi",
-            "spritePos": [490, 90],
-            "atlas": "menucharacters/tabiandyuri",
-            "prefix": "Tabi Yuri together hueh",
-            "scale": [0.77, 0.77],
-            "frames": 21,
-            "looped": true
-        },
-        {
             "name": "pixelmonika",
             "spritePos": [600, 120],
             "atlas": "menucharacters/pixelmonika",

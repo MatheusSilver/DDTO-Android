@@ -184,14 +184,14 @@ class TitleState extends MusicBeatState
 		dokiApp.antialiasing = SaveData.globalAntialiasing;
 		add(dokiApp);
 
-		//preload maybe
+		/*//preload maybe
 		var predoki = new FlxSprite(0, 0);
 		predoki.frames = Paths.getSparrowAtlas('intro/${dokiIndex}', 'preload');
 		predoki.animation.addByPrefix('pop', dokiIndex, 26, false);
 		predoki.screenCenter();
 		predoki.antialiasing = SaveData.globalAntialiasing;
 		predoki.alpha = 0.001;
-		add(predoki);
+		add(predoki);*/
 
 		doki = new FlxSprite(50, 100);
 		doki.frames = Paths.getSparrowAtlas('intro/DOKI DOKI');

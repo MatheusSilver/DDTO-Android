@@ -21,7 +21,6 @@ class DokiSideStory extends MusicBeatSubstate
 	public static var sidestoryinstance:DokiSideStory;
 
 	public var acceptInput:Bool = false;
-	var cursor:FlxSprite;
 	var curSelected:Int = 0;
 
 	var diffSelect:Bool = false;
@@ -61,10 +60,6 @@ class DokiSideStory extends MusicBeatSubstate
 			sideIcon.ID = i;
 			selectGrp.add(sideIcon);
 		}
-
-		cursor = new FlxSprite().loadGraphic(Paths.image('dokistory/sidestories/cursorsidestories'));
-		cursor.antialiasing = SaveData.globalAntialiasing;
-		add(cursor);
 
 		new FlxTimer().start(0.1, function(tmr:FlxTimer)
 		{
@@ -151,13 +146,6 @@ class DokiSideStory extends MusicBeatSubstate
 			curSelected = songData.length - 1;
 
 		curSong = songData[curSelected][1];
-		cursor.x = songData[curSelected][2];
-		cursor.y = songData[curSelected][3];
-
-		if (songData[curSelected][0] == 'meta')
-			cursor.loadGraphic(Paths.image('dokistory/sidestories/cursorsidestories_meta'));
-		else
-			cursor.loadGraphic(Paths.image('dokistory/sidestories/cursorsidestories'));
 	}
 
 	public function loadSong(songName:String)
@@ -184,15 +172,17 @@ class DokiSideStory extends MusicBeatSubstate
 				FlxFlicker.flicker(hueh, 1, 0.06, false, false);
 		});
 
-		cursor.visible = false;
-
 		PlayState.isStoryMode = true;
 		PlayState.storyPlaylist = [songName.toLowerCase()];
 		PlayState.storyWeek = 8;
 
 		new FlxTimer().start(2, function(tmr:FlxTimer)
 		{
-			MusicBeatState.switchState(new EstadoDeTroca());
+			#if mobile
+			if (curSong.toLowerCase()=='libitina')
+				MusicBeatState.switchState(new VideoState('assets/videos/metaintro', new EstadoDeTroca()));
+			else #end
+				MusicBeatState.switchState(new EstadoDeTroca());
 		});
 	}
 }

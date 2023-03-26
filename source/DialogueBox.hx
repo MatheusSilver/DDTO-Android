@@ -15,7 +15,6 @@ import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import openfl.utils.Assets as OpenFlAssets;
 import openfl.geom.Point;
-import openfl.filters.ShaderFilter;
 import haxe.Json;
 import lime.utils.Assets;
 #if FEATURE_GAMEJOLT
@@ -52,6 +51,8 @@ class DialogueBox extends FlxSpriteGroup
 	var box:FlxSprite;
 	
 	var botaoSkip:FlxSprite;
+
+	var fastLoadImage:FlxSprite;
 
 	var curCharacter:String = '';
 	var prevCharacter:Array<String> = ['monika', 'left'];
@@ -145,9 +146,7 @@ class DialogueBox extends FlxSpriteGroup
 		botaoSkip = new FlxSprite(FlxG.width - 300, 50);
 		botaoSkip.loadGraphic(Paths.image('botaoSkip', 'doki'));
 		botaoSkip.antialiasing = SaveData.globalAntialiasing;
-		#if mobile
-			add(botaoSkip);
-		#end
+		add(botaoSkip);
 
 		if (PlayState.SONG.noteStyle == 'pixel' || isPixel)
 			skipText.font = LangUtil.getFont('vcr');
@@ -206,14 +205,12 @@ class DialogueBox extends FlxSpriteGroup
 
 		if (canSkip && !playingCutscene)
 		{
-			if ((PlayerSettings.player1.controls.BACK #if android || BSLTouchUtils.aperta(botaoSkip, 0) == 'primeiro' #end) && !stopspamming && canFullSkip && !playingCutscene && dialogueStarted)
+			if ((PlayerSettings.player1.controls.BACK || BSLTouchUtils.apertasimples(botaoSkip)) && !stopspamming && canFullSkip && !playingCutscene && dialogueStarted)
 			{
 				isEnding = true;
 				stopspamming = true;
 				endinstantly();
-			}
-	
-			if ((PlayerSettings.player1.controls.ACCEPT || BSLTouchUtils.justTouched()) && dialogueEnded)
+			}else if ((PlayerSettings.player1.controls.ACCEPT || BSLTouchUtils.justTouched()) && dialogueEnded)
 			{
 				FlxG.sound.play(Paths.sound('clickText'), 0.8);
 				enddialogue();
@@ -577,6 +574,12 @@ class DialogueBox extends FlxSpriteGroup
 					portraitLeft.alpha = 0.001;
 					swagDialogue.visible = false;
 					swagDialogue.sounds = [FlxG.sound.load(Paths.sound('dialogue/pixelText'), 0)];
+				}else if(Paths.imagechecker('gallery/'+curDialogue.string,'preload')){
+					fastLoadImage = new FlxSprite(0, 0).loadGraphic(Paths.image('gallery/' + curDialogue.string, 'doki'));
+					fastLoadImage.setGraphicSize(FlxG.width,FlxG.height);
+					fastLoadImage.screenCenter(XY);
+					fastLoadImage.antialiasing = SaveData.globalAntialiasing;
+					add(fastLoadImage);
 				}
 				funnyGlitch();
 			case 'autoskip':
@@ -731,11 +734,18 @@ class DialogueBox extends FlxSpriteGroup
 
 	function funnyGlitch():Void
 	{
-
 		FlxG.sound.play(Paths.sound('glitchin'));
 
 		new FlxTimer().start(0.5, function(tmr:FlxTimer)
 		{
+			if (fastLoadImage != null)
+			{
+				fastLoadImage.visible = false;
+				remove(fastLoadImage);
+				fastLoadImage.kill();
+				fastLoadImage.destroy();
+			}
+
 			enddialogue();
 		});
 	}

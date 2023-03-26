@@ -61,13 +61,12 @@ class SaveData
 	public static var middleScroll:Null<Bool> = false;
 	public static var laneUnderlay:Null<Bool> = false;
 	public static var laneTransparency:Null<Float> = 0.5;
-	public static var selfAware:Null<Bool> = true;
 	public static var mirrorMode:Null<Bool> = false;
 	public static var randomMode:Null<Bool> = false;
 	public static var hitSound:Null<Bool> = false;
 	public static var judgeHitSound:Null<Bool> = false;
 	public static var hitSoundVolume:Null<Float> = 1;
-	public static var noteSplash:Null<Bool> = true;
+	public static var noteSplash:Null<Bool> = false;
 	public static var earlyLate:Null<Bool> = false;
 	public static var autoPause:Null<Bool> = false;
 	public static var judgementCounter:Null<Bool> = false;
@@ -78,7 +77,6 @@ class SaveData
 	public static var goodMs:Null<Int> = 90;
 	public static var sickMs:Null<Int> = 45;
 	public static var ratingToggle:Null<Bool> = true;
-	public static var shaders:Null<Bool> = false;
 	public static var songSpeed:Null<Float> = 1;
 
 	// Costumes

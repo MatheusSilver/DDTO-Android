@@ -19,9 +19,8 @@ class Paths
 
 	public static var dumpExclusions:Array<String> = [
 		'assets/images/Credits_LeftSide.png',
-		'assets/images/cursor.png',
 		'assets/images/DDLCStart_Screen_Assets.png',
-		'assets/images/scrollingBG.png',
+		'assets/images/backdropsmenu/backdropcatfight.png', //Não esparava que isso fosse ser tão importante.
 		'assets/music/freakyMenu.$SOUND_EXT',
 		'assets/music/disco.$SOUND_EXT'
 	];
@@ -133,10 +132,13 @@ class Paths
 		return returnPath;
 	}
 
-	// eu real acho que isso não vai mudar MUITA, mas MUITA coisa, mas ok
-	inline static public function imagechecker(key:String, ?library:String):Dynamic //A library pode ser nula pelo o que eu entendi
+	//X02: "Acho que não vai ser usado pra muita coisa"
+
+	//Sílvio fazendo uma gambiarra gigantesca nos diálogos só com isso k
+	//E com isso, os créditos voltam a funcionar da forma como deveriam tambem kek
+	inline static public function imagechecker(key:String, ?library:String):Bool
 	{
-		return getPath('images/$key.png', IMAGE, library);
+		return OpenFlAssets.exists(getPath('images/$key.png', IMAGE, library));
 	}
 
 	inline public static function getPreloadPath(file:String = '')
@@ -162,16 +164,6 @@ class Paths
 	inline static public function json(key:String, ?library:String)
 	{
 		return getPath('data/$key.json', TEXT, library);
-	}
-
-	inline static public function shaderVertex(key:String, ?library:String)
-	{
-		return getPath('shaders/$key.vs', TEXT, library);
-	}
-
-	inline static public function shaderFragment(key:String, ?library:String)
-	{
-		return getPath('shaders/$key.fs', TEXT, library);
 	}
 
 	inline static public function video(key:String, ?library:String)
@@ -255,6 +247,9 @@ class Paths
 	public static function returnGraphic(key:String, ?library:String, ?locale:Bool)
 	{
 		var path:String = getPath('images/$key.png', IMAGE, library);
+		#if (debug && !mobile)
+		trace('carregando $path');
+		#end
 		if (OpenFlAssets.exists(path))
 		{
 			if (!currentTrackedAssets["graphics"].exists(path))
@@ -291,6 +286,9 @@ class Paths
 	public static function returnSound(path:String, key:String, ?library:String)
 	{
 		var file:String = getPath(path == 'songs' ? '$key.$SOUND_EXT' : '$path/$key.$SOUND_EXT', SOUND, path == 'songs' ? path : library);
+		#if (debug && !mobile)
+		trace('carregando $file'); //Apenas pra eu ter uma noção melhor dos carregamentos desncessauros que esse mod tá fazendo.
+		#end
 		if (OpenFlAssets.exists(file))
 		{
 			if (!currentTrackedAssets["sounds"].exists(file))

@@ -53,7 +53,6 @@ class OptionsState extends MusicBeatState
 			new AntiAliasing(LangUtil.getString('descAntialiasing', 'option')),
 			#end
 			new LowEnd('Opções de otimização extras'),
-			//new Shaders('extremamente NÃO recomendável, ative por sua conta e risco.'),
 			new FlashingLightsOption(LangUtil.getString('descFlashing', 'option')),
 			new AccuracyOption(LangUtil.getString('descAccuracy', 'option')),
 			new NPSDisplayOption(LangUtil.getString('descNPS', 'option')),

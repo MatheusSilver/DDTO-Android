@@ -8,7 +8,7 @@ import flixel.util.FlxColor;
 
 class CloseGameSubState extends MusicBeatSubstate
 {
-	var curSelected:Int = 1;
+	var curSelected:Int = 2;
 	var selectGrp:FlxTypedGroup<FlxText> = new FlxTypedGroup<FlxText>();
 	var textYes:FlxText;
 	var textNo:FlxText;
@@ -34,14 +34,14 @@ class CloseGameSubState extends MusicBeatSubstate
 		text.antialiasing = SaveData.globalAntialiasing;
 		add(text);
 
-		textYes = new FlxText(box.x + (box.width * 0.18), box.y + (box.height * 0.65), 0, LangUtil.getString('cmnYes'));
+		textYes = new FlxText(box.x + (box.width * 0.18), box.y + (box.height * 0.65), 0, 'Sim');
 		textYes.setFormat(LangUtil.getFont('riffic'), 48, FlxColor.WHITE, FlxTextAlign.CENTER);
 		textYes.y += LangUtil.getFontOffset('riffic');
 		textYes.antialiasing = SaveData.globalAntialiasing;
 		textYes.setBorderStyle(OUTLINE, 0xFFFF7CFF, 4);
 		textYes.ID = 0;
 
-		textNo = new FlxText(box.x + (box.width * 0.7), box.y + (box.height * 0.65), 0, LangUtil.getString('cmnNo'));
+		textNo = new FlxText(box.x + (box.width * 0.7), box.y + (box.height * 0.65), 0, 'Não');
 		textNo.setFormat(LangUtil.getFont('riffic'), 48, FlxColor.WHITE, FlxTextAlign.CENTER);
 		textNo.y += LangUtil.getFontOffset('riffic');
 		textNo.antialiasing = SaveData.globalAntialiasing;
@@ -63,14 +63,14 @@ class CloseGameSubState extends MusicBeatSubstate
 			selectItem(1);
 
 		if (BSLTouchUtils.apertasimples(textYes) && curSelected != 0)
-			curSelected = 0;
+			changeItem(0);
 		else if (BSLTouchUtils.apertasimples(textNo)  && curSelected != 1)
-			curSelected = 1;
+			changeItem(1);
 		else if (BSLTouchUtils.apertasimples(textYes) || BSLTouchUtils.apertasimples(textNo))
 			selectItem(curSelected);
 
 		if (controls.LEFT_P)
-			changeItem(-1);
+			changeItem(0);
 		if (controls.RIGHT_P)
 			changeItem(1);
 
@@ -82,12 +82,7 @@ class CloseGameSubState extends MusicBeatSubstate
 	{
 		FlxG.sound.play(Paths.sound('scrollMenu'));
 
-		curSelected += huh;
-
-		if (curSelected >= selectGrp.length)
-			curSelected = 0;
-		if (curSelected < 0)
-			curSelected = selectGrp.length - 1;
+		curSelected = huh;
 
 		selectGrp.forEach(function(txt:FlxText)
 		{

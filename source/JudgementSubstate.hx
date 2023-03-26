@@ -89,6 +89,10 @@ class JudgementSubstate extends MusicBeatSubstate
 
 		textUpdate();
 
+		#if mobile
+			addVirtualPad(FULL, A_B); // Yep... Omega F para os créditos...
+		#end
+
 		super.create();
 	}
 

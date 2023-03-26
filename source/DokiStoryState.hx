@@ -77,7 +77,6 @@ class DokiStoryState extends MusicBeatState
 	public static var popupType:String = 'Prologue';
 	var allBeat:Bool = false;
 
-	var story_cursor:FlxSprite;
 	var story_sidestories:FlxSprite;
 
 	var backdrop:FlxBackdrop;
@@ -199,9 +198,6 @@ class DokiStoryState extends MusicBeatState
 		story_sidestories.ID = 8; // I'm gonna go ahead and force this ID rq
 		story_sidestories.visible = false;
 		add(story_sidestories);
-
-		story_cursor = new FlxSprite(icons[curPos][2], icons[curPos][3]).loadGraphic(Paths.image('dokistory/cursor'));
-		add(story_cursor);
 
 		changeItem();
 		updateText();
@@ -347,8 +343,6 @@ class DokiStoryState extends MusicBeatState
 					if (curPos == hueh.ID)
 						FlxFlicker.flicker(hueh, 1, 0.06, false, false);
 				});
-
-				story_cursor.visible = false;
 		}
 
 		try
@@ -500,15 +494,11 @@ class DokiStoryState extends MusicBeatState
 		{
 			story_sidestories.animation.play('idle');
 			story_sidestories.animation.stop();
-			story_cursor.visible = true;
 		}
 		else if(curPos == 8 && story_sidestories != null)
 		{
 			story_sidestories.animation.play('highlighted');
-			story_cursor.visible = false;
 		}
-
-		story_cursor.setPosition(icons[curPos][2], icons[curPos][3]);
 	}
 
 	function unlockedWeeks()

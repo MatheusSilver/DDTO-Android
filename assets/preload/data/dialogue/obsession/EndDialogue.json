@@ -70,7 +70,8 @@
 		},
 		{
 			"isCommand": true,
-			"name": "glitch"
+			"name": "glitch",
+			"string": "DDTOCutscene2"
 		},
 		{
 			"isCommand": true,
@@ -853,10 +854,6 @@
 			"expression": "gasp",
 			"string": "\"Monika!\"",
 			"side": "left"
-		},
-		{
-			"isCommand": true,
-			"name": "crash"
 		}
 	]
 }

@@ -241,7 +241,7 @@ class Ratings
 			+ ": "
 			+ nps
 			+ " ("
-			+ LangUtil.getString('cmnMax')
+			+ 'Máximo'
 			+ " "
 			+ maxNPS
 			+ ")"

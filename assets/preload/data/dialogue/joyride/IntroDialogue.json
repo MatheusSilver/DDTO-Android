@@ -14,14 +14,14 @@
 			"isCommand": false,
 			"name": "no_one",
 			"expression": "gone",
-			"string": "As palavras de Monika foram interrompidas pelo som da porta da sala de musica se abrindo.",
+			"string": "As palavras de Monika foram interrompidas pelo som da porta da sala de música se abrindo.",
 			"side": ""
 		},
 		{
 			"isCommand": false,
 			"name": "no_one",
 			"expression": "gone",
-			"string": "O ultimo membro importante do clube de literatura estava correndo rapidamente, com um passo animado.",
+			"string": "O último membro importante do clube de literatura estava correndo rapidamente, com um passo animado.",
 			"side": ""
 		},
 		{
@@ -34,14 +34,14 @@
 			"isCommand": false,
 			"name": "monika",
 			"expression": "ahaha",
-			"string": "\"Ahaha, como eu pensei! Estou feliz que voce veio me visitar tambem, Sayori.\"",
+			"string": "\"Ahaha, como eu pensei! Estou feliz que você veio me visitar também, Sayori.\"",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "yeah",
-			"string": "\"Ah, Natsuki e Yuri ja estao aqui??? Elas ja sairam??? Ahh droga, eu tinha novidades animadoras para compartilhar!\"",
+			"string": "\"Ah, Natsuki e Yuri já estão aqui??? Elas já sairam??? Ahh droga, eu tinha novidades animadoras para compartilhar!\"",
 			"side": "left"
 		},
 		{
@@ -55,14 +55,14 @@
 			"isCommand": false,
 			"name": "monika",
 			"expression": "neutral",
-			"string": "\"E o que te deixou tao animada agora? Seu sorriso é o maior que eu ja vi!\"",
+			"string": "\"E o que te deixou tão animada agora? Seu sorriso é o maior que eu já vi!\"",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "happ",
-			"string": "\"Ehehe, nao e minha culpa! Tudo que estamos fazendo recentemente é incrivel!\"",
+			"string": "\"Ehehe, não é minha culpa! Tudo que estamos fazendo recentemente é incrivel!\"",
 			"side": "left"
 		},
 		{
@@ -90,21 +90,21 @@
 			"isCommand": false,
 			"name": "no_one",
 			"expression": "gone",
-			"string": "A animacao de sayori diminui, se tornando mais solene, mas com um sorriso genuino em seu rosto.",
+			"string": "A animação de Sayori diminui, se tornando mais solene, mas com um sorriso genuíno em seu rosto.",
 			"side": ""
 		},
 		{
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "wah",
-			"string": "\"Vendo quão bem estamos fazendo… Isso me da uma razao para levantar da cama toda manha, sabendo que somos capazes de concluir isso.\"",
+			"string": "\"Vendo quão bem estamos fazendo… Isso me dá uma razão para levantar da cama toda manhã, sabendo que somos capazes de concluir isso.\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "wah",
-			"string": "\"Ainda e dificil para mim manter pensamentos positivos na minha mente, mas esta ficando melhor, de pouco em pouco a cada dia que passa.\"",
+			"string": "\"Ainda é difícil para eu manter pensamentos positivos na minha mente, mas está ficando melhor, de pouco em pouco a cada dia que passa.\"",
 			"side": "left"
 		},
 		{
@@ -125,28 +125,28 @@
 			"isCommand": false,
 			"name": "no_one",
 			"expression": "gone",
-			"string": "Todas as boas novas e a felicidade de suas amigas preencheram Monika com um grande estado de emocao.",
+			"string": "Todas as boas novas e a felicidade de suas amigas preencheram Monika com um grande estado de emoção.",
 			"side": ""
 		},
 		{
 			"isCommand": false,
 			"name": "no_one",
 			"expression": "gone",
-			"string": "Lagrimas sairam dos olhos de Monika enquanto ela ouvia as palavras de Sayori.",
+			"string": "Lágrimas sairam dos olhos de Monika enquanto ela ouvia as palavras de Sayori.",
 			"side": ""
 		},
 		{
 			"isCommand": false,
 			"name": "no_one",
 			"expression": "gone",
-			"string": "Em um momento de felicidade melancolica, Monika caminha ate Sayori e a abraca.",
+			"string": "Em um momento de felicidade melancólica, Monika caminha até Sayori e a abraça.",
 			"side": ""
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "cry",
-			"string": "Estou... Estou tao orgulhosa de voce, Sayori. Significa muito que voce esteja conosco, fazendo do clube o lugar que ele e.",
+			"string": "Estou... Estou tão orgulhosa de você, Sayori. Significa muito que você esteja conosco, fazendo do clube o lugar que ele é.",
 			"side": "right"
 		},
 		{
@@ -160,21 +160,21 @@
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "wah",
-			"string": "Ehehe… obrigada tambem, Monika.",
+			"string": "Ehehe… obrigada também, Monika.",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "no_one",
 			"expression": "gone",
-			"string": "Depois de alguns momentos, as garotas param com o abraco. Monika limpa suas lagrimas e respira profundamente.",
+			"string": "Depois de alguns momentos, as garotas param com o abraço. Monika limpa suas lágrimas e respira profundamente.",
 			"side": ""
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "ahaha",
-			"string": "Aha- isso vai ser uma grande mudanca no clima, mas quando as outras vieram aqui mais cedo, elas cantaram uma musica comigo.",
+			"string": "Aha- isso vai ser uma grande mudança no clima, mas quando as outras vieram aqui mais cedo, elas cantaram uma música comigo.",
 			"side": "right"
 		},
 		{
@@ -188,7 +188,7 @@
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "yeah",
-			"string": "Nao precisa me pedir duas vezes! Vamos cantar!",
+			"string": "Não precisa me pedir duas vezes! Vamos cantar!",
 			"side": "left"
 		}
 	]

@@ -1,18 +1,18 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <TextureAtlas imagePath="MidwayBG.png" width="2000" height="1440">
-	<SubTexture name="MidwayBG0000" x="0" y="0" width="720" height="1280" rotated="true"/>
-	<SubTexture name="MidwayBG0001" x="0" y="0" width="720" height="1280" rotated="true"/>
-	<SubTexture name="MidwayBG0002" x="0" y="0" width="720" height="1280" rotated="true"/>
-	<SubTexture name="MidwayBG0003" x="0" y="0" width="720" height="1280" rotated="true"/>
-	<SubTexture name="MidwayBG0004" x="0" y="0" width="720" height="1280" rotated="true"/>
-	<SubTexture name="MidwayBG0005" x="720" y="0" width="1280" height="720"/>
-	<SubTexture name="MidwayBG0006" x="720" y="0" width="1280" height="720"/>
-	<SubTexture name="MidwayBG0007" x="720" y="0" width="1280" height="720"/>
-	<SubTexture name="MidwayBG0008" x="720" y="0" width="1280" height="720"/>
-	<SubTexture name="MidwayBG0009" x="720" y="0" width="1280" height="720"/>
-	<SubTexture name="MidwayBG0010" x="720" y="720" width="1280" height="720"/>
-	<SubTexture name="MidwayBG0011" x="720" y="720" width="1280" height="720"/>
-	<SubTexture name="MidwayBG0012" x="720" y="720" width="1280" height="720"/>
-	<SubTexture name="MidwayBG0013" x="720" y="720" width="1280" height="720"/>
-	<SubTexture name="MidwayBG0014" x="720" y="720" width="1280" height="720"/>
+  <SubTexture name="MidwayBG0000" x="0" y="0" width="360" height="640" rotated="true" />
+  <SubTexture name="MidwayBG0001" x="0" y="0" width="360" height="640" rotated="true" />
+  <SubTexture name="MidwayBG0002" x="0" y="0" width="360" height="640" rotated="true" />
+  <SubTexture name="MidwayBG0003" x="0" y="0" width="360" height="640" rotated="true" />
+  <SubTexture name="MidwayBG0004" x="0" y="0" width="360" height="640" rotated="true" />
+  <SubTexture name="MidwayBG0005" x="360" y="0" width="640" height="360" />
+  <SubTexture name="MidwayBG0006" x="360" y="0" width="640" height="360" />
+  <SubTexture name="MidwayBG0007" x="360" y="0" width="640" height="360" />
+  <SubTexture name="MidwayBG0008" x="360" y="0" width="640" height="360" />
+  <SubTexture name="MidwayBG0009" x="360" y="0" width="640" height="360" />
+  <SubTexture name="MidwayBG0010" x="360" y="360" width="640" height="360" />
+  <SubTexture name="MidwayBG0011" x="360" y="360" width="640" height="360" />
+  <SubTexture name="MidwayBG0012" x="360" y="360" width="640" height="360" />
+  <SubTexture name="MidwayBG0013" x="360" y="360" width="640" height="360" />
+  <SubTexture name="MidwayBG0014" x="360" y="360" width="640" height="360" />
 </TextureAtlas>

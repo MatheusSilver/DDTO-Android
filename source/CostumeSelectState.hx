@@ -69,7 +69,6 @@ class CostumeSelectState extends MusicBeatState
 	var costumeLabel:FlxText;
 	var controlLabel:FlxText;
 	var flavorText:FlxText;
-	var colorShader:ColorMask = new ColorMask(0xFFFDFFFF, 0xFFFDDBF1);
 
 	var colorTween1:FlxSprite = new FlxSprite(-9000, -9000).makeGraphic(1, 1, 0xFFFDFFFF);
 	var colorTween2:FlxSprite = new FlxSprite(-9000, -9000).makeGraphic(1, 1, 0xFFFDDBF1);
@@ -309,9 +308,6 @@ class CostumeSelectState extends MusicBeatState
 				else
 					savecostume();
 		}
-
-		colorShader.color1 = colorTween1.color;
-		colorShader.color2 = colorTween2.color;
 	}
 
 	function loadcharacter(char:String, ?costume:String, ?forceColor:FlxColor = 0xFFFDDBF1)
@@ -348,9 +344,6 @@ class CostumeSelectState extends MusicBeatState
 		FlxTween.cancelTweensOf(colorTween2);
 
 		var goku:FlxColor = FlxColor.fromHSB(barColor.hue, barColor.saturation, barColor.brightness * 1.3);
-
-		FlxTween.color(colorTween1, 1, colorShader.color1, goku);
-		FlxTween.color(colorTween2, 1, colorShader.color2, barColor);
 
 		if (charCostume != null && charCostume != 'hueh' && charCostume != '')
 			chara.loadGraphic(Paths.image('costume/' + char + '-' + charCostume, 'preload'));
