@@ -90,24 +90,28 @@ class BSLTouchUtils
 		return false;
 	}
 
-	public static function pegarpos(axes:flixel.util.FlxAxes = XY):Int
+	#if desktop
+	public static function pegarpos(axes:custom.FlxAxes = XY):Int
 	{
-		#if desktop
-		if (axes.match(X))
+		if (axes.x)
 			return FlxG.mouse.x;
 		
-		if (axes.match(Y))
+		if (axes.y)
 			return FlxG.mouse.y;
-		#elseif mobile
-		for (touch in FlxG.touches.list){
-			if (axes.match(X))
-				return touch.x;
-			
-			if (axes.match(Y))
-				return touch.y;
-		}
-		#end
 
 		return 0;
 	}
+	#elseif mobile
+
+	public static function pegarpos(touch:flixel.input.touch.FlxTouch, axes:custom.FlxAxes = XY){
+		if (axes.x)
+			return touch.x;
+
+		if (axes.y)
+			return touch.y;
+
+		return 0;
+	}
+
+	#end
 }

@@ -240,6 +240,47 @@ class FlashingLightsOption extends Option
 	}
 }
 
+class RatingVisivel extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+
+	public override function press():Bool
+	{
+		SaveData.ratingVisivel = !SaveData.ratingVisivel;
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return 'Classificação vísivel ' + ' ' + (SaveData.flashing ? LangUtil.getString('cmnOn') : LangUtil.getString('cmnOff'));
+	}
+}
+
+class Padroes extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+
+	public override function press():Bool
+	{
+		OptionsState.instance.openSubState(new PresetsSubstate());
+		return false;
+	}
+
+	private override function updateDisplay():String
+	{
+		return 'Configurações Padrão Mobile';
+	}
+}
+
 class Judgement extends Option
 {
 	public function new(desc:String)
@@ -781,30 +822,6 @@ class ResetStory extends Option
 	}
 }
 
-#if FEATURE_OBS
-class SelfAwareness extends Option
-{
-	public function new(desc:String)
-	{
-		super();
-		description = desc;
-	}
-
-	public override function press():Bool
-	{
-		SaveData.selfAware = !SaveData.selfAware;
-
-		display = updateDisplay();
-		return true;
-	}
-
-	private override function updateDisplay():String
-	{
-		return LangUtil.getString('nameSelfAware', 'option') + ' ' + (SaveData.selfAware ? LangUtil.getString('cmnOn') : LangUtil.getString('cmnOff'));
-	}
-}
-#end
-
 #if FEATURE_GAMEJOLT
 class GameJolt extends Option
 {
@@ -1109,27 +1126,6 @@ class SongCacheOption extends Option
 	private override function updateDisplay():String
 	{
 		return LangUtil.getString('nameCacheSong', 'option') + ' ' + (SaveData.cacheSong ? LangUtil.getString('cmnOn') : LangUtil.getString('cmnOff'));
-	}
-}
-
-class Shaders extends Option
-{
-	public function new(desc:String)
-	{
-		super();
-		description = desc;
-	}
-
-	public override function press():Bool
-	{
-		SaveData.shaders = !SaveData.shaders;
-		display = updateDisplay();
-		return true;
-	}
-
-	private override function updateDisplay():String
-	{
-		return LangUtil.getString('nameShaders', 'option') + ' ' + (SaveData.shaders ? LangUtil.getString('cmnOn') : LangUtil.getString('cmnOff'));
 	}
 }
 

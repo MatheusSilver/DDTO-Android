@@ -5,7 +5,7 @@ descGhostTap	Determina se você irá tomar dano caso clique em uma nota vazia.
 descJudgement	Personalize o ritmo com que você recebera notas(Doki,Bom,etc).
 descFPSCap	Coloque um Limite no FPS(Direita ou Esquerda).
 descCurFPSCap	Limite atual de FPS.
-descScroll	Mude a velocidade do Scroll. Partes em que isso ê ajustado não serão afetadas. (Direita ou Esquerda).
+descScroll	Mude a velocidade do Scroll. Partes em que isso é ajustado não serão afetadas. (Direita ou Esquerda).
 descCurScroll	Velocidade atual do Scroll
 descReset	Pressione R para resetar a música
 descCustomize	Personalize o HUD da Gameplay para a forma que seu coração levar.
@@ -18,7 +18,7 @@ descFlashing	Determina se vai haver luzes piscantes por causa de epilepsia.
 descBotplay	Faça um BOT jogar pra você(Pontuação não sera salva).
 descGFCountdown	Faça a Girlfriend contar antes da música começar.
 descMiddleScroll	Faça suas notas virem do lado, ou do centro da tela.
-descLaneUnderway	Ativa um Underlay atrás das notas(0% ê desativado, 100% é opaco).
+descLaneUnderway	Ativa um Underlay atrás das notas(0% é desativado, 100% é opaco).
 descLaneUnderwayControl	Transparência atual do Underlay.
 descScoreReset	Apaga os dados das suas pontuações, isso também afeta alguns desbloqueios(CAMINHO SEM VOLTA).
 descStoryReset	Apaga os dados de seu progresso na história isso também afeta alguns desbloqueios(CAMINHO SEM VOLTA).

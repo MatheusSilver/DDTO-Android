@@ -20,7 +20,6 @@ class DokiModifierSubState extends MusicBeatSubstate
 		['down', 'Downscroll', true, 'downScroll', 'bool', false],
 		['middle', 'Middlescroll', true, 'middleScroll', 'bool', false],
 		//['speed', 'Velocidade da Música', true, 'songSpeed', 'float', 1],
-		//['selfAware', 'Auto Consciência', true, 'selfAware', 'bool', true], //Isso aqui na real era pro OBS, mas não é usado
 		['cool', 'Cool gameplay!!!', true, 'coolGameplay', 'bool', false]
 	];
 

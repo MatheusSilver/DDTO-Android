@@ -144,8 +144,8 @@ class GameplayCustomizeState extends MusicBeatState
 		sick = new FlxSprite().loadGraphic(Paths.image('sick'));
 		sick.setGraphicSize(Std.int(sick.width * 0.7));
 		sick.antialiasing = SaveData.globalAntialiasing;
-		sick.scrollFactor.set();
 		sick.updateHitbox();
+		sick.scrollFactor.set(1.0,1.0);
 
 		if (SaveData.ratingToggle)
 			insert(members.indexOf(strumLineNotes), sick);
@@ -210,8 +210,16 @@ class GameplayCustomizeState extends MusicBeatState
 
 		if (BSLTouchUtils.pressionando(sick))
 		{
+			#if desktop
 			sick.x = (BSLTouchUtils.pegarpos(X) - sick.width / 2) - 60;
 			sick.y = (BSLTouchUtils.pegarpos(Y) - sick.height) - 60;
+			#elseif mobile
+			for (touch in FlxG.touches.list)
+			{
+				sick.x = (BSLTouchUtils.pegarpos(touch, X) - sick.width / 2) - 60;
+				sick.y = (BSLTouchUtils.pegarpos(touch, Y) - sick.height) - 60;
+			}
+			#end
 		}
 
 		for (i in playerStrums)

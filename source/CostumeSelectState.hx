@@ -15,8 +15,6 @@ import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.text.FlxText;
 import flixel.math.FlxMath;
-import flixel.tweens.FlxEase;
-import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import lime.app.Application;
@@ -649,6 +647,8 @@ class CostumeSelectState extends MusicBeatState
 				FlxG.sound.play(Paths.sound('buff'));
 			else
 				FlxG.sound.play(Paths.sound('confirmMenu'));
+
+			costumeselect(false);
 		}
 	}
 

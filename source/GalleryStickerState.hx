@@ -53,7 +53,7 @@ class GalleryStickerState extends MusicBeatState
 			urlData.push(data[2]);
 		}
 
-		backdrop = new FlxBackdrop(Paths.image('backdropsmenu/backdropmenuscredits'));
+		backdrop = new FlxBackdrop(Paths.image('backdropsmenu/backdropcredits'));
 		backdrop.velocity.set(-16, 0);
 		backdrop.scale.set(0.5, 0.5);
 		backdrop.antialiasing = SaveData.globalAntialiasing;

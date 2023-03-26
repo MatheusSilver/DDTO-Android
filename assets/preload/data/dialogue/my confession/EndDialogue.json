@@ -135,7 +135,8 @@
 		},
 		{
 			"isCommand": true,
-			"name": "glitch"
+			"name": "glitch",
+			"string": "DDTOTAKEOVER"
 		},
 		{
 			"isCommand": false,

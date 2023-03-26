@@ -231,18 +231,34 @@ class Note extends FlxSprite
 			case 'pixel':
 				if (isSustainNote)
 				{
+					#if debug
+					loadGraphic(Paths.imagesimple('pixelUI/' + blahblah + 'ENDS'));
+					#else
 					loadGraphic(Paths.image('pixelUI/' + blahblah + 'ENDS'));
+					#end
 					width = width / 4;
 					height = height / 2;
 					originalHeightForCalcs = height;
+					#if debug
+					loadGraphic(Paths.imagesimple('pixelUI/' + blahblah + 'ENDS'), true, Math.floor(width), Math.floor(height));
+					#else
 					loadGraphic(Paths.image('pixelUI/' + blahblah + 'ENDS'), true, Math.floor(width), Math.floor(height));
+					#end
 				}
 				else
 				{
+					#if debug
+					loadGraphic(Paths.imagesimple('pixelUI/' + blahblah));
+					#else
 					loadGraphic(Paths.image('pixelUI/' + blahblah));
+					#end
 					width = width / 4;
 					height = height / 6;
+					#if debug
+					loadGraphic(Paths.imagesimple('pixelUI/' + blahblah), true, Math.floor(width), Math.floor(height));
+					#else
 					loadGraphic(Paths.image('pixelUI/' + blahblah), true, Math.floor(width), Math.floor(height));
+					#end
 				}
 
 				setGraphicSize(Std.int(width * PlayState.daPixelZoom));
@@ -256,7 +272,11 @@ class Note extends FlxSprite
 					offsetX -= lastNoteOffsetXForPixelAutoAdjusting;
 				}
 			default:
+				#if debug
+				frames = Paths.getSparrowAtlassimple(blahblah);
+				#else
 				frames = Paths.getSparrowAtlas(blahblah);
+				#end
 				loadNoteAnims();
 				antialiasing = SaveData.globalAntialiasing;
 		}

@@ -13,21 +13,21 @@
 			"isCommand": false,
 			"name": "monika",
 			"expression": "ahh",
-			"string": "\"Ah, Sayori! Yuri! Natsuki! You're back!\"",
+			"string": "\"Ah, Sayori! Yuri! Natsuki! Vocês voltaram!\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "neutral",
-			"string": "\"How was your time hanging with Boyfriend and Girlfriend in their hometown?\"",
+			"string": "\"Como foi a volta na cidade natal do Boyfriend e da Girlfriend?\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "ahaha",
-			"string": "(Aha, I still can't believe that's their actual names. Even says so on their character files-)",
+			"string": "(Aha, ainda não acredito que estes sejam os nomes deles de verdade. Isso está escrito até nos arquivos deles-)",
 			"side": "left"
 		},
 		{
@@ -41,14 +41,14 @@
 			"isCommand": false,
 			"name": "natsuki",
 			"expression": "wah",
-			"string": "\"I had a screaming competition with a rock star! And I totally beat them too.\"",
+			"string": "\"Eu tive uma competição de gritos contra uma rockeira! E eu totalmente amassei ela também.\"",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "natsuki",
 			"expression": "wah",
-			"string": "\"They're inviting me back next week for a rematch. If I win, I get free tickets to their band's next show!\"",
+			"string": "\"Eles nos convidaram para uma revanche na semana que vem. Se eu ganhar, ganho ingressos para o próximo show deles!\"",
 			"side": "right"
 		},
 		{
@@ -59,7 +59,7 @@
 			"isCommand": false,
 			"name": "yuri",
 			"expression": "smile",
-			"string": "\"I had a lot of extra money to spend this week, so I ate dinner at a very nice restaurant not too far off from the city.\"",
+			"string": "\"Eu tinha muito dinheiro sobrando pra gastar esta semana, então jantei num restaurante muito bom, não tão longe da cidade.\"",
 			"side": "right"
 		},
 		{
@@ -73,14 +73,14 @@
 			"isCommand": false,
 			"name": "yuri",
 			"expression": "neutral",
-			"string": "\"While I was there, I had a nice chat with someone who shared a... similar interest in collecting.\"",
+			"string": "\"Enquanto eu estava lá, tive uma boa conversa com alguém, que compartilhava um... gosto similar em colecionar... Coisas...\"",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "yuri",
 			"expression": "neutral",
-			"string": "\"He also seemed very intrigued when I mentioned our two new club members in a conversation. I didn't want to pry, though.\"",
+			"string": "\"Ele também pareceu bem intrigado quando mencionei nossos dois novos membros do clube na conversa. Ele não pareceu muito feliz em saber.\"",
 			"side": "right"
 		},
 		{
@@ -91,84 +91,84 @@
 			"isCommand": false,
 			"name": "monika",
 			"expression": "neutral",
-			"string": "(There's a lot of strange, fantastical people out there in the real world, it seems.)",
+			"string": "(Tem um monte de pessoas estranhas e fantásticas no mundo real pelo o que parece.)",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "ahaha",
-			"string": "(And somewhere out there, my true love... I still have not forgotten about them.)",
+			"string": "(E em algum lugar, meu verdadeiro amor... Eu ainda não esqueci sobre eles.)",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "neutral",
-			"string": "(I'll go back and continue my search soon enough. There's... so much I need to tell them.)",
+			"string": "(Vou voltar e continuar minha pesquisa muito em breve. Ainda.. há muito que eu quero falar pra eles.)",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "ahaha",
-			"string": "\"Ah- sorry, I got lost in thought. What about you, Sayori? Did you meet any new friends on your trip?\"",
+			"string": "\"Ah- desculpa, me perdi em pensamentos. Evocê, Sayori? Conheceu algum amigo novo em sua viagem?\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "happ",
-			"string": "\"It was amazing! I didn't even know all these places existed!\"",
+			"string": "\"Foi incrível! Eu nem sequer sabia que todos esses lugares existiam!\"",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "wah",
-			"string": "\"It's almost as if they popped up out of nowhere, ehehe~\"",
+			"string": "\"É quase como se eles apenas surgissem do nada, ehehe~\"",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "neutral",
-			"string": "\"I did meet a new friend, in fact! He's followed me around the whole time we were gone.\"",
+			"string": "\"Eu conheci um amigo novo, na verdade! Ele me seguiu o tempo todo.\"",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "ahaha",
-			"string": "\"Eh-? That's... a little odd.\"",
+			"string": "\"É...-? Isso é... Um pouco estranho...\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "ahh",
-			"string": "\"-But I'm glad you all found some great new friends!\"",
+			"string": "\"-Mas estou feliz que todas vocês fizeram novos amigos!\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "happ",
-			"string": "\"Mhhmm! He followed me back here too! Wanna meet him? He's so cute!\"",
+			"string": "\"Mhhmm! Ele me seguiu até aqui também! Quer conhecê-lo? Ele é tão fofo!\"",
 			"side": "right"
 		},
 		{
 			"isCommand": false,
 			"name": "monika",
 			"expression": "neutral",
-			"string": "\"Oh? S-sure! Bring them in!\"",
+			"string": "\"Oh? Cl-Claro! Apresente ele!\"",
 			"side": "left"
 		},
 		{
 			"isCommand": false,
 			"name": "sayori",
 			"expression": "ooh",
-			"string": "\"Say hi, Zipper!\"",
+			"string": "\"Diga olá, Zipper!\"",
 			"side": "right"
 		},
 		{

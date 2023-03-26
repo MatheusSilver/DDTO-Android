@@ -1,61 +1,61 @@
-<?xml version="1.0" encoding="UTF-8"?>
+﻿<?xml version="1.0" encoding="UTF-8"?>
 <!--
 Created with Free texture packer v0.6.7 http://free-tex-packer.com
 -->
 <TextureAtlas imagePath="chuva.png" width="3200" height="3960">
-  <SubTexture name="chuva0000" x="0" y="0"  width="640" height="360" frameX="-0" frameY="-0" frameWidth="640" frameHeight="360"/>
-  <SubTexture name="chuva0001" x="0" y="360"  width="640" height="360" frameX="-0" frameY="-0" frameWidth="640" frameHeight="360"/>
-  <SubTexture name="chuva0002" x="0" y="720"  width="640" height="360" frameX="-0" frameY="-0" frameWidth="640" frameHeight="360"/>
-  <SubTexture name="chuva0003" x="0" y="1080"  width="640" height="360" frameX="-0" frameY="-0" frameWidth="640" frameHeight="360"/>
-  <SubTexture name="chuva0004" x="0" y="1440"  width="640" height="360" frameX="-0" frameY="-0" frameWidth="640" frameHeight="360"/>
-  <SubTexture name="chuva0005" x="0" y="1800"  width="640" height="360" frameX="-0" frameY="-0" frameWidth="640" frameHeight="360"/>
-  <SubTexture name="chuva0006" x="0" y="2160"  width="640" height="360" frameX="-0" frameY="-0" frameWidth="640" frameHeight="360"/>
-  <SubTexture name="chuva0007" x="0" y="2520"  width="640" height="360" frameX="-0" frameY="-0" frameWidth="640" frameHeight="360"/>
-  <SubTexture name="chuva0008" x="0" y="2880"  width="640" height="360" frameX="-0" frameY="-0" frameWidth="640" frameHeight="360"/>
-  <SubTexture name="chuva0009" x="0" y="3240"  width="640" height="360" frameX="-0" frameY="-0" frameWidth="640" frameHeight="360"/>
-  <SubTexture name="chuva0010" x="0" y="3600"  width="640" height="360" frameX="-0" frameY="-0" frameWidth="640" frameHeight="360"/>
-  <SubTexture name="chuva0011" x="640" y="0"  width="640" height="360" frameX="-0" frameY="-0" frameWidth="640" frameHeight="360"/>
-  <SubTexture name="chuva0012" x="640" y="360"  width="640" height="360" frameX="-0" frameY="-0" frameWidth="640" frameHeight="360"/>
-  <SubTexture name="chuva0013" x="640" y="720"  width="640" height="360" frameX="-0" frameY="-0" frameWidth="640" frameHeight="360"/>
-  <SubTexture name="chuva0014" x="640" y="1080"  width="640" height="360" frameX="-0" frameY="-0" frameWidth="640" frameHeight="360"/>
-  <SubTexture name="chuva0015" x="640" y="1440"  width="640" height="360" frameX="-0" frameY="-0" frameWidth="640" frameHeight="360"/>
-  <SubTexture name="chuva0016" x="640" y="1800"  width="640" height="360" frameX="-0" frameY="-0" frameWidth="640" frameHeight="360"/>
-  <SubTexture name="chuva0017" x="640" y="2160"  width="640" height="360" frameX="-0" frameY="-0" frameWidth="640" frameHeight="360"/>
-  <SubTexture name="chuva0018" x="640" y="2520"  width="640" height="360" frameX="-0" frameY="-0" frameWidth="640" frameHeight="360"/>
-  <SubTexture name="chuva0019" x="640" y="2880"  width="640" height="360" frameX="-0" frameY="-0" frameWidth="640" frameHeight="360"/>
-  <SubTexture name="chuva0020" x="640" y="3240"  width="640" height="360" frameX="-0" frameY="-0" frameWidth="640" frameHeight="360"/>
-  <SubTexture name="chuva0021" x="640" y="3600"  width="640" height="360" frameX="-0" frameY="-0" frameWidth="640" frameHeight="360"/>
-  <SubTexture name="chuva0022" x="1280" y="0"  width="640" height="360" frameX="-0" frameY="-0" frameWidth="640" frameHeight="360"/>
-  <SubTexture name="chuva0023" x="1280" y="360"  width="640" height="360" frameX="-0" frameY="-0" frameWidth="640" frameHeight="360"/>
-  <SubTexture name="chuva0024" x="1280" y="720"  width="640" height="360" frameX="-0" frameY="-0" frameWidth="640" frameHeight="360"/>
-  <SubTexture name="chuva0025" x="1280" y="1080"  width="640" height="360" frameX="-0" frameY="-0" frameWidth="640" frameHeight="360"/>
-  <SubTexture name="chuva0026" x="1280" y="1440"  width="640" height="360" frameX="-0" frameY="-0" frameWidth="640" frameHeight="360"/>
-  <SubTexture name="chuva0027" x="1280" y="1800"  width="640" height="360" frameX="-0" frameY="-0" frameWidth="640" frameHeight="360"/>
-  <SubTexture name="chuva0028" x="1280" y="2160"  width="640" height="360" frameX="-0" frameY="-0" frameWidth="640" frameHeight="360"/>
-  <SubTexture name="chuva0029" x="1280" y="2520"  width="640" height="360" frameX="-0" frameY="-0" frameWidth="640" frameHeight="360"/>
-  <SubTexture name="chuva0030" x="1280" y="2880"  width="640" height="360" frameX="-0" frameY="-0" frameWidth="640" frameHeight="360"/>
-  <SubTexture name="chuva0031" x="1280" y="3240"  width="640" height="360" frameX="-0" frameY="-0" frameWidth="640" frameHeight="360"/>
-  <SubTexture name="chuva0032" x="1280" y="3600"  width="640" height="360" frameX="-0" frameY="-0" frameWidth="640" frameHeight="360"/>
-  <SubTexture name="chuva0033" x="1920" y="0"  width="640" height="360" frameX="-0" frameY="-0" frameWidth="640" frameHeight="360"/>
-  <SubTexture name="chuva0034" x="1920" y="360"  width="640" height="360" frameX="-0" frameY="-0" frameWidth="640" frameHeight="360"/>
-  <SubTexture name="chuva0035" x="1920" y="720"  width="640" height="360" frameX="-0" frameY="-0" frameWidth="640" frameHeight="360"/>
-  <SubTexture name="chuva0036" x="1920" y="1080"  width="640" height="360" frameX="-0" frameY="-0" frameWidth="640" frameHeight="360"/>
-  <SubTexture name="chuva0037" x="1920" y="1440"  width="640" height="360" frameX="-0" frameY="-0" frameWidth="640" frameHeight="360"/>
-  <SubTexture name="chuva0038" x="1920" y="1800"  width="640" height="360" frameX="-0" frameY="-0" frameWidth="640" frameHeight="360"/>
-  <SubTexture name="chuva0039" x="1920" y="2160"  width="640" height="360" frameX="-0" frameY="-0" frameWidth="640" frameHeight="360"/>
-  <SubTexture name="chuva0040" x="1920" y="2520"  width="640" height="360" frameX="-0" frameY="-0" frameWidth="640" frameHeight="360"/>
-  <SubTexture name="chuva0041" x="1920" y="2880"  width="640" height="360" frameX="-0" frameY="-0" frameWidth="640" frameHeight="360"/>
-  <SubTexture name="chuva0042" x="1920" y="3240"  width="640" height="360" frameX="-0" frameY="-0" frameWidth="640" frameHeight="360"/>
-  <SubTexture name="chuva0043" x="1920" y="3600"  width="640" height="360" frameX="-0" frameY="-0" frameWidth="640" frameHeight="360"/>
-  <SubTexture name="chuva0044" x="2560" y="0"  width="640" height="360" frameX="-0" frameY="-0" frameWidth="640" frameHeight="360"/>
-  <SubTexture name="chuva0045" x="2560" y="360"  width="640" height="360" frameX="-0" frameY="-0" frameWidth="640" frameHeight="360"/>
-  <SubTexture name="chuva0046" x="2560" y="720"  width="640" height="360" frameX="-0" frameY="-0" frameWidth="640" frameHeight="360"/>
-  <SubTexture name="chuva0047" x="2560" y="1080"  width="640" height="360" frameX="-0" frameY="-0" frameWidth="640" frameHeight="360"/>
-  <SubTexture name="chuva0048" x="2560" y="1440"  width="640" height="360" frameX="-0" frameY="-0" frameWidth="640" frameHeight="360"/>
-  <SubTexture name="chuva0049" x="2560" y="1800"  width="640" height="360" frameX="-0" frameY="-0" frameWidth="640" frameHeight="360"/>
-  <SubTexture name="chuva0050" x="2560" y="2160"  width="640" height="360" frameX="-0" frameY="-0" frameWidth="640" frameHeight="360"/>
-  <SubTexture name="chuva0051" x="2560" y="2520"  width="640" height="360" frameX="-0" frameY="-0" frameWidth="640" frameHeight="360"/>
-  <SubTexture name="chuva0052" x="2560" y="2880"  width="640" height="360" frameX="-0" frameY="-0" frameWidth="640" frameHeight="360"/>
-  <SubTexture name="chuva0053" x="2560" y="3240"  width="640" height="360" frameX="-0" frameY="-0" frameWidth="640" frameHeight="360"/>
-  <SubTexture name="chuva0054" x="2560" y="3600"  width="640" height="360" frameX="-0" frameY="-0" frameWidth="640" frameHeight="360"/>
+  <SubTexture name="chuva0000" x="0" y="0" width="320" height="180" frameX="0" frameY="0" frameWidth="320" frameHeight="180" />
+  <SubTexture name="chuva0001" x="0" y="180" width="320" height="180" frameX="0" frameY="0" frameWidth="320" frameHeight="180" />
+  <SubTexture name="chuva0002" x="0" y="360" width="320" height="180" frameX="0" frameY="0" frameWidth="320" frameHeight="180" />
+  <SubTexture name="chuva0003" x="0" y="540" width="320" height="180" frameX="0" frameY="0" frameWidth="320" frameHeight="180" />
+  <SubTexture name="chuva0004" x="0" y="720" width="320" height="180" frameX="0" frameY="0" frameWidth="320" frameHeight="180" />
+  <SubTexture name="chuva0005" x="0" y="900" width="320" height="180" frameX="0" frameY="0" frameWidth="320" frameHeight="180" />
+  <SubTexture name="chuva0006" x="0" y="1080" width="320" height="180" frameX="0" frameY="0" frameWidth="320" frameHeight="180" />
+  <SubTexture name="chuva0007" x="0" y="1260" width="320" height="180" frameX="0" frameY="0" frameWidth="320" frameHeight="180" />
+  <SubTexture name="chuva0008" x="0" y="1440" width="320" height="180" frameX="0" frameY="0" frameWidth="320" frameHeight="180" />
+  <SubTexture name="chuva0009" x="0" y="1620" width="320" height="180" frameX="0" frameY="0" frameWidth="320" frameHeight="180" />
+  <SubTexture name="chuva0010" x="0" y="1800" width="320" height="180" frameX="0" frameY="0" frameWidth="320" frameHeight="180" />
+  <SubTexture name="chuva0011" x="320" y="0" width="320" height="180" frameX="0" frameY="0" frameWidth="320" frameHeight="180" />
+  <SubTexture name="chuva0012" x="320" y="180" width="320" height="180" frameX="0" frameY="0" frameWidth="320" frameHeight="180" />
+  <SubTexture name="chuva0013" x="320" y="360" width="320" height="180" frameX="0" frameY="0" frameWidth="320" frameHeight="180" />
+  <SubTexture name="chuva0014" x="320" y="540" width="320" height="180" frameX="0" frameY="0" frameWidth="320" frameHeight="180" />
+  <SubTexture name="chuva0015" x="320" y="720" width="320" height="180" frameX="0" frameY="0" frameWidth="320" frameHeight="180" />
+  <SubTexture name="chuva0016" x="320" y="900" width="320" height="180" frameX="0" frameY="0" frameWidth="320" frameHeight="180" />
+  <SubTexture name="chuva0017" x="320" y="1080" width="320" height="180" frameX="0" frameY="0" frameWidth="320" frameHeight="180" />
+  <SubTexture name="chuva0018" x="320" y="1260" width="320" height="180" frameX="0" frameY="0" frameWidth="320" frameHeight="180" />
+  <SubTexture name="chuva0019" x="320" y="1440" width="320" height="180" frameX="0" frameY="0" frameWidth="320" frameHeight="180" />
+  <SubTexture name="chuva0020" x="320" y="1620" width="320" height="180" frameX="0" frameY="0" frameWidth="320" frameHeight="180" />
+  <SubTexture name="chuva0021" x="320" y="1800" width="320" height="180" frameX="0" frameY="0" frameWidth="320" frameHeight="180" />
+  <SubTexture name="chuva0022" x="640" y="0" width="320" height="180" frameX="0" frameY="0" frameWidth="320" frameHeight="180" />
+  <SubTexture name="chuva0023" x="640" y="180" width="320" height="180" frameX="0" frameY="0" frameWidth="320" frameHeight="180" />
+  <SubTexture name="chuva0024" x="640" y="360" width="320" height="180" frameX="0" frameY="0" frameWidth="320" frameHeight="180" />
+  <SubTexture name="chuva0025" x="640" y="540" width="320" height="180" frameX="0" frameY="0" frameWidth="320" frameHeight="180" />
+  <SubTexture name="chuva0026" x="640" y="720" width="320" height="180" frameX="0" frameY="0" frameWidth="320" frameHeight="180" />
+  <SubTexture name="chuva0027" x="640" y="900" width="320" height="180" frameX="0" frameY="0" frameWidth="320" frameHeight="180" />
+  <SubTexture name="chuva0028" x="640" y="1080" width="320" height="180" frameX="0" frameY="0" frameWidth="320" frameHeight="180" />
+  <SubTexture name="chuva0029" x="640" y="1260" width="320" height="180" frameX="0" frameY="0" frameWidth="320" frameHeight="180" />
+  <SubTexture name="chuva0030" x="640" y="1440" width="320" height="180" frameX="0" frameY="0" frameWidth="320" frameHeight="180" />
+  <SubTexture name="chuva0031" x="640" y="1620" width="320" height="180" frameX="0" frameY="0" frameWidth="320" frameHeight="180" />
+  <SubTexture name="chuva0032" x="640" y="1800" width="320" height="180" frameX="0" frameY="0" frameWidth="320" frameHeight="180" />
+  <SubTexture name="chuva0033" x="960" y="0" width="320" height="180" frameX="0" frameY="0" frameWidth="320" frameHeight="180" />
+  <SubTexture name="chuva0034" x="960" y="180" width="320" height="180" frameX="0" frameY="0" frameWidth="320" frameHeight="180" />
+  <SubTexture name="chuva0035" x="960" y="360" width="320" height="180" frameX="0" frameY="0" frameWidth="320" frameHeight="180" />
+  <SubTexture name="chuva0036" x="960" y="540" width="320" height="180" frameX="0" frameY="0" frameWidth="320" frameHeight="180" />
+  <SubTexture name="chuva0037" x="960" y="720" width="320" height="180" frameX="0" frameY="0" frameWidth="320" frameHeight="180" />
+  <SubTexture name="chuva0038" x="960" y="900" width="320" height="180" frameX="0" frameY="0" frameWidth="320" frameHeight="180" />
+  <SubTexture name="chuva0039" x="960" y="1080" width="320" height="180" frameX="0" frameY="0" frameWidth="320" frameHeight="180" />
+  <SubTexture name="chuva0040" x="960" y="1260" width="320" height="180" frameX="0" frameY="0" frameWidth="320" frameHeight="180" />
+  <SubTexture name="chuva0041" x="960" y="1440" width="320" height="180" frameX="0" frameY="0" frameWidth="320" frameHeight="180" />
+  <SubTexture name="chuva0042" x="960" y="1620" width="320" height="180" frameX="0" frameY="0" frameWidth="320" frameHeight="180" />
+  <SubTexture name="chuva0043" x="960" y="1800" width="320" height="180" frameX="0" frameY="0" frameWidth="320" frameHeight="180" />
+  <SubTexture name="chuva0044" x="1280" y="0" width="320" height="180" frameX="0" frameY="0" frameWidth="320" frameHeight="180" />
+  <SubTexture name="chuva0045" x="1280" y="180" width="320" height="180" frameX="0" frameY="0" frameWidth="320" frameHeight="180" />
+  <SubTexture name="chuva0046" x="1280" y="360" width="320" height="180" frameX="0" frameY="0" frameWidth="320" frameHeight="180" />
+  <SubTexture name="chuva0047" x="1280" y="540" width="320" height="180" frameX="0" frameY="0" frameWidth="320" frameHeight="180" />
+  <SubTexture name="chuva0048" x="1280" y="720" width="320" height="180" frameX="0" frameY="0" frameWidth="320" frameHeight="180" />
+  <SubTexture name="chuva0049" x="1280" y="900" width="320" height="180" frameX="0" frameY="0" frameWidth="320" frameHeight="180" />
+  <SubTexture name="chuva0050" x="1280" y="1080" width="320" height="180" frameX="0" frameY="0" frameWidth="320" frameHeight="180" />
+  <SubTexture name="chuva0051" x="1280" y="1260" width="320" height="180" frameX="0" frameY="0" frameWidth="320" frameHeight="180" />
+  <SubTexture name="chuva0052" x="1280" y="1440" width="320" height="180" frameX="0" frameY="0" frameWidth="320" frameHeight="180" />
+  <SubTexture name="chuva0053" x="1280" y="1620" width="320" height="180" frameX="0" frameY="0" frameWidth="320" frameHeight="180" />
+  <SubTexture name="chuva0054" x="1280" y="1800" width="320" height="180" frameX="0" frameY="0" frameWidth="320" frameHeight="180" />
 </TextureAtlas>

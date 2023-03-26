@@ -57,7 +57,7 @@ class VideoState extends MusicBeatState
 	function onURLChanging(url:String)
 	{
 		text.alpha = 1;
-		if (url == 'http://exitme(.*)')
+		if (url == 'http://exitme/')
 			onClose(); // drity hack lol
 		trace("WebView is about to open: " + url);
 	}
