@@ -65,6 +65,8 @@ class MainMenuState extends MusicBeatState
 	public static var menuCharJSON:MenuCharacterJSON;
 
 	public static var instance:MainMenuState;
+	var versionShit:FlxText;
+
 
 	override function create()
 	{
@@ -79,6 +81,23 @@ class MainMenuState extends MusicBeatState
 		FlxG.mouse.visible = true;
 		#end
 
+		if(!Assets.exists("assets/doki/characters/monika.chr")) 
+		{
+			//SOBRE A IDEIA do grf, dá pra usar um firsttime, para fazer um evento específico de abrir um link e etc
+			versionShit.text = "APENAS MONIKA, APENAS MONIKA, APENAS MONIKA, A P E N A S M O N I K A, APENAS MONIKA";
+		}
+		if(!Assets.exists("assets/doki/characters/natsuki.chr"))
+		{
+			versionShit.text = "END";
+		}
+		if (!Assets.exists("assets/doki/characters/sayori.chr"))
+		{
+			versionShit.text = "É por isso que as pontas dos dedos dela estavam todas ensanguentadas, de qualquer maneira.";
+		}
+		if (!Assets.exists("assets/doki/characters/yuri.chr"))
+		{
+			versionShit.text = "JUST MONIKA.";
+		}
 		if (!SaveData.beatPrologue)
 		{
 			SaveData.weekUnlocked = 1;
@@ -250,7 +269,7 @@ class MainMenuState extends MusicBeatState
 		if (addVally)
 			add(shaker);
 
-		var versionShit:FlxText = new FlxText(-350, FlxG.height - 24, 0, "v" + Application.current.meta.get('version'), 12);
+		versionShit = new FlxText(-350, FlxG.height - 24, 0, "v" + Application.current.meta.get('version'), 12);
 		versionShit.scrollFactor.set();
 		versionShit.antialiasing = SaveData.globalAntialiasing;
 		versionShit.setFormat(LangUtil.getFont('aller'), 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
