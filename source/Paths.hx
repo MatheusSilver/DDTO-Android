@@ -141,6 +141,11 @@ class Paths
 		return OpenFlAssets.exists(getPath('images/$key.png', IMAGE, library));
 	}
 
+	inline static public function imagesimple(key:String, ?library:String):String
+	{
+		return getPath('images/$key.png', IMAGE, library);
+	}
+
 	inline public static function getPreloadPath(file:String = '')
 	{
 		return 'assets/$file';
@@ -235,6 +240,11 @@ class Paths
 	inline static public function getSparrowAtlas(key:String, ?library:String, ?locale:Bool)
 	{
 		return FlxAtlasFrames.fromSparrow(image(key, library, locale), file('images/$key.xml', library));
+	}
+
+	inline static public function getSparrowAtlassimple(key:String, ?library:String, ?locale:Bool)
+	{
+		return FlxAtlasFrames.fromSparrow(imagesimple(key, library), file('images/$key.xml', library));
 	}
 
 	inline static public function getPackerAtlas(key:String, ?library:String)

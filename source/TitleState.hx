@@ -18,7 +18,6 @@ class TitleState extends MusicBeatState
 
 	var blackScreen:FlxSprite;
 	var credGroup:FlxGroup;
-	var credTextShit:Alphabet;
 	var textGroup:FlxGroup;
 
 	var moniSpr:FlxSprite;
@@ -124,12 +123,6 @@ class TitleState extends MusicBeatState
 		blackScreen = new FlxSprite().makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
 		credGroup.add(blackScreen);
 
-		credTextShit = new Alphabet(0, 0, "ninjamuffin99\nPhantomArcade\nkawaisprite\nevilsk8er", true);
-		credTextShit.screenCenter();
-
-		credTextShit.visible = false;
-
-
 		// Put whatever hueh you want in the array
 		var huehArray:Array<String> = ['TBDHueh', 'NatHueh', 'SayoHueh', 'YuriHueh', 'MoniHueh', 'ProtagHueh'];
 		var hueh:String = huehArray[Random.randUInt(0, huehArray.length)];
@@ -200,8 +193,6 @@ class TitleState extends MusicBeatState
 		doki.alpha = 0.001;
 		doki.updateHitbox();
 		add(doki);
-
-		FlxTween.tween(credTextShit, {y: credTextShit.y + 20}, 2.9, {ease: FlxEase.quadInOut, type: PINGPONG});
 
 		if (initialized)
 			skipIntro();
@@ -315,44 +306,46 @@ class TitleState extends MusicBeatState
 		else
 			gfDance.animation.play('danceLeft');
 
-		switch (curBeat)
-		{
-			case 1:
-				createCoolText(['Team TBD']);
-			case 3:
-				//addMoreText('presents');
-				tbdSpr.visible = true;
-			case 4:
-				tbdSpr.visible = false;
-				deleteCoolText();
-			case 5:
-				createCoolText(['Powered', 'by']);
-			case 7:
-				addMoreText('Hueh Engine');
-				moniSpr.visible = true;
-			case 8:
-				deleteCoolText();
-				moniSpr.visible = false;
-			case 9:
-				createCoolText([curWacky[0]]);
-			case 11:
-				addMoreText(curWacky[1]);
-			case 12:
-				deleteCoolText();
-			case 13:
-				// addMoreText('Doki');
-				dokiApp.animation.play('pop');
-				FlxTween.tween(dokiApp, {"scale.x": 0.75, y: top}, 0.15, {ease: FlxEase.sineIn, startDelay: 0.2, onComplete: function(twn:FlxTween)
-					{
-						FlxTween.tween(dokiApp, {"scale.x": 1}, 0.2, {ease: FlxEase.bounceInOut});
-					}});
-			case 14:
-				doki.alpha = 1;
-				doki.animation.play('doki');
-			case 15:
-			case 16:
-				skipIntro();
-		}
+		if(!skippedIntro){ //[E estranho alguem ficar tanto tempo na tela de título mas né?
+			switch (curBeat)
+			{
+				case 1:
+					createCoolText(['Team TBD']);
+				case 3:
+					//addMoreText('presents');
+					tbdSpr.visible = true;
+				case 4:
+					tbdSpr.visible = false;
+					deleteCoolText();
+				case 5:
+					createCoolText(['Powered', 'by']);
+				case 7:
+					addMoreText('Hueh Engine');
+					moniSpr.visible = true;
+				case 8:
+					deleteCoolText();
+					moniSpr.visible = false;
+				case 9:
+					createCoolText([curWacky[0]]);
+				case 11:
+					addMoreText(curWacky[1]);
+				case 12:
+					deleteCoolText();
+				case 13:
+					// addMoreText('Doki');
+					dokiApp.animation.play('pop');
+					FlxTween.tween(dokiApp, {"scale.x": 0.75, y: top}, 0.15, {ease: FlxEase.sineIn, startDelay: 0.2, onComplete: function(twn:FlxTween)
+						{
+							FlxTween.tween(dokiApp, {"scale.x": 1}, 0.2, {ease: FlxEase.bounceInOut});
+						}});
+				case 14:
+					doki.alpha = 1;
+					doki.animation.play('doki');
+				case 15:
+				case 16:
+					skipIntro();
+			}
+	}
 	}
 
 	var skippedIntro:Bool = false;

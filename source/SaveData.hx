@@ -69,6 +69,7 @@ class SaveData
 	public static var noteSplash:Null<Bool> = false;
 	public static var earlyLate:Null<Bool> = false;
 	public static var autoPause:Null<Bool> = false;
+	public static var ratingVisivel:Null<Bool> = false;
 	public static var judgementCounter:Null<Bool> = false;
 	public static var showHelp:Null<Bool> = true;
 	public static var globalAntialiasing:Null<Bool> = true;

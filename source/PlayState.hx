@@ -88,6 +88,8 @@ class PlayState extends MusicBeatState
 	public static var toggleBotplay:Bool = false;
 	public static var ForceDisableDialogue:Bool = false;
 
+	var membrosdoclube:Array<String> = [];
+
 	var midsongcutscene:Bool = false;
 
 	private var constantScroll:Bool = false;
@@ -591,9 +593,18 @@ class PlayState extends MusicBeatState
 
 		camHUD.zoom = defaultHudZoom;
 
-		var tempNoteSplash = new NoteSplash(0, 0, 0, curStyle);
-		grpNoteSplashes.add(tempNoteSplash);
-		tempNoteSplash.alpha = 0.001;
+		if(SaveData.noteSplash) 
+		{
+			switch(curStyle)
+			{
+				case 'lib':
+					Paths.image('libbie_Splash');
+				case 'pixel':
+					Paths.image('pixel_Splash');
+				default:
+					Paths.image('NOTE_splashes_doki');
+			}
+		}
 
 		FlxCamera.defaultCameras = [camGame];
 		CustomFadeTransition.nextCamera = camOverlay;
@@ -738,30 +749,63 @@ class PlayState extends MusicBeatState
 		if (centerCameraOffset == null)
 			centerCameraOffset = [0, 0];
 
+		if (SONG.song.toLowerCase() != 'obsession')
+		{ 	//Honestamente, tenho certeza que existe uma maneira mais bonita de fazer isso, mas considerando que tenho zero conhecimento de como isso funciona
+			//É melhor manter a utilidade disso, para apenas carregar os sprites corretamente...
+			if (!SONG.player1.startsWith('monika') && !SONG.player2.startsWith('monika') && (SONG.song.toLowerCase() == 'neet' || curStage != 'dokiclubroom'))
+				membrosdoclube.push('monika');
+			if (!SONG.player1.startsWith('sayori') && !SONG.player2.startsWith('sayori') && SONG.gfVersion != 'sayo-speaker')
+				{
+					if (isStoryMode || Character.loadaltcostume && SONG.gfVersion == 'gf-realdoki' && SaveData.gfcostume != "sayo")
+						membrosdoclube.push('sayori');
+				}
+			if (!SONG.player1.startsWith('natsuki') && !SONG.player2.startsWith('natsuki'))
+				membrosdoclube.push('natsuki');
+			if (curStage != 'dokiclubroom' && !SONG.player1.startsWith('protag') && !SONG.player2.startsWith('protag'))
+				membrosdoclube.push('protag');
+			if (!SONG.player1.startsWith('yuri') && !SONG.player2.startsWith('yuri'))
+				membrosdoclube.push('yuri');
+			
+		}
+		else if (SONG.song.toLowerCase() == 'obsession' && isStoryMode && showCutscene && !ForceDisableDialogue)
+		{
+			membrosdoclube.push('sayori');
+			membrosdoclube.push('natsuki');
+		}
+
+		#if debug
+			trace('o total de membros é '+membrosdoclube.length);
+		#end
+
 		// initializing the bg dokis here
 		if (curStage.startsWith('doki') && !SaveData.lowEnd)
 		{
 			bgDokis = new FlxSpriteGroup();
 
-			monika = new BGSprite('bgdoki/monika', 'doki', 320, 173, 1, 0.9, ['idle', 'Moni BG']);
-			monika.setGraphicSize(Std.int(monika.width * 0.7));
-			monika.updateHitbox();
-
-			sayori = new BGSprite('bgdoki/sayori', 'doki', -49, 247, 1, 0.9, ['idle', 'Sayori BG']);
-			sayori.setGraphicSize(Std.int(sayori.width * 0.7));
-			sayori.updateHitbox();
-
-			natsuki = new BGSprite('bgdoki/natsuki', 'doki', 1247, 303, 1, 0.9, ['idle', 'Natsu BG']);
-			natsuki.setGraphicSize(Std.int(natsuki.width * 0.7));
-			natsuki.updateHitbox();
-
-			protag = new BGSprite('bgdoki/protag', 'doki', 150, 152, 1, 0.9, ['idle', 'Protag-kun BG']);
-			protag.setGraphicSize(Std.int(protag.width * 0.7));
-			protag.updateHitbox();
-
-			yuri = new BGSprite('bgdoki/yuri', 'doki', 1044, 178, 1, 0.9, ['idle', 'Yuri BG']);
-			yuri.setGraphicSize(Std.int(yuri.width * 0.7));
-			yuri.updateHitbox();
+			for (member in membrosdoclube){
+				switch(member){
+					case 'monika':
+						monika = new BGSprite('bgdoki/monika', 'doki', 320, 173, 1, 0.9, ['idle', 'Moni BG']);
+						monika.setGraphicSize(Std.int(monika.width * 0.7));
+						monika.updateHitbox();
+					case 'sayori':
+						sayori = new BGSprite('bgdoki/sayori', 'doki', -49, 247, 1, 0.9, ['idle', 'Sayori BG']);
+						sayori.setGraphicSize(Std.int(sayori.width * 0.7));
+						sayori.updateHitbox();
+					case 'natsuki':
+						natsuki = new BGSprite('bgdoki/natsuki', 'doki', 1247, 303, 1, 0.9, ['idle', 'Natsu BG']);
+						natsuki.setGraphicSize(Std.int(natsuki.width * 0.7));
+						natsuki.updateHitbox();
+					case 'protag':
+						protag = new BGSprite('bgdoki/protag', 'doki', 150, 152, 1, 0.9, ['idle', 'Protag-kun BG']);
+						protag.setGraphicSize(Std.int(protag.width * 0.7));
+						protag.updateHitbox();
+					case 'yuri':
+						yuri = new BGSprite('bgdoki/yuri', 'doki', 1044, 178, 1, 0.9, ['idle', 'Yuri BG']);
+						yuri.setGraphicSize(Std.int(yuri.width * 0.7));
+						yuri.updateHitbox();
+				}
+			}
 		}
 
 		preloadGroup = new FlxSpriteGroup(100, 100);
@@ -1805,37 +1849,24 @@ class PlayState extends MusicBeatState
 		// managing the bg dokis here
 		if (bgDokis != null)
 		{
-			if (SONG.song.toLowerCase() != 'obsession')
-			{
-				if (Character.isFestival)
-				{
-					var club:Array<BGSprite> = [monika, sayori, natsuki, protag, yuri];
-					for (member in club)
-						member.color = 0x828282;
+			for (member in membrosdoclube){
+				switch(member){
+					case 'monika':
+						bgDokis.add(monika);
+					case 'sayori':
+						bgDokis.add(sayori);
+					case 'natsuki':
+						bgDokis.add(natsuki);
+					case 'protag':
+						bgDokis.add(protag);
+					case 'yuri':
+						bgDokis.add(yuri);
 				}
-
-				if (!SONG.player1.startsWith('monika') && !SONG.player2.startsWith('monika') && (SONG.song.toLowerCase() == 'neet' || curStage != 'dokiclubroom'))
-					bgDokis.add(monika);
-
-				if (!SONG.player1.startsWith('sayori') && !SONG.player2.startsWith('sayori') && SONG.gfVersion != 'sayo-speaker')
-					{
-						if (isStoryMode || Character.loadaltcostume && SONG.gfVersion == 'gf-realdoki' && SaveData.gfcostume != "sayo")
-							bgDokis.add(sayori);
-					}
-				if (!SONG.player1.startsWith('natsuki') && !SONG.player2.startsWith('natsuki'))
-					bgDokis.add(natsuki);
-
-				if (curStage != 'dokiclubroom' && !SONG.player1.startsWith('protag') && !SONG.player2.startsWith('protag'))
-					bgDokis.add(protag);
-
-				if (!SONG.player1.startsWith('yuri') && !SONG.player2.startsWith('yuri'))
-					bgDokis.add(yuri);
 			}
-			else if (SONG.song.toLowerCase() == 'obsession' && isStoryMode && showCutscene && !ForceDisableDialogue)
-			{
-				bgDokis.add(sayori);
-				bgDokis.add(natsuki);
-			}
+
+			#if debug
+			trace(bgDokis.length);
+			#end
 
 			if (curStage == 'dokiclubroom')
 			{
@@ -1909,10 +1940,10 @@ class PlayState extends MusicBeatState
 			}
 		}
 
-		for (i in 1...4)
-		{
-			CoolUtil.precacheSound('missnote' + i);
-		}
+		//for (i in 1...4)
+		//{
+		//	CoolUtil.precacheSound('missnote' + i);
+		//}
 
 		switch (SONG.song.toLowerCase())
 		{
@@ -2043,46 +2074,44 @@ class PlayState extends MusicBeatState
 
 				add(popup);
 			case 'musicroom':
-				//Funny CGs here
-				//Main Moniker
-				//CG2 zoomed in on Moni
-				//CG2 with all of em zoomed out and paralaxing
-				cg1 = new BGSprite('musicroom/CG/cg1', 'doki', 0, 0, 0, 0);
-				cg1.alpha = 0.001;
-				cg1.cameras = [camHUD];
-				cg1.setGraphicSize(Std.int(cg1.width * 0.7));//Smallest 0.67
-				cg1.updateHitbox();
-				cg1.screenCenter();
-				add(cg1);
+				if(curSong.toLowerCase()=='our harmony'){
+					cg1 = new BGSprite('musicroom/CG/cg1', 'doki', 0, 0, 0, 0);
+					cg1.alpha = 0.001;
+					cg1.cameras = [camHUD];
+					cg1.setGraphicSize(Std.int(cg1.width * 0.7));//Smallest 0.67
+					cg1.updateHitbox();
+					cg1.screenCenter();
+					add(cg1);
 
 				//Tween to -954x
-				cg2 = new BGSprite('musicroom/CG/cg2', 'doki', -914, -347, 0, 0);
-				cg2.alpha = 0.001;
-				cg2.cameras = [camHUD];
-				add(cg2);
+					cg2 = new BGSprite('musicroom/CG/cg2', 'doki', -914, -347, 0, 0);
+					cg2.alpha = 0.001;
+					cg2.cameras = [camHUD];
+					add(cg2);
 
 				//I'm not sorry
-				cg2Group = new FlxSpriteGroup();
-				cg2Group.cameras = [camGame2];
-				cg2Group.scrollFactor.set();
-				cg2Group.alpha = 0.001;
-				add(cg2Group);
+					cg2Group = new FlxSpriteGroup();
+					cg2Group.cameras = [camGame2];
+					cg2Group.scrollFactor.set();
+					cg2Group.alpha = 0.001;
+					add(cg2Group);
 
-				cg2BG = new BGSprite('musicroom/CG/bigone/cg2BG', 'doki', 0, 0, 0, 0);
-				cg2BG.ID = 4;
-				cg2Group.add(cg2BG);
-				cg2Yuri = new BGSprite('musicroom/CG/bigone/cg2Yuri', 'doki', 0, 0, 0, 0);
-				cg2Yuri.ID = 3;
-				cg2Group.add(cg2Yuri);
-				cg2Sayo = new BGSprite('musicroom/CG/bigone/cg2Sayo', 'doki', 0, 0, 0, 0);
-				cg2Sayo.ID = 2;
-				cg2Group.add(cg2Sayo);
-				cg2Natsu = new BGSprite('musicroom/CG/bigone/cg2Natsu', 'doki', 0, 0, 0, 0);
-				cg2Natsu.ID = 1;
-				cg2Group.add(cg2Natsu);
-				cg2Moni = new BGSprite('musicroom/CG/bigone/cg2Moni', 'doki', 0, 0, 0, 0);
-				cg2Moni.ID = 0;
-				cg2Group.add(cg2Moni);
+					cg2BG = new BGSprite('musicroom/CG/bigone/cg2BG', 'doki', 0, 0, 0, 0);
+					cg2BG.ID = 4;
+					cg2Group.add(cg2BG);
+					cg2Yuri = new BGSprite('musicroom/CG/bigone/cg2Yuri', 'doki', 0, 0, 0, 0);
+					cg2Yuri.ID = 3;
+					cg2Group.add(cg2Yuri);
+					cg2Sayo = new BGSprite('musicroom/CG/bigone/cg2Sayo', 'doki', 0, 0, 0, 0);
+					cg2Sayo.ID = 2;
+					cg2Group.add(cg2Sayo);
+					cg2Natsu = new BGSprite('musicroom/CG/bigone/cg2Natsu', 'doki', 0, 0, 0, 0);
+					cg2Natsu.ID = 1;
+					cg2Group.add(cg2Natsu);
+					cg2Moni = new BGSprite('musicroom/CG/bigone/cg2Moni', 'doki', 0, 0, 0, 0);
+					cg2Moni.ID = 0;
+					cg2Group.add(cg2Moni);
+				}
 
 				cg2Light = new BGSprite('musicroom/CG/bigone/cg2Light', 'doki', 0, 0, 0, 0);
 				cg2Light.alpha = 0.001;
@@ -2103,19 +2132,7 @@ class PlayState extends MusicBeatState
 		funnTextGroup.cameras = [camHUD];
 		add(funnTextGroup);
 
-		if (!SaveData.lowEnd)
-		{
-			sunshine = new BGSprite('musicroom/SayoSunshine', 'doki', 0, 0, 1, 1);
-			sunshine.alpha = 0.001;
-			sunshine.cameras = [camHUD];
-			add(sunshine);
-	
-			encoreborder = new BGSprite('ENCOREBORDER', 'doki', 0, 0, 1, 1);
-			encoreborder.alpha = 0.001;
-			encoreborder.cameras = [camHUD];
-			add(encoreborder);
-		}
-
+		if(curSong.toLowerCase()=='you and me'){
 		waitin = new BGSprite('extraui/lol', 'preload', true, 153, 720, 0, 0);
 		waitin.cameras = [camHUD];
 		waitin.alpha = 0.001;
@@ -2129,7 +2146,9 @@ class PlayState extends MusicBeatState
 		blackbarBottom = new BGSprite('TightBars', 'shared', 0, 822, 0, 0);
 		blackbarBottom.alpha = 0.001;
 		blackbarBottom.cameras = [camHUD];
-		add(blackbarBottom);			
+		add(blackbarBottom);	
+		
+		}
 
 		// Shitty layering but whatev it works LOL
 		// thanks ninja muffin :)
@@ -2177,7 +2196,7 @@ class PlayState extends MusicBeatState
 					funX = 1025;
 					funY = 465;
 			}
-			if(SONG.song.toLowerCase()=='joyride' || SONG.song.toLowerCase()=='drinks on me' || SONG.song.toLowerCase()=='takeover medley'){
+			if(SONG.song.toLowerCase()=='takeover medley' && !SaveData.lowEnd){
 				for (i in 0...stickerData.length - 1){
 					var sticker:BGSprite;
 					sticker = new BGSprite('stickies/' + stickerData[i], 'preload', funX, funY, 0, 0);
@@ -2186,6 +2205,19 @@ class PlayState extends MusicBeatState
 					stickerSprites.add(sticker);
 				}
 			}
+		}
+
+		if (!SaveData.lowEnd && (SONG.song.toLowerCase()=='joyride' || SONG.song.toLowerCase()=='drinks on me'))
+		{
+			sunshine = new BGSprite('musicroom/SayoSunshine', 'doki', 0, 0, 1, 1);
+			sunshine.alpha = 0.001;
+			sunshine.cameras = [camHUD];
+			add(sunshine);
+	
+			encoreborder = new BGSprite('ENCOREBORDER', 'doki', 0, 0, 1, 1);
+			encoreborder.alpha = 0.001;
+			encoreborder.cameras = [camHUD];
+			add(encoreborder);
 		}
 		
 		if (curStage == 'musicroom')
@@ -3408,9 +3440,12 @@ class PlayState extends MusicBeatState
 							monika.dance(true);
 						if (protag != null)
 							protag.dance(true);
-						sayori.dance(true);
-						natsuki.dance(true);
-						yuri.dance(true);
+						if (sayori != null)
+							sayori.dance(true);
+						if (natsuki != null)
+							natsuki.dance(true);
+						if (yuri != null)
+							yuri.dance(true);
 					}
 				}
 				else if (swagCounter % 2 != 0)
@@ -3569,6 +3604,7 @@ class PlayState extends MusicBeatState
 						if (SaveData.gfCountdown && gf.curCharacter == 'gf-realdoki')
 							gf.playAnim('countdownGo');
 					case 4:
+						canPause = true;
 						new FlxTimer().start(3, function(tmr:FlxTimer)
 						{
 							if (metadataDisplay != null)
@@ -3672,15 +3708,16 @@ class PlayState extends MusicBeatState
 
 		FlxG.sound.list.add(vocals);
 
-		var tempMusic:FlxSound = new FlxSound().loadEmbedded(Paths.inst(SONG.song));
+		//var tempMusic:FlxSound = new FlxSound().loadEmbedded(Paths.inst(SONG.song));
+		//Honestamente, não entendi o motivo pra carregar o inst de novo...
 
 		// Song duration in a float, useful for the time left feature
-		songLength = tempMusic.length / 1000;
+		songLength = FlxG.sound.music.length / 1000;
 		#if FEATURE_DISCORD
-		songLengthDiscord = tempMusic.length;
+		songLengthDiscord = FlxG.sound.music.length.length;
 		#end
 
-		tempMusic.destroy();
+		//tempMusic.destroy();
 
 		notes = new FlxTypedGroup<Note>();
 		add(notes);
@@ -3927,9 +3964,6 @@ class PlayState extends MusicBeatState
 				startTimer.active = true;
 
 			paused = false;
-
-			persistentUpdate = true;
-			persistentDraw = true;
 			
 			if (FlxG.sound.music.volume <= 0.1)
 				FlxG.sound.music.fadeIn(0.1, 0.6);
@@ -4298,6 +4332,8 @@ class PlayState extends MusicBeatState
 
 		if (positionDisplay != null)
 			positionDisplay.songPosBar.createGradientBar([FlxColor.TRANSPARENT], [boyfriend.barColor, dad.barColor]);
+
+		persistentUpdate = true;
 	}
 
 	override public function onFocus():Void
@@ -4389,7 +4425,7 @@ class PlayState extends MusicBeatState
 	private var prevMusicTime:Float = 0;
 	private var paused:Bool = false;
 	var startedCountdown:Bool = false;
-	public var canPause:Bool = true; //tmj dav meu bom
+	public var canPause:Bool = false; //tmj dav meu bom
 	var nps:Int = 0;
 	var maxNPS:Int = 0;
 
@@ -5398,7 +5434,12 @@ class PlayState extends MusicBeatState
 			pixelShitPart2 = '';
 		}
 
-		rating.loadGraphic(Paths.image(pixelShitPart1 + daRating + pixelShitPart2));
+		if(SaveData.ratingVisivel)
+			rating.loadGraphic(Paths.image(pixelShitPart1 + daRating + pixelShitPart2));
+		else
+			rating.makeGraphic(1, 1, FlxColor.TRANSPARENT);
+
+		rating.visible = SaveData.ratingVisivel;
 
 		if (SaveData.changedHit)
 		{
@@ -5467,13 +5508,6 @@ class PlayState extends MusicBeatState
 
 		if (scorePop)
 		{
-		var comboSpr:FlxSprite = new FlxSprite().loadGraphic(Paths.image(pixelShitPart1 + 'combo' + pixelShitPart2));
-		comboSpr.screenCenter();
-		comboSpr.x = rating.x;
-		comboSpr.y = rating.y + 100;
-		comboSpr.acceleration.y = 600;
-		comboSpr.velocity.x += Random.randUInt(1, 10);
-		comboSpr.velocity.y -= 150;
 
 		if (SaveData.ratingToggle)
 			insert(members.indexOf(strumLineNotes), rating);
@@ -5482,19 +5516,14 @@ class PlayState extends MusicBeatState
 		{
 			rating.setGraphicSize(Std.int(rating.width * 0.7));
 			rating.antialiasing = SaveData.globalAntialiasing;
-			comboSpr.setGraphicSize(Std.int(comboSpr.width * 0.7));
-			comboSpr.antialiasing = SaveData.globalAntialiasing;
 		}
 		else
 		{
 			rating.setGraphicSize(Std.int(rating.width * daPixelZoom * 0.7));
-			comboSpr.setGraphicSize(Std.int(comboSpr.width * daPixelZoom * 0.7));
 		}
 
-		comboSpr.updateHitbox();
 		rating.updateHitbox();
 
-		comboSpr.cameras = [camHUD];
 		rating.cameras = [camHUD];
 
 		var seperatedScore:Array<Int> = [];
@@ -5519,7 +5548,13 @@ class PlayState extends MusicBeatState
 		var daLoop:Int = 0;
 		for (i in seperatedScore)
 		{
-			var numScore:FlxSprite = new FlxSprite().loadGraphic(Paths.image(pixelShitPart1 + 'num' + Std.int(i) + pixelShitPart2));
+			var numScore:FlxSprite;
+			if(SaveData.ratingVisivel)
+				numScore= new FlxSprite().loadGraphic(Paths.image(pixelShitPart1 + 'num' + Std.int(i) + pixelShitPart2));
+			else
+				numScore = new FlxSprite().makeGraphic(1, 1, FlxColor.WHITE);
+
+			numScore.visible = SaveData.ratingVisivel;
 			numScore.screenCenter();
 			numScore.x = rating.x + (45 * daLoop) - 50;
 			numScore.y = rating.y + 100;
@@ -5553,14 +5588,6 @@ class PlayState extends MusicBeatState
 
 			daLoop++;
 		}
-
-		FlxTween.tween(comboSpr, {alpha: 0}, 0.2, {
-			startDelay: Conductor.crochet * 0.002,
-			onComplete: function(tween:FlxTween)
-			{
-				comboSpr.destroy();
-			}
-		});
 
 		FlxTween.tween(rating, {alpha: 0}, 0.2, {
 			startDelay: Conductor.crochet * 0.002,
@@ -5877,7 +5904,7 @@ class PlayState extends MusicBeatState
 			char.playAnim(animToPlay, true);
 
 		vocals.volume = 0;
-		FlxG.sound.play(Paths.soundRandom('missnote', 1, 3), Random.randF(0.1, 0.2));
+		//FlxG.sound.play(Paths.soundRandom('missnote', 1, 3), Random.randF(0.1, 0.2));
 	}
 
 	function noteMissPress(direction:Int = 1):Void
@@ -5913,7 +5940,7 @@ class PlayState extends MusicBeatState
 			char.playAnim(animToPlay, true);
 
 			vocals.volume = 0;
-			FlxG.sound.play(Paths.soundRandom('missnote', 1, 3), Random.randF(0.1, 0.2));
+			//FlxG.sound.play(Paths.soundRandom('missnote', 1, 3), Random.randF(0.1, 0.2));
 		}
 	}
 
@@ -7512,10 +7539,12 @@ class PlayState extends MusicBeatState
 					monika.dance(true);
 				if (protag != null)
 					protag.dance(true);
-				
-				sayori.dance(true);
-				natsuki.dance(true);
-				yuri.dance(true);
+				if (sayori != null)
+					sayori.dance(true);
+				if (natsuki != null)
+					natsuki.dance(true);
+				if (yuri != null)
+					yuri.dance(true);
 			}
 
 			switch (encoreTime)
@@ -7533,16 +7562,18 @@ class PlayState extends MusicBeatState
 						// so as not to repeat the same color
 						curDokiLight = FlxG.random.int(0, dokiLights.length - 1, [pastDokiLight]);
 						pastDokiLight = curDokiLight;
-	
+					if (!SaveData.lowEnd){
 						var funnyFlash:BGSprite = encoreborder;
 	
 						if (encoreTime == 2) // Can turn into a switch if need be
 							funnyFlash = sunshine;
-	
+					
 						FlxTween.cancelTweensOf(funnyFlash);
+					
 						funnyFlash.color = dokiLights[curDokiLight];
 						funnyFlash.alpha = 1;
 						FlxTween.tween(funnyFlash, {alpha: 0.001}, 1, {startDelay: 0.5});
+					}
 					}
 				case 3:
 					if (curBeat % 4 == 0 && stickerSprites != null)

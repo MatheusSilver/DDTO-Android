@@ -53,6 +53,7 @@ class OptionsState extends MusicBeatState
 			new AntiAliasing(LangUtil.getString('descAntialiasing', 'option')),
 			#end
 			new LowEnd('Opções de otimização extras'),
+			new RatingVisivel('Deixa as notificações de "Sick", "Good", etc... Vísiveis na tela, (Pode gerar instabilidade no FPS)'),
 			new FlashingLightsOption(LangUtil.getString('descFlashing', 'option')),
 			new AccuracyOption(LangUtil.getString('descAccuracy', 'option')),
 			new NPSDisplayOption(LangUtil.getString('descNPS', 'option')),
@@ -68,6 +69,7 @@ class OptionsState extends MusicBeatState
 			new FPSCapOption(LangUtil.getString('descFPSCap', 'option')),
 			new AntiAliasing(LangUtil.getString('descAntialiasing', 'option')),
 			new GPUTextures(LangUtil.getString('descGPUTextures', 'option')),
+			new Padroes('Escolha entre os presets de configurações recomendadas, a que mais se encaixa ao seu celular.'),
 			#if nnone
 			new CharaCacheOption(LangUtil.getString('descCacheCharacter', 'option')),
 			new SongCacheOption(LangUtil.getString('descCacheSong', 'option')),

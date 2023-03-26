@@ -15,8 +15,6 @@ import flixel.graphics.frames.FlxAtlasFrames;
 import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.text.FlxText;
 import flixel.math.FlxMath;
-import flixel.tweens.FlxEase;
-import flixel.tweens.FlxTween;
 import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import lime.app.Application;
@@ -69,9 +67,6 @@ class CostumeSelectState extends MusicBeatState
 	var costumeLabel:FlxText;
 	var controlLabel:FlxText;
 	var flavorText:FlxText;
-
-	var colorTween1:FlxSprite = new FlxSprite(-9000, -9000).makeGraphic(1, 1, 0xFFFDFFFF);
-	var colorTween2:FlxSprite = new FlxSprite(-9000, -9000).makeGraphic(1, 1, 0xFFFDDBF1);
 
 	var character:Array<String> = ['bf', 'gf', 'monika', 'sayori', 'natsuki', 'yuri', 'protag'];
 	// costume unlocks
@@ -652,6 +647,8 @@ class CostumeSelectState extends MusicBeatState
 				FlxG.sound.play(Paths.sound('buff'));
 			else
 				FlxG.sound.play(Paths.sound('confirmMenu'));
+
+			costumeselect(false);
 		}
 	}
 

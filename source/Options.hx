@@ -240,6 +240,47 @@ class FlashingLightsOption extends Option
 	}
 }
 
+class RatingVisivel extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+
+	public override function press():Bool
+	{
+		SaveData.ratingVisivel = !SaveData.ratingVisivel;
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return 'Classificação vísivel ' + ' ' + (SaveData.flashing ? LangUtil.getString('cmnOn') : LangUtil.getString('cmnOff'));
+	}
+}
+
+class Padroes extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+
+	public override function press():Bool
+	{
+		OptionsState.instance.openSubState(new PresetsSubstate());
+		return false;
+	}
+
+	private override function updateDisplay():String
+	{
+		return 'Configurações Padrão Mobile';
+	}
+}
+
 class Judgement extends Option
 {
 	public function new(desc:String)
