@@ -10,20 +10,17 @@ class DiscordClient
 {
 	public function new()
 	{
-		trace("Discord Client starting...");
 		DiscordRpc.start({
 			clientID: "1080457485489545287", // change this to what ever the fuck you want lol
 			onReady: onReady,
 			onError: onError,
 			onDisconnected: onDisconnected
 		});
-		trace("Discord Client started.");
 
 		while (true)
 		{
 			DiscordRpc.process();
 			sleep(2);
-			// trace("Discord Client Update");
 		}
 
 		DiscordRpc.shutdown();
@@ -60,7 +57,6 @@ class DiscordClient
 		{
 			new DiscordClient();
 		});
-		trace("Discord Client initialized");
 	}
 
 	public static function changePresence(details:String, state:Null<String>, ?smallImageKey:String, ?hasStartTimestamp:Bool, ?endTimestamp:Float)
@@ -82,8 +78,6 @@ class DiscordClient
 			startTimestamp: Std.int(startTimestamp / 1000),
 			endTimestamp: Std.int(endTimestamp / 1000)
 		});
-
-		// trace('Discord RPC Updated. Arguments: $details, $state, $smallImageKey, $hasStartTimestamp, $endTimestamp');
 	}
 }
 #end

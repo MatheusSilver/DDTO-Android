@@ -114,7 +114,6 @@ class Character extends FlxSprite
 
 		if (hasCostume)
 		{
-			trace('we are in!');
 			if (costumeoverride == '')
 			{
 				switch (json.costumes)

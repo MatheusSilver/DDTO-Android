@@ -307,8 +307,6 @@ class CostumeSelectState extends MusicBeatState
 
 	function loadcharacter(char:String, ?costume:String, ?forceColor:FlxColor = 0xFFFDDBF1)
 	{
-		//I'm pissed, gotta throw this here too cause offsets break due to the costumeoverride being blank
-		//trace(costume);
 		var charCostume:String = costume;
 		if (charCostume == '' || charCostume == null)
 		{
@@ -330,7 +328,6 @@ class CostumeSelectState extends MusicBeatState
 					charCostume = SaveData.bfcostume;
 			}
 		}
-		//trace(charCostume);
 		var barColor:FlxColor = forceColor;
 		if (costumeJSON.list[curSelected].costumes[costumeSelected].color != null && forceColor == 0xFFFDDBF1)
 			barColor = FlxColor.fromString(costumeJSON.list[curSelected].costumes[costumeSelected].color);

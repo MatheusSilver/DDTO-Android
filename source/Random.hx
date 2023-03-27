@@ -93,7 +93,6 @@ class Random
 		seed.z = tempW;
 		seed.w = seedOut;
 
-		// Debug.logTrace('[randBool] rate: $rate, output: ${(seedOut & 0xffff) * 0.00001526} (${(seedOut & 0xffff) * 0.00001526 <= rate})');
 		return (seedOut & 0xffff) * 0.00001526 <= rate;
 	}
 
@@ -123,7 +122,6 @@ class Random
 		if (limit != 0)
 			i = cast seedOut / limit;
 
-		// Debug.logTrace('[rand] limit: $limit, output: ${seedOut - i * limit}');
 		return seedOut - i * limit;
 	}
 
@@ -156,7 +154,6 @@ class Random
 		if (max != 0)
 			i = cast seedOut / max;
 
-		// Debug.logTrace('[randInt] min: $min, max: $max, output: ${(seedOut - i * max) + min}');
 		return (seedOut - i * max) + min;
 	}
 
@@ -209,7 +206,6 @@ class Random
 		if (max != 0)
 			i = cast seedOut / max;
 
-		// Debug.logTrace('[randUInt] min: $min, max: $max, output: ${(seedOut - i * max) + min}');
 		return (seedOut - i * max) + min;
 	}
 
@@ -234,7 +230,6 @@ class Random
 		seed.y = seed.z;
 		seed.z = tempW;
 
-		// Debug.logTrace('[randF] min: $min, max: $max, output: ${(max - min) * (seedOut & 0xFFFF) * 0.00001526 + min}');
 		return (max - min) * (seedOut & 0xFFFF) * 0.00001526 + min;
 	}
 
@@ -254,7 +249,6 @@ class Random
 		seed.y = seed.z;
 		seed.z = tempW;
 
-		// Debug.logTrace('[randNF] output: ${(seedOut & 0xFFFF) * 0.00001526}');
 		return (seedOut & 0xFFFF) * 0.00001526;
 	}
 
@@ -276,7 +270,6 @@ class Random
 
 		var f:Float = (seedOut & 0xffff) * 0.00001526;
 
-		// Debug.logTrace('[randAF] output: ${f + f - 1}');
 		return f + f - 1;
 	}
 }

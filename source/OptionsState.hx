@@ -81,9 +81,6 @@ class OptionsState extends MusicBeatState
 			#if FEATURE_LANGUAGE
 			new LanguageSelection(LangUtil.getString('descLanguage', 'option')),
 			#end
-			#if FEATURE_OBS
-			new SelfAwareness('...'),
-			#end
 			#if FEATURE_GAMEJOLT
 			new GameJolt(LangUtil.getString('descGameJolt', 'option')),
 			#end

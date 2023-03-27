@@ -29,24 +29,11 @@
 	<!-- Defines whether or not this is a public build. -->
 	<define name="PUBLIC_BUILD" unless="debug" />
 
-	<!-- Defines whether the Discord client should be enabled. -->
 	<define name="FEATURE_DISCORD" if="none" unless="hl"/>
-	<!-- Defines whether the file system can be read/written directly. Does not work in browser. -->
 	<define name="FEATURE_FILESYSTEM" if="none" />
-	<!-- Defines whether videos via OpenFL should be enabled. Only works on HTML5. -->
 	<define name="FEATURE_VIDEO" if="html5" />
-	<!-- Defines whether Caching is enabled. Will cause issues on systems with limited memory. Doesn't work with Linux. -->
-	<!-- Defines whether OBS or other Windows recording software can be detected. Unverified with Mac. -->
-	<define name="FEATURE_OBS" if="none" />
-	<!-- Defines whether Game Jolt integration is enabled. -->
-	<!-- <define name="FEATURE_GAMEJOLT" if="PUBLIC_BUILD" unless="hl" /> -->
-	<!-- Defines whether a log file can be created. Depends on FEATURE_FILESYSTEM. Pointless when trace logging is disabled. -->
 	<define name="FEATURE_LOGGING" if="FEATURE_FILESYSTEM" unless="PUBLIC_BUILD" />
-	<!-- Defines whether or not language select is available. -->
-	<!-- <define name="FEATURE_LANGUAGE" /> -->
-	<!-- Defines whether there's an unlock all function in the Options menu. -->
 	<define name="FEATURE_UNLOCK" unless="PUBLIC_BUILD" />
-	<!-- Defines whether or not the Izzy Engine crash handler is used. -->
 	<define name="CRASH_HANDLER" if="desktop" />
 
 

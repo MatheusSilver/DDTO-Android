@@ -2,30 +2,22 @@ package;
 
 import flixel.FlxG;
 import openfl.display.BitmapData;
-import openfl.utils.Assets as OpenFlAssets;
 import flixel.graphics.FlxGraphic;
 import flixel.addons.transition.FlxTransitionableState;
-import openfl.utils.Assets;
+import lime.utils.Assets;
+import openfl.Lib;
 
 using StringTools;
 
 class CoolUtil
 {
-	public static var programList:Array<String> = [
-		'obs',
-		'bdcam',
-		'fraps',
-		'xsplit', // TIL c# program
-		'hycam2', // hueh
-		'twitchstudio' // why
-	];
 
 	public static function difficultyString(diff:Int):String
 	{
 		var difficultyArray:Array<String> = [
-			LangUtil.getString('cmnEasy'),
-			LangUtil.getString('cmnNormal'),
-			LangUtil.getString('cmnHard')
+			'Fácil',
+			'Normal',
+			'Difícil'
 		];
 
 		return difficultyArray[diff];
@@ -64,11 +56,6 @@ class CoolUtil
 		return null;
 	}
 
-	public static function isRecording():Bool
-	{
-		return false;
-	}
-
 	inline public static function boundTo(value:Float, min:Float, max:Float):Float
 	{
 		return Math.max(min, Math.min(max, value));
@@ -76,13 +63,13 @@ class CoolUtil
 
 	public static function coolText(path:String):String
 	{
-		var daList:String = OpenFlAssets.getText(path).trim();
+		var daList:String = Assets.getText(path).trim();
 		return daList;
 	}
 
 	public static function coolTextFile(path:String):Array<String>
 	{
-		var daList:Array<String> = OpenFlAssets.getText(path).trim().split('\n');
+		var daList:Array<String> = Assets.getText(path).trim().split('\n');
 
 		for (i in 0...daList.length)
 		{
@@ -116,40 +103,24 @@ class CoolUtil
 
 	public static function getFPSCap():Int
 	{
-		return Std.int(openfl.Lib.current.stage.frameRate);
+		return Std.int(Lib.current.stage.frameRate);
 	}
 
 	public static function setFPSCap(cap:Int):Void
 	{
-		openfl.Lib.current.stage.frameRate = cap;
+		Lib.current.stage.frameRate = cap;
 	}
 
-	/**
-		* Check for an existing HaxeFlixel save file.
-		*
-		* @param   company		The company of the HaxeFlixel title, required for saves before 5.0.0+.
-		* @param   title		The title/name of the HaxeFlixel title, required for saves before 5.0.0+.
-		* @param   localPath	The path of the save file.
-		* @param   name			The name of the save file.
-		* @param   newPath		Whether or not the save file is from a HaxeFlixel title that's on 5.0.0+.
-	**/
 	public static function flixelSaveCheck(company:String, title:String, localPath:String = 'ninjamuffin99', name:String = 'funkin', newPath:Bool = false):Bool
 	{
 		return true;
 	}
 
-	/**
-		Check for an existing renpy save file.
-	**/
 	public static function renpySaveCheck(?doki:String = 'DDLC-1454445547'):Bool
 	{
-		
 		return true;
 	}
 
-	/**
-		Check for an existing Doki Doki Literature Club Plus! save file.
-	**/
 	public static function ddlcpSaveCheck():Bool
 	{
 		return true;
@@ -157,18 +128,12 @@ class CoolUtil
 
 	public static function getUsername():String
 	{
-		
-		return coolText(Paths.txt('data/name', 'preload'));
-		
+		return "Jogador";
 	}
 
 	public static function openURL(url:String)
 	{
-		#if linux
-		Sys.command('/usr/bin/xdg-open', [url]);
-		#else
 		FlxG.openURL(url);
-		#end
 	}
 
 	public static function precacheSound(sound:String, ?library:String = null):Void

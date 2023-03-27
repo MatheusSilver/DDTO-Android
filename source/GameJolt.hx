@@ -114,11 +114,8 @@ class GameJoltAPI // Connects to tentools.api.FlxGameJolt
 		{
 			GJApi.authUser(in1, in2, function(v:Bool)
 			{
-				trace("user: " + (in1 == "" ? "n/a" : in1));
-				trace("token:" + in2);
 				if (v)
 				{
-					trace("User authenticated!");
 					SaveData.gjUser = in1;
 					SaveData.gjToken = in2;
 					SaveData.save();
@@ -138,7 +135,6 @@ class GameJoltAPI // Connects to tentools.api.FlxGameJolt
 						GameJoltLogin.login = true;
 						FlxG.switchState(new GameJoltLogin());
 					}
-					trace("User login failure!");
 				}
 			});
 		}
@@ -149,12 +145,9 @@ class GameJoltAPI // Connects to tentools.api.FlxGameJolt
 	{
 		closeSession();
 		userLogin = false;
-		trace(SaveData.gjUser + SaveData.gjToken);
 		SaveData.gjUser = null;
 		SaveData.gjToken = null;
 		SaveData.save();
-		trace(SaveData.gjUser + SaveData.gjToken);
-		trace("Logged out!");
 		Sys.exit(0);
 	}
 
@@ -165,7 +158,6 @@ class GameJoltAPI // Connects to tentools.api.FlxGameJolt
 		{
 			GJApi.addTrophy(trophyID, function()
 			{
-				trace("Unlocked a trophy with an ID of " + trophyID);
 			});
 		}
 	}
@@ -175,7 +167,6 @@ class GameJoltAPI // Connects to tentools.api.FlxGameJolt
 	{
 		GJApi.openSession(function()
 		{
-			trace("Session started!");
 			new FlxTimer().start(20, function(tmr:FlxTimer)
 			{
 				pingSession();
@@ -188,7 +179,6 @@ class GameJoltAPI // Connects to tentools.api.FlxGameJolt
 	{
 		GJApi.pingSession(true, function()
 		{
-			trace("Ping!");
 		});
 	}
 
@@ -197,7 +187,7 @@ class GameJoltAPI // Connects to tentools.api.FlxGameJolt
 	{
 		GJApi.closeSession(function()
 		{
-			trace('Closed out the session');
+			
 		});
 	}
 }
@@ -240,7 +230,6 @@ class GameJoltLogin extends MusicBeatSubstate
 
 	override function create()
 	{
-		trace("init? " + GJApi.initialized);
 
 		backdrop = new FlxBackdrop(Paths.image('backdropsmenu/backdropcredits'));
 		backdrop.velocity.set(-40, -40);
@@ -323,8 +312,6 @@ class GameJoltLogin extends MusicBeatSubstate
 
 		signInBox = new FlxButton(0, 450, "Sign In", function()
 		{
-			trace(usernameBox.text);
-			trace(tokenBox.text);
 			GameJoltAPI.authDaUser(usernameBox.text, tokenBox.text, true);
 		});
 
