@@ -380,7 +380,6 @@ class PlayState extends MusicBeatState
 	var libParty:BGSprite;
 	var libRockIs:BGSprite;
 	var libFinale:BGSprite;
-	var libFinaleEyes:BGSprite;
 	var libFinaleOverlay:BGSprite;
 	var libVignette:BGSprite;
 	var grpPopups = new FlxTypedGroup<BGSprite>();
@@ -1509,6 +1508,7 @@ class PlayState extends MusicBeatState
 						rainBG.setGraphicSize(Std.int(4 * rainBG.width / defaultCamZoom));
 						rainBG.updateHitbox();
 						rainBG.alpha = 0.001;
+						rainBG.visible = false;
 						rainBG.cameras = [camGame2];
 						add(rainBG);
 					}
@@ -1526,6 +1526,7 @@ class PlayState extends MusicBeatState
 					deskBG2.updateHitbox();
 					deskBG2.cameras = [camGame2];
 					deskBG2.alpha = 0.001;
+					deskBG2.visible = false;
 					add(deskBG2);
 
 					extractPopup = new BGSprite('libitina/extracting', 'doki', true, 0, 0, 0, 0);
@@ -1534,12 +1535,14 @@ class PlayState extends MusicBeatState
 					extractPopup.screenCenter();
 					extractPopup.cameras = [camGame2];
 					extractPopup.alpha = 0.001;
+					extractPopup.visible = false;
 					add(extractPopup);
 
 					testVMLE = new BGSprite('libitina/testVM', 'doki', 0, 0, 0, 0, ['idle', 'testVM'], true);
 					testVMLE.setGraphicSize(Std.int(FlxG.width / defaultCamZoom));
 					testVMLE.updateHitbox();
 					testVMLE.alpha = 0.001;
+					testVMLE.visible = false;
 					add(testVMLE);
 
 					libiWindow = new BGSprite('libitina/bigwindow', 'doki', 0, 0, 0, 0);
@@ -1549,6 +1552,7 @@ class PlayState extends MusicBeatState
 					libiWindow.screenCenter();
 					libiWindow.cameras = [camGame2];
 					libiWindow.alpha = 0.001;
+					libiWindow.visible = false;
 					add(libiWindow);
 
 					libHando = new BGSprite('libitina/Hando', 'doki', 0, 0, 0.3, 0.3, ['idle', 'HandoAnim']);
@@ -1557,6 +1561,7 @@ class PlayState extends MusicBeatState
 					libHando.screenCenter();
 					libHando.cameras = [camGame2];
 					libHando.alpha = 0.001;
+					libHando.visible =false;
 					add(libHando);
 
 					deskBG2Overlay = new BGSprite('libitina/lightoverlay', 'doki', 0, 0, 0, 0);
@@ -1565,6 +1570,7 @@ class PlayState extends MusicBeatState
 					deskBG2Overlay.screenCenter();
 					deskBG2Overlay.cameras = [camOverlay];
 					deskBG2Overlay.alpha = 0.001;
+					deskBG2Overlay.visible =false;
 					add(deskBG2Overlay);
 
 					libAwaken = new BGSprite('libitina/SheAwakens', 'doki', 0, 0, 0, 0, ['idle', 'SheAwakens']);
@@ -1573,6 +1579,7 @@ class PlayState extends MusicBeatState
 					libAwaken.screenCenter();
 					libAwaken.cameras = [camGame2];
 					libAwaken.alpha = 0.001;
+					libAwaken.visible = false;
 					add(libAwaken);
 
 					ghostBG = new FlxBackdrop(Paths.image('libitina/ghostbg', 'doki'));
@@ -1583,6 +1590,7 @@ class PlayState extends MusicBeatState
 					ghostBG.updateHitbox();
 					ghostBG.antialiasing = SaveData.globalAntialiasing;
 					ghostBG.alpha = 0.001;
+					ghostBG.visible = false;
 					add(ghostBG);
 
 					eyeBG = new BGSprite('libitina/eyebg', 'doki', 0, 0, 0, 0);
@@ -1590,6 +1598,7 @@ class PlayState extends MusicBeatState
 					eyeBG.updateHitbox();
 					eyeBG.screenCenter();
 					eyeBG.alpha = 0.001;
+					eyeBG.visible = false;
 					add(eyeBG);
 
 					eyeMidwayBG = new BGSprite('libitina/EyeMidwayBG', 'doki', 0, 0, 0.3, 0.3, ['idle', 'MidwayBG'], true);
@@ -1609,6 +1618,7 @@ class PlayState extends MusicBeatState
 					infoBG.updateHitbox();
 					infoBG.screenCenter();
 					infoBG.alpha = 0.001;
+					infoBG.visible = false;
 					add(infoBG);
 
 					infoBG2 = new BGSprite('libitina/InfoMidwayBGInvert', 'doki', 0, 0, 0.3, 0.3, ['idle', 'InfoBG'], true);
@@ -1616,12 +1626,14 @@ class PlayState extends MusicBeatState
 					infoBG2.updateHitbox();
 					infoBG2.screenCenter();
 					infoBG2.alpha = 0.001;
+					infoBG2.visible = false;
 					add(infoBG2);
 
 					crackBGLE = new BGSprite('libitina/crackbg', 'doki', -10, -10, 0.3, 0.3);
 					crackBGLE.setGraphicSize(Std.int(crackBGLE.width / defaultCamZoom));
 					crackBGLE.updateHitbox();
 					crackBGLE.alpha = 0.001;
+					crackBGLE.visible = false;
 					add(crackBGLE);
 
 					staticshock = new FlxSprite();
@@ -1641,6 +1653,7 @@ class PlayState extends MusicBeatState
 					libFinaleBG.updateHitbox();
 					libFinaleBG.cameras = [camGame2];
 					libFinaleBG.alpha = 0.001;
+					libFinaleBG.visible = false;
 					add(libFinaleBG);
 
 					libGhost = new BGSprite('libitina/finale/LibiFinaleDramatic', 'doki', 160, 710, 0.3, 0.3, ['idle', 'LibiFinale'], true);
@@ -1648,6 +1661,7 @@ class PlayState extends MusicBeatState
 					libGhost.updateHitbox();
 					libGhost.cameras = [camGame2];
 					libGhost.alpha = 0.001;
+					libGhost.visible = false;
 					add(libGhost);
 
 					libParty = new BGSprite('libitina/finale/GOONS1', 'doki', -80, -460, 0, 0);
@@ -1655,6 +1669,7 @@ class PlayState extends MusicBeatState
 					libParty.updateHitbox();
 					libParty.cameras = [camGame2];
 					libParty.alpha = 0.001;
+					libParty.visible = false;
 					add(libParty);
 
 					libRockIs = new BGSprite('libitina/finale/GOONS2', 'doki', 140, -460, 0, 0);
@@ -1662,6 +1677,7 @@ class PlayState extends MusicBeatState
 					libRockIs.updateHitbox();
 					libRockIs.cameras = [camGame2];
 					libRockIs.alpha = 0.001;
+					libRockIs.visible = false;
 					add(libRockIs);
 
 					//Meu Preload é melhor k
@@ -1672,20 +1688,15 @@ class PlayState extends MusicBeatState
 					libFinale.updateHitbox();
 					libFinale.cameras = [camGame2];
 					libFinale.alpha = 0.001;
+					libFinale.visible = false;
 					add(libFinale);
-
-					libFinaleEyes = new BGSprite('libitina/finale/ShesWatching', 'doki', 0, 0, 0, 0, ['idle', 'ShesWatching'], true);
-					libFinaleEyes.setGraphicSize(Std.int(FlxG.width*2 / defaultCamZoom));
-					libFinaleEyes.updateHitbox();
-					libFinaleEyes.screenCenter();
-					libFinaleEyes.alpha = 0.001;
-					add(libFinaleEyes);
 
 					libFinaleOverlay = new BGSprite('libitina/finale/ShesWatching', 'doki', 0, 0, 0, 0, ['idle', 'ShesWatching'], true);
 					libFinaleOverlay.setGraphicSize(Std.int(FlxG.width / defaultCamZoom));
 					libFinaleOverlay.updateHitbox();
 					libFinaleOverlay.cameras = [camGame2];
 					libFinaleOverlay.alpha = 0.001;
+					libFinaleOverlay.visible = false;
 					add(libFinaleOverlay);
 
 					libVignette = new BGSprite('libitina/vignette', 'doki', 0, 0, 0, 0);
@@ -2104,9 +2115,11 @@ class PlayState extends MusicBeatState
 				add(whiteflash);
 		}
 
-		funnTextGroup = new FlxTypedGroup<FlxText>();
-		funnTextGroup.cameras = [camHUD];
-		add(funnTextGroup);
+		if(SONG.song.toLowerCase()=='drinks on me'){
+			funnTextGroup = new FlxTypedGroup<FlxText>();
+			funnTextGroup.cameras = [camHUD];
+			add(funnTextGroup);
+		}
 
 		if(SONG.song.toLowerCase()=='you and me'){
 		waitin = new BGSprite('extraui/lol', 'preload', true, 153, 720, 0, 0);
@@ -7295,13 +7308,13 @@ class PlayState extends MusicBeatState
 						case 16:
 							FlxTween.tween(blackScreen, {alpha: 0.001}, CoolUtil.calcSectionLength(2), {ease: FlxEase.sineOut});
 						case 68:
+							deskBG2.visible = true;
 							FlxTween.tween(deskBG2, {alpha: 1}, CoolUtil.calcSectionLength(0.25), {
 								ease: FlxEase.sineIn,
 								onComplete: function(tween:FlxTween)
 								{
 									deskBG1.alpha = 0.001;
-									if (!SaveData.lowEnd)
-										rainBG.alpha = 0.001;
+									deskBG1.visible = false;
 								}
 							});
 						case 72:
@@ -7310,10 +7323,16 @@ class PlayState extends MusicBeatState
 							defaultCamZoom = 1.5;
 						case 112:
 							extractPopup.alpha = 1;
+							extractPopup.visible = true;
 							extractPopup.scale.set();
 							FlxTween.tween(extractPopup, {"scale.x": 1, "scale.y": 1}, 0.2, {ease: FlxEase.quadOut});
 						case 120:
-							FlxTween.tween(deskBG2, {alpha: 0.001}, CoolUtil.calcSectionLength(0.3125), {ease: FlxEase.sineIn});
+							FlxTween.tween(deskBG2, {alpha: 0.001}, CoolUtil.calcSectionLength(0.3125), {ease: FlxEase.sineIn,
+								onComplete: function(tween:FlxTween)
+								{
+									deskBG2.visible = false;
+								}
+							});
 						case 127:
 							testVMLE.animation.play('idle', true);
 						case 128:
@@ -7322,11 +7341,13 @@ class PlayState extends MusicBeatState
 							defaultCamZoom = 1;
 
 							camGame2.fade(FlxColor.WHITE, 0.2, true);
-							deskBG2.alpha = 0.001;
 							extractPopup.alpha = 0.001;
+							extractPopup.visible = false;
 							deskBG2Overlay.alpha = 0.15;
+							deskBG2Overlay.visible = true;
 							camHUD.alpha = 1;
 
+							testVMLE.visible = true;
 							testVMLE.alpha = 1;
 						case 160 | 224 | 288 | 480 | 576 | 688 | 800 | 896 | 1024:
 							libPopup(526, Random.randUInt(88, 442), Random.randF(0.9, 1.1), Random.randF(0, 2));
@@ -7334,10 +7355,12 @@ class PlayState extends MusicBeatState
 							libPopup(184, Random.randUInt(88, 442), Random.randF(0.9, 1.1), Random.randF(0, 2));
 						case 352:
 							libiWindow.alpha = 1;
+							libiWindow.visible = true;
 							libiWindow.scale.set();
 							FlxTween.tween(libiWindow, {"scale.x": 1.1, "scale.y": 1.1}, 0.2, {ease: FlxEase.quadOut});
 						case 364:
 							libHando.alpha = 1;
+							libHando.visible = true;
 							libHando.animation.play('idle', true);
 						case 368:
 							if (SaveData.judgementCounter)
@@ -7357,6 +7380,7 @@ class PlayState extends MusicBeatState
 							}
 						case 384:
 							libHando.alpha = 0.001;
+							libHando.visible =false;
 							camGame2.fade(FlxColor.WHITE, 0.2, true);
 							libiWindow.scale.set(1, 1);
 							boyfriend.setPosition(170, -50);
@@ -7368,23 +7392,29 @@ class PlayState extends MusicBeatState
 							insert(members.indexOf(boyfriend) + 1, grpPopups);
 						case 624:
 								testVMLE.alpha = 0.001;
+								testVMLE.visible = false;
 
 							libiWindow.alpha = 0.001;
 							boyfriend.alpha = 0.001;
 							deskBG2Overlay.alpha = 0.001;
+							deskBG2Overlay.visible = false;
 							grpPopups.visible = false;
 							libAwaken.alpha = 1;
+							libAwaken.visible = true;
 							libAwaken.animation.play('idle', true);
 						case 640:
 							if (!constantScroll)
 								songSpeed += 0.2;
 
 								testVMLE.alpha = 1;
+								testVMLE.visible = true;
 
 							boyfriend.alpha = 1;
 							deskBG2Overlay.alpha = 0.15;
+							deskBG2Overlay.visible = true;
 							grpPopups.visible = true;
 							libAwaken.alpha = 0.001;
+							libAwaken.visible = false;
 							camGame2.fade(FlxColor.WHITE, 0.2, true);
 							addcharacter('ghost-sketch', 0);
 							boyfriend.cameras = [camGame2];
@@ -7394,9 +7424,19 @@ class PlayState extends MusicBeatState
 
 							add(libVignette);
 						case 1152:
-								FlxTween.tween(testVMLE, {alpha: 0.001}, CoolUtil.calcSectionLength(), {ease: FlxEase.sineOut});
+								FlxTween.tween(testVMLE, {alpha: 0.001}, CoolUtil.calcSectionLength(), {ease: FlxEase.sineOut,
+								onComplete: function(tween:FlxTween)
+								{
+									testVMLE.visible = false;
+								}
+							});
 						case 1200:
-							FlxTween.tween(deskBG2Overlay, {alpha: 0.001}, CoolUtil.calcSectionLength(), {ease: FlxEase.linear});
+							FlxTween.tween(deskBG2Overlay, {alpha: 0.001}, CoolUtil.calcSectionLength(), {ease: FlxEase.linear,
+								onComplete: function(tween:FlxTween)
+								{
+									deskBG2Overlay.visible = false;
+								}
+							});
 							camGame2.fade(FlxColor.WHITE, CoolUtil.calcSectionLength(), false);
 						case 1216:
 
@@ -7404,6 +7444,7 @@ class PlayState extends MusicBeatState
 							boyfriend.cameras = [camGame2];
 
 							ghostBG.alpha = 1;
+							ghostBG.visible = true;
 							camGame2.fade(FlxColor.WHITE, 0.2, true);
 							noteCam = true;
 
@@ -7414,34 +7455,45 @@ class PlayState extends MusicBeatState
 							add(libVignette);
 						case 1712:
 							ghostBG.alpha = 0.001;
+							ghostBG.visible = false;
 							libVignette.alpha = 0.001;
+							libVignette.visible = false;
 							staticshock.alpha = 1;
 							add(staticshock);
 						case 1728:
 
 							eyeBG.alpha = 1;
+							eyeBG.visible = true;
 							insert(members.indexOf(boyfriend) + 1, eyeShadow);
 							insert(members.indexOf(libVignette), eyeMidwayBG);
 
 							libVignette.alpha = 1;
+							libVignette.visible = true;
 							staticshock.alpha = 0.001;
 						case 1984:
 							camGame2.fade(FlxColor.WHITE, 0.2, true);
-							libFinaleOverlay.alpha = 0.001;
 							eyeBG.alpha = 0.001;
+							eyeBG.visible = false;
 							eyeShadow.alpha = 0.001;
+							eyeShadow.visible = false;
 							eyeMidwayBG.alpha = 0.001;
+							eyeMidwayBG.visible = false;
 							infoBG.alpha = 1;
+							infoBG.visible = true;
 						case 2240:
 							camGame2.fade(FlxColor.WHITE, 0.2, true);
 							infoBG.alpha = 0.001;
+							infoBG.visible = false;
+							infoBG2.visible = true;
 							infoBG2.alpha = 1;
 						case 2480:
 							camGame2.fade(FlxColor.BLACK, 0, false);
 						case 2496:
 							camGame2.fade(FlxColor.WHITE, 0.2, true);
 							infoBG2.alpha = 0.001;
+							infoBG2.visible = false;
 							crackBGLE.alpha = 1;
+							crackBGLE.visible = true;
 
 							libVignette.loadGraphic(Paths.image('libitina/vignetteend', 'doki'));
 						case 2752 | 2817 | 2881 | 2945 | 2960 | 2972 | 2974 | 2976 | 2978 | 2980 | 2981 | 2982 | 2983 | 2984 | 2985 | 2986 | 2987 | 2988 | 2889 | 2890 | 2891 | 2892 | 2893:
@@ -7465,6 +7517,7 @@ class PlayState extends MusicBeatState
 							libiWindow.alpha = 0.001;
 
 							crackBGLE.alpha = 0.001;
+							crackBGLE.visible = false;
 
 							noteCam = false;
 							camZooming = false;
@@ -7474,7 +7527,9 @@ class PlayState extends MusicBeatState
 
 							libVignette.loadGraphic(Paths.image('libitina/vignette', 'doki'));
 							libFinaleBG.alpha = 1;
+							libFinaleBG.visible = true;
 							libGhost.alpha = 1;
+							libGhost.visible = true;
 
 							remove(grpPopups);
 						case 3020:
@@ -7488,16 +7543,23 @@ class PlayState extends MusicBeatState
 						case 3584:
 							camGame2.fade(FlxColor.WHITE, 0.2, true);
 							libParty.alpha = 1;
+							libParty.visible = true;
 							libRockIs.alpha = 1;
+							libRockIs.visible = true;
 						case 3624:
+							libFinale.visible = true;
 							FlxTween.tween(libFinale, {alpha: 1}, CoolUtil.calcSectionLength(0.35), {
 								ease: FlxEase.sineIn,
 								onComplete: function(tween:FlxTween)
 								{
 									libFinaleBG.alpha = 0.001;
+									libFinaleBG.visible = false;
 									libGhost.alpha = 0.001;
+									libGhost.visible = false;
 									libParty.alpha = 0.001;
+									libParty.visible = false;
 									libRockIs.alpha = 0.001;
+									libRockIs.visible = false;
 								}
 							});
 						case 3648:
@@ -7505,6 +7567,7 @@ class PlayState extends MusicBeatState
 							libFinale.loadGraphic(Paths.image('libitina/finale/Finale3', 'doki'));
 						case 3664:
 							libFinaleOverlay.alpha = 1;
+							libFinaleOverlay.visible = true;
 						case 3684:
 							libFinale.loadGraphic(Paths.image('libitina/finale/Finale4', 'doki'));
 						case 3692:
@@ -7515,7 +7578,9 @@ class PlayState extends MusicBeatState
 							deskBG2.loadGraphic(Paths.image('libitina/outroscreen', 'doki'));
 							camHUD.alpha = 0.001;
 							libFinale.alpha = 0.001;
+							libFinale.visible = false;
 							deskBG2.alpha = 1;
+							deskBG2.visible = true;
 						case 3711:
 							if (!SaveData.lowEnd)
 								rainBG.animation.play('idle');
@@ -7524,22 +7589,30 @@ class PlayState extends MusicBeatState
 							FlxTween.tween(camGame2, {zoom: 1}, CoolUtil.calcSectionLength(2.5), {ease: FlxEase.sineInOut});
 
 							metadataDisplay.tweenIn();
+							deskBG1.visible = true;
 							deskBG1.loadGraphic(Paths.image('libitina/outrodesk', 'doki'));
 							deskBG1.alpha = 1;
 
-							if (!SaveData.lowEnd)
+							if (!SaveData.lowEnd){
 								rainBG.alpha = 1;
+								rainBG.visible = true;
+							}
 
 							deskBG2.alpha = 0.001;
+							deskBG2.visible = false;
 							libFinaleOverlay.alpha = 0.001;
+							libFinaleOverlay.visible = false;
 						case 3760:
 							camGame2.fade(FlxColor.WHITE, 0.3, true);
 							metadataDisplay.visible = false;
 							camHUD.alpha = 0.001;
 							deskBG1.alpha = 0.001;
+							deskBG1.visible = false;
 
-							if (!SaveData.lowEnd)
+							if (!SaveData.lowEnd){
 								rainBG.alpha = 0.001;
+								rainBG.visible = false;
+							}
 					}
 			}
 		}
