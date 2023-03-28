@@ -600,7 +600,7 @@ class LaneUnderlayOption extends Option
 	}
 }
 
-class GlobalSoundOption extends Option
+/*class GlobalSoundOption extends Option
 {
 	public function new(desc:String)
 	{
@@ -660,7 +660,7 @@ class GlobalSoundOption extends Option
 	{
 		return 'Volume atual dos sons' + ': ${FlxMath.roundDecimal(SaveData.soundEffectsVolume, 1) * 100}%';
 	}
-}
+}*/
 
 class HitSoundOption extends Option
 {
