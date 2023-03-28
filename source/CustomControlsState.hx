@@ -193,7 +193,6 @@ class CustomControlsState extends MusicBeatState //Code desenvolvido dois anos a
 				curSelected = controlitems.length - 1;
 			if (curSelected >= controlitems.length)
 				curSelected = 0;
-			//trace(curSelected);
 
 			if (forceChange != null)
 			{
@@ -227,10 +226,8 @@ class CustomControlsState extends MusicBeatState //Code desenvolvido dois anos a
 					_pad.alpha = 0.75;
 					this.add(_pad);
 				case 2:
-					//trace(2);
 					_pad.alpha = 0;
 				case 3:
-					//trace(3);
 					this.add(_pad);
 					_pad.alpha = 0.75;
 					loadcustom();
@@ -333,7 +330,6 @@ class CustomControlsState extends MusicBeatState //Code desenvolvido dois anos a
 	}
 
 	function savecustom() {
-		//trace("saved");
 
 		//Config.setdata(55);
 
@@ -355,7 +351,6 @@ class CustomControlsState extends MusicBeatState //Code desenvolvido dois anos a
 	}
 
 	function savetoclipboard(pad:FlxVirtualPad) {
-		//trace("saved");
 
 		var json = {
 			buttonsarray : []
@@ -372,8 +367,6 @@ class CustomControlsState extends MusicBeatState //Code desenvolvido dois anos a
 		}
 
 		json.buttonsarray = buttonsarray;
-
-		//trace(json);
 
 		var data:String = Json.stringify(json);
 

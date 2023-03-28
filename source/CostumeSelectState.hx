@@ -20,12 +20,6 @@ import flixel.util.FlxTimer;
 import lime.app.Application;
 import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.group.FlxGroup;
-#if FEATURE_DISCORD
-import Discord.DiscordClient;
-#end
-#if FEATURE_GAMEJOLT
-import GameJolt.GameJoltAPI;
-#end
 
 using StringTools;
 
@@ -115,11 +109,7 @@ class CostumeSelectState extends MusicBeatState
 	{
 		Character.ingame = false;
 
-		#if FEATURE_DISCORD
-		// Updating Discord Rich Presence
-		DiscordClient.changePresence("In the Menus", null);
-		#end
-
+		
 		FlxG.sound.playMusic(Paths.music('disco'), 0.4);
 		Conductor.changeBPM(124);
 
@@ -277,8 +267,6 @@ class CostumeSelectState extends MusicBeatState
 
 	function loadcharacter(char:String, ?costume:String, ?forceColor:FlxColor = 0xFFFDDBF1)
 	{
-		//I'm pissed, gotta throw this here too cause offsets break due to the costumeoverride being blank
-		//trace(costume);
 		var charCostume:String = costume;
 		if (charCostume == '' || charCostume == null)
 		{
@@ -300,7 +288,6 @@ class CostumeSelectState extends MusicBeatState
 					charCostume = SaveData.bfcostume;
 			}
 		}
-		//trace(charCostume);
 		var barColor:FlxColor = forceColor;
 		if (costumeJSON.list[curSelected].costumes[costumeSelected].color != null && forceColor == 0xFFFDDBF1)
 			barColor = FlxColor.fromString(costumeJSON.list[curSelected].costumes[costumeSelected].color);

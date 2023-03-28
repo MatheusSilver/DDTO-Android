@@ -39,9 +39,7 @@ typedef DialogueLine =
 	var name:Null<String>; // chara name or command name
 	var expression:Null<String>; // Exclusive to dialogue
 	var string:Null<String>; // used for dialogue or command
-	var stringOBS:Null<String>; // used for replacement dialogue when OBS is running
 	var key:Null<String>; // used for localized dialogue
-	var keyOBS:Null<String>; // used for localized replacement dialogue when OBS is running
 	var sound:Null<String>; // Used for the voice clips -- Might be used instead of a seperate command
 	var side:Null<String>; // Exclusive to dialogue left or right side or hiding side
 	var duration:Null<Float>; // Used for the duration of a cutscene
@@ -62,7 +60,6 @@ class DialogueBox extends FlxSpriteGroup
 
 	var dialogueData:DialogueFile;
 
-	public static var isOBS:Bool = false;
 	var isPixel:Bool = false;
 	var isEpiphany:Bool = false;
 
@@ -313,7 +310,6 @@ class DialogueBox extends FlxSpriteGroup
 	override function kill()
 	{
 		isPixel = false;
-		isOBS = false;
 		super.kill();
 	}
 
@@ -360,18 +356,7 @@ class DialogueBox extends FlxSpriteGroup
 
 		if (isEpiphany)
 		{
-			if (isOBS && curDialogue.stringOBS != null)
-			{
-				dialogueText = curDialogue.stringOBS;
-				#if FEATURE_LANGUAGE
-				if (SaveData.language != 'en-US' && curDialogue.keyOBS != null)
-					dialogueText = LangUtil.getString(curDialogue.keyOBS, 'dialogue');
-				#end
-			}
-			else
-			{
-				dialogueText = StringTools.replace(dialogueText, '{USERNAME}', CoolUtil.getUsername());
-			}
+			dialogueText = StringTools.replace(dialogueText, '{USERNAME}', CoolUtil.getUsername());
 		}
 
 		var commandDuration:Null<Float> = curDialogue.duration;

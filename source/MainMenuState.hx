@@ -16,12 +16,6 @@ import flixel.util.FlxColor;
 import flixel.util.FlxTimer;
 import lime.app.Application;
 import flixel.group.FlxGroup.FlxTypedGroup;
-#if FEATURE_DISCORD
-import Discord.DiscordClient;
-#end
-#if FEATURE_GAMEJOLT
-import GameJolt.GameJoltAPI;
-#end
 
 using StringTools;
 
@@ -123,10 +117,7 @@ class MainMenuState extends MusicBeatState
 
 		addVally = true;
 
-		#if FEATURE_DISCORD
-		// Updating Discord Rich Presence
-		DiscordClient.changePresence("In the Menus", null);
-		#end
+		
 
 		if (!FlxG.sound.music.playing)
 		{

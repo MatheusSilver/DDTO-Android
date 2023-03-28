@@ -148,7 +148,6 @@ class FirstBootState extends MusicBeatState
 					else
 					{
 						SaveData.language = localeList[curSelected];
-						trace('Game language set to ${SaveData.language}');
 						Main.tongue.initialize({locale: SaveData.language});
 
 						if (SaveData.flashing)
