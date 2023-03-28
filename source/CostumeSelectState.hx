@@ -20,12 +20,6 @@ import flixel.util.FlxTimer;
 import lime.app.Application;
 import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.group.FlxGroup;
-#if FEATURE_DISCORD
-import Discord.DiscordClient;
-#end
-#if FEATURE_GAMEJOLT
-import GameJolt.GameJoltAPI;
-#end
 
 using StringTools;
 
@@ -145,11 +139,7 @@ class CostumeSelectState extends MusicBeatState
 	{
 		Character.ingame = false;
 
-		#if FEATURE_DISCORD
-		// Updating Discord Rich Presence
-		DiscordClient.changePresence("In the Menus", null);
-		#end
-
+		
 		FlxG.sound.playMusic(Paths.music('disco'), 0.4);
 		Conductor.changeBPM(124);
 
