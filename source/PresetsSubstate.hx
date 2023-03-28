@@ -58,7 +58,7 @@ class PresetsSubstate extends MusicBeatSubstate
 		blackBox = new FlxSprite(0, 0).makeGraphic(FlxG.width, FlxG.height, FlxColor.BLACK);
 		add(blackBox);
 
-		infoText = new FlxText(-10, 580, 1280, 'Escolha um Preset de otimização\nToque na opção duas vezes para confirmar\n\n'+ judgementText[curSelected] + ': ' + explicacoes[curSelected], 72);
+		infoText = new FlxText(-10, 580, 1280, '', 72);
 		infoText.scrollFactor.set(0, 0);
 		infoText.setFormat(LangUtil.getFont('riffic'), 21, FlxColor.WHITE, FlxTextAlign.CENTER, FlxTextBorderStyle.OUTLINE, 0xFFFF7CFF);
 		infoText.y += LangUtil.getFontOffset('riffic');
@@ -85,6 +85,10 @@ class PresetsSubstate extends MusicBeatSubstate
 
 		OptionsState.instance.acceptInput = false;
 
+		#if mobile
+		addVirtualPad(UP_DOWN, A_B);
+		#end
+
 		textUpdate();
 
 		super.create();
@@ -96,17 +100,20 @@ class PresetsSubstate extends MusicBeatSubstate
 		{
 			if (controls.UP_P)
 			{
-				FlxG.sound.play(Paths.sound('scrollMenu'));
+				GlobalSoundManager.play('scrollMenu');
 				changeItem(-1);
-				textUpdate();
+				updateJudgement();
 			}
 
 			if (controls.DOWN_P)
 			{
-				FlxG.sound.play(Paths.sound('scrollMenu'));
+				GlobalSoundManager.play('scrollMenu');
 				changeItem(1);
-				textUpdate();
+				updateJudgement();
 			}
+
+			if (controls.ACCEPT)
+				selecionarpreset();
 
 			if (controls.BACK #if android || FlxG.android.justReleased.BACK #end)
 				quit();
@@ -117,17 +124,17 @@ class PresetsSubstate extends MusicBeatSubstate
 
 	function updateJudgement()
 	{
-		//if (judgementTimings[curSelected] < 0)
-		//	judgementTimings[curSelected] = 0;
-
-		//judgementTimings[curSelected] = judgementTimings[curSelected];
+		infoText.text = 'Escolha um Preset de otimização\n\n'
+			+ judgementText[curSelected]
+			+ ': '
+			+ explicacoes[curSelected];
 
 		textUpdate();
 	}
 
 	function textUpdate()
 	{
-		keyTextDisplay.text = "\n\n";
+		keyTextDisplay.text = "\n";
 
 		for (i in 0...judgementText.length-1)
 		{
@@ -139,6 +146,40 @@ class PresetsSubstate extends MusicBeatSubstate
 
 		infoText = new FlxText(-10, 580, 1280, 'Escolha um Preset de otimização\nToque na opção duas vezes para confirmar\n\n'+ judgementText[curSelected] + ': ' + explicacoes[curSelected], 72);
 
+	}
+
+	function selecionarpreset()
+	{
+		switch (curSelected)
+		{
+			case 0:
+				SaveData.gpuTextures = true;
+				SaveData.ratingVisivel = true;
+				SaveData.globalAntialiasing = true;
+				SaveData.lowEnd = false;
+				SaveData.flashing = true;
+				SaveData.framerate = 90;
+			case 1:
+				SaveData.gpuTextures = true;
+				SaveData.ratingVisivel = false;
+				SaveData.globalAntialiasing = false;
+				SaveData.lowEnd = false;
+				SaveData.flashing = true;
+				SaveData.framerate = 60;
+			case 2:
+				SaveData.gpuTextures = true;
+				SaveData.ratingVisivel = false;
+				SaveData.globalAntialiasing = false;
+				SaveData.lowEnd = true;
+				SaveData.flashing = false;
+				SaveData.npsDisplay = false;
+				SaveData.accuracyDisplay = false;
+				SaveData.framerate = 30;
+		}
+
+		SaveData.save();
+
+		MusicBeatState.switchState(new MainMenuState());
 	}
 
 	function save()

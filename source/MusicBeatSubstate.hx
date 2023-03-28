@@ -1,5 +1,6 @@
 package;
 
+import flixel.ui.FlxButton;
 import Conductor.BPMChangeEvent;
 import flixel.FlxG;
 import flixel.FlxSubState;
@@ -28,6 +29,20 @@ class MusicBeatSubstate extends FlxSubState
 
 	inline function get_controls():Controls
 		return PlayerSettings.player1.controls;
+
+	var _backButton:FlxButton;
+
+	public function addbackButton(semState:Bool = true)
+	{
+		_backButton = new FlxButton(50, 50, function() // TMJ dav que isso slk man - Code originalmente criado para o Projeto ModBoa
+		{
+			if (!semState)
+				close();
+		});
+		_backButton.loadGraphic(Paths.image('voltar_simples'));
+		_backButton.updateHitbox();
+		add(_backButton);
+	}
 
 	#if mobileC
 	var _virtualpad:FlxVirtualPad;

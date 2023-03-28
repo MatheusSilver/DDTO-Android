@@ -102,6 +102,8 @@ class GalleryArtState extends MusicBeatState
 
 		changeItem();
 
+		addbackButton();
+
 		super.create();
 	}
 
@@ -112,20 +114,19 @@ class GalleryArtState extends MusicBeatState
 		if (FlxG.sound.music != null && FlxG.sound.music.volume < 0.8)
 			FlxG.sound.music.volume += 0.5 * FlxG.elapsed;
 
-		if (controls.BACK #if android || FlxG.android.justReleased.BACK #end)
+		if (controls.BACK || _backButton.justPressed #if android || FlxG.android.justReleased.BACK #end)
 		{
 			FlxG.sound.music.stop();
-			FlxG.sound.play(Paths.sound('cancelMenu'));
+			GlobalSoundManager.play('cancelMenu');
 			MusicBeatState.switchState(new MainMenuState());
 		}
-
-		if (controls.LEFT_P || BSLTouchUtils.apertasimples(setaEsquerda))
+		else if (controls.LEFT_P || BSLTouchUtils.apertasimples(setaEsquerda))
 			changeItem(-1);
 		else if (controls.RIGHT_P || BSLTouchUtils.apertasimples(setaDireita))
 			changeItem(1);
 		else if ((controls.ACCEPT || BSLTouchUtils.apertasimples(artwork)) && !artworkData[curSelected].contains('antipathy'))
 		{
-			FlxG.sound.play(Paths.sound('scrollMenu'));
+			GlobalSoundManager.play('scrollMenu');
 			CoolUtil.openURL(urlData[curSelected]);
 		}
 
@@ -148,7 +149,7 @@ class GalleryArtState extends MusicBeatState
 
 	function changeItem(huh:Int = 0)
 	{
-		FlxG.sound.play(Paths.sound('scrollMenu'));
+		GlobalSoundManager.play('scrollMenu');
 
 		curSelected += huh;
 

@@ -203,14 +203,17 @@
 			"name": "idle"
 		}
 	],
-	"no_antialiasing": false,
+	"no_antialiasing": true,
 	"image": "characters/invisibru",
 	"position": [
 		0,
 		0
 	],
-	"healthicon": "invisibru",
+	"healthicon": "bf",
 	"flip_x": false,
+	"gameover_character": "invisibru",
+	"death_sound": "fnf_loss_sfx-bigmonika",
+	"win_sound": "dah",
 	"healthbar_colors": [
 		49,
 		176,

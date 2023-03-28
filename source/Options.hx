@@ -346,8 +346,8 @@ class FPSCapOption extends Option
 	{
 		SaveData.framerate += 1;
 
-		if (SaveData.framerate < 60)
-			SaveData.framerate = 60;
+		if (SaveData.framerate < 30)
+			SaveData.framerate = 30;
 		else if (SaveData.framerate > 330)
 			SaveData.framerate = 330;
 
@@ -360,8 +360,8 @@ class FPSCapOption extends Option
 	{
 		SaveData.framerate -= 1;
 
-		if (SaveData.framerate < 60)
-			SaveData.framerate = 60;
+		if (SaveData.framerate < 30)
+			SaveData.framerate = 30;
 		else if (SaveData.framerate > 330)
 			SaveData.framerate = 330;
 
@@ -530,14 +530,14 @@ class MiddleScrollOption extends Option
 
 	override function left():Bool
 	{
-		FlxG.sound.play(Paths.sound('scrollMenu'));
+		GlobalSoundManager.play('scrollMenu');
 		SaveData.middleOpponent = !SaveData.middleOpponent;
 		return true;
 	}
 
 	override function right():Bool
 	{
-		FlxG.sound.play(Paths.sound('scrollMenu'));
+		GlobalSoundManager.play('scrollMenu');
 		SaveData.middleOpponent = !SaveData.middleOpponent;
 		return true;
 	}
@@ -597,6 +597,68 @@ class LaneUnderlayOption extends Option
 	override function getValue():String
 	{
 		return LangUtil.getString('descLaneUnderwayControl', 'option') + ': ${FlxMath.roundDecimal(SaveData.laneTransparency, 2) * 100}%';
+	}
+}
+
+class GlobalSoundOption extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+		acceptValues = true;
+	}
+
+	public override function press():Bool
+	{
+		display = updateDisplay();
+		return false;
+	}
+
+	private override function updateDisplay():String
+	{
+		return 'Volume dos efeitos sonoros' + ' ' + SaveData.soundEffectsVolume;
+	}
+
+	override function right():Bool
+	{
+		SaveData.soundEffectsVolume += 0.1;
+
+		if (SaveData.soundEffectsVolume < 0)
+			SaveData.soundEffectsVolume = 0;
+
+		if (SaveData.soundEffectsVolume > 1)
+			SaveData.soundEffectsVolume = 1;
+
+		display = updateDisplay();
+		SaveData.save();
+
+		GlobalSoundManager.play('clickText');
+
+		return true;
+	}
+
+	override function left():Bool
+	{
+		SaveData.soundEffectsVolume -= 0.1;
+
+		if (SaveData.soundEffectsVolume < 0)
+			SaveData.soundEffectsVolume = 0;
+
+		if (SaveData.soundEffectsVolume > 1)
+			SaveData.soundEffectsVolume = 1;
+
+		display = updateDisplay();
+		SaveData.save(); //PQQQQQQQQQQQQQ AAAAAAAAAAAAAAAAA
+
+		GlobalSoundManager.play('clickText');
+
+		return true;
+	}
+
+	override function getValue():String
+	{
+		return 'Volume atual dos sons' + ': ${FlxMath.roundDecimal(SaveData.soundEffectsVolume, 1) * 100}%';
 	}
 }
 

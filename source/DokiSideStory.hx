@@ -66,6 +66,8 @@ class DokiSideStory extends MusicBeatSubstate
 			acceptInput = true;
 		});
 
+		addbackButton();
+
 		changeItem();
 	}
 
@@ -81,9 +83,9 @@ class DokiSideStory extends MusicBeatSubstate
 				if (FlxG.keys.pressed.P)
 					SaveData.beatSide = false;
 			#end
-			if (controls.BACK #if android || FlxG.android.justReleased.BACK #end)
+			if (controls.BACK || _backButton.justPressed #if android || FlxG.android.justReleased.BACK #end)
 			{
-				FlxG.sound.play(Paths.sound('cancelMenu'));
+				GlobalSoundManager.play('cancelMenu');
 				DokiStoryState.instance.acceptInput = true;
 				close();
 			}
@@ -114,7 +116,7 @@ class DokiSideStory extends MusicBeatSubstate
 	}
 
 	function aceitas(){
-		FlxG.sound.play(Paths.sound('confirmMenu'));
+		GlobalSoundManager.play('confirmMenu');
 		curDifficulty = 1;
 		if (curSong.toLowerCase() == "catfight")
 		{
@@ -135,7 +137,7 @@ class DokiSideStory extends MusicBeatSubstate
 			curSelected = trocadireta;
 
 		if (prevselected != curSelected)
-			FlxG.sound.play(Paths.sound('scrollMenu'));
+			GlobalSoundManager.play('scrollMenu');
 
 		if (curSelected == 5 && prevselected != 4)
 			curSelected = 4;

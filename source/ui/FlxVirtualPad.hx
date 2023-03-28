@@ -73,6 +73,9 @@ class FlxVirtualPad extends FlxSpriteGroup
 			case UP_DOWN:
 				dPad.add(add(buttonUp = createButton(0, FlxG.height - 85 * 3, 44 * 3, 45 * 3, "up")));
 				dPad.add(add(buttonDown = createButton(0, FlxG.height - 45 * 3, 44 * 3, 45 * 3, "down")));
+			case DIREITA_UP_DOWN:
+				dPad.add(add(buttonUp = createButton(FlxG.width - 44 * 3, 45, 44 * 3, 45 * 3, "up")));
+				dPad.add(add(buttonDown = createButton(FlxG.width - 44 * 3, 45 * 3, 44 * 3, 45 * 3, "down")));
 			case LEFT_RIGHT:
 				dPad.add(add(buttonLeft = createButton(0, FlxG.height - 45 * 3, 44 * 3, 45 * 3, "left")));
 				dPad.add(add(buttonRight = createButton(42 * 3, FlxG.height - 45 * 3, 44 * 3, 45 * 3, "right")));
@@ -80,6 +83,11 @@ class FlxVirtualPad extends FlxSpriteGroup
 				dPad.add(add(buttonUp = createButton(35 * 3, FlxG.height - 81 * 3, 44 * 3, 45 * 3, "up")));
 				dPad.add(add(buttonLeft = createButton(0, FlxG.height - 45 * 3, 44 * 3, 45 * 3, "left")));
 				dPad.add(add(buttonRight = createButton(69 * 3, FlxG.height - 45 * 3, 44 * 3, 45 * 3, "right")));
+			case EU_TU_NOIS_BOTA_NELA: //As vezes eu coloco nomes diferenciados nas coisas...
+				dPad.add(add(buttonLeft = createButton(3*FlxG.width/13, FlxG.height - 45 * 3, 44 * 3, 45 * 3, "left")));
+				dPad.add(add(buttonDown = createButton(6*FlxG.width / 13, FlxG.height - 45 * 3, 44 * 3, 45 * 3, "down")));
+				dPad.add(add(buttonUp = createButton(9*FlxG.width / 13, FlxG.height - 45 * 3, 44 * 3, 45 * 3, "up")));
+				dPad.add(add(buttonRight = createButton(12*FlxG.width / 13, FlxG.height - 45 * 3, 44 * 3, 45 * 3, "right")));
 			case FULL:
 				dPad.add(add(buttonUp = createButton(35 * 3, FlxG.height - 116 * 3, 44 * 3, 45 * 3, "up")));
 				dPad.add(add(buttonLeft = createButton(0, FlxG.height - 81 * 3, 44 * 3, 45 * 3, "left")));
@@ -188,8 +196,10 @@ class FlxVirtualPad extends FlxSpriteGroup
 enum FlxDPadMode
 {
 	NONE;
+	DIREITA_UP_DOWN;
 	UP_DOWN;
 	LEFT_RIGHT;
+	EU_TU_NOIS_BOTA_NELA;
 	UP_LEFT_RIGHT;
 	RIGHT_FULL;
 	FULL;

@@ -1,5 +1,6 @@
 package;
 
+import flixel.ui.FlxButton;
 import Conductor.BPMChangeEvent;
 import flixel.FlxG;
 import flixel.FlxSprite;
@@ -22,6 +23,20 @@ class MusicBeatState extends FlxUIState
 
 	inline function get_controls():Controls
 		return PlayerSettings.player1.controls;
+
+	var _backButton:FlxButton;
+
+	public function addbackButton(semState:Bool = true,?prevState:FlxState)
+	{
+		_backButton = new FlxButton(50, 50, function()
+		{
+			if (!semState)
+				switchState(prevState); //Assim posso usar esse botão apenas como um mero sprite em situações mais complexas.
+		});
+		_backButton.loadGraphic(Paths.image('voltar_simples'));
+		_backButton.updateHitbox();
+		add(_backButton);
+	}
 
 	#if mobileC
 	var _virtualpad:FlxVirtualPad;
@@ -52,6 +67,7 @@ class MusicBeatState extends FlxUIState
 	override function create()
 	{
 
+		GlobalSoundManager.listaDeSons = [];
 		CoolUtil.setFPSCap(SaveData.framerate);
 
 		if (!FlxTransitionableState.skipNextTransOut)

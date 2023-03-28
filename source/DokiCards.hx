@@ -5,7 +5,6 @@ import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.group.FlxGroup.FlxTypedGroup;
 import flixel.util.FlxColor;
-import flixel.FlxCamera;
 import flixel.tweens.FlxEase;
 import flixel.tweens.FlxTween;
 import flixel.util.FlxTimer;
@@ -14,6 +13,9 @@ import flixel.effects.FlxFlicker;
 class DokiCards extends MusicBeatSubstate
 {
 	public static var cardinstance:DokiCards;
+	#if mobile
+	var camcontrol:FlxCamera;
+	#end
 
 	public var acceptInput:Bool = false;
 	var select:FlxSprite;
@@ -84,8 +86,8 @@ class DokiCards extends MusicBeatSubstate
 		});
 
 		#if mobileC
-		addVirtualPad(FULL, NONE);
-		var camcontrol = new FlxCamera();
+		addVirtualPad(EU_TU_NOIS_BOTA_NELA, NONE);
+		camcontrol = new FlxCamera();
 		FlxG.cameras.add(camcontrol);
 		camcontrol.bgColor.alpha = 0;
 		_virtualpad.cameras = [camcontrol];
@@ -119,7 +121,7 @@ class DokiCards extends MusicBeatSubstate
 		acceptInput = false;
 		funnyChar = who;
 		curSelected = num;
-		FlxG.sound.play(Paths.sound('confirmMenu'), 1);
+		GlobalSoundManager.play('confirmMenu');
 
 		selectGrp.forEach(function(hueh:FlxSprite)
 		{
@@ -142,6 +144,9 @@ class DokiCards extends MusicBeatSubstate
 			FlxTween.tween(hueh, {alpha: 0}, 0.5, {ease: FlxEase.circIn, onComplete: function(twn:FlxTween){}});
 		});
 		FlxTween.tween(select, {alpha: 0}, 1, {ease: FlxEase.linear});
+		#if mobile
+		FlxTween.tween(camcontrol, {alpha: 0}, 0.5, {ease: FlxEase.linear});
+		#end
 		//tween selected card with alpha
 		new FlxTimer().start(0.5, function(tmr:FlxTimer)
 		{

@@ -77,6 +77,8 @@ class CatfightPopup extends MusicBeatSubstate
 			canpressbuttons = true;
 		});
 
+		addbackButton();
+
 		changeItem();
 	}
 
@@ -86,9 +88,9 @@ class CatfightPopup extends MusicBeatSubstate
 
 		if (canpressbuttons)
 		{
-			if (controls.BACK #if android || FlxG.android.justReleased.BACK #end)
+			if (controls.BACK || _backButton.justPressed #if android || FlxG.android.justReleased.BACK #end)
 			{
-				FlxG.sound.play(Paths.sound('cancelMenu'));
+				GlobalSoundManager.play('cancelMenu');
 	
 				if (isFreePlay)
 					DokiFreeplayState.instance.acceptInput = true;
@@ -120,7 +122,7 @@ class CatfightPopup extends MusicBeatSubstate
 		}	
 		else
 		{
-			FlxG.sound.play(Paths.sound('confirmMenu'));
+			GlobalSoundManager.play('confirmMenu');
 			PlayState.isYuri = (curSelected == 0 ? true : false);
 			DokiSideStory.sidestoryinstance.loadSong('Catfight');
 			canpressbuttons = false;
@@ -129,7 +131,7 @@ class CatfightPopup extends MusicBeatSubstate
 
 	function changeItem(amt:Int = 0):Void
 	{
-		FlxG.sound.play(Paths.sound('scrollMenu'));
+		GlobalSoundManager.play('scrollMenu');
 
 		curSelected += amt;
 

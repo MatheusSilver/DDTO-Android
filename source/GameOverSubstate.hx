@@ -83,9 +83,12 @@ class GameOverSubstate extends MusicBeatSubstate
 
 			if (!crashdeath)
 			{
-				if (!mirrormode)
+				if (!mirrormode && PlayState.SONG.song.toLowerCase() == 'epiphany'){
+					FlxG.sound.play(Paths.sound('fnf_loss_sfx-bigmonika', 'preload')); //NYEHEHHEHE CORINGUE MONKA CORINGUE NYEHEHHEHEHE
+				}
+				else if (!mirrormode){ //Se pah quem coringou fui eu...
 					FlxG.sound.play(Paths.sound(bf.deathsound));
-				else
+				}else
 					FlxG.sound.play(Paths.sound(bf.winsound));
 			}
 		}
@@ -254,6 +257,7 @@ class GameOverSubstate extends MusicBeatSubstate
 
 	function endBullshit():Void
 	{
+		PlayState.limparCache = false;
 		if (!isEnding)
 		{
 			isEnding = true;

@@ -5,6 +5,7 @@ import flixel.FlxSprite;
 import flixel.addons.text.FlxTypeText;
 import flixel.addons.transition.FlxTransitionableState;
 import flixel.graphics.frames.FlxAtlasFrames;
+import flixel.FlxCamera;
 import flixel.group.FlxSpriteGroup;
 import flixel.input.FlxKeyManager;
 import flixel.math.FlxMatrix;
@@ -50,7 +51,9 @@ class DialogueBox extends FlxSpriteGroup
 {
 	var box:FlxSprite;
 	
-	var botaoSkip:FlxSprite;
+	var botaoSkip:flixel.ui.FlxButton;
+
+	var skipcam:FlxCamera;
 
 	var fastLoadImage:FlxSprite;
 
@@ -62,6 +65,8 @@ class DialogueBox extends FlxSpriteGroup
 	public static var isOBS:Bool = false;
 	var isPixel:Bool = false;
 	var isEpiphany:Bool = false;
+
+	var fakeraccept = false;
 
 	var canSkip:Bool = true;
 	var canFullSkip:Bool = true;
@@ -143,9 +148,12 @@ class DialogueBox extends FlxSpriteGroup
 		skipText.antialiasing = SaveData.globalAntialiasing;
 		add(skipText);
 		
-		botaoSkip = new FlxSprite(FlxG.width - 300, 50);
+		botaoSkip = new flixel.ui.FlxButton(FlxG.width - 300, 50, function()
+		{
+				fakeraccept = true; // Assim posso usar esse botão apenas como um mero sprite em situações mais complexas.
+		});
 		botaoSkip.loadGraphic(Paths.image('botaoSkip', 'doki'));
-		botaoSkip.antialiasing = SaveData.globalAntialiasing;
+		botaoSkip.updateHitbox();
 		add(botaoSkip);
 
 		if (PlayState.SONG.noteStyle == 'pixel' || isPixel)
@@ -205,14 +213,15 @@ class DialogueBox extends FlxSpriteGroup
 
 		if (canSkip && !playingCutscene)
 		{
-			if ((PlayerSettings.player1.controls.BACK || BSLTouchUtils.apertasimples(botaoSkip)) && !stopspamming && canFullSkip && !playingCutscene && dialogueStarted)
+			if ((PlayerSettings.player1.controls.BACK || fakeraccept) && !stopspamming && canFullSkip && !playingCutscene && dialogueStarted)
 			{
+				fakeraccept = false;
 				isEnding = true;
 				stopspamming = true;
 				endinstantly();
 			}else if ((PlayerSettings.player1.controls.ACCEPT || BSLTouchUtils.justTouched()) && dialogueEnded)
 			{
-				FlxG.sound.play(Paths.sound('clickText'), 0.8);
+				GlobalSoundManager.play('clickText');
 				enddialogue();
 			}
 			else if ((PlayerSettings.player1.controls.ACCEPT || BSLTouchUtils.justTouched()) && dialogueStarted)

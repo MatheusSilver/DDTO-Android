@@ -104,13 +104,13 @@ class FirstBootState extends MusicBeatState
 		{
 			if (controls.UP_P)
 			{
-				FlxG.sound.play(Paths.sound('scrollMenu'));
+				GlobalSoundManager.play('scrollMenu');
 				curSelected -= 1;
 			}
 
 			if (controls.DOWN_P)
 			{
-				FlxG.sound.play(Paths.sound('scrollMenu'));
+				GlobalSoundManager.play('scrollMenu');
 				curSelected += 1;
 			}
 
@@ -132,7 +132,7 @@ class FirstBootState extends MusicBeatState
 			{
 				selectedsomething = true;
 				selectedSomethin = true;
-				FlxG.sound.play(Paths.sound('confirmMenu'));
+				GlobalSoundManager.play('confirmMenu');
 				grpOptionsTexts.forEach(function(txt:FlxText)
 				{
 					if (curSelected != txt.ID)

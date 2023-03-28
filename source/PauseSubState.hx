@@ -328,7 +328,7 @@ class PauseSubState extends MusicBeatSubstate
 		changeSelection();
 
 		#if mobileC
-		addVirtualPad(FULL, A);
+		addVirtualPad(DIREITA_UP_DOWN, A);
 		var camcontrol = new FlxCamera();
 		FlxG.cameras.add(camcontrol);
 		camcontrol.bgColor.alpha = 0;
@@ -477,7 +477,7 @@ class PauseSubState extends MusicBeatSubstate
 
 	function changeSelection(change:Int = 0):Void
 	{
-		FlxG.sound.play(Paths.sound('scrollMenu'), 0.7);
+		GlobalSoundManager.play('scrollMenu');
 
 		curSelected += change;
 
@@ -528,7 +528,7 @@ class PauseSubState extends MusicBeatSubstate
 	function closeMenu()
 	{
 		//Tweens!
-		FlxG.sound.play(Paths.sound('confirmMenu'));
+		GlobalSoundManager.play('confirmMenu');
 		canPress = false;
 
 		FlxTween.cancelTweensOf(pauseArt);

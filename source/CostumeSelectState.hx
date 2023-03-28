@@ -73,70 +73,40 @@ class CostumeSelectState extends MusicBeatState
 	var costumeUnlocked:Array<Dynamic> = [
 		// Boyfriend
 		[
-			true, // Uniform, unlocked by default
-			true, // Regular, unlocked by default
-			true, // Minus, unlocked by default
-			CoolUtil.flixelSaveCheck('Disky', 'Soft Mod') || SaveData.unlockSoftCostume, // Soft, save check for Soft Mod or mirror mode It's complicated with festy costume
-			CoolUtil.renpySaveCheck() || CoolUtil.ddlcpSaveCheck() || SaveData.unlockMrCowCostume, // Mr. Cow, save checks for DDLC. If you played this mod and don't have this unlocked then I am extremely dissappointed in you.
-			Highscore.getAccuracyUnlock('Your Demise', 2) >= 90, // Blue Skies, 90% Accuracy on Your Demise
-			SaveData.unlockHFCostume // HoloFunk, unlocked by clicking on sticker
+		true, true, true, true, true, true, true
 		],
 		// Girlfriend
 		[
-			true, // Uniform, unlocked by default
-			true, // Regular, unlocked by default
-			true, // Minus, unlocked by default
-			CoolUtil.flixelSaveCheck('Disky', 'Soft Mod') || SaveData.unlockSoftCostume, // Soft Pico, save check for Soft Mod or mirror mode It's complicated with festy costume
-			Highscore.getMirrorScore('Love n Funkin', 1) > 0, // Blue Skies, play Love n' Funkin' on Mirror Mode
-			SaveData.unlockHFCostume, // HoloFunk, unlocked by clicking on sticker
-			SaveData.beatLibitina // TBD-tan, beat Libitina
+		true, true, true, true, true, true, true
 		],
 		// Monika
 		[
-			true, // Uniform, unlocked by default
-			true, // Casual, unlocked by default
-			Highscore.getScore('Epiphany', 2) > 0, // valentine, unlocks if Epiphany with Lyrics is beaten
-			Highscore.getAccuracyUnlock('Glitcher (Monika Mix)', 2) >= 90, // Festival, unlocks if Glitcher (Hard) is 90%+ accuracy
-			Highscore.getMirrorScore('Wilted', 1) > 0, // Friends, play Wilted on Mirror Mode
-			Highscore.getMirrorScore('Reconciliation', 2) > 0, // Blue Skies, play Reconciliation (Hard) on Mirror Mode
-			SaveData.yamMonika // Vigilante, choose Monika on You and Me
+		true, true, true, true, true, true, true
 		],
 		// Sayori
 		[
-			true, // Uniform, unlocked by default
-			true, // Casual, unlocked by default
-			CoolUtil.flixelSaveCheck('Team TBD', 'DokiTakeover', 'teamtbd', 'badending') || CoolUtil.flixelSaveCheck(null, null, 'TeamTBD', 'BadEnding', true) || Highscore.getMirrorScore('Joyride', 2) > 0, // Sleep Wear, save check for BAD ENDING
-			SaveData.yamSayori, // Picnic, choose Sayori on You and Me
-			Highscore.getAccuracyUnlock("It's Complicated (Sayori Mix)", 2) >= 90, // Festival, unlocks if It's Complicated (Hard) is 90%+ accuracy
-			Highscore.getAccuracyUnlock('Constricted', 2) >= 90, // Friends, unlocks if Constricted (Hard) is 90%+ accuracy
-			Highscore.getMirrorScore('My Confession', 2) > 0 // Blue Skies, play My Confession (Hard) on Mirror Mode
+			true,
+			true,
+			true,
+			true,
+			true,
+			true, 
+			true
 		],
 		// Natsuki
 		[
-			true, // Uniform, unlocked by default
-			true, // Casual, unlocked by default
-			SaveData.yamNatsuki, // Skater, choose Natsuki on You and Me
-			Highscore.getAccuracyUnlock('Beathoven (Natsuki Mix)', 2) >= 90, // Festival, unlocks if Beathoven (Hard) is 90%+ accuracy
-			CoolUtil.flixelSaveCheck('kadedev', 'Vs Sunday') || CoolUtil.flixelSaveCheck('kadedev', 'Vs Sunday WITH SHADERS') || Highscore.getMirrorScore('Baka', 2) > 0, // Friends, save checks for Sunday
-			SaveData.unlockAntipathyCostume, // Antipathy, unlocked by clicking on artwork
-			Highscore.getScore('Catfight', 1) > 0 // Blue Skies, pick Natsu on Catfight (Hard)
+		true, true, true, true, true, true, true
 		],
 		// Yuri
 		[
-			true, // Uniform, unlocked by default
-			true, // Casual, unlocked by default
-			Highscore.getMirrorScore('Catfight', 2) > 0, // Derby, pick Yuri on Catfight (Hard)
-			SaveData.yamYuri, // Picnic, choose Yuri on You and Me
-			Highscore.getAccuracyUnlock('Crucify (Yuri Mix)', 2) >= 90, // Festival, unlocks if Crucify (Hard) is 90%+ accuracy
-			CoolUtil.flixelSaveCheck('Homskiy', 'Tabi', 'homskiy', 'tabi') || Highscore.getMirrorScore('Obsession', 2) > 0, // Friends, save check for Tabi
-			Highscore.getMirrorScore('Shrinking Violet', 2) > 0 // Blue Skies, play Deep Breaths (Hard) on Mirror Mode
+		true, true, true, true, true, true, true
 		],
 		// Protag
 		[
 			true, // Uniform, unlocked by default
 			true, // Casual, unlocked by default
-			CoolUtil.flixelSaveCheck('Hotline024', 'Hotline024') || Highscore.getMirrorScore('Deep Breaths', 2) > 0 && Highscore.getMirrorScore('Poems n Thorns', 2) > 0, // Hotline, save check for Hotline 024
-			SaveData.yamLoss // Blue Skies, fail You and Me by not picking a doki
+			true,
+			true
 		]
 	];
 	var costumeJSON:CostumeJSON = null;
@@ -281,12 +251,12 @@ class CostumeSelectState extends MusicBeatState
 				selectedSomethin = true;
 				SaveData.save();
 				FlxG.sound.music.stop();
-				FlxG.sound.play(Paths.sound('cancelMenu'));
+				GlobalSoundManager.play('cancelMenu');
 				MusicBeatState.switchState(new DokiFreeplayState());
 			}
 			if ((controls.BACK #if android || FlxG.android.justReleased.BACK #end) && selectingcostume)
 			{
-				FlxG.sound.play(Paths.sound('cancelMenu'));
+				GlobalSoundManager.play('cancelMenu');
 				costumeselect(false);
 				
 				// Initial bug is that, if you have a selected character, but
@@ -402,7 +372,7 @@ class CostumeSelectState extends MusicBeatState
 			flavorText.visible = true;
 			flavorBar.visible = true;
 
-			FlxG.sound.play(Paths.sound('confirmMenu'));
+			GlobalSoundManager.play('confirmMenu');
 
 			var daSelection = costumeJSON.list[curSelected];
 			trace(daSelection);
@@ -455,7 +425,7 @@ class CostumeSelectState extends MusicBeatState
 
 	function changeItem(huh:Int = 0) //PT1
 	{
-		FlxG.sound.play(Paths.sound('scrollMenu'));
+		GlobalSoundManager.play('scrollMenu');
 		curSelected += huh;
 
 		var daChoice:String = character[curSelected];
@@ -477,7 +447,7 @@ class CostumeSelectState extends MusicBeatState
 							
 	function changeItemDirectly(huh:Int = 0) //PT1
 	{
-		FlxG.sound.play(Paths.sound('scrollMenu'));
+		GlobalSoundManager.play('scrollMenu');
 		curSelected = huh;
 
 		var daChoice:String = character[curSelected];
@@ -500,7 +470,7 @@ class CostumeSelectState extends MusicBeatState
 	function changecostume(huh:Int = 0, goingforward:Bool = true) //PT2
 	{
 		var daChoice:String = character[curSelected];
-		FlxG.sound.play(Paths.sound('scrollMenu'));
+		GlobalSoundManager.play('scrollMenu');
 		costumeSelected += huh;
 
 		trace(hueh);
@@ -537,7 +507,7 @@ class CostumeSelectState extends MusicBeatState
 	function changeCostumeDirectly(huh:Int = 0, goingforward:Bool = true) //PT2
 	{
 		var daChoice:String = character[curSelected];
-		FlxG.sound.play(Paths.sound('scrollMenu'));
+		GlobalSoundManager.play('scrollMenu');
 		costumeSelected = huh;
 
 		trace(hueh);
@@ -646,7 +616,7 @@ class CostumeSelectState extends MusicBeatState
 			if (daChoice == "natsuki" && costumeSelected == 0 && SaveData.natsukicostume == "buff")
 				FlxG.sound.play(Paths.sound('buff'));
 			else
-				FlxG.sound.play(Paths.sound('confirmMenu'));
+				GlobalSoundManager.play('confirmMenu');
 
 			costumeselect(false);
 		}

@@ -204,6 +204,8 @@ class DokiStoryState extends MusicBeatState
 		unlockedWeeks();
 		updateSelected();
 
+		addbackButton(true);
+
 		super.create();
 	}
 	
@@ -295,10 +297,10 @@ class DokiStoryState extends MusicBeatState
 			else if (BSLTouchUtils.aperta(story_sidestories, 8) == 'segundo')
 				selectThing();
 
-			if (controls.BACK #if android || FlxG.android.justReleased.BACK #end)
+			if (controls.BACK || _backButton.justPressed #if android || FlxG.android.justReleased.BACK #end)
 			{
 				acceptInput = false;
-				FlxG.sound.play(Paths.sound('cancelMenu'));
+				GlobalSoundManager.play('cancelMenu');
 				MusicBeatState.switchState(new MainMenuState());
 			}
 
@@ -392,13 +394,13 @@ class DokiStoryState extends MusicBeatState
 	{
 		if (curPos == 8 && icons[curPos][1])
 		{
-			FlxG.sound.play(Paths.sound('confirmMenu'));
+			GlobalSoundManager.play('confirmMenu');
 			openSubState(new DokiSideStory());
 		}
 		else if (icons[curPos][1])
 		{
 			selectedSomethin = true;
-			FlxG.sound.play(Paths.sound('confirmMenu'));
+			GlobalSoundManager.play('confirmMenu');
 			goToState();
 		}
 	}
@@ -412,7 +414,7 @@ class DokiStoryState extends MusicBeatState
 			curPos = trocadireta;
 
 		if (prevselected != curPos)
-			FlxG.sound.play(Paths.sound('scrollMenu'));
+			GlobalSoundManager.play('scrollMenu');
 
 		//Tenho minhas dúvidas se esse code é util agora que tudo é por touch...
 		if (!SaveData.beatFestival)

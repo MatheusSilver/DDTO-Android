@@ -6,6 +6,7 @@ class EstadoDeTroca extends MusicBeatState
 	{
 		Paths.clearStoredMemory();
 		Paths.clearUnusedMemory();
+		PlayState.limparCache = true;
 
 		new flixel.util.FlxTimer().start(1.0, function(tmr:flixel.util.FlxTimer)
 		{

@@ -165,6 +165,8 @@ class PlayState extends MusicBeatState
 
 	public var strumLine:FlxSprite;
 
+	public static var limparCache:Bool = true;
+
 	private var curSection:Int = 0;
 
 	private var camFollow:FlxObject;
@@ -454,7 +456,8 @@ class PlayState extends MusicBeatState
 
 	override public function create()
 	{
-		Paths.clearStoredMemory();
+		if (limparCache)
+			Paths.clearStoredMemory();
 
 		instance = this;
 
@@ -631,7 +634,8 @@ class PlayState extends MusicBeatState
 		if(SONG.song.toLowerCase()=='deep breaths' || SONG.song.toLowerCase()=='shrinking violet'){
 		pinkOverlay = new FlxSprite(-FlxG.width * FlxG.camera.zoom, -FlxG.height * FlxG.camera.zoom).makeGraphic(FlxG.width * 3, FlxG.height * 3, 0xFFF281F2);
 		pinkOverlay.alpha = 0.2;
-		pinkOverlay.blend = SCREEN;
+		if(!SaveData.lowEnd && !SaveData.globalAntialiasing)
+			pinkOverlay.blend = SCREEN;
 		pinkOverlay.visible = false;
 		pinkOverlay.scrollFactor.set();
 		}
@@ -974,7 +978,8 @@ class PlayState extends MusicBeatState
 						staticcredits.scrollFactor.set();
 						staticcredits.alpha = 0.001;
 						staticcredits.visible = false;
-						staticcredits.blend = MULTIPLY;
+						if(!SaveData.lowEnd && !SaveData.globalAntialiasing)
+							staticcredits.blend = MULTIPLY;
 						staticcredits.cameras = [camGame2];
 						staticcredits.setGraphicSize(Std.int(4*staticcredits.width / defaultHudZoom));
 						staticcredits.updateHitbox();
@@ -1186,7 +1191,8 @@ class PlayState extends MusicBeatState
 								staticshock.scrollFactor.set();
 								staticshock.alpha = 0.6;
 								staticshock.setGraphicSize(Std.int(staticshock.width * 4));
-								staticshock.blend = SUBTRACT;
+								if(!SaveData.lowEnd && !SaveData.globalAntialiasing)	
+									staticshock.blend = SUBTRACT;
 								staticshock.visible = false;
 								staticshock.cameras = [camOverlay];
 								staticshock.updateHitbox();
@@ -1224,7 +1230,8 @@ class PlayState extends MusicBeatState
 					clubmainlight = new BGSprite('clubroom/clublights', 'doki', -700, -520, 1, 1);
 					clubmainlight.setGraphicSize(Std.int(clubmainlight.width * 1.6));
 					clubmainlight.updateHitbox();
-					clubmainlight.blend = SCREEN;
+					if(!SaveData.lowEnd && !SaveData.globalAntialiasing)
+						clubmainlight.blend = SCREEN;
 					add(clubmainlight);
 
 					deskfront = new BGSprite('clubroom/DesksFront', 'doki', -700, -520, 1.3, 1);
@@ -1257,7 +1264,8 @@ class PlayState extends MusicBeatState
 						spotlight = new BGSprite('clubroom/NEETspotlight', 'doki', -700, -520, 1, 0.9);
 						spotlight.setGraphicSize(Std.int(spotlight.width * 1.6));
 						spotlight.alpha = 0.001;
-						spotlight.blend = SCREEN;
+						if(!SaveData.lowEnd && !SaveData.globalAntialiasing)	
+							spotlight.blend = SCREEN;
 						spotlight.updateHitbox();
 						spotlight.visible = false;
 						add(spotlight);
@@ -1430,7 +1438,8 @@ class PlayState extends MusicBeatState
 	
 						lightontopofall = new BGSprite('bigmonika/lights', 'doki', -250, -167, 0.4, 0.6);
 						lightontopofall.cameras = [camGame2];
-						lightontopofall.blend = SCREEN;
+						if(!SaveData.lowEnd && !SaveData.globalAntialiasing)	
+							lightontopofall.blend = SCREEN;
 
 						dokiBackdrop = new FlxBackdrop(Paths.image('backdropsmenu/backdropcatfight'));
 						dokiBackdrop.velocity.set(-40, -40);
@@ -1474,7 +1483,8 @@ class PlayState extends MusicBeatState
 					lightoverlay = new BGSprite('musicroom/Music_RoomLight', 'doki', -250, -100, 1.1, 0.9);
 					lightoverlay.setGraphicSize(Std.int(lightoverlay.width * 1.5));
 					lightoverlay.updateHitbox();
-					lightoverlay.blend = ADD;
+					if(!SaveData.lowEnd && !SaveData.globalAntialiasing)	
+						lightoverlay.blend = ADD;
 
 					// love n' funkin'
 					if (SONG.song.toLowerCase() == 'love n funkin')
@@ -2427,10 +2437,7 @@ class PlayState extends MusicBeatState
 			trackedinputsNOTES = controls.trackedinputsNOTES;
 			controls.trackedinputsNOTES = [];
 
-			var camcontrol = new FlxCamera();
-			FlxG.cameras.add(camcontrol);
-			camcontrol.bgColor.alpha = 0;
-			mcontrols.cameras = [camcontrol];
+			mcontrols.cameras = [camHUD];
 
 			mcontrols.visible = false;
 
@@ -2582,7 +2589,10 @@ class PlayState extends MusicBeatState
 
 		CustomFadeTransition.nextCamera = camOverlay;
 
-		Paths.clearUnusedMemory();
+		if (limparCache)
+			Paths.clearUnusedMemory();
+
+		limparCache = false;
 	}
 
 	private function cachePopUpScore()

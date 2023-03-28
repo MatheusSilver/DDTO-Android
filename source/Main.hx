@@ -18,8 +18,6 @@ class Main extends Sprite
 	var skipSplash:Bool = true; // Whether to skip the flixel splash screen that appears in release mode.
 	var startFullscreen:Bool = false; // Whether to start the game in fullscreen on desktop targets
 
-	public static var path:String = lime.system.System.applicationStorageDirectory;
-
 	public static var fpsVar:FPS;
 	public static var tongue:FireTongueEx;
 
@@ -42,6 +40,20 @@ class Main extends Sprite
 		else
 		{
 			addEventListener(Event.ADDED_TO_STAGE, init);
+		}
+	}
+
+	public static function setFPSCap(cap:Int)
+	{
+		if (cap > FlxG.drawFramerate)
+		{
+			FlxG.updateFramerate = cap;
+			FlxG.drawFramerate = cap;
+		}
+		else
+		{
+			FlxG.drawFramerate = cap;
+			FlxG.updateFramerate = cap;
 		}
 	}
 
@@ -81,5 +93,6 @@ class Main extends Sprite
 
 		tongue = new FireTongueEx();
 		tongue.initialize({locale: SaveData.language});
+		
 	}
 }

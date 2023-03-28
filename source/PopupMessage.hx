@@ -90,7 +90,7 @@ class PopupMessage extends MusicBeatSubstate
 		text.antialiasing = SaveData.globalAntialiasing;
 		add(text);
 
-		FlxG.sound.play(Paths.sound('scrollMenu'));
+		GlobalSoundManager.play('scrollMenu');
 		updateBox();
 	}
 
@@ -156,7 +156,7 @@ class PopupMessage extends MusicBeatSubstate
 
 		if ((controls.ACCEPT || BSLTouchUtils.justTouched()))
 		{
-			FlxG.sound.play(Paths.sound('confirmMenu'));
+			GlobalSoundManager.play('confirmMenu');
 
 			popupData[popupID][1].remove(popupData[popupID][1][0]);
 

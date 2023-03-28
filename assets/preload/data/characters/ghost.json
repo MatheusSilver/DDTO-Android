@@ -2,8 +2,8 @@
 	"animations": [
 		{
 			"offsets": [
-				0,
-				0
+				174,
+				-174
 			],
 			"loop": true,
 			"anim": "idle",
@@ -13,8 +13,8 @@
 		},
 		{
 			"offsets": [
-				100,
-				-27
+				200,
+				-217
 			],
 			"loop": false,
 			"anim": "singLEFT",
@@ -24,8 +24,8 @@
 		},
 		{
 			"offsets": [
-				120,
-				-67
+				280,
+				-247
 			],
 			"loop": false,
 			"anim": "singDOWN",
@@ -35,8 +35,8 @@
 		},
 		{
 			"offsets": [
-				42,
-				65
+				200,
+				-160
 			],
 			"loop": false,
 			"anim": "singUP",
@@ -46,8 +46,8 @@
 		},
 		{
 			"offsets": [
-				20,
-				-38
+				225,
+				-208
 			],
 			"loop": false,
 			"anim": "singRIGHT",
@@ -57,8 +57,8 @@
 		},
 		{
 			"offsets": [
-				100,
-				-80
+				190,
+				-260
 			],
 			"loop": false,
 			"anim": "singLEFTmiss",
@@ -68,8 +68,8 @@
 		},
 		{
 			"offsets": [
-				120,
-				-70
+				190,
+				-250
 			],
 			"loop": false,
 			"anim": "singDOWNmiss",
@@ -79,8 +79,8 @@
 		},
 		{
 			"offsets": [
-				132,
-				-65
+				192, 
+				-265
 			],
 			"loop": false,
 			"anim": "singUPmiss",
@@ -90,8 +90,8 @@
 		},
 		{
 			"offsets": [
-				20,
-				-18
+				280,
+				-248
 			],
 			"loop": false,
 			"anim": "singRIGHTmiss",
@@ -103,8 +103,8 @@
 	"no_antialiasing": false,
 	"image": "characters/ghost/Libitina",
 	"position": [
-		0,
-		0
+		330,
+		40
 	],
 	"healthicon": "hidden",
 	"flip_x": true,

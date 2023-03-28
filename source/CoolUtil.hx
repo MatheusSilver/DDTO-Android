@@ -121,7 +121,7 @@ class CoolUtil
 
 	public static function setFPSCap(cap:Int):Void
 	{
-		openfl.Lib.current.stage.frameRate = cap;
+		Main.setFPSCap(cap);
 	}
 
 	/**

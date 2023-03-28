@@ -102,14 +102,14 @@ class JudgementSubstate extends MusicBeatSubstate
 		{
 			if (controls.UP_P)
 			{
-				FlxG.sound.play(Paths.sound('scrollMenu'));
+				GlobalSoundManager.play('scrollMenu');
 				changeItem(-1);
 				textUpdate();
 			}
 
 			if (controls.DOWN_P)
 			{
-				FlxG.sound.play(Paths.sound('scrollMenu'));
+				GlobalSoundManager.play('scrollMenu');
 				changeItem(1);
 				textUpdate();
 			}
@@ -132,14 +132,14 @@ class JudgementSubstate extends MusicBeatSubstate
 			{
 				if (controls.LEFT_P)
 				{
-					FlxG.sound.play(Paths.sound('scrollMenu'));
+					GlobalSoundManager.play('scrollMenu');
 					judgementTimings[curSelected]--;
 					updateJudgement();
 				}
 
 				if (controls.RIGHT_P)
 				{
-					FlxG.sound.play(Paths.sound('scrollMenu'));
+					GlobalSoundManager.play('scrollMenu');
 					judgementTimings[curSelected]++;
 					updateJudgement();
 				}
@@ -149,7 +149,7 @@ class JudgementSubstate extends MusicBeatSubstate
 				quit();
 			else if (controls.RESET)
 			{
-				FlxG.sound.play(Paths.sound('scrollMenu'));
+				GlobalSoundManager.play('scrollMenu');
 				reset();
 			}
 		}

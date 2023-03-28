@@ -329,6 +329,8 @@ class DokiFreeplayState extends MusicBeatState
 		add(leftArrow);
 		add(rightArrow);
 
+		addbackButton(true);
+
 		super.create();
 	}
 
@@ -376,7 +378,7 @@ class DokiFreeplayState extends MusicBeatState
 
 			if (BSLTouchUtils.apertasimples(modifierMenu))
 			{
-				FlxG.sound.play(Paths.sound('confirmMenu'));
+				GlobalSoundManager.play('confirmMenu');
 				openSubState(new DokiModifierSubState());
 			}
 
@@ -390,7 +392,7 @@ class DokiFreeplayState extends MusicBeatState
 				}
 				else
 				{
-					FlxG.sound.play(Paths.sound('scrollMenu'));
+					GlobalSoundManager.play('scrollMenu');
 					changeItem(-1);
 				}
 			}
@@ -402,7 +404,7 @@ class DokiFreeplayState extends MusicBeatState
 				}
 				else
 				{
-					FlxG.sound.play(Paths.sound('scrollMenu'));
+					GlobalSoundManager.play('scrollMenu');
 					changeItem(1);
 				}
 			}
@@ -433,7 +435,7 @@ class DokiFreeplayState extends MusicBeatState
 			else if (BSLTouchUtils.apertasimples(rightArrow))
 				changePageHotkey(1, false);
 
-			if (controls.BACK #if android || FlxG.android.justReleased.BACK #end)
+			if (controls.BACK || _backButton.justPressed #if android || FlxG.android.justReleased.BACK #end)
 			{
 				switch (diffselect)
 				{
@@ -448,7 +450,7 @@ class DokiFreeplayState extends MusicBeatState
 						pageFlipped = false;
 						curSelected = 0;
 						curPage = 0;
-						FlxG.sound.play(Paths.sound('cancelMenu'));
+						GlobalSoundManager.play('cancelMenu');
 						MusicBeatState.switchState(new MainMenuState());
 				}
 			}
@@ -461,13 +463,13 @@ class DokiFreeplayState extends MusicBeatState
 
 			if (controls.LEFT_P && diffselect)
 			{
-				FlxG.sound.play(Paths.sound('scrollMenu'));
+				GlobalSoundManager.play('scrollMenu');
 				changeDiff(-1);
 			}
 
 			if (controls.RIGHT_P && diffselect)
 			{
-				FlxG.sound.play(Paths.sound('scrollMenu'));
+				GlobalSoundManager.play('scrollMenu');
 				changeDiff(1);
 			}
 
@@ -483,7 +485,7 @@ class DokiFreeplayState extends MusicBeatState
 					{
 						case false:
 							{
-								FlxG.sound.play(Paths.sound('confirmMenu'));
+								GlobalSoundManager.play('confirmMenu');
 								diff.visible = true;
 
 								diffselect = true;
@@ -518,7 +520,7 @@ class DokiFreeplayState extends MusicBeatState
 	{
 		pageFlipped = false;
 		selectedSomethin = true;
-		FlxG.sound.play(Paths.sound('confirmMenu'));
+		GlobalSoundManager.play('confirmMenu');
 		menu_character.y -= 31;
 		menu_character.animation.play('pop_off');
 		grpSongs.forEach(function(spr:FlxSprite)

@@ -102,6 +102,8 @@ class GalleryStickerState extends MusicBeatState
 
 		changeItem();
 
+		addbackButton();
+
 		super.create();
 	}
 
@@ -112,10 +114,10 @@ class GalleryStickerState extends MusicBeatState
 		if (FlxG.sound.music != null && FlxG.sound.music.volume < 0.8)
 			FlxG.sound.music.volume += 0.5 * FlxG.elapsed;
 
-		if (controls.BACK #if android || FlxG.android.justReleased.BACK #end)
+		if (controls.BACK || _backButton.justPressed #if android || FlxG.android.justReleased.BACK #end)
 		{
 			FlxG.sound.music.stop();
-			FlxG.sound.play(Paths.sound('cancelMenu'));
+			GlobalSoundManager.play('cancelMenu');
 			MusicBeatState.switchState(new MainMenuState());
 		}
 
@@ -125,7 +127,7 @@ class GalleryStickerState extends MusicBeatState
 			changeItem(1);
 		else if (controls.ACCEPT || BSLTouchUtils.apertasimples(sticker) && stickerData[curSelected] != 'grandhammer')
 		{
-			FlxG.sound.play(Paths.sound('scrollMenu'));
+			GlobalSoundManager.play('scrollMenu');
 			CoolUtil.openURL(urlData[curSelected]);
 		}
 
@@ -148,7 +150,7 @@ class GalleryStickerState extends MusicBeatState
 
 	function changeItem(huh:Int = 0)
 	{
-		FlxG.sound.play(Paths.sound('scrollMenu'));
+		GlobalSoundManager.play('scrollMenu');
 
 		curSelected += huh;
 

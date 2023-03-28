@@ -75,6 +75,8 @@ class DokiModifierSubState extends MusicBeatSubstate
 		});
 
 		changeSelection();
+
+		addbackButton();
 	}
 
 	override function update(elapsed:Float):Void
@@ -83,9 +85,9 @@ class DokiModifierSubState extends MusicBeatSubstate
 
 		if (acceptInput)
 		{
-			if (controls.BACK #if android || FlxG.android.justReleased.BACK #end)
+			if (controls.BACK || _backButton.justPressed #if android || FlxG.android.justReleased.BACK #end)
 			{
-				FlxG.sound.play(Paths.sound('cancelMenu'));
+				GlobalSoundManager.play('cancelMenu');
 				DokiFreeplayState.instance.acceptInput = true;
 				SaveData.save();
 				close();
@@ -111,7 +113,7 @@ class DokiModifierSubState extends MusicBeatSubstate
 
 			if (FlxG.keys.justPressed.R)
 			{
-				FlxG.sound.play(Paths.sound('scrollMenu'));
+				GlobalSoundManager.play('scrollMenu');
 				setValue(modifierData[curSelected][5]);
 				updateText();
 			}
@@ -125,7 +127,7 @@ class DokiModifierSubState extends MusicBeatSubstate
 
 
 		if (prevSelected != curSelected)
-			FlxG.sound.play(Paths.sound('scrollMenu'));
+			GlobalSoundManager.play('scrollMenu');
 
 		if (curSelected >= modifierData.length)
 			curSelected = 0;
@@ -211,7 +213,7 @@ class DokiModifierSubState extends MusicBeatSubstate
 		}
 
 		if (!FlxG.keys.pressed.SHIFT)
-			FlxG.sound.play(Paths.sound('scrollMenu'));
+			GlobalSoundManager.play('scrollMenu');
 
 		updateText();
 	}

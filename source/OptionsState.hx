@@ -34,6 +34,7 @@ class OptionsState extends MusicBeatState
 			#end
 			//new MonikaHD('Habilite a skin de Monika Hd'),
 			new BotPlay('Deixe o Bot jogar por você e apenas aproveite a história.'),
+			//new GlobalSoundOption('Altere o volume dos efeitos sonoros GLOBAIS do jogo'),
 			new KeyBindingsOption(LangUtil.getString('descKeyBindings', 'option'), controls),
 			new DownscrollOption(LangUtil.getString('descDownscroll', 'option')),
 			new LaneUnderlayOption(LangUtil.getString('descLaneUnderway', 'option')),
@@ -174,6 +175,7 @@ class OptionsState extends MusicBeatState
 
 		#if mobileC
 		addVirtualPad(FULL, A_B);
+		_virtualpad.x -= 20;
 		#end
 
 		super.create();
@@ -188,7 +190,7 @@ class OptionsState extends MusicBeatState
 			if ((controls.BACK #if android || FlxG.android.justReleased.BACK #end) && !isCat)
 			{
 				acceptInput = false;
-				FlxG.sound.play(Paths.sound('cancelMenu'));
+				GlobalSoundManager.play('cancelMenu');
 				SaveData.save();
 				MusicBeatState.switchState(new MainMenuState());
 			}
@@ -280,7 +282,7 @@ class OptionsState extends MusicBeatState
 
 	function changeSelection(change:Int = 0)
 	{
-		FlxG.sound.play(Paths.sound("scrollMenu"));
+		GlobalSoundManager.play("scrollMenu");
 
 		curSelected += change;
 
