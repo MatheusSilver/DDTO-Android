@@ -2208,7 +2208,7 @@ class PlayState extends MusicBeatState
 		}
 			if(!SaveData.lowEnd){
 				for (sticker in stickerData)
-					Paths.image('stickies/' + sticker, 'preload');
+					Paths.image('stickies/' + sticker, 'preload', false, true);
 			}
 		}
 
@@ -8424,7 +8424,7 @@ class PlayState extends MusicBeatState
 				else //FIX FOUND
 					trace('This Sticker doesnt exists ' + stickerData.length + ' which number' + rand);
 
-				item.loadGraphic(Paths.image('stickies/' + stike, 'preload'));
+				item.loadGraphic(Paths.image('stickies/' + stike, 'preload', false, true));
 				stickerData.remove(stike);
 				item.scale.set(1, 1);
 				FlxTween.tween(item, {"scale.x": 0.85, "scale.y": 0.85}, 0.1, {});

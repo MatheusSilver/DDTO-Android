@@ -11,6 +11,7 @@ using StringTools;
 
 class VideoState extends MusicBeatState
 {
+	var changecount = 0;
 	public static var androidPath:String = 'file:///android_asset/';
 
 	public var nextState:FlxState;
@@ -56,8 +57,12 @@ class VideoState extends MusicBeatState
 
 	function onURLChanging(url:String)
 	{
+		if (changecount == 2)
+			onClose();
+		else
+			changecount++;
 		text.alpha = 1;
-		if (url == 'http://exitme/')
+		if (url == 'http://exitme%28.%2A%29/')
 			onClose(); // drity hack lol
 		trace("WebView is about to open: " + url);
 	}
