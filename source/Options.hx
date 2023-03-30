@@ -1211,3 +1211,24 @@ class LowEnd extends Option
 		return 'Modo Gama Baja' + ' ' + (SaveData.lowEnd ? LangUtil.getString('cmnOn') : LangUtil.getString('cmnOff'));
 	}
 }
+
+class RemoverGf extends Option
+{
+	public function new(desc:String)
+	{
+		super();
+		description = desc;
+	}
+
+	public override function press():Bool
+	{
+		SaveData.removergirlfriend = !SaveData.removergirlfriend;
+		display = updateDisplay();
+		return true;
+	}
+
+	private override function updateDisplay():String
+	{
+		return 'Remover Girlfriend' + ' ' + (SaveData.removergirlfriend ? LangUtil.getString('cmnOn') : LangUtil.getString('cmnOff'));
+	}
+}

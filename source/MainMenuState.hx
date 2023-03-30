@@ -86,22 +86,7 @@ class MainMenuState extends MusicBeatState
 				{
 					lime.system.System.exit(0);
 				});
-				// SOBRE A IDEIA do grf, dá pra usar um firsttime, para fazer um evento específico de abrir um link e etc
-				//versionShit.text = "APENAS MONIKA, APENAS MONIKA, APENAS MONIKA, A P E N A S M O N I K A, APENAS MONIKA";
 			}
-			/*
-			else if (!Assets.exists("assets/doki/characters/natsuki.chr"))
-			{
-				versionShit.text = "END";
-			}
-			else if (!Assets.exists("assets/doki/characters/sayori.chr"))
-			{
-				versionShit.text = "É por isso que as pontas dos dedos dela estavam todas ensanguentadas, de qualquer maneira.";
-			}
-			else if (!Assets.exists("assets/doki/characters/yuri.chr"))
-			{
-				versionShit.text = "JUST MONIKA.";
-			}*/
 		}
 		if (!SaveData.beatPrologue)
 		{

@@ -4,8 +4,8 @@
 2534::Cantamos juntos, e vamos aos céus
 2566::Não tem limite
 2578::Pegue minha mão
-2594::Vamos Juntos
-2610::Na escuridão, Serei sua voz
-2642::Junte a sua melodia com a a minha
+2594::Vamos juntos
+2610::Na escuridão, serei sua voz
+2642::Junte a sua melodia com a minha
 2672::Mostre a todos nossa harmônia
 2712::
