@@ -14,6 +14,7 @@ class VideoSubState extends MusicBeatSubstate
 	public static var androidPath:String = 'file:///android_asset/';
 
 	var text:FlxText;
+	var changecount = 0;
 
 	public function new(source:String)
 	{
@@ -43,6 +44,7 @@ class VideoSubState extends MusicBeatSubstate
 	function onClose()
 	{ // not working
 		text.alpha = 0;
+		changecount = 0;
 		// FlxG.autoPause = true;
 		trace('aqui cabo!'); //==11x3 Fnatic :skull:
 		close();
@@ -50,6 +52,10 @@ class VideoSubState extends MusicBeatSubstate
 
 	function onURLChanging(url:String)
 	{
+		if (changecount == 2)
+			onClose();
+		else
+			changecount++;
 		text.alpha = 1;
 		if (url == 'http://exitme(.*)') //Não tenho certeza sobre isso tambem, mas deve fazer com que o player de vídeo feche sozinho.
 			onClose(); // drity hack lol

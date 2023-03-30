@@ -49,6 +49,7 @@ class VideoState extends MusicBeatState
 	function onClose()
 	{ // not working
 		text.alpha = 0;
+		changecount = 0;
 		// FlxG.autoPause = true;
 		trace('close!');
 		trace(nextState);
@@ -57,11 +58,13 @@ class VideoState extends MusicBeatState
 
 	function onURLChanging(url:String)
 	{
-		if (changecount == 2)
+		if (changecount == 2){ //Hacks mais sujos que o anterior k
+			text.alpha = 0;
 			onClose();
-		else
+		}else{
 			changecount++;
-		text.alpha = 1;
+			text.alpha = 1;
+		}
 		if (url == 'http://exitme%28.%2A%29/')
 			onClose(); // drity hack lol
 		trace("WebView is about to open: " + url);

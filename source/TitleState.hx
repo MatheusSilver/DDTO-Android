@@ -70,7 +70,7 @@ class TitleState extends MusicBeatState
 			FlxG.sound.music.fadeIn(2, 0, 0.7);
 		}
 
-		backdrop = new FlxBackdrop(Paths.image('backdropsmenu/backdropcatfight'));
+		backdrop = new FlxBackdrop(Paths.imagesimple('backdropsmenu/backdropcatfight'));
 		backdrop.velocity.set(-10, 0);
 		backdrop.antialiasing = SaveData.globalAntialiasing;
 		add(backdrop);

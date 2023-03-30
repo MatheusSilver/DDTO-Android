@@ -116,13 +116,13 @@ class DokiStoryState extends MusicBeatState
 		persistentUpdate = persistentDraw = true;
 
 
-		backdrop = new FlxBackdrop(Paths.image('backdropsmenu/backdropcatfight'));
+		backdrop = new FlxBackdrop(Paths.imagesimple('backdropsmenu/backdropcatfight'));
 		backdrop.velocity.set(-40, -40);
 		backdrop.antialiasing = SaveData.globalAntialiasing;
 		add(backdrop);
 
 		//-700, -360
-		logo = new FlxSprite(-60, 0).loadGraphic(Paths.image('Credits_LeftSide'));
+		logo = new FlxSprite(-60, 0).loadGraphic(Paths.imagesimple('Credits_LeftSide'));
 		logo.antialiasing = SaveData.globalAntialiasing;
 		add(logo);
 
@@ -207,6 +207,8 @@ class DokiStoryState extends MusicBeatState
 		addbackButton(true);
 
 		super.create();
+
+		_backButton.x = FlxG.width - 50 - _backButton.width;
 	}
 	
 	var selectedSomethin:Bool = false;
@@ -367,7 +369,7 @@ class DokiStoryState extends MusicBeatState
 				#if mobile
 				case 1:
 					MusicBeatState.switchState(new VideoState('assets/videos/sayointro', new EstadoDeTroca()));
-					FlxG.sound.music.fadeOut(0.5);
+					FlxG.sound.music.fadeOut(0.1);
 					trace("Sayori Selected");
 				#end
 				case 6:

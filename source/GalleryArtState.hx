@@ -29,6 +29,8 @@ class GalleryArtState extends MusicBeatState
 	var authorData:Array<String> = [];
 	var urlData:Array<String> = [];
 
+	var stopit:Bool = false;
+
 	override function create()
 	{
 		persistentUpdate = persistentDraw = true;
@@ -53,7 +55,7 @@ class GalleryArtState extends MusicBeatState
 			urlData.push(data[2]);
 		}
 
-		backdrop = new FlxBackdrop(Paths.image('backdropsmenu/backdropcredits'));
+		backdrop = new FlxBackdrop(Paths.imagesimple('backdropsmenu/backdropcredits'));
 		backdrop.velocity.set(-16, 0);
 		backdrop.scale.set(0.5, 0.5);
 		backdrop.antialiasing = SaveData.globalAntialiasing;
@@ -99,6 +101,7 @@ class GalleryArtState extends MusicBeatState
 		setaDireita.updateHitbox();
 		setaDireita.screenCenter(Y);
 		add(setaDireita);
+		stopit = false;
 
 		changeItem();
 
@@ -116,6 +119,7 @@ class GalleryArtState extends MusicBeatState
 
 		if (controls.BACK || _backButton.justPressed #if android || FlxG.android.justReleased.BACK #end)
 		{
+			stopit = true;
 			FlxG.sound.music.stop();
 			GlobalSoundManager.play('cancelMenu');
 			MusicBeatState.switchState(new MainMenuState());
@@ -124,13 +128,12 @@ class GalleryArtState extends MusicBeatState
 			changeItem(-1);
 		else if (controls.RIGHT_P || BSLTouchUtils.apertasimples(setaDireita))
 			changeItem(1);
-		else if ((controls.ACCEPT || BSLTouchUtils.apertasimples(artwork)) && !artworkData[curSelected].contains('antipathy'))
+		else if ((controls.ACCEPT || BSLTouchUtils.apertasimples(artwork)) && !stopit && !artworkData[curSelected].contains('antipathy'))
 		{
 			GlobalSoundManager.play('scrollMenu');
 			CoolUtil.openURL(urlData[curSelected]);
 		}
-
-		if (BSLTouchUtils.apertasimples(artwork) && artworkData[curSelected].contains('antipathy') && !dontSpam)
+		else if (BSLTouchUtils.apertasimples(artwork) && artworkData[curSelected].contains('antipathy') && !dontSpam)
 		{
 			FlxG.camera.fade(FlxColor.WHITE, 1, true, true);
 			FlxG.sound.play(Paths.sound('antipathyUnlock'));

@@ -58,7 +58,7 @@ class LoadingState extends MusicBeatState
 		#if NO_PRELOAD_ALL
 		persistentUpdate = persistentDraw = true;
 
-		backdrop = new FlxBackdrop(Paths.image('backdropsmenu/backdropcatfight'));
+		backdrop = new FlxBackdrop(Paths.imagesimple('backdropsmenu/backdropcatfight'));
 		backdrop.velocity.set(-40, -40);
 		backdrop.antialiasing = SaveData.globalAntialiasing;
 		add(backdrop);
@@ -66,7 +66,7 @@ class LoadingState extends MusicBeatState
 		if (!SaveData.beatFestival || PlayState.isStoryMode)
 		{
 			logo = new FlxSprite(0, 0);
-			logo.frames = Paths.getSparrowAtlas('DDLCStart_Screen_Assets');
+			logo.frames = Paths.getSparrowAtlassimple('DDLCStart_Screen_Assets');
 			logo.antialiasing = SaveData.globalAntialiasing;
 			logo.setGraphicSize(Std.int(logo.width * 0.8));
 			logo.animation.addByPrefix('bump', 'logo bumpin', 24, false);

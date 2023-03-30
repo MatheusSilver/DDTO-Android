@@ -129,17 +129,17 @@ class OptionsState extends MusicBeatState
 			]));
 		}
 
-		backdrop = new FlxBackdrop(Paths.image('backdropsmenu/backdropcatfight'));
+		backdrop = new FlxBackdrop(Paths.imagesimple('backdropsmenu/backdropcatfight'));
 		backdrop.velocity.set(-40, -40);
 		backdrop.antialiasing = SaveData.globalAntialiasing;
 		add(backdrop);
 
-		logo = new FlxSprite(-60, 0).loadGraphic(Paths.image('Credits_LeftSide'));
+		logo = new FlxSprite(-60, 0).loadGraphic(Paths.imagesimple('Credits_LeftSide'));
 		logo.antialiasing = SaveData.globalAntialiasing;
 		add(logo);
 
 		logoBl = new FlxSprite(40, -40);
-		logoBl.frames = Paths.getSparrowAtlas('DDLCStart_Screen_Assets');
+		logoBl.frames = Paths.getSparrowAtlassimple('DDLCStart_Screen_Assets');
 		logoBl.antialiasing = SaveData.globalAntialiasing;
 		logoBl.scale.set(0.5, 0.5);
 		logoBl.animation.addByPrefix('bump', 'logo bumpin', 24, false);
@@ -171,8 +171,8 @@ class OptionsState extends MusicBeatState
 		changeSelection();
 
 		#if mobileC
-		addVirtualPad(FULL, A_B);
-		_virtualpad.x -= 20;
+			addVirtualPad(FULL, A_B);
+			_virtualpad.y -= 20;
 		#end
 
 		super.create();

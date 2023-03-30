@@ -213,7 +213,7 @@ class PauseSubState extends MusicBeatSubstate
 			levelInfo.visible = false;
 		}
 
-		logo = new FlxSprite(-260, 0).loadGraphic(Paths.image('Credits_LeftSide'));
+		logo = new FlxSprite(-260, 0).loadGraphic(Paths.imagesimple('Credits_LeftSide'));
 		logo.antialiasing = SaveData.globalAntialiasing;
 		add(logo);
 
@@ -222,7 +222,7 @@ class PauseSubState extends MusicBeatSubstate
 		});
 
 		logoBl = new FlxSprite(-160, -40);
-		logoBl.frames = Paths.getSparrowAtlas('DDLCStart_Screen_Assets');
+		logoBl.frames = Paths.getSparrowAtlassimple('DDLCStart_Screen_Assets');
 		logoBl.antialiasing = SaveData.globalAntialiasing;
 		logoBl.scale.set(0.5, 0.5);
 		logoBl.animation.addByPrefix('bump', 'logo bumpin', 24, true);

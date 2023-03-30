@@ -82,7 +82,7 @@ class CreditsState extends MusicBeatState
 			Conductor.changeBPM(90);
 		}
 
-		backdrop = new FlxBackdrop(Paths.image('backdropsmenu/backdropcredits'));
+		backdrop = new FlxBackdrop(Paths.imagesimple('backdropsmenu/backdropcredits'));
 		backdrop.x = backdropX;
 		backdrop.velocity.set(-16, 0);
 		backdrop.scale.set(0.2, 0.2);
@@ -135,10 +135,11 @@ class CreditsState extends MusicBeatState
 		for (i in 0...creditsStuff.length)
 		{
 			//icons
-			var icon:FlxSprite = new FlxSprite(777, 216).loadGraphic(Paths.image('credits/icons/' + creditsStuff[i][1]));
-
-			if (!Paths.imagechecker("images/credits/icons/' + creditsStuff[i][1]", "preload"))
-				icon.loadGraphic(Paths.image('credits/icons/invisibru')); //por enquanto, el invisibru
+			var icon:FlxSprite;
+			if (Paths.imagechecker('credits/icons/' + creditsStuff[i][1], "preload"))
+				icon = new FlxSprite(777, 216).loadGraphic(Paths.image('credits/icons/' + creditsStuff[i][1]));
+			else
+				icon = new FlxSprite(777, 216).loadGraphic(Paths.image('credits/icons/invisibru', 'preload')); //por enquanto, el invisibru
 
 			iconArray.push(icon);
 			icon.antialiasing = SaveData.globalAntialiasing;

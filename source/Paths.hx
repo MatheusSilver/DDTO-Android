@@ -26,15 +26,6 @@ class Paths
 {
 	inline public static var SOUND_EXT = "ogg";
 
-	public static var dumpExclusions:Array<String> = [
-		'assets/images/Credits_LeftSide.png',
-		'assets/images/DDLCStart_Screen_Assets.png',
-		'assets/images/voltar_simples.png',
-		'assets/images/backdropsmenu/backdropcatfight.png' /*, //Não esparava que isso fosse ser tão importante.
-		'assets/music/freakyMenu.$SOUND_EXT',
-		'assets/music/disco.$SOUND_EXT'*/
-	];
-
 	public static var currentTrackedAssets:Map<String, FlxGraphic> = [];
 	public static var currentTrackedTextures:Map<String, Texture> = [];
 	public static var currentTrackedSounds:Map<String, Sound> = [];
@@ -42,18 +33,13 @@ class Paths
 	/// haya I love you for the base cache dump I took to the max
 	//Esse código não foi roubado de uma adaptação feita para outro projeto, fonte: Confia :sunglasses:
 
-	public static function excludeAsset(key:String):Void {
-		if (!dumpExclusions.contains(key))
-			dumpExclusions.push(key);
-	}
-
 	public static function clearUnusedMemory()
 	{
 		// clear non local assets in the tracked assets list
 		var counter:Int = 0;
 		for (key in currentTrackedAssets.keys())
 		{
-			if (!localTrackedAssets.contains(key) && !dumpExclusions.contains(key))
+			if (!localTrackedAssets.contains(key))
 			{
 				var obj = currentTrackedAssets.get(key);
 				if (obj != null)
@@ -104,7 +90,7 @@ class Paths
 		// clear all sounds that are cached
 		for (key in currentTrackedSounds.keys())
 		{
-			if (!localTrackedAssets.contains(key) && !dumpExclusions.contains(key) && key != null)
+			if (!localTrackedAssets.contains(key) && key != null)
 			{
 				Assets.cache.clear(key);
 				currentTrackedSounds.remove(key);
@@ -280,13 +266,13 @@ class Paths
 	public static function returnGraphic(key:String, ?library:String, ?locale:Bool, usarGPU:Bool = false)
 	{
 		var path:String = getPath('images/$key.png', IMAGE, library);
-		#if (debug && !mobile)
-		trace('carregando $path');
-		#end
 	if (OpenFlAssets.exists(path))
 	{
 		if (!currentTrackedAssets.exists(key))
 		{
+				#if (debug && !mobile)
+				trace('carregando $path');
+				#end
 			var bitmap = OpenFlAssets.getBitmapData(path);
 			var newGraphic:FlxGraphic;
 				if (SaveData.gpuTextures && usarGPU)
@@ -305,7 +291,7 @@ class Paths
 				newGraphic = FlxGraphic.fromBitmapData(bitmap, false, key, false);
 			}
 			newGraphic.destroyOnNoUse = false;
-			newGraphic.persist = true;
+		//	newGraphic.persist = true;
 			currentTrackedAssets.set(key, newGraphic);
 		}
 		localTrackedAssets.push(key);

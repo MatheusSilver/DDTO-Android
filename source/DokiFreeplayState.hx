@@ -332,6 +332,13 @@ class DokiFreeplayState extends MusicBeatState
 		addbackButton(true);
 
 		super.create();
+		
+		_backButton.x = modifierMenu.x + (modifierMenu.width - _backButton.width)/2 + 5;
+		
+		if (SaveData.beatProtag && (curPage != 3 && curPage != 4))
+			_backButton.y = costumeSelect.y + costumeSelect.height + 10;	
+		else
+			_backButton.y = modifierMenu.y + modifierMenu.height + 10;
 	}
 
 	public function addSong(songName:String, weekNum:Int, songCharacter:String)

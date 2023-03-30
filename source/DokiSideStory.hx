@@ -181,9 +181,10 @@ class DokiSideStory extends MusicBeatSubstate
 		new FlxTimer().start(2, function(tmr:FlxTimer)
 		{
 			#if mobile
-			if (curSong.toLowerCase()=='libitina')
+			if (curSong.toLowerCase()=='libitina'){
 				MusicBeatState.switchState(new VideoState('assets/videos/metaintro', new EstadoDeTroca()));
-			else #end
+				FlxG.sound.music.fadeOut(0.1);
+			}else #end
 				MusicBeatState.switchState(new EstadoDeTroca());
 		});
 	}
