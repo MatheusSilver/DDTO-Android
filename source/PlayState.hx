@@ -150,7 +150,6 @@ class PlayState extends MusicBeatState
 	public var GF_X:Float = 400;
 	public var GF_Y:Float = 130;
 	public var hideGirlfriend:Bool = false;
-
 	#if (haxe >= "4.0.0")
 	public var preloadMap:Map<String, Character> = new Map();
 	#else
@@ -742,7 +741,7 @@ class PlayState extends MusicBeatState
 		GF_Y = stageData.girlfriend[1];
 		DAD_X = stageData.opponent[0];
 		DAD_Y = stageData.opponent[1];
-		hideGirlfriend = stageData.hide_girlfriend;
+		hideGirlfriend = if(SaveData.removergirlfriend) { true; } else { stageData.hide_girlfriend; }
 
 		if (stageData.camera_speed != null)
 			cameraSpeed = stageData.camera_speed;
@@ -4087,6 +4086,7 @@ class PlayState extends MusicBeatState
 
 	function addcharacter(newCharacter:String, type:Int, ?trail:Bool, ?costume:String)
 	{
+		// Ia fazer um Paths.image aqui, mas suponho que acontecerá um precache duplo
 		switch (type)
 		{
 			case 0:
@@ -9054,6 +9054,8 @@ class PlayState extends MusicBeatState
 }
 //Oi monkaaaaaaaaaaaaa turu bão??? Aparentemente o x02 gostou de te deletar...
 //Seria legal dar o troco.
+//???????????
+//Não vou nem dizer minha opinião, pq acho que vocês já sabem.
 
 /* Hi :)
 Wc    ckkkkkkkkkc     ,xkkkkkkkxkxxkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkkx; 

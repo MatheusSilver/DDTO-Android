@@ -67,6 +67,7 @@ class OptionsState extends MusicBeatState
 		]),
 		#if !html5
 		new OptionCategory(LangUtil.getString('catPerformance', 'option'), [
+			new RemoverGf('Remove a Girlfriend da música, consumindo pouca ram.\n(Se seu celular estiver travando muito\nou com pouca bateria, desative isso.)'),
 			new FPSCapOption(LangUtil.getString('descFPSCap', 'option')),
 			new AntiAliasing(LangUtil.getString('descAntialiasing', 'option')),
 			new GPUTextures(LangUtil.getString('descGPUTextures', 'option')),
