@@ -68,6 +68,8 @@ class DokiSideStory extends MusicBeatSubstate
 
 		addbackButton();
 
+		BSLTouchUtils.prevTouched = -1;
+
 		changeItem();
 	}
 

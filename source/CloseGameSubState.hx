@@ -8,7 +8,7 @@ import flixel.util.FlxColor;
 
 class CloseGameSubState extends MusicBeatSubstate
 {
-	var curSelected:Int = 2;
+	var curSelected:Int = -1;
 	var selectGrp:FlxTypedGroup<FlxText> = new FlxTypedGroup<FlxText>();
 	var textYes:FlxText;
 	var textNo:FlxText;

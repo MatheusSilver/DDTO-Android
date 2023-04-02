@@ -331,6 +331,8 @@ class DokiFreeplayState extends MusicBeatState
 
 		addbackButton(true);
 
+		BSLTouchUtils.prevTouched = -1; //Só pra garantir k
+
 		super.create();
 		
 		_backButton.x = modifierMenu.x + (modifierMenu.width - _backButton.width)/2 + 5;

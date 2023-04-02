@@ -49,6 +49,7 @@ class PlayerSettings
 			++numPlayers;
 		}
 
+		#if !FLX_NO_GAMEPAD
 		var numGamepads = FlxG.gamepads.numActiveGamepads;
 		if (numGamepads > 0)
 		{
@@ -73,6 +74,8 @@ class PlayerSettings
 
 			player2.controls.addDefaultGamepad(1);
 		}
+
+		#end
 
 		player1.controls.loadKeyBinds();
 		// player2.controls.loadKeyBinds();

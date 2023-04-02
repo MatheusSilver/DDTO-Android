@@ -123,7 +123,7 @@ class CostumeSelectState extends MusicBeatState
 			trace("Costume JSON cannot be found. \n" + costumestring);
 		}
 
-		backdrop = new FlxBackdrop(Paths.imagesimple('backdropsmenu/backdropcatfight'));
+		backdrop = new FlxBackdrop(Paths.image('backdropsmenu/backdropcatfight'));
 		backdrop.velocity.set(-40, -40);
 		backdrop.antialiasing = SaveData.globalAntialiasing;
 		add(backdrop);
@@ -151,7 +151,7 @@ class CostumeSelectState extends MusicBeatState
 		flavorText.visible = false;
 		add(flavorText);
 
-		logo = new FlxSprite(-60, 0).loadGraphic(Paths.imagesimple('Credits_LeftSide'));
+		logo = new FlxSprite(-60, 0).loadGraphic(Paths.image('Credits_LeftSide'));
 		logo.antialiasing = SaveData.globalAntialiasing;
 		add(logo);
 

@@ -35,7 +35,7 @@ class VideoSubState extends MusicBeatSubstate
 
 	public override function update(dt:Float)
 	{
-		if (BSLTouchUtils.justTouched())
+		if (BSLTouchUtils.justTouched() || FlxG.android.justReleased.BACK)
 			onClose();
 
 		super.update(dt);

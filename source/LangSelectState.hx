@@ -31,7 +31,7 @@ class LangSelectState extends MusicBeatState
 	{
 		persistentUpdate = persistentDraw = true;
 
-		backdrop = new FlxBackdrop(Paths.imagesimple('backdropsmenu/backdropcatfight'));
+		backdrop = new FlxBackdrop(Paths.image('backdropsmenu/backdropcatfight'));
 		backdrop.velocity.set(-40, -40);
 		backdrop.antialiasing = SaveData.globalAntialiasing;
 		add(backdrop);

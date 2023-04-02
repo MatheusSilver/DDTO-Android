@@ -52,7 +52,7 @@ typedef AnimArray = {
 
 class Character extends FlxSprite
 {
-	var DEFAULT_CHARACTER:String = 'hidden';
+	var DEFAULT_CHARACTER:String = 'invisibru'; //my beloved
 
 	public var animOffsets:Map<String, Array<Dynamic>>;
 	public static var debugMode:Bool = false;

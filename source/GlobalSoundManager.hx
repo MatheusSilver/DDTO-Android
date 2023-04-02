@@ -22,6 +22,7 @@ class GlobalSoundManager
 			confirm = null;
 			confirm = new FlxSound().loadEmbedded(Paths.sound('confirmMenu'));
 			confirm.volume = 0.7;
+			confirm.persist = false;
 			FlxG.sound.list.add(confirm);
 		}
 		
@@ -30,6 +31,7 @@ class GlobalSoundManager
 			cancel = null;
 			cancel = new FlxSound().loadEmbedded(Paths.sound('cancelMenu'));
 			cancel.volume = 0.7;
+			cancel.persist = false;
 			FlxG.sound.list.add(cancel);
 		}
 
@@ -39,6 +41,7 @@ class GlobalSoundManager
 			scroll = null;
 			scroll = new FlxSound().loadEmbedded(Paths.sound('scrollMenu'));
 			scroll.volume = 0.7;
+			scroll.persist = false;
 			FlxG.sound.list.add(scroll);
 		}
 
@@ -47,6 +50,7 @@ class GlobalSoundManager
 			clickText = null;
 			clickText = new FlxSound().loadEmbedded(Paths.sound('clickText'));
 			clickText.volume = 0.7;
+			clickText.persist = false;
 			FlxG.sound.list.add(clickText);
 		}
 

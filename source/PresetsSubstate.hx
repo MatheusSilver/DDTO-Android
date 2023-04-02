@@ -153,7 +153,7 @@ class PresetsSubstate extends MusicBeatSubstate
 		switch (curSelected)
 		{
 			case 0:
-				SaveData.gpuTextures = true;
+				SaveData.gpuTextures = false;
 				SaveData.ratingVisivel = true;
 				SaveData.globalAntialiasing = true;
 				SaveData.lowEnd = false;
@@ -174,7 +174,7 @@ class PresetsSubstate extends MusicBeatSubstate
 				SaveData.flashing = false;
 				SaveData.npsDisplay = false;
 				SaveData.accuracyDisplay = false;
-				SaveData.framerate = 30;
+				SaveData.framerate = 45;
 		}
 
 		SaveData.save();

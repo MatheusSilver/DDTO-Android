@@ -17,6 +17,8 @@ class DokiCards extends MusicBeatSubstate
 	var camcontrol:FlxCamera;
 	#end
 
+	public static var selectedByBot:Bool = false;
+
 	public var acceptInput:Bool = false;
 	var select:FlxSprite;
 	var funnyChar:String = 'protag';
@@ -29,6 +31,8 @@ class DokiCards extends MusicBeatSubstate
 	{
 		super();
 		cardinstance = this;
+
+		selectedByBot = false;
 
 
 		var bg:FlxSprite = new FlxSprite(-FlxG.width * FlxG.camera.zoom,
@@ -80,17 +84,27 @@ class DokiCards extends MusicBeatSubstate
 			charSelected(funnyChar);
 		});
 
+		if(SaveData.botplay){
+			new FlxTimer().start(4, function(swagTimer:FlxTimer)
+			{
+				selectedByBot = true;
+				selectChar('natsuski', 3); //O bug era tão legal que eu quis tornar ele uma mecânica k
+			});
+		}
+
 		new FlxTimer().start(0.5, function(tmr:FlxTimer)
 		{
 			acceptInput = true;
 		});
 
 		#if mobileC
-		addVirtualPad(EU_TU_NOIS_BOTA_NELA, NONE);
-		camcontrol = new FlxCamera();
-		FlxG.cameras.add(camcontrol);
-		camcontrol.bgColor.alpha = 0;
-		_virtualpad.cameras = [camcontrol];
+		if (!SaveData.botplay){
+			addVirtualPad(EU_TU_NOIS_BOTA_NELA, NONE);
+			camcontrol = new FlxCamera();
+			FlxG.cameras.add(camcontrol);
+			camcontrol.bgColor.alpha = 0;
+			_virtualpad.cameras = [camcontrol];
+		}
 		#end
 
 		cameras = [FlxG.cameras.list[FlxG.cameras.list.length - 1]];
@@ -100,15 +114,15 @@ class DokiCards extends MusicBeatSubstate
 	{
 		super.update(elapsed);
 
-		if (acceptInput)
+		if (acceptInput && !SaveData.botplay)
 		{ //A camera dessa bosta não permite que eu use touch aqui...
-			if (controls.NOTE_LEFT_P)
+			if (controls.LEFT_P) //Se fosse NOTE_LEFT_P, ele usaria a hitbox/controles do fundo...
 				selectChar('yuri', 0);
-			if (controls.NOTE_DOWN_P)
+			if (controls.DOWN_P)
 				selectChar('sayori', 1);
-			if (controls.NOTE_UP_P)
+			if (controls.UP_P)
 				selectChar('monika', 2);
-			if (controls.NOTE_RIGHT_P)
+			if (controls.RIGHT_P)
 				selectChar('natsuki', 3);
 			
 		}

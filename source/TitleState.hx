@@ -37,7 +37,9 @@ class TitleState extends MusicBeatState
 
 		SaveData.init();
 		CoolUtil.setFPSCap(SaveData.framerate);
+		#if !FLX_NO_GAMEPAD
 		KeyBinds.gamepad = FlxG.gamepads.lastActive != null;
+		#end
 		Random.resetSeed();
 
 		curWacky = FlxG.random.getObject(getIntroTextShit());
@@ -70,7 +72,7 @@ class TitleState extends MusicBeatState
 			FlxG.sound.music.fadeIn(2, 0, 0.7);
 		}
 
-		backdrop = new FlxBackdrop(Paths.imagesimple('backdropsmenu/backdropcatfight'));
+		backdrop = new FlxBackdrop(Paths.image('backdropsmenu/backdropcatfight'));
 		backdrop.velocity.set(-10, 0);
 		backdrop.antialiasing = SaveData.globalAntialiasing;
 		add(backdrop);

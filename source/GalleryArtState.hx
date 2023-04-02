@@ -55,7 +55,7 @@ class GalleryArtState extends MusicBeatState
 			urlData.push(data[2]);
 		}
 
-		backdrop = new FlxBackdrop(Paths.imagesimple('backdropsmenu/backdropcredits'));
+		backdrop = new FlxBackdrop(Paths.image('backdropsmenu/backdropcredits'));
 		backdrop.velocity.set(-16, 0);
 		backdrop.scale.set(0.5, 0.5);
 		backdrop.antialiasing = SaveData.globalAntialiasing;
@@ -107,6 +107,10 @@ class GalleryArtState extends MusicBeatState
 
 		addbackButton();
 
+		_backButton.y = FlxG.height - _backButton.height - 20;
+
+		_backButton.x = FlxG.width - _backButton.width - 30;
+
 		super.create();
 	}
 
@@ -124,11 +128,13 @@ class GalleryArtState extends MusicBeatState
 			GlobalSoundManager.play('cancelMenu');
 			MusicBeatState.switchState(new MainMenuState());
 		}
-		else if (controls.LEFT_P || BSLTouchUtils.apertasimples(setaEsquerda))
+		
+		if (controls.LEFT_P || BSLTouchUtils.apertasimples(setaEsquerda))
 			changeItem(-1);
 		else if (controls.RIGHT_P || BSLTouchUtils.apertasimples(setaDireita))
 			changeItem(1);
-		else if ((controls.ACCEPT || BSLTouchUtils.apertasimples(artwork)) && !stopit && !artworkData[curSelected].contains('antipathy'))
+		
+		if ((controls.ACCEPT || BSLTouchUtils.apertasimples(artwork)) && !stopit && !artworkData[curSelected].contains('antipathy'))
 		{
 			GlobalSoundManager.play('scrollMenu');
 			CoolUtil.openURL(urlData[curSelected]);

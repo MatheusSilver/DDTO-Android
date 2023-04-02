@@ -65,11 +65,11 @@ class BSLTouchUtils
 	public static function pressionando(coisa:Dynamic):Bool
 	{
 		#if desktop
-		if (FlxG.mouse.overlaps(coisa) && FlxG.mouse.pressed)
+		if (FlxG.mouse.overlaps(coisa) && FlxG.mouse.justPressed && !FlxG.mouse.justReleased)
 			return true;
 		#elseif mobile
 		for (touch in FlxG.touches.list)
-			if (touch.overlaps(coisa) && touch.pressed)
+			if (touch.overlaps(coisa) && touch.justPressed && !touch.justReleased)
 				return true;
 		#end
 

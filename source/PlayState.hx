@@ -210,6 +210,8 @@ class PlayState extends MusicBeatState
 	private var totalPlayed:Int = 0;
 	private var ss:Bool = false;
 
+	public static var isPlayState:Bool = false;
+
 	private var healthBarBG:FlxSprite;
 	private var healthBar:FlxBar;
 
@@ -227,6 +229,9 @@ class PlayState extends MusicBeatState
 	private var camGame2:FlxCamera;
 	public static var camOverlay:FlxCamera;
 	public var cameraSpeed:Float = 1;
+	var sky:BGSprite;
+	var bg3:BGSprite;
+	var bg2:BGSprite;
 
 	public var forceCam:Bool = false;
 	public var boyfriendCameraOffset:Array<Float> = null;
@@ -456,6 +461,7 @@ class PlayState extends MusicBeatState
 
 	override public function create()
 	{
+		isPlayState = true;
 		if (limparCache)
 			Paths.clearStoredMemory();
 
@@ -656,7 +662,6 @@ class PlayState extends MusicBeatState
 			-FlxG.height * FlxG.camera.zoom).makeGraphic(FlxG.width * 3, FlxG.height * 3, FlxColor.BLACK);
 		blackScreentwo.scrollFactor.set();
 
-		// set up dialogue
 		if (isStoryMode || metadata.song.freeplayDialogue)
 		{
 			if (metadata.song.introDialogue != null && showCutscene)
@@ -684,7 +689,7 @@ class PlayState extends MusicBeatState
 				}
 				catch (e)
 				{
-					FlxG.log.add('[${SONG.song}] "$introDialogue" either doesn\'t exist or contains an error!');
+					trace('[${SONG.song}] "$introDialogue" either doesn\'t exist or contains an error!');
 				}
 			}
 	
@@ -696,9 +701,6 @@ class PlayState extends MusicBeatState
 				{
 					endDoof = new DialogueBox(Assets.getText(Paths.json('dialogue/${SONG.song.toLowerCase()}/$endDialogue')));
 					endDoof.scrollFactor.set();
-					#if mobile
-					mcontrols.visible = false;
-					#end
 				}
 				catch (e)
 				{
@@ -754,7 +756,7 @@ class PlayState extends MusicBeatState
 		if (opponentCameraOffset == null)
 			opponentCameraOffset = [0, 0];
 
-		centerCameraOffset = stageData.camera_center; //Repurposing this for Center cam sorry Michael
+		centerCameraOffset = stageData.camera_center; // Repurposing this for Center cam sorry Michael
 		if (centerCameraOffset == null)
 			centerCameraOffset = [0, 0];
 
@@ -941,7 +943,7 @@ class PlayState extends MusicBeatState
 				{
 					camGame.bgColor = FlxColor.WHITE;
 
-					dokiBackdrop = new FlxBackdrop(Paths.imagesimple('backdropsmenu/backdropcatfight'));
+					dokiBackdrop = new FlxBackdrop(Paths.image('backdropsmenu/backdropcatfight'));
 					dokiBackdrop.scrollFactor.set(0.1, 0.1);
 					dokiBackdrop.velocity.set(-10, 0);
 					dokiBackdrop.antialiasing = SaveData.globalAntialiasing;
@@ -1039,7 +1041,7 @@ class PlayState extends MusicBeatState
 					
 					camGame.bgColor = FlxColor.WHITE;
 
-					dokiBackdrop = new FlxBackdrop(Paths.imagesimple('backdropsmenu/backdropcatfight'));
+					dokiBackdrop = new FlxBackdrop(Paths.image('backdropsmenu/backdropcatfight'));
 					dokiBackdrop.scrollFactor.set(0.1, 0.1);
 					dokiBackdrop.velocity.set(-10, 0);
 					dokiBackdrop.antialiasing = SaveData.globalAntialiasing;
@@ -1438,7 +1440,7 @@ class PlayState extends MusicBeatState
 						if(!SaveData.lowEnd && !SaveData.globalAntialiasing)	
 							lightontopofall.blend = SCREEN;
 
-						dokiBackdrop = new FlxBackdrop(Paths.imagesimple('backdropsmenu/backdropcatfight'));
+						dokiBackdrop = new FlxBackdrop(Paths.image('backdropsmenu/backdropcatfight'));
 						dokiBackdrop.velocity.set(-40, -40);
 						dokiBackdrop.antialiasing = SaveData.globalAntialiasing;
 						dokiBackdrop.alpha = 0.001;
@@ -1755,17 +1757,17 @@ class PlayState extends MusicBeatState
 					var posY:Int = -795;
 					var scale:Float = 1.2;
 
-					var sky:BGSprite = new BGSprite('ynm/skybox', 'doki', posX, posY, 0.2, 0.2);
+					sky = new BGSprite('ynm/skybox', 'doki', posX, posY, 0.2, 0.2);
 					sky.setGraphicSize(Std.int(sky.width * scale));
 					sky.updateHitbox();
 					add(sky);
 
-					var bg3:BGSprite = new BGSprite('ynm/bg3', 'doki', posX, posY, 0.5, 0.5);
+					bg3 = new BGSprite('ynm/bg3', 'doki', posX, posY, 0.5, 0.5);
 					bg3.setGraphicSize(Std.int(bg3.width * scale));
 					bg3.updateHitbox();
 					add(bg3);
 
-					var bg2:BGSprite = new BGSprite('ynm/bg2', 'doki', posX, posY, 0.8, 0.8);
+					bg2 = new BGSprite('ynm/bg2', 'doki', posX, posY, 0.8, 0.8);
 					bg2.setGraphicSize(Std.int(bg2.width * scale));
 					bg2.updateHitbox();
 					add(bg2);
@@ -1777,7 +1779,7 @@ class PlayState extends MusicBeatState
 
 					if (!SaveData.lowEnd)
 					{
-						dokiBackdrop = new FlxBackdrop(Paths.imagesimple('backdropsmenu/backdropcatfight'));
+						dokiBackdrop = new FlxBackdrop(Paths.image('backdropsmenu/backdropcatfight'));
 						dokiBackdrop.velocity.set(-40, -40);
 						dokiBackdrop.antialiasing = SaveData.globalAntialiasing;
 						dokiBackdrop.visible = false;
@@ -1961,15 +1963,21 @@ class PlayState extends MusicBeatState
 			case 'neet':
 				CoolUtil.precacheSound('spotlight');
 			case 'you and me':
+				if(!SaveData.lowEnd){ //Na real, não tenho muita ideia de como lidar com isso...
 				addCharacterToList("yuri");
 				addCharacterToList("sayori");
 				addCharacterToList("natsuki");
 				addCharacterToList("monika");
 				addCharacterToList("protag");
-				/*CoolUtil.precacheVoices(SONG.song, '', '_Monika');
-				CoolUtil.precacheVoices(SONG.song, '', '_Natsuki');
+				CoolUtil.precacheVoices(SONG.song, '', '_Monika');
 				CoolUtil.precacheVoices(SONG.song, '', '_Sayori');
-				CoolUtil.precacheVoices(SONG.song, '', '_Yuri');*/
+				CoolUtil.precacheVoices(SONG.song, '', '_Yuri');
+				}
+				if(SaveData.botplay){
+				CoolUtil.precacheVoices(SONG.song, '', '_Natsuki');
+				addCharacterToList("costumes/natsuki-buff");
+				}
+				
 			case 'wilted':
 				addCharacterToList("senpai-angynonpixel");
 				addCharacterToList("senpai-nonpixel");
@@ -2006,7 +2014,7 @@ class PlayState extends MusicBeatState
 		}
 
 		addcharacter("", 1);
-		addcharacter("", 0);
+		addcharacter(SONG.player1, 0);
 
 		if (SONG.numofchar >= 3)
 		{
@@ -2376,9 +2384,9 @@ class PlayState extends MusicBeatState
 			judgementCounter.text = 'Doki: $sicks\nGood: $goods\nOk: $bads\nNo: $shits\nMiss: $misses\n';
 
 			if (SaveData.earlyLate)
-				judgementCounter.text += '\n${LangUtil.getString('cmnEarly')}: $earlys\n${LangUtil.getString('cmnLate')}: $lates\n';
+				judgementCounter.text += '\n${'Cedo'}: $earlys\n${'Tarde'}: $lates\n';
 
-			judgementCounter.text += '\n${LangUtil.getString('cmnMax')}: $maxCombo\n';
+			judgementCounter.text += '\n${'Combo Máximo'}: $maxCombo\n';
 
 			add(judgementCounter);
 		}
@@ -2435,7 +2443,7 @@ class PlayState extends MusicBeatState
 			trackedinputsNOTES = controls.trackedinputsNOTES;
 			controls.trackedinputsNOTES = [];
 
-			mcontrols.cameras = [camOverlay];
+			mcontrols.cameras = [camHUD];
 
 			mcontrols.visible = false;
 
@@ -2472,7 +2480,7 @@ class PlayState extends MusicBeatState
 		metadataDisplay = new MetadataDisplay(name, icon, artist);
 		add(metadataDisplay);
 
-		positionDisplay = new PositionDisplay(name, boyfriend, dad, songLength+1000);
+		positionDisplay = new PositionDisplay(name, boyfriend, dad, songLength);
 
 		if (positionBar)
 			insert(members.indexOf(healthBar), positionDisplay);
@@ -4844,6 +4852,7 @@ class PlayState extends MusicBeatState
 			DiscordClient.changePresence("Chart Editor", null, null, true);
 			#end
 			MusicBeatState.switchState(new ChartingState());
+			isPlayState = false;
 			sectionStart = false;
 		}
 
@@ -5322,15 +5331,14 @@ class PlayState extends MusicBeatState
 
 				Highscore.saveWeekScore(storyWeek, campaignScore, storyDifficulty);
 				SaveData.save();
+				isPlayState = false;
 
 				switch (curSong.toLowerCase())
 				{
 					default:
 						FlxG.sound.playMusic(Paths.music('freakyMenu'));
 						Conductor.changeBPM(120);
-						MusicBeatState.switchState(new DokiStoryState());
-					case 'obsession':
-						Sys.exit(0);
+						MusicBeatState.switchState(new EstadoDeTrocaReverso());
 					case 'libitina':
 						MusicBeatState.switchState(new ThankyouState());
 				}
@@ -5346,6 +5354,7 @@ class PlayState extends MusicBeatState
 
 			if (chartingMode)
 			{
+				isPlayState = false;
 				MusicBeatState.switchState(new ChartingState());
 				chartingMode = false;
 			}
@@ -5356,7 +5365,8 @@ class PlayState extends MusicBeatState
 				if (FlxTransitionableState.skipNextTransIn)
 					CustomFadeTransition.nextCamera = null;
 
-				MusicBeatState.switchState(new DokiFreeplayState());
+				isPlayState = false;
+				MusicBeatState.switchState(new EstadoDeTrocaReverso());
 			}
 		}
 	}
@@ -5388,10 +5398,10 @@ class PlayState extends MusicBeatState
 		switch (curSong.toLowerCase()){
 			#if mobile
 			case 'bara no yume':
-				MusicBeatState.switchState(new VideoState('assets/videos/monika', new PlayState()));
+				MusicBeatState.switchState(new VideoState('assets/videos/monika', new EstadoDeTroca()));
 			#end
 			default:
-				LoadingState.loadAndSwitchState(new PlayState());
+				LoadingState.loadAndSwitchState(new EstadoDeTroca());
 		}
 	}
 
@@ -6259,9 +6269,6 @@ class PlayState extends MusicBeatState
 
 	function killPlayer(forceType:Int = 0)
 	{
-		if (curStage == "credits" || curStage == "wilted" || curStage == 'clubroomevil' || curStage == 'libitina')
-			camGame.filtersEnabled = false;
-
 		boyfriendFuckingDead = true;
 		boyfriend.stunned = true;
 
@@ -7174,7 +7181,10 @@ class PlayState extends MusicBeatState
 							FlxTween.tween(funnytext, {alpha: 0}, 2, {ease: FlxEase.sineIn,
 								onComplete: function(twn:FlxTween)
 								{
-									destruirsprites(funnytext);
+									if(!SaveData.botplay)
+										destruirsprites(funnytext);
+									else
+										funnytext.visible = false; //Natsuski buffada purposes
 								}
 							});
 						case 240:
@@ -7230,12 +7240,20 @@ class PlayState extends MusicBeatState
 									ease: FlxEase.sineIn,
 									onComplete: function(tween:FlxTween)
 									{
+										sky.visible = false;
+										bg3.visible = false;
+										bg2.visible = false;
+										bg.visible = false;
 										defaultCamZoom = 1.1;
 									}
 								});
 							}
 						case 1068:
 							defaultCamZoom = 0.9;
+							sky.visible = true;
+							bg3.visible = true;
+							bg2.visible = true;
+							bg.visible = true;
 							if (dokiBackdrop != null) FlxTween.tween(dokiBackdrop, {alpha: 0}, 3, {ease: FlxEase.sineIn, onComplete:function(twn:FlxTween){
 									dokiBackdrop.visible = false;
 								}});
@@ -7249,9 +7267,6 @@ class PlayState extends MusicBeatState
 							canPause = false;
 							camOverlay.visible = true;
 							openSubState(new DokiCards(!isStoryMode));
-							#if mobile
-							FlxTween.tween(mcontrols, {alpha: 0}, 2, {ease: FlxEase.sineOut});
-							#end
 						case 1246:
 							var targetAlpha:Float = 1;
 
@@ -7272,9 +7287,34 @@ class PlayState extends MusicBeatState
 								FlxTween.tween(laneunderlay, {alpha: SaveData.laneTransparency}, 0.5, {ease: FlxEase.sineIn});
 						case 1252:
 							blackBars(true);
-							#if mobile
-							FlxTween.tween(mcontrols, {alpha: 0}, 3, {ease: FlxEase.sineOut});
-							#end
+							if(SaveData.botplay){
+								funnytext.text = 'Quer dizer, as vezes as coisas\nSão decididas por bots';
+								funnytext.visible = true;
+							FlxTween.tween(funnytext, {alpha: 1}, 1, {ease: FlxEase.sineIn,
+								onComplete:function(twn:FlxTween)
+								{
+									FlxTween.tween(funnytext, {alpha: 0}, 0.5, {ease: FlxEase.sineIn, startDelay: 2,
+										onComplete:function(twn:FlxTween)
+										{
+											funnytext.text = 'E os bots... Gostam de...\nNATSUSKI BOMBADA\n(Ou talvez só o porter que é troll kek-)';
+											FlxTween.tween(funnytext, {alpha: 1}, 1, {ease: FlxEase.sineIn,
+												onComplete:function(twn:FlxTween)
+												{
+													FlxTween.tween(funnytext, {alpha: 0}, 1, {ease: FlxEase.sineIn, startDelay: 1.5,
+														onComplete:function(twn:FlxTween)
+														{
+															destruirsprites(funnytext);
+														}
+													});
+												}
+											});
+										}
+									});
+								}
+							});
+							}//Esse código tá feião, mas não importa a aparência, O QUE IMPORTA SÃO OS MÚSCULOS
+							//Faça jojo pose imediatamente
+							//Espero ter feito isso certo de primeira... Tenho certeza que se eu precisar voltar aqui... Meu Amigo... Melhor nem pensar...
 							FlxTween.tween(camFollow, {y: 326}, 3, {
 								ease: FlxEase.linear,
 								onComplete: function(twn:FlxTween)
@@ -7287,10 +7327,20 @@ class PlayState extends MusicBeatState
 							defaultCamZoom = 1;
 						case 1904:
 							dokiBackdrop.visible = true;
-							if (dokiBackdrop != null) FlxTween.tween(dokiBackdrop, {alpha: 1}, CoolUtil.calcSectionLength(0.5), {ease: FlxEase.sineIn});
+							if (dokiBackdrop != null) FlxTween.tween(dokiBackdrop, {alpha: 1}, CoolUtil.calcSectionLength(0.5), {ease: FlxEase.sineIn,
+							onComplete:function(twn:FlxTween){
+								sky.visible = false;
+								bg3.visible = false;
+								bg2.visible = false;
+								bg.visible = false;
+							}});
 							defaultCamZoom = 0.9;
 						case 2160:
 							blackBars(false);
+							sky.visible = true;
+							bg3.visible = true;
+							bg2.visible = true;
+							bg.visible = true;
 							if (dokiBackdrop != null) FlxTween.tween(dokiBackdrop, {alpha: 0}, 3, {ease: FlxEase.sineIn,
 								onComplete: function(twn:FlxTween)
 								{
@@ -7301,9 +7351,6 @@ class PlayState extends MusicBeatState
 							camFocus = false;
 							FlxTween.tween(camFollow, {y: -3404, x: 589}, 5, {ease: FlxEase.linear});
 							FlxTween.tween(camHUD, {alpha: 0}, 2, {ease: FlxEase.sineOut});
-							#if mobile
-							FlxTween.tween(mcontrols, {alpha: 0}, 2, {ease: FlxEase.sineOut});
-							#end
 					}
 				case 'love n funkin':
 					// Jorge please don't kill me ~M&M
@@ -8915,6 +8962,11 @@ class PlayState extends MusicBeatState
 					addcharacter("monika", 1);
 					generateNotes(SONG.song + '-monika');
 					changeVocalTrack('', '_Monika');
+				case 'natsuski':
+					addcharacter("costumes/natsuki-buff", 1);
+					generateNotes(SONG.song + '-natsuki');
+					changeVocalTrack('', '_Natsuki');
+					
 				default:
 					if (!toggleBotplay && !practiceModeToggled) SaveData.yamLoss = true;
 					killPlayer(1);
@@ -8998,10 +9050,6 @@ class PlayState extends MusicBeatState
 		remove(sprite);
 		sprite.kill();
 		sprite.destroy();
-	}
-
-	function invisibru(sprite:FlxSprite){
-		sprite.visible = false;
 	}
 }
 //Oi monkaaaaaaaaaaaaa turu bão??? Aparentemente o x02 gostou de te deletar...

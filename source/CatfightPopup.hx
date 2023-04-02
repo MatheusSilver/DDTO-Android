@@ -35,7 +35,7 @@ class CatfightPopup extends MusicBeatSubstate
 		}
 		else
 		{
-			var backdrop:FlxBackdrop = new FlxBackdrop(Paths.imagesimple('backdropsmenu/backdropcatfight'));
+			var backdrop:FlxBackdrop = new FlxBackdrop(Paths.image('backdropsmenu/backdropcatfight'));
 			backdrop.velocity.set(-40, -40);
 			backdrop.antialiasing = SaveData.globalAntialiasing;
 			add(backdrop);

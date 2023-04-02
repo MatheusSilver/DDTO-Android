@@ -39,8 +39,7 @@ class VideoState extends MusicBeatState
 
 	public override function update(dt:Float)
 	{
-		for (touch in FlxG.touches.list)
-			if (touch.justReleased)
+		if (BSLTouchUtils.justTouched() || FlxG.android.justReleased.BACK)
 				onClose();
 
 		super.update(dt);

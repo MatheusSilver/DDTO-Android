@@ -26,78 +26,85 @@ class Paths
 {
 	inline public static var SOUND_EXT = "ogg";
 
-	public static var currentTrackedAssets:Map<String, FlxGraphic> = [];
-	public static var currentTrackedTextures:Map<String, Texture> = [];
-	public static var currentTrackedSounds:Map<String, Sound> = [];
+	private static var currentTrackedAssets:Map<String, Map<String, Dynamic>> = ["textures" => [], "graphics" => [], "sounds" => []];
+	private static var localTrackedAssets:Map<String, Array<String>> = ["graphics" => [], "sounds" => []];
 
-	/// haya I love you for the base cache dump I took to the max
-	//Esse código não foi roubado de uma adaptação feita para outro projeto, fonte: Confia :sunglasses:
+	public static final extensions:Map<String, String> = ["image" => "png", "audio" => "ogg", "video" => "mp4"];
 
-	public static function clearUnusedMemory()
-	{
-		// clear non local assets in the tracked assets list
-		var counter:Int = 0;
-		for (key in currentTrackedAssets.keys())
-		{
-			if (!localTrackedAssets.contains(key))
-			{
-				var obj = currentTrackedAssets.get(key);
-				if (obj != null)
-				{
-					var isTexture:Bool = currentTrackedTextures.exists(key);
-					if (isTexture)
-					{
-						var texture = currentTrackedTextures.get(key);
-						texture.dispose();
-						texture = null;
-						currentTrackedTextures.remove(key);
-					}
-					@:privateAccess
-					if (openfl.Assets.cache.hasBitmapData(key))
-					{
-						openfl.Assets.cache.removeBitmapData(key);
-						FlxG.bitmap._cache.remove(key);
-					}
-					obj.destroy();
-					currentTrackedAssets.remove(key);
-					counter++;
+	public static var dumpExclusions:Array<String> = [];
+
+	public static function excludeAsset(key:String):Void {
+		if (!dumpExclusions.contains(key))
+			dumpExclusions.push(key);
+	}
+
+	public static function clearUnusedMemory(runG:Bool = true):Void {
+		for (key in currentTrackedAssets["graphics"].keys()) {
+			@:privateAccess
+			if (!localTrackedAssets["graphics"].contains(key)) {
+				if (currentTrackedAssets["textures"].exists(key)) {
+					var texture:Null<Texture> = currentTrackedAssets["textures"].get(key);
+					texture.dispose();
+					#if (debug && !mobile)
+					trace('limpando $key das texturas');
+					#end
+					texture = null;
+					currentTrackedAssets["textures"].remove(key);
 				}
+
+				var graphic:Null<FlxGraphic> = currentTrackedAssets["graphics"].get(key);
+				OpenFlAssets.cache.removeBitmapData(key);
+				FlxG.bitmap._cache.remove(key);
+				graphic.destroy();
+				currentTrackedAssets["graphics"].remove(key);
 			}
 		}
+
+		for (key in currentTrackedAssets["sounds"].keys()) {
+			if (!localTrackedAssets["sounds"].contains(key)) {
+				OpenFlAssets.cache.removeSound(key);
+				currentTrackedAssets["sounds"].remove(key);
+			}
+		}
+		if(runG)
+			gColetor();
+	}
+
+	public static function gColetor()
+		{
 		// run the garbage collector for good measure lmfao
 		#if (cpp || neko || java || hl)
 		Gc.run(true);
+		Gc.compact();
 		#end
-	}
+		}
 
-	public static var localTrackedAssets:Array<String> = [];
-
-	public static function clearStoredMemory(?cleanUnused:Bool = false)
+	public static function clearStoredMemory():Void
 	{
-		// clear anything not in the tracked assets list
+		FlxG.bitmap.dumpCache();
+
 		@:privateAccess
 		for (key in FlxG.bitmap._cache.keys())
 		{
-			var obj = FlxG.bitmap._cache.get(key);
-			if (obj != null && !currentTrackedAssets.exists(key))
+			if (!currentTrackedAssets["graphics"].exists(key))
 			{
-				openfl.Assets.cache.removeBitmapData(key);
+				var graphic:Null<FlxGraphic> = FlxG.bitmap._cache.get(key);
+				OpenFlAssets.cache.removeBitmapData(key);
 				FlxG.bitmap._cache.remove(key);
-				obj.destroy();
+				graphic.destroy();
 			}
 		}
 
-		// clear all sounds that are cached
-		for (key in currentTrackedSounds.keys())
+		for (key in OpenFlAssets.cache.getSoundKeys())
 		{
-			if (!localTrackedAssets.contains(key) && key != null)
-			{
-				Assets.cache.clear(key);
-				currentTrackedSounds.remove(key);
-			}
+			if (!currentTrackedAssets["sounds"].exists(key))
+				OpenFlAssets.cache.removeSound(key);
 		}
-		// flags everything to be cleared out next unused memory clear
-		localTrackedAssets = [];
+
+		for (key in OpenFlAssets.cache.getFontKeys())
+			OpenFlAssets.cache.removeFont(key);
+
+		localTrackedAssets["sounds"] = localTrackedAssets["graphics"] = [];
 	}
 
 	static var currentLevel:String;
@@ -266,54 +273,58 @@ class Paths
 	public static function returnGraphic(key:String, ?library:String, ?locale:Bool, usarGPU:Bool = false)
 	{
 		var path:String = getPath('images/$key.png', IMAGE, library);
-	if (OpenFlAssets.exists(path))
-	{
-		if (!currentTrackedAssets.exists(key))
+		if (OpenFlAssets.exists(path))
 		{
-				#if (debug && !mobile)
-				trace('carregando $path');
-				#end
-			var bitmap = OpenFlAssets.getBitmapData(path);
-			var newGraphic:FlxGraphic;
-				if (SaveData.gpuTextures && usarGPU)
+			if (!currentTrackedAssets["graphics"].exists(path)) //Talvez essa segunda parte não seja usada mas né?
 			{
-				var texture = FlxG.stage.context3D.createTexture(bitmap.width, bitmap.height, BGRA, true, 0);
+				var graphic:FlxGraphic;
+				var bitmapData:BitmapData = OpenFlAssets.getBitmapData(path);
 
-				texture.uploadFromBitmapData(bitmap);
-				currentTrackedTextures.set(key, texture);
-				bitmap.dispose();
-				bitmap.disposeImage();
-				bitmap = null;
-				newGraphic = FlxGraphic.fromBitmapData(openfl.display.BitmapData.fromTexture(texture), false, key, false);
+				if (SaveData.gpuTextures && PlayState.isPlayState && usarGPU) //Basicamente, se o uso da CPU chegar próximo do limite do aparelho, então a GPU será usada
+				{ //É mais fácil gerenciar a GPU através da CPU do que o contrário.
+					#if (debug && !mobile)
+					trace('carregando $path por GPU');
+					#end
+					var texture:Texture = FlxG.stage.context3D.createTexture(bitmapData.width, bitmapData.height, BGRA, true);
+					texture.uploadFromBitmapData(bitmapData);
+					currentTrackedAssets["textures"].set(path, texture);
+
+					bitmapData.disposeImage();
+					bitmapData.dispose();
+					bitmapData = null;
+
+					graphic = FlxGraphic.fromBitmapData(openfl.display.BitmapData.fromTexture(texture), false, path);
+				}
+				else{
+					#if (debug && !mobile)
+					trace('carregando $path por CPU');
+					#end
+					graphic = FlxGraphic.fromBitmapData(bitmapData, false, path);
+				}
+				graphic.persist = true;
+				currentTrackedAssets["graphics"].set(path, graphic);
 			}
-			else
-			{
-				newGraphic = FlxGraphic.fromBitmapData(bitmap, false, key, false);
-			}
-			newGraphic.destroyOnNoUse = false;
-		//	newGraphic.persist = true;
-			currentTrackedAssets.set(key, newGraphic);
+
+			localTrackedAssets["graphics"].push(path);
+			return currentTrackedAssets["graphics"].get(path);
 		}
-		localTrackedAssets.push(key);
-		return currentTrackedAssets.get(key);
-	}
-	trace('graphic is returning null at $key');
-	return null;
+		FlxG.log.error('oh no $path is returning null NOOOO');
+		return null; // Apenas para garantir que o jooj tentará carregar do jeito normal primeiro (ou então ajuidar a descobrir qual o pilantra.)
 	}
 
 	public static function returnSound(path:String, key:String, ?library:String)
 	{
 		var file:String = getPath(path == 'songs' ? '$key.$SOUND_EXT' : '$path/$key.$SOUND_EXT', SOUND, path == 'songs' ? path : library);
 		#if (debug && !mobile)
-		trace('carregando $file'); //Apenas pra eu ter uma noção melhor dos carregamentos desncessauros que esse mod tá fazendo.
+		trace('carregando $file'); // Apenas pra eu ter uma noção melhor dos carregamentos desncessauros que esse mod tá fazendo.
 		#end
 		if (OpenFlAssets.exists(file))
 		{
-			if (!currentTrackedSounds.exists(file))
-				currentTrackedSounds.set(file, OpenFlAssets.getSound(file));
+			if (!currentTrackedAssets["sounds"].exists(file))
+				currentTrackedAssets["sounds"].set(file, OpenFlAssets.getSound(file));
 
-			localTrackedAssets.push(key);
-			return currentTrackedSounds.get(file);
+			localTrackedAssets["sounds"].push(file);
+			return currentTrackedAssets["sounds"].get(file);
 		}
 
 		FlxG.log.error('oh no $file is returning null NOOOO');

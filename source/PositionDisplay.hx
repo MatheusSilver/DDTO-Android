@@ -36,9 +36,9 @@ class PositionDisplay extends FlxSpriteGroup
 		songPosBG.alpha = 0;
 
 		songPosBar = new FlxBar(songPosBG.x + 4, songPosBG.y + 4, LEFT_TO_RIGHT, Std.int(songPosBG.width - 8), Std.int(songPosBG.height - 8), this,
-			'songPositionBar', 0, songLength+0.5);
+			'songPositionBar', 0, songLength+0.00001);
 		songPosBar.scrollFactor.set();
-		songPosBar.numDivisions = 300; // How much lag this causes?? Should i tone it down to idk, 400 or 200?
+		songPosBar.numDivisions = 200; // How much lag this causes?? Should i tone it down to idk, 400 or 200?
 		songPosBar.createGradientBar([FlxColor.TRANSPARENT], [boyfriend.barColor, dad.barColor]);
 		songPosBar.alpha = 0;
 

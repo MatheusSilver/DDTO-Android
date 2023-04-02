@@ -568,12 +568,6 @@ class DialogueBox extends FlxSpriteGroup
 					portraitLeft.alpha = 0.001;
 					swagDialogue.visible = false;
 					swagDialogue.sounds = [FlxG.sound.load(Paths.sound('dialogue/pixelText'), 0)];
-				}else if(Paths.imagechecker('gallery/'+curDialogue.string,'preload')){
-					fastLoadImage = new FlxSprite(0, 0).loadGraphic(Paths.image('gallery/' + curDialogue.string, 'doki'));
-					fastLoadImage.setGraphicSize(FlxG.width,FlxG.height);
-					fastLoadImage.screenCenter(XY);
-					fastLoadImage.antialiasing = SaveData.globalAntialiasing;
-					add(fastLoadImage);
 				}
 				funnyGlitch();
 			case 'autoskip':

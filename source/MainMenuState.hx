@@ -125,7 +125,7 @@ class MainMenuState extends MusicBeatState
 			Conductor.changeBPM(120);
 		}
 
-		backdrop = new FlxBackdrop(Paths.imagesimple('backdropsmenu/backdropcatfight'));
+		backdrop = new FlxBackdrop(Paths.image('backdropsmenu/backdropcatfight'));
 		backdrop.velocity.set(-40, -40);
 		backdrop.antialiasing = SaveData.globalAntialiasing;
 		add(backdrop);
@@ -203,7 +203,7 @@ class MainMenuState extends MusicBeatState
 		menu_character.animation.play('play');
 		add(menu_character);
 
-		logo = new FlxSprite(-260, 0).loadGraphic(Paths.imagesimple('Credits_LeftSide'));
+		logo = new FlxSprite(-260, 0).loadGraphic(Paths.image('Credits_LeftSide'));
 		logo.antialiasing = SaveData.globalAntialiasing;
 		add(logo);
 		if (firstStart)

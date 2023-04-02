@@ -116,13 +116,13 @@ class DokiStoryState extends MusicBeatState
 		persistentUpdate = persistentDraw = true;
 
 
-		backdrop = new FlxBackdrop(Paths.imagesimple('backdropsmenu/backdropcatfight'));
+		backdrop = new FlxBackdrop(Paths.image('backdropsmenu/backdropcatfight'));
 		backdrop.velocity.set(-40, -40);
 		backdrop.antialiasing = SaveData.globalAntialiasing;
 		add(backdrop);
 
 		//-700, -360
-		logo = new FlxSprite(-60, 0).loadGraphic(Paths.imagesimple('Credits_LeftSide'));
+		logo = new FlxSprite(-60, 0).loadGraphic(Paths.image('Credits_LeftSide'));
 		logo.antialiasing = SaveData.globalAntialiasing;
 		add(logo);
 
@@ -205,6 +205,8 @@ class DokiStoryState extends MusicBeatState
 		updateSelected();
 
 		addbackButton(true);
+
+		BSLTouchUtils.prevTouched = -1;
 
 		super.create();
 

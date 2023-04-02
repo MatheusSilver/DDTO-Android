@@ -234,7 +234,7 @@ class Note extends FlxSprite
 					#if debug
 					loadGraphic(Paths.imagesimple('pixelUI/' + blahblah + 'ENDS'));
 					#else
-					loadGraphic(Paths.image('pixelUI/' + blahblah + 'ENDS'));
+					loadGraphic(Paths.image('pixelUI/' + blahblah + 'ENDS', false, false));
 					#end
 					width = width / 4;
 					height = height / 2;
@@ -242,7 +242,7 @@ class Note extends FlxSprite
 					#if debug
 					loadGraphic(Paths.imagesimple('pixelUI/' + blahblah + 'ENDS'), true, Math.floor(width), Math.floor(height));
 					#else
-					loadGraphic(Paths.image('pixelUI/' + blahblah + 'ENDS'), true, Math.floor(width), Math.floor(height));
+					loadGraphic(Paths.image('pixelUI/' + blahblah + 'ENDS', false, false), true, Math.floor(width), Math.floor(height));
 					#end
 				}
 				else
@@ -250,14 +250,14 @@ class Note extends FlxSprite
 					#if debug
 					loadGraphic(Paths.imagesimple('pixelUI/' + blahblah));
 					#else
-					loadGraphic(Paths.image('pixelUI/' + blahblah));
+					loadGraphic(Paths.image('pixelUI/' + blahblah, false, false));
 					#end
 					width = width / 4;
 					height = height / 6;
 					#if debug
 					loadGraphic(Paths.imagesimple('pixelUI/' + blahblah), true, Math.floor(width), Math.floor(height));
 					#else
-					loadGraphic(Paths.image('pixelUI/' + blahblah), true, Math.floor(width), Math.floor(height));
+					loadGraphic(Paths.image('pixelUI/' + blahblah, false , false), true, Math.floor(width), Math.floor(height));
 					#end
 				}
 
@@ -275,7 +275,7 @@ class Note extends FlxSprite
 				#if debug
 				frames = Paths.getSparrowAtlassimple(blahblah);
 				#else
-				frames = Paths.getSparrowAtlas(blahblah);
+				frames = Paths.getSparrowAtlas(blahblah, false, false);
 				#end
 				loadNoteAnims();
 				antialiasing = SaveData.globalAntialiasing;
