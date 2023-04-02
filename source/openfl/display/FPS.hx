@@ -144,7 +144,7 @@ class FPS extends TextField
 				// text += '\nMEM: ${getInterval(mem)} / ${getInterval(memPeak)}';
 				text += '\nMEM: ${getInterval(mem)}';
 				#if (mobile || debug)
-					if (curMEMforReference + 250 ^ 2 > Paths.limites[SaveData.curPreset] ^ 2)
+					if (curMEMforReference > Paths.limites[SaveData.curPreset] ^ 2 + 200 ^ 2)
 						text += '\nO jogo está usando RAM extra. Feche e abra-o novamente quando possível.';
 				#end
 			#end
@@ -152,7 +152,7 @@ class FPS extends TextField
 			textColor = 0xFF1DADBB;
 
 			if (currentFPS < 30
-			#if (mobile || debug) || curMEMforReference + 250 ^ 2 > Paths.limites[SaveData.curPreset]^2 #end)
+			#if (mobile || debug) || curMEMforReference > Paths.limites[SaveData.curPreset] ^ 2 + 200 ^ 2 #end)
 				textColor = 0xFFBB2B1D;
 
 			#if (gl_stats && !disable_cffi && (!html5 || !canvas))
