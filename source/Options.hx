@@ -880,7 +880,7 @@ class ResetStory extends Option
 
 	private override function updateDisplay():String
 	{
-		return confirm ? LangUtil.getString('nameStoryResetConfirm', 'option') : LangUtil.getString('nameStoryReset', 'option');
+		return confirm ? 'Quer realmente recomeçar do zero?' : 'Recomeçar a História';
 	}
 }
 
@@ -1145,7 +1145,7 @@ class GPUTextures extends Option
 
 	private override function updateDisplay():String
 	{
-		return LangUtil.getString('nameGPUTextures', 'option') + ' ' + (SaveData.gpuTextures ? LangUtil.getString('cmnOn') : LangUtil.getString('cmnOff'));
+		return 'Permitir Sobrecarga' + ' ' + (SaveData.gpuTextures ? 'Sim' : 'Não');
 	}
 }
 

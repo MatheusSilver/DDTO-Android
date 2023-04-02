@@ -134,12 +134,12 @@ class PresetsSubstate extends MusicBeatSubstate
 
 	function textUpdate()
 	{
-		keyTextDisplay.text = "\n";
+		keyTextDisplay.text = "\n\n";
 
 		for (i in 0...judgementText.length-1)
 		{
 			var textStart = (i == curSelected) ? "> " : "  ";
-			keyTextDisplay.text += textStart + judgementText[i];
+			keyTextDisplay.text += textStart + judgementText[i] + "\n";
 		}
 
 		keyTextDisplay.screenCenter();
@@ -153,14 +153,16 @@ class PresetsSubstate extends MusicBeatSubstate
 		switch (curSelected)
 		{
 			case 0:
-				SaveData.gpuTextures = false;
+				SaveData.gpuTextures = false; //Não acho que um gama alta precise, mas...
 				SaveData.ratingVisivel = true;
+				SaveData.removergirlfriend = false;
 				SaveData.globalAntialiasing = true;
 				SaveData.lowEnd = false;
 				SaveData.flashing = true;
 				SaveData.framerate = 90;
 			case 1:
 				SaveData.gpuTextures = true;
+				SaveData.removergirlfriend = false;
 				SaveData.ratingVisivel = false;
 				SaveData.globalAntialiasing = false;
 				SaveData.lowEnd = false;
@@ -169,13 +171,15 @@ class PresetsSubstate extends MusicBeatSubstate
 			case 2:
 				SaveData.gpuTextures = true;
 				SaveData.ratingVisivel = false;
+				SaveData.removergirlfriend = true;
 				SaveData.globalAntialiasing = false;
 				SaveData.lowEnd = true;
 				SaveData.flashing = false;
-				SaveData.npsDisplay = false;
-				SaveData.accuracyDisplay = false;
 				SaveData.framerate = 45;
 		}
+
+		if (curSelected < 3)
+			SaveData.curPreset = curSelected;
 
 		SaveData.save();
 

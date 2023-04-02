@@ -70,7 +70,7 @@ class OptionsState extends MusicBeatState
 			new RemoverGf('Remove a Girlfriend da música, consumindo pouca ram.\n(Se seu celular estiver travando muito\nou com pouca bateria, desative isso.)'),
 			new FPSCapOption(LangUtil.getString('descFPSCap', 'option')),
 			new AntiAliasing(LangUtil.getString('descAntialiasing', 'option')),
-			new GPUTextures(LangUtil.getString('descGPUTextures', 'option')),
+			new GPUTextures('Caso ligado, o jogo passará a usar GPU para aguentar mais peso quando precisar, mas você precisará reiniciar o jogo depois'),
 			new Padroes('Escolha entre os presets de configurações recomendadas, a que mais se encaixa ao seu celular.'),
 			#if nnone
 			new CharaCacheOption(LangUtil.getString('descCacheCharacter', 'option')),
@@ -88,7 +88,7 @@ class OptionsState extends MusicBeatState
 			#end
 			new UnlockAll("Desbloqueia tudo no mod com exceção de algumas skins"),
 			new ResetScore(LangUtil.getString('descScoreReset', 'option')),
-			new ResetStory(LangUtil.getString('descStoryReset', 'option')),
+			new ResetStory('Apagad todo o seu progresso na história do jogo'),
 			new ResetSave(LangUtil.getString('descSaveReset', 'option'))
 		])
 	];

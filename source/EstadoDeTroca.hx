@@ -5,10 +5,11 @@ class EstadoDeTroca extends MusicBeatState
 	override function create()
 	{
 		Paths.clearStoredMemory();
-		Paths.clearUnusedMemory(false);
+		Paths.clearUnusedMemory();
 		PlayState.limparCache = true;
 		PlayState.isPlayState = true;
 
+		/*
 		//tmj meu mano YoshiCrafter, não sei como isso funciona, mas pelo menos tá resolvendo um pouquinho
 		@:privateAccess {
 			// clear uint8 pools
@@ -21,6 +22,9 @@ class EstadoDeTroca extends MusicBeatState
 		}
 
 		Paths.gColetor();
+		*/
+
+		//As vezes nem tão junto assim k
 
 		new flixel.util.FlxTimer().start(0.5, function(tmr:flixel.util.FlxTimer)
 		{

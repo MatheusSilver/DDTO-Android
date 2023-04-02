@@ -53,7 +53,7 @@ class SaveData
 		Depende se seu celular é mais forte em questão de GPU ou não
 	*/
 
-	public static var gpuTextures:Null<Bool> = true;
+	public static var gpuTextures:Null<Bool> = false;
 	public static var removergirlfriend:Null<Bool> = false;
 	public static var cacheCharacter:Null<Bool> = false;
 	public static var cacheSong:Null<Bool> = false;
@@ -76,6 +76,7 @@ class SaveData
 	public static var badMs:Null<Int> = 135;
 	public static var goodMs:Null<Int> = 90;
 	public static var sickMs:Null<Int> = 45;
+	public static var curPreset:Null<Int> = 1;
 	public static var ratingToggle:Null<Bool> = true;
 	public static var songSpeed:Null<Float> = 1;
 

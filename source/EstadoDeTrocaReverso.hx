@@ -5,9 +5,11 @@ class EstadoDeTrocaReverso extends MusicBeatState
 	override function create()
 	{
 		Paths.clearStoredMemory();
-		Paths.clearUnusedMemory(false);
+		Paths.clearUnusedMemory();
 		PlayState.limparCache = true;
 		PlayState.isPlayState = false; //Só pra garantir k
+
+		/*
 
 		@:privateAccess {
 			// clear uint8 pools
@@ -20,7 +22,8 @@ class EstadoDeTrocaReverso extends MusicBeatState
 		}
 
 		Paths.gColetor();
-
+		*/
+		
 		new flixel.util.FlxTimer().start(0.5, function(tmr:flixel.util.FlxTimer)
 		{
 			if (PlayState.isStoryMode)

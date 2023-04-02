@@ -29,7 +29,10 @@ class Paths
 	private static var currentTrackedAssets:Map<String, Map<String, Dynamic>> = ["textures" => [], "graphics" => [], "sounds" => []];
 	private static var localTrackedAssets:Map<String, Array<String>> = ["graphics" => [], "sounds" => []];
 
+	public static var numerodetexturas:Int = 0;
 	public static final extensions:Map<String, String> = ["image" => "png", "audio" => "ogg", "video" => "mp4"];
+
+	public static final limites:Array<Int> = [300, 500, 700]; //Esperança para 1gb de RAM, mas tenho certeza que isso não será suficiente para Love n' Funkin, Libitina e outras pesadonas.
 
 	public static var dumpExclusions:Array<String> = [];
 
@@ -41,7 +44,8 @@ class Paths
 	public static function clearUnusedMemory(runG:Bool = true):Void {
 		for (key in currentTrackedAssets["graphics"].keys()) {
 			@:privateAccess
-			if (!localTrackedAssets["graphics"].contains(key)) {
+			if (!localTrackedAssets["graphics"].contains(key) #if (debug || mobile) && !currentTrackedAssets["textures"].exists(key)#end) {
+				//Se ela não quer ser limpa... Quem sou eu pra obrigar né?
 				if (currentTrackedAssets["textures"].exists(key)) {
 					var texture:Null<Texture> = currentTrackedAssets["textures"].get(key);
 					texture.dispose();
@@ -280,8 +284,12 @@ class Paths
 				var graphic:FlxGraphic;
 				var bitmapData:BitmapData = OpenFlAssets.getBitmapData(path);
 
-				if (SaveData.gpuTextures && PlayState.isPlayState && usarGPU) //Basicamente, se o uso da CPU chegar próximo do limite do aparelho, então a GPU será usada
+				if (SaveData.gpuTextures
+				#if (mobile || debug)
+					&& openfl.display.FPS.curMEMforReference > limites[SaveData.curPreset] ^ 2 && PlayState.isPlayState #end) //Basicamente, se o uso da CPU chegar próximo do limite do aparelho, então a GPU será usada
 				{ //É mais fácil gerenciar a GPU através da CPU do que o contrário.
+					//Caso o jogo consuma mais do que um celular de 2gb pode aguenta,
+					//Ele passa a usar GPU pra segurar o jooj por um pouco mais de tempo antes de precisar reiniciar o APK
 					#if (debug && !mobile)
 					trace('carregando $path por GPU');
 					#end
@@ -292,6 +300,7 @@ class Paths
 					bitmapData.disposeImage();
 					bitmapData.dispose();
 					bitmapData = null;
+					numerodetexturas++;
 
 					graphic = FlxGraphic.fromBitmapData(openfl.display.BitmapData.fromTexture(texture), false, path);
 				}
@@ -299,6 +308,8 @@ class Paths
 					#if (debug && !mobile)
 					trace('carregando $path por CPU');
 					#end
+					openfl.display.FPS.curMemChecker();
+					//Checa a cada vez que um asset é carregado pra saber se devemos ou não, ativar a GPU
 					graphic = FlxGraphic.fromBitmapData(bitmapData, false, path);
 				}
 				graphic.persist = true;

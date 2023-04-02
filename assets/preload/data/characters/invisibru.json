@@ -212,6 +212,97 @@
 			"anim": "idle",
 			"indices": [],
 			"name": "idle"
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": false,
+			"anim": "countdownThree",
+			"fps": 1,
+			"indices": [
+				0
+			],
+			"name": "GF Dancing Beat Hair Landing"
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": false,
+			"anim": "countdownTwo",
+			"fps": 1,
+			"indices": [
+				0
+			],
+			"name": "GF Dancing Beat Hair Landing"
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": false,
+			"anim": "countdownOne",
+			"fps": 1,
+			"indices": [
+				0
+			],
+			"name": "GF Dancing Beat Hair Landing"
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": false,
+			"anim": "countdownGo",
+			"fps": 1,
+			"indices": [
+				0
+			],
+			"name": "GF Dancing Beat Hair Landing"
+		},
+		{
+			"offsets": [
+				-2,
+				-62
+			],
+			"loop": true,
+			"anim": "necksnap",
+			"fps": 1,
+			"indices": [
+				0
+			],
+			"name": "GF Dancing Beat Hair Landing"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				11
+			],
+			"anim": "popout",
+			"fps": 1,
+			"indices": [
+				0
+			],
+			"name": "GF Dancing Beat Hair Landing"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				-212
+			],
+			"anim": "gone",
+			"fps": 1,
+			"indices": [
+				0
+			],
+			"name": "GF Dancing Beat Hair Landing"
 		}
 	],
 	"no_antialiasing": true,

@@ -187,10 +187,13 @@ class Character extends FlxSprite
 		positionArray = json.position;
 		cameraPosition = json.camera_position;
 
+		if(PlayState.SONG.song.toLowerCase()!='takeover medley'){
 		if (isPlayer && json.playericon != null)
 			healthIcon = json.playericon;
 		else
 			healthIcon = json.healthicon;
+		}else
+			healthIcon = 'invisibru'; //My beloved //Isso provavelmente deve evitar sobrecarga e lag em celulares mais humildes.
 
 		singDuration = json.sing_duration;
 		if (json.gameover_character != null)

@@ -124,8 +124,8 @@ class KeyBindSubstate extends MusicBeatSubstate
 					{
 						quit();
 					}
-					else if (FlxG.keys.justPressed.BACKSPACE)
-					{
+					else if (FlxG.keys.justPressed.BACKSPACE #if android || FlxG.android.justReleased.BACK #end)
+					{ //Troxa
 						reset();
 					}
 

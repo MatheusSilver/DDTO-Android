@@ -742,7 +742,8 @@ class PlayState extends MusicBeatState
 		DAD_X = stageData.opponent[0];
 		DAD_Y = stageData.opponent[1];
 		hideGirlfriend = if(SaveData.removergirlfriend) { true; } else { stageData.hide_girlfriend; }
-
+		//Isso impede que a GF seja adicionada, mas não impede que ela seja carregada
+		
 		if (stageData.camera_speed != null)
 			cameraSpeed = stageData.camera_speed;
 
@@ -1954,7 +1955,8 @@ class PlayState extends MusicBeatState
 			case 'glitcher (monika mix)':
 				addCharacterToList("monika");
 				addCharacterToList("pixelbf-new");
-				addCharacterToList("gf-pixel");
+				if(!hideGirlfriend)
+					addCharacterToList("gf-pixel");
 			case 'epiphany':
 				addCharacterToList("bigmonika-dead");
 				if (storyDifficulty == 2)
@@ -4282,10 +4284,13 @@ class PlayState extends MusicBeatState
 				if (SONG.player2.startsWith('sayori') && (SONG.gfVersion == 'gf-realdoki' && SaveData.gfcostume == "sayo"))
 					costume = 'hueh';
 
-				gf = new Character(GF_X, GF_Y, newCharacter, mirrormode, costume);
+				if(SONG.song.toLowerCase()!='takeover medley') //Maldito orfão...
+					gf = new Character(GF_X, GF_Y, hideGirlfriend ? 'invisibru' : newCharacter, mirrormode, costume);
+				else
+					gf = new Character(GF_X, GF_Y, newCharacter, mirrormode, costume);
 				gf.x += gf.positionArray[0];
 				gf.y += gf.positionArray[1];
-				if (!hideGirlfriend) add(gf);
+				add(gf);
 
 				if (SONG.song.toLowerCase() == 'catfight')
 					gf.playAnim('gone');
@@ -8732,7 +8737,11 @@ class PlayState extends MusicBeatState
 		boxFlash.alpha = 1;
 		boxFlash.cameras = [camGame2];
 		insert(members.indexOf(p2Boxtop) - 1, boxFlash);
-		FlxTween.tween(boxFlash, {alpha: 0.001}, CoolUtil.calcSectionLength(0.1), {ease: FlxEase.sineOut});
+		FlxTween.tween(boxFlash, {alpha: 0.001}, CoolUtil.calcSectionLength(0.1), {ease: FlxEase.sineOut,
+			 onComplete:function(twn:FlxTween){
+				destruirsprites(boxFlash);
+			}
+		});
 	}
 
 	function loadYuriSparkles()

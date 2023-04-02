@@ -31,12 +31,13 @@ class FPS extends TextField
 		The current frame rate, expressed using frames-per-second
 	**/
 	public var currentFPS(default, null):Int;
-
+	
 	@:noCompletion private var cacheCount:Int;
 	@:noCompletion private var currentTime:Float;
 	@:noCompletion private var times:Array<Float>;
 
 	private var memPeak:UInt = 0;
+	public static var curMEMforReference:Int;
 
 	public function new(x:Float = 10, y:Float = 10, color:Int = 0x000000)
 	{
@@ -97,6 +98,20 @@ class FPS extends TextField
 		return size + " " + intervalArray[data];
 	}
 
+	public static function curMemChecker(){
+		var size:Float = System.totalMemory;
+		var data = 0;
+
+		while (size > 1024 && data < intervalArray.length - 1)
+		{
+			data++;
+			size = size / 1024;
+		}
+
+		size = Math.round(size * 100) / 100;
+		curMEMforReference = Std.int(size) ^ data;
+	}
+
 	// Event Handlers
 	@:noCompletion
 	private #if !flash override #end function __enterFrame(deltaTime:Float):Void
@@ -128,11 +143,16 @@ class FPS extends TextField
 				// need to make memPeak decrease over time
 				// text += '\nMEM: ${getInterval(mem)} / ${getInterval(memPeak)}';
 				text += '\nMEM: ${getInterval(mem)}';
+				#if (mobile || debug)
+					if (curMEMforReference + 250 ^ 2 > Paths.limites[SaveData.curPreset] ^ 2)
+						text += '\nO jogo está usando RAM extra. Feche e abra-o novamente quando possível.';
+				#end
 			#end
 
 			textColor = 0xFF1DADBB;
 
-			if (currentFPS < 30)
+			if (currentFPS < 30
+			#if (mobile || debug) || curMEMforReference + 250 ^ 2 > Paths.limites[SaveData.curPreset]^2 #end)
 				textColor = 0xFFBB2B1D;
 
 			#if (gl_stats && !disable_cffi && (!html5 || !canvas))
