@@ -35,6 +35,7 @@
 		}
 	],
 	"no_antialiasing": true,
+	"usegpu": true,
 	"image": "characters/bfPixelsDEAD",
 	"position": [
 		0,

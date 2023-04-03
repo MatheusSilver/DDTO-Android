@@ -728,9 +728,7 @@ class CustomControls extends Option
 	}
 	public override function press():Bool
 	{
-		#if android
 		FlxG.switchState(new CustomControlsState());
-		#end
 		return true;
 	}
 	private override function updateDisplay():String

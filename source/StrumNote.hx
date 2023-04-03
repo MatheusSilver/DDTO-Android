@@ -57,18 +57,10 @@ class StrumNote extends FlxSprite
 		switch (noteStyle)
 		{
 			case 'pixel':
-				#if debug
-				loadGraphic(Paths.imagesimple('pixelUI/' + texture));
-				#else
-				loadGraphic(Paths.image('pixelUI/' + texture));
-				#end	
+				loadGraphic(Paths.image('pixelUI/' + texture, false, true));
 				width = width / 4;
 				height = height / 6;
-				#if debug
-				loadGraphic(Paths.imagesimple('pixelUI/' + texture), true, Math.floor(width), Math.floor(height));
-				#else
-				loadGraphic(Paths.image('pixelUI/' + texture), true, Math.floor(width), Math.floor(height));
-				#end				
+				loadGraphic(Paths.image('pixelUI/' + texture, false, true), true, Math.floor(width), Math.floor(height));	
 				antialiasing = false;
 				setGraphicSize(Std.int(width * PlayState.daPixelZoom));
 
@@ -96,11 +88,7 @@ class StrumNote extends FlxSprite
 						animation.add('confirm', [15, 19], 24, false);
 				}
 			default:
-				#if debug
-				frames = Paths.getSparrowAtlassimple(texture);
-				#else
-				frames = Paths.getSparrowAtlas(texture);
-				#end
+				frames = Paths.getSparrowAtlas(texture, false, true);
 				animation.addByPrefix('green', 'arrowUP');
 				animation.addByPrefix('blue', 'arrowDOWN');
 				animation.addByPrefix('purple', 'arrowLEFT');

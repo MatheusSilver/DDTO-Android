@@ -184,6 +184,7 @@
 		160
 	],
 	"healthicon": "gf",
+	"usegpu": true,
 	"flip_x": false,
 	"healthbar_colors": [
 		165,

@@ -1,5 +1,5 @@
 package;
-
+#if mobile
 import Config;
 import flixel.FlxG;
 import flixel.FlxSprite;
@@ -401,3 +401,4 @@ class CustomControlsState extends MusicBeatState //Code desenvolvido dois anos a
 		super.destroy();
 	}
 }
+#end

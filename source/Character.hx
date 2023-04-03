@@ -26,6 +26,7 @@ typedef CharacterFile = {
 
 	var flip_x:Bool;
 	var no_antialiasing:Bool;
+	var usegpu:Bool;
 	var healthbar_colors:Array<Int>;
 
 	var gameover_character:String;
@@ -77,6 +78,7 @@ class Character extends FlxSprite
 	public var animationsArray:Array<AnimArray> = [];
 	public var costumeArray:Array<CostumeList> = [];
 	public var deathsound:String = 'fnf_loss_sfx';
+	public var gpu:Bool = false;
 	public var winsound:String = 'fnf_loss_sfx';
 	public var gameoverchara:String = 'gameover-generic';
 	public var gameovercharamirror:String = 'bf';
@@ -92,6 +94,7 @@ class Character extends FlxSprite
 	public var initFacing:Int = FlxDirectionFlags.RIGHT;
 	var initWidth:Float;
 
+
 	public function new(x:Float, y:Float, ?character:String = "bf", ?isPlayer:Bool = false, ?forceCostume:String = '')
 	{
 		super(x, y);
@@ -105,6 +108,8 @@ class Character extends FlxSprite
 		PlayState.altSection = false;
 
 		jsonLoad(curCharacter);
+
+		gpu = json.usegpu;
 
 		if (json.costumes != null && loadaltcostume)
 		{
@@ -163,7 +168,7 @@ class Character extends FlxSprite
 		}
 		else
 		{
-			frames = Paths.getSparrowAtlas(json.image);
+			frames = Paths.getSparrowAtlas(json.image, false, gpu);
 		}
 
 		var imageFile:String = '';

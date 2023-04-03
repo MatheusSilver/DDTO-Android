@@ -156,7 +156,7 @@ class CostumeSelectState extends MusicBeatState
 		add(logo);
 
 		logoBl = new FlxSprite(40, -40);
-		logoBl.frames = Paths.getSparrowAtlassimple('DDLCStart_Screen_Assets');
+		logoBl.frames = Paths.getSparrowAtlas('DDLCStart_Screen_Assets');
 		logoBl.antialiasing = SaveData.globalAntialiasing;
 		logoBl.scale.set(0.5, 0.5);
 		logoBl.animation.addByPrefix('bump', 'logo bumpin', 24, false);
@@ -185,7 +185,13 @@ class CostumeSelectState extends MusicBeatState
 
 		changeItem();
 
+		addbackButton(true);
+
+		BSLTouchUtils.prevTouched = -1;
+
 		super.create();
+
+		_backButton.x = FlxG.width - 50 - _backButton.width;
 	}
 
 	var selectedSomethin:Bool = false;
@@ -236,7 +242,7 @@ class CostumeSelectState extends MusicBeatState
 			{
 				changecostume(-1, false);
 			}
-			if ((controls.BACK #if android || FlxG.android.justReleased.BACK #end) && !selectingcostume)
+			if ((controls.BACK || _backButton.justPressed #if android || FlxG.android.justReleased.BACK #end) && !selectingcostume)
 			{
 				selectedSomethin = true;
 				SaveData.save();
@@ -244,7 +250,7 @@ class CostumeSelectState extends MusicBeatState
 				GlobalSoundManager.play('cancelMenu');
 				MusicBeatState.switchState(new DokiFreeplayState());
 			}
-			if ((controls.BACK #if android || FlxG.android.justReleased.BACK #end) && selectingcostume)
+			if ((controls.BACK || _backButton.justPressed #if android || FlxG.android.justReleased.BACK #end) && selectingcostume)
 			{
 				GlobalSoundManager.play('cancelMenu');
 				costumeselect(false);

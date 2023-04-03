@@ -28,11 +28,12 @@ class Paths
 
 	private static var currentTrackedAssets:Map<String, Map<String, Dynamic>> = ["textures" => [], "graphics" => [], "sounds" => []];
 	private static var localTrackedAssets:Map<String, Array<String>> = ["graphics" => [], "sounds" => []];
+	private static var noDisposeTextures:Array<String> = [];
 
-	public static var numerodetexturas:Int = 0;
+
 	public static final extensions:Map<String, String> = ["image" => "png", "audio" => "ogg", "video" => "mp4"];
 
-	public static final limites:Array<Int> = [300, 500, 700]; //Esperança para 1gb de RAM, mas tenho certeza que isso não será suficiente para Love n' Funkin, Libitina e outras pesadonas.
+	public static final limites:Array<Int> = [400, 500, 600]; //Esperança para 1gb de RAM, mas tenho certeza que isso não será suficiente para Love n' Funkin, Libitina e outras pesadonas.
 
 	public static var dumpExclusions:Array<String> = [];
 
@@ -41,12 +42,38 @@ class Paths
 			dumpExclusions.push(key);
 	}
 
+	public static function limparspriteporchave(chave:String, library:String){ //Isso é uma tentativa desesperada de arrumar libitina
+		
+		var key:String = getPath('images/$chave.png', IMAGE, library);
+		@:privateAccess{
+		if (currentTrackedAssets["textures"].exists(key) && !noDisposeTextures.contains(key))
+			{
+				var texture:Null<Texture> = currentTrackedAssets["textures"].get(key);
+				texture.dispose();
+				#if (debug && !mobile)
+				trace('limpando $key das texturas');
+				#end
+				texture = null;
+				currentTrackedAssets["textures"].remove(key);
+			}
+
+			var graphic:Null<FlxGraphic> = currentTrackedAssets["graphics"].get(key);
+			OpenFlAssets.cache.removeBitmapData(key);
+			FlxG.bitmap._cache.remove(key);
+			graphic.destroy();
+			#if debug
+				trace('Removendo $key');
+			#end
+			currentTrackedAssets["graphics"].remove(key);
+			localTrackedAssets["graphics"].remove(key);
+		}
+	}
+
 	public static function clearUnusedMemory(runG:Bool = true):Void {
 		for (key in currentTrackedAssets["graphics"].keys()) {
 			@:privateAccess
-			if (!localTrackedAssets["graphics"].contains(key) #if (debug || mobile) && !currentTrackedAssets["textures"].exists(key)#end) {
-				//Se ela não quer ser limpa... Quem sou eu pra obrigar né?
-				if (currentTrackedAssets["textures"].exists(key)) {
+			if (!localTrackedAssets["graphics"].contains(key)) {
+				if (currentTrackedAssets["textures"].exists(key) && !noDisposeTextures.contains(key)) {
 					var texture:Null<Texture> = currentTrackedAssets["textures"].get(key);
 					texture.dispose();
 					#if (debug && !mobile)
@@ -161,11 +188,6 @@ class Paths
 		return OpenFlAssets.exists(getPath('images/$key.png', IMAGE, library));
 	}
 
-	inline static public function imagesimple(key:String, ?library:String):String
-	{
-		return getPath('images/$key.png', IMAGE, library);
-	}
-
 	inline public static function getPreloadPath(file:String = '')
 	{
 		return 'assets/$file';
@@ -257,19 +279,14 @@ class Paths
 		return false;
 	}
 
-	inline static public function getSparrowAtlas(key:String, ?library:String, ?locale:Bool, usaGPU:Bool = true)
+	inline static public function getSparrowAtlas(key:String, ?library:String, ?locale:Bool, usaGPU:Bool = false)
 	{
 		return FlxAtlasFrames.fromSparrow(image(key, library, locale, usaGPU), file('images/$key.xml', library));
 	}
 
-	inline static public function getSparrowAtlassimple(key:String, ?library:String, ?locale:Bool)
+	inline static public function getPackerAtlas(key:String, ?library:String, ?locale:Bool = false, usaGPU:Bool = false)
 	{
-		return FlxAtlasFrames.fromSparrow(imagesimple(key, library), file('images/$key.xml', library));
-	}
-
-	inline static public function getPackerAtlas(key:String, ?library:String)
-	{
-		var imageLoaded:FlxGraphic = returnGraphic(key, library, false, true);
+		var imageLoaded:FlxGraphic = returnGraphic(key, library, locale, usaGPU);
 
 		return FlxAtlasFrames.fromSpriteSheetPacker((imageLoaded != null ? imageLoaded : image(key, library)), file('images/$key.txt', library));
 	}
@@ -284,12 +301,18 @@ class Paths
 				var graphic:FlxGraphic;
 				var bitmapData:BitmapData = OpenFlAssets.getBitmapData(path);
 
-				if (SaveData.gpuTextures
+				openfl.display.FPS.curMemChecker();
+
+				if ((SaveData.gpuTextures
 				#if (mobile || debug)
-					&& openfl.display.FPS.curMEMforReference > limites[SaveData.curPreset] ^ 2 && PlayState.isPlayState #end) //Basicamente, se o uso da CPU chegar próximo do limite do aparelho, então a GPU será usada
+					&& openfl.display.FPS.curMEMforReference > limites[SaveData.curPreset] ^ 2
+					&& PlayState.isPlayState #end)
+					|| currentTrackedAssets["textures"].exists(path) || usarGPU) //Basicamente, se o uso da CPU chegar próximo do limite do aparelho, então a GPU será usada
 				{ //É mais fácil gerenciar a GPU através da CPU do que o contrário.
 					//Caso o jogo consuma mais do que um celular de 2gb pode aguenta,
 					//Ele passa a usar GPU pra segurar o jooj por um pouco mais de tempo antes de precisar reiniciar o APK
+					
+					if (!currentTrackedAssets["textures"].exists(path)){
 					#if (debug && !mobile)
 					trace('carregando $path por GPU');
 					#end
@@ -300,18 +323,19 @@ class Paths
 					bitmapData.disposeImage();
 					bitmapData.dispose();
 					bitmapData = null;
-					numerodetexturas++;
+					if(usarGPU)
+						noDisposeTextures.push(path);
+					}
 
-					graphic = FlxGraphic.fromBitmapData(openfl.display.BitmapData.fromTexture(texture), false, path);
-				}
-				else{
+					graphic = FlxGraphic.fromBitmapData(openfl.display.BitmapData.fromTexture(currentTrackedAssets["textures"].get(path)), false, path);
+				}else{
 					#if (debug && !mobile)
 					trace('carregando $path por CPU');
 					#end
-					openfl.display.FPS.curMemChecker();
 					//Checa a cada vez que um asset é carregado pra saber se devemos ou não, ativar a GPU
 					graphic = FlxGraphic.fromBitmapData(bitmapData, false, path);
 				}
+
 				graphic.persist = true;
 				currentTrackedAssets["graphics"].set(path, graphic);
 			}

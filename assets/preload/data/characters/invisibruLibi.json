@@ -1,0 +1,330 @@
+{
+	"animations": [
+		{
+			"loop": false,
+			"offsets": [
+				3,
+				0
+			],
+			"fps": 1,
+			"anim": "cheer",
+			"indices": [
+				0
+			],
+			"name": "GF Cheer"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				-19
+			],
+			"fps": 1,
+			"anim": "singLEFT",
+			"indices": [
+				0
+			],
+			"name": "GF left note"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				-20
+			],
+			"fps": 1,
+			"anim": "singDOWN",
+			"indices": [
+				0
+			],
+			"name": "GF Down Note"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				4
+			],
+			"fps": 1,
+			"anim": "singUP",
+			"indices": [
+				0
+			],
+			"name": "GF Up Note"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				-20
+			],
+			"fps": 1,
+			"anim": "singRIGHT",
+			"indices": [],
+			"name": "GF Right Note"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				-2,
+				-21
+			],
+			"fps": 24,
+			"anim": "sad",
+			"indices": [
+				0
+			],
+			"name": "gf sad"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				-9
+			],
+			"fps": 1,
+			"anim": "danceLeft",
+			"indices": [
+				0
+			],
+			"name": "GF Dancing Beat"
+		},
+		{
+			"offsets": [
+				-29,
+				27
+			],
+			"loop": false,
+			"fps": 1,
+			"anim": "singUPmiss",
+			"indices": [
+				0
+			],
+			"name": "GF FEAR"
+		},
+		{
+			"offsets": [
+				-30,
+				21
+			],
+			"loop": false,
+			"fps": 1,
+			"anim": "singRIGHTmiss",
+			"indices": [
+				0
+			],
+			"name": "GF FEAR"
+		},
+		{
+			"offsets": [
+				12,
+				24
+			],
+			"loop": false,
+			"fps": 1,
+			"anim": "singLEFTmiss",
+			"indices": [
+				0
+			],
+			"name": "GF FEAR"
+		},
+		{
+			"offsets": [
+				-11,
+				-19
+			],
+			"loop": false,
+			"fps": 1,
+			"anim": "singDOWNmiss",
+			"indices": [
+				0
+			],
+			"name": "GF FEAR"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				-9
+			],
+			"fps": 1,
+			"anim": "danceRight",
+			"indices": [
+				0
+			],
+			"name": "GF Dancing Beat"
+		},
+		{
+			"loop": true,
+			"offsets": [
+				45,
+				-8
+			],
+			"fps": 1,
+			"anim": "hairBlow",
+			"indices": [
+				0
+			],
+			"name": "GF Dancing Beat Hair blowing"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				-9
+			],
+			"fps": 1,
+			"anim": "hairFall",
+			"indices": [
+				0
+			],
+			"name": "GF Dancing Beat Hair Landing"
+		},
+		{
+			"loop": true,
+			"offsets": [
+				-2,
+				-17
+			],
+			"fps": 1,
+			"anim": "scared",
+			"indices": [],
+			"name": "GF FEAR"
+		},
+		{
+			"loop": true,
+			"offsets": [
+				-2,
+				-17
+			],
+			"fps": 1,
+			"anim": "sad",
+			"indices": [],
+			"name": "GF FEAR"
+		},
+		{
+			"loop": true,
+			"offsets": [
+				-2,
+				-17
+			],
+			"fps": 1,
+			"anim": "idle",
+			"indices": [],
+			"name": "idle"
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": false,
+			"anim": "countdownThree",
+			"fps": 1,
+			"indices": [
+				0
+			],
+			"name": "GF Dancing Beat Hair Landing"
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": false,
+			"anim": "countdownTwo",
+			"fps": 1,
+			"indices": [
+				0
+			],
+			"name": "GF Dancing Beat Hair Landing"
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": false,
+			"anim": "countdownOne",
+			"fps": 1,
+			"indices": [
+				0
+			],
+			"name": "GF Dancing Beat Hair Landing"
+		},
+		{
+			"offsets": [
+				0,
+				0
+			],
+			"loop": false,
+			"anim": "countdownGo",
+			"fps": 1,
+			"indices": [
+				0
+			],
+			"name": "GF Dancing Beat Hair Landing"
+		},
+		{
+			"offsets": [
+				-2,
+				-62
+			],
+			"loop": true,
+			"anim": "necksnap",
+			"fps": 1,
+			"indices": [
+				0
+			],
+			"name": "GF Dancing Beat Hair Landing"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				11
+			],
+			"anim": "popout",
+			"fps": 1,
+			"indices": [
+				0
+			],
+			"name": "GF Dancing Beat Hair Landing"
+		},
+		{
+			"loop": false,
+			"offsets": [
+				0,
+				-212
+			],
+			"anim": "gone",
+			"fps": 1,
+			"indices": [
+				0
+			],
+			"name": "GF Dancing Beat Hair Landing"
+		}
+	],
+	"no_antialiasing": true,
+	"image": "characters/invisibru",
+	"position": [
+		0,
+		0
+	],
+	"healthicon": "hidden",
+	"flip_x": false,
+	"gameover_character": "invisibru",
+	"death_sound": "fnf_loss_sfx-bigmonika",
+	"win_sound": "dah",
+	"healthbar_colors": [
+		0,
+		0,
+		0
+	],
+	"camera_position": [
+		110,
+		90
+	],
+	"sing_duration": 4,
+	"scale": 1
+}

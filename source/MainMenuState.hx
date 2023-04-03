@@ -110,7 +110,7 @@ class MainMenuState extends MusicBeatState
 			Conductor.changeBPM(120);
 		}
 
-		backdrop = new FlxBackdrop(Paths.image('backdropsmenu/backdropcatfight'));
+		backdrop = new FlxBackdrop(Paths.image('backdropsmenu/backdropcatfight', false, true));
 		backdrop.velocity.set(-40, -40);
 		backdrop.antialiasing = SaveData.globalAntialiasing;
 		add(backdrop);
@@ -188,7 +188,7 @@ class MainMenuState extends MusicBeatState
 		menu_character.animation.play('play');
 		add(menu_character);
 
-		logo = new FlxSprite(-260, 0).loadGraphic(Paths.image('Credits_LeftSide'));
+		logo = new FlxSprite(-260, 0).loadGraphic(Paths.image('Credits_LeftSide', false, true));
 		logo.antialiasing = SaveData.globalAntialiasing;
 		add(logo);
 		if (firstStart)
@@ -204,7 +204,7 @@ class MainMenuState extends MusicBeatState
 			logo.x = -60;
 
 		logoBl = new FlxSprite(-160, -40);
-		logoBl.frames = Paths.getSparrowAtlassimple('DDLCStart_Screen_Assets');
+		logoBl.frames = Paths.getSparrowAtlas('DDLCStart_Screen_Assets', false, true);
 		logoBl.antialiasing = SaveData.globalAntialiasing;
 		logoBl.scale.set(0.5, 0.5);
 		logoBl.animation.addByPrefix('bump', 'logo bumpin', 24, false);

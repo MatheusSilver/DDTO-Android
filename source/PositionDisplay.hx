@@ -27,7 +27,7 @@ class PositionDisplay extends FlxSpriteGroup
 		isPixel = PlayState.isPixelUI;
 		this.songLength = songLength;
 
-		songPosBG = new FlxSprite(0, 10).loadGraphic(Paths.image('timeBar'));
+		songPosBG = new FlxSprite(0, 10).loadGraphic(Paths.image('timeBar', false , true));
 
 		if (SaveData.downScroll)
 			songPosBG.y = FlxG.height * 0.9 + 40;

@@ -187,6 +187,7 @@
 		
 	],
 	"no_antialiasing": false,
+	"usegpu": true,
 	"image": "characters/boyfriend/DDLCBoyFriend_Assets",
 	"position": [
 		5,

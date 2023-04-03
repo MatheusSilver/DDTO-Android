@@ -231,34 +231,18 @@ class Note extends FlxSprite
 			case 'pixel':
 				if (isSustainNote)
 				{
-					#if debug
-					loadGraphic(Paths.imagesimple('pixelUI/' + blahblah + 'ENDS'));
-					#else
-					loadGraphic(Paths.image('pixelUI/' + blahblah + 'ENDS', false, false));
-					#end
+					loadGraphic(Paths.image('pixelUI/' + blahblah + 'ENDS', false, true));
 					width = width / 4;
 					height = height / 2;
 					originalHeightForCalcs = height;
-					#if debug
-					loadGraphic(Paths.imagesimple('pixelUI/' + blahblah + 'ENDS'), true, Math.floor(width), Math.floor(height));
-					#else
-					loadGraphic(Paths.image('pixelUI/' + blahblah + 'ENDS', false, false), true, Math.floor(width), Math.floor(height));
-					#end
+					loadGraphic(Paths.image('pixelUI/' + blahblah + 'ENDS', false, true), true, Math.floor(width), Math.floor(height));
 				}
 				else
 				{
-					#if debug
-					loadGraphic(Paths.imagesimple('pixelUI/' + blahblah));
-					#else
-					loadGraphic(Paths.image('pixelUI/' + blahblah, false, false));
-					#end
+					loadGraphic(Paths.image('pixelUI/' + blahblah, false, true));
 					width = width / 4;
 					height = height / 6;
-					#if debug
-					loadGraphic(Paths.imagesimple('pixelUI/' + blahblah), true, Math.floor(width), Math.floor(height));
-					#else
-					loadGraphic(Paths.image('pixelUI/' + blahblah, false , false), true, Math.floor(width), Math.floor(height));
-					#end
+					loadGraphic(Paths.image('pixelUI/' + blahblah, false , true), true, Math.floor(width), Math.floor(height));
 				}
 
 				setGraphicSize(Std.int(width * PlayState.daPixelZoom));
@@ -272,11 +256,7 @@ class Note extends FlxSprite
 					offsetX -= lastNoteOffsetXForPixelAutoAdjusting;
 				}
 			default:
-				#if debug
-				frames = Paths.getSparrowAtlassimple(blahblah);
-				#else
-				frames = Paths.getSparrowAtlas(blahblah, false, false);
-				#end
+				frames = Paths.getSparrowAtlas(blahblah, false, true);
 				loadNoteAnims();
 				antialiasing = SaveData.globalAntialiasing;
 		}

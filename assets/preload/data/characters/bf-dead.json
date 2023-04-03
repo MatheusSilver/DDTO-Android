@@ -36,12 +36,15 @@
 	],
 	"no_antialiasing": false,
 	"image": "characters/BOYFRIEND_DEAD",
+	"death_sound": "fnf_loss_sfx",
+	"win_sound": "dah",
 	"position": [
 		0,
 		350
 	],
 	"healthicon": "bf",
 	"flip_x": true,
+	"usegpu": true,
 	"healthbar_colors": [
 		49,
 		176,

@@ -159,7 +159,8 @@ class DokiCards extends MusicBeatSubstate
 		});
 		FlxTween.tween(select, {alpha: 0}, 1, {ease: FlxEase.linear});
 		#if mobile
-		FlxTween.tween(camcontrol, {alpha: 0}, 0.5, {ease: FlxEase.linear});
+		if(!SaveData.botplay)
+			FlxTween.tween(camcontrol, {alpha: 0}, 0.5, {ease: FlxEase.linear});
 		#end
 		//tween selected card with alpha
 		new FlxTimer().start(0.5, function(tmr:FlxTimer)

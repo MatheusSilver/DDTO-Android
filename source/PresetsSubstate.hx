@@ -29,12 +29,12 @@ class PresetsSubstate extends MusicBeatSubstate
 	var keyTextDisplay:FlxText;
 	var curSelected:Int = 0;
 
-	var judgementText:Array<String> = ["Gama Alta", "Gama Média", "Gama Baja", "Voltar", ''];
+	var judgementText:Array<String> = ["Gama Alta (4GB+)", "Gama Média(3GB+)", "Gama Baja(2GB+)", "Voltar", ''];
 
 	var explicacoes:Array<String> = [
 		"Tudo do mod original estará ativado (recomendado para acima de 4 GB de RAM)", 
-		"A notificação de acerto não estará visível e irá estabilizar o FPS (recomendado para 2 GB de RAM)", 
-		"Removerá detalhes consideráveis do jogo, mas ainda poderá acompanhar a história principal (recomendado para 1,5 GB de RAM)", 
+		"A notificação de acerto não estará visível e irá estabilizar o FPS (recomendado para 3 GB de RAM)", 
+		"Removerá detalhes consideráveis do jogo, mas ainda poderá acompanhar a história principal (recomendado para 2 GB de RAM)", 
 		"Você não estará escolhendo nenhum preset. Clique novamente para voltar ao menu.",
 		''];
 
@@ -161,7 +161,7 @@ class PresetsSubstate extends MusicBeatSubstate
 				SaveData.flashing = true;
 				SaveData.framerate = 90;
 			case 1:
-				SaveData.gpuTextures = true;
+				SaveData.gpuTextures = false;
 				SaveData.removergirlfriend = false;
 				SaveData.ratingVisivel = false;
 				SaveData.globalAntialiasing = false;
@@ -169,7 +169,7 @@ class PresetsSubstate extends MusicBeatSubstate
 				SaveData.flashing = true;
 				SaveData.framerate = 60;
 			case 2:
-				SaveData.gpuTextures = true;
+				SaveData.gpuTextures = false;
 				SaveData.ratingVisivel = false;
 				SaveData.removergirlfriend = true;
 				SaveData.globalAntialiasing = false;

@@ -1,7 +1,6 @@
 package;
 
 import openfl.events.KeyboardEvent;
-import ui.Mobilecontrols;
 import flixel.input.keyboard.FlxKey;
 import haxe.Exception;
 import openfl.geom.Matrix;
@@ -61,6 +60,10 @@ import openfl.display.BlendMode;
 import openfl.display.StageQuality;
 import flixel.util.FlxSpriteUtil;
 import flixel.group.FlxSpriteGroup;
+
+#if android
+import ui.Mobilecontrols;
+#end
 import StageData;
 #if FEATURE_DISCORD
 import Discord.DiscordClient;
@@ -605,11 +608,11 @@ class PlayState extends MusicBeatState
 			switch(curStyle)
 			{
 				case 'lib':
-					Paths.image('libbie_Splash');
+					Paths.image('libbie_Splash', false, true);
 				case 'pixel':
-					Paths.image('pixel_Splash');
+					Paths.image('pixel_Splash', false, true);
 				default:
-					Paths.image('NOTE_splashes_doki');
+					Paths.image('NOTE_splashes_doki', false, true);
 			}
 		}
 
@@ -1088,18 +1091,21 @@ class PlayState extends MusicBeatState
 
 					wiltedhey_senpai = new BGSprite('wilt/hoii_senpai', 'doki', wiltedwindow.x, wiltedwindow.y, 1, 1, ['Hey_Senpai'], false);
 					wiltedhey_senpai.alpha = 0.001;
+					wiltedhey_senpai.visible = false;
 					wiltedhey_senpai.scale.set(1.25, 1.25);
 					wiltedhey_senpai.updateHitbox();
 					wiltedhey_senpai.cameras = [camGame2];
 
 					wiltedhey = new BGSprite('wilt/hoii', 'doki', 415, -150, 1, 1, ['Hey'], false);
 					wiltedhey.alpha = 0.001;
+					wiltedhey.visible = false;
 					wiltedhey.scale.set(1.25*2, 1.25*2);
 					wiltedhey.updateHitbox();
 					wiltedhey.cameras = [camGame2];
 
 					wiltedHmph = new BGSprite('wilt/hmhphph', 'doki', -257, -167, 1, 1, ['Hmph'], false);
 					wiltedHmph.alpha = 0.001;
+					wiltedHmph.visible = false;
 					wiltedHmph.scale.set(1.25*2, 1.25*2);
 					wiltedHmph.updateHitbox();
 					wiltedHmph.cameras = [camGame2];
@@ -1437,13 +1443,14 @@ class PlayState extends MusicBeatState
 	
 						lightontopofall = new BGSprite('bigmonika/lights', 'doki', -250, -167, 0.4, 0.6);
 						lightontopofall.cameras = [camGame2];
-						if(!SaveData.lowEnd && !SaveData.globalAntialiasing)	
+						if(!SaveData.globalAntialiasing)	
 							lightontopofall.blend = SCREEN;
 
 						dokiBackdrop = new FlxBackdrop(Paths.image('backdropsmenu/backdropcatfight'));
 						dokiBackdrop.velocity.set(-40, -40);
 						dokiBackdrop.antialiasing = SaveData.globalAntialiasing;
 						dokiBackdrop.alpha = 0.001;
+						dokiBackdrop.visible = false;
 						dokiBackdrop.cameras = [camGame2];
 						add(dokiBackdrop);
 					}
@@ -1964,20 +1971,28 @@ class PlayState extends MusicBeatState
 			case 'neet':
 				CoolUtil.precacheSound('spotlight');
 			case 'you and me':
-				if(!SaveData.lowEnd){ //Na real, não tenho muita ideia de como lidar com isso...
+				if(SaveData.curPreset == 0){ //Na real, não tenho muita ideia de como lidar com isso...
+					//Sendo assim, o jogo só vai dar precache se tu for gama alta
 				addCharacterToList("yuri");
 				addCharacterToList("sayori");
 				addCharacterToList("natsuki");
 				addCharacterToList("monika");
 				addCharacterToList("protag");
+				}
 				CoolUtil.precacheVoices(SONG.song, '', '_Monika');
 				CoolUtil.precacheVoices(SONG.song, '', '_Sayori');
 				CoolUtil.precacheVoices(SONG.song, '', '_Yuri');
-				}
-				if(SaveData.botplay){
 				CoolUtil.precacheVoices(SONG.song, '', '_Natsuki');
-				addCharacterToList("costumes/natsuki-buff");
+				if(SaveData.botplay){
+					addCharacterToList("costumes/natsuki-buff");
+					CoolUtil.precacheVoices(SONG.song, '', '_Natsuki');
+				}else{
+					CoolUtil.precacheVoices(SONG.song, '', '_Monika');
+					CoolUtil.precacheVoices(SONG.song, '', '_Sayori');
+					CoolUtil.precacheVoices(SONG.song, '', '_Yuri');
+					CoolUtil.precacheVoices(SONG.song, '', '_Natsuki');
 				}
+				
 				
 			case 'wilted':
 				addCharacterToList("senpai-angynonpixel");
@@ -2001,6 +2016,7 @@ class PlayState extends MusicBeatState
 				libPopup(-42069, -42069, 0, 'Corrupted', 'red', 0, false);
 
 				addCharacterToList("ghost-sketch");
+				addCharacterToList("invisibruLibi");
 				addCharacterToList("ghost");
 		}
 
@@ -2216,7 +2232,7 @@ class PlayState extends MusicBeatState
 		}
 			if(!SaveData.lowEnd){
 				for (sticker in stickerData)
-					Paths.image('stickies/' + sticker, 'preload', false, true);
+					Paths.image('stickies/' + sticker, 'preload', false, false);
 			}
 		}
 
@@ -2294,7 +2310,7 @@ class PlayState extends MusicBeatState
 		camGame2.zoom = defaultCamZoom;
 		camGame2.focusOn(camFollow.getPosition());
 
-		healthBarBG = new FlxSprite(0, FlxG.height * 0.89).loadGraphic(Paths.image('healthBar'));
+		healthBarBG = new FlxSprite(0, FlxG.height * 0.89).loadGraphic(Paths.image('healthBar', false , true));
 
 		switch (SONG.song.toLowerCase())
 		{
@@ -2466,9 +2482,9 @@ class PlayState extends MusicBeatState
 		// layering due to icons
 		add(scoreTxt);
 
-		supermercadostavin("pause/"+ ((hasMetadata && metadata.song.pause != null) ? metadata.song.pause : "fumo"), 'preload');
-		supermercadostavin("Credits_LeftSide", 'preload');
-		supermercadostavin("DDLCStart_Screen_Assets", 'preload');
+		Paths.image("pause/"+ ((hasMetadata && metadata.song.pause != null) ? metadata.song.pause : "fumo"), 'preload', false, true);
+		Paths.image("Credits_LeftSide", 'preload', false, true);
+		Paths.image("DDLCStart_Screen_Assets", 'preload', false, true);
 		Paths.music('disco');
 
 		//Movendo pra cá pra dar tempo do jogo setar as variáveis que ele vai usar
@@ -2612,14 +2628,14 @@ class PlayState extends MusicBeatState
 			pixelShitPart2 = '-pixel';
 		}
 
-		Paths.image(pixelShitPart1 + "sick" + pixelShitPart2);
-		Paths.image(pixelShitPart1 + "good" + pixelShitPart2);
-		Paths.image(pixelShitPart1 + "bad" + pixelShitPart2);
-		Paths.image(pixelShitPart1 + "shit" + pixelShitPart2);
-		Paths.image(pixelShitPart1 + "combo" + pixelShitPart2);
+		Paths.image(pixelShitPart1 + "sick" + pixelShitPart2, false, true);
+		Paths.image(pixelShitPart1 + "good" + pixelShitPart2, false, true);
+		Paths.image(pixelShitPart1 + "bad" + pixelShitPart2, false, true);
+		Paths.image(pixelShitPart1 + "shit" + pixelShitPart2, false, true);
+		Paths.image(pixelShitPart1 + "combo" + pixelShitPart2, false, true);
 		
 		for (i in 0...10) {
-			Paths.image(pixelShitPart1 + 'num' + i + pixelShitPart2);
+			Paths.image(pixelShitPart1 + 'num' + i + pixelShitPart2, false, true);
 		}
 	}
 
@@ -2644,7 +2660,7 @@ class PlayState extends MusicBeatState
 		}
 
 		for (asset in introAlts)
-			Paths.image(asset);
+			Paths.image(asset, false, true);
 
 		if (curStage.startsWith('schoolEvil') || curStage.startsWith('schoolEvilEX')){
 			CoolUtil.precacheSound('intro3' + glitchSuffix);
@@ -2931,9 +2947,6 @@ class PlayState extends MusicBeatState
 		}
 	}
 
-	function supermercadostavin(leimagem:String, lelibrary:String ='doki') {
-		Paths.image(leimagem, lelibrary); //le supermercados tavin commit
-	}
 	function endcutscene():Void
 	{
 		var dialogueBox:DialogueBox = endDoof;
@@ -3130,7 +3143,7 @@ class PlayState extends MusicBeatState
 					onComplete: function(twn:FlxTween)
 					{
 							if (bgDokis != null)
-							bgDokis.visible = false;
+								bgDokis.visible = false;
 
 						FlxTween.tween(blackScreen, {alpha: 0}, 4, {ease: FlxEase.expoInOut});
 					}
@@ -4079,6 +4092,7 @@ class PlayState extends MusicBeatState
 				newBoyfriend = new Character(0, 0, newCharacter, false);
 			else
 				newBoyfriend = new Character(0, 0, newCharacter, false, costume);
+			
 			preloadMap.set(newCharacter, newBoyfriend);
 			preloadGroup.add(newBoyfriend);
 			newBoyfriend.alpha = 0.00001;
@@ -6679,23 +6693,26 @@ class PlayState extends MusicBeatState
 						case 848:
 							addcharacter("senpai-angynonpixel", 1);
 						case 912:
+							wiltedhey.visible = true;
 							wiltedhey.alpha = 1;
 							wiltedhey.animation.play('Hey');
+							wiltedhey_senpai.visible = true;
 							wiltedhey_senpai.alpha = 1;
 							wiltedhey_senpai.animation.play('Hey_Senpai');
 						case 929:
-							remove(wiltedhey_senpai);
-							remove(wiltedhey);
+							destruirsprites(wiltedhey_senpai, 'wilt/hoii_senpai', 'doki');
+							destruirsprites(wiltedhey, 'wilt/hoii', 'doki');
 						case 928:
 							wiltswap(0);
 							addcharacter("senpai-angry", 1);
 						case 1056:
 							// Start final thing
+							wiltedHmph.visible = true;
 							wiltedHmph.alpha = 1;
 							wiltedHmph.animation.play('Hmph');
 						case 1064:
-							wiltbg.visible = false;
-							wiltedwindow.visible = false;
+							destruirsprites(wiltbg, 'wilt/bg', 'doki');
+							destruirsprites(wiltedwindow, 'wilt/p1', 'doki');
 							dad.visible = false;
 							boyfriend.visible = false;
 						case 1100:
@@ -6918,13 +6935,19 @@ class PlayState extends MusicBeatState
 						case 844:
 							forcedPause = 'natsuki';
 							creditsCharSwap("natsuki");
-						case 1228:
+							Paths.limparspriteporchave('credits/window_bottom_' + 'sayori', 'doki');
+							aquiloQueAMonkaGosta('costumes/sayori-casual', "characters/sayori/Doki_SayoCasual_Assets");
+							case 1228:
 							forcedPause = 'yuri';
 							creditsCharSwap("yuri");
 							summmonStickies(true, 8);
+							Paths.limparspriteporchave('credits/window_bottom_' + 'natsuki', 'doki');
+							aquiloQueAMonkaGosta('costumes/natsuki-casual', "characters/natsuki/Doki_NatCasual_Assets");
 						case 1392:
-							staticcredits.visible = true;
-							if (staticcredits != null) FlxTween.tween(staticcredits, {alpha: 1}, CoolUtil.calcSectionLength(5), {ease: FlxEase.sineOut});
+							if (staticcredits != null){
+								staticcredits.visible = true;
+								FlxTween.tween(staticcredits, {alpha: 1}, CoolUtil.calcSectionLength(5), {ease: FlxEase.sineOut});
+							}
 							FlxTween.tween(dad, {alpha: 0}, 5, {ease: FlxEase.sineOut,
 								onComplete: function(tween:FlxTween)
 								{
@@ -6934,8 +6957,10 @@ class PlayState extends MusicBeatState
 							extrachar1.visible = true;
 							FlxTween.tween(extrachar1, {alpha: 1}, 5, {ease: FlxEase.sineOut});
 						case 1488:
-							if (staticcredits != null) staticcredits.alpha = 0.0001;
+							if (staticcredits != null){ staticcredits.alpha = 0.0001;
 							staticcredits.visible = false;
+							destruirsprites(staticcredits, 'credits/HomeStatic', 'doki');
+							}
 							dad.visible = true;
 							dad.alpha = 1;
 							extrachar1.alpha = 0;
@@ -6946,9 +6971,16 @@ class PlayState extends MusicBeatState
 							forcedPause = 'protag';
 							creditsCharSwap("protag");
 							summmonStickies(true, 8);
+							Paths.limparspriteporchave('credits/window_bottom_' + 'yuri', 'doki');
+							aquiloQueAMonkaGosta('costumes/yuri-crazy-casual', "characters/yuri/Doki_Yuri_Casual_Crazy_Assets");
+							aquiloQueAMonkaGosta('costumes/yuri-casual', "characters/yuri/Doki_Yuri_Casual_Assets");
+				
 						case 1876:
 							forcedPause = 'monika';
 							creditsCharSwap("monika");
+							Paths.limparspriteporchave('credits/window_bottom_' + 'protag', 'doki');
+							aquiloQueAMonkaGosta('costumes/protag-casual', "characters/protag/protag_casual");
+
 						case 2240:
 							FlxTween.tween(camHUD, {alpha: 0}, 5, {ease: FlxEase.sineOut});
 							FlxTween.tween(camFollow, {y: -930}, 5, {ease: FlxEase.sineOut});
@@ -7259,9 +7291,11 @@ class PlayState extends MusicBeatState
 							bg3.visible = true;
 							bg2.visible = true;
 							bg.visible = true;
-							if (dokiBackdrop != null) FlxTween.tween(dokiBackdrop, {alpha: 0}, 3, {ease: FlxEase.sineIn, onComplete:function(twn:FlxTween){
+							if (dokiBackdrop != null) {
+								FlxTween.tween(dokiBackdrop, {alpha: 0}, 3, {ease: FlxEase.sineIn, onComplete:function(twn:FlxTween){
 									dokiBackdrop.visible = false;
 								}});
+							}
 						case 1122:
 							blackBars(false);
 							camFocus = false;
@@ -7331,14 +7365,17 @@ class PlayState extends MusicBeatState
 						case 1776:
 							defaultCamZoom = 1;
 						case 1904:
-							dokiBackdrop.visible = true;
-							if (dokiBackdrop != null) FlxTween.tween(dokiBackdrop, {alpha: 1}, CoolUtil.calcSectionLength(0.5), {ease: FlxEase.sineIn,
-							onComplete:function(twn:FlxTween){
-								sky.visible = false;
-								bg3.visible = false;
-								bg2.visible = false;
-								bg.visible = false;
-							}});
+							if (dokiBackdrop != null) {
+								dokiBackdrop.visible = true;
+								FlxTween.tween(dokiBackdrop, {alpha: 1}, CoolUtil.calcSectionLength(0.5), {ease: FlxEase.sineIn,
+									onComplete:function(twn:FlxTween){
+										sky.visible = false;
+										bg3.visible = false;
+										bg2.visible = false;
+										bg.visible = false;
+									}
+								});
+							}
 							defaultCamZoom = 0.9;
 						case 2160:
 							blackBars(false);
@@ -7346,12 +7383,14 @@ class PlayState extends MusicBeatState
 							bg3.visible = true;
 							bg2.visible = true;
 							bg.visible = true;
-							if (dokiBackdrop != null) FlxTween.tween(dokiBackdrop, {alpha: 0}, 3, {ease: FlxEase.sineIn,
-								onComplete: function(twn:FlxTween)
-								{
-									dokiBackdrop.visible = false;
-								}
-							});
+							if (dokiBackdrop != null){
+								FlxTween.tween(dokiBackdrop, {alpha: 0}, 3, {ease: FlxEase.sineIn,
+									onComplete: function(twn:FlxTween)
+									{
+										dokiBackdrop.visible = false;
+									}
+								});
+							}
 						case 2638:
 							camFocus = false;
 							FlxTween.tween(camFollow, {y: -3404, x: 589}, 5, {ease: FlxEase.linear});
@@ -7438,7 +7477,11 @@ class PlayState extends MusicBeatState
 							poemVideo.visible = false;
 							sideWindow.visible = false;
 							poemVideo.alpha = 0.001;
+							remove(poemVideo);
+							poemVideo.kill();
+							poemVideo.destroy();
 							sideWindow.alpha = 0.001;
+							destruirsprites(sideWindow, 'notepad/SideWindow', 'doki');
 
 							new FlxTimer().start(0.7, function(tmr:FlxTimer)
 							{
@@ -7485,7 +7528,7 @@ class PlayState extends MusicBeatState
 
 							camGame2.fade(FlxColor.WHITE, 0.2, true);
 							extractPopup.alpha = 0.001;
-							destruirsprites(extractPopup);
+							destruirsprites(extractPopup, 'libitina/extracting', 'doki');
 							deskBG2Overlay.alpha = 0.15;
 							deskBG2Overlay.visible = true;
 							camHUD.alpha = 1;
@@ -7523,7 +7566,7 @@ class PlayState extends MusicBeatState
 							}
 						case 384:
 							libHando.alpha = 0.001;
-							destruirsprites(libHando);
+							destruirsprites(libHando, 'libitina/Hando', 'doki');
 							camGame2.fade(FlxColor.WHITE, 0.2, true);
 							libiWindow.scale.set(1, 1);
 							boyfriend.setPosition(170, -50);
@@ -7557,9 +7600,10 @@ class PlayState extends MusicBeatState
 							deskBG2Overlay.visible = true;
 							grpPopups.visible = true;
 							libAwaken.alpha = 0.001;
-							destruirsprites(libAwaken);
+							destruirsprites(libAwaken, 'libitina/SheAwakens', 'doki');
 							camGame2.fade(FlxColor.WHITE, 0.2, true);
 							addcharacter('ghost-sketch', 0);
+							Paths.limparspriteporchave('characters/ghost/LibiIntro_Assets', 'preload');
 							boyfriend.cameras = [camGame2];
 
 							remove(grpPopups);
@@ -7570,20 +7614,26 @@ class PlayState extends MusicBeatState
 								FlxTween.tween(testVMLE, {alpha: 0.001}, CoolUtil.calcSectionLength(), {ease: FlxEase.sineOut,
 								onComplete: function(tween:FlxTween)
 								{
-									destruirsprites(testVMLE);
+									destruirsprites(testVMLE, 'libitina/testVM', 'doki');
 								}
 							});
 						case 1200:
 							FlxTween.tween(deskBG2Overlay, {alpha: 0.001}, CoolUtil.calcSectionLength(), {ease: FlxEase.linear,
 								onComplete: function(tween:FlxTween)
 								{
-									destruirsprites(deskBG2Overlay);
+									destruirsprites(deskBG2Overlay, 'libitina/lightoverlay', 'doki');
 								}
 							});
 							camGame2.fade(FlxColor.WHITE, CoolUtil.calcSectionLength(), false);
 						case 1216:
 
+							
 							addcharacter('ghost', 0);
+							preloadGroup.remove(preloadMap.get('ghost-sketch'));
+							preloadMap.remove('ghost-sketch');
+							Paths.limparspriteporchave('characters/ghost/Libitina_tmp', 'preload');
+							//Espero ter te orgulhado monka, my beloved
+
 							boyfriend.cameras = [camGame2];
 
 							ghostBG.alpha = 1;
@@ -7598,7 +7648,7 @@ class PlayState extends MusicBeatState
 							add(libVignette);
 						case 1712:
 							ghostBG.alpha = 0.001;
-							destruirsprites(ghostBG);
+							destruirsprites(ghostBG, 'libitina/ghostbg', 'doki');
 							libVignette.alpha = 0.001;
 							libVignette.visible = false;
 							staticshock.alpha = 1;
@@ -7616,17 +7666,17 @@ class PlayState extends MusicBeatState
 						case 1984:
 							camGame2.fade(FlxColor.WHITE, 0.2, true);
 							eyeBG.alpha = 0.001;
-							destruirsprites(eyeBG);
+							destruirsprites(eyeBG, 'libitina/eyebg', 'doki');
 							eyeShadow.alpha = 0.001;
-							destruirsprites(eyeShadow);
+							destruirsprites(eyeShadow, 'libitina/EyeShadow', 'doki');
 							eyeMidwayBG.alpha = 0.001;
-							destruirsprites(eyeMidwayBG);
+							destruirsprites(eyeMidwayBG, 'libitina/EyeMidwayBG', 'doki');
 							infoBG.alpha = 1;
 							infoBG.visible = true;
 						case 2240:
 							camGame2.fade(FlxColor.WHITE, 0.2, true);
 							infoBG.alpha = 0.001;
-							destruirsprites(infoBG);
+							destruirsprites(infoBG, 'libitina/InfoMidwayBG', 'doki');
 							infoBG2.visible = true;
 							infoBG2.alpha = 1;
 						case 2480:
@@ -7634,7 +7684,7 @@ class PlayState extends MusicBeatState
 						case 2496:
 							camGame2.fade(FlxColor.WHITE, 0.2, true);
 							infoBG2.alpha = 0.001;
-							destruirsprites(infoBG2);
+							destruirsprites(infoBG2, 'libitina/InfoMidwayBGInvert', 'doki');
 							crackBGLE.alpha = 1;
 							crackBGLE.visible = true;
 
@@ -7654,13 +7704,18 @@ class PlayState extends MusicBeatState
 
 							remove(libiWindow);
 							insert(members.indexOf(boyfriend) + 69, libiWindow);
+							addcharacter('invisibruLibi', 0); //Isso aqui é bem inútil, mas honestamente
+							//É absurdamente satisfatório ver a memória caindo com o tempo k
+							preloadGroup.remove(preloadMap.get('ghost'));
+							preloadMap.remove('ghost');
+							Paths.limparspriteporchave('characters/ghost/Libitina', 'preload');
 						case 3008:
 							camGame2.fade(FlxColor.WHITE, 0, false);
 							boyfriend.alpha = 0.001;
-							destruirsprites(libiWindow);
+							destruirsprites(libiWindow, 'libitina/bigwindow', 'doki');
 
 							crackBGLE.alpha = 0.001;
-							destruirsprites(crackBGLE);
+							destruirsprites(crackBGLE, 'libitina/crackbg', 'doki');
 
 							noteCam = false;
 							camZooming = false;
@@ -7696,13 +7751,13 @@ class PlayState extends MusicBeatState
 								onComplete: function(tween:FlxTween)
 								{
 									libFinaleBG.alpha = 0.001;
-									destruirsprites(libFinaleBG);
+									destruirsprites(libFinaleBG, 'libitina/finale/FinaleBG', 'doki');
 									libGhost.alpha = 0.001;
-									destruirsprites(libGhost);
+									destruirsprites(libGhost, 'libitina/finale/LibiFinaleDramatic', 'doki');
 									libParty.alpha = 0.001;
-									destruirsprites(libParty);
+									destruirsprites(libParty, 'libitina/finale/GOONS1', 'doki');
 									libRockIs.alpha = 0.001;
-									destruirsprites(libRockIs);
+									destruirsprites(libRockIs, 'libitina/finale/GOONS2', 'doki');
 								}
 							});
 						case 3648:
@@ -7721,7 +7776,7 @@ class PlayState extends MusicBeatState
 							deskBG2.loadGraphic(Paths.image('libitina/outroscreen', 'doki'));
 							camHUD.alpha = 0.001;
 							libFinale.alpha = 0.001;
-							destruirsprites(libFinale);
+							destruirsprites(libFinale, 'libitina/finale/Finale2', 'doki');
 							deskBG2.alpha = 1;
 							deskBG2.visible = true;
 						case 3711:
@@ -7743,19 +7798,19 @@ class PlayState extends MusicBeatState
 
 							deskBG2.alpha = 0.001;
 							deskBG2.visible = false;
-							destruirsprites(deskBG2);
+							destruirsprites(deskBG2, 'libitina/introscreen', 'doki');
 							libFinaleOverlay.alpha = 0.001;
-							destruirsprites(libFinaleOverlay);
+							destruirsprites(libFinaleOverlay, 'libitina/finale/ShesWatching', 'doki');
 						case 3760:
 							camGame2.fade(FlxColor.WHITE, 0.3, true);
 							metadataDisplay.visible = false;
 							camHUD.alpha = 0.001;
 							deskBG1.alpha = 0.001;
-							destruirsprites(deskBG1);
+							destruirsprites(deskBG1, 'libitina/outrodesk', 'doki');
 
 							if (!SaveData.lowEnd){
 								rainBG.alpha = 0.001;
-								destruirsprites(rainBG);
+								destruirsprites(rainBG, 'libitina/chuva', 'doki');
 							}
 					}
 			}
@@ -8039,9 +8094,13 @@ class PlayState extends MusicBeatState
 							}
 						});
 					case 112 | 264:
-						if (bakaOverlay != null) FlxTween.tween(bakaOverlay, {alpha: 0}, CoolUtil.calcSectionLength(2), {ease: FlxEase.sineOut, onComplete:function(twn:FlxTween){
-									bakaOverlay.visible = false;
-								}});
+						if (bakaOverlay != null){
+							FlxTween.tween(bakaOverlay, {alpha: 0}, CoolUtil.calcSectionLength(2), {ease: FlxEase.sineOut, 
+								onComplete:function(twn:FlxTween){
+								bakaOverlay.visible = false;
+								}
+							});
+						}
 					case 144:
 						if (bakaOverlay != null)
 						{
@@ -8125,8 +8184,10 @@ class PlayState extends MusicBeatState
 							}
 						});
 					case 585:
-						if (dokiBackdrop != null)
+						if (dokiBackdrop != null){
+							dokiBackdrop.visible = true;
 							FlxTween.tween(dokiBackdrop, {alpha: 1}, CoolUtil.calcSectionLength(), {ease: FlxEase.sineIn});
+						}
 					case 648:
 						FlxTween.tween(FlxG.camera, {zoom: 0.9}, CoolUtil.calcSectionLength(), {
 							ease: FlxEase.sineOut,
@@ -8136,8 +8197,13 @@ class PlayState extends MusicBeatState
 							}
 						});
 
-						if (dokiBackdrop != null)
-							FlxTween.tween(dokiBackdrop, {alpha: 0.001}, CoolUtil.calcSectionLength(0.5), {ease: FlxEase.sineOut});
+						if (dokiBackdrop != null){
+							FlxTween.tween(dokiBackdrop, {alpha: 0.001}, CoolUtil.calcSectionLength(0.5), {ease: FlxEase.sineOut,
+								onComplete: function(twn:FlxTween){
+									dokiBackdrop.visible = false;
+								}
+							});
+						}
 
 						popup.visible = true;
 						popup.animation.play('idle', true);
@@ -8499,6 +8565,8 @@ class PlayState extends MusicBeatState
 			return false;
 	}
 
+	var microArrayofStickies:Array<String> = [];
+
 	function summmonStickies(?fadeOut:Bool, ?startDelayDur:Float = 0.5)
 	{
 		if (!SaveData.lowEnd)
@@ -8524,7 +8592,8 @@ class PlayState extends MusicBeatState
 				else //FIX FOUND
 					trace('This Sticker doesnt exists ' + stickerData.length + ' which number' + rand);
 
-				item.loadGraphic(Paths.image('stickies/' + stike, 'preload', false, true));
+				item.loadGraphic(Paths.image('stickies/' + stike, 'preload', false, false));
+				microArrayofStickies.push('stickies/' + stike);
 				stickerData.remove(stike);
 				item.scale.set(1, 1);
 				FlxTween.tween(item, {"scale.x": 0.85, "scale.y": 0.85}, 0.1, {});
@@ -8534,6 +8603,11 @@ class PlayState extends MusicBeatState
 				onComplete: function(tween:FlxTween)
 				{
 					stickerSprites.visible = false;
+					for(stick in microArrayofStickies){
+						Paths.limparspriteporchave(stick, 'preload');
+						microArrayofStickies.remove(stick);
+						
+					}
 				}
 			});
 		}
@@ -8736,12 +8810,16 @@ class PlayState extends MusicBeatState
 		var boxFlash:FlxSprite = new FlxSprite(p2Box.x, p2Box.y).makeGraphic(745, 864, FlxColor.WHITE);
 		boxFlash.alpha = 1;
 		boxFlash.cameras = [camGame2];
+		boxFlash.visible = true;
 		insert(members.indexOf(p2Boxtop) - 1, boxFlash);
 		FlxTween.tween(boxFlash, {alpha: 0.001}, CoolUtil.calcSectionLength(0.1), {ease: FlxEase.sineOut,
 			 onComplete:function(twn:FlxTween){
-				destruirsprites(boxFlash);
+				//destruirsprites(boxFlash); //Testing
+				boxFlash.visible = false;
+					
 			}
 		});
+
 	}
 
 	function loadYuriSparkles()
@@ -8980,7 +9058,7 @@ class PlayState extends MusicBeatState
 					if (!toggleBotplay && !practiceModeToggled) SaveData.yamLoss = true;
 					killPlayer(1);
 			}
-			if (!boyfriendFuckingDead){
+			/*if (!boyfriendFuckingDead){
 				for (key in preloadMap.keys()){//Limpando cache depois disso pois né?
 					if (key != who || key != 'protag'){
 						var obj = preloadMap.get(key);
@@ -8988,7 +9066,7 @@ class PlayState extends MusicBeatState
 						preloadMap.remove(key);
 					}
 				}
-			}
+			}*/ //Não mais nescessário haja vista que agora eles não são mais carregados ao mesmo tempo
 			SaveData.save();
 			FlxTween.tween(iconP2, {alpha: 1}, 1, {ease: FlxEase.linear});
 		});
@@ -9054,11 +9132,21 @@ class PlayState extends MusicBeatState
 		openSubState(new PauseSubState(forcedPause, boyfriend.getScreenPosition().x, boyfriend.getScreenPosition().y));
 	}
 
-	function destruirsprites(sprite:FlxSprite){
+	function aquiloQueAMonkaGosta(json:String, png:String){
+		if(preloadMap.exists(json)){
+		preloadGroup.remove(preloadMap.get(json));
+		preloadMap.remove(json);
+		}
+		Paths.limparspriteporchave(png, 'preload');
+	}
+
+	function destruirsprites(sprite:FlxSprite, chave:String = '', library:String = ''){
 		sprite.visible = false;
 		remove(sprite);
 		sprite.kill();
 		sprite.destroy();
+		if(chave.length > 2)
+			Paths.limparspriteporchave(chave, library);
 	}
 }
 //Oi monkaaaaaaaaaaaaa turu bão??? Aparentemente o x02 gostou de te deletar...

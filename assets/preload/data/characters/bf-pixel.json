@@ -130,6 +130,7 @@
 	],
 	"sing_duration": 4,
 	"scale": 6,
+	"usegpu": true,
 	"gameover_character": "bf-pixel-dead",
 	"death_sound": "fnf_loss_sfx-pixel",
 	"win_sound": "dah"

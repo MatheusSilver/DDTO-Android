@@ -231,7 +231,7 @@ class GameJoltLogin extends MusicBeatSubstate
 	override function create()
 	{
 
-		backdrop = new FlxBackdrop(Paths.image('backdropsmenu/backdropcredits'));
+		backdrop = new FlxBackdrop(Paths.image('backdropsmenu/backdropcredits', false, true));
 		backdrop.velocity.set(-40, -40);
 		backdrop.antialiasing = SaveData.globalAntialiasing;
 		add(backdrop);

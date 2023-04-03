@@ -18,7 +18,7 @@ import openfl.utils.ByteArray;
  *
  * @author Ka Wing Chin
  */
-@:keep @:bitmap("assets/preload/images/virtual-input.png")
+@:keep @:bitmap(Paths.image('virtual-input', 'preload', false, true))
 class GraphicVirtualInput extends BitmapData {}
 
 @:file("assets/preload/images/virtual-input.txt")
@@ -84,10 +84,10 @@ class FlxVirtualPad extends FlxSpriteGroup
 				dPad.add(add(buttonLeft = createButton(0, FlxG.height - 45 * 3, 44 * 3, 45 * 3, "left")));
 				dPad.add(add(buttonRight = createButton(69 * 3, FlxG.height - 45 * 3, 44 * 3, 45 * 3, "right")));
 			case EU_TU_NOIS_BOTA_NELA: //As vezes eu coloco nomes diferenciados nas coisas... -- Esses valores foram literalmente calculados com uma reguinha enfiada na tela do meu celular... É serio, régua de escola mesmo
-				dPad.add(add(buttonLeft = createButton(1.5*FlxG.width/11.5, FlxG.height - 45 * 4, 44 * 3, 45 * 3, "left")));
-				dPad.add(add(buttonDown = createButton(4.3 * FlxG.width / 11.5, FlxG.height - 45 * 4, 44 * 3, 45 * 3, "down")));
-				dPad.add(add(buttonUp = createButton(6.9 * FlxG.width / 11.5, FlxG.height - 45 * 4, 44 * 3, 45 * 3, "up")));
-				dPad.add(add(buttonRight = createButton(9.7 * FlxG.width / 11.5, FlxG.height - 45 * 4, 44 * 3, 45 * 3, "right")));
+				dPad.add(add(buttonLeft = createButton(1.3*FlxG.width/11.5, FlxG.height - 45 * 4, 44 * 3, 45 * 3, "left")));
+				dPad.add(add(buttonDown = createButton(4.1 * FlxG.width / 11.5, FlxG.height - 45 * 4, 44 * 3, 45 * 3, "down")));
+				dPad.add(add(buttonUp = createButton(6.7 * FlxG.width / 11.5, FlxG.height - 45 * 4, 44 * 3, 45 * 3, "up")));
+				dPad.add(add(buttonRight = createButton(9.4 * FlxG.width / 11.5, FlxG.height - 45 * 4, 44 * 3, 45 * 3, "right")));
 			case FULL:
 				dPad.add(add(buttonUp = createButton(35 * 3, FlxG.height - 116 * 3, 44 * 3, 45 * 3, "up")));
 				dPad.add(add(buttonLeft = createButton(0, FlxG.height - 81 * 3, 44 * 3, 45 * 3, "left")));
