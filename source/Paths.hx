@@ -33,7 +33,7 @@ class Paths
 
 	public static final extensions:Map<String, String> = ["image" => "png", "audio" => "ogg", "video" => "mp4"];
 
-	public static final limites:Array<Int> = [400, 500, 600]; //Esperança para 1gb de RAM, mas tenho certeza que isso não será suficiente para Love n' Funkin, Libitina e outras pesadonas.
+	public static final limites:Array<Int> = [500, 600, 700]; //Esperança para 1gb de RAM, mas tenho certeza que isso não será suficiente para Love n' Funkin, Libitina e outras pesadonas.
 
 	public static var dumpExclusions:Array<String> = [];
 

@@ -53,7 +53,7 @@
 			"fps": 24,
 			"anim": "danceLeft",
 			"indices": [
-				23,
+				16,
 				0,
 				1,
 				2,
@@ -77,16 +77,12 @@
 			"fps": 24,
 			"anim": "danceRight",
 			"indices": [
+				10,
 				11,
 				12,
 				13,
 				14,
-				15,
-				17,
-				18,
-				19,
-				20,
-				21
+				15
 			],
 			"name": "Sayo_Idle"
 		},

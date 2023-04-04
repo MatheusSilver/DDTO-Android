@@ -228,6 +228,18 @@ class DialogueBox extends FlxSpriteGroup
 		}
 
 		super.update(elapsed);
+
+		if (portraitLeft.alpha < 0.01 && portraitLeft.visible){
+			portraitLeft.visible = false;
+			//trace('tentando deixar retrato esquerda invisivel');
+		}else if (!portraitLeft.visible && portraitLeft.alpha > 0.02)
+			portraitLeft.visible = true;
+
+		if (portraitRight.alpha < 0.01 && portraitRight.visible){
+			portraitRight.visible = false;
+			//trace('tentando deixar retrato direita invisivel');
+		}else if (!portraitRight.visible && portraitRight.alpha > 0.02)
+			portraitRight.visible = true;
 	}
 
 	function endinstantly()

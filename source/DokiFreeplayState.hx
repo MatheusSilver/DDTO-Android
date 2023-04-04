@@ -331,6 +331,8 @@ class DokiFreeplayState extends MusicBeatState
 
 		addbackButton(true);
 
+		diffselect = false;
+
 		BSLTouchUtils.prevTouched = -1; //Só pra garantir k
 
 		super.create();
@@ -433,16 +435,13 @@ class DokiFreeplayState extends MusicBeatState
 			if (FlxG.keys.justPressed.FIVE && SaveData.beatLibitina)
 				changePageHotkey(4);
 
-			if (controls.LEFT_P && !diffselect)
+			if ((controls.LEFT_P || BSLTouchUtils.apertasimples(leftArrow)) && !diffselect)
 				changePageHotkey(-1, false);
-
-			if (controls.RIGHT_P && !diffselect)
+			
+			if ((controls.RIGHT_P || BSLTouchUtils.apertasimples(rightArrow))&& !diffselect)
 				changePageHotkey(1, false);
 
-			if (BSLTouchUtils.apertasimples(leftArrow))
-				changePageHotkey(-1, false);
-			else if (BSLTouchUtils.apertasimples(rightArrow))
-				changePageHotkey(1, false);
+			//Eu amo a Monka, mas as vezes ela é chatona man...
 
 			if (controls.BACK || _backButton.justPressed #if android || FlxG.android.justReleased.BACK #end)
 			{

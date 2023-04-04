@@ -1463,7 +1463,6 @@ class PlayState extends MusicBeatState
 					popup.frames = Paths.getSparrowAtlas('bigmonika/bigika_delete', 'doki', true);
 					popup.animation.addByPrefix('idle', "PopUpAnim", 24, false);
 					popup.animation.play('idle', true);
-					popup.setGraphicSize(Std.int(popup.width * 3));
 					popup.antialiasing = SaveData.globalAntialiasing;
 					popup.scrollFactor.set(1, 1);
 					popup.cameras = [camGame2];
@@ -1471,11 +1470,8 @@ class PlayState extends MusicBeatState
 				}
 			case 'musicroom':
 				{
-					stage_front = new BGSprite('musicroom/Music_Room_FG', 'doki', -250, -100, 1.2, 1);
-					stage_front.setGraphicSize(Std.int(stage_front.width * 1.5));
-					stage_front.updateHitbox();
 
-					clubroom = new BGSprite('musicroom/Music_Room', 'doki', -250, -100, 1, 1);
+					clubroom = new BGSprite('musicroom/'+ (SONG.song.toLowerCase() == 'love n funkin' ? 'Music_RoomLNF' : 'Music_Room'), 'doki', -250, -100, 1, 1);
 					clubroom.setGraphicSize(Std.int(clubroom.width * 1.5));
 					clubroom.updateHitbox();
 					add(clubroom);
@@ -1486,17 +1482,22 @@ class PlayState extends MusicBeatState
 						add(sparkleBG);
 					}
 
-					lightoverlay = new BGSprite('musicroom/Music_RoomLight', 'doki', -250, -100, 1.1, 0.9);
-					lightoverlay.setGraphicSize(Std.int(lightoverlay.width * 1.5));
-					lightoverlay.updateHitbox();
-					if(!SaveData.lowEnd && !SaveData.globalAntialiasing)	
-						lightoverlay.blend = ADD;
+					if(!SaveData.lowEnd ){
+						stage_front = new BGSprite('musicroom/Music_Room_FG', 'doki', -250, -100, 1.2, 1);
+						stage_front.setGraphicSize(Std.int(stage_front.width * 1.5));
+						stage_front.updateHitbox();
+
+						lightoverlay = new BGSprite('musicroom/Music_RoomLight', 'doki', -250, -100, 1.1, 0.9);
+						lightoverlay.setGraphicSize(Std.int(lightoverlay.width * 1.5));
+						lightoverlay.updateHitbox();
+						if(!SaveData.globalAntialiasing)	
+							lightoverlay.blend = ADD;
+
+					}
 
 					// love n' funkin'
-					if (SONG.song.toLowerCase() == 'love n funkin')
+					if (SONG.song.toLowerCase() == 'love n funkin' && !SaveData.lowEnd)
 					{
-						clubroom.loadGraphic(Paths.image('musicroom/Music_RoomLNF', 'doki'));
-
 						poemVideo = new FlxAnimate(0, 0, Paths.getLibraryPath('images/notepad/infelizmenteflxanimate', 'doki'));
 						poemVideo.showPivot = false;
 						poemVideo.anim.addBySymbol('hando', 'lnf video');
@@ -1586,6 +1587,8 @@ class PlayState extends MusicBeatState
 					libHando.visible =false;
 					add(libHando);
 
+					if (!SaveData.lowEnd)
+					{
 					deskBG2Overlay = new BGSprite('libitina/lightoverlay', 'doki', 0, 0, 0, 0);
 					deskBG2Overlay.setGraphicSize(Std.int((FlxG.width * 1.2) / defaultCamZoom));
 					deskBG2Overlay.updateHitbox();
@@ -1594,6 +1597,7 @@ class PlayState extends MusicBeatState
 					deskBG2Overlay.alpha = 0.001;
 					deskBG2Overlay.visible =false;
 					add(deskBG2Overlay);
+					}
 
 					libAwaken = new BGSprite('libitina/SheAwakens', 'doki', 0, 0, 0, 0, ['idle', 'SheAwakens']);
 					libAwaken.setGraphicSize(Std.int((libAwaken.width * 1.1)*2 / defaultCamZoom));
@@ -1883,7 +1887,8 @@ class PlayState extends MusicBeatState
 					case "natsuki":
 						{
 							if(SONG.song.toLowerCase() != 'catfight'){
-								sayori.setPosition(1050, 250);
+								if(sayori != null)
+									sayori.setPosition(1050, 250);
 								yuri.setPosition(130, 176);
 							}
 							
@@ -1891,20 +1896,23 @@ class PlayState extends MusicBeatState
 					case "yuri" | "yuri-crazy":
 						{
 							if(SONG.song.toLowerCase() != 'catfight'){
-								sayori.setPosition(-49, 247);
+								if(sayori != null)
+									sayori.setPosition(-49, 247);
 								natsuki.setPosition(1044, 290);
 							}
 						}
 					case "monika":
 						{
-							sayori.setPosition(134, 246);
+							if(sayori != null)
+								sayori.setPosition(134, 246);
 							yuri.setPosition(-74, 176);
 							natsuki.setPosition(1044, 290);
 							
 						}
 					case "protag":
 						{
-							sayori.setPosition(-49, 247);
+							if(sayori != null)
+								sayori.setPosition(-49, 247);
 							yuri.setPosition(379, 176);
 							natsuki.setPosition(1044, 290);
 							monika.setPosition(1207, 173);
@@ -1917,14 +1925,16 @@ class PlayState extends MusicBeatState
 				{
 					case "natsuki":
 						{
-							sayori.setPosition(-49, 247);
+							if(sayori != null)
+								sayori.setPosition(-49, 247);
 							yuri.setPosition(1044, 178);
 							protag.setPosition(379, 152);
 							monika.setPosition(1207, 173);
 						}
 					case "yuri" | "yuri-crazy":
 						{
-							sayori.setPosition(-49, 247);
+							if(sayori != null)
+								sayori.setPosition(-49, 247);
 							natsuki.setPosition(1044, 290);
 							protag.setPosition(379, 152);
 							monika.setPosition(1207, 173);
@@ -1938,7 +1948,8 @@ class PlayState extends MusicBeatState
 						}
 					case "monika":
 						{
-							sayori.setPosition(-49, 247);
+							if(sayori != null)
+								sayori.setPosition(-49, 247);
 							yuri.setPosition(1044, 178);
 							natsuki.setPosition(1247, 303);
 							protag.setPosition(150, 152);
@@ -2140,13 +2151,15 @@ class PlayState extends MusicBeatState
 					cg2Group.visible = false;
 				}
 
-				cg2Light = new BGSprite('musicroom/CG/bigone/cg2Light', 'doki', 0, 0, 0, 0);
-				cg2Light.alpha = 0.001;
-				cg2Light.setGraphicSize(Std.int(cg2Light.width / FlxG.camera.zoom));
-				cg2Light.updateHitbox();
-				cg2Light.screenCenter();
-				cg2Light.cameras = [camHUD];
-				add(cg2Light);
+				if(!SaveData.lowEnd){
+					cg2Light = new BGSprite('musicroom/CG/bigone/cg2Light', 'doki', 0, 0, 0, 0);
+					cg2Light.alpha = 0.001;
+					cg2Light.setGraphicSize(Std.int(cg2Light.width / FlxG.camera.zoom));
+					cg2Light.updateHitbox();
+					cg2Light.screenCenter();
+					cg2Light.cameras = [camHUD];
+					add(cg2Light);
+				}
 
 
 				whiteflash.makeGraphic(FlxG.width * 3, FlxG.height * 3, FlxColor.WHITE);
@@ -2249,7 +2262,7 @@ class PlayState extends MusicBeatState
 			add(encoreborder);
 		}
 		
-		if (curStage == 'musicroom')
+		if (curStage == 'musicroom' && !SaveData.lowEnd)
 		{
 			add(stage_front);
 			add(lightoverlay);
@@ -2763,8 +2776,10 @@ class PlayState extends MusicBeatState
 
 				camGame2.visible = false;
 
+				if(!SaveData.lowEnd){
 				add(poemVideo);
 				add(sideWindow);
+				}
 
 				if (isStoryMode && showCutscene)
 				{
@@ -4186,7 +4201,9 @@ class PlayState extends MusicBeatState
 			if (newCharacter == 'monika' && SaveData.monikacostume == 'casuallong' && !isStoryMode)
 				boyfriend.x += 120;
 			
-			addCharacterToList(boyfriend.gameoverchara);
+			if(!SaveData.lowEnd)
+				addCharacterToList(boyfriend.gameoverchara);
+			
 			boyfriend.dance();
 			case 1:
 				// Player 2
@@ -4295,7 +4312,7 @@ class PlayState extends MusicBeatState
 
 				remove(gf);
 
-				if (SONG.player2.startsWith('sayori') && (SONG.gfVersion == 'gf-realdoki' && SaveData.gfcostume == "sayo"))
+				if (( SONG.player2.startsWith('sayori') || SONG.song.toLowerCase()== 'obsession') && (SONG.gfVersion == 'gf-realdoki' && SaveData.gfcostume == "sayo"))
 					costume = 'hueh';
 
 				if(SONG.song.toLowerCase()!='takeover medley') //Maldito orfão...
@@ -7398,6 +7415,7 @@ class PlayState extends MusicBeatState
 					}
 				case 'love n funkin':
 					// Jorge please don't kill me ~M&M
+					if(!SaveData.lowEnd){
 					switch (curStep)
 					{
 						case 384:
@@ -7488,6 +7506,7 @@ class PlayState extends MusicBeatState
 								camGame2.visible = false;
 							});
 					}
+				}
 				case 'libitina':
 					switch (curStep)
 					{
@@ -7529,8 +7548,11 @@ class PlayState extends MusicBeatState
 							camGame2.fade(FlxColor.WHITE, 0.2, true);
 							extractPopup.alpha = 0.001;
 							destruirsprites(extractPopup, 'libitina/extracting', 'doki');
+							if (!SaveData.lowEnd)
+							{
 							deskBG2Overlay.alpha = 0.15;
 							deskBG2Overlay.visible = true;
+							}
 							camHUD.alpha = 1;
 
 							testVMLE.visible = true;
@@ -7582,8 +7604,11 @@ class PlayState extends MusicBeatState
 
 							libiWindow.alpha = 0.001;
 							boyfriend.alpha = 0.001;
+							if (!SaveData.lowEnd)
+							{
 							deskBG2Overlay.alpha = 0.001;
 							deskBG2Overlay.visible = false;
+							}
 							grpPopups.visible = false;
 							libAwaken.alpha = 1;
 							libAwaken.visible = true;
@@ -7596,8 +7621,11 @@ class PlayState extends MusicBeatState
 								testVMLE.visible = true;
 
 							boyfriend.alpha = 1;
+							if (!SaveData.lowEnd)
+							{
 							deskBG2Overlay.alpha = 0.15;
 							deskBG2Overlay.visible = true;
+							}
 							grpPopups.visible = true;
 							libAwaken.alpha = 0.001;
 							destruirsprites(libAwaken, 'libitina/SheAwakens', 'doki');
@@ -7618,12 +7646,15 @@ class PlayState extends MusicBeatState
 								}
 							});
 						case 1200:
+							if (!SaveData.lowEnd)
+							{
 							FlxTween.tween(deskBG2Overlay, {alpha: 0.001}, CoolUtil.calcSectionLength(), {ease: FlxEase.linear,
 								onComplete: function(tween:FlxTween)
 								{
 									destruirsprites(deskBG2Overlay, 'libitina/lightoverlay', 'doki');
 								}
 							});
+							}
 							camGame2.fade(FlxColor.WHITE, CoolUtil.calcSectionLength(), false);
 						case 1216:
 
@@ -8286,7 +8317,7 @@ class PlayState extends MusicBeatState
 			if (SaveData.earlyLate)
 				judgementCounter.text += '\n${LangUtil.getString('cmnEarly')}: $earlys\n${LangUtil.getString('cmnLate')}: $lates\n';
 
-			judgementCounter.text += '\n${LangUtil.getString('cmnMax')}: $maxCombo\n';
+			judgementCounter.text += '\n${'Combo máximo'}: $maxCombo\n';
 		}
 	}
 

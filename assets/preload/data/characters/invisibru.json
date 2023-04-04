@@ -292,6 +292,39 @@
 			"name": "GF Dancing Beat Hair Landing"
 		},
 		{
+			"offsets": [
+				37,
+				11
+			],
+			"loop": false,
+			"fps": 1,
+			"anim": "firstDeath",
+			"indices": [],
+			"name": "GF Dancing Beat Hair Landing"
+		},
+		{
+			"offsets": [
+				37,
+				5
+			],
+			"loop": true,
+			"fps": 1,
+			"anim": "deathLoop",
+			"indices": [],
+			"name": "GF Dancing Beat Hair Landing"
+		},
+		{
+			"offsets": [
+				37,
+				69
+			],
+			"loop": false,
+			"fps": 1,
+			"anim": "deathConfirm",
+			"indices": [],
+			"name": "GF Dancing Beat Hair Landing"
+		},
+		{
 			"loop": false,
 			"offsets": [
 				0,

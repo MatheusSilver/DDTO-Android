@@ -17,12 +17,10 @@
 <SubTexture name="Sayo_Idle0014" x="1398" y="562" width="699" height="560" frameX="-2" frameY="-4" frameWidth="703" frameHeight="564" />
 <SubTexture name="Sayo_Idle0015" x="2800" y="0" width="699" height="562" frameX="-2" frameY="-2" frameWidth="703" frameHeight="564" />
 <SubTexture name="Sayo_Idle0016" x="2800" y="0" width="699" height="562" frameX="-2" frameY="-2" frameWidth="703" frameHeight="564" />
-<SubTexture name="Sayo_Idle0017" x="2800" y="0" width="699" height="562" frameX="-2" frameY="-2" frameWidth="703" frameHeight="564" />
-<SubTexture name="Sayo_Idle0018" x="2800" y="0" width="699" height="562" frameX="-2" frameY="-2" frameWidth="703" frameHeight="564" />
-<SubTexture name="Sayo_Idle0019" x="2800" y="0" width="699" height="562" frameX="-2" frameY="-2" frameWidth="703" frameHeight="564" />
-<SubTexture name="Sayo_Idle0020" x="2800" y="0" width="699" height="562" frameX="-2" frameY="-2" frameWidth="703" frameHeight="564" />
-<SubTexture name="Sayo_Idle0021" x="2800" y="0" width="699" height="562" frameX="-2" frameY="-2" frameWidth="703" frameHeight="564" />
-<SubTexture name="Sayo_Idle0022" x="2800" y="0" width="699" height="562" frameX="-2" frameY="-2" frameWidth="703" frameHeight="564" />
+<SubTexture name="Sayo_Idle0017" x="1398" y="562" width="699" height="560" frameX="-2" frameY="-4" frameWidth="703" frameHeight="564" />
+<SubTexture name="Sayo_Idle0018" x="1398" y="562" width="699" height="560" frameX="-2" frameY="-4" frameWidth="703" frameHeight="564" />
+<SubTexture name="Sayo_Idle0019" x="699" y="562" width="699" height="556" frameX="-2" frameY="-8" frameWidth="703" frameHeight="564" />
+<SubTexture name="Sayo_Idle0020" x="699" y="562" width="699" height="556" frameX="-2" frameY="-8" frameWidth="703" frameHeight="564" />
 <SubTexture name="Sayo_Idle_gone0000" x="2796" y="562" width="703" height="352" frameX="0" frameY="0" frameWidth="703" frameHeight="352" />
 <SubTexture name="Sayo_Idle_gone0001" x="2097" y="562" width="699" height="352" frameX="-2" frameY="0" frameWidth="703" frameHeight="352" />
 <SubTexture name="Sayo_Idle_gone0002" x="2097" y="562" width="699" height="352" frameX="-2" frameY="0" frameWidth="703" frameHeight="352" />

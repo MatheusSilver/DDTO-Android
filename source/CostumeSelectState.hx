@@ -263,11 +263,12 @@ class CostumeSelectState extends MusicBeatState
 				if (chara.color == 0x000000)
 					chara.color = 0xFFFFFF;
 			}
-			if (controls.ACCEPT)
+			var secrettrigger = BSLTouchUtils.apertasimples(chara);
+			if (controls.ACCEPT || (secrettrigger && selectingcostume))
 				if (!selectingcostume)
 					costumeselect(true);
 				else
-					savecostume();
+					savecostume(secrettrigger);
 		}
 	}
 
@@ -304,6 +305,8 @@ class CostumeSelectState extends MusicBeatState
 			chara.loadGraphic(Paths.image('costume/' + char + '-' + charCostume, 'preload'));
 		else
 			chara.loadGraphic(Paths.image('costume/' + char, 'preload'));
+
+		chara.updateHitbox();
 
 		if (costumeUnlocked[curSelected][costumeSelected])
 		{
@@ -536,7 +539,7 @@ class CostumeSelectState extends MusicBeatState
 		}
 	}
 
-	function savecostume()
+	function savecostume(secret:Bool = false)
 	{
 		BSLTouchUtils.prevTouched = -1;
 		var daChoice:String = character[curSelected];
@@ -555,50 +558,50 @@ class CostumeSelectState extends MusicBeatState
 				case 4:
 					SaveData.natsukicostume = selection.data;
 
-					if (costumeSelected == 0 && FlxG.keys.pressed.B)
+					if (costumeSelected == 0 && (FlxG.keys.pressed.B || secret))
 						SaveData.natsukicostume = "buff";
 				case 3:
 					SaveData.sayoricostume = selection.data;
 				case 2:
 					SaveData.monikacostume = selection.data;
 
-					if (costumeSelected == 1 && (controls.LEFT || controls.RIGHT))
+					if (costumeSelected == 1 && (controls.LEFT || controls.RIGHT || secret))
 						SaveData.monikacostume = "casuallong";
 				case 1:
 					SaveData.gfcostume = selection.data;
 					
-					if (costumeSelected == 0 && FlxG.keys.pressed.B && SaveData.beatCatfight)
+					if (costumeSelected == 0 && (FlxG.keys.pressed.B || secret) && SaveData.beatCatfight)
 					{
 						colorthingie = 0xFF94D9FA;
 						SaveData.gfcostume = "sayo";
 					}
 						
-					if (costumeSelected == 1 && (controls.LEFT || controls.RIGHT))
+					if (costumeSelected == 1 && (controls.LEFT || controls.RIGHT || secret))
 						SaveData.gfcostume = "christmas";
 				default:
 					SaveData.bfcostume = selection.data;
 
 					// Variations
-					if (costumeSelected == 0 && FlxG.keys.pressed.B)
+					if (costumeSelected == 0 && (FlxG.keys.pressed.B || secret))
 					{
 						colorthingie = 0xFFFFADD7;
 						SaveData.bfcostume = "sutazu";
 					}
-					if (costumeSelected == 1 && (controls.LEFT || controls.RIGHT))
+					if (costumeSelected == 1 && (controls.LEFT || controls.RIGHT || secret) )
 						SaveData.bfcostume = "christmas";
-					if (costumeSelected == 2 && controls.LEFT)
+					if (costumeSelected == 2 && (controls.LEFT || secret))
 					{
 						colorthingie = 0xFFF8F4C1;
 						SaveData.bfcostume = "minus-yellow";
 					}
-					if (costumeSelected == 2 && controls.RIGHT)
+					if (costumeSelected == 4 && (controls.RIGHT || secret))
 					{
 						colorthingie = 0xFFBFE6FF;
 						SaveData.bfcostume = "minus-mean";
 					}
-					if (costumeSelected == 3 && (controls.LEFT || controls.RIGHT))
+					if (costumeSelected == 3 && (controls.LEFT || controls.RIGHT || secret))
 						SaveData.bfcostume = "soft-classic";
-					if (costumeSelected == 6 && (controls.LEFT || controls.RIGHT))
+					if (costumeSelected == 6 && (controls.LEFT || controls.RIGHT || secret))
 						SaveData.bfcostume = "aloe-classic";
 			}
 

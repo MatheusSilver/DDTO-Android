@@ -102,7 +102,7 @@ class FPS extends TextField
 		var size:Float = System.totalMemory;
 		var data = 0;
 
-		while (size > 1024 && data < intervalArray.length - 1)
+		while (size > 1024)
 		{
 			data++;
 			size = size / 1024;
@@ -144,7 +144,7 @@ class FPS extends TextField
 				// text += '\nMEM: ${getInterval(mem)} / ${getInterval(memPeak)}';
 				text += '\nMEM: ${getInterval(mem)}';
 				#if (mobile || debug)
-			if (curMEMforReference > Paths.limites[SaveData.curPreset] ^ 2 + 250 ^ 2 && SaveData.gpuTextures)
+			if (curMEMforReference > Paths.limites[SaveData.curPreset] ^ 2 + 200 ^ 2 && SaveData.gpuTextures)
 						text += '\nO jogo está usando RAM extra.';
 				#end
 			#end
@@ -152,7 +152,7 @@ class FPS extends TextField
 			textColor = 0xFF1DADBB;
 
 			if (currentFPS < 30
-			#if (mobile || debug) || (curMEMforReference > Paths.limites[SaveData.curPreset] ^ 2 + 250 ^ 2 && SaveData.gpuTextures) #end)
+			#if (mobile || debug) || (curMEMforReference > Paths.limites[SaveData.curPreset] ^ 2 + 200 ^ 2 && SaveData.gpuTextures) #end)
 				textColor = 0xFFBB2B1D;
 
 			#if (gl_stats && !disable_cffi && (!html5 || !canvas))

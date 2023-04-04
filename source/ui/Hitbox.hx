@@ -1,19 +1,27 @@
 package ui;
 
-import flixel.FlxG;
 import flixel.graphics.FlxGraphic;
+import flixel.addons.ui.FlxButtonPlus;
 import flixel.FlxSprite;
+import flixel.FlxG;
+import flixel.graphics.frames.FlxTileFrames;
 import flixel.group.FlxSpriteGroup;
+import flixel.math.FlxPoint;
+import flixel.system.FlxAssets;
+import flixel.util.FlxDestroyUtil;
 import flixel.ui.FlxButton;
 import flixel.graphics.frames.FlxAtlasFrames;
+import flixel.graphics.frames.FlxFrame;
+import flixel.ui.FlxVirtualPad;
 import flixel.tweens.FlxTween;
 import flixel.tweens.FlxEase;
 
+// copyed from flxvirtualpad
 class Hitbox extends FlxSpriteGroup
 {
 	public var hitbox:FlxSpriteGroup;
 
-	var sizex:Float = 320;
+	var sizex:Int = 320;
 
 	var screensizey:Int = 720;
 
@@ -22,28 +30,22 @@ class Hitbox extends FlxSpriteGroup
 	public var buttonUp:FlxButton;
 	public var buttonRight:FlxButton;
 
-	public function new(?widghtScreen:Float)
+	public function new(?widghtScreen:Int)
 	{
 		super();
 
-		if (widghtScreen == null)
-			widghtScreen = FlxG.width;
+		/*if (widghtScreen == null)
+			widghtScreen = FlxG.width; */
 
-		sizex = widghtScreen != null ? widghtScreen / 4 : 320;
+		sizex = widghtScreen != null ? Std.int(widghtScreen / 4) : 320;
 
 		// add graphic
 		hitbox = new FlxSpriteGroup();
 		hitbox.scrollFactor.set();
 
-		var hitbox_hint:FlxSprite = new FlxSprite(0, 0).loadGraphic(Paths.image('hitbox/hitbox_hint', 'shared'));
+		var hitbox_hint:FlxSprite = new FlxSprite(0, 0).loadGraphic('assets/shared/images/hitbox/hitbox_hint.png');
 
-		hitbox_hint.alpha = 0.35;
-
-		if (sizex != 320)
-		{
-			hitbox_hint.setGraphicSize(FlxG.width);
-			hitbox_hint.updateHitbox();
-		}
+		hitbox_hint.alpha = 0.2;
 
 		add(hitbox_hint);
 
@@ -59,26 +61,17 @@ class Hitbox extends FlxSpriteGroup
 	public function createhitbox(X:Float, framestring:String)
 	{
 		var button = new FlxButton(X, 0);
-		var frames = Paths.getSparrowAtlas('hitbox/hitbox', 'shared', false, true);
+		var frames = FlxAtlasFrames.fromSparrow('assets/shared/images/hitbox/hitbox.png', 'assets/shared/images/hitbox/hitbox.xml');
 
 		var graphic:FlxGraphic = FlxGraphic.fromFrame(frames.getByName(framestring));
 
 		button.loadGraphic(graphic);
 
-		/*button.width = sizex;
-			button.height = FlxG.height; */
-		button.setGraphicSize(Std.int(sizex), FlxG.height);
-		button.updateHitbox();
-
 		button.alpha = 0;
-
-		var tween:FlxTween;
 
 		button.onDown.callback = function()
 		{
-			if (tween != null)
-				tween.cancel();
-			tween = FlxTween.num(button.alpha, 0.75, .075, {ease: FlxEase.circInOut}, function(a:Float)
+			FlxTween.num(0, 0.75, .075, {ease: FlxEase.circInOut}, function(a:Float)
 			{
 				button.alpha = a;
 			});
@@ -86,9 +79,7 @@ class Hitbox extends FlxSpriteGroup
 
 		button.onUp.callback = function()
 		{
-			if (tween != null)
-				tween.cancel();
-			tween = FlxTween.num(button.alpha, 0, .15, {ease: FlxEase.circInOut}, function(a:Float)
+			FlxTween.num(0.75, 0, .1, {ease: FlxEase.circInOut}, function(a:Float)
 			{
 				button.alpha = a;
 			});
@@ -96,9 +87,7 @@ class Hitbox extends FlxSpriteGroup
 
 		button.onOut.callback = function()
 		{
-			if (tween != null)
-				tween.cancel();
-			tween = FlxTween.num(button.alpha, 0, .15, {ease: FlxEase.circInOut}, function(a:Float)
+			FlxTween.num(button.alpha, 0, .2, {ease: FlxEase.circInOut}, function(a:Float)
 			{
 				button.alpha = a;
 			});

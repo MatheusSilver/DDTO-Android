@@ -74,7 +74,11 @@ class GameOverSubstate extends MusicBeatSubstate
 
 		if (!libbie)
 		{
-			bf = new Character(x, y, daBf, !isBig);
+			if (SaveData.lowEnd)
+				bf = new Character(x, y, 'invisibru', !isBig); //Carregando a invisibru pra economizar memoria no gameover
+			else
+				bf = new Character(x, y, daBf, !isBig);
+
 			trace(bf == null ? "bf if hella dumb" : "bf has a big forehead");
 			add(bf);
 

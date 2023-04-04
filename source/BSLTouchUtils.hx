@@ -91,24 +91,24 @@ class BSLTouchUtils
 	}
 
 	#if desktop
-	public static function pegarpos(axes:custom.FlxAxes = XY):Int
+	public static function pegarpos(pos:String):Int
 	{
-		if (axes.x)
+		if (pos == 'x')
 			return FlxG.mouse.x;
 		
-		if (axes.y)
+		if (pos == 'y')
 			return FlxG.mouse.y;
 
 		return 0;
 	}
 	#elseif mobile
 
-	public static function pegarpos(touch:flixel.input.touch.FlxTouch, axes:custom.FlxAxes = XY):Int
+	public static function pegarpos(touch:flixel.input.touch.FlxTouch, pos:String):Int
 	{
-		if (axes.x)
+		if (pos == 'x')
 			return touch.x;
 
-		if (axes.y)
+		if (pos == 'y')
 			return touch.y;
 
 		return 0;

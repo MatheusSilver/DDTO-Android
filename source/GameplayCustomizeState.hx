@@ -211,13 +211,13 @@ class GameplayCustomizeState extends MusicBeatState
 		if (BSLTouchUtils.pressionando(sick))
 		{
 			#if desktop
-			sick.x = (BSLTouchUtils.pegarpos(X) - sick.width / 2) - 60;
-			sick.y = (BSLTouchUtils.pegarpos(Y) - sick.height) - 60;
+			sick.x = (BSLTouchUtils.pegarpos('x') - sick.width / 2) - 60;
+			sick.y = (BSLTouchUtils.pegarpos('y') - sick.height) - 60;
 			#elseif mobile
 			for (touch in FlxG.touches.list)
 			{
-				sick.x = (BSLTouchUtils.pegarpos(touch, X) - sick.width / 2) - 60;
-				sick.y = (BSLTouchUtils.pegarpos(touch, Y) - sick.height) - 60;
+				sick.x = (BSLTouchUtils.pegarpos(touch, 'x') - sick.width / 2) - 60;
+				sick.y = (BSLTouchUtils.pegarpos(touch, 'y') - sick.height) - 60;
 			}
 			#end
 		}
