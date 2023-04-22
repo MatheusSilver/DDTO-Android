@@ -371,7 +371,7 @@ class DokiStoryState extends MusicBeatState
 				#if mobile
 				case 1:
 					MusicBeatState.switchState(new VideoState('assets/videos/sayointro', new EstadoDeTroca()));
-					FlxG.sound.music.fadeOut(0.1);
+					FlxG.sound.music.volume = 0;
 					trace("Sayori Selected");
 				#end
 				case 6:

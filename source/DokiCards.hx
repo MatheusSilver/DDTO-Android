@@ -27,7 +27,7 @@ class DokiCards extends MusicBeatSubstate
 	var curSelected:Int = 0;
 	var huehTimer:FlxTimer;
 
-	public function new(fp:Bool)
+	public function new()
 	{
 		super();
 		cardinstance = this;
