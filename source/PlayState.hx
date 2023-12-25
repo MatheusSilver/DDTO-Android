@@ -5203,8 +5203,9 @@ class PlayState extends MusicBeatState
 							endSong();
 
 					case 'obsession':
+						if (staticshock != null)
+							staticshock.visible = false;
 						remove(whiteflash);
-						staticshock.visible = false;
 						obsessionending();
 						endcutscene();
 				}

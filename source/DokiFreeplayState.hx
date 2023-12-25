@@ -492,44 +492,7 @@ class DokiFreeplayState extends MusicBeatState
 	
 		super.update(elapsed);
 	}
-
-	function selectSong() {
-			if (diffselect && multiDiff.contains(songs[curSelected].songName.toLowerCase()) && SaveData.beatEpiphany)
-			{
-				if (diffType == 1)
-					curDifficulty = 1;
-
-				startsong();
-				return;
-			}
-
-			if (multiDiff.contains(songs[curSelected].songName.toLowerCase()))
-			{
-				switch (songs[curSelected].songName.toLowerCase())
-				{
-					case 'epiphany':
-						GlobalSoundManager.play('confirmMenu');
-						diffType = 0;
-						diff.visible = true;
-						diffselect = true;
-					case 'baka' | 'shrinking violet' | 'love n funkin':
-						GlobalSoundManager.play('confirmMenu');
-						diffType = 1;
-						diff.visible = true;
-						diffselect = true;
-					default:
-						startsong();
-				}
-			}
-			else
-			{
-				curDifficulty = 1;
-				if (songs[curSelected].songName.toLowerCase() == 'catfight')
-					openSubState(new CatfightPopup('freeplay'));
-				else
-					startsong();
-			}
-		}
+	
 	}
 
 	public function startsong()
@@ -569,6 +532,45 @@ class DokiFreeplayState extends MusicBeatState
 				}
 			}
 		});
+	}
+
+		function selectSong()
+		{
+			if (diffselect && multiDiff.contains(songs[curSelected].songName.toLowerCase()) && SaveData.beatEpiphany)
+			{
+				if (diffType == 1)
+					curDifficulty = 1;
+
+				startsong();
+				return;
+			}
+
+			if (multiDiff.contains(songs[curSelected].songName.toLowerCase()))
+			{
+				switch (songs[curSelected].songName.toLowerCase())
+				{
+					case 'epiphany':
+						GlobalSoundManager.play('confirmMenu');
+						diffType = 0;
+						diff.visible = true;
+						diffselect = true;
+					case 'baka' | 'shrinking violet' | 'love n funkin':
+						GlobalSoundManager.play('confirmMenu');
+						diffType = 1;
+						diff.visible = true;
+						diffselect = true;
+					default:
+						startsong();
+				}
+			}
+			else
+			{
+				curDifficulty = 1;
+				if (songs[curSelected].songName.toLowerCase() == 'catfight')
+					openSubState(new CatfightPopup('freeplay'));
+				else
+					startsong();
+		}
 	}
 
 	function loadSong(isCharting:Bool = false)
