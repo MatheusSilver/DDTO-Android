@@ -5,6 +5,11 @@
 	<android target-sdk-version="29"/>
 	<android minimum-sdk-version="9"/>
 	<!--gravação de audio interno gg-->
+
+	<!-- nota do x02: 
+	Eu apaguei o arquivo gitattributes pq como usaremos os assets otimizados aqui,
+	não tem necessidade de se preocupar com arquivos com mais de 50mb (pngs, mp4, webm)
+	E também pelo motivo de que ele simplesmente "corrompeu" toda a source-->
 	<app title="Doki Doki Takeover Plus" file="DokiTakeover" packageName="com.teamsilver.dokitakeover" package="com.teamsilver.dokitakeover" main="Main" version="3.0.2" company="Team-Silver" />
 
 	<!--The flixel preloader is not accurate in Chrome. You can use it regularly if you embed the swf into a html file
@@ -156,13 +161,6 @@
 
 	<!--Place custom nodes like icons here (higher priority to override the HaxeFlixel icon)-->
 
-	<icon path="art/icon8.png" size='8'/>
-	<icon path="art/icon16.png" size='16'/>
-	<icon path="art/icon32.png" size='32'/>
-	<icon path="art/icon64.png" size='64'/>
-	<icon path="art/icon128.png" size='128'/>
-	<icon path="art/icon256.png" size='256'/>
-	<icon path="art/icon512.png" size='512'/>
 	<icon path="art/iconOG.png" />
 
 </project>

@@ -1,81 +1,81 @@
-menuBG::The original Monika Full Week's menu background.\nby TokyoGalaxy::https://twitter.com/TokyoGalaxyOG
-Monipai::Initial pixel Monika sketch.\nby DusterBuster::https://twitter.com/SirDusterBuster
-DokiFNF::Initial sketches of the cast.\nby DusterBuster::https://twitter.com/SirDusterBuster
-cut2::Obsession Cutscene rough sketch\nby DusterBuster::https://twitter.com/SirDusterBuster
-Mockup1::Rough drafts of Takeover's intro cutscene.\nby DusterBuster::https://twitter.com/SirDusterBuster
-Mockup4::Rough drafts of Takeover's intro cutscene.\nby DusterBuster::https://twitter.com/SirDusterBuster
-episketch::Initial Epiphany Monika sketch\nby DusterBuster::https://twitter.com/SirDusterBuster
-senpai::Non-pixel Senpai sketch.\nby DusterBuster::https://twitter.com/SirDusterBuster
-logos::The mod's various logos.\nby DusterBuster::https://twitter.com/SirDusterBuster
-oldbg::The old Clubroom background.\nby ItoSaihara and DusterBuster::https://twitter.com/ItoSaihara_
-newbg::The new Clubroom background. So much cleaner and vibrant!\nby ItoSaihara and DusterBuster::https://twitter.com/ItoSaihara_
-musicbg::The Music Room background.\nby Sayphonic::https://twitter.com/sayphonic
-ynmbg::The Outside BG\nby Lezanikat::https://twitter.com/lezanikat
-epibg::The Act 3 BG\nby DusterBuster::https://twitter.com/SirDusterBuster
-pkpromo::The promo art for DDTO Plus!\nby Pikons::https://twitter.com/vivalapk
+menuBG::Background original da semana da Monika.\nby TokyoGalaxy::https://twitter.com/TokyoGalaxyOG
+Monipai::Rascunho inicial da Monika Pixel.\nby DusterBuster::https://twitter.com/SirDusterBuster
+DokiFNF::Rascunhos iniciais do elenco.\nby DusterBuster::https://twitter.com/SirDusterBuster
+cut2::Rascunho da cutscene da música Obsession.\nby DusterBuster::https://twitter.com/SirDusterBuster
+Mockup1::Rascunhos da introdução de DDLC takeover.\nby DusterBuster::https://twitter.com/SirDusterBuster
+Mockup4::Rascunhos da cutscene de introdução de DDLC takeover.\nby DusterBuster::https://twitter.com/SirDusterBuster
+episketch::Rascunhos iniciais da Monika epiphany.\nby DusterBuster::https://twitter.com/SirDusterBuster
+senpai::Rascunhos do Senpai não-pixel.\nby DusterBuster::https://twitter.com/SirDusterBuster
+logos::Os vários logos do mod.\nby DusterBuster::https://twitter.com/SirDusterBuster
+oldbg::Velho background da sala do clube.\nby ItoSaihara and DusterBuster::https://twitter.com/ItoSaihara_
+newbg::O novo background da sala do clube. Muito mais "clean" e vibrante!\nby ItoSaihara and DusterBuster::https://twitter.com/ItoSaihara_
+musicbg::O background da sala de música.\nby Sayphonic::https://twitter.com/sayphonic
+ynmbg::O Background de fora.\nby Lezanikat::https://twitter.com/lezanikat
+epibg::O background do Ato 3.\nby DusterBuster::https://twitter.com/SirDusterBuster
+pkpromo::A arte promocional de DDLC PLUS!\nby Pikons::https://twitter.com/vivalapk
 MoniBoxArt::Monika Full Week's Spotify Album Art\nby MetalSucc::https://twitter.com/MetalSucc
 plusalbum::Doki Doki Takeover Plus' Spotify Album Art\nby Miss Beepy and Crim::https://twitter.com/scrimblocrimbo
 mantella::Monika Full Week/Doki Doki Takeover's Mantella Mixtape Cassette Art\nby Juno Songs::https://twitter.com/JunoSongsYT
-MonikaFriends::Art celebrating the release of Monika Full Week. Recognize them all?\nby DusterBuster::https://twitter.com/SirDusterBuster
+MonikaFriends::Arte celebrando o lançamento da semana da Monika. Reconhece todos?\nby DusterBuster::https://twitter.com/SirDusterBuster
 MoniFF::Rebooted! Funky Friday Art\nby DusterBuster::https://twitter.com/SirDusterBuster
 MoniFF2::Takeover! Funky Friday Art\nby DusterBuster::https://twitter.com/SirDusterBuster
-DDTOCutscene::Obsession Cutscene Art 1\nby DusterBuster::https://twitter.com/SirDusterBuster
-DDTOCutscene2::Obsession Cutscene Art 2\nby DusterBuster::https://twitter.com/SirDusterBuster
-ourharmony1::Our Harmony Cutscene Art 1\nby Juno Songs::https://twitter.com/JunoSongsYT
-ourharmony2::Our Harmony Cutscene Art 2\nby Juno Songs::https://twitter.com/JunoSongsYT
-youandme::You and Me Cutscene Art 1\nby Juno Songs & DusterBuster::https://twitter.com/JunoSongsYT
-youandme2::You and Me Cutscene Art 2\nby Juno Songs & DusterBuster::https://twitter.com/JunoSongsYT
-youandme3::You and Me Cutscene Art 3\nby Juno Songs::https://twitter.com/JunoSongsYT
-youandme4::You and Me Cutscene Art 4\nby Lezanikat::https://twitter.com/lezanikat
-youandme5::You and Me Cutscene Art 5\nby Lezanikat::https://twitter.com/lezanikat
-lovenfunkin::Love n' Funkin' Cutscene Art\nby Lezanikat::https://twitter.com/lezanikat
-wilted1::Wilted Cutscene Art 1\nby DusterBuster::https://twitter.com/SirDusterBuster
-wilted3::Wilted Cutscene Art 2\nby DusterBuster::https://twitter.com/SirDusterBuster
-rerelease::Art celebrating Monika Full Week Rebooted's release!\nby emeruga::https://twitter.com/emeruga/status/1410266880179425285?s=20
-emceleb::Emeruga strikes again to celebrate Takeover's release too!\nby emeruga::https://twitter.com/emeruga/status/1453436298266439684?s=20
-emcelebfinal::One last celebration for one last update!\nby emeruga::https://twitter.com/emeruga
-monikajuno::After a year's worth of work, DDTO+ has released!\nby Juno Songs::https://twitter.com/JunoSongsYT
-hairbrushnat::"I sometimes sing in front of the mirror into my hairbrush."\nby Skellybreak::https://twitter.com/skellybreak/status/1456628128009261056
-club::The Takeover Begins.\nby Coco Puffs::https://twitter.com/file_corruption/status/1626064213876658176?s=20
-oddballmoni::"Just the two of us."\nby Oddball::https://twitter.com/AnOddArtist/status/1455302772413321219
-sannat::Ready to subvert your expectations.\nby Santandraws::https://twitter.com/Santandraws/status/1455597668747538438
-saydoki::The whole gang together again!\nby Sayphonic::https://twitter.com/sayphonic/status/1457503952526794752
-shouko::Ready to write!\nby Shouko-Kun::https://twitter.com/animeeigo10/status/1625966928572432384?s=20
-memoddto::Okay, everyone!\nby MEMOSAN::https://twitter.com/jSY9emonizou/status/1490143424540192768?s=20&t=1VrqOX7uUnG9LwbW-uEvng
+DDTOCutscene::Obsession Arte de Cutscene 1\nby DusterBuster::https://twitter.com/SirDusterBuster
+DDTOCutscene2::Obsession Arte de Cutscene 2\nby DusterBuster::https://twitter.com/SirDusterBuster
+ourharmony1::Our Harmony Arte de Cutscene 1\nby Juno Songs::https://twitter.com/JunoSongsYT
+ourharmony2::Our Harmony Arte de Cutscene 2\nby Juno Songs::https://twitter.com/JunoSongsYT
+youandme::You and Me Arte de Cutscene 1\nby Juno Songs & DusterBuster::https://twitter.com/JunoSongsYT
+youandme2::You and Me Arte de Cutscene 2\nby Juno Songs & DusterBuster::https://twitter.com/JunoSongsYT
+youandme3::You and Me Arte de Cutscene 3\nby Juno Songs::https://twitter.com/JunoSongsYT
+youandme4::You and Me Arte de Cutscene 4\nby Lezanikat::https://twitter.com/lezanikat
+youandme5::You and Me Arte de Cutscene 5\nby Lezanikat::https://twitter.com/lezanikat
+lovenfunkin::Love n' Funkin' Arte de Cutscene\nby Lezanikat::https://twitter.com/lezanikat
+wilted1::Wilted Arte de Cutscene 1\nby DusterBuster::https://twitter.com/SirDusterBuster
+wilted3::Wilted Arte de Cutscene 2\nby DusterBuster::https://twitter.com/SirDusterBuster
+rerelease::Arte celebrando o lançamento da semana da Monika reboot!\nby emeruga::https://twitter.com/emeruga/status/1410266880179425285?s=20
+emceleb::Emeruga volta de novo para celebrar o lançamento de DDLC takeover!\nby emeruga::https://twitter.com/emeruga/status/1453436298266439684?s=20
+emcelebfinal::Uma última celebração para um último update!\nby emeruga::https://twitter.com/emeruga
+monikajuno::Depois de um ano de trabalho, DDTO+ foi lançado!\nby Juno Songs::https://twitter.com/JunoSongsYT
+hairbrushnat::"Eu ás vezes canto na frente do espelho com minha escova."\nby Skellybreak::https://twitter.com/skellybreak/status/1456628128009261056
+club::O Takeover começa.\nby Coco Puffs::https://twitter.com/file_corruption/status/1626064213876658176?s=20
+oddballmoni::"Apenas nós dois."\nby Oddball::https://twitter.com/AnOddArtist/status/1455302772413321219
+sannat::Pronto para superar suas expectativas.\nby Santandraws::https://twitter.com/Santandraws/status/1455597668747538438
+saydoki::A turma completa junto de novo!\nby Sayphonic::https://twitter.com/sayphonic/status/1457503952526794752
+shouko::Pronta para escrever!\nby Shouko-Kun::https://twitter.com/animeeigo10/status/1625966928572432384?s=20
+memoddto::Okay, todos!\nby MEMOSAN::https://twitter.com/jSY9emonizou/status/1490143424540192768?s=20&t=1VrqOX7uUnG9LwbW-uEvng
 baka::Baka!\nby sisima_::https://twitter.com/sisima_/status/1488494742774054913?s=20&t=ZcGQdjsSU0KQ7bU2G26Ijw
-stariidoki::Come and sing with the Literature Club!\nby StariiFish::https://twitter.com/StariiFish/status/1489825949084307456?s=20&t=v2uYYw1y1csBrHuRyRFwOA
-leza::The Showstopping Club President!\nby Lezanikat::https://twitter.com/lezanikat
-groupshot::Let the world feel our harmony!\nby ChicaBonBon2::https://twitter.com/ChicaBonBon2/status/1625921285846102016?s=20
-groupphoto::"Group photo, everyone!"\nby MrCloaks::https://twitter.com/Cloaks_Artguy/status/1628261632999579648?t=t1XzHsAqCtiOo0GJHD11oA&s=19
-silly::"-and one more!"\nby MrCloaks::https://twitter.com/vivwikls/status/1630030455486533632?s=20
-allofthem::All together now!\nby GMZ::https://twitter.com/GMZ98422340
-tallbf::BF's new Literature Club fit.\nby M4rc3llyLoka::https://twitter.com/M4rc3llyLoka/status/1453491850761932801?s=20
-monisen::The first time two characters fought each other, but as one opponent, in an FNF mod!\nby 3Monika4::https://twitter.com/3Monika4/status/1403274659458535428
-drip::Dripped out.\nby Zee::https://twitter.com/z_zmag8
-ayamoni::Swingin' and Singin'!\nby Ayacchi::https://twitter.com/ayacchi_corner/status/1627910993245351937?s=20
-balloon::Skies full of Hot Air Balloons.\nby Lame::https://twitter.com/justbeinglame/status/1513367920444784640?s=20&t=w27SZCpLfSdFhkBlyJOQrw
-ynm::You and Me!\nby kkflick::https://twitter.com/kkflick/status/1632388367622246401?s=20
-gf::Sing with your special someone!\nby Phillia Esaya::https://twitter.com/PhilliaEsaya
-minusmoni::With many icons comes many Minus forms.\nby LiquidMercury::https://twitter.com/_liquidmercury/status/1454545267995389960?s=20
-minuska::Minus Pixel Monika original sketch.\nby DusterBuster::https://twitter.com/SirDusterBuster
-cheermoni::The original pixel Minus Monika.\nby ShayReyez::https://twitter.com/ShayReyez/status/1454598355678638089?s=20
-minusfriends::Minus friends!\nby Coco Puffs::https://twitter.com/file_corruption/status/1481491451028680704?s=20&t=v2uYYw1y1csBrHuRyRFwOA
-minusgoobers::More friends join the mix!\nby Tapor::https://twitter.com/tapergamine/status/1527993344328364033?s=20&t=KP_G6PBFA7x0uxhIGBEPgQ
-shurisayo::The Literature Club welcomes everyone!\nby Juno Songs::https://twitter.com/JunoSongsYT/status/1453949201126072320?s=20
-antipathy::Well that's a little rude-\nby STS-Puelle::https://twitter.com/STS_PiaEsaya/status/1462690517762732034?s=20
-antipathysaga::The saga continues.\nby FoxinOrbit, onlyoneindigo, & STS-Puelle::https://twitter.com/FoxinOrbit/status/1462849051632754689?s=20
-madcom::Of Madness and Markov.\nby PhilliaEsaya::https://twitter.com/PhilliaEsaya/status/1465492692763250692?s=20
-smiler::A "friend" from the Hotline Tournament.\nby DusterBuster::https://twitter.com/SirDusterBuster/status/1451042942395760643?s=20&t=v2uYYw1y1csBrHuRyRFwOA
-sayozipper::Sayori's been making a lot of weird friends.\nby MaxOKE::https://twitter.com/MaxOKE_
-sayozipper2::He looks friendly though!\nby MaxOKE::https://twitter.com/MaxOKE_
-dokifriends::A world of strange new friends awaits the Literature Club.\nby shiroeyoru::https://twitter.com/shiroeyoru/status/1465821401923784705?s=20
-beepymoment::Sweet girls with shared VAs!\nby Miss Beepy::https://twitter.com/MissBeepy
-carimellemoment::Speaking of same VAs-\nby GumiYumi::https://twitter.com/Yumi61937282
-tioder::Teaching the Rhythm Robo some piano!\nby Zonian::https://twitter.com/MrZonian
-kapsuki::Kapi cosplay!\nby MephrilGG::https://twitter.com/MephrilGG/status/1476608460926169092?s=20&t=c73KF7IfGcuFbpIImC5Lgw
+stariidoki::Venha e cante com o clube de literatura!\nby StariiFish::https://twitter.com/StariiFish/status/1489825949084307456?s=20&t=v2uYYw1y1csBrHuRyRFwOA
+leza::A presidente do clube!\nby Lezanikat::https://twitter.com/lezanikat
+groupshot::Mostre a todos a nossa harmonia!\nby ChicaBonBon2::https://twitter.com/ChicaBonBon2/status/1625921285846102016?s=20
+groupphoto::"Foto do grupo, todos!"\nby MrCloaks::https://twitter.com/Cloaks_Artguy/status/1628261632999579648?t=t1XzHsAqCtiOo0GJHD11oA&s=19
+silly::"-e mais uma!"\nby MrCloaks::https://twitter.com/vivwikls/status/1630030455486533632?s=20
+allofthem::Todos juntos agora!\nby GMZ::https://twitter.com/GMZ98422340
+tallbf::Novo clube de literatura do BF fit.\nby M4rc3llyLoka::https://twitter.com/M4rc3llyLoka/status/1453491850761932801?s=20
+monisen::A primeira vez que dois personagens lutaram juntos, mas apenas como um oponente, em um mod de FNF!\nby 3Monika4::https://twitter.com/3Monika4/status/1403274659458535428
+drip::Drip.\nby Zee::https://twitter.com/z_zmag8
+ayamoni::Balnçando e cantando!\nby Ayacchi::https://twitter.com/ayacchi_corner/status/1627910993245351937?s=20
+balloon::Céu cheio de balões.\nby Lame::https://twitter.com/justbeinglame/status/1513367920444784640?s=20&t=w27SZCpLfSdFhkBlyJOQrw
+ynm::Você e eu!\nby kkflick::https://twitter.com/kkflick/status/1632388367622246401?s=20
+gf::Cante com seu alguém especial!\nby Phillia Esaya::https://twitter.com/PhilliaEsaya
+minusmoni::Com muitos ícones vem muitas formas Minus.\nby LiquidMercury::https://twitter.com/_liquidmercury/status/1454545267995389960?s=20
+minuska::Rascunho da Monika Pixel Minus.\nby DusterBuster::https://twitter.com/SirDusterBuster
+cheermoni::A original Monika Pixel Minus.\nby ShayReyez::https://twitter.com/ShayReyez/status/1454598355678638089?s=20
+minusfriends::Minus amigos!\nby Coco Puffs::https://twitter.com/file_corruption/status/1481491451028680704?s=20&t=v2uYYw1y1csBrHuRyRFwOA
+minusgoobers::Mais amigos se juntam!\nby Tapor::https://twitter.com/tapergamine/status/1527993344328364033?s=20&t=KP_G6PBFA7x0uxhIGBEPgQ
+shurisayo::O Clube de Literatura recebe todos!\nby Juno Songs::https://twitter.com/JunoSongsYT/status/1453949201126072320?s=20
+antipathy::Bem, isso é um pouco rude-\nby STS-Puelle::https://twitter.com/STS_PiaEsaya/status/1462690517762732034?s=20
+antipathysaga::A saga continua.\nby FoxinOrbit, onlyoneindigo, & STS-Puelle::https://twitter.com/FoxinOrbit/status/1462849051632754689?s=20
+madcom::De Madness e Markov.\nby PhilliaEsaya::https://twitter.com/PhilliaEsaya/status/1465492692763250692?s=20
+smiler::Um "amigo" do torneio HotLine.\nby DusterBuster::https://twitter.com/SirDusterBuster/status/1451042942395760643?s=20&t=v2uYYw1y1csBrHuRyRFwOA
+sayozipper::Sayori está fazendo muitos amigos estranhos.\nby MaxOKE::https://twitter.com/MaxOKE_
+sayozipper2::Ele parece amigável! Eu acho...\nby MaxOKE::https://twitter.com/MaxOKE_
+dokifriends::Um mundo de estranhos novos amigos te espera.\nby shiroeyoru::https://twitter.com/shiroeyoru/status/1465821401923784705?s=20
+beepymoment::Doces garotas com compartilhadas VAs!\nby Miss Beepy::https://twitter.com/MissBeepy
+carimellemoment::Falando das mesmas VAs-\nby GumiYumi::https://twitter.com/Yumi61937282
+tioder::Ensinando piano para o robô de ritmo.\nby Zonian::https://twitter.com/MrZonian
+kapsuki::Cosplay de Kapi!\nby MephrilGG::https://twitter.com/MephrilGG/status/1476608460926169092?s=20&t=c73KF7IfGcuFbpIImC5Lgw
 soft::Soft swap!\nby sakaruchibi12::https://twitter.com/SoftModFNF/status/1581107153066418177?s=20&t=tvahIyq1EYDr8QFlfockow
 cosplay::Festival Fashion!\nby Shouko-Kun::https://twitter.com/animeeigo10/status/1626617481455448070?s=20
-zee::Dressed for the occasion!\nby Zee::https://twitter.com/z_zmag8/status/1632226259186110464?s=20
-calli::...That's not Monika-\nby DusterBuster::https://twitter.com/SirDusterBuster/status/1493706048502484993?s=20&t=xlgoJvsXl25ojVnHbTb4XA
-haachama::"Haachama eats spiders. That's why I'm not friends with her."\nby Zarkion::https://twitter.com/Zarky_Zarky/status/1633972367557795840?s=20
-holopiece::Can we get much higher?\nby TexusA::https://twitter.com/TexusA1/status/1577676443991306240?s=20&t=5j4VCrqxa3DyNaA2oev3-w
+zee::Vestida para a ocasião!\nby Zee::https://twitter.com/z_zmag8/status/1632226259186110464?s=20
+calli::...Essa não é a Monika-\nby DusterBuster::https://twitter.com/SirDusterBuster/status/1493706048502484993?s=20&t=xlgoJvsXl25ojVnHbTb4XA
+haachama::"Haachama come aranhas. É por isso que não sou amiga dela."\nby Zarkion::https://twitter.com/Zarky_Zarky/status/1633972367557795840?s=20
+holopiece::Nós podemos ficar mais altos?\nby TexusA::https://twitter.com/TexusA1/status/1577676443991306240?s=20&t=5j4VCrqxa3DyNaA2oev3-w
