@@ -72,7 +72,7 @@ class OptionsState extends MusicBeatState
 			new AntiAliasing(LangUtil.getString('descAntialiasing', 'option')),
 			new GPUTextures('Caso ligado, o jogo passará a usar GPU para aguentar mais peso quando precisar, mas você precisará reiniciar o jogo depois'),
 			new Padroes('Escolha entre os presets de configurações recomendadas, a que mais se encaixa ao seu celular.'),
-			#if nnone
+			#if nnone // Como nukar seu celular, tutorial grátis e rápido:
 			new CharaCacheOption(LangUtil.getString('descCacheCharacter', 'option')),
 			new SongCacheOption(LangUtil.getString('descCacheSong', 'option')),
 			new CacheState(LangUtil.getString('descCache', 'option')),

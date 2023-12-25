@@ -65,6 +65,9 @@ class CostumeSelectState extends MusicBeatState
 	var character:Array<String> = ['bf', 'gf', 'monika', 'sayori', 'natsuki', 'yuri', 'protag'];
 	// costume unlocks
 	var costumeUnlocked:Array<Dynamic> = [
+		// Eu tava com a ideia de colocar as personagens do DDTO Bad Ending aqui
+		// Mas preferi esperar e adicionar o DDTO BadEnding ao port primeiramente
+
 		// Boyfriend
 		[
 		true, true, true, true, true, true, true
@@ -99,6 +102,7 @@ class CostumeSelectState extends MusicBeatState
 		[
 			true, // Uniform, unlocked by default
 			true, // Casual, unlocked by default
+			true,
 			true,
 			true
 		]
@@ -172,7 +176,7 @@ class CostumeSelectState extends MusicBeatState
 			var id:String = LangUtil.getString(costumeJSON.list[i].charName, 'costume');
 
 			controlLabel = new FlxText(60, (40 * i) + 370, 0, id, 3);
-			controlLabel.setFormat(LangUtil.getFont('riffic'), 38, FlxColor.WHITE, CENTER);
+			controlLabel.setFormat(LangUtil.getFont('riffic'), 38, FlxColor.WHITE, LEFT);
 			controlLabel.y += LangUtil.getFontOffset('riffic');
 			controlLabel.scale.set(0.7, 0.7);
 			controlLabel.updateHitbox();
@@ -311,7 +315,9 @@ class CostumeSelectState extends MusicBeatState
 		if (costumeUnlocked[curSelected][costumeSelected])
 		{
 			// JSON array is always ordered, so should be fine
-			var text:String = LangUtil.getString(costumeJSON.list[curSelected].costumes[costumeSelected].desc, 'costume');
+			// Sinceramente não sei o que isso faz
+			var nameText:String = LangUtil.getString(costumeJSON.list[curSelected].costumes[costumeSelected].name, 'costume');
+			var descText:String = LangUtil.getString(costumeJSON.list[curSelected].costumes[costumeSelected].desc, 'costume');
 
 			// Descriptions for hidden costumes
 			switch (char)
@@ -321,7 +327,8 @@ class CostumeSelectState extends MusicBeatState
 					switch (charCostume)
 					{
 						case 'buff':
-							text = LangUtil.getString('descBuff_NA', 'costume');
+								nameText = LangUtil.getString('nameBuff', 'costume');
+								descText = LangUtil.getString('descBuff_NA', 'costume');
 					}
 				}
 				case 'bf':
@@ -329,7 +336,8 @@ class CostumeSelectState extends MusicBeatState
 					switch (charCostume)
 					{
 						case 'sutazu':
-							text = LangUtil.getString('descSutazu', 'costume');
+								nameText = LangUtil.getString('nameSutazu', 'costume');
+								descText = LangUtil.getString('descSutazu', 'costume');
 					}
 				}
 				case 'gf':
@@ -337,7 +345,26 @@ class CostumeSelectState extends MusicBeatState
 					switch (charCostume)
 					{
 						case 'sayo':
-							text = LangUtil.getString('descSayoGF', 'costume');
+								nameText = LangUtil.getString('charSayo', 'costume');
+								descText = LangUtil.getString('descSayoGF', 'costume');
+						}
+					}
+				case 'sayori':
+					{
+						switch (charCostume)
+						{
+							case 'minus':
+								nameText = LangUtil.getString('nameMinus', 'costume');
+								descText = LangUtil.getString('descMinus_SA', 'costume');
+						}
+					}
+				case 'protag':
+					{
+						switch (charCostume)
+						{
+							case 'fanon':
+								nameText = LangUtil.getString('nameFanon', 'costume');
+								descText = LangUtil.getString('descFanon', 'costume');
 					}
 				}
 			}
@@ -352,9 +379,12 @@ class CostumeSelectState extends MusicBeatState
 			if (costumeJSON.list[curSelected].costumes[costumeSelected].unlock != null)
 				text = LangUtil.getString(costumeJSON.list[curSelected].costumes[costumeSelected].unlock, 'costume');
 			else
-				text = "Unlocked by default.";
+				text = "Desbloqueado por padrão.";
 
-			flavorText.text = LangUtil.getString('cmnLock') + ": " + text;
+			if (grpControlshueh != null && grpControlshueh.members[costumeSelected].text != nameText)
+				grpControlshueh.members[costumeSelected].text = nameText;
+
+			flavorText.text = descText;
 		}
 	}
 
@@ -388,7 +418,7 @@ class CostumeSelectState extends MusicBeatState
 				else
 					costumeLabel = new FlxText(60, (40 * i) + 370, 0, "???", 3);
 
-				costumeLabel.setFormat(LangUtil.getFont('riffic'), 38, FlxColor.WHITE, CENTER);
+				costumeLabel.setFormat(LangUtil.getFont('riffic'), 38, FlxColor.WHITE, LEFT);
 				costumeLabel.y += LangUtil.getFontOffset('riffic');
 				costumeLabel.scale.set(0.7, 0.7);
 				costumeLabel.updateHitbox();
@@ -553,6 +583,8 @@ class CostumeSelectState extends MusicBeatState
 			{
 				case 6:
 					SaveData.protagcostume = selection.data;
+					if (costumeSelected == 0 && (FlxG.keys.pressed.B || secret))
+						SaveData.protagcostume = "fanon";
 				case 5:
 					SaveData.yuricostume = selection.data;
 				case 4:
@@ -562,6 +594,8 @@ class CostumeSelectState extends MusicBeatState
 						SaveData.natsukicostume = "buff";
 				case 3:
 					SaveData.sayoricostume = selection.data;
+					if (costumeSelected == 0 && (FlxG.keys.pressed.B || secret))
+						SaveData.sayoricostume = "minus";
 				case 2:
 					SaveData.monikacostume = selection.data;
 

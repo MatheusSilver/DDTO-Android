@@ -2,7 +2,7 @@ flag	content
 descDefault_BF	Um uniforme de colégio comum. Aqueles que vem até o clube misteriosamente<N>recebem um.
 descRegular_BF	Roupa padrão do BF. É bem confortável de usar, e também é estiloso.
 descMinus_BF	BF de um universo alternativo. Ele é uma das três variações de BF do seu Mundo Natal.
-descSutazu	Q-Quem ê essa? Por que ela continua aparecendo em todo lugar?!
+descSutazu	Eles falam que existe uma Sutazu em todo universo.<N>Seu amigo Henry acompanha ela às vezes.
 descSoft	o Benjamin nem sabe como chegou aqui, mas acha essas colegiais legais então tá de boa, ele espera...
 descCow	Em parceria com o Sr. Passaro, ele está sempre lá quando a Sayori precisa de<N>um abraço. Ah, e ele está consiente agora.
 descBlueSky_BF	Roupa do professor de sala de aula Sakurai. Que melhor maneira de saudar sua namorada do que<N>contando a ela sobre as atrocidades da história do século 20?
@@ -18,7 +18,6 @@ descHoloFunk_GF	Essa não é a primeira vez da Nene em um jogo de terror escolar
 descDefault_MO	Um uniforme escolar comum. A Monika personalizou um pouco o dela.
 descCasual_MO	Roupa casual da Monika, Sweaters são o nivel máximo de conforto.(Yuri concordaria.)
 descValentine_MO	Traje de verão da Monika, Isso não existe no jogo, Monika se veste assim em varias artes de propagandas.
-descNeo_MO	Monika de um universo alternativo. Nesse mundo Neon e Futuristico,<N>Monika é uma suave mas não confiavel IA programada para<N>encontrar seu criador.
 descFestival_MO	Uniforme do Hex. As habilidades atléticas da Monika fariam ela<N>ser uma notável estrela do basquete igual ao Hex.
 descFriends_MO	Roupa do Senpai. Fica melhor na Monika do que no próprio Senpai.
 descBlueSky_MO	Roupa de inverno da Monika do Blue Skies. a falta de tempo da Presidente do clube não quer dizer que ela não vai ser estilosa.
@@ -30,6 +29,7 @@ descFestival_SA	Roupa da Grace. Sayori se indentifica facilmente com as emocões
 descFriends_SA	Um moletom inspirado no Zipper. bem mais legal do que uma jaqueta reta
 descBlueSky_SA	Roupa de inverno da Sayori Blue Skies. Tênis Confortáveis? Checado. Roupa simples? Checado.<N>Nem mesmo colocado direito? Claro, Estamos falando da Sayori né?
 descSleepWear	Pijama da Sayori. Ela só apareceu usando isso em<N>condições bem "amarradas"
+descMinus_SA	Sayori de um universo alternativo.<N>Uma sereia adorável.
 descDefault_NA	Um uniforme de colégio comum. Natsuki teve que pegar o menor tamanho possível.
 descCasual_NA	Roupa casual da Natsuki. Ela esqueceu seu microfone, então ela trouxe sua escova de cabelo no lugar.
 descSkater_NA	Roupa de skatista da Natsuki. bem maneira por sinal.
@@ -46,6 +46,8 @@ descFestival_YU	Vestes da Taki. Sem Motoserra Incluída.
 descFriends_YU	Roupa do Tabi, a Turi e o Tabi criaram um bom vínculos por que ambos<N>tem uma paixão cortante.
 descBlueSky_YU	Roupa de Inverno da Yuri Blue Skies. Ela realmente se sai bem vestindo preto.
 descDefault_PR	Um uniforme de colégio comum. Para alguém tão comum quanto.
+descHenry	Uma roupa inspirada no Henry Stickmin. O Protagonista e Henry são protagonistas<N>que sempre estão em situações de risco.<N>Um é especialista em abrir grades de prisão<N>e o outro é especialista em gentilmente abrir portas...
+descFanon	O design feito pelo Fandom de DDLC.<N>(Fanon = Algo que é muito aceito pelos fãs,<N>mas não necessáriamente é canônico.)
 descCasual_PR	Roupa casual do Protagonista. Teve um bom trabalho de interpretação já<N>que você só ver a parte traseira superior dela no Jogo.
 descHotline	Primeira roupa da Rude. a Monika junto com a Yuri decidiram esse visual <N>logo após um estranho encontro com uma dama espacial.
 descBlueSky_PR	Roupa de verão do Protagonista. se você conseguir levar a Yuri para ver os<N>fogos de artifício em Blue Skies, Você pode ver ele nessa roupa.

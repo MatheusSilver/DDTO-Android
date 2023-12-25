@@ -767,7 +767,9 @@ class PlayState extends MusicBeatState
 				membrosdoclube.push('monika');
 			if (!SONG.player1.startsWith('sayori') && !SONG.player2.startsWith('sayori') && SONG.gfVersion != 'sayo-speaker')
 				{
-					if (isStoryMode || Character.loadaltcostume && SONG.gfVersion == 'gf-realdoki' && SaveData.gfcostume != "sayo")
+				if (isStoryMode
+					|| Character.loadaltcostume
+					&& (SONG.gfVersion == 'gf-realdoki' && SaveData.gfcostume != "sayo" || SONG.gfVersion != 'gf-realdoki'))
 						membrosdoclube.push('sayori');
 				}
 			if (!SONG.player1.startsWith('natsuki') && !SONG.player2.startsWith('natsuki') && SONG.song.toLowerCase()!='erb')
@@ -1440,8 +1442,10 @@ class PlayState extends MusicBeatState
 					clubroom.updateHitbox();
 					add(clubroom);
 
-					if (!SaveData.lowEnd && SONG.song.toLowerCase() == 'shrinking violet')
+					if (!SaveData.lowEnd && SONG.song.toLowerCase().startsWith('shrinking violet'))
 					{ 
+						if (SONG.song.toLowerCase().endsWith('-alt'))
+							clubroom.loadGraphic(Paths.image('musicroom/Music_RoomSpooky', 'doki'));
 						loadYuriSparkles();
 						add(sparkleBG);
 					}
@@ -1460,9 +1464,13 @@ class PlayState extends MusicBeatState
 					}
 
 					// love n' funkin'
-					if (SONG.song.toLowerCase() == 'love n funkin' && !SaveData.lowEnd)
+					// Usando o Starts With, todas as músicas remixes (alt) vão ter o mesmo code/mesma otimização das originais
+					// Isso é do próprio ddto original, mas vai ser muito bom aqui também
+					if (SONG.song.toLowerCase().startsWith('love n funkin') && !SaveData.lowEnd)
 					{
-						poemVideo = new FlxAnimate(0, 0, Paths.getLibraryPath('images/notepad/infelizmenteflxanimate', 'doki'));
+						// picohandoatlas
+						var poemSprite:String = (SONG.song.toLowerCase().endsWith('-alt') ? 'images/notepad/poemapico' : 'images/notepad/poemalnf');
+						poemVideo = new FlxAnimate(0, 0, Paths.getLibraryPath(poemSprite, 'doki'));
 						poemVideo.showPivot = false;
 						poemVideo.anim.addBySymbol('hando', 'lnf video');
 						poemVideo.anim.play('hando');
@@ -1793,13 +1801,14 @@ class PlayState extends MusicBeatState
 			add(redStatic);
 		}
 
-		if ((SONG.song.toLowerCase() == 'baka' || SONG.song.toLowerCase() == 'hot air balloon') && !SaveData.lowEnd)
+		if ((SONG.song.toLowerCase().startsWith('baka') || SONG.song.toLowerCase() == 'hot air balloon') && !SaveData.lowEnd)
 		{
 			bakaOverlay = new FlxSprite(0, 0);
 			bakaOverlay.frames = Paths.getSparrowAtlas('clubroom/BakaBGDoodles', 'doki');
 			bakaOverlay.antialiasing = SaveData.globalAntialiasing;
 			bakaOverlay.animation.addByPrefix('normal', 'Normal Overlay', 24, true);
 			bakaOverlay.animation.addByPrefix('party rock is', 'Rock Overlay', 24, true);
+			bakaOverlay.animation.addByPrefix('FUCK', 'Tank Overlay', 24, true);
 			bakaOverlay.animation.play('normal');
 			bakaOverlay.scrollFactor.set();
 			bakaOverlay.visible = false;
@@ -1809,6 +1818,12 @@ class PlayState extends MusicBeatState
 			bakaOverlay.updateHitbox();
 			bakaOverlay.screenCenter();
 			add(bakaOverlay);
+
+			whiteflash.makeGraphic(FlxG.width * 3, FlxG.height * 3, 0xFFFDC1FF);
+			//aaaaaaa
+			whiteflash.alpha = 0.0001;
+			whiteflash.cameras = [camHUD];
+			add(whiteflash);
 		}
 
 		if (SONG.song.toLowerCase() != 'takeover medley')
@@ -1841,7 +1856,7 @@ class PlayState extends MusicBeatState
 
 			if (curStage == 'dokiclubroom')
 			{
-				switch (SONG.player2)
+			switch (SONG.player2)
 				{
 					case "sayori":
 						{
@@ -2515,7 +2530,7 @@ class PlayState extends MusicBeatState
 
 					case 'hot air balloon':
 						customstart();
-					case 'shrinking violet':
+				case 'shrinking violet' | 'shrinking violet-alt':
 						customstart();
 					case 'joyride':
 						customstart();
@@ -2526,7 +2541,7 @@ class PlayState extends MusicBeatState
 					case 'you and me':
 						customstart();
 
-					case 'love n funkin':
+				case 'love n funkin' | 'love n funkin-alt':
 						customstart();
 
 					case 'constricted':
@@ -2550,7 +2565,7 @@ class PlayState extends MusicBeatState
 			{
 				switch (curSong.toLowerCase())
 				{
-					case 'dual demise' | 'your demise' | 'epiphany' | 'wilted' | 'you and me' | 'libitina' | 'takeover medley' | 'drinks on me' | 'our harmony' | 'love n funkin' | 'constricted':
+					case 'dual demise' | 'your demise' | 'epiphany' | 'wilted' | 'you and me' | 'libitina' | 'takeover medley' | 'drinks on me' | 'our harmony' | 'love n funkin' | 'love n funkin-alt' | 'constricted':
 						customstart();
 					default:
 						startCountdown();
@@ -2561,7 +2576,8 @@ class PlayState extends MusicBeatState
 		{
 			switch (curSong.toLowerCase())
 			{
-				case 'dual demise' | 'your demise' | 'epiphany' | 'wilted' | 'you and me' | 'libitina' | 'takeover medley' | 'drinks on me' | 'our harmony' | 'love n funkin' | 'constricted':
+			case 'dual demise' | 'your demise' | 'epiphany' | 'wilted' | 'you and me' | 'libitina' | 'takeover medley' | 'drinks on me' | 'our harmony' |
+				'love n funkin' | 'love n funkin-alt' | 'constricted':
 					customstart();
 				default:
 					startCountdown();
@@ -2699,7 +2715,8 @@ class PlayState extends MusicBeatState
 
 		switch (curSong.toLowerCase())
 		{
-			case 'hot air balloon' | 'shrinking violet' | 'joyride':
+		case 'hot air balloon' | 'shrinking violet' | 'shrinking violet-alt' | 'joyride':
+			whiteflash.makeGraphic(FlxG.width * 3, FlxG.height * 3, 0xFFFDC1FF);
 				if (isStoryMode && showCutscene)
 				{
 					dad.alpha = 0.001;
@@ -2726,7 +2743,7 @@ class PlayState extends MusicBeatState
 				}
 				else
 					startCountdown();
-			case 'love n funkin':
+		case 'love n funkin' | 'love n funkin-alt':
 				boyfriend.x += 230;
 				gf.x += 85;
 				gf.y += 320;
@@ -2979,7 +2996,7 @@ class PlayState extends MusicBeatState
 						});
 					}
 				});
-			case 'baka':
+			case 'baka' | 'baka-alt':
 				add(blackScreen);
 				blackScreen.cameras = [camOverlay];
 				blackScreen.alpha = 0.1;
@@ -3381,7 +3398,7 @@ class PlayState extends MusicBeatState
 
 		switch (curSong.toLowerCase())
 		{
-			case 'hot air balloon' | 'shrinking violet' | 'joyride':
+			case 'hot air balloon' | 'shrinking violet' | 'shrinking violet-alt' | 'joyride':
 				dad.alpha = 1;
 			case 'catfight':
 				var who:String;
@@ -3394,7 +3411,7 @@ class PlayState extends MusicBeatState
 				add(catpopup);
 			case 'wilted':
 				wiltswap(0, true);
-			case 'love n funkin' | 'constricted':
+			case 'love n funkin' | 'love n funkin-alt' | 'constricted':
 				if (blackScreen != null)
 					FlxTween.tween(blackScreen, {alpha: 0.001}, CoolUtil.calcSectionLength(0.25), {ease: FlxEase.sineOut});
 		}
@@ -5949,7 +5966,7 @@ class PlayState extends MusicBeatState
 			else
 				char = dad;
 
-			if (curSong.toLowerCase() == 'love n funkin' && iconP2.char != char.healthIcon)
+			if (curSong.toLowerCase().startsWith('love n funkin') && iconP2.char != char.healthIcon)
 				changeOpponentIcon(char);
 		}
 		else if (daNote != null && daNote.noteType == 6)
@@ -6053,7 +6070,7 @@ class PlayState extends MusicBeatState
 			else
 				char = dad;
 
-			if (curSong.toLowerCase() == 'love n funkin' && iconP2.char != char.healthIcon)
+			if (curSong.toLowerCase().startsWith('love n funkin') && iconP2.char != char.healthIcon)
 				changeOpponentIcon(char);
 		}
 		else if (note != null && note.noteType == 6)
@@ -6174,7 +6191,7 @@ class PlayState extends MusicBeatState
 				else
 					char = dad;
 
-				if (curSong.toLowerCase() == 'love n funkin' && iconP2.char != char.healthIcon)
+				if (curSong.toLowerCase().startsWith('love n funkin') && iconP2.char != char.healthIcon)
 					changeOpponentIcon(char);
 
 				switch (note.noteType)
@@ -6269,7 +6286,7 @@ class PlayState extends MusicBeatState
 		if (boyfriend.curCharacter == 'monika' && SaveData.monikacostume == 'casuallong' && !isStoryMode && !mirrormode)
 				boyfriend.x -= 120;
 
-		mirrormode = false;
+		//mirrormode = false;
 		if (curSong.toLowerCase() == 'catfight' && mirrormode || curSong.toLowerCase() == 'epiphany' && storyDifficulty == 2){
 
 			if (boyfriend.gameoverchara == 'gameover-generic' && !mirrormode)
@@ -6582,6 +6599,41 @@ class PlayState extends MusicBeatState
 									pinkOverlay.visible = false;
 								}});
 							}
+					}
+
+				case 'shrinking violet-alt': // Violet specific events
+					switch (curStep)
+					{
+						case 272:
+							defaultCamZoom = 1.2;
+						case 528:
+							defaultCamZoom = 1;
+						case 784:
+							if (!SaveData.lowEnd)
+							{
+								sparkleBG.visible = true;
+								add(sparkleFG);
+								add(pinkOverlay);
+							}
+						case 1024:
+							defaultCamZoom = 1.2;
+							camFocus = false;
+							moveCamera('centered');
+						case 1040:
+							whiteflash.alpha = 1;
+							FlxTween.tween(whiteflash, {alpha: 0.001}, CoolUtil.calcSectionLength(0.3), {ease: FlxEase.sineOut});
+							defaultCamZoom = 1;
+							if (!SaveData.lowEnd)
+							{
+								encoreTime = 2;
+								FlxTween.tween(sparkleBG, {alpha: 0}, CoolUtil.calcSectionLength(), {ease: FlxEase.sineOut});
+								FlxTween.tween(sparkleFG, {alpha: 0}, CoolUtil.calcSectionLength(), {ease: FlxEase.sineOut});
+								FlxTween.tween(pinkOverlay, {alpha: 0}, CoolUtil.calcSectionLength(), {ease: FlxEase.sineOut});
+							}
+						case 1296:
+							camFocus = true;
+							defaultCamZoom = 1.2;
+							encoreTime = 0;
 					}
 				case 'titular (mc mix)':
 					switch (curStep)
@@ -7135,26 +7187,9 @@ class PlayState extends MusicBeatState
 							FlxTween.tween(camFollow, {y: -3404, x: 589}, 15, {ease: FlxEase.linear});
 						case 16:
 							FlxTween.tween(whiteflash, {alpha: 0.001}, 3, {ease: FlxEase.sineOut});
-						/*case 19: //ISSO É EXTREMAMENTE CUSTOSO PARA UM CELULAR POR ALGUM MOTIVO... Então tive que refazer.
-							funnytext.resetText("Alguns dias se passaram desde que o BF e a GF\nvisitaram o clube pela última vez.");
-							funnytext.start(0.04);
-						case 84:
-							funnytext.resetText("O Clube de Literatura voltou a ter apenas seus 5 membros originais.");
-							funnytext.start(0.04);
-						case 141:
-							funnytext.resetText("Os dias continuaram normais com reuniões\ncheias de histórias, doces e músicas.");
-							funnytext.start(0.04);
-						case 208:
-							funnytext.resetText("As coisas estavam indo bem...\n especialmente para um certo alguém-");
-							funnytext.start(0.04);
-						case 252:
-							FlxTween.tween(funnytext, {alpha: 0}, 0.5, {ease: FlxEase.sineIn,
-								onComplete: function(twn:FlxTween)
-								{
-									funnytext.visible = false;
-								}
-							});*/
 						case 19: //ISSO É EXTREMAMENTE CUSTOSO PARA UM CELULAR POR ALGUM MOTIVO... Então tive que refazer.
+						// Se isso tá funcionando bem aqui, melhor nem mexer
+						// Somente olhei nessa parte do code pelo motivo de que na 3.1.1, eles trocaram isso pra um txt
 							FlxTween.tween(funnytext, {alpha: 1}, 0.4, {ease: FlxEase.sineIn});	
 						case 58:
 							FlxTween.tween(funnytext, {alpha: 0}, 1, {ease: FlxEase.sineIn,
@@ -7364,7 +7399,7 @@ class PlayState extends MusicBeatState
 							FlxTween.tween(camFollow, {y: -3404, x: 589}, 5, {ease: FlxEase.linear});
 							FlxTween.tween(camHUD, {alpha: 0}, 2, {ease: FlxEase.sineOut});
 					}
-				case 'love n funkin':
+				case 'love n funkin' | 'love n funkin-alt':
 					// Jorge please don't kill me ~M&M
 					if(!SaveData.lowEnd){
 					switch (curStep)
@@ -7393,6 +7428,7 @@ class PlayState extends MusicBeatState
 							
 							camZooming = false;
 							camGame2.fade(FlxColor.WHITE, 0.5, true);
+							defaultCamZoom = 1;
 							poemVideo.anim.play('hando', true);
 							poemVideo.visible = true;
 							poemVideo.alpha = 1;
@@ -7458,6 +7494,20 @@ class PlayState extends MusicBeatState
 							});
 					}
 				}
+					if (curSong.toLowerCase() == 'love n funkin-alt')
+					{
+						switch (curStep)
+						{
+							case 240:
+								defaultCamZoom = 1.3;
+							case 256:
+								defaultCamZoom = 1;
+							case 960:
+								defaultCamZoom = 1.1;
+							case 1024:
+								defaultCamZoom = 1;
+						}
+					}
 				case 'libitina':
 					switch (curStep)
 					{
@@ -8045,7 +8095,7 @@ class PlayState extends MusicBeatState
 				}
 			}
 
-			if (curSong.toLowerCase() == 'baka' && !sectionStart)
+			if (curSong.toLowerCase().startsWith('baka') && !sectionStart)
 			{
 				switch (curBeat)
 				{
@@ -8056,9 +8106,16 @@ class PlayState extends MusicBeatState
 							FlxTween.tween(bakaOverlay, {alpha: 1}, CoolUtil.calcSectionLength(2), {ease: FlxEase.sineIn});
 						}
 					case 32:
-						if (bakaOverlay != null) bakaOverlay.animation.play('party rock is', true);
+						if (bakaOverlay != null)
+							bakaOverlay.animation.play((curSong.toLowerCase().endsWith('-alt') ? 'FUCK' : 'party rock is'), true);
 						defaultCamZoom = 1.2;
-						camGame.shake(0.002, CoolUtil.calcSectionLength(2));
+						if (!curSong.toLowerCase().endsWith('-alt'))
+							camGame.shake(0.002, CoolUtil.calcSectionLength(2));
+						else
+						{
+							whiteflash.alpha = 1;
+							FlxTween.tween(whiteflash, {alpha: 0.001}, CoolUtil.calcSectionLength(0.2), {ease: FlxEase.sineOut});
+						}
 					case 40:
 						camFocus = false;
 						camFollow.setPosition(boyfriend.getMidpoint().x - 100, boyfriend.getMidpoint().y - 100);
@@ -8087,7 +8144,14 @@ class PlayState extends MusicBeatState
 							FlxTween.tween(bakaOverlay, {alpha: 1}, CoolUtil.calcSectionLength(2), {ease: FlxEase.sineIn});
 						}
 					case 176:
-						if (bakaOverlay != null) bakaOverlay.animation.play('party rock is', true);
+						if (bakaOverlay != null)
+							bakaOverlay.animation.play((curSong.toLowerCase().endsWith('-alt') ? 'FUCK' : 'party rock is'), true);
+
+						if (curSong.toLowerCase().endsWith('-alt'))
+						{
+							whiteflash.alpha = 1;
+							FlxTween.tween(whiteflash, {alpha: 0.001}, CoolUtil.calcSectionLength(0.2), {ease: FlxEase.sineOut});
+						}
 				}
 			}
 
@@ -8335,6 +8399,8 @@ class PlayState extends MusicBeatState
 								camFollow.x += 10;
 						}
 				}
+				camFollow.x += dad.cameraPosition[0];
+				camFollow.y += dad.cameraPosition[1];
 				switch (curStage)
 				{
 					case 'clubroomevil' | 'libitina':
@@ -8423,6 +8489,8 @@ class PlayState extends MusicBeatState
 								camFollow.y = 360;
 						}
 				}
+				camFollow.x += boyfriend.cameraPosition[0];
+				camFollow.y += boyfriend.cameraPosition[1];
 				switch (curStage)
 				{
 					case 'wilted':
@@ -8857,9 +8925,7 @@ class PlayState extends MusicBeatState
 		{
 			whiteflash.visible = true;
 			whiteflash.alpha = 1;
-			FlxTween.tween(whiteflash, {alpha: 0.001}, CoolUtil.calcSectionLength(0.1), {ease: FlxEase.sineOut, onComplete: function(twn:FlxTween){
-				whiteflash.visible = false;
-			}});
+			FlxTween.tween(whiteflash, {alpha: 0.001}, CoolUtil.calcSectionLength(0.2), {ease: FlxEase.sineOut});
 		}
 
 		var regStyle:String = mirrormode ? 'pixel' : SONG.noteStyle;

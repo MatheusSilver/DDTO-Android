@@ -137,7 +137,7 @@ class PauseSubState extends MusicBeatSubstate
 		levelInfo.text += (PlayState.hasMetadata ? PlayState.metadata.song.name : PlayState.SONG.song);
 		levelInfo.antialiasing = SaveData.globalAntialiasing;
 		levelInfo.scrollFactor.set();
-		levelInfo.setFormat(LangUtil.getFont(), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		levelInfo.setFormat(LangUtil.getFont(), 32, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		levelInfo.borderSize = 1.25;
 		levelInfo.y += LangUtil.getFontOffset();
 		levelInfo.updateHitbox();
@@ -147,7 +147,7 @@ class PauseSubState extends MusicBeatSubstate
 		levelDifficulty.text = CoolUtil.difficultyString(PlayState.storyDifficulty);
 		levelDifficulty.antialiasing = SaveData.globalAntialiasing;
 		levelDifficulty.scrollFactor.set();
-		levelDifficulty.setFormat(LangUtil.getFont(), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		levelDifficulty.setFormat(LangUtil.getFont(), 32, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		levelDifficulty.borderSize = 1.25;
 		levelDifficulty.y += LangUtil.getFontOffset();
 		levelDifficulty.updateHitbox();
@@ -160,7 +160,7 @@ class PauseSubState extends MusicBeatSubstate
 		deathText.text += PlayState.deathCounter;
 		deathText.antialiasing = SaveData.globalAntialiasing;
 		deathText.scrollFactor.set();
-		deathText.setFormat(LangUtil.getFont(), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		deathText.setFormat(LangUtil.getFont(), 32, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		deathText.borderSize = 1.25;
 		deathText.y += LangUtil.getFontOffset();
 		deathText.updateHitbox();
@@ -173,7 +173,7 @@ class PauseSubState extends MusicBeatSubstate
 		practiceText.visible = PlayState.practiceMode;
 		practiceText.antialiasing = SaveData.globalAntialiasing;
 		practiceText.scrollFactor.set();
-		practiceText.setFormat(LangUtil.getFont(), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		practiceText.setFormat(LangUtil.getFont(), 32, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		practiceText.borderSize = 1.25;
 		practiceText.y += LangUtil.getFontOffset();
 		practiceText.updateHitbox();
@@ -183,7 +183,7 @@ class PauseSubState extends MusicBeatSubstate
 		speedText.visible = PlayState.practiceMode;
 		speedText.antialiasing = SaveData.globalAntialiasing;
 		speedText.scrollFactor.set();
-		speedText.setFormat(LangUtil.getFont(), 32, FlxColor.WHITE, CENTER, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
+		speedText.setFormat(LangUtil.getFont(), 32, FlxColor.WHITE, RIGHT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		speedText.borderSize = 1.25;
 		speedText.y += LangUtil.getFontOffset();
 		speedText.updateHitbox();

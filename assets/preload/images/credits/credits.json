@@ -288,10 +288,10 @@
 			"whichrole": 5
 		},
 		{
-			"realName": "Kairii",
-			"iconName": "Kairii",
+			"realName": "JACKALRUIN",
+			"iconName": "JACKALRUIN",
 			"description": "Músicas",
-			"twitter": "https://www.youtube.com/@RiiStudios",
+			"twitter": "https://www.youtube.com/@JACKALRUIN",
 			"whichrole": 5
 		},
 		{
@@ -344,6 +344,30 @@
 			"whichrole": 5
 		},
 		{
+			"realName": "Baka (Tankman Mix)",
+			"iconName": "Tankman",
+			"description": "Remix composto por Cocopuffs\nMúsica original por Starrie_blu",
+			"twitter": "",
+			"whichrole": 6,
+			"funnyName": "Baka\n(Tankman Mix)"
+		},
+		{
+			"realName": "Shrinking Violet (Spooky Mix)",
+			"iconName": "SpookyKids",
+			"description": "Remix composto por DrazicallyDTM\nMúsica original por\nHighPoweredKeyz e DatDavi",
+			"twitter": "",
+			"whichrole": 6,
+			"funnyName": "Shrinking Violet\n(Spooky Mix)"
+		},
+		{
+			"realName": "Love n' Funkin' (Pico Mix)",
+			"iconName": "Pico",
+			"description": "Remix composto por Noichi\nMúsica original por DatDavi\ne Stardust Tunes",
+			"twitter": "",
+			"whichrole": 6,
+			"funnyName": "Love n' Funkin'\n(Pico Mix)"
+		},
+		{
 			"realName": "High School Conflict (Plus)",
 			"iconName": "MonikaPixel",
 			"description": "Composto por GGalactigal",
@@ -354,7 +378,7 @@
 		{
 			"realName": "Bara no Yume (Plus)",
 			"iconName": "SenpaiMonika",
-			"description": "Composto por Kairii",
+			"description": "Composto por JACKALRUIN",
 			"twitter": "",
 			"whichrole": 6,
 			"funnyName": "Bara no Yume\n(Plus)"
@@ -434,7 +458,7 @@
 		{
 			"realName": "Beathoven (Natsuki Mix)",
 			"iconName": "Beathoven",
-			"description": "Remix Composto por Kairii\nMúsica Original por PaperKitty",
+			"description": "Remix Composto por JACKALRUIN\nMúsica Original por PaperKitty",
 			"twitter": "",
 			"whichrole": 6,
 			"funnyName": "Beathoven\n(Natsuki Mix)"
@@ -528,7 +552,7 @@
 		{
 			"realName": "Takeover Medley",
 			"iconName": "Monika",
-			"description": "Composto por HighPoweredKeyz,\nStardust Tunes, Kairii,\nMiss Beepy, GGalactigal, & DatDavi",
+			"description": "Composto por HighPoweredKeyz,\nStardust Tunes, JACKALRUIN,\nMiss Beepy, GGalactigal, & DatDavi",
 			"twitter": "",
 			"whichrole": 6
 		},
@@ -578,7 +602,7 @@
 		{
 			"realName": "Libitina",
 			"iconName": "Libitina",
-			"description": "Composto por Kairii",
+			"description": "Composto por JACKALRUIN",
 			"twitter": "",
 			"whichrole": 6,
 			"hiddenType": "libitina"
@@ -900,7 +924,7 @@
 		{
 			"realName": "Playtesters",
 			"iconName": "Monika",
-			"description": "DatDavi, ItoSaihara_, Jorge_SunSpirit, Kairii,\nM&M, SirDusterBuster, Weeg",
+			"description": "DatDavi, ItoSaihara_, Jorge_SunSpirit, JACKALRUIN,\nM&M, SirDusterBuster, Weeg",
 			"twitter": "",
 			"whichrole": 10
 		},

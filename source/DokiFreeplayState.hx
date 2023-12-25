@@ -41,12 +41,14 @@ class DokiFreeplayState extends MusicBeatState
 	static var pageFlipped:Bool = false;
 
 	var curDifficulty:Int = 1;
-	var goku:Bool = false;
+	var diffType:Int = 0;
 	var diffselect:Bool = false;
+	var diff:FlxSprite;
+	var diffsuffix:String = '';
 	var scoreText:FlxText;
 	var lerpScore:Float = 0;
 	var intendedScore:Float = 0;
-	var diff:FlxSprite;
+
 	var bg:FlxSprite;
 	
 	var leftArrow:FlxSprite;
@@ -73,7 +75,7 @@ class DokiFreeplayState extends MusicBeatState
 	];
 
 	public static var multiDiff:Array<String> = [
-		'epiphany'
+	'epiphany', 'baka', 'shrinking violet', 'love n funkin'
 	];
 
 	public static function loadDiff(diff:Int, name:String, array:Array<SwagSong>)
@@ -140,7 +142,7 @@ class DokiFreeplayState extends MusicBeatState
 
 		for (i in 0...songs.length)
 		{
-			var icon:HealthIcon = new HealthIcon(songs[i].songCharacter);
+			var icon:HealthIcon = new HealthIcon(songs[i].songCharacter, false, false);
 			iconArray.push(icon);
 			icon.x = 1060;
 			icon.y = 550;
@@ -208,13 +210,7 @@ class DokiFreeplayState extends MusicBeatState
 		diff.antialiasing = SaveData.globalAntialiasing;
 		diff.animation.addByPrefix('regular', 'Regular', 24);
 		diff.animation.addByPrefix('lyrics', 'Lyrics', 24);
-		switch (curPage)
-		{
-			default:
-				diff.animation.play('regular');
-			case 3:
-				diff.animation.play('lyrics');
-		}
+		diff.animation.addByPrefix('alt', 'Alt', 24);
 		diff.updateHitbox();
 		diff.visible = false;
 		add(diff);
@@ -450,6 +446,7 @@ class DokiFreeplayState extends MusicBeatState
 					case true:
 						diff.visible = false;
 						diffselect = false;
+						diffsuffix = '';
 						pageNum.visible = true;
 						rightArrow.visible=true;
 						leftArrow.visible=true;
@@ -487,41 +484,52 @@ class DokiFreeplayState extends MusicBeatState
 			if ((controls.ACCEPT || acceptDiferenciado)  && songs.length >= 1)
 			{
 				acceptDiferenciado = false;
-				if (multiDiff.contains(songs[curSelected].songName.toLowerCase()) && SaveData.beatEpiphany)
-				{
-					switch (diffselect)
-					{
-						case false:
-							{
-								GlobalSoundManager.play('confirmMenu');
-								diff.visible = true;
-
-								diffselect = true;
-								pageNum.visible = false;
-								rightArrow.visible=false;
-								leftArrow.visible=false;
-							}
-						case true:
-							{
-								startsong();
-							}
-					}
-				}
-				else
-				{
-					curDifficulty = 1;
-					if (songs[curSelected].songName.toLowerCase() == 'catfight')
-						openSubState(new CatfightPopup('freeplay'));
-					else
-						startsong();
-				}
+				selectSong();
 			}
-		}
 
 		if (FlxG.sound.music != null)
 			Conductor.songPosition = FlxG.sound.music.time;
 	
 		super.update(elapsed);
+	}
+
+	function selectSong() {
+			if (diffselect && multiDiff.contains(songs[curSelected].songName.toLowerCase()) && SaveData.beatEpiphany)
+			{
+				if (diffType == 1)
+					curDifficulty = 1;
+
+				startsong();
+				return;
+			}
+
+			if (multiDiff.contains(songs[curSelected].songName.toLowerCase()))
+			{
+				switch (songs[curSelected].songName.toLowerCase())
+				{
+					case 'epiphany':
+						GlobalSoundManager.play('confirmMenu');
+						diffType = 0;
+						diff.visible = true;
+						diffselect = true;
+					case 'baka' | 'shrinking violet' | 'love n funkin':
+						GlobalSoundManager.play('confirmMenu');
+						diffType = 1;
+						diff.visible = true;
+						diffselect = true;
+					default:
+						startsong();
+				}
+			}
+			else
+			{
+				curDifficulty = 1;
+				if (songs[curSelected].songName.toLowerCase() == 'catfight')
+					openSubState(new CatfightPopup('freeplay'));
+				else
+					startsong();
+			}
+		}
 	}
 
 	public function startsong()
@@ -565,19 +573,19 @@ class DokiFreeplayState extends MusicBeatState
 
 	function loadSong(isCharting:Bool = false)
 	{
-		var poop:String = Highscore.formatSong(songs[curSelected].songName, curDifficulty);
+		var poop:String = Highscore.formatSong(songs[curSelected].songName + diffsuffix, curDifficulty);
 
 		PlayState.isStoryMode = false;
 
 		try
 		{
-			PlayState.SONG = Song.loadFromJson(poop, songs[curSelected].songName.toLowerCase());
+			PlayState.SONG = Song.loadFromJson(poop, songs[curSelected].songName.toLowerCase() + diffsuffix);
 			PlayState.storyDifficulty = curDifficulty;
 		}
 		catch (e)
 		{
 			poop = Highscore.formatSong(songs[curSelected].songName, 1);
-			PlayState.SONG = Song.loadFromJson(poop, songs[curSelected].songName.toLowerCase());
+			PlayState.SONG = Song.loadFromJson(poop, songs[curSelected].songName.toLowerCase() + diffsuffix);
 			PlayState.storyDifficulty = 1;
 		}
 
@@ -601,34 +609,27 @@ class DokiFreeplayState extends MusicBeatState
 
 	function changeDiff(change:Int = 0):Void
 	{
+		diffsuffix = '';
 		curDifficulty += change;
 
-		if (curPage != 3)
-		{
-			if (curDifficulty < 0)
-				curDifficulty = 2;
-			if (curDifficulty > 2)
-				curDifficulty = 0;
-		}
-		else
-		{
-			if (curDifficulty <= 0)
-				curDifficulty = 2;
-			if (curDifficulty > 2)
-				curDifficulty = 1;
-		}
-
-		getSongData(songs[curSelected].songName, curDifficulty);
+		if (curDifficulty <= 0)
+			curDifficulty = 2;
+		if (curDifficulty > 2)
+			curDifficulty = 1;
 
 		switch (curDifficulty)
 		{
 			case 2:
 				trace('hard');
-				diff.animation.play('lyrics');
+				diff.animation.play((diffType == 0 ? 'lyrics' : 'alt'));
+				if (diffType == 1)
+					diffsuffix = '-alt';
 			case 1:
 				trace('normal');
 				diff.animation.play('regular');
 		}
+
+		getSongData(songs[curSelected].songName + diffsuffix, curDifficulty);
 	}
 
 	function playSong()
@@ -658,7 +659,8 @@ class DokiFreeplayState extends MusicBeatState
 		}
 		else
 		{
-			getSongData(songs[curSelected].songName, curDifficulty);
+			getSongData(songs[curSelected].songName + diffsuffix, curDifficulty);
+
 
 			if (SaveData.cacheSong)
 			{
@@ -701,7 +703,7 @@ class DokiFreeplayState extends MusicBeatState
 		if (!multiDiff.contains(songName.toLowerCase()))
 			diff = 1;
 
-		intendedScore = Highscore.getScore(songName, diff);
+		intendedScore = Highscore.getScore(songName + diffsuffix, diff);
 	}
 
 	function changePage(huh:Int = 0)

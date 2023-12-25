@@ -336,6 +336,13 @@
                     "color": "0xFFF75B6C"
                 },
                 {
+                    "data": "henry",
+                    "name": "nameHenry",
+                    "desc": "descHenry",
+                    "unlock": "unlockHenry",
+                    "color": "#F0F4FA"
+                },
+                {
                     "data": "blueskies",
                     "name": "nameBlueSky",
                     "desc": "descBlueSky_PR",
