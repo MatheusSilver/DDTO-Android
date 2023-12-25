@@ -3121,7 +3121,7 @@ class PlayState extends MusicBeatState
 
 				new FlxTimer().start(2.2, function(swagTimer:FlxTimer)
 				{
-					FlxG.sound.play(Paths.sound('dah'));
+					FlxG.sound.play(Paths.sound('gameover/dah'));
 				});
 			}
 			case 'dokiexit':

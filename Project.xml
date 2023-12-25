@@ -10,7 +10,7 @@
 	Eu apaguei o arquivo gitattributes pq como usaremos os assets otimizados aqui,
 	não tem necessidade de se preocupar com arquivos com mais de 50mb (pngs, mp4, webm)
 	E também pelo motivo de que ele simplesmente "corrompeu" toda a source-->
-	<app title="Doki Doki Takeover Plus" file="DokiTakeover" packageName="com.teamsilver.dokitakeover" package="com.teamsilver.dokitakeover" main="Main" version="3.1.0" company="Team-Silver" />
+	<app title="Doki Doki Takeover Plus" file="DokiTakeover" packageName="com.teamsilver.dokitakeover" package="com.teamsilver.dokitakeover" main="Main" version="3.1.2" company="Team-Silver" />
 
 	<!--The flixel preloader is not accurate in Chrome. You can use it regularly if you embed the swf into a html file
 		or you can set the actual size of your file manually at "FlxPreloaderBase-onUpdate-bytesTotal"-->
