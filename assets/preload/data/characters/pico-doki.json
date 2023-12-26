@@ -98,39 +98,6 @@
 			"fps": 24,
 			"name": "Pico NOTE LEFT miss",
 			"indices": []
-		},
-		{
-			"offsets": [
-				-2,
-				5
-			],
-			"loop": false,
-			"fps": 24,
-			"anim": "firstDeath",
-			"indices": [],
-			"name": "Pico GameOver Start"
-		},
-		{
-			"offsets": [
-				-5,
-				0
-			],
-			"loop": false,
-			"fps": 24,
-			"anim": "deathLoop",
-			"indices": [],
-			"name": "Pico GameOver Loop"
-		},
-		{
-			"offsets": [
-				-5,
-				29
-			],
-			"loop": false,
-			"fps": 24,
-			"anim": "deathConfirm",
-			"indices": [],
-			"name": "Pico GameOver Confirm"
 		}
 	],
 	"no_antialiasing": false,
@@ -152,7 +119,6 @@
 	],
 	"sing_duration": 4,
 	"scale": 1,
-	"death_sound": "fnf_loss_sfx",
 	"win_sound": "dah",
-	"gameover_character": "pico-doki"
+	"gameover_character": "pico-doki-gameover"
 }

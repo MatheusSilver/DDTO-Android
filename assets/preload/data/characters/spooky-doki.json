@@ -154,39 +154,6 @@
 				12,
 				14
 			]
-		},
-		{
-			"loop": false,
-			"offsets": [
-				259,
-				96
-			],
-			"anim": "firstDeath",
-			"fps": 24,
-			"name": "Game Over Start0",
-			"indices": []
-		},
-		{
-			"loop": false,
-			"offsets": [
-				259,
-				-245
-			],
-			"anim": "deathLoop",
-			"fps": 24,
-			"name": "Game Over Death0",
-			"indices": []
-		},
-		{
-			"loop": false,
-			"offsets": [
-				261,
-				-228
-			],
-			"anim": "deathConfirm",
-			"fps": 24,
-			"name": "Game Over Retry0",
-			"indices": []
 		}
 	],
 	"no_antialiasing": false,
@@ -210,5 +177,5 @@
 	"scale": 1,
 	"death_sound": "fnf_loss_sfx_spooky",
 	"win_sound": "sk_ayy",
-	"gameover_character": "spooky-doki"
+	"gameover_character": "spooky-doki-gameover"
 }

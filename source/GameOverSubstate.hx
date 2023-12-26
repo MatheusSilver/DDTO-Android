@@ -77,6 +77,8 @@ class GameOverSubstate extends MusicBeatSubstate
 		{
 			if (SaveData.lowEnd)
 				bf = new Character(x, y, 'invisibru', !isBig); //Carregando a invisibru pra economizar memoria no gameover
+				// hmmmmmmmmmmm não lembrava desse low end no save data. talvez eu tenha que usar por conta dos sons de gameover. eu ainda não testei mas acho que eles podem travar um pouquinho o jogo.
+				// enfim, os personagens/skins novas jogáveis tem um gameover separado, então não sei se isso vai realmente interferir muito na performance. 
 			else
 				bf = new Character(x, y, daBf, !isBig);
 

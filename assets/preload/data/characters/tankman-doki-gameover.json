@@ -1,0 +1,58 @@
+{
+    "animations": [
+        {
+			"offsets": [
+				14,
+				11
+			],
+			"loop": false,
+			"fps": 16,
+			"anim": "firstDeath",
+			"indices": [],
+			"name": "Tankman Gameover Start"
+		},
+		{
+			"offsets": [
+				8,
+				0
+			],
+			"loop": false,
+			"fps": 16,
+			"anim": "deathLoop",
+			"indices": [],
+			"name": "Tankman Gameover Idle"
+		},
+		{
+			"offsets": [
+				8,
+				65
+			],
+			"loop": false,
+			"fps": 24,
+			"anim": "deathConfirm",
+			"indices": [],
+			"name": "Tankman Gameover Confirm"
+		}
+    ],
+    "no_antialiasing": false,
+    "image": "characters/DDLCTankman_gameover",
+    "position": [
+        -25,
+        0
+    ],
+    "healthicon": "invisibru",
+    "flip_x": false,
+    "healthbar_colors": [
+        49,
+        176,
+        209
+    ],
+    "camera_position": [
+        0,
+        0
+    ],
+    "sing_duration": 4,
+    "scale": 1,
+    "death_sound": "fnf_loss_sfx_tankman",
+	"win_sound": "tm_yousuck"
+}

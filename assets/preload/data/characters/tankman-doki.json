@@ -120,39 +120,6 @@
 			"anim": "hey",
 			"indices": [],
 			"name": "Tankman Taunt"
-		},
-		{
-			"offsets": [
-				14,
-				11
-			],
-			"loop": false,
-			"fps": 24,
-			"anim": "firstDeath",
-			"indices": [],
-			"name": "Tankman Gameover Start"
-		},
-		{
-			"offsets": [
-				8,
-				0
-			],
-			"loop": false,
-			"fps": 24,
-			"anim": "deathLoop",
-			"indices": [],
-			"name": "Tankman Gameover Idle"
-		},
-		{
-			"offsets": [
-				8,
-				65
-			],
-			"loop": false,
-			"fps": 24,
-			"anim": "deathConfirm",
-			"indices": [],
-			"name": "Tankman Gameover Confirm"
 		}
 	],
 	"no_antialiasing": false,
@@ -176,5 +143,5 @@
 	"scale": 1,
 	"death_sound": "fnf_loss_sfx_tankman",
 	"win_sound": "tm_yousuck",
-	"gameover_character": "tankman-doki"
+	"gameover_character": "tankman-doki-gameover"
 }

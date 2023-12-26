@@ -1,0 +1,58 @@
+{
+    "animations": [
+        {
+			"loop": false,
+			"offsets": [
+				259,
+				96
+			],
+			"anim": "firstDeath",
+			"fps": 24,
+			"name": "Game Over Start0",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				259,
+				-245
+			],
+			"anim": "deathLoop",
+			"fps": 24,
+			"name": "Game Over Death0",
+			"indices": []
+		},
+		{
+			"loop": false,
+			"offsets": [
+				261,
+				-228
+			],
+			"anim": "deathConfirm",
+			"fps": 24,
+			"name": "Game Over Retry0",
+			"indices": []
+		}
+    ],
+    "no_antialiasing": false,
+    "image": "characters/DDLCSpookyKids_gameover",
+    "position": [
+        -25,
+        0
+    ],
+    "healthicon": "invisibru",
+    "flip_x": false,
+    "healthbar_colors": [
+        49,
+        176,
+        209
+    ],
+    "camera_position": [
+        0,
+        0
+    ],
+    "sing_duration": 4,
+    "scale": 1,
+    "death_sound": "fnf_loss_sfx_spooky",
+	"win_sound": "sk_ayy"
+}

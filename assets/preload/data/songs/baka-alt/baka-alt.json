@@ -6684,7 +6684,7 @@
 		"validScore": true,
 		"stage": "dokiclubroom",
 		"arrowSkin": "",
-		"needsVoices": true,
+		"needsVoices": false,
 		"speed": 2.7,
 		"bpm": 110
 	}
