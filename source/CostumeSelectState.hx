@@ -369,7 +369,10 @@ class CostumeSelectState extends MusicBeatState
 				}
 			}
 
-			flavorText.text = text;
+			if (grpControlshueh != null && grpControlshueh.members[costumeSelected].text != nameText)
+				grpControlshueh.members[costumeSelected].text = nameText;
+
+			flavorText.text = descText;
 		}
 		else
 		{
@@ -379,12 +382,9 @@ class CostumeSelectState extends MusicBeatState
 			if (costumeJSON.list[curSelected].costumes[costumeSelected].unlock != null)
 				text = LangUtil.getString(costumeJSON.list[curSelected].costumes[costumeSelected].unlock, 'costume');
 			else
-				text = "Desbloqueado por padrão.";
+				text = "Unlocked by default.";
 
-			if (grpControlshueh != null && grpControlshueh.members[costumeSelected].text != nameText)
-				grpControlshueh.members[costumeSelected].text = nameText;
-
-			flavorText.text = descText;
+			flavorText.text = LangUtil.getString('cmnLock') + ": " + text;
 		}
 	}
 
