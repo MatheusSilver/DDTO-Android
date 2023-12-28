@@ -1,0 +1,105 @@
+{
+	"startingMusic": "natsc",
+	"initStyle": "normal",
+	"dialogue": 
+	[
+		{
+			"isCommand": false,
+			"name": "no_one",
+			"expression": "gone",
+			"string": "Conforme a música de Monika e Sayori acaba, Yuri e Natsuki voltam para a sala de música, ambas com um sorriso de timidez no rosto.",
+			"side": ""
+		},
+		{
+			"isCommand": false,
+			"name": "yuri",
+			"expression": "smile",
+			"string": "\"Ah, nós perdemos uma grande performance?\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "sayori",
+			"expression": "ehh",
+			"string": "\"Ehehehe, estavamos apenas celebrando com uma música. Com o quão bem as coisas vão indo, porque não?\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "natsuki",
+			"expression": "happy",
+			"string": "\"Infelizmente temos que interromper a celebração rapidinho, heh heh.\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "natsuki",
+			"expression": "happy",
+			"string": "\"Yuri e eu vimos a presidente do clube de música, e eles precisam dessa sala de volta rápido.\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "neutral",
+			"string": "\"Isso significa que devemos ter a NOSSA reunião já já.\"",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "neutral",
+			"string": "\"Me sinto mal que continuemos usando a sala deles, mas os acústicos aqui são incríveis. Perfeitos para cantar ou pensar alto.\"",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "sayori",
+			"expression": "neutral",
+			"string": "\"Temos um pouquinho de tempo extra até nossa reunião começar, então tenho uma idéia!\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "sayori",
+			"expression": "yeah",
+			"string": "\"Vamos cantar todas juntas! Duetos são legais, mas imagine como soamos bem juntas!\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "natsuki",
+			"expression": "wah",
+			"string": "\"Tô nessa. Estou mais animada para fazer isso agora do que nunca.\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "yuri",
+			"expression": "smile",
+			"string": "\"Uhu, eu amaria me juntar.\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "sayori",
+			"expression": "ooh",
+			"string": "\"O que você me diz, presidente do clube?\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "ahh",
+			"string": "\"Ahaha, claro que estou nessa!\"",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "ahh",
+			"string": "\"Ok, todo mundo, vamos começar!\"",
+			"side": "right"
+		}
+	]
+}

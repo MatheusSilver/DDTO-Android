@@ -62,13 +62,17 @@ class CreditsState extends MusicBeatState
 	public var bufferArray:Array<Peeps> = [];
 	var creditsStuff:Array<Array<Dynamic>> = [];
 
-	var path:String = Paths.getPreloadPath('images/credits/credits.json');
+	var path:String;
 
 	override function create()
 	{
 		Paths.clearStoredMemory();
 		Paths.clearUnusedMemory();
-
+		if(SaveData.language == "pt-BR") {
+			path = Paths.getPreloadPath('images/credits/credits.json');
+		} else {
+			path = Paths.getPath('locales/' + SaveData.language + '/images/credits/credits.json', TEXT, ''); // eu vou me jogar de um prédio
+		}
 		persistentUpdate = persistentDraw = true;
 
 		if (pageFlipped)

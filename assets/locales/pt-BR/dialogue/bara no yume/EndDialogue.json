@@ -1,0 +1,77 @@
+{
+	"canSkip": false,
+	"startingMusic": "",
+	"initStyle": "pixel",
+	"dialogue": 
+	[
+		{
+			"isCommand": false,
+			"name": "senpai",
+			"expression": "angry",
+			"string": "Primeiro você rouba minhas coisas, e agora vem pra cima de mim com isso?",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "senpai",
+			"expression": "angry",
+			"string": "Quem que você pensa que é?",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "sad",
+			"string": "...",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "senpai",
+			"expression": "angry",
+			"string": "Agora, sai da minha frente.",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "sad",
+			"string": "...",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "uhoh",
+			"string": "...ahaha.",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "uhoh",
+			"string": "Eu acho que não vou.",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "uhoh",
+			"string": "Mas você pelo outro lado-",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "senpai",
+			"expression": "angry",
+			"string": "O que você tá-",
+			"side": "left"
+		},
+		{
+			"isCommand": true,
+			"name": "playcutscene",
+			"string": "fakeout",
+			"duration": 100000
+		}
+	]
+}

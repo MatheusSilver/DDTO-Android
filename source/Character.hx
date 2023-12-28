@@ -304,6 +304,15 @@ class Character extends FlxSprite
 		animation.addByPrefix(Name, Prefix, 24, false);
 	}
 
+	public static function pegarpng(character:String):String {
+		var json2:CharacterFile; //só fiz isso com medo de conflito
+		var path:String;
+		path = Paths.json('characters/' + character); //Eu vou utilizar isso só pra pegar o sprite da Natsuski Bombada msm
+		var jailson = Assets.getText(path);
+		json2 = cast Json.parse(jailson);
+		return json2.image; //FINALMENTE IMAGEM
+	}
+
 	override function update(elapsed:Float)
 	{
 		if (!debugMode)

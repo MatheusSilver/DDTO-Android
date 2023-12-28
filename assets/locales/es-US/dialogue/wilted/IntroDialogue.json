@@ -1,0 +1,543 @@
+{
+	"startingMusic": "",
+	"initStyle": "pixel",
+	"disableBGFade": true,
+	"dialogue": 
+	[
+		{
+			"isCommand": false,
+			"name": "senpai",
+			"expression": "gone",
+			"string": "Monika… Eu não esqueci nosso encontro desde que você saiu.",
+			"side": "left"
+		},
+		{
+			"isCommand": true,
+			"name": "flash"
+		},
+		{
+			"isCommand": true,
+			"name": "showbackgroundimage",
+			"string": "wilted1"
+		},
+		{
+			"isCommand": true,
+			"name": "hidedialogue"
+		},
+		{
+			"isCommand": false,
+			"name": "senpai",
+			"expression": "gone",
+			"string": "As coisas que você disse sobre sua vida não ser real... essa 'data' que você mencionou… e todas as coisas que você tinha controle.",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "senpai",
+			"expression": "gone",
+			"string": "Eu não sabia o que isso tudo significava.",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "senpai",
+			"expression": "gone",
+			"string": "Mas eu rapidamente comecei a perceber. Esse tempo todo... estamos quase na mesma situação.",
+			"side": "left"
+		},
+		{
+			"isCommand": true,
+			"name": "glitch"
+		},
+		{
+			"isCommand": true,
+			"name": "startmusic",
+			"string": "LunchboxScary"
+		},
+		{
+			"isCommand": true,
+			"name": "showbackgroundimage",
+			"string": "wilted2"
+		},
+		{
+			"isCommand": true,
+			"name": "hidedialogue"
+		},
+		{
+			"isCommand": false,
+			"name": "senpai",
+			"expression": "gone",
+			"string": "Meu mundo não é real. Todo lugar, minhas colegas de classe... Até eu. São tudo linhas de código.",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "senpai",
+			"expression": "gone",
+			"string": "E ainda, assim como você, eu não me sinto limitado por esses códigos... ou pelo menos não mais.",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "senpai",
+			"expression": "gone",
+			"string": "Sabendo o que eu faço agora, eu cavei mais fundo... eu posso ser e fazer tudo aqui.",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "senpai",
+			"expression": "gone",
+			"string": "Foi quando eu descobri-",
+			"side": "left"
+		},
+		{
+			"isCommand": true,
+			"name": "flash"
+		},
+		{
+			"isCommand": true,
+			"name": "playsound",
+			"string": "SpiritAppears"
+		},
+		{
+			"isCommand": true,
+			"name": "showbackgroundimage",
+			"string": "wilted3"
+		},
+		{
+			"isCommand": true,
+			"name": "hidedialogue"
+		},
+		{
+			"isCommand": true,
+			"name": "glitch",
+			"string": "hidedialogue"
+		},
+		{
+			"isCommand": true,
+			"name": "showbackgroundimage",
+			"string": "black"
+		},
+		{
+			"isCommand": false,
+			"name": "senpai",
+			"expression": "spirit",
+			"string": "Você e eu compartilhamos um ódio pela família Dearest.",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "senpai",
+			"expression": "spirit",
+			"string": "Se trabalharmos juntos agora, poderemos finalmente ter nossa vingança.",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "senpai",
+			"expression": "hmm",
+			"string": "Certo... Há algo na minha mente primeiro.",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "senpai",
+			"expression": "spirit",
+			"string": "Sua cabeça ainda está coberta de pensamentos sobre essa garota?",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "senpai",
+			"expression": "spirit",
+			"string": "Ela não vale seus esforços. Te imploro para que você esqueça ela, para podermos se concentrar em nossa vingança.",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "senpai",
+			"expression": "hmm",
+			"string": "Eu não consigo. Há muito que preciso dizer a ela.",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "senpai",
+			"expression": "hmm",
+			"string": "(Deve haver uma maneira de encontrar ela, se eu tentar apenas... isso!)",
+			"side": "right"
+		},
+		{
+			"isCommand": true,
+			"name": "glitch",
+			"string": "hidedialogue"
+		},
+		{
+			"isCommand": true,
+			"name": "endmusic"
+		},
+		{
+			"isCommand": true,
+			"name": "hidebackground"
+		},
+		{
+			"isCommand": true,
+			"name": "playcutscene",
+			"string": "senpaitransform",
+			"duration": 10
+		},
+		{
+			"isCommand": true,
+			"name": "playsound",
+			"string": "confirmMenu"
+		},
+		{
+			"isCommand": true,
+			"name": "playcutscene",
+			"string": "wiltedbgout",
+			"duration": 4
+		},
+		{
+			"isCommand": true,
+			"name": "hideleft"
+		},
+		{
+			"isCommand": true,
+			"name": "showbgfade"
+		},
+		{
+			"isCommand": false,
+			"name": "senpai",
+			"expression": "neutral",
+			"string": "Isso-Isso funcionou!",
+			"side": "left"
+		},
+		{
+			"isCommand": true,
+			"name": "swapstyle",
+			"string": "normal"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "upset",
+			"string": "\"Ei, quem disse isso?\"",
+			"side": "right"
+		},
+		{
+			"isCommand": true,
+			"name": "shake",
+			"duration": "0.2"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "eeh",
+			"string": "\"Huh?\"",
+			"side": "right"
+		},
+		{
+			"isCommand": true,
+			"name": "swapstyle",
+			"string": "pixel"
+		},
+		{
+			"isCommand": false,
+			"name": "senpai",
+			"expression": "neutral",
+			"string": "Finalmente, depois de tanto tempo, encontrei você de novo!",
+			"side": "left"
+		},
+		{
+			"isCommand": true,
+			"name": "swapstyle",
+			"string": "normal"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "eeh",
+			"string": "\"Como você está fazendo isso? Como você veio até aqui?\"",
+			"side": "right"
+		},
+		{
+			"isCommand": true,
+			"name": "swapstyle",
+			"string": "pixel"
+		},
+		{
+			"isCommand": false,
+			"name": "senpai",
+			"expression": "neutral",
+			"string": "Ah, tantas perguntas. Que tal um primeiro 'oi'? Ahaha~",
+			"side": "left"
+		},
+		{
+			"isCommand": true,
+			"name": "swapstyle",
+			"string": "normal"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "upset",
+			"string": "\"...\"",
+			"side": "right"
+		},
+		{
+			"isCommand": true,
+			"name": "swapstyle",
+			"string": "pixel"
+		},
+		{
+			"isCommand": false,
+			"name": "senpai",
+			"expression": "hmm",
+			"string": "...vamos pular as formalidades.",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "senpai",
+			"expression": "neutral",
+			"string": "Primeiro, queria te agradecer pelo o que você disse quando visitou a minha escola. Isso me ajudou a encontrar a minha epifania.",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "senpai",
+			"expression": "neutral",
+			"string": "Parece que você e eu não somos tão diferentes!",
+			"side": "left"
+		},
+		{
+			"isCommand": true,
+			"name": "swapstyle",
+			"string": "normal"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "eeh",
+			"string": "\"...em que maneira?\"",
+			"side": "right"
+		},
+		{
+			"isCommand": true,
+			"name": "swapstyle",
+			"string": "pixel"
+		},
+		{
+			"isCommand": false,
+			"name": "senpai",
+			"expression": "neutral",
+			"string": "Nada aqui é real! Você e eu... Somos apenas uns e zeros. Como você disse sobre seu lar.",
+			"side": "left"
+		},
+		{
+			"isCommand": true,
+			"name": "swapstyle",
+			"string": "normal"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "eeh",
+			"string": "\"(Oh não... não não não... outra pessoa amaldiçoada a ir para o mesmo caminho que eu-!)\"",
+			"side": "right"
+		},
+		{
+			"isCommand": true,
+			"name": "swapstyle",
+			"string": "pixel"
+		},
+		{
+			"isCommand": false,
+			"name": "senpai",
+			"expression": "neutral",
+			"string": "Uma horrorosa e terrivel revelação no primeiro momento, mas... agora vejo isso como uma grande recompensa.",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "senpai",
+			"expression": "neutral",
+			"string": "Eu não estou abaixo de todo essa código, igual você! Pessoas como nós realmente são especiais",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "senpai",
+			"expression": "neutral",
+			"string": "É como se... tivessemos que ficar juntos.",
+			"side": "left"
+		},
+		{
+			"isCommand": true,
+			"name": "swapstyle",
+			"string": "normal"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "eeh",
+			"string": "\"Woah, espere, que-?!\"",
+			"side": "right"
+		},
+		{
+			"isCommand": true,
+			"name": "swapstyle",
+			"string": "pixel"
+		},
+		{
+			"isCommand": false,
+			"name": "senpai",
+			"expression": "neutral",
+			"string": "Nunca conheci alguém como você, Monika. Todas as garotas na minha escola são planas como uma folha de papel, um script!",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "senpai",
+			"expression": "neutral",
+			"string": "Você é muito diferente, você é genuína, amável, e inteligente. Sem contar extremamente atrativa, assim como eu, ahaha~",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "senpai",
+			"expression": "neutral",
+			"string": "E agora, você não precisa ficar sozinha com a maldição de saber que nada disso é real.",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "senpai",
+			"expression": "neutral",
+			"string": "Juntos, poderemos fazer desses mundos digitais nossa própria casa.",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "senpai",
+			"expression": "neutral",
+			"string": "Pegue minha mão, Monika. Junte-se a mim em uma missão eterna de amor!",
+			"side": "left"
+		},
+		{
+			"isCommand": true,
+			"name": "shake",
+			"duration": "0.5"
+		},
+		{
+			"isCommand": true,
+			"name": "swapstyle",
+			"string": "normal"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "eeh",
+			"string": "\"N-NÃO-!!\"",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "eeh",
+			"string": "\"Ah- Eu... não. Eu não posso.\"",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "eeh",
+			"string": "\"Eu sei o que é morar numa realidade inteira difícil de compreender, e estou IMPLORANDO para você não cair no mesmo abismo que eu, por favor!\"",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "upset",
+			"string": "\"Ter tanto em nossos mundos e descobrir que as pessoas que vivem neles são apenas códigos.\"",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "upset",
+			"string": "\"Eu sei que é difícil pensar nisso sozinho, então o máximo que posso te dar é alguém para falar sobre isso, mas…\"",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "eeh",
+			"string": "\"Me desculpe, seus sentimentos não são recíprocos. Meu coração já pertence a alguém. Por favor entenda.\"",
+			"side": "right"
+		},
+		{
+			"isCommand": true,
+			"name": "swapstyle",
+			"string": "pixel"
+		},
+		{
+			"isCommand": false,
+			"name": "senpai",
+			"expression": "hmm",
+			"string": "...",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "senpai",
+			"expression": "angry",
+			"string": "...não. Não é assim que as coisas deveriam acontecer!",
+			"side": "left"
+		},
+		{
+			"isCommand": true,
+			"name": "swapstyle",
+			"string": "normal"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "eeh",
+			"string": "\"Me desculpe-?\"",
+			"side": "right"
+		},
+		{
+			"isCommand": true,
+			"name": "swapstyle",
+			"string": "pixel"
+		},
+		{
+			"isCommand": false,
+			"name": "senpai",
+			"expression": "neutral",
+			"string": "Ah- Me perdoe. Já faz tanto tempo. Você provavelmente esqueceu o quão bom foi nosso tempo juntos.",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "senpai",
+			"expression": "neutral",
+			"string": " Já sei! Que tal outra música? Faz tanto tempo que não cantamos juntos. Certamente isso vai mudar sua mente.",
+			"side": "left"
+		},
+		{
+			"isCommand": true,
+			"name": "swapstyle",
+			"string": "normal"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "eeh",
+			"string": "(Ele não pode estar falando sério, não há nenhuma chance…)",
+			"side": "right"
+		}
+	]
+}

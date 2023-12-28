@@ -375,9 +375,14 @@ class DokiFreeplayState extends MusicBeatState
 			grpSongs.forEach(function(spr:FlxText)
 			{
 				if (BSLTouchUtils.aperta(spr, spr.ID) == 'primeiro')
-					changeItem(spr.ID);
+					changeItem(spr.ID); //aqui ele selecionou pra trocar a diff
+					if(diffselect || !BSLTouchUtils.apertasimples(leftArrow) || !BSLTouchUtils.apertasimples(rightArrow)) {
+						pageNum.visible = false; // Isso faz com que o botão de trocar as páginas fique invisibru
+						leftArrow.visible = false;
+						rightArrow.visible = false;
+					}
 				else if (BSLTouchUtils.aperta(spr, spr.ID) == 'segundo')
-					acceptDiferenciado = true;
+					acceptDiferenciado = true; //aqui ele confirma
 			});
 
 			if (BSLTouchUtils.apertasimples(diff))
@@ -655,6 +660,9 @@ class DokiFreeplayState extends MusicBeatState
 	{
 		curSelected = change;
 
+		curDifficulty = 1;
+		changeDiff();
+
 		if ((curPage == 1 && !SaveData.beatEncore) || (curPage == 2 && !SaveData.beatPrologue))
 		{
 			trace('look at me I am not beaten');
@@ -702,10 +710,23 @@ class DokiFreeplayState extends MusicBeatState
 
 	function getSongData(songName:String, diff:Int)
 	{
+		var suffixChanged = false;
+
 		if (!multiDiff.contains(songName.toLowerCase()))
 			diff = 1;
 
+		if (songName.contains("-alt") && diffsuffix == "-alt")
+		{
+			diffsuffix = "";
+			suffixChanged = true;
+		}
+
 		intendedScore = Highscore.getScore(songName + diffsuffix, diff);
+
+		if (suffixChanged)
+		{
+			diffsuffix = "-alt";
+		}
 	}
 
 	function changePage(huh:Int = 0)

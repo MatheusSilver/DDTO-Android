@@ -94,7 +94,7 @@ class DialogueBox extends FlxSpriteGroup
 
 		isEpiphany = PlayState.SONG.song.toLowerCase() == 'epiphany';
 
-		var jsonDiaString:String = Assets.getText(Paths.json('dialogue/erb/TestDialogue'));
+		var jsonDiaString:String = Assets.getText(Paths.localeJson('erb/TestDialogue')); // Isso faz que seja retornado a pasta locales/sua linguagem/dialogues/musica/arquivo.json
 		if (initdialogueData != null)
 			jsonDiaString = initdialogueData;
 

@@ -1,0 +1,42 @@
+{
+	"startingMusic": "",
+	"initStyle": "normal",
+	"dialogue": 
+	[
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "ahh",
+			"string": "\"Uau, Você já é uma verdadeira compositor. Tenho certeza que as outras vão adorar ouvir isso!\"",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "no_one",
+			"expression": "gone",
+			"string": "Yuri olha para longe timidamente de novo e dá um pequeno sorriso para si mesma.",
+			"side": ""
+		},
+		{
+			"isCommand": false,
+			"name": "yuri",
+			"expression": "happy",
+			"string": "\"Uhuhu… Eu aprecio você passando tempo comigo.\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "yuri",
+			"expression": "happy",
+			"string": "\"Vou ensaiar um pouco mais sozinha antes da próxima reunião do clube.\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "yuri",
+			"expression": "smile",
+			"string": "\"Vejo você então, Monika.\"",
+			"side": "left"
+		}
+	]
+}

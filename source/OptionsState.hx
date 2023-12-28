@@ -32,7 +32,6 @@ class OptionsState extends MusicBeatState
 			#if android
 			new CustomControls('Configure o estilo de controle mobile'),
 			#end
-			//new MonikaHD('Habilite a skin de Monika Hd'),
 			new BotPlay('Deixe o Bot jogar por você e apenas aproveite a história.'),
 			//new GlobalSoundOption('Altere o volume dos efeitos sonoros GLOBAIS do jogo'),
 			new KeyBindingsOption(LangUtil.getString('descKeyBindings', 'option'), controls),
@@ -80,15 +79,13 @@ class OptionsState extends MusicBeatState
 		]),
 		#end
 		new OptionCategory(LangUtil.getString('catSave', 'option'), [
-			#if FEATURE_LANGUAGE
-			new LanguageSelection(LangUtil.getString('descLanguage', 'option')),
-			#end
+			new LanguageSelection('Alterar a linguagem do jogo'),
 			#if FEATURE_GAMEJOLT
 			new GameJolt(LangUtil.getString('descGameJolt', 'option')),
 			#end
 			new UnlockAll("Desbloqueia tudo no mod com exceção de algumas skins"),
 			new ResetScore(LangUtil.getString('descScoreReset', 'option')),
-			new ResetStory('Apagad todo o seu progresso na história do jogo'),
+			new ResetStory('Apagar todo o seu progresso na história do jogo'),
 			new ResetSave(LangUtil.getString('descSaveReset', 'option'))
 		])
 	];

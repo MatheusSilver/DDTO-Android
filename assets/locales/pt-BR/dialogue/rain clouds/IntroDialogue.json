@@ -1,0 +1,291 @@
+{
+	"startingMusic": "sayoc",
+	"initStyle": "normal",
+	"dialogue": 
+	[
+		{
+			"isCommand": false,
+			"name": "yuri",
+			"expression": "neutral",
+			"string": "\"Parece que temos visita.\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "natsuki",
+			"expression": "hmmph",
+			"string": "\"Sério, Sayori? Você trouxe um menino para o clube?\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "sayori",
+			"expression": "ehh",
+			"string": "\"Ei- eu não estava esperando por ninguém novo. A gente nem distribuiu cartazes pro clube ainda!\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "sayori",
+			"expression": "neutral",
+			"string": "\"Mas olha, Natsuki! Nós temos outra menina também!\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "gf",
+			"expression": "neutral",
+			"string": "*pensamentos vazios*",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "sayori",
+			"expression": "ehh",
+			"string": "\"Ehehe, se eu soubesse que estávamos esperando mais membros- Eu iria ter pedido a Natsuki pra fazer alguns cupcakes de boas vindas!\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "sayori",
+			"expression": "happ",
+			"string": "\"Ah! E talvez eu teria perguntado a Yuri para fazer chá também!\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "sayori",
+			"expression": "happ",
+			"string": "\"Eu preciso escrever isso pra mais tarde: 'Planejar Festa do Chá para Clube em Breve'\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "yuri",
+			"expression": "smile",
+			"string": "\"Parece que você já está bem animada sobre nossos novos convidados. Mas você ainda nem perguntou seus nomes-\"",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "sayori",
+			"expression": "ehh",
+			"string": "\"Ah, certo! Eheh, eu sou tão bobinha. Quais são seus nomes, novos membros do clube de literatura?\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "bf",
+			"expression": "beep",
+			"string": "\"Beep skee!\"",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "gf",
+			"expression": "yeah",
+			"string": "*gesto feliz*",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "sayori",
+			"expression": "happ",
+			"string": "\"Vocês dois são Boyfriend e Girlfriend? Aww, vocês são tão fofinhos juntos!!!\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "natsuki",
+			"expression": "neutral",
+			"string": "\"...Isso aí são apelidos fofos e tudo, mas tipo, quais são seus nomes de verdade?\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "bf",
+			"expression": "beep",
+			"string": "\"Beep skee!\"",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "gf",
+			"expression": "yeah",
+			"string": "*outro gesto feliz*",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "natsuki",
+			"expression": "angy",
+			"string": "\"Sim, nós sabemos que vocês estão namorando! A gente quer saber é SEUS NOMES!\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "bf",
+			"expression": "neutral",
+			"string": "\"Bee dee skee dep!\"",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "natsuki",
+			"expression": "hmmph",
+			"string": "\"...Eu já não gostei deles.\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "natsuki",
+			"expression": "hmmph",
+			"string": "\"Eles já estão zuando com minha cara!\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "yuri",
+			"expression": "ehh",
+			"string": "\"Natsuki! Não seja assim...\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "natsuki",
+			"expression": "hmmph",
+			"string": "\"Hmph.\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "sayori",
+			"expression": "ehh",
+			"string": "\"Eheheh... Me desculpe por aquilo. Se você não quer nos contar seus nomes, tá tudo bem!\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "sayori",
+			"expression": "happ",
+			"string": "\"Eu sou a Sayori!\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "sayori",
+			"expression": "neutral",
+			"string": "\"Aquela linda e amável garota com cheiro de lavanda é a Yuri, e a Natsuki é a que está bem atrevida hoje.\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "yuri",
+			"expression": "neutral",
+			"string": "\"Com introduções a lado... nós podemos perguntar pra quê servem esses microfones?\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "sayori",
+			"expression": "neutral",
+			"string": "\"Eu já ia perguntar sobre isso.\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "sayori",
+			"expression": "ehh",
+			"string": "\"Eu espero que você não confundiu esse lugar com o clube de canto-\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "bf",
+			"expression": "beep",
+			"string": "\"Boop dee!\"",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "yuri",
+			"expression": "neutral",
+			"string": "\"...você quer mesmo cantar conosco?\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "yuri",
+			"expression": "blush",
+			"string": "\"Eu... não tenho certeza quão comfortável eu estaria fazendo isso-\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "bf",
+			"expression": "beep",
+			"string": "\"Skee dep doop!\"",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "yuri",
+			"expression": "blush",
+			"string": "\"C-Como assim nós temos que cantar?!\"",
+			"side": "left"
+		},
+		{
+			"isCommand": true,
+			"name": "hideright"
+		},
+		{
+			"isCommand": false,
+			"name": "sayori",
+			"expression": "neutral",
+			"string": "\"Sabe, nós estivemos trabalhando tão duro em escrever e em poemas recentemente. Eu acho que ter uma divertida sessão de canto com todo mundo seria o descanso perfeito que todas nós precisamos!\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "yuri",
+			"expression": "blush",
+			"string": "\"-!\"",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "sayori",
+			"expression": "neutral",
+			"string": "\"Quando você pensa sobre, cantar é só recitar poemas com música no fundo, não é?\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "sayori",
+			"expression": "yeah",
+			"string": "\"Eu aposto que todas nós seriamos ótimas nisso!\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "yuri",
+			"expression": "neutral",
+			"string": "\"...\"",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "natsuki",
+			"expression": "neutral",
+			"string": "\"...\"",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "sayori",
+			"expression": "yeah",
+			"string": "\"Aqui, eu vou primeiro!\"",
+			"side": "left"
+		}
+	]
+}

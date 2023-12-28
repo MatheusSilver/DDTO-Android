@@ -1053,7 +1053,6 @@ class JudgementCounter extends Option
 	}
 }
 
-#if FEATURE_LANGUAGE
 class LanguageSelection extends Option
 {
 	public function new(desc:String)
@@ -1064,16 +1063,15 @@ class LanguageSelection extends Option
 
 	public override function press():Bool
 	{
-		MusicBeatState.switchState(new LangSelectState());
+		OptionsState.instance.openSubState(new LinguagensSubstate());
 		return false;
 	}
 
 	private override function updateDisplay():String
 	{
-		return LangUtil.getString('cmnLanguage');
+		return 'Linguagem: ${SaveData.language}';
 	}
 }
-#end
 
 class RatingToggle extends Option
 {

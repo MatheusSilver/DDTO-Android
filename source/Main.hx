@@ -99,7 +99,7 @@ class Main extends Sprite
 			fpsVar.visible = SaveData.showFPS;
 
 		tongue = new FireTongueEx();
-		tongue.initialize({locale: SaveData.language});
+		tongue.initialize({locale: SaveData.language}); //kek
 		
 	}
 }

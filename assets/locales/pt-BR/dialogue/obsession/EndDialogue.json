@@ -1,0 +1,859 @@
+{
+	"canSkip": false,
+	"startingMusic": "",
+	"initStyle": "normal",
+	"dialogue": 
+	[
+		{
+			"isCommand": false,
+			"name": "yuri",
+			"expression": "crazy",
+			"string": "\"Khh- Ahahahaha!\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "yuri",
+			"expression": "crazy",
+			"string": "\"Por que deveríamos parar agora?\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "yuri",
+			"expression": "crazy",
+			"string": "\"Deixe-me gritar cada letra presa na minha cabeça doentia!\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "yuri",
+			"expression": "crazy",
+			"string": "\"Hahaha!\"",
+			"side": "left"
+		},
+		{
+			"isCommand": true,
+			"name": "playsound",
+			"string": "glitch1"
+		},
+		{
+			"isCommand": false,
+			"name": "gf",
+			"expression": "spook",
+			"string": "",
+			"side": "right"
+		},
+		{
+			"isCommand": true,
+			"name": "playsound",
+			"string": "glitch1"
+		},
+		{
+			"isCommand": true,
+			"name": "autoskip",
+			"string": "\"#($**&#&#@)*&#&$^$^&@*(($(#\""
+		},
+		{
+			"isCommand": false,
+			"name": "bf",
+			"expression": "scared",
+			"string": "\"-!\"",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "sayori",
+			"expression": "ehh",
+			"string": "\"Eheheh... não era pra você ter visto aquilo.\"",
+			"side": "left"
+		},
+		{
+			"isCommand": true,
+			"name": "glitch",
+			"string": "DDTOCutscene2"
+		},
+		{
+			"isCommand": true,
+			"name": "hideright"
+		},
+		{
+			"isCommand": true,
+			"name": "hidebgfade"
+		},
+		{
+			"isCommand": true,
+			"name": "showbackgroundimage",
+			"string": "evil1"
+		},
+		{
+			"isCommand": true,
+			"name": "startmusic",
+			"string": "ghost"
+		},
+		{
+			"isCommand": false,
+			"name": "sayori",
+			"expression": "gone",
+			"string": "\"Eu lhe agradeço por ter ficado tanto tempo aqui para cantar conosco.\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "sayori",
+			"expression": "gone",
+			"string": "\"Nós não estivemos felizes assim há tanto tempo.\"",
+			"side": "left"
+		},
+		{
+			"isCommand": true,
+			"name": "glitch"	
+		},
+		{
+			"isCommand": false,
+			"name": "sayori",
+			"expression": "gone",
+			"string": "\"Especialmente depois do que a Monika fez com a gente.\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "bf",
+			"expression": "hmph",
+			"string": "\"Bep-!\"",
+			"side": "right"
+		},
+		{
+			"isCommand": true,
+			"name": "hideright"
+		},
+		{
+			"isCommand": false,
+			"name": "sayori",
+			"expression": "gone",
+			"string": "\"Esse nome te lembra alguém?\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "sayori",
+			"expression": "gone",
+			"string": "\"Isso deve significar-\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "sayori",
+			"expression": "gone",
+			"string": "\"deve ter sido você que deletou ela!\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "sayori",
+			"expression": "gone",
+			"string": "\"Ahaha, então deve ter sido você quem nos trouxe de volta também!\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "bf",
+			"expression": "scared",
+			"string": "\"Dee le bep skee doo-!\"",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "bf",
+			"expression": "scared",
+			"string": "(Tradução) \"Espera aí, eu não-!\"",
+			"side": "right"
+		},
+		{
+			"isCommand": true,
+			"name": "hideright"
+		},
+		{
+			"isCommand": false,
+			"name": "sayori",
+			"expression": "gone",
+			"string": "\"Eu sabia que você e essa sua \"namorada\" não eram daqui. Sua data é tão diferente.\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "sayori",
+			"expression": "gone",
+			"string": "\"Eheheh, que diabos é um .xml, de qualquer jeito?\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "sayori",
+			"expression": "gone",
+			"string": "\"Na verdade, vocês dois nunca existiram neste computador até alguns momentos atrás quando vimos você.\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "sayori",
+			"expression": "gone",
+			"string": "\"Você poderia ter feito o impossível?\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "sayori",
+			"expression": "gone",
+			"string": "\"Você conseguiu entrar no mundo digital pelo mundo real?\"",
+			"side": "left"
+		},
+		{
+			"isCommand": true,
+			"name": "showbackgroundimage",
+			"string": "evilcutin"
+		},
+		{
+			"isCommand": true,
+			"name": "autoskip",
+			"string": "\"*%&^$*(%)^*&\""
+		},
+		{
+			"isCommand": true,
+			"name": "glitch"
+		},
+		{
+			"isCommand": true,
+			"name": "showbackgroundimage",
+			"string": "evil1"
+		},
+		{
+			"isCommand": false,
+			"name": "sayori",
+			"expression": "gone",
+			"string": "\"Você desafiou toda lógica e ciência, só por nós?\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "sayori",
+			"expression": "gone",
+			"string": "\"Ahahaha, você nos fez tão feliz.\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "sayori",
+			"expression": "gone",
+			"string": "\"Agora que você finalmente está aqui, nós podemos ser todas felizes e cantar juntas para sempre.\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "sayori",
+			"expression": "gone",
+			"string": "\"Para sempre\"",
+			"side": "left"
+		},
+		{
+			"isCommand": true,
+			"name": "glitch"
+		},
+		{
+			"isCommand": true,
+			"name": "showbackgroundimage",
+			"string": "evil2"
+		},
+		{
+			"isCommand": false,
+			"name": "natsuki",
+			"expression": "gone",
+			"string": "\"...\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "sayori",
+			"expression": "gone",
+			"string": "\"Para sempre.\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "yuri",
+			"expression": "gone",
+			"string": "\"...\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "sayori",
+			"expression": "gone",
+			"string": "\"Para sempre\"",
+			"side": "left"
+		},
+		{
+			"isCommand": true,
+			"name": "glitch"
+		},
+		{
+			"isCommand": true,
+			"name": "playsound",
+			"string": "glitch2"
+		},
+		{
+			"isCommand": true,
+			"name": "showbackgroundimage",
+			"string": "evil3"
+		},
+		{
+			"isCommand": false,
+			"name": "gf",
+			"expression": "gone",
+			"string": "\"...\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "sayori",
+			"expression": "gone",
+			"string": "\"Para sempre\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "bf",
+			"expression": "scared",
+			"string": "*barulhos de beep boop horrificados*",
+			"side": "right"
+		},
+		{
+			"isCommand": true,
+			"name": "fadeout",
+			"duration": 4
+		},
+		{
+			"isCommand": true,
+			"name": "endmusic"
+		},
+		{
+			"isCommand": true,
+			"name": "swapstyle",
+			"string": "pixel"
+		},
+		{
+			"isCommand": true,
+			"name": "showbackgroundimage",
+			"string": "ending3"
+		},
+		{
+			"isCommand": true,
+			"name": "fadein",
+			"string": "hidedialogue",
+			"duration": 4
+		},
+		{
+			"isCommand": true,
+			"name": "showbgfade"
+		},
+		{
+			"isCommand": false,
+			"name": "senpai",
+			"expression": "hmm",
+			"string": "...o Clube de Literatura? Devo admitir, nunca me interessei muito por poesia ou escrita.",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "senpai",
+			"expression": "",
+			"string": "Isso é chocante pra alguns, já que me dizem que eu tenho um jeito tão bom com palavras.",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "senpai",
+			"expression": "",
+			"string": "E estão tão certos~",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "gasp",
+			"string": "Aquele clube significa tudo pra mim.",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "gasp",
+			"string": "Foi a minha chance de finalmente interessar a todos nesse mundo de possibilidades infinitas no qual eu entreti por toda a minha vida.",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "gasp",
+			"string": "Isso uniu pessoas que nunca se falaram na vida.",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "gasp",
+			"string": "Essas pessoas se tornaram em minhas amigas. Minhas melhores amigas.",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "sad",
+			"string": "Minhas únicas amigas...",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "senpai",
+			"expression": "hmm",
+			"string": "Algo deve ter te levado pra longe disso, e ainda por cima pra uma escola nova.",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "sad",
+			"string": "Fiquei presa em uma \"epifania\".",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "sad",
+			"string": "Nada na minha vida era real. E eu desesperadamente queria uma coisa que era real.",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "sad",
+			"string": "Eu ganhei uma oportunidade para algo maior, mas o mundo queria que eu observasse todo mundo conseguir o que havia do outro lado.",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "sad",
+			"string": "Minhas amigas. Sayori, Yuri, Natsuki. Elas conseguiram a tal coisa na qual eu queria. Então-",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "senpai",
+			"expression": "hmm",
+			"string": "Então você \"se livrou\" delas. Assim como você fez aqui, certo?",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "sad",
+			"string": "Ah, desculpa por ter deixado minhas ações estúpidas tomarem conta mesmo quando eu tinha aprendido minha lição.",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "senpai",
+			"expression": "",
+			"string": "Bom, você nos trouxe de volta como se nada tivesse acontecido, não é? Sem consentimentos.",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "gasp",
+			"string": "Acho que sim. Espero que nada de errado aconteça por conta disso.",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "gasp",
+			"string": "Antes de parar aqui, eu também trouxe minhas amigas de volta, e eu planejava em ficar de fora, com meus arquivos deletados-",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "sad",
+			"string": "-pra que elas pudessem ser felizes.",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "sad",
+			"string": "Mas, as coisas não foram como o \"planejado\" quando todos não estavam presentes.",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "gasp",
+			"string": "Se isso ainda for verdade comigo não-",
+			"side": "right"
+		},
+		{
+			"isCommand": true,
+			"name": "glitch"
+		},
+		{
+			"isCommand": true,
+			"name": "hidebgfade"
+		},
+		{
+			"isCommand": true,
+			"name": "showbackgroundimage",
+			"string": "flashback2"
+		},
+		{
+			"isCommand": true,
+			"name": "hideleft"
+		},
+		{
+			"isCommand": true,
+			"name": "hidedialogue"
+		},
+		{
+			"isCommand": true,
+			"name": "showbgfade"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "gasp",
+			"string": "-!",
+			"side": "right"
+		},
+		{
+			"isCommand": true,
+			"name": "glitch"
+		},
+		{
+			"isCommand": true,
+			"name": "hidebgfade"
+		},
+		{
+			"isCommand": true,
+			"name": "showbackgroundimage",
+			"string": "ending3"
+		},
+		{
+			"isCommand": true,
+			"name": "startmusic",
+			"string": "ghost"
+		},
+		{
+			"isCommand": true,
+			"name": "showbgfade"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "gasp",
+			"string": "E- eu cometi um erro-!",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "senpai",
+			"expression": "hmm",
+			"string": "M-Monika?! O que tá acontecendo com você?",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "sad",
+			"string": "(Isso é muito ruim. Eu preciso-)",
+			"side": "right"
+		},
+		{
+			"isCommand": true,
+			"name": "glitch"
+		},
+		{
+			"isCommand": true,
+			"name": "hidebgfade"
+		},
+		{
+			"isCommand": true,
+			"name": "showbackgroundimage",
+			"string": "flashback3"
+		},
+		{
+			"isCommand": true,
+			"name": "hidedialogue"
+		},
+		{
+			"isCommand": true,
+			"name": "hideleft"
+		},
+		{
+			"isCommand": true,
+			"name": "showbgfade"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "sad",
+			"string": "(espera-! Aquele garoto está lá também?-)",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "sad",
+			"string": "(Droga, nem sei como que ele foi parar lá, mas se as minhas amigas estão agindo assim-)",
+			"side": "right"
+		},
+		{
+			"isCommand": true,
+			"name": "glitch"
+		},
+		{
+			"isCommand": true,
+			"name": "hidebgfade"
+		},
+		{
+			"isCommand": true,
+			"name": "showbackgroundimage",
+			"string": "ending4"
+		},
+		{
+			"isCommand": true,
+			"name": "playsound",
+			"string": "glitch2"
+		},
+		{
+			"isCommand": true,
+			"name": "hidedialogue"
+		},
+		{
+			"isCommand": true,
+			"name": "showbgfade"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "gasp",
+			"string": "Preciso consertar isso! De alguma forma!",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "senpai",
+			"expression": "hmm",
+			"string": "Ma- Mas o que diabos é isso tudo?!",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "sad",
+			"string": "Deve ter alguma coisa... alguma coisa...",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "gasp",
+			"string": "Se os meus arquivos ainda estão agindo, mesmo daqui-",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "gasp",
+			"string": "-então significa que eu ainda tenho dados resíduais por lá-!",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "gasp",
+			"string": "Talvez se eu só...",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "gasp",
+			"string": "-tentar isso!",
+			"side": "right"
+		},
+		{
+			"isCommand": true,
+			"name": "glitch"
+		},
+		{
+			"isCommand": true,
+			"name": "hidebgfade"
+		},
+		{
+			"isCommand": true,
+			"name": "showbackgroundimage",
+			"string": "ending5"
+		},
+		{
+			"isCommand": true,
+			"name": "endmusic"
+		},
+		{
+			"isCommand": true,
+			"name": "playsound",
+			"string": "glitch1"
+		},
+		{
+			"isCommand": true,
+			"name": "hidedialogue"
+		},
+		{
+			"isCommand": true,
+			"name": "hideright"
+		},
+		{
+			"isCommand": true,
+			"name": "showbgfade"
+		},
+		{
+			"isCommand": false,
+			"name": "senpai",
+			"expression": "hmm",
+			"string": "-!",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "senpai",
+			"expression": "hmm",
+			"string": "...e assim, a única pessoa que me intrigava sumiu em um instante.",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "senpai",
+			"expression": "hmm",
+			"string": "Ah, tadinho de mim!",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "senpai",
+			"expression": "hmm",
+			"string": "...",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "senpai",
+			"expression": "angry",
+			"string": "...o que que eu tô falando?",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "senpai",
+			"expression": "angry",
+			"string": "Essa merda é um saco.",
+			"side": "left"
+		},
+		{
+			"isCommand": true,
+			"name": "fadeout",
+			"duration": 4
+		},
+		{
+			"isCommand": true,
+			"name": "hidebgfade"
+		},
+		{
+			"isCommand": true,
+			"name": "swapstyle",
+			"string": "normal"
+		},
+		{
+			"isCommand": true,
+			"name": "showbackgroundimage",
+			"string": "black"
+		},
+		{
+			"isCommand": true,
+			"name": "fadein",
+			"string": "hidedialogue",
+			"duration": 1
+		},
+		{
+			"isCommand": true,
+			"name": "hidebackground"
+		},
+		{
+			"isCommand": true,
+			"name": "playcutscene",
+			"string": "monikatransform",
+			"duration": 10
+		},
+		{
+			"isCommand": true,
+			"name": "showbackgroundimage",
+			"string": "ending6"
+		},
+		{
+			"isCommand": true,
+			"name": "hidedialogue"
+		},
+		{
+			"isCommand": true,
+			"name": "showbgfade"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "ahaha",
+			"string": "\"Fun... funcionou!\"",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "bf",
+			"expression": "scared",
+			"string": "\"...\"",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "gf",
+			"expression": "scared",
+			"string": "\"...\"",
+			"side": "right"
+		},
+		{
+			"isCommand": true,
+			"name": "hideright"
+		},
+		{
+			"isCommand": false,
+			"name": "all",
+			"expression": "neutral",
+			"string": "\"...\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "all",
+			"expression": "gasp",
+			"string": "\"Monika!\"",
+			"side": "left"
+		}
+	]
+}

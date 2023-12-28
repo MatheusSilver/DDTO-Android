@@ -204,8 +204,12 @@ class TitleState extends MusicBeatState
 
 	function getIntroTextShit():Array<Array<String>>
 	{
-		var fullText:String = Assets.getText(Paths.txt('data/introText'));
-
+		var fullText:String;
+		if(SaveData.language == "pt-BR") {
+			fullText = Assets.getText('assets/data/introText.txt');
+		} else {
+			fullText = Assets.getText('assets/locales/' + SaveData.language + '/data/introText.txt');
+		}
 		var firstArray:Array<String> = fullText.split('\n');
 		var swagGoodArray:Array<Array<String>> = [];
 

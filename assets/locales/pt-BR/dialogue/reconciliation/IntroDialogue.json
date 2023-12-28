@@ -1,0 +1,191 @@
+{
+	"dialogue": [
+		{
+			"isCommand": true,
+			"name": "startmusic",
+			"string": "monic"
+		},
+		{
+			"isCommand": false,
+			"name": "sayori",
+			"expression": "happ",
+			"string": "\"Monika! Nós estávamos esperando por você!\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "sayori",
+			"expression": "happ",
+			"string": "\"Não é do seu tipo estar atrasada assim pra uma reunião do clube!\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "yuri",
+			"expression": "neutral",
+			"string": "\"Parece que você também trouxe alguns membros novos com você também.\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "natsuki",
+			"expression": "neutral",
+			"string": "\"Sério, Monika? Você trouxe um menino?\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "natsuki",
+			"expression": "hmmph",
+			"string": "\"Bem, pelo menos você trouxe outra menina também.\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "natsuki",
+			"expression": "hmmph",
+			"string": "(Uma que não me faz sentir tão pequena comparada ao resto de vocês.)",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "eeh",
+			"string": "\"Ah! Eu-\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "bf",
+			"expression": "neutral",
+			"string": "*olhando*",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "gf",
+			"expression": "neutral",
+			"string": "*olhando*",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "eeh",
+			"string": "\"...olá, vocês dois. Já faz um tempo.\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "bf",
+			"expression": "neutral",
+			"string": "\"Bep.\"",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "upset",
+			"string": "\"Me desculpe pelo o que eu fiz antes.\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "eeh",
+			"string": "\"E me desculpe por sem querer te botar em outra situação como aquela logo depois-\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "upset",
+			"string": "\"-mas agora que eu estou aqui, tudo deve estar estável.\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "eeh",
+			"string": "\"Não espero que vocês me perdoem... mas estou feliz que vocês dois estejam salvos agora.\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "bf",
+			"expression": "think",
+			"string": "\"...\"",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "bf",
+			"expression": "yeah",
+			"string": "\"Ska dee beep!\"",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "upset",
+			"string": "\"-!\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "ahaha",
+			"string": "\"Ahaha... Você não faz ideia de quão feliz eu estou ouvindo isso.\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "ahh",
+			"string": "\"Okay, todo mundo!\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "ahh",
+			"string": "\"Eu gostaria que vocês conhecessem os novos membros do Clube de Literatura!\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "ahh",
+			"string": "\"E eu tenho uma maneira divertida de apresentá-los.\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "upset",
+			"string": "\"Ei, apesar de tudo estressante que acabou de acontecer-\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "ahaha",
+			"string": "\"-você tem energia só para mais uma música?\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "bf",
+			"expression": "yeah",
+			"string": "\"Ska dee beep!\"",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "ahh",
+			"string": "\"Então bora lá!\"",
+			"side": "left"
+		}
+	]
+}

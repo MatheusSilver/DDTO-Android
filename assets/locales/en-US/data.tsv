@@ -1,30 +1,33 @@
 flag	content
-cmnEasy	Fácil
+cmnDiff	Difficulty
+cmnEasy	Easy
 cmnNormal	Normal
-cmnHard	Difícil
-cmnPB	Melhor Pontuação Pessoal
-cmnScore	Pontuação
+cmnHard	Hard
+cmnPB	Personal Best
+cmnScore	Score
 cmnNPS	NPS
-cmnMaxNPS	Máximo
-cmnComboBreak	Erros
-cmnBreaks   Erros
-cmnMisses	Erros
-cmnAccuracy	Precisão
-cmnRating	Ranking
+cmnMax	Max
+cmnComboBreak	Combo Breaks
+cmnBreaks	Breaks
+cmnAccuracy	Accuracy
+cmnRating	Rating
 cmnBotplay	Botplay
-cmnClear	Limpar
-cmnOn	Ligado
-cmnOff	Desligado
-cmnDesc	Descrição
-cmnOffset	Offset (Esquerda ou Direita)
-cmnAddOffset	Offset Additivo (Esquerda ou Direita): <X> - Adiciona valor ao offset global, por música.
-cmnCategory	Por favor selecione uma categoria.
+cmnClear	Clear
+cmnEarly	Early
+cmnLate	Late
+cmnOn	On
+cmnOff	Off
+cmnYes	Yes
+cmnNo	No
+cmnOffset	Global Offset
+cmnAddOffset	Song Offset: <X> | Adds an additional offset to this song only. (Left or Right, Shift to go faster)
+cmnCategory	Please select a category. (Global Offset: Left or Right, Shift to go faster)
 cmnPractice	Practice Mode
-cmnLock	Travado
-cmnSpeed	Velocidade da Música
+cmnLock	Locked
+cmnSpeed	Song Speed
 cmnCaching	Caching
-cmnLanguage	Seleção de linguagem
-cmnDisableCaching	(pressione D para desabilitar após iniciar o jogo na próxima vez)
+cmnLanguage	Language Select
+cmnDisableCaching	(press D to disable next boot)
 cmnCachingFinish	Finished caching!
-cmnWelcome	Bem vindo a Doki Doki Takeover!<N>Esta é uma sequência de Monika Full Week<N><N>Você jogou Monika Full Week?<N><N>Aperte A para sim, ou B para não.
-cmnDialogueSkip	Aperte o botão 'Pular' no canto superior direito para pular a cutscene.
+cmnDialogueSkip	Press BACK button in the screen to skip the dialogue.
+cmnExit	Are you sure you want to<N>exit the game?

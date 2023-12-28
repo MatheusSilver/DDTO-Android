@@ -1,0 +1,105 @@
+{
+	"startingMusic": "",
+	"initStyle": "pixel",
+	"dialogue": 
+	[
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "uhoh",
+			"string": "Pronto... Sem mais distrações.",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "bf",
+			"expression": "what",
+			"string": "SKEE DEP!",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "bf",
+			"expression": "what",
+			"string": "(Tradução) GIRLFRIEND!",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "",
+			"string": "Agora, podemos voltar a cantar?",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "bf",
+			"expression": "angry",
+			"string": "...",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "gasp",
+			"string": "Hmm?",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "bf",
+			"expression": "angry",
+			"string": "*sons de bee bop agressivos*",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "gasp",
+			"string": "Ah... ela.",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "",
+			"string": "Ei, não se preocupe com ela, ok?",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "",
+			"string": "Qual é, eu tenho uma música especial na qual eu quero cantar!",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "bf",
+			"expression": "angry",
+			"string": "*continuação de bee bops furiosos*",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "gasp",
+			"string": "...",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "hmm",
+			"string": "...",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "hmm",
+			"string": "Só mais uma.",
+			"side": "left"
+		}
+	]
+}

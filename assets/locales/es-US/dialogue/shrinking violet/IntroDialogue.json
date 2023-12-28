@@ -1,0 +1,132 @@
+{
+	"startingMusic": "yuric",
+	"initStyle": "normal",
+	"dialogue": 
+	[
+		{
+			"isCommand": false,
+			"name": "no_one",
+			"expression": "gone",
+			"string": "Pouco depois de Natsuki sair, outro rosto familiar entrou na sala de música. Uma certa ‘amável moça de lavanda’, para ser exato.",
+			"side": ""
+		},
+		{
+			"isCommand": true,
+			"name": "playcutscene",
+			"string": "showdad",
+			"duration": 0
+		},
+		{
+			"isCommand": false,
+			"name": "yuri",
+			"expression": "ehh",
+			"string": "\"Ah, espero que eu não esteja interrompendo nada-\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "neutral",
+			"string": "\"Yuri! Não se preocupe, eu estava apenas relaxando, matando o tempo até a próxima reunião do clube.\"",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "yuri",
+			"expression": "neutral",
+			"string": "\"Hmmm. É um pouco estranho dizer isso do nada, mas…\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "yuri",
+			"expression": "smile",
+			"string": "\"-obrigada.\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "neutral",
+			"string": "\"Oh? Pelo que?\"",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "yuri",
+			"expression": "smile",
+			"string": "\"Com tudo que estamos fazendo no clube, esse desconforto que sinto...em tentar apresentar algo que faço na frente dos outros.\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "yuri",
+			"expression": "smile",
+			"string": "\"Isso está gradualmente sumindo conforme faço coisas no clube.\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "yuri",
+			"expression": "smile",
+			"string": "\"Escrever, cantar, e apenas... falar. Isso tudo é uma maneira muito boa de... soltar meus sentimentos.\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "ahaha",
+			"string": "\"Estou tão feliz de ouvir isso, Yuri! Eu notei que você estava saindo da sua zona de conforto depois de um tempo, e sua voz confiante ao cantar é sempre prazerosa de se ouvir.\"",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "ahaha",
+			"string": "\"Saber que o clube é um bom lugar pra você melhorar a si mesma, eu não poderia estar mais feliz de ouvir isso.\"",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "no_one",
+			"expression": "gone",
+			"string": "Yuri quebra o contato visual e olha para longe por um segundo; Um sorriso tímido aparecendo em seu rosto.",
+			"side": ""
+		},
+		{
+			"isCommand": false,
+			"name": "yuri",
+			"expression": "smile",
+			"string": "\"Eu queria celebrar essa vitória pessoal de um modo especial.\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "yuri",
+			"expression": "neutral",
+			"string": "\"Eu... escrevi minha própria música. Isso é um território novo para mim, então eu queria perguntar se você não se importa de cantar junto comigo.\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "yuri",
+			"expression": "neutral",
+			"string": "\"Apenas uma pequena revisão antes que eu a mostre para os outros.\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "ahh",
+			"string": "\"Isso é uma honra!\"",
+			"side": "right"
+		},
+		{
+			"isCommand": false,
+			"name": "monika",
+			"expression": "ahh",
+			"string": "\"Podemos começar? Minhas cordas vocais já estão prontas!\"",
+			"side": "right"
+		}
+	]
+}

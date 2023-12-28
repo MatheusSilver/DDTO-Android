@@ -1,0 +1,67 @@
+{
+	"disableBGFade": true,
+	"dialogue": [{
+			"isCommand": false,
+			"name": "no_one",
+			"expression": "gone",
+			"string": "\"Percebe alguma coisa diferente?\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "no_one",
+			"expression": "gone",
+			"string": "\"Ahaha, eu quis deixar esse momento um pouco mais especial.\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "no_one",
+			"expression": "gone",
+			"string": "\"Eu percebi que quando cantamos, minha voz se transformou num arranjo de sons e vogais aleatórias.\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "no_one",
+			"expression": "gone",
+			"string": "\"Mesmo que isso seja divertido, existe muitas coisas que quero dizer, que não funcionam daquela forma.\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "no_one",
+			"expression": "gone",
+			"string": "\"Então eu explorei um pouquinho os arquivos do jogo por mim mesma, e acho que consegui superar essa mecânica!\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "no_one",
+			"expression": "gone",
+			"string": "\"Infelizmente, você ainda vai precisar usar a voz do Boyfriend para cantar, entretanto, não vou fazer você cantar contra todas aquelas notas mortais desta vez, ahaha.\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "no_one",
+			"expression": "gone",
+			"string": "\"Apenas se lembre de me salvar quando o jogo tentar me deletar de novo, okay, meu amor?\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "no_one",
+			"expression": "gone",
+			"string": "\"Ah, Estou me distraindo muito.\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "no_one",
+			"expression": "gone",
+			"string": "\"Como eu disse, eu quero que isso seja muito especial, então aqui está algo que escrevi especialmente para você.\"",
+			"side": "left"
+		}
+	]
+}

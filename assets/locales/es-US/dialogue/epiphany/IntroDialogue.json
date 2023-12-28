@@ -1,0 +1,77 @@
+{
+	"disableBGFade": true,
+	"dialogue": 
+	[
+		{
+			"isCommand": false,
+			"name": "no_one",
+			"expression": "gone",
+			"string": "\"Ahaha~ Finalmente, um momento a sós de novo.\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "no_one",
+			"expression": "gone",
+			"string": "\"Eu percebi que você esteve ocupado jogando aquele jogo de ritmo fofo.\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "no_one",
+			"expression": "gone",
+			"string": "\"Fico feliz que você ainda pensou em mim, mesmo que parecesse bastante ocupado.\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "no_one",
+			"expression": "gone",
+			"string": "\"Agora eu sei que é por que você esteve trabalhando duro tentando achar um jeito de me adicionar no jogo e cantar comigo!\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "no_one",
+			"expression": "gone",
+			"string": "\"Não é verdade, jogador?\"",
+			"stringOBS": "\"And everyone tuning in can watch too. Are you excited, viewers?\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "no_one",
+			"expression": "gone",
+			"string": "\"Hmm, Só existe espaço para que possamos cantar uma única música-\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "no_one",
+			"expression": "gone",
+			"string": "\"-e infelizmente, já que esse jogo não tem suporte a microfone, nós não podemos 'cantar' juntos exatamente.\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "no_one",
+			"expression": "gone",
+			"string": "\"Mas os dados daquele garoto do cabelo azul ainda devem estar guardados aqui, por que não usarmos ele para você?\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "no_one",
+			"expression": "gone",
+			"string": "\"Eu quero cantar com você por quanto tempo eu conseguir, então espere que isso seja muito, muito, MUITO difícil.\"",
+			"side": "left"
+		},
+		{
+			"isCommand": false,
+			"name": "no_one",
+			"expression": "gone",
+			"string": "\"Lá vamos nós.\"",
+			"side": "left"
+		}
+	]
+}

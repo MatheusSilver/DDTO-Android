@@ -81,7 +81,9 @@
 	<assets path="assets/locales" if="FEATURE_LANGUAGE"/>
 
 	<section if="NO_LANGUAGE">
+		<assets path="assets/locales/pt-BR"/>
 		<assets path="assets/locales/en-US"/>
+		<assets path="assets/locales/es-US"/>
 		<assets path="assets/locales/index.xml"/>
 	</section>
 

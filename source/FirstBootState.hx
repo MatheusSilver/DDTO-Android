@@ -1,5 +1,6 @@
 package;
 
+// Isso sequer é usado, ent sodasse
 import flixel.FlxG;
 import flixel.FlxSprite;
 import flixel.addons.display.FlxBackdrop;
@@ -44,7 +45,7 @@ class FirstBootState extends MusicBeatState
 
 		#if FEATURE_LANGUAGE
 
-		localeList = Main.tongue.locales;
+		localeList = ['pt-BR', 'en-US', 'es-US']; // Aqui é portugues br, ingles do usa, e espanhol dos estados unidos (?)
 
 		for (i in 0...localeList.length)
 			textMenuItems.push(Main.tongue.getIndexString(Language, localeList[i]));

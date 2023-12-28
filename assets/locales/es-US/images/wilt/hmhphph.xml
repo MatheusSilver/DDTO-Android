@@ -1,0 +1,236 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<TextureAtlas imagePath="hmhphph.png">
+	<SubTexture name="Hmph0000" x="1440" y="620" width="717" height="360" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0001" x="1434" y="1340" width="717" height="360" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0002" x="2494" y="1700" width="717" height="360" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0003" x="2952" y="2060" width="717" height="360" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0004" x="0" y="2370" width="717" height="360" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0005" x="717" y="2420" width="717" height="360" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0006" x="1434" y="2420" width="717" height="360" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0007" x="2151" y="2420"  width="717" height="360" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0008" x="2868" y="2420" width="717" height="360" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0009" x="2157" y="620" width="717" height="360" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0010" x="2874" y="620" width="717" height="360" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0011" x="0" y="930" width="717" height="360" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0012" x="717" y="930" width="717" height="360" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0013" x="1434" y="980" width="717" height="360" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0014" x="2151" y="980" width="717" height="360" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0015" x="2868" y="980" width="717" height="360" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0016" x="0" y="1290" width="717" height="360" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0017" x="717" y="1290" width="717" height="360" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0018" x="717" y="1290" width="717" height="360" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0019" x="717" y="1290" width="717" height="360" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0020" x="717" y="1290" width="717" height="360" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0021" x="717" y="1290" width="717" height="360" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0022" x="717" y="1290" width="717" height="360" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0023" x="717" y="1290" width="717" height="360" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0024" x="717" y="1290" width="717" height="360" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0025" x="717" y="1290" width="717" height="360" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0026" x="717" y="1290" width="717" height="360" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0027" x="717" y="1290" width="717" height="360" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0028" x="717" y="1290" width="717" height="360" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0029" x="717" y="1290" width="717" height="360" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0030" x="717" y="1290" width="717" height="360" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0031" x="717" y="1290" width="717" height="360" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0032" x="0" y="2780" width="765" height="402" frameX="0" frameY="-9.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0033" x="0" y="2780" width="765" height="402" frameX="0" frameY="-9.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0034" x="765" y="2780" width="771" height="418" frameX="0" frameY="-3.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0035" x="1536" y="2780" width="771" height="418" frameX="0" frameY="-3.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0036" x="2307" y="2780" width="775" height="421"/>
+	<SubTexture name="Hmph0037" x="3082" y="2780" width="775" height="421"/>
+	<SubTexture name="Hmph0038" x="2151" y="1340" width="692" height="360" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0039" x="2843" y="1340" width="692" height="360" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0040" x="0" y="1650" width="593" height="360" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0041" x="593" y="1650" width="593" height="360" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0042" x="1186" y="1700" width="654" height="360" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0043" x="1840" y="1700" width="654" height="360" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0044" x="3211" y="1700" width="574" height="360" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0045" x="3211" y="1700" width="574" height="360" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0046" x="3591" y="620" width="360" height="492" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0047" x="3591" y="620" width="360" height="492" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0048" x="3591" y="620" width="360" height="492" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0049" x="3591" y="620" width="360" height="492" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0050" x="3591" y="620" width="360" height="492" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0051" x="3591" y="620" width="360" height="492" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0052" x="3591" y="620" width="360" height="492" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0053" x="3591" y="620" width="360" height="492" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0054" x="3591" y="620" width="360" height="492" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0055" x="3591" y="620" width="360" height="492" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0056" x="3591" y="620" width="360" height="492" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0057" x="3591" y="620" width="360" height="492" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0058" x="3591" y="620" width="360" height="492" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0059" x="3591" y="620" width="360" height="492" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0060" x="3591" y="620" width="360" height="492" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0061" x="3591" y="620" width="360" height="492" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0062" x="3591" y="620" width="360" height="492" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0063" x="3585" y="1112" width="360" height="492" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0064" x="0" y="2010" width="492" height="360" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0065" x="492" y="2010" width="492" height="360" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0066" x="984" y="2060" width="492" height="360" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0067" x="1476" y="2060" width="492" height="360" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0068" x="1968" y="2060" width="492" height="360" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0069" x="2460" y="2060" width="492" height="360" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0070" x="2460" y="2060" width="492" height="360" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0071" x="2460" y="2060" width="492" height="360" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0072" x="2460" y="2060" width="492" height="360" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0073" x="2460" y="2060" width="492" height="360" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0074" x="2460" y="2060" width="492" height="360" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0075" x="2460" y="2060" width="492" height="360" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0076" x="2460" y="2060" width="492" height="360" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0077" x="2460" y="2060" width="492" height="360" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0078" x="0" y="0" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0079" x="360" y="0" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0080" x="720" y="0" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0081" x="1080" y="0" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0082" x="1440" y="0" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0083" x="1800" y="0" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0084" x="2160" y="0" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0085" x="2520" y="0" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0086" x="2880" y="0" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0087" x="3240" y="0" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0088" x="3240" y="0" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0089" x="3600" y="0" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0090" x="3600" y="0" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0091" x="0" y="310" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0092" x="0" y="310" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0093" x="0" y="310" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0094" x="0" y="310" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0095" x="0" y="310" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0096" x="0" y="310" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0097" x="0" y="310" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0098" x="0" y="310" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0099" x="0" y="310" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0100" x="0" y="310" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0101" x="0" y="310" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0102" x="0" y="310" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0103" x="0" y="310" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0104" x="0" y="310" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0105" x="0" y="310" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0106" x="0" y="310" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0107" x="360" y="310" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0108" x="360" y="310" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0109" x="720" y="310" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0110" x="1080" y="310" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0111" x="1440" y="310" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0112" x="1800" y="310" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0113" x="2160" y="310" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0114" x="2520" y="310" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0115" x="2880" y="310" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0116" x="3240" y="310" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0117" x="3600" y="310" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0118" x="0" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0119" x="360" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0120" x="360" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0121" x="720" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0122" x="720" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0123" x="720" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0124" x="720" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0125" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0126" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0127" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0128" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0129" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0130" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0131" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0132" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0133" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0134" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0135" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0136" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0137" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0138" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0139" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0140" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0141" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0142" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0143" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0144" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0145" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0146" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0147" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0148" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0149" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0150" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0151" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0152" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0153" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0154" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0155" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0156" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0157" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0158" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0159" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0160" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0161" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0162" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0163" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0164" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0165" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0166" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0167" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0168" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0169" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0170" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0171" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0172" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0173" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0174" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0175" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0176" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0177" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0178" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0179" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0180" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0181" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0182" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0183" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0184" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0185" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0186" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0187" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0188" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0189" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0190" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0191" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0192" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0193" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0194" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0195" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0196" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0197" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0198" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0199" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0200" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0201" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0202" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0203" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0204" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0205" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0206" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0207" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0208" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0209" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0210" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0211" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0212" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0213" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0214" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0215" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0216" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0217" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0218" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0219" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0220" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0221" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0222" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0223" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0224" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0225" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0226" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0227" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0228" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0229" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0230" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0231" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+	<SubTexture name="Hmph0232" x="1080" y="620" width="360" height="310" rotated="true" frameX="0" frameY="-30.5" frameWidth="774.5" frameHeight="412.5"/>
+</TextureAtlas>

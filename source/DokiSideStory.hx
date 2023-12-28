@@ -184,7 +184,7 @@ class DokiSideStory extends MusicBeatSubstate
 		{
 			#if mobile
 			if (curSong.toLowerCase()=='libitina'){
-				MusicBeatState.switchState(new VideoState('assets/videos/metaintro', new EstadoDeTroca()));
+				MusicBeatState.switchState(new VideoState('assets/locales/' + SaveData.language + '/metaintro', new EstadoDeTroca())); // só mais um detalhe que eu quis adicionar
 				FlxG.sound.music.volume = 0;
 			}else #end
 				MusicBeatState.switchState(new EstadoDeTroca());

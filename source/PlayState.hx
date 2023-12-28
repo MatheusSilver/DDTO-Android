@@ -605,11 +605,11 @@ class PlayState extends MusicBeatState
 			switch(curStyle)
 			{
 				case 'lib':
-					Paths.image('libbie_Splash', false, true);
+					Paths.image('libbie_Splash', true);
 				case 'pixel':
-					Paths.image('pixel_Splash', false, true);
+					Paths.image('pixel_Splash', true);
 				default:
-					Paths.image('NOTE_splashes_doki', false, true);
+					Paths.image('NOTE_splashes_doki', true);
 			}
 		}
 
@@ -683,12 +683,12 @@ class PlayState extends MusicBeatState
 	
 				try
 				{
-					introDoof = new DialogueBox(Assets.getText(Paths.json('dialogue/${SONG.song.toLowerCase()}/$introDialogue')));
+					introDoof = new DialogueBox(Assets.getText(Paths.localeDialogue('${SONG.song.toLowerCase()}/$introDialogue')));
 					introDoof.scrollFactor.set();
 				}
 				catch (e)
 				{
-					trace('[${SONG.song}] "$introDialogue" either doesn\'t exist or contains an error!');
+					trace('[${SONG.song}] "$introDialogue" nao existe ou contem um erro!');
 				}
 			}
 	
@@ -698,13 +698,13 @@ class PlayState extends MusicBeatState
 	
 				try
 				{
-					endDoof = new DialogueBox(Assets.getText(Paths.json('dialogue/${SONG.song.toLowerCase()}/$endDialogue')));
+					endDoof = new DialogueBox(Assets.getText(Paths.localeDialogue('${SONG.song.toLowerCase()}/$endDialogue')));
 					endDoof.scrollFactor.set();
 				}
 				catch (e)
 				{
 					endDoof = null;
-					trace('[${SONG.song}] "$endDialogue" either doesn\'t exist or contains an error!');
+					trace('[${SONG.song}] "$endDialogue" nao existe ou tem algum erro!');
 				}
 			}
 		}
@@ -2221,7 +2221,7 @@ class PlayState extends MusicBeatState
 		}
 			if(!SaveData.lowEnd){
 				for (sticker in stickerData)
-					Paths.image('stickies/' + sticker, 'preload', false, false);
+					Paths.image('stickies/' + sticker, 'preload', false);
 			}
 		}
 
@@ -2299,7 +2299,7 @@ class PlayState extends MusicBeatState
 		camGame2.zoom = defaultCamZoom;
 		camGame2.focusOn(camFollow.getPosition());
 
-		healthBarBG = new FlxSprite(0, FlxG.height * 0.89).loadGraphic(Paths.image('healthBar', false , true));
+		healthBarBG = new FlxSprite(0, FlxG.height * 0.89).loadGraphic(Paths.image('healthBar', true));
 
 		switch (SONG.song.toLowerCase())
 		{
@@ -2348,7 +2348,57 @@ class PlayState extends MusicBeatState
 		// lyics
 		try
 		{
-			var lyricFile = CoolUtil.coolTextFile(Paths.txt('data/songs/${SONG.song.toLowerCase()}/lyrics'));
+			var lyricFile:Array<String>;
+			//Ou é Our Harmony ou Epiphany, pelo simples motivo de que não tem nenhuma outra música com letra além dessas
+			if (SONG.song.toLowerCase() == "our harmony")
+			{ // our harmony
+				switch (SaveData.language)
+				{
+					case "pt-BR":
+						if (Assets.exists('assets/data/songs/our harmony/letrasptbr.txt'))
+						{
+							lyricFile = CoolUtil.coolTextFile(Paths.txt('data/songs/our harmony/letrasptbr'));
+						}
+						else
+						{
+							lyricFile = CoolUtil.coolTextFile(Paths.txt('data/lyricerrada')); // Isso não é um easter egg
+						}
+
+					case "en-US":
+						if (Assets.exists('assets/data/songs/our harmony/letrasenus.txt'))
+						{
+							lyricFile = CoolUtil.coolTextFile(Paths.txt('data/songs/our harmony/letrasenus'));
+						}
+						else
+						{
+							lyricFile = CoolUtil.coolTextFile(Paths.txt('data/lyricerrada')); // Isso não é um easter egg
+						}
+
+					case "es-US":
+						if (Assets.exists('assets/data/songs/our harmony/letrasesus.txt'))
+						{
+							lyricFile = CoolUtil.coolTextFile(Paths.txt('data/songs/our harmony/letrasesus'));
+						}
+						else
+						{
+							lyricFile = CoolUtil.coolTextFile(Paths.txt('data/lyricerrada')); // Isso não é um easter egg
+						}
+
+					default:
+						lyricFile = CoolUtil.coolTextFile(Paths.txt('data/lyricerrada')); // Lida com outros idiomas ou casos não especificados
+				}
+			}
+			else if (SONG.song.toLowerCase() == "epiphany")
+			{ // epiphany
+				if (Assets.exists('assets/data/songs/epiphany/lyrics.txt'))
+				{
+					lyricFile = CoolUtil.coolTextFile(Paths.txt('data/songs/epiphany/lyrics.txt'));
+				}
+				else
+				{
+					lyricFile = CoolUtil.coolTextFile(Paths.txt('data/lyricerrada')); // Isso não é um easter egg
+				}
+			}
 
 			for (lyric in lyricFile)
 			{
@@ -2471,9 +2521,9 @@ class PlayState extends MusicBeatState
 		// layering due to icons
 		add(scoreTxt);
 
-		Paths.image("pause/"+ ((hasMetadata && metadata.song.pause != null) ? metadata.song.pause : "fumo"), 'preload', false, true);
-		Paths.image("Credits_LeftSide", 'preload', false, true);
-		Paths.image("DDLCStart_Screen_Assets", 'preload', false, true);
+		Paths.image("pause/"+ ((hasMetadata && metadata.song.pause != null) ? metadata.song.pause : "fumo"), 'preload', true);
+		Paths.image("Credits_LeftSide", 'preload', true);
+		Paths.image("DDLCStart_Screen_Assets", 'preload', true);
 		Paths.music('disco');
 
 		//Movendo pra cá pra dar tempo do jogo setar as variáveis que ele vai usar
@@ -2618,14 +2668,14 @@ class PlayState extends MusicBeatState
 			pixelShitPart2 = '-pixel';
 		}
 
-		Paths.image(pixelShitPart1 + "sick" + pixelShitPart2, false, true);
-		Paths.image(pixelShitPart1 + "good" + pixelShitPart2, false, true);
-		Paths.image(pixelShitPart1 + "bad" + pixelShitPart2, false, true);
-		Paths.image(pixelShitPart1 + "shit" + pixelShitPart2, false, true);
-		Paths.image(pixelShitPart1 + "combo" + pixelShitPart2, false, true);
+		Paths.image(pixelShitPart1 + "sick" + pixelShitPart2, true);
+		Paths.image(pixelShitPart1 + "good" + pixelShitPart2, true);
+		Paths.image(pixelShitPart1 + "bad" + pixelShitPart2, true);
+		Paths.image(pixelShitPart1 + "shit" + pixelShitPart2, true);
+		Paths.image(pixelShitPart1 + "combo" + pixelShitPart2, true);
 		
 		for (i in 0...10) {
-			Paths.image(pixelShitPart1 + 'num' + i + pixelShitPart2, false, true);
+			Paths.image(pixelShitPart1 + 'num' + i + pixelShitPart2, true);
 		}
 	}
 
@@ -2650,7 +2700,7 @@ class PlayState extends MusicBeatState
 		}
 
 		for (asset in introAlts)
-			Paths.image(asset, false, true);
+			Paths.image(asset, true);
 
 		if (curStage.startsWith('schoolEvil') || curStage.startsWith('schoolEvilEX')){
 			CoolUtil.precacheSound('intro3' + glitchSuffix);
@@ -3728,6 +3778,21 @@ class PlayState extends MusicBeatState
 		FlxG.sound.playMusic(Paths.inst(SONG.song), 1, false);
 		FlxG.sound.music.onComplete = songOutro;
 
+		
+		if(curSong.toLowerCase() == 'our harmony') {
+			// to do: arrumar dublagem em espanhol
+			switch(SaveData.language) {
+				case "en-US":
+						changeVocalTrack('', '_EngDub');
+				case "es-US":
+						changeVocalTrack('', '_EspDub');
+				case "pt-BR":
+						vocals = new FlxSound().loadEmbedded(Paths.voices(SONG.song)); // Isso faz que só seja o vocal normal, já que o vocal base já é dublado em PTBR
+						FlxG.sound.list.add(vocals);
+						resyncVocals();
+			}
+		}
+
 		vocals.play();
 		vocals.onComplete = function()
 		{
@@ -3736,6 +3801,7 @@ class PlayState extends MusicBeatState
 
 		if (curSong.toLowerCase() == 'epiphany' && storyDifficulty == 2)
 			changeVocalTrack('', '_Lyrics');
+
 
 		if (paused)
 		{
@@ -7340,7 +7406,7 @@ class PlayState extends MusicBeatState
 									FlxTween.tween(funnytext, {alpha: 0}, 0.5, {ease: FlxEase.sineIn, startDelay: 2,
 										onComplete:function(twn:FlxTween)
 										{
-											funnytext.text = 'E os bots... Gostam de...\nNATSUSKI BOMBADA\n(Ou talvez só o porter que é troll kek-)';
+											funnytext.text = 'E os bots... Gostam de...\nNATSUSKI BOMBADA\n(Ou talvez só o porter que é troll kek-)'; // tinha me esquecido disso k
 											FlxTween.tween(funnytext, {alpha: 1}, 1, {ease: FlxEase.sineIn,
 												onComplete:function(twn:FlxTween)
 												{
@@ -7358,6 +7424,7 @@ class PlayState extends MusicBeatState
 							});
 							}//Esse código tá feião, mas não importa a aparência, O QUE IMPORTA SÃO OS MÚSCULOS
 							//Faça jojo pose imediatamente
+							//JOJO REFERENCEEEEEEEEE
 							//Espero ter feito isso certo de primeira... Tenho certeza que se eu precisar voltar aqui... Meu Amigo... Melhor nem pensar...
 							FlxTween.tween(camFollow, {y: 326}, 3, {
 								ease: FlxEase.linear,
@@ -8639,7 +8706,7 @@ class PlayState extends MusicBeatState
 				else //FIX FOUND
 					trace('This Sticker doesnt exists ' + stickerData.length + ' which number' + rand);
 
-				item.loadGraphic(Paths.image('stickies/' + stike, 'preload', false, false));
+				item.loadGraphic(Paths.image('stickies/' + stike, 'preload', false));
 				microArrayofStickies.push('stickies/' + stike);
 				stickerData.remove(stike);
 				item.scale.set(1, 1);
@@ -8665,7 +8732,13 @@ class PlayState extends MusicBeatState
 		if (!SaveData.lowEnd)
 		{
 			trace("It's happenin!");
-			var nicoText:Array<String> = CoolUtil.coolTextFile(Paths.txt("data/nicoText"));
+			var nicoText:Array<String>;
+
+			if(SaveData.language == "pt-BR") {
+				nicoText = CoolUtil.coolTextFile("assets/data/nicoText.txt");
+			} else {
+				nicoText = CoolUtil.coolTextFile("assets/locales/" + SaveData.language + '/data/nicoText.txt');
+			}
 	
 			if (Date.now().getDay() != 5)
 				nicoText.push("it's not even friday...");
