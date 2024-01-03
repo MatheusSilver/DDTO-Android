@@ -13,9 +13,9 @@ class DokiModifierSubState extends MusicBeatSubstate
 		// internal, name, unlock, save, type, default
 		//['offset', 'Offset Global', true, 'offset', 'float', 0],
 		['botplay', 'Botplay', true, 'botplay', 'bool', false],
-		['mirror', 'Modo Espelho', SaveData.beatFestival, 'mirrorMode', 'bool', false],
-		['death', 'Morte Súbita', true, 'missModeType', 'int', 0],
-		['random', 'Notas Aleatórias', SaveData.beatFestival, 'randomMode', 'bool', false],
+		['mirror', LangUtil.getString('nameMirror', 'option'), SaveData.beatFestival, 'mirrorMode', 'bool', false],
+		['death', LangUtil.getString('nameSudden', 'option'), true, 'missModeType', 'int', 0],
+		['random', LangUtil.getString('nameRandom', 'option'), SaveData.beatFestival, 'randomMode', 'bool', false],
 		//['scroll', 'Velocidade do Scroll', true, 'scrollSpeed', 'float', 0.9],
 		['down', 'Downscroll', true, 'downScroll', 'bool', false],
 		['middle', 'Middlescroll', true, 'middleScroll', 'bool', false],

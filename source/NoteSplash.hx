@@ -15,16 +15,16 @@ class NoteSplash extends FlxSprite
 		switch (style) // Libbie for later
 		{
 			case 'lib':
-				frames = Paths.getSparrowAtlas('libbie_Splash', false, false);
+				frames = Paths.getSparrowAtlas('libbie_Splash', false);
 				allowRotation = false;
 			case 'pixel':
-				frames = Paths.getSparrowAtlas('pixel_Splash', false, false);
+				frames = Paths.getSparrowAtlas('pixel_Splash', false);
 				scale.set(6, 6);
 				setPosition(x + 100, y + 100);
 				allowRotation = false;
 				antialiasing = false;
 			default:
-				frames = Paths.getSparrowAtlas('NOTE_splashes_doki', false, false);
+				frames = Paths.getSparrowAtlas('NOTE_splashes_doki', false);
 				allowRotation = true;
 				setPosition(x - 25, y - 25);
 		}

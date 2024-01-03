@@ -44,7 +44,7 @@ class PresetsSubstate extends MusicBeatSubstate
 
 		switch(SaveData.language) {
 			case "pt-BR":
-				judgementText = ["Português do Brasil", "Inglês (Estados Unidos)", "Espanhol (Estados Unidos)", "Voltar", ''];
+				judgementText = ["Gama Alta (4GB+)", "Gama Média(3GB+)", "Gama Baja(2GB+)", "Voltar", ''];
 				explicacoes = [
 				"Tudo do mod original estará ativado (recomendado para acima de 4 GB de RAM)", 
 				"A notificação de acerto não estará visível e irá estabilizar o FPS (recomendado para 3 GB de RAM)", 
@@ -52,7 +52,7 @@ class PresetsSubstate extends MusicBeatSubstate
 				"Você não estará escolhendo nenhum preset. Clique novamente para voltar ao menu.",
 				''];
 			case "en-US":
-				judgementText = ["Brazilian Portuguese", "English (USA)", "Spanish (USA)", "Back", ''];
+				judgementText = ["High End (4GB+)", "Mid End(3GB+)", "Low End(2GB+)", "Back", ''];
 				explicacoes = [
 					"Everything of the mod will be activated (recommended for 4 GB RAM or more)",
 					"Ratings popup will be invisible and FPS will become stable (recommended for 3 GB RAM)",
@@ -60,8 +60,8 @@ class PresetsSubstate extends MusicBeatSubstate
 					"Go back to the options",
 					''
 				];
-			case "es-US":
-				judgementText = ["Portugués de Brasil", "Inglés (Estados Unidos)", "Español (Estados Unidos)", "Volver", ''];
+			case "es-ES":
+				judgementText = ["Gama Alta (4GB+)", "Gama Media(3GB+)", "Gama Baja(2GB+)", "Voltar", ''];
 				explicacoes = [
 					"Se activará todo el mod (recomendado para 4 GB de RAM o más)",
 					"Los popup de rating se convertirá invisible y los FPS se estabilizarán (recomendado para 3 GB de RAM)",
@@ -159,7 +159,7 @@ class PresetsSubstate extends MusicBeatSubstate
 			+ judgementText[curSelected]
 			+ ': '
 			+ explicacoes[curSelected];
-			case "es-US":
+			case "es-ES":
 		infoText.text = 'Seleccione un preset de optimización\n\n'
 			+ judgementText[curSelected]
 			+ ': '
@@ -187,7 +187,7 @@ class PresetsSubstate extends MusicBeatSubstate
 		infoText = new FlxText(-10, 580, 1280, 'Escolha um Preset de otimização\nToque na opção duas vezes para confirmar\n\n'+ judgementText[curSelected] + ': ' + explicacoes[curSelected], 72);
 			case "en-US":
 		infoText = new FlxText(-10, 580, 1280, 'Choose a optimization preset\nTouch two times on the option to confirm\n\n'+ judgementText[curSelected] + ': ' + explicacoes[curSelected], 72);
-			case "es-US":
+			case "es-ES":
 		infoText = new FlxText(-10, 580, 1280, 'Seleccione un preset de optimización\nToca la opción dos veces para confirmar\n\n'+ judgementText[curSelected] + ': ' + explicacoes[curSelected], 72);
 	}
 	}

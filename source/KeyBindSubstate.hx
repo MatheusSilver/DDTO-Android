@@ -94,9 +94,12 @@ class KeyBindSubstate extends MusicBeatSubstate
 
 	override function update(elapsed:Float)
 	{
-		infoText.text = ${LangUtil.getString('descKeyBindControls', 'option')}
+		infoText.text =
+			#if android
+			${LangUtil.getString('descKeyBindControls', 'option')} #else
+			LangUtil.getString('descKeyBindControls', 'option') #end
 			+ '\n'
-			+ ${lastKey != '' ? LangUtil.getString('descKeyBindBlacklist', 'option', lastKey) : ''};
+			+ #if android ${lastKey != '' ? LangUtil.getString('descKeyBindBlacklist', 'option', lastKey) : ''} #else "" #end; // meu pc nao compilava por causa de algo aqui
 
 		if (acceptInput)
 		{

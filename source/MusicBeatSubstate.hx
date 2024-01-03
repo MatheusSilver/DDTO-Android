@@ -39,7 +39,7 @@ class MusicBeatSubstate extends FlxSubState
 			if (!semState)
 				close();
 		});
-		_backButton.loadGraphic(Paths.image('voltar', false, true));
+		_backButton.loadGraphic(Paths.image('voltar', true));
 		_backButton.updateHitbox();
 		add(_backButton);
 	}

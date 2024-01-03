@@ -168,7 +168,7 @@ class Character extends FlxSprite
 		}
 		else
 		{
-			frames = Paths.getSparrowAtlas(json.image, false, gpu);
+			frames = Paths.getSparrowAtlas(json.image, gpu);
 		}
 
 		var imageFile:String = '';

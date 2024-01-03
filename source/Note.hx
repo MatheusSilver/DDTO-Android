@@ -231,18 +231,18 @@ class Note extends FlxSprite
 			case 'pixel':
 				if (isSustainNote)
 				{
-					loadGraphic(Paths.image('pixelUI/' + blahblah + 'ENDS', false, true));
+					loadGraphic(Paths.image('pixelUI/' + blahblah + 'ENDS', true));
 					width = width / 4;
 					height = height / 2;
 					originalHeightForCalcs = height;
-					loadGraphic(Paths.image('pixelUI/' + blahblah + 'ENDS', false, true), true, Math.floor(width), Math.floor(height));
+					loadGraphic(Paths.image('pixelUI/' + blahblah + 'ENDS', true), true, Math.floor(width), Math.floor(height));
 				}
 				else
 				{
-					loadGraphic(Paths.image('pixelUI/' + blahblah, false, true));
+					loadGraphic(Paths.image('pixelUI/' + blahblah, true));
 					width = width / 4;
 					height = height / 6;
-					loadGraphic(Paths.image('pixelUI/' + blahblah, false , true), true, Math.floor(width), Math.floor(height));
+					loadGraphic(Paths.image('pixelUI/' + blahblah, true), true, Math.floor(width), Math.floor(height));
 				}
 
 				setGraphicSize(Std.int(width * PlayState.daPixelZoom));
@@ -256,7 +256,7 @@ class Note extends FlxSprite
 					offsetX -= lastNoteOffsetXForPixelAutoAdjusting;
 				}
 			default:
-				frames = Paths.getSparrowAtlas(blahblah, false, true);
+				frames = Paths.getSparrowAtlas(blahblah, true); //APARENTEMENTE, acabaram os erros do "locales" (bool)
 				loadNoteAnims();
 				antialiasing = SaveData.globalAntialiasing;
 		}

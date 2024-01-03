@@ -24,7 +24,7 @@ class GalleryArtState extends MusicBeatState
 	var setaEsquerda:FlxSprite;
 	var setaDireita:FlxSprite;
 
-	var galleryData:Array<String> = CoolUtil.coolTextFile(Paths.txt('data/galleryData', 'preload'));
+	var galleryData:Array<String>;
 	var artworkData:Array<String> = [];
 	var authorData:Array<String> = [];
 	var urlData:Array<String> = [];
@@ -39,6 +39,15 @@ class GalleryArtState extends MusicBeatState
 		// Updating Discord Rich Presence
 		DiscordClient.changePresence("Viewing the Art Gallery", null);
 		#end
+
+		switch(SaveData.language) {
+			case 'pt-BR':
+				galleryData = CoolUtil.coolTextFile('assets/data/galleryData.txt');
+			case 'en-US':
+				galleryData = CoolUtil.coolTextFile('assets/locales/en-US/data/galleryData.txt');
+			case 'es-ES':
+				galleryData = CoolUtil.coolTextFile('assets/locales/es-ES/data/galleryData.txt');
+		}
 
 		FlxG.sound.playMusic(Paths.music('sayoc'));
 		Conductor.changeBPM(110);

@@ -389,6 +389,9 @@ class PlayState extends MusicBeatState
 	var libFinaleOverlay:BGSprite;
 	var libVignette:BGSprite;
 	var grpPopups = new FlxTypedGroup<BGSprite>();
+	 
+	// natsuki bombada supremacy
+	public static final charList:Array<String> = ['Yuri', 'Sayori', 'Monika', 'Natsuki'];
 
 	var altAnim:String = "";
 	var fc:Bool = true;
@@ -1782,7 +1785,7 @@ class PlayState extends MusicBeatState
 
 					//Preload cards justincase
 					//Um preload mil vezes melhor diga-se de passagem...
-					for (chr in DokiCards.charList)
+					for (chr in charList)
 						Paths.image('extraui/' + chr + 'Card', 'preload');
 
 				}
@@ -2348,57 +2351,7 @@ class PlayState extends MusicBeatState
 		// lyics
 		try
 		{
-			var lyricFile:Array<String>;
-			//Ou é Our Harmony ou Epiphany, pelo simples motivo de que não tem nenhuma outra música com letra além dessas
-			if (SONG.song.toLowerCase() == "our harmony")
-			{ // our harmony
-				switch (SaveData.language)
-				{
-					case "pt-BR":
-						if (Assets.exists('assets/data/songs/our harmony/letrasptbr.txt'))
-						{
-							lyricFile = CoolUtil.coolTextFile(Paths.txt('data/songs/our harmony/letrasptbr'));
-						}
-						else
-						{
-							lyricFile = CoolUtil.coolTextFile(Paths.txt('data/lyricerrada')); // Isso não é um easter egg
-						}
-
-					case "en-US":
-						if (Assets.exists('assets/data/songs/our harmony/letrasenus.txt'))
-						{
-							lyricFile = CoolUtil.coolTextFile(Paths.txt('data/songs/our harmony/letrasenus'));
-						}
-						else
-						{
-							lyricFile = CoolUtil.coolTextFile(Paths.txt('data/lyricerrada')); // Isso não é um easter egg
-						}
-
-					case "es-US":
-						if (Assets.exists('assets/data/songs/our harmony/letrasesus.txt'))
-						{
-							lyricFile = CoolUtil.coolTextFile(Paths.txt('data/songs/our harmony/letrasesus'));
-						}
-						else
-						{
-							lyricFile = CoolUtil.coolTextFile(Paths.txt('data/lyricerrada')); // Isso não é um easter egg
-						}
-
-					default:
-						lyricFile = CoolUtil.coolTextFile(Paths.txt('data/lyricerrada')); // Lida com outros idiomas ou casos não especificados
-				}
-			}
-			else if (SONG.song.toLowerCase() == "epiphany")
-			{ // epiphany
-				if (Assets.exists('assets/data/songs/epiphany/lyrics.txt'))
-				{
-					lyricFile = CoolUtil.coolTextFile(Paths.txt('data/songs/epiphany/lyrics.txt'));
-				}
-				else
-				{
-					lyricFile = CoolUtil.coolTextFile(Paths.txt('data/lyricerrada')); // Isso não é um easter egg
-				}
-			}
+			var lyricFile = CoolUtil.coolTextFile(Paths.txt('data/songs/${SONG.song.toLowerCase()}/lyrics${SaveData.language}'));
 
 			for (lyric in lyricFile)
 			{
@@ -2647,7 +2600,8 @@ class PlayState extends MusicBeatState
 		super.create();
 
 		cacheCountdown();
-		if(SaveData.ratingVisivel)
+		if(SaveData.ratingVisivel && !SaveData.botplay) // Isso vai fazer (ou pelo menos deveria) com que caso tu tenha o botplay ativado os popups não vão aparecer
+			//Só fiz isso pq não faz sentido tu não jogar e aparecer os ratings... Isso também economiza memória
 			cachePopUpScore();
 
 		CustomFadeTransition.nextCamera = camOverlay;
@@ -2906,7 +2860,7 @@ class PlayState extends MusicBeatState
 				extrachar1.visible = false;
 				camFocus = false;
 				camHUD.alpha = 0.001;
-				for(char in DokiCards.charList)
+				for(char in charList)
 					Paths.image('credits/window_bottom_' + char.toLowerCase(), 'doki');
 
 				Paths.image('credits/window_bottom', 'doki');
@@ -3784,7 +3738,7 @@ class PlayState extends MusicBeatState
 			switch(SaveData.language) {
 				case "en-US":
 						changeVocalTrack('', '_EngDub');
-				case "es-US":
+				case "es-ES":
 						changeVocalTrack('', '_EspDub');
 				case "pt-BR":
 						vocals = new FlxSound().loadEmbedded(Paths.voices(SONG.song)); // Isso faz que só seja o vocal normal, já que o vocal base já é dublado em PTBR
@@ -5557,8 +5511,8 @@ class PlayState extends MusicBeatState
 			grpNoteSplashes.add(daNoteSplash);
 		}
 
-		if (SaveData.hitSound)
-			HitSoundManager.play(daRating);
+		if (SaveData.judgeHitSound)
+			HitSoundManager.play(daRating); //q
 
 		if (!practiceMode)
 			songScore += Math.round(score);
@@ -5589,12 +5543,12 @@ class PlayState extends MusicBeatState
 			pixelShitPart2 = '';
 		}
 
-		if(SaveData.ratingVisivel)
+		if(SaveData.ratingVisivel && !SaveData.botplay)
 			rating.loadGraphic(Paths.image(pixelShitPart1 + daRating + pixelShitPart2));
 		else
 			rating= new FlxSprite().makeGraphic(1, 1, FlxColor.TRANSPARENT);
 
-		rating.visible = SaveData.ratingVisivel;
+		rating.visible = SaveData.ratingVisivel && !SaveData.botplay;
 
 		if (SaveData.changedHit)
 		{
@@ -5704,12 +5658,12 @@ class PlayState extends MusicBeatState
 		for (i in seperatedScore)
 		{
 			var numScore:FlxSprite;
-			if(SaveData.ratingVisivel)
+			if(SaveData.ratingVisivel && !SaveData.botplay)
 				numScore= new FlxSprite().loadGraphic(Paths.image(pixelShitPart1 + 'num' + Std.int(i) + pixelShitPart2));
 			else
 				numScore= new FlxSprite().makeGraphic(1, 1, FlxColor.TRANSPARENT);
 
-			numScore.visible = SaveData.ratingVisivel;
+			numScore.visible = SaveData.ratingVisivel  && !SaveData.botplay;
 			numScore.screenCenter();
 			numScore.x = rating.x + (45 * daLoop) - 50;
 			numScore.y = rating.y + 100;
@@ -6881,8 +6835,7 @@ class PlayState extends MusicBeatState
 						case 2568:
 							FlxTween.tween(whiteflash, {alpha: 1}, 0.57, {ease: FlxEase.sineIn});
 						case 2578:
-							cg1.visible = false;
-							cg1.alpha = 0;
+							destruirsprites(cg1, "musicroom/CG/cg1", "doki");
 							cg2.visible = true;
 							cg2.alpha = 1;
 							FlxTween.tween(whiteflash, {alpha: 0}, 1, {ease: FlxEase.sineIn});
@@ -6892,18 +6845,18 @@ class PlayState extends MusicBeatState
 						case 2674:
 							FlxTween.tween(whiteflash, {alpha: 1}, 1, {ease: FlxEase.sineIn});
 						case 2694:
-							cg2.visible = false;
-							cg2.alpha = 0;
+							destruirsprites(cg2, "musicroom/CG/cg2", "doki");
 							cg2Group.visible = true;
 							cg2Group.alpha = 1;
 
 							for (item in cg2Group.members)
 								FlxTween.tween(item, {x: -250}, 17 + (1 * item.ID), {ease: FlxEase.sineIn});
-
 							FlxTween.tween(whiteflash, {alpha: 0}, 1, {ease: FlxEase.sineIn});
 						// Fade out
 						case 2702:
 							// End here
+						case 2712:
+							destruirsprites(lyrics);
 					}
 				case 'neet':
 					switch (curStep)
@@ -7616,7 +7569,7 @@ class PlayState extends MusicBeatState
 
 							camGame2.fade(FlxColor.WHITE, 0.2, true);
 							extractPopup.alpha = 0.001;
-							destruirsprites(extractPopup, 'libitina/extracting', 'doki');
+							destruirsprites(extractPopup, 'libitina/extracting', 'doki'); // BUG AQUI, se eu nao to moscando
 							if (!SaveData.lowEnd)
 							{
 							deskBG2Overlay.alpha = 0.15;
@@ -7657,7 +7610,7 @@ class PlayState extends MusicBeatState
 							}
 						case 384:
 							libHando.alpha = 0.001;
-							destruirsprites(libHando, 'libitina/Hando', 'doki');
+							destruirsprites(libHando, 'libitina/Hando', 'doki'); // aparentemente o jogo crasha aqui em outras linguagens por algum motivo
 							camGame2.fade(FlxColor.WHITE, 0.2, true);
 							libiWindow.scale.set(1, 1);
 							boyfriend.setPosition(170, -50);
@@ -9314,4 +9267,104 @@ l.,dkxkxl.       .l0XXXXXXXXKKXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXd
      ..,;;:odddddddolcccc;lOXNk.   .''. ;oxO0l.....;c:;;;,.     .,;;;.        .oxkkkkkkx:. .okkkkkkk
 .,::ldddxxxxxdxxxdxdlc;;xkxoodxl.      cXNxcdxocccccc;.     ........          'ldkkkkkx:. .cxkkkkkkk
 ddxxxxxxxxddxxxxxdxdol;dNWW0l:llc'   .lXNklclldkOkkdlc.    'lddddddl;',,,,'.    'okkkko.  ;dkkkkkkkk
-*/
+
+
+⠀                                                                                                                                            
+                                                  --..----..    ------..                                                                    
+                                            ....----    mm@@::    ......MM  ----                                                            
+                                        ..@@@@            ..MM    --    --::    --                                                          
+                                        mm..                    ----....::::..                                                              
+                                      ----                        ::..    ++  --  ..++                                                      
+                                      ++      --    ..      --      --..  ..##  --..  @@                                                    
+                                    ..----..--..  --  ..    mm--..  ..::    ##mm::--..::--                                                  
+                                    mm..----++  ++  ++--  ++--mm++..  ++    ++::++      ##                                                  
+                                    ::..  ++--++::++..  ::::::++++..  --..  ..MM--::  --......                                              
+                                  ++::::--++::--..MM  ::::--..--++--::----  ..++::..  ++..    ++                                            
+                                --::::--------@@++::::--....  --++::::--..    ----    mm..      --                                          
+                              mm  mm::....    ##MM++MM..      ..  ----..::          ++++        ::                                          
+                            @@    ::::..    ----@@          --  ..--....------------::::        ::                                          
+                                        ------                    --....--  ::mm++    ..                                                    
+                                    ++::                --####++  ::..--::    ..++      ++                                                  
+                                  mm  ..MM##@@            ::MMmm::++::::--    ..++      MM                                                  
+                                --  ..  ..mm@@            --      --::....      ::        ::                                                
+                                    ..  ..                        --            ::                                                          
+                              ..      ++..                            ..      ..++                                                          
+                            MM        ....                        ..  --  ..  ..mmMM::                                                      
+                                      ..  ..                    --    ++  ++  ..mm++MMMMMM::                                                
+                                      --                            ++++  ::  --mmmmMMMMMMMMMMMM++..                                        
+                                      ..  ..--                ..  ..mm::..--..++MM::----------::::++mmmm++++--                              
+                                  --++++    ++++            --....++@@--mm  ++mm++----------------------::::++++++::                        
+                              --mmmmmmmm::  MM++mm++    ++..  ..++@@::  ......mm::--------------------------mmmm::--MM                      
+                            mmmm++::::::++@@MMMMmmMMMM::      ..--          ++MMmm----------------------++mm--------++MMmm                  
+                        ++mm++++::::::::++mm@@@@MM##  --      ::mm        ..MM::++--------------------mm--------------mmmmMM..              
+                      mm++::::::::::::::++mmMMmmMM--  ++  ::              @@MM..::------------------mm..--------------mmmmmmMM++            
+                    MM::::::::::::::::::::++--MMMM++::++                mmmmMM++::----------------mm------------------::mm++MMmm--          
+                    ++--::::::::::::++::::::++mm::MM::MMmm            ::++mm++mm--------::------mm----------------------mm::::mm++          
+                  MM----::--::::::::++::::::++mm++mm::++--..        --++++mm--mm::::::::++::------------------------::::::++--::++::        
+                ::MM::::::::::::++::++--::::::@@::::--mmMM..    ..--++::::::--::::::::::++::::++----------------------::--++::::++mm        
+                MMMMmm++----::::::++@@  ::::--++  ..##@@----      ++::------mm::::::::::::::::------------------------++::::::::++++        
+              --MMMMMM::----++mm++++::mm::----....@@####  @@    mm::--------MM--::::::::++++++------------------------++::::::::++++        
+              @@MMMMMM++--::::::::::--::mmmm--mm  ##@@--++MMMM++++------::..MM--::::::++++++::------------------------++::::::::::++++      
+              MMMMMMMMmm++mm::::::----::mm--MM..  ##@@++##mm::::......--++  ++--::++++++++::::------------------------++++::::::::++MM      
+              MMMMMMMM++mm++++::----::::::::##--##::##MM##MMmm++mmmmmmMM..--::----::++++++::::------------------------++++::::::::++MMMM    
+              MMMMMMMM::MM++::------++++::::@@##++  ####++mm----  mm--------------::++++++::::--------------------------++++::::::++MMMM..  
+            ..MMMMMM::::MM++::------::++::::MM@@@@++######++------mm::--------------::++++++::--------------------------::::::::::++mmMM@@  
+            MMMMMM::::::++::----------++::::@@##mm++##@@------++MMmm----------------::::++++::::--------------------------::::::::++++MMMM++
+            mmmm::::::++++::----------::::--##mmmm++@@MM----::MM++------------------::::++mm::::----------------------------::::::::++MMMMMM
+          ++mm++::::::MM++::------------::--++##::##MM++--::MM++----------------------::++++::------------------------------::::::::++mmmmmm
+          MMmm++::::::MM++::----------::::--##mm++##::::::mmmm------------------------::++::++----------::::::----------------::::::++++mmmm
+          mm++::::::::MM++::::--------::----MMmm@@mm::--::mm--------------------------::::++--------------::++::--------------::::::++++mmmm
+        MM++++::::::::MM++::::::----::::..--mmmmMM::++::@@::----------------------------::MM::------------::::++::----------::::::::::++mmmm
+        ++++::::::::::MM++++::::::::::::----##MM@@mm++++::------------------------------::--::------------::::++++++--::::::::::::::::++mmmm
+      mm++::::::::++::MM++++++++::::::::--::##@@@@MM::mm----------------------------::--mm::::--------------::::++++mm--::::::::::::::::mmmm
+      mm++::::::::::::MMmm++++++++::::::::++##@@MMMM--++::::----------------------::::--++::::------------------::++++mm::::::::::::::::mmMM
+      mmmm::::::::++::mmMMmmmm++++++++++mm@@##@@@@MMmm++++::::::::::----::::::::::::::::--::----------------------++++++::::::::++::::::mm--
+    ++mmmm++::::::::++::MM++mmmmmmmm++++mm######@@--mm++++++++::::::::::::::::::::::::++::::--------------------::::++++++::::::..::::++mm  
+    MMmmmm++++::++++::::MM@@mmMMMMMMmmmmmm@@##@@##MMmmmmmm++++++++::::::::::::::::::::mm::::----------------------::++++++::::mm..::::++mm  
+    mmmmmm++++++::++++::++@@##@@mmMMMMMMmmMM####MMMMMMmmmm++++++++++::::::::::::::::::++::::--------------------::::++++::::::MM--::++mmMM  
+    ++mmmm++++++::++::::++MM######MMMMMM@@@@####MMMMmmmmmm++++++++++++++++++++::::::::mm--::::------------------::::++++++::mm++::::++mm..  
+    ::mmmm++++++::++++::::MM######    ##@@MMMM####MMmmmmmmmm++++++++++++++++++++::++++##mm++::::----------------::::++++++++mm::::::++mm..  
+    ..mmmm++++++++++::::::mm@@##MM    --########@@MMmmmmmmmm++++++++++++++++++++::MM######::::::::------------::::::++++++mmmm::::::mmmm..  
+    ..mm++++++++++++++++++++MM##        ##MM##########MM++++++++++++++++++++mmMM@@@@@@####@@::::::::----------::::++++mmmmmm::::::::mmmm++  
+    --mm++++++++mmmm++::::::MM##        ..############@@@@@@MMMMmmMMMMMMMMMMMMMMMM@@@@@@####::++::::::------::::::++mmmmMM++::::::++mmmmMM  
+    --++++mm++++mmmmmm++::::MM@@          ########@@MMMMMMMMMMmmmmmmmmmmmmmmmmMMMM@@MMMM######::mm::::::::::::::::mmmmmmMM++::::::++mmmmMM  
+    ++++mmmmmm::++mmmmMM::::MM++          ##@@@@##MMmmmmmmmm@@mmmmmmmmmmmmmmmmmmmm@@MMMM######mmmmmm++++::::++MM##MMMM@@mm++::::::::mmmm--  
+    ++MMMMmm++::::::MMMM++++MM            --MM@@##MMmmmmmm++##mmmmmmmmMMMMMMMMMMMM##MMMM########::mmmmmmmmMM####MMMM@@MM++::::::::::++MM    
+    MMMMMMmm::::::::mmMMmmmm++              @@++##MM++++mm::##MMmmmmMMMMMMMMMMMMMM##MM@@##########::mmMM@@####@@MM##MMmm::::::::::::::mm..  
+    @@MMMMmm::::::::::MMMMMM                ..@@##@@++++++MM##@@mmmmmmMMMM@@@@@@@@##@@@@############@@mm@@##MMMM##@@MM++++::::::::::::mm--  
+    --@@mm::::::::::::MMMM..                  ####@@++::++++mm++mmmmmmMMMM@@@@@@@@##@@####################mmMM##@@MMMMMMmmmm++::::::::mm--  
+      MM++++::::::::++::++                    @@++##++::::::::mm::::++mmmmMMMM@@@@##@@####################@@@@########@@@@mm::::::::::mm..  
+      MM::++::::::::::::                      @@::##MM----::::MM::::::++++mmMM@@@@####################::..::::::::++++++::::::::::::++mm    
+    MM++::++++::::::::::++                    ::MM@@@@mm::::::MM::::::::::++mmMM@@##################..::::::--::::::::::++++::::::::mmmm    
+    mm::++++++::::::::++::                      ##@@##MMmmmmMMMMmm::::::::::::++@@@@##############::::::--++::::::::::++++++::::::++++MM    
+  MM++::++++++::::::++++::..                    ######mm::::--MMmm::::::::::::::::@@############@@++::--::::::::::::++++++++::::::++mm..    
+  MM::::++++mm::::::++++::..                    ##mm##mm------  MM::::::::::::::::::##@@########mm++::::::::::::::++++++mm++::++++MMMM      
+  mm::::++++mm::::++++++++                      @@++##::::::--..MM::::::::::::::::::mm@@@@######MMmm::::::::::::::++++MMMM++++++MMMM        
+  MM::mm++mmmm::::++mmmmmm                      --++##++::::::::mm::::::::::::::::@@++mm##@@####MM++----::::::::::mmmmMMMMMM++MMMM--        
+  ::::mmmmmmmm::::mmmmmmMM                        ####MM::::::::++++++::::::::::::::::@@MM@@####MM--::::::::::::::mmMMMMMMmmmmmmmm          
+    ++mmmmmmmm::::mmMMMM                          ####MMMM::::::++++++++::::::::::MM++--MM######++::::::::::::::::mmMMMMMMMMMM::            
+    mmmmmmmmmm::::::mmMM                        ..@@@@MM@@@@mm++++++++++++++++++++++::::##@@@@##--::::::::::::::::mmMMMMMMMM::              
+    mmmmmmmmmm::::::::                          mmMMMMMM@@@@@@mmmmmm++++++++++++++++++++MMMM@@mm::::----::::::::::MMMMMMMM..                
+    MMmmmmmmmm::::++::                          @@MM::mm++@@@@@@mmmmmm++++++++++++++++mmmm####MMMM++mm::--::::::::mmMMMM--                  
+    mmmmmmmmmm::mm  mm                          MMMMmm######mmmmMMmmmmmmmmmm++++++++mmmmMM####  --..      mm--::::MMMM##                    
+  ++mmmmmmmmMM  --MM                          ..@@mm##@@##MM##@@--MMmmmmmmmmmmmm++mmmmMM@@@@##--  ..++mm@@..++--::MM@@##..                  
+  MMMMMMmm..mm--..--                          MMMM####MM##MM@@####--mmmmmmmmmmmmmmmmmmMM@@@@##..        ++MM++--::MM######                  
+  ::++..++--::                                MM####@@MM##MMMM######++::mmmmmmmmMMMMMMMMMMMM##            ..MM++MMmm######..                
+      ++..--..                                ##@@##@@MM##MMMM@@MMMM##@@++MMMMMMMMMMMMMMMM@@##                ##--MM########                
+      ::......                              ..MM@@####MM##MMMM@@MMMM######++MMMMMMMMMM@@@@####                ##############                
+                    ..                      ##MM@@####MMMMMMMM@@MMMM####mm##++MMMM@@@@##@@####              ################..              
+        ++                      ..          ##@@@@####MMMMMMMM@@MMMM####mmMMMMmmmm@@@@mmMM####..          --################::              
+                                  --      ..##@@@@####@@MM##@@@@MMMM####MMMMMM####::++@@MM####--          @@##################              
+          ::                      --      ++##@@@@####@@MM##@@@@MMMM####@@MMMM##########MMMM##..            ##################              
+                              ..  --      ####@@@@######MM@@@@MMMMMM######MMMM############MM@@..              ################              
+            --                @@  ::      ####@@@@######@@MM##MMMMMM######MMMM############MM::                ################--            
+              --                ::::    ::####@@@@@@####@@MM##MMMMMM######MMMM##############::                @@########@@####--            
+                --            ....--    ########MM@@######@@@@MMMMMM######MMMM##############::                MM########@@####@@            
+                          --::++MM::    ########MM########@@@@@@@@MM######MMMM##############++                mm########MM######            
+                  ::      --::++::    ++########MM############@@@@@@######MMMM##############++                mm..######@@######            
+                        ::mm::        ##########MM############@@@@@@@@####@@@@##############@@                    MM####@@######--          
+                      ..              ##########@@############@@@@@@@@####@@@@@@####@@########..                  ################          
+                                    ::##########@@############@@@@@@@@####@@@@@@####@@##@@######              @@##########@@######          
+                                    ############@@############@@@@@@@@@@####@@@@####@@##@@######  ..--  @@################@@######@@        
+                                    ############@@@@##########@@@@@@@@@@####@@@@####@@##MM################################MM########..      
+                                  ..##############@@########@@@@@@@@@@@@####@@@@@@@@@@##MM########@@##################################      */

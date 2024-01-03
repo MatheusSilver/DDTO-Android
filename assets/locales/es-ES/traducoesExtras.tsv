@@ -1,0 +1,11 @@
+flag	content
+comentarioparaorganizacaoum DAQUI PRA BAIXO SOMENTE DESCRIÇÕES
+mcontrolsdesc   Configurar el estilo de los controles mobile
+botplaydesc Deja que el Bot juegue por ti y podrás disfrutar de la historia.
+lowenddesc  Opciones de optimización adicionales
+ratingvisiveldesc   Deja los popups de "Sick", "Good", etc... Visibles en pantalla, (Puede causar inestabilidad en lo FPS)
+gfvisiveldesc   Elimina Girlfriend de la canción, consumiendo poca RAM.<N>(Si su teléfono estas con lag,<N>o tiene poca batería, es necesario desactivar esto).
+gputexturesdesc Si está activado, el juego utilizará la GPU para soportar más peso cuando sea necesario, pero tendrás que reiniciar el juego después.
+presetsdesc Elige entre presets de optimización, la que mejor se adapta a tu celular.
+unlockalldesc   Desbloquea todo en el mod con excepción de algunas skins
+resetstorydesc  Borra todo tu progreso en la historia del juego.

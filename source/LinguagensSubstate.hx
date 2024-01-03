@@ -50,19 +50,19 @@ class LinguagensSubstate extends MusicBeatSubstate
 				judgementText = [
 					"Português do Brasil",
 					"Inglês (Estados Unidos)",
-					"Espanhol (Estados Unidos)",
+					"Espanhol (America Latina)",
 					"Voltar",
 					''
 				];
 				
 			case "en-US":
-				judgementText = ["Brazilian Portuguese", "English (USA)", "Spanish (USA)", "Back", ''];
+				judgementText = ["Brazilian Portuguese", "English (USA)", "Spanish (Latin America)", "Back", ''];
 				
-			case "es-US":
+			case "es-ES":
 				judgementText = [
 					"Portugués de Brasil",
 					"Inglés (Estados Unidos)",
-					"Español (Estados Unidos)",
+					"Español (America Latina)",
 					"Volver",
 					''
 				];
@@ -173,18 +173,26 @@ class LinguagensSubstate extends MusicBeatSubstate
 		switch (curSelected)
 		{
 			case 0:
-				SaveData.language == "pt-BR";
+				SaveData.language = "pt-BR";
+				trace(SaveData.language); // segurança
+				
 			case 1:
-				SaveData.language == "en-US";
+				SaveData.language = "en-US";
+				trace(SaveData.language); // segurança
+				
 			case 2:
-				SaveData.language == "es-US";
+				SaveData.language = "es-ES";
+				trace(SaveData.language); // segurança
+				
 		}
 
-		if (curSelected < 3)
-			SaveData.language == "pt-BR"; // ratomanocu
-
+		if (curSelected >= 3) { // budega veia
+			SaveData.language = SaveData.language; // PADRÃO
+			
+		}
+		
 		SaveData.save();
-
+		Main.tongue.initialize({locale: SaveData.language}); // ZYEEEEEEEEEUEUUNNNNNNN
 		MusicBeatState.switchState(new MainMenuState());
 	}
 

@@ -20,7 +20,10 @@
 	<!-- Used for Story Menu & Pop-ups -->
 	<file id="story" value="weekNames.tsv"/>
 	<file id="story" value="unlockPopups.tsv"/>
-
+	
+	<!-- Usado para a tradução de coisas que ficaram faltando e eu fiquei com preguiça de organizar -->
+	<file id="extra" value="traducoesExtras.tsv"/>
+	
 	<!--Add locale entries here.
 
 	https://www.techonthenet.com/js/language_tags.php
@@ -31,48 +34,24 @@
 	4) Add any labels you want to display the language text in the menu
 	-->
 
-	<!-- alguém me mata por favor? -->
-	<locale id="pt-BR" is_default="true">
-		<contributors value="Mega, Sem Nome, Noas, Demon Fever, Black Impostor, M&amp;M"/>
-		<label id="pt-BR" language="Português Brasileiro" region="Brasil"/>
-		<label id="en-US" language="Brazilian Portuguese" region="Brazil"/>
-		<label id="es-US" language="Portugués de Brasil" region="Brasil"/>
-	</locale>
-
-	<locale id="en-US" is_default="false">
+	<locale id="en-US" is_default="true">
 		<contributors value="DDTO+ team of translators (look in credits)"/>
 		<label id="pt-BR" language="Inglês (Estados Unidos)" region="Estados Unidos"/>
 		<label id="en-US" language="English (United States)" region="United States"/>
-		<label id="es-US" language="Inglés (Estados Unidos)" region="Estados Unidos"/>
+		<label id="es-ES" language="Inglés (Estados Unidos)" region="Estados Unidos"/>
 	</locale>
 
-	<locale id="es-US" is_default="false"> <!--não sabia que não tinha um espanhol da america latina inteira...-->
+	<locale id="pt-BR">
+		<contributors value="Mega, Sem Nome, Noas, Demon Fever, Black Impostor, M&amp;M"/>
+		<label id="pt-BR" language="Português Brasileiro" region="Brasil"/>
+		<label id="en-US" language="Brazilian Portuguese" region="Brazil"/>
+		<label id="es-ES" language="Portugués de Brasil" region="Brasil"/>
+	</locale>
+
+	<locale id="es-ES" is_default="false">
 		<contributors value="DDTO+ equipo de traductores (mira en los creditos)"/>
 		<label id="pt-BR" language="Espanhol (Estados Unidos)" region="Estados Unidos"/>
 		<label id="en-US" language="Spanish (United States)" region="United States"/>
-		<label id="es-US" language="Español (Estados Unidos)" region="Estados Unidos"/>
+		<label id="es-ES" language="Español (Estados Unidos)" region="Estados Unidos"/>
 	</locale>
-
-
-
-	<!---
-	Any text blurbs that the translation interface itself needs are stored here rather than
-	in text files, to avoid the boot-strapping problem of having to load a locale in order
-	to display locale interface text in that locale.
-
-	A good practice is that this note should always display in the currently selected locale as
-	a tooltip over various translations.
-	-->
-	
-	<note id="volunteer">
-		<!--This means that a fan or other volunteer submitted this to us-->
-		<text id="pt-BR" title="Voluntários" body="Essa tradução foi feita por voluntários. No caso, a equipe de tradução do Port de Android."/>
-		<text id="es-US" title="Voluntarios" body="Esta traduccion no es oficial e fue creada por voluntarios. (equipo del port android)"/> <!--espanhol afiado-->
-	</note>
-	
-	<note id="official">
-		<!--This means that we solicited and paid the translator for an official translation-->
-		<text id="en-US" title="Official" body="This translation is official and was created by the translators of DDTO+."/>	
-	</note>
-
 </data>

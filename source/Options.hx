@@ -423,7 +423,18 @@ class ScrollSpeedOption extends Option
 
 	override function getValue():String
 	{
-		var visualValue:String = SaveData.scrollSpeed < 1 ? 'Padrão da Música' : Std.string(FlxMath.roundDecimal(SaveData.scrollSpeed, 1));
+		var defaulttexto:String;
+		switch(SaveData.language) {
+			case "pt-BR":
+				defaulttexto = "Padrão da Música";
+			case "en-US":
+				defaulttexto = "Song Default";
+			case "es-ES":
+				defaulttexto = "Predeterminado (chart)"; // sla uai tava com preguiça de usar tradutor
+			default:
+				defaulttexto = "aaaaaaa";
+		}
+		var visualValue:String = SaveData.scrollSpeed < 1 ? '$defaulttexto' : Std.string(FlxMath.roundDecimal(SaveData.scrollSpeed, 1));
 		return LangUtil.getString('descCurScroll', 'option') + ': ' + visualValue;
 	}
 }
@@ -1069,7 +1080,7 @@ class LanguageSelection extends Option
 
 	private override function updateDisplay():String
 	{
-		return 'Linguagem: ${SaveData.language}';
+		return LangUtil.getString('cmnLanguage', 'data');
 	}
 }
 

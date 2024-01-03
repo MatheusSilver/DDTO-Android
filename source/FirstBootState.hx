@@ -45,7 +45,7 @@ class FirstBootState extends MusicBeatState
 
 		#if FEATURE_LANGUAGE
 
-		localeList = ['pt-BR', 'en-US', 'es-US']; // Aqui é portugues br, ingles do usa, e espanhol dos estados unidos (?)
+		localeList = ['pt-BR', 'en-US', 'es-ES']; // Aqui é portugues br, ingles do usa, e espanhol dos estados unidos (?)
 
 		for (i in 0...localeList.length)
 			textMenuItems.push(Main.tongue.getIndexString(Language, localeList[i]));

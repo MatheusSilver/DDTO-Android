@@ -128,7 +128,16 @@ class CoolUtil
 
 	public static function getUsername():String
 	{
-		return "Jogador";
+		switch (SaveData.language) {
+			case "pt-BR":
+				return "Jogador";
+			case "en-US":
+				return "Player";
+			case "es-ES":
+				return "Jugador";
+			default:
+				return "SIIIIIIIIIIIIIIIIIIIIIIIIIUUUUUUUUUUU";
+		}
 	}
 
 	public static function openURL(url:String)

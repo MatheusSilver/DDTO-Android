@@ -38,6 +38,7 @@ descRatingToggle	Determina quando mostrar ou não notas(Doki,Bom,etc...) durante
 descAntialiasing	Faz os visuais ficarem mais suaves a custo de um pouco de performance
 descMiddleOpponent	Mostra as notas do oponente
 descGPUTextures	Carrega as texturas na GPU, fazendo usar menos memória.
+descLanguage Troque o idioma do jogo
 descCacheCharacter	Reduz o tempo de carregamento por carregar todos os personagens durante a abertura do Jogo(USA MUITA MEMÓRIA).
 descCacheSong	Reduz o tempo de carregamento por carregar todas as músicas durante a abertura do Jogo(USA MUITA MEMÓRIA).
 descCache	Reduz os carregamentos ainda mais nessa sessão por carregar o que está selecionado acima.

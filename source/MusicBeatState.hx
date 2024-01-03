@@ -33,7 +33,7 @@ class MusicBeatState extends FlxUIState
 			if (!semState)
 				switchState(prevState); //Assim posso usar esse botão apenas como um mero sprite em situações mais complexas.
 		});
-		_backButton.loadGraphic(Paths.image('voltar_simples', false, true));
+		_backButton.loadGraphic(Paths.image('voltar_simples', true));
 		_backButton.updateHitbox();
 		add(_backButton);
 	}

@@ -1,0 +1,48 @@
+flag	content
+nameKeyBindings	Config. del Teclado
+nameDownscroll	Downscroll
+nameUpscroll	Upscroll
+nameGhostTap	Ghost Tapping
+nameNoGhostTap	Sin Ghost Tapping
+namePosition	Posicion de la Música
+nameReset	Botón Reset
+nameFlashing	Flashing Lights
+nameJudgement	Clasificación de Ritmo
+nameFPSCount	Contador de Memoria y FPS
+nameFPSCap	FPS Cap
+nameScroll	Velocidad de Scroll
+nameNPS	Display de NPS
+nameCustomize	Personalizar el HUD del juego
+nameGFCountdown	GF Countdown
+nameMiddleScrollOn	Middle Scroll
+nameMiddleScrollOff	Side Scroll
+nameLaneUnderwayOn	Lane Underlay
+nameLaneUnderwayOff	Sin Lane Underlay
+nameScoreReset	Resetar puntuaciones
+nameScoreResetConfirm	Confirmar Reset
+nameStoryReset	Resetar Story Data
+nameStoryResetConfirm	Confirmar Reset
+nameSaveReset	Eliminar datos guardados
+nameSaveResetConfirm	¿Está seguro?
+nameSelfAware	Self Awareness
+nameGameJolt	Integracion de Game Jolt
+nameHitSound	Hitsounds
+nameHitSoundJudge	Hitsounds de Ranking
+nameNoteSplash	Note Splashes
+nameEarlyLate	Indicador de Early/Late
+nameAutoPause	Pausa Automática
+nameJudgeCount	Contador de clasificación
+nameVideoDub	Doblaje de vídeo
+nameShowRating	Mostrar Ranking
+nameHideRating	Ocultar Ranking
+nameAntialiasing	Anti-aliasing
+nameGPUTextures	Texturas de GPU
+nameCacheCharacter	Caché de personajes
+nameCacheSong	Caché de música
+nameCache	Caché de Assets
+namePreload	Preload de Assets
+nameMirror	Modo Espejo
+nameSudden	Muerte Súbita
+nameRandom	Random Notes
+nameShaders	Shaders
+nameCursor	Cursor Personalizado

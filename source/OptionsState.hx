@@ -30,9 +30,9 @@ class OptionsState extends MusicBeatState
 	var options:Array<OptionCategory> = [
 		new OptionCategory(LangUtil.getString('catGameplay', 'option'), [
 			#if android
-			new CustomControls('Configure o estilo de controle mobile'),
+			new CustomControls(LangUtil.getString('mcontrolsdesc', 'extra')),
 			#end
-			new BotPlay('Deixe o Bot jogar por você e apenas aproveite a história.'),
+			new BotPlay(LangUtil.getString('botplaydesc', 'extra')),
 			//new GlobalSoundOption('Altere o volume dos efeitos sonoros GLOBAIS do jogo'),
 			new KeyBindingsOption(LangUtil.getString('descKeyBindings', 'option'), controls),
 			new DownscrollOption(LangUtil.getString('descDownscroll', 'option')),
@@ -52,8 +52,8 @@ class OptionsState extends MusicBeatState
 			#if html5
 			new AntiAliasing(LangUtil.getString('descAntialiasing', 'option')),
 			#end
-			new LowEnd('Opções de otimização extras'),
-			new RatingVisivel('Deixa as notificações de "Sick", "Good", etc... Vísiveis na tela, (Pode gerar instabilidade no FPS)'),
+			new LowEnd(LangUtil.getString('lowenddesc', 'extra')),
+			new RatingVisivel(LangUtil.getString('ratingvisiveldesc', 'extra')),
 			new FlashingLightsOption(LangUtil.getString('descFlashing', 'option')),
 			new AccuracyOption(LangUtil.getString('descAccuracy', 'option')),
 			new NPSDisplayOption(LangUtil.getString('descNPS', 'option')),
@@ -66,11 +66,11 @@ class OptionsState extends MusicBeatState
 		]),
 		#if !html5
 		new OptionCategory(LangUtil.getString('catPerformance', 'option'), [
-			new RemoverGf('Remove a Girlfriend da música, consumindo pouca ram.\n(Se seu celular estiver travando muito\nou com pouca bateria, desative isso.)'),
+			new RemoverGf(LangUtil.getString('gfvisiveldesc', 'extra')),
 			new FPSCapOption(LangUtil.getString('descFPSCap', 'option')),
 			new AntiAliasing(LangUtil.getString('descAntialiasing', 'option')),
-			new GPUTextures('Caso ligado, o jogo passará a usar GPU para aguentar mais peso quando precisar, mas você precisará reiniciar o jogo depois'),
-			new Padroes('Escolha entre os presets de configurações recomendadas, a que mais se encaixa ao seu celular.'),
+			new GPUTextures(LangUtil.getString('gputexturesdesc', 'extra')),
+			new Padroes(LangUtil.getString('presetsdesc', 'extra')),
 			#if nnone // Como nukar seu celular, tutorial grátis e rápido:
 			new CharaCacheOption(LangUtil.getString('descCacheCharacter', 'option')),
 			new SongCacheOption(LangUtil.getString('descCacheSong', 'option')),
@@ -79,14 +79,16 @@ class OptionsState extends MusicBeatState
 		]),
 		#end
 		new OptionCategory(LangUtil.getString('catSave', 'option'), [
-			new LanguageSelection('Alterar a linguagem do jogo'),
 			#if FEATURE_GAMEJOLT
 			new GameJolt(LangUtil.getString('descGameJolt', 'option')),
 			#end
-			new UnlockAll("Desbloqueia tudo no mod com exceção de algumas skins"),
+			new UnlockAll(LangUtil.getString('unlockalldesc', 'extra')),
 			new ResetScore(LangUtil.getString('descScoreReset', 'option')),
-			new ResetStory('Apagar todo o seu progresso na história do jogo'),
+			new ResetStory(LangUtil.getString('resetstorydesc', 'extra')),
 			new ResetSave(LangUtil.getString('descSaveReset', 'option'))
+		]),
+		new OptionCategory(LangUtil.getString('catIdiomas', 'option'), [
+			new LanguageSelection(LangUtil.getString('descLanguage', 'option'))
 		])
 	];
 

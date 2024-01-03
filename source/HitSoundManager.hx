@@ -19,58 +19,80 @@ class HitSoundManager
 
 	public static function init():Void
 	{
-		CoolUtil.precacheSound('hitsound/snap');
-		CoolUtil.precacheSound('hitsound/perfect');
-		CoolUtil.precacheSound('hitsound/great');
-		CoolUtil.precacheSound('hitsound/good');
-		CoolUtil.precacheSound('hitsound/tap');
-
-		snap = null;
-		perfect = null;
-		great = null;
-		good = null;
-		tap = null;
-
-		snap = new FlxSound().loadEmbedded(Paths.sound('hitsound/snap'));
-		snap.volume = SaveData.hitSoundVolume;
-
-		perfect = new FlxSound().loadEmbedded(Paths.sound('hitsound/perfect'));
-		perfect.volume = SaveData.hitSoundVolume;
-		perfect.onComplete = function():Void
+		if (SaveData.hitSound)
 		{
-			noteHit = false;
-		};
+			CoolUtil.precacheSound('hitsound/snap');
+		}
+		else if (SaveData.judgeHitSound)
+		{ // não é pra fazer precache do negócio se vc não tiver ativado pra usar ele
+			CoolUtil.precacheSound('hitsound/perfect');
+			CoolUtil.precacheSound('hitsound/great');
+			CoolUtil.precacheSound('hitsound/good');
+			CoolUtil.precacheSound('hitsound/tap');
+		}
 
-		great = new FlxSound().loadEmbedded(Paths.sound('hitsound/great'));
-		great.volume = SaveData.hitSoundVolume;
-		great.onComplete = function():Void
+		if (SaveData.hitSound)
 		{
-			noteHit = false;
-		};
-
-		good = new FlxSound().loadEmbedded(Paths.sound('hitsound/good'));
-		good.volume = SaveData.hitSoundVolume;
-		good.onComplete = function():Void
+			snap = null;
+		}
+		else if (SaveData.judgeHitSound)
 		{
-			noteHit = false;
-		};
+			perfect = null;
+			great = null;
+			good = null;
+			tap = null;
+		}
 
-		tap = new FlxSound().loadEmbedded(Paths.sound('hitsound/tap'));
-		tap.volume = SaveData.hitSoundVolume;
+		if (SaveData.hitSound)
+		{
+			snap = new FlxSound().loadEmbedded(Paths.sound('hitsound/snap'));
+			snap.volume = SaveData.hitSoundVolume;
+		}
+		else if (SaveData.judgeHitSound)
+		{
+			perfect = new FlxSound().loadEmbedded(Paths.sound('hitsound/perfect'));
+			perfect.volume = SaveData.hitSoundVolume;
+			perfect.onComplete = function():Void
+			{
+				noteHit = false;
+			};
 
-		FlxG.sound.list.add(snap);
-		FlxG.sound.list.add(perfect);
-		FlxG.sound.list.add(great);
-		FlxG.sound.list.add(good);
-		FlxG.sound.list.add(tap);
+			great = new FlxSound().loadEmbedded(Paths.sound('hitsound/great'));
+			great.volume = SaveData.hitSoundVolume;
+			great.onComplete = function():Void
+			{
+				noteHit = false;
+			};
+
+			good = new FlxSound().loadEmbedded(Paths.sound('hitsound/good'));
+			good.volume = SaveData.hitSoundVolume;
+			good.onComplete = function():Void
+			{
+				noteHit = false;
+			};
+
+			tap = new FlxSound().loadEmbedded(Paths.sound('hitsound/tap'));
+			tap.volume = SaveData.hitSoundVolume;
+		}
+
+		if (SaveData.hitSound)
+		{
+			FlxG.sound.list.add(snap);
+		}
+		else if (SaveData.judgeHitSound)
+		{
+			FlxG.sound.list.add(perfect);
+			FlxG.sound.list.add(great);
+			FlxG.sound.list.add(good);
+			FlxG.sound.list.add(tap);
+		}
 	}
 
 	public static function play(rating:String = 'ghost'):Void
 	{
 		var sfx:FlxSound;
 
-		if (SaveData.judgeHitSound)
-		{
+		if (SaveData.judgeHitSound) {
 			noteHit = true;
 
 			switch (rating)
@@ -85,11 +107,15 @@ class HitSoundManager
 					sfx = tap;
 					noteHit = false;
 			}
-		}
-		else
-			sfx = snap;
 
-		if (sfx.playing) sfx.stop();
-		sfx.play();
+			if (sfx.playing)
+				sfx.stop();
+			sfx.play();
+      	} else if (SaveData.hitSound) {
+			sfx = snap;
+			if (sfx.playing)
+				sfx.stop();
+			sfx.play();
+		}
 	}
 }

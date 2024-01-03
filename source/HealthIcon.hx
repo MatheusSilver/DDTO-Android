@@ -61,14 +61,14 @@ class HealthIcon extends FlxSprite
 
 		if (isHealth)
 		{
-			loadGraphic(Paths.image('icons/icon-' + daChar, false, true));
-			loadGraphic(Paths.image('icons/icon-' + daChar, false, true), true, Math.floor(width / 3), Math.floor(height));
+			loadGraphic(Paths.image('icons/icon-' + daChar, true));
+			loadGraphic(Paths.image('icons/icon-' + daChar, true), true, Math.floor(width / 3), Math.floor(height));
 			iconOffsets[0] = (width - 150) / 3;
 			iconOffsets[1] = (width - 150) / 3;
 			updateHitbox();
 		}
 		else
-			loadGraphic(Paths.image('icons/icon-' + daChar, false, true), true, 150, 150);
+			loadGraphic(Paths.image('icons/icon-' + daChar, true), true, 150, 150);
 
 		animation.add(daChar, [0, 1, 2], 0, false, isPlayer);
 		animation.play(daChar);

@@ -94,7 +94,7 @@ class DialogueBox extends FlxSpriteGroup
 
 		isEpiphany = PlayState.SONG.song.toLowerCase() == 'epiphany';
 
-		var jsonDiaString:String = Assets.getText(Paths.localeJson('erb/TestDialogue')); // Isso faz que seja retornado a pasta locales/sua linguagem/dialogues/musica/arquivo.json
+		var jsonDiaString:String = Assets.getText(Paths.localeDialogue('erb/TestDialogue')); // Isso faz que seja retornado a pasta locales/sua linguagem/dialogues/musica/arquivo.json
 		if (initdialogueData != null)
 			jsonDiaString = initdialogueData;
 
@@ -798,7 +798,7 @@ class DialogueBox extends FlxSpriteGroup
 			default: //Normal will be default, important
 
 				box = new FlxSprite(-20, 45);
-				box.frames = Paths.getSparrowAtlas('dialogue/Text_Boxes', 'doki', false, true);
+				box.frames = Paths.getSparrowAtlas('dialogue/Text_Boxes', 'doki', true);
 				for (name in prefixMap.keys())
 					box.animation.addByPrefix(name, prefixMap[name], 24, false);
 				

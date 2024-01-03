@@ -213,7 +213,7 @@ class PauseSubState extends MusicBeatSubstate
 			levelInfo.visible = false;
 		}
 
-		logo = new FlxSprite(-260, 0).loadGraphic(Paths.image('Credits_LeftSide', false, true));
+		logo = new FlxSprite(-260, 0).loadGraphic(Paths.image('Credits_LeftSide', true));
 		logo.antialiasing = SaveData.globalAntialiasing;
 		add(logo);
 

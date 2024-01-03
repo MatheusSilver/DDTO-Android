@@ -45,12 +45,12 @@ class Paths
 	public static function limparspriteporchave(chave:String, library:String){ //Isso é uma tentativa desesperada de arrumar libitina
 		
 		var key:String;
-		if(SaveData.language == "pt-BR") {
-		key	= getPath('images/$chave.png', IMAGE, library);
+		if(SaveData.language == "pt-BR" && fileExists("assets/locales/" + SaveData.language + '/images/$chave.png', IMAGE, "locales")) {
+			key = getPath(SaveData.language + '/images/$chave.png', IMAGE, "locales");
 		} else {
-		key = getPath('locales/' + SaveData.language + '/$chave.png', IMAGE, ''); // NÃO FAÇO A MÍNIMA IDEIA SE ISSO VAI FUNCIONAR DA FORMA QUE EU FIZ
+			key	= getPath('images/$chave.png', IMAGE, library);
 		}
-	
+
 		@:privateAccess{
 		if (currentTrackedAssets["textures"].exists(key) && !noDisposeTextures.contains(key))
 			{
@@ -191,10 +191,10 @@ class Paths
 	//E com isso, os créditos voltam a funcionar da forma como deveriam tambem kek
 	inline static public function imagechecker(key:String, ?library:String):Bool
 	{
-		if(SaveData.language == "pt-BR") {
- 			return OpenFlAssets.exists(getPath('images/$key.png', IMAGE, library));
+		if(SaveData.language != "pt-BR") {
+			return OpenFlAssets.exists(getPath("locales/" + SaveData.language + '/images/$key.png', IMAGE));
 		} else {
-			return OpenFlAssets.exists(getPath('locales' + SaveData.language +'/images/$key.png', IMAGE));	//não aguento mais escrever savedata language
+ 			return OpenFlAssets.exists(getPath('images/$key.png', IMAGE, library));
 		}
 	}
 
@@ -210,11 +210,11 @@ class Paths
 
 	inline static public function txt(key:String, ?library:String)
 	{
-		if(SaveData.language == "pt-BR") {
- 		return getPath('$key.txt', TEXT, library);
-		} else {
-		return getPath('locales/' + SaveData.language + '/data/$key.txt', TEXT);
-		}
+		return getPath('$key.txt', TEXT);
+		
+		//} else {
+		//return getPath('locales/' + SaveData.language + '/data/$key.txt', TEXT);
+		//}
 	}
 
 	inline static public function xml(key:String, ?library:String)
@@ -299,8 +299,8 @@ class Paths
 
 	inline static public function getSparrowAtlas(key:String, ?library:String, usaGPU:Bool = false)
 	{
-		if(SaveData.language != "pt-BR") { // Aqui ele procura pela pasta da sua linguagem já que tu não tá usando PT BR (padrão)
-		return FlxAtlasFrames.fromSparrow(image(key, usaGPU), file('locales/' + SaveData.language + '/images/$key.xml')); //pombas viu
+		if (fileExists("locales/" + SaveData.language + '/images/$key.xml', IMAGE)) {
+		return FlxAtlasFrames.fromSparrow(image(key, library, usaGPU), file('locales/' + SaveData.language +'/images/$key.xml'));
 		} else {
 		return FlxAtlasFrames.fromSparrow(image(key, library, usaGPU), file('images/$key.xml', library));
 		}
@@ -316,10 +316,10 @@ class Paths
 	public static function returnGraphic(key:String, ?library:String, usarGPU:Bool = false)
 	{
 		var path:String;
-		if(SaveData.language == "pt-BR") { // Já expliquei: mas como PT-BR é o padrão, ele procura tudo pelo path que o jogo procuraria normalmente
-		path = getPath('images/$key.png', IMAGE, library);
-		} else { // já caso seja espanhol ou inglês, ele procura pelo locales/sualinguagem/
-		path = getPath('locales/' + SaveData.language + '/images/$key.png',	IMAGE); // Isso faz com que não procure numa pasta tipo "shared" ou "preload/images"
+		if(fileExists("locales/" + SaveData.language + '/images/$key.png', IMAGE)) {
+			path = getPath("locales/" +SaveData.language + '/images/$key.png', IMAGE);
+		} else {
+			path = getPath('images/$key.png', IMAGE, library);
 		}
 		
 		if (OpenFlAssets.exists(path))
